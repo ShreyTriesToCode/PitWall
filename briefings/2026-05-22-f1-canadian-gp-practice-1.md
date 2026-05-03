@@ -1,0 +1,119 @@
+# F1 Briefing: F1 Canadian GP - Practice 1
+
+Generated: Monday, 04 May 2026, 05:02 AM IST
+
+## 1. Grand Prix overview
+
+- Event: F1 Canadian GP - Practice 1
+- Start time: Friday, 22 May 2026, 10:00 PM IST
+- Calendar location: Not provided
+- Jolpica race: Canadian Grand Prix
+- Circuit: Circuit Gilles Villeneuve
+- City and country: Montreal, Canada
+- Track type: permanent circuit
+- Overtaking level: medium-good
+- Safety car likelihood: high
+
+## 2. Weather briefing
+
+- Weather source: Open-Meteo forecast
+- Air temperature: 19.2°C
+- Track temperature: Unavailable
+- Rain: 24%
+- Humidity: 31%
+- Wind: 9.4 km/h
+- Strategy impact: dry baseline more likely
+
+## 3. Dynamic track model
+
+- Dominance: tyre management and thermal control
+- Speed profile: balanced speed profile (no extreme speed profile detected from free race data)
+- Tyre stress: high (historical average around 4.3 stops per driver)
+- Overtaking: medium-good (average grid-to-finish movement around 4.0 places)
+- Safety car: high (non-finish proxy rate around 33.8%)
+- Strategy bias: two-stop risk if degradation appears in long runs
+
+## 3A. Data source audit
+
+- Source: Jolpica + Open-Meteo + optional FastF1
+- Historical races sampled: 5
+- Results sampled: 80
+- Qualifying rows sampled: 80
+- Pit stops sampled: 120
+- Average overtake delta: 3.95
+- Average stops per driver: 4.285714285714286
+- Prediction stage: Pre-weekend prediction
+
+## 4. Team advantage estimate
+
+- 1. Mercedes
+- 2. Ferrari
+- 3. McLaren
+- 4. Red Bull
+- 5. Alpine F1 Team
+
+## 5. Tyre strategy
+
+- Baseline strategy: two-stop risk if degradation appears in long runs
+- Safest dry approach: conservative one-stop if degradation data stays controlled.
+- Aggressive dry approach: early undercut or two-stop if tyre stress rises.
+- Wet-weather adjustment: if rain probability rises, delay fixed dry-compound plans.
+- Pit window: Lap 14-24 for aggressive two-stop, lap 22-32 for conservative one-stop.
+
+## 6. Pit stop strategy
+
+- Likely number of stops: inferred from historical pit-stop data where available.
+- Safety car response: pit if the loss is lower and track position can be retained.
+- Virtual safety car response: pit if tyre age is near the planned window.
+- Avoid pitting into traffic, especially where overtaking is low.
+
+## 7. Setup direction
+
+stable platform with tyre temperature control
+
+## 8. Potential top 10 prediction
+
+Prediction status: dynamic but not guaranteed. This hybrid model combines Mintlify-style F1 ML feature groups with free data from Jolpica, FastF1, Open-Meteo, and your ICS calendar. It uses driver history, grid/qualifying, car and team form, circuit experience, weather, tyre strategy, race pace, pit execution, reliability, and race-simulation scenario logic.
+
+1. Andrea Kimi Antonelli, score 84.9, confidence 71%, car performance; driver form; ML podium probability; same-circuit history; pit-stop execution
+2. George Russell, score 77.3, confidence 71%, car performance; driver form; ML podium probability; same-circuit history; pit-stop execution
+3. Charles Leclerc, score 56.5, confidence 71%, car performance; driver form; ML podium probability; same-circuit history; team strategy and recovery
+4. Max Verstappen, score 56.4, confidence 83%, race pace; same-circuit history; ML top 10 probability; team strategy and recovery; pit-stop execution
+5. Lando Norris, score 55.2, confidence 71%, car performance; ML podium probability; driver form; same-circuit history; ML top 10 probability
+6. Oscar Piastri, score 54.0, confidence 71%, same-circuit history; car performance; ML top 10 probability; driver form; pit-stop execution
+7. Lewis Hamilton, score 52.8, confidence 71%, same-circuit history; car performance; driver form; team strategy and recovery; ML top 10 probability
+8. Fernando Alonso, score 35.4, confidence 71%, same-circuit history; pit-stop execution; team strategy and recovery; reliability; weather adaptation
+9. Pierre Gasly, score 33.5, confidence 71%, team strategy and recovery; pit-stop execution; same-circuit history; ML top 10 probability
+10. Franco Colapinto, score 31.8, confidence 71%, team strategy and recovery; same-circuit history; pit-stop execution; recent race result
+
+## 8A. Prediction model weights
+
+- ml win probability: 6.0%
+- ml podium probability: 8.7%
+- ml top10 probability: 4.7%
+- driver form: 9.4%
+- car performance: 10.1%
+- recent result: 4.0%
+- qualifying: 6.0%
+- circuit history: 8.1%
+- race pace: 11.4%
+- pit execution: 5.4%
+- team strategy: 6.0%
+- reliability: 2.7%
+- team track fit: 3.4%
+- weather adaptation: 2.7%
+- fastf1 race pace: 5.4%
+- fastf1 consistency: 2.0%
+- fastf1 tyre stint: 4.0%
+
+## 9. What to watch
+
+- Whether current-round qualifying becomes available before race start.
+- Whether weather changes alter the first pit window.
+- Whether circuit history suggests track position or race pace matters more.
+- Whether constructor form matches the circuit demand.
+- Whether pit execution and strategy gain change the final race order.
+
+---
+
+Generated by the free hybrid F1 briefing bot.

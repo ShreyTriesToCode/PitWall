@@ -1,0 +1,52 @@
+{
+  "trained_at": "2026-05-04T04:51:30.618737+05:30",
+  "ml_start_year": 2018,
+  "rows_raw": 3546,
+  "rows_features": 3387,
+  "latest_completed_race_id": "2026-4",
+  "metrics": {
+    "win": {
+      "auc": 1.0,
+      "brier": 0.013487288642777836,
+      "validation_rows": 77
+    },
+    "podium": {
+      "auc": 0.9384615384615385,
+      "brier": 0.07568171731292675,
+      "validation_rows": 77
+    },
+    "top10": {
+      "auc": 0.8076923076923077,
+      "brier": 0.18434786296775538,
+      "validation_rows": 77
+    }
+  },
+  "feature_columns": [
+    "grid_position",
+    "qualifying_position",
+    "driver_avg_finish",
+    "driver_median_finish",
+    "driver_avg_points",
+    "driver_win_rate",
+    "driver_podium_rate",
+    "driver_top10_rate",
+    "driver_finish_rate",
+    "driver_recent3_finish",
+    "driver_recent5_points",
+    "driver_recent5_podium_rate",
+    "team_avg_finish",
+    "team_avg_points",
+    "team_win_rate",
+    "team_podium_rate",
+    "team_top10_rate",
+    "team_finish_rate",
+    "team_recent_points",
+    "driver_circuit_avg_finish",
+    "driver_circuit_podium_rate",
+    "team_circuit_avg_finish",
+    "team_circuit_podium_rate",
+    "career_starts",
+    "team_starts",
+    "circuit_experience"
+  ]
+}
