@@ -19,9 +19,17 @@ on:
         required: false
         default: "90"
       send_email:
-        description: "Send email after generation"
+        description: "Allow email system when notification gate opens"
         required: false
         default: "true"
+      force_notify:
+        description: "Force email and GitHub Issue notification even outside 8-hour window"
+        required: false
+        default: "false"
+      notification_window_hours:
+        description: "Hours before matched event when email and issue notifications are allowed"
+        required: false
+        default: "8"
 
 permissions:
   contents: write
@@ -75,11 +83,21 @@ jobs:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           USER_TIMEZONE: "Asia/Kolkata"
           LOOKAHEAD_DAYS: ${{ github.event.inputs.lookahead_days || '90' }}
+          FINAL_RESULTS_DELAY_HOURS: "8"
+          NOTIFICATION_WINDOW_HOURS: ${{ github.event.inputs.notification_window_hours || '8' }}
+          FORCE_NOTIFY: ${{ github.event.inputs.force_notify || 'false' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           FORCE_RETRAIN: ${{ github.event.inputs.force_retrain || 'false' }}
           ML_START_YEAR: "2018"
           USE_FULL_HISTORICAL_DATA: "true"
+          OPENF1_ENABLED: "true"
+          OPENF1_BASE: "https://api.openf1.org/v1"
+          UPGRADES_ENABLED: "true"
+          F1_REGULATIONS_ENABLED: "true"
+          OFFICIAL_CALENDAR_ENABLED: "true"
+          FIA_TECH_UPDATE_BASE: "https://www.fia.com/news"
+          OFFICIAL_F1_CALENDAR_URL: "https://www.formula1.com/en/racing/{year}"
           FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '10' }}
           JOLPICA_REQUEST_SLEEP: "1.2"
           MODEL_DIR: "models/saved_models"

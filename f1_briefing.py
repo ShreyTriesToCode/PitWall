@@ -39,6 +39,9 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 USER_TIMEZONE_NAME = os.getenv("USER_TIMEZONE", "Asia/Kolkata")
 USER_TIMEZONE = tz.gettz(USER_TIMEZONE_NAME) or timezone.utc
 LOOKAHEAD_DAYS = int(os.getenv("LOOKAHEAD_DAYS", "90"))
+FINAL_RESULTS_DELAY_HOURS = int(os.getenv("FINAL_RESULTS_DELAY_HOURS", "8"))
+NOTIFICATION_WINDOW_HOURS = int(os.getenv("NOTIFICATION_WINDOW_HOURS", "8"))
+FORCE_NOTIFY = os.getenv("FORCE_NOTIFY", "false").lower() == "true"
 
 ML_START_YEAR = int(os.getenv("ML_START_YEAR", "2018"))
 USE_FULL_HISTORICAL_DATA = os.getenv("USE_FULL_HISTORICAL_DATA", "true").lower() == "true"
@@ -57,6 +60,14 @@ MODEL_BUNDLE_PATH = MODEL_DIR / "f1_hybrid_full_data_bundle.pkl"
 MODEL_META_PATH = MODEL_DIR / "f1_hybrid_full_data_meta.json"
 
 JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1"
+OPENF1_BASE = os.getenv("OPENF1_BASE", "https://api.openf1.org/v1").rstrip("/")
+OPENF1_ENABLED = os.getenv("OPENF1_ENABLED", "true").lower() == "true"
+UPGRADES_ENABLED = os.getenv("UPGRADES_ENABLED", "true").lower() == "true"
+F1_REGULATIONS_ENABLED = os.getenv("F1_REGULATIONS_ENABLED", "true").lower() == "true"
+OFFICIAL_CALENDAR_ENABLED = os.getenv("OFFICIAL_CALENDAR_ENABLED", "true").lower() == "true"
+FIA_TECH_UPDATE_BASE = os.getenv("FIA_TECH_UPDATE_BASE", "https://www.fia.com/news").rstrip("/")
+OFFICIAL_F1_CALENDAR_URL = os.getenv("OFFICIAL_F1_CALENDAR_URL", "https://www.formula1.com/en/racing/{year}")
+UPGRADE_NEWS_URLS = [u.strip() for u in os.getenv("UPGRADE_NEWS_URLS", "").split(",") if u.strip()]
 JOLPICA_HEADERS = {
     "User-Agent": "f1-race-intel/3.0 cache-first full-data model",
     "Accept": "application/json",
@@ -83,6 +94,18 @@ PREDICTION_LABELS = {
     "weather_adaptation": "weather adaptation",
     "track_trait_fit": "track trait fit",
     "sprint_performance": "sprint performance",
+    "current_season_car_performance": "current-season car performance",
+    "current_season_recent_form": "current-season recent constructor form",
+    "openf1_session_result": "OpenF1 session result",
+    "openf1_starting_grid": "OpenF1 starting grid",
+    "openf1_lap_pace": "OpenF1 lap pace",
+    "openf1_pit_execution": "OpenF1 pit execution",
+    "openf1_stint_strength": "OpenF1 stint strength",
+    "openf1_telemetry_speed": "OpenF1 telemetry speed",
+    "openf1_car_performance": "OpenF1 car performance",
+    "upgrade_package_impact": "official upgrade package impact",
+    "regulation_fit": "regulation-era fit",
+    "calendar_confidence": "official calendar confidence",
     "fastf1_race_pace": "FastF1 clean-lap pace",
     "fastf1_consistency": "FastF1 consistency",
     "fastf1_tyre_stint": "FastF1 tyre/stint evidence",
@@ -336,6 +359,59 @@ def parse_race_datetime(race):
         return None
 
 
+def final_results_cutoff(race):
+    race_dt = parse_race_datetime(race)
+    if race_dt is None:
+        return None
+    return race_dt + timedelta(hours=FINAL_RESULTS_DELAY_HOURS)
+
+
+def is_race_past_calendar_cutoff(race):
+    cutoff = final_results_cutoff(race)
+    return bool(cutoff and now_local() >= cutoff)
+
+
+def is_race_future_or_not_final_yet(race):
+    return not is_race_past_calendar_cutoff(race)
+
+
+def race_has_results(data):
+    try:
+        races = data.get("results", [])
+        return bool(races and races[0].get("Results"))
+    except AttributeError:
+        return False
+
+
+def cache_status_for_race(race, data):
+    if race_has_results(data):
+        return "final_results_available"
+    if race is not None and is_race_past_calendar_cutoff(race):
+        return "past_calendar_no_results_yet"
+    return "future_or_partial"
+
+
+def should_use_cached_round(cached, race=None, require_final_if_past=False):
+    if not cached:
+        return False
+
+    data = cached.get("data", {})
+    status = cached.get("status")
+
+    if race is None:
+        return True
+
+    if require_final_if_past and is_race_past_calendar_cutoff(race):
+        # Old caches may not have a status field. For past races, trust only caches with race results.
+        return race_has_results(data)
+
+    if status == "future_or_partial" and is_race_past_calendar_cutoff(race):
+        # A race cached before it happened must be refreshed after the GP.
+        return False
+
+    return True
+
+
 def full_race_cache_path(season, round_no):
     return FULL_RACE_CACHE_DIR / f"{season}-{round_no}.json.gz"
 
@@ -375,28 +451,58 @@ def fetch_round_data_direct(season, round_no):
     }
 
 
-def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=False):
+def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=False, race=None, training_mode=False):
+    """
+    Cache-first full race loader.
+
+    Rules:
+    1. Historical ML training uses only races whose scheduled GP time plus FINAL_RESULTS_DELAY_HOURS has passed.
+    2. A race is used for ML training only when race results exist.
+    3. Future GPs may still be fetched for prediction/session context when force_fetch=True, but they are not used as final training rows.
+    4. If a race was cached before it had results, it is refreshed after the GP cutoff.
+    """
     cached = read_full_race_cache(season, round_no)
-    if cached and not force_fetch:
-        return cached.get("data", {})
+
+    if cached and not force_fetch and should_use_cached_round(cached, race=race, require_final_if_past=training_mode):
+        data = cached.get("data", {})
+        if training_mode and not race_has_results(data):
+            return {}
+        return data
 
     key = f"{season}-{round_no}"
+
+    if race is not None and training_mode and is_race_future_or_not_final_yet(race):
+        print(f"Skipping future/not-final GP for training cache: {key}")
+        return {}
+
     if allow_backfill and not force_fetch and not BACKFILL_BUDGET.can_fetch():
         print(f"Full-data backfill limit reached. Skipping uncached historical race {key}.")
         return {}
 
     print(f"Fetching full round data for {key}")
     data = fetch_round_data_direct(season, round_no)
+    status = cache_status_for_race(race, data) if race is not None else ("final_results_available" if race_has_results(data) else "unknown")
+
+    # Avoid storing empty future training files as if they were complete history.
+    if training_mode and status == "future_or_partial":
+        print(f"Not caching future/partial training race: {key}")
+        return {}
+
     payload = {
         "season": season,
         "round": str(round_no),
         "fetched_at": now_local().isoformat(),
+        "status": status,
+        "final_results_delay_hours": FINAL_RESULTS_DELAY_HOURS,
         "data": data,
     }
     write_full_race_cache(season, round_no, payload)
 
     if allow_backfill and not force_fetch:
         BACKFILL_BUDGET.mark(key)
+
+    if training_mode and not race_has_results(data):
+        return {}
 
     return data
 
@@ -713,9 +819,11 @@ def collect_race_rows(start_year, end_year):
                 round_no,
                 allow_backfill=True,
                 force_fetch=False,
+                race=race,
+                training_mode=True,
             )
 
-            if not data or not data.get("results"):
+            if not data or not race_has_results(data):
                 races_skipped_uncached += 1
                 continue
 
@@ -874,9 +982,15 @@ def latest_completed_race_id(current_year=None):
     completed = []
     for race in fetch_schedule(year):
         race_dt = parse_race_datetime(race)
-        if race_dt and race_dt < now_local() - timedelta(hours=2):
-            data = fetch_round_data_cached(year, race.get("round"), allow_backfill=False)
-            if data.get("results"):
+        if race_dt and now_local() >= race_dt + timedelta(hours=FINAL_RESULTS_DELAY_HOURS):
+            data = fetch_round_data_cached(
+                year,
+                race.get("round"),
+                allow_backfill=False,
+                race=race,
+                training_mode=True,
+            )
+            if race_has_results(data):
                 completed.append((race_dt, f"{year}-{race.get('round')}"))
     if not completed and year > 1950:
         return latest_completed_race_id(year - 1)
@@ -1162,8 +1276,15 @@ def fetch_historical_same_circuit(target_race, years_back=5):
             if race.get("Circuit", {}).get("circuitId") == circuit_id:
                 round_no = race.get("round")
                 if round_no:
-                    data = fetch_round_data_cached(year, round_no, allow_backfill=True)
-                    records.append({"season": year, "round": round_no, "race": race, "data": data})
+                    data = fetch_round_data_cached(
+                        year,
+                        round_no,
+                        allow_backfill=True,
+                        race=race,
+                        training_mode=is_race_past_calendar_cutoff(race),
+                    )
+                    if data:
+                        records.append({"season": year, "round": round_no, "race": race, "data": data})
                 break
     return records
 
@@ -1716,12 +1837,678 @@ def fastf1_enhancement_scores(season, round_no):
     return scores
 
 
+
+def openf1_get(endpoint, params=None, optional_404=True):
+    """
+    OpenF1 historical endpoints are used only when the free public API responds.
+    If OpenF1 rejects the request, the model falls back to Jolpica + FastF1.
+    """
+    if not OPENF1_ENABLED:
+        return None
+    if not endpoint.startswith("/"):
+        endpoint = "/" + endpoint
+    url = OPENF1_BASE + endpoint
+    response = safe_get(url, params=params or {}, headers={"User-Agent": "f1-race-intel/3.1 openf1-fallback"}, timeout=35, optional_404=optional_404)
+    if not response:
+        return None
+    try:
+        return response.json()
+    except json.JSONDecodeError:
+        print(f"OpenF1 returned non-JSON for {endpoint}")
+        return None
+
+
+def find_openf1_meeting(race):
+    season = safe_int(race.get("season")) or now_local().year
+    location = race.get("Circuit", {}).get("Location", {})
+    country = location.get("country")
+    city = location.get("locality")
+    circuit = race.get("Circuit", {}).get("circuitName")
+    race_name = race.get("raceName", "")
+
+    queries = []
+    if country:
+        queries.append({"year": season, "country_name": country})
+    if city:
+        queries.append({"year": season, "location": city})
+    if circuit:
+        queries.append({"year": season})
+
+    candidates = []
+    for params in queries:
+        data = openf1_get("/meetings", params=params)
+        if isinstance(data, list):
+            candidates.extend(data)
+
+    if not candidates:
+        return None
+
+    target = " ".join([str(country or ""), str(city or ""), str(circuit or ""), str(race_name or "")]).lower()
+    best = None
+    best_score = -1
+    for meeting in candidates:
+        text = " ".join([
+            str(meeting.get("country_name", "")),
+            str(meeting.get("location", "")),
+            str(meeting.get("circuit_short_name", "")),
+            str(meeting.get("meeting_name", "")),
+            str(meeting.get("meeting_official_name", "")),
+        ]).lower()
+        score = sum(1 for token in tokenize(target) if token in text)
+        if score > best_score:
+            best = meeting
+            best_score = score
+    return best
+
+
+def choose_openf1_session(sessions, wanted_type):
+    if not sessions:
+        return None
+    wanted_type = wanted_type.lower()
+    for session in sessions:
+        name = str(session.get("session_name", "")).lower()
+        typ = str(session.get("session_type", "")).lower()
+        if wanted_type == "race" and (typ == "race" or name == "race"):
+            return session
+        if wanted_type == "qualifying" and ("qualifying" in name or typ == "qualifying"):
+            return session
+    return None
+
+
+def match_openf1_driver_to_id(openf1_driver, known_drivers):
+    full = normalize_name(openf1_driver.get("full_name") or " ".join([str(openf1_driver.get("first_name", "")), str(openf1_driver.get("last_name", ""))]))
+    full_key = set(tokenize(full))
+    best = None
+    best_score = -1
+    for driver in known_drivers:
+        key = set(tokenize(driver.get("name", "")))
+        score = len(full_key & key)
+        if score > best_score:
+            best = driver
+            best_score = score
+    if best_score <= 0:
+        return None
+    return best.get("driver_id")
+
+
+def openf1_enhancement_scores(race, known_drivers):
+    """
+    Adds OpenF1 if the free historical API works. If OpenF1 fails, all maps stay empty.
+    Data used: meetings, sessions, drivers, session_result, starting_grid, laps, pit, stints, weather, car_data.
+    """
+    empty = {
+        "provider_status": "not_used",
+        "meeting": None,
+        "sessions": [],
+        "driver_scores": {},
+        "team_scores": {},
+        "weather_traits": {},
+        "openf1_session_result": {},
+        "openf1_starting_grid": {},
+        "openf1_lap_pace": {},
+        "openf1_pit_execution": {},
+        "openf1_stint_strength": {},
+        "openf1_telemetry_speed": {},
+        "openf1_car_performance": {},
+    }
+    if not OPENF1_ENABLED:
+        empty["provider_status"] = "disabled"
+        return empty
+
+    meeting = find_openf1_meeting(race)
+    if not meeting:
+        empty["provider_status"] = "unavailable_or_rejected"
+        return empty
+
+    meeting_key = meeting.get("meeting_key")
+    sessions = openf1_get("/sessions", params={"meeting_key": meeting_key}) or []
+    race_session = choose_openf1_session(sessions, "race")
+    quali_session = choose_openf1_session(sessions, "qualifying")
+    session_key = (race_session or quali_session or {}).get("session_key")
+    if not session_key:
+        empty["provider_status"] = "meeting_found_no_session"
+        empty["meeting"] = meeting
+        return empty
+
+    drivers_data = openf1_get("/drivers", params={"session_key": session_key}) or []
+    number_to_driver = {}
+    number_to_team = {}
+    for od in drivers_data:
+        number = safe_int(od.get("driver_number"))
+        driver_id = match_openf1_driver_to_id(od, known_drivers)
+        if number and driver_id:
+            number_to_driver[number] = driver_id
+            number_to_team[number] = od.get("team_name")
+
+    result_raw = {}
+    grid_raw = {}
+    lap_raw = {}
+    pit_raw = {}
+    stint_raw = {}
+    speed_raw = {}
+    team_raw = {}
+
+    result_rows = openf1_get("/session_result", params={"session_key": session_key}) or []
+    for row in result_rows:
+        number = safe_int(row.get("driver_number"))
+        driver_id = number_to_driver.get(number)
+        if not driver_id:
+            continue
+        pos = safe_int(row.get("position"))
+        result_raw[driver_id] = score_position(pos)
+        duration = safe_float(row.get("duration"))
+        if duration:
+            lap_raw.setdefault(driver_id, []).append(duration)
+
+    grid_rows = openf1_get("/starting_grid", params={"session_key": session_key}) or []
+    for row in grid_rows:
+        number = safe_int(row.get("driver_number"))
+        driver_id = number_to_driver.get(number)
+        if driver_id:
+            grid_raw[driver_id] = score_position(row.get("position"))
+
+    laps = openf1_get("/laps", params={"session_key": session_key}) or []
+    for row in laps:
+        number = safe_int(row.get("driver_number"))
+        driver_id = number_to_driver.get(number)
+        lap_duration = safe_float(row.get("lap_duration"))
+        if driver_id and lap_duration and 45 <= lap_duration <= 180:
+            lap_raw.setdefault(driver_id, []).append(lap_duration)
+
+    pits = openf1_get("/pit", params={"session_key": session_key}) or []
+    for row in pits:
+        number = safe_int(row.get("driver_number"))
+        driver_id = number_to_driver.get(number)
+        duration = safe_float(row.get("stop_duration")) or safe_float(row.get("pit_duration")) or safe_float(row.get("lane_duration"))
+        if driver_id and duration and 1.5 <= duration <= 80:
+            pit_raw.setdefault(driver_id, []).append(duration)
+
+    stints = openf1_get("/stints", params={"session_key": session_key}) or []
+    for row in stints:
+        number = safe_int(row.get("driver_number"))
+        driver_id = number_to_driver.get(number)
+        start = safe_int(row.get("lap_start"))
+        end = safe_int(row.get("lap_end"))
+        if driver_id and start is not None and end is not None:
+            stint_raw.setdefault(driver_id, []).append(max(0, end - start + 1))
+
+    # Keep telemetry bounded: high-speed samples are enough for straight-line car signal.
+    car_data = openf1_get("/car_data", params={"session_key": session_key, "speed>=": 300}) or []
+    if not car_data:
+        car_data = openf1_get("/car_data", params={"session_key": session_key, "speed>=": 280}) or []
+    for row in car_data:
+        number = safe_int(row.get("driver_number"))
+        driver_id = number_to_driver.get(number)
+        speed = safe_float(row.get("speed"))
+        rpm = safe_float(row.get("rpm"))
+        throttle = safe_float(row.get("throttle"))
+        if driver_id and speed:
+            speed_raw.setdefault(driver_id, []).append(weighted_average([(speed, 0.70), (rpm / 100 if rpm else None, 0.15), (throttle, 0.15)]))
+
+    weather_rows = openf1_get("/weather", params={"session_key": session_key}) or []
+    weather_traits = {}
+    if weather_rows:
+        weather_traits = {
+            "openf1_air_temperature": average([r.get("air_temperature") for r in weather_rows]),
+            "openf1_track_temperature": average([r.get("track_temperature") for r in weather_rows]),
+            "openf1_rainfall": average([r.get("rainfall") for r in weather_rows]),
+            "openf1_wind_speed": average([r.get("wind_speed") for r in weather_rows]),
+            "openf1_humidity": average([r.get("humidity") for r in weather_rows]),
+        }
+
+    lap_avg = {d: average(v) for d, v in lap_raw.items()}
+    pit_avg = {d: average(v) for d, v in pit_raw.items()}
+    stint_avg = {d: average(v) for d, v in stint_raw.items()}
+    speed_avg = {d: average(v) for d, v in speed_raw.items()}
+
+    lap_score = normalize_scores(lap_avg, reverse=True)
+    pit_score = normalize_scores(pit_avg, reverse=True)
+    stint_score = normalize_scores(stint_avg)
+    speed_score = normalize_scores(speed_avg)
+
+    car_score = {}
+    for driver_id in set(result_raw) | set(grid_raw) | set(lap_score) | set(pit_score) | set(stint_score) | set(speed_score):
+        car_score[driver_id] = weighted_average([
+            (result_raw.get(driver_id), 0.14),
+            (grid_raw.get(driver_id), 0.12),
+            (lap_score.get(driver_id), 0.25),
+            (speed_score.get(driver_id), 0.22),
+            (pit_score.get(driver_id), 0.12),
+            (stint_score.get(driver_id), 0.15),
+        ])
+
+    for number, driver_id in number_to_driver.items():
+        team = number_to_team.get(number)
+        if team and car_score.get(driver_id) is not None:
+            team_raw.setdefault(team, []).append(car_score[driver_id])
+
+    empty.update({
+        "provider_status": "used",
+        "meeting": meeting,
+        "sessions": sessions,
+        "driver_scores": car_score,
+        "team_scores": {team: average(vals) for team, vals in team_raw.items()},
+        "weather_traits": weather_traits,
+        "openf1_session_result": result_raw,
+        "openf1_starting_grid": grid_raw,
+        "openf1_lap_pace": lap_score,
+        "openf1_pit_execution": pit_score,
+        "openf1_stint_strength": stint_score,
+        "openf1_telemetry_speed": speed_score,
+        "openf1_car_performance": car_score,
+    })
+    return empty
+
+
+def collect_current_season_constructor_performance(season, current_round):
+    team_rows = {}
+    if not current_round:
+        return {}
+
+    for race in fetch_schedule(season):
+        round_no = safe_int(race.get("round"))
+        if not round_no or round_no >= safe_int(current_round):
+            continue
+        data = fetch_round_data_cached(season, round_no, allow_backfill=True)
+        if not data or not race_has_results(data):
+            continue
+
+        result_race = data["results"][0]
+        qualifying_race = data.get("qualifying", [{}])[0] if data.get("qualifying") else {}
+        lap_metrics = driver_lap_metrics_from_data(data)
+        pit_metrics = pit_metrics_from_data(data)
+
+        q_by_driver = {}
+        for q in qualifying_race.get("QualifyingResults", []):
+            q_by_driver[q.get("Driver", {}).get("driverId")] = safe_int(q.get("position"))
+
+        for result in result_race.get("Results", []):
+            driver_id = result.get("Driver", {}).get("driverId")
+            team = result.get("Constructor", {}).get("name")
+            finish = safe_int(result.get("positionOrder") or result.get("position"))
+            grid = safe_int(result.get("grid"))
+            points = safe_float(result.get("points")) or 0
+            status = str(result.get("status", "")).lower()
+            if not team or not driver_id:
+                continue
+            lap = lap_metrics.get(driver_id, {})
+            pit = pit_metrics.get(driver_id, {})
+            reliability_score = 90 if ("finished" in status or "+" in status) else 45
+            grid_gain = grid - finish if grid and grid > 0 and finish else None
+            team_rows.setdefault(team, []).append({
+                "finish_score": score_position(finish),
+                "qualifying_score": score_position(q_by_driver.get(driver_id) or grid),
+                "points": points,
+                "grid_gain": grid_gain,
+                "lap_pace": lap.get("avg_best_35pct"),
+                "lap_consistency": lap.get("consistency"),
+                "pit_duration": pit.get("avg_pit_duration"),
+                "reliability": reliability_score,
+            })
+
+    raw = {}
+    for team, rows in team_rows.items():
+        raw[team] = {
+            "finish_score": average([r["finish_score"] for r in rows]),
+            "qualifying_score": average([r["qualifying_score"] for r in rows]),
+            "points_score": average([r["points"] for r in rows]),
+            "strategy_score": average([r["grid_gain"] for r in rows]),
+            "lap_pace_raw": average([r["lap_pace"] for r in rows]),
+            "lap_consistency_raw": average([r["lap_consistency"] for r in rows]),
+            "pit_duration_raw": average([r["pit_duration"] for r in rows]),
+            "reliability": average([r["reliability"] for r in rows]),
+        }
+
+    lap_scores = normalize_scores({t: r["lap_pace_raw"] for t, r in raw.items() if r["lap_pace_raw"] is not None}, reverse=True)
+    consistency_scores = normalize_scores({t: r["lap_consistency_raw"] for t, r in raw.items() if r["lap_consistency_raw"] is not None}, reverse=True)
+    pit_scores = normalize_scores({t: r["pit_duration_raw"] for t, r in raw.items() if r["pit_duration_raw"] is not None}, reverse=True)
+    point_scores = normalize_scores({t: r["points_score"] for t, r in raw.items() if r["points_score"] is not None})
+    strategy_scores = normalize_scores({t: r["strategy_score"] for t, r in raw.items() if r["strategy_score"] is not None})
+
+    final = {}
+    for team, row in raw.items():
+        final[team] = weighted_average([
+            (row["finish_score"], 0.20),
+            (row["qualifying_score"], 0.16),
+            (point_scores.get(team), 0.16),
+            (lap_scores.get(team), 0.18),
+            (consistency_scores.get(team), 0.08),
+            (pit_scores.get(team), 0.08),
+            (strategy_scores.get(team), 0.06),
+            (row["reliability"], 0.08),
+        ])
+    return final
+
+
+def collect_recent_current_season_constructor_form(season, current_round, recent_n=3):
+    if not current_round:
+        return {}
+    completed = []
+    for race in fetch_schedule(season):
+        round_no = safe_int(race.get("round"))
+        if round_no and round_no < safe_int(current_round):
+            completed.append((round_no, race))
+    completed = sorted(completed, key=lambda x: x[0])[-recent_n:]
+    team_scores = {}
+    for round_no, race in completed:
+        data = fetch_round_data_cached(season, round_no, allow_backfill=True)
+        if not data or not race_has_results(data):
+            continue
+        for result in data["results"][0].get("Results", []):
+            team = result.get("Constructor", {}).get("name")
+            finish = safe_int(result.get("positionOrder") or result.get("position"))
+            points = safe_float(result.get("points")) or 0
+            if not team:
+                continue
+            team_scores.setdefault(team, []).append(weighted_average([(score_position(finish), 0.62), (points, 0.38)]))
+    return {team: average(scores) for team, scores in team_scores.items() if scores}
+
 def driver_code_guess(name):
     parts = str(name or "").split()
     if len(parts) >= 2:
         return (parts[0][0] + parts[-1][:3]).lower()
     return str(name or "").lower()[:4]
 
+
+
+# -----------------------------
+# Official upgrades, regulations, calendar resilience
+# -----------------------------
+
+TRUSTED_UPGRADE_SOURCE_DOMAINS = (
+    "fia.com",
+    "formula1.com",
+)
+
+UPGRADE_TRAIT_KEYWORDS = {
+    "downforce": ["downforce", "load", "floor", "diffuser", "front wing", "rear wing", "beam wing", "bodywork", "underfloor", "floor edge", "floor fence"],
+    "aero_efficiency": ["aero efficiency", "aerodynamic efficiency", "efficiency", "flow", "wake", "sidepod", "engine cover", "coke", "fence", "fences"],
+    "straight_line": ["low drag", "drag reduction", "straight", "straightline", "straight-line", "monza", "low-downforce"],
+    "traction": ["traction", "rear suspension", "suspension", "mechanical grip", "slow-speed", "low speed", "kerb", "kerbs"],
+    "braking": ["brake", "braking", "brake duct", "brake cooling", "front brake", "rear brake"],
+    "cooling": ["cooling", "louvre", "louvres", "heat rejection", "exit", "inlet", "radiator", "high altitude"],
+    "tyre_management": ["tyre", "tire", "thermal", "degradation", "temperature", "rear tyre", "front tyre"],
+    "stability": ["stability", "balance", "sensitivity", "wind", "yaw", "ride height", "porpoising", "bouncing"],
+    "power_efficiency": ["power unit", "energy", "ers", "battery", "deployment", "fuel", "sustainable fuel", "compression ratio"],
+}
+
+REGULATION_CONTEXTS = {
+    "2025": {
+        "era": "2025 bodywork flexibility control era",
+        "notes": [
+            "FIA front and rear wing flexibility checks make aero compliance and load stability more important.",
+            "Teams with efficient legal wing load and stable platforms should be less exposed to regulatory disruption.",
+        ],
+        "boost_traits": ["aero_efficiency", "stability", "downforce"],
+    },
+    "2026+": {
+        "era": "2026+ active-aero and new power-unit era",
+        "notes": [
+            "The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.",
+            "Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.",
+        ],
+        "boost_traits": ["aero_efficiency", "straight_line", "power_efficiency", "stability", "traction", "braking", "reliability"],
+    },
+    "2027+": {
+        "era": "2027+ evolved 2026 regulation era",
+        "notes": [
+            "From 2027 onward the FIA compression-ratio control language moves toward operating-condition control, so power-unit reliability and thermal stability remain relevant model traits.",
+            "The model keeps 2026-era active aero and power-unit assumptions unless newer regulation text is added through source notes.",
+        ],
+        "boost_traits": ["power_efficiency", "cooling", "reliability", "aero_efficiency", "stability"],
+    },
+}
+
+PROMPT_REQUIREMENT_CHECKLIST = [
+    "cache_first_backfill_for_github",
+    "use_local_full_cache_after_manual_download",
+    "openf1_if_free_and_working_else_fallback",
+    "jolpica_fastf1_openmeteo_core",
+    "current_season_car_performance",
+    "recent_constructor_form",
+    "team_upgrade_package_impact",
+    "trusted_upgrade_sources",
+    "track_traits_downforce_straightline_traction_braking_tyre_overtaking",
+    "weather_traits_rain_heat_wind_cloud_historical_weather",
+    "driver_skill_form_reliability_circuit_history_recent_results",
+    "qualifying_grid_sprint_lap_pace_pit_execution_strategy_gain",
+    "f1_regulation_context_2025_2026_2027_and_future_safe",
+    "official_calendar_or_jolpica_fallback",
+    "season_change_resilience_uses_previous_data_when_current_missing",
+    "email_issue_markdown_dashboard_json",
+]
+
+
+def strip_html(html):
+    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.I)
+    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"&nbsp;", " ", text)
+    text = re.sub(r"&amp;", "&", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def candidate_fia_upgrade_urls(race):
+    race_name = str(race.get("raceName", ""))
+    circuit = race.get("Circuit", {}).get("circuitName", "")
+    candidates = []
+    base_terms = []
+    for source in [race_name, circuit]:
+        cleaned = re.sub(r"\b(formula|1|f1|grand|prix|gp|the|de|del|d')\b", " ", source.lower())
+        cleaned = re.sub(r"[^a-z0-9]+", " ", cleaned).strip()
+        if cleaned:
+            base_terms.append(cleaned)
+    for term in base_terms:
+        slug = make_slug(term)
+        candidates.append(f"{FIA_TECH_UPDATE_BASE}/f1-tech-updates-{slug}-grand-prix")
+        candidates.append(f"{FIA_TECH_UPDATE_BASE}/f1-tech-updates-{slug}-gp")
+    for url in UPGRADE_NEWS_URLS:
+        candidates.append(url)
+    seen = []
+    for url in candidates:
+        if url not in seen:
+            seen.append(url)
+    return seen[:10]
+
+
+def fetch_text_from_trusted_url(url):
+    if not any(domain in url for domain in TRUSTED_UPGRADE_SOURCE_DOMAINS):
+        return None
+    response = safe_get(url, timeout=25, use_cache=False, optional_404=True)
+    if not response:
+        return None
+    try:
+        return strip_html(response.text)
+    except Exception:
+        return None
+
+
+def classify_upgrade_text(text):
+    text_l = str(text or "").lower()
+    traits = {}
+    components = []
+    for trait, keywords in UPGRADE_TRAIT_KEYWORDS.items():
+        score = 0
+        for keyword in keywords:
+            if keyword in text_l:
+                score += 12
+                components.append(keyword)
+        if score:
+            traits[trait] = min(100, score)
+    if not traits:
+        return {}, []
+    return traits, sorted(set(components))[:12]
+
+
+def extract_team_upgrade_sections(text, team_names):
+    sections = {}
+    lower = text.lower()
+    aliases = {
+        "red bull racing": ["red bull", "oracle red bull"],
+        "mclaren": ["mclaren"],
+        "ferrari": ["ferrari", "scuderia ferrari"],
+        "mercedes": ["mercedes", "silver arrows"],
+        "aston martin": ["aston martin"],
+        "alpine": ["alpine"],
+        "williams": ["williams"],
+        "haas": ["haas"],
+        "racing bulls": ["racing bulls", "rb", "visa cash app"],
+        "audi": ["audi", "sauber", "kick sauber"],
+        "cadillac": ["cadillac"],
+    }
+    for team in team_names:
+        team_key = str(team or "").lower()
+        names = [team_key] + aliases.get(team_key, [])
+        hits = []
+        for name in names:
+            if not name:
+                continue
+            for match in re.finditer(re.escape(name), lower):
+                start = max(0, match.start() - 450)
+                end = min(len(text), match.end() + 900)
+                hits.append(text[start:end])
+        if hits:
+            sections[team] = " ".join(hits[:3])
+    return sections
+
+
+def trait_alignment_score(traits, profile, weather_summary, regulation_context):
+    if not traits:
+        return None
+    dominance = str(profile.get("dominance", "")).lower()
+    speed = str(profile.get("speed_profile", "")).lower()
+    tyre = str(profile.get("tyre_stress", "")).lower()
+    overtaking = str(profile.get("overtaking", "")).lower()
+    rain = safe_float(weather_summary.get("rain_score")) or 0
+    heat = safe_float(weather_summary.get("heat_score")) or 0
+    wind = safe_float(weather_summary.get("wind_score")) or 0
+    weights = {trait: 0.35 for trait in traits}
+    if "straight" in speed or "low drag" in dominance:
+        weights["straight_line"] = weights.get("straight_line", 0) + 0.9
+        weights["aero_efficiency"] = weights.get("aero_efficiency", 0) + 0.45
+    if "aero" in dominance or "downforce" in dominance:
+        weights["downforce"] = weights.get("downforce", 0) + 0.75
+        weights["aero_efficiency"] = weights.get("aero_efficiency", 0) + 0.65
+    if "traction" in speed or "track position" in dominance or "low" in overtaking:
+        weights["traction"] = weights.get("traction", 0) + 0.55
+        weights["braking"] = weights.get("braking", 0) + 0.45
+        weights["downforce"] = weights.get("downforce", 0) + 0.45
+    if tyre in {"high", "medium-high"}:
+        weights["tyre_management"] = weights.get("tyre_management", 0) + 0.65
+        weights["cooling"] = weights.get("cooling", 0) + 0.35
+    if heat >= 60:
+        weights["cooling"] = weights.get("cooling", 0) + 0.7
+        weights["tyre_management"] = weights.get("tyre_management", 0) + 0.4
+    if wind >= 55:
+        weights["stability"] = weights.get("stability", 0) + 0.55
+    if rain >= 35:
+        weights["stability"] = weights.get("stability", 0) + 0.35
+        weights["traction"] = weights.get("traction", 0) + 0.35
+    for trait in regulation_context.get("boost_traits", []):
+        weights[trait] = weights.get(trait, 0) + 0.3
+    return weighted_average([(traits.get(k), weights.get(k, 0.25)) for k in set(traits) | set(weights)])
+
+
+def regulation_context_for_season(season):
+    season = safe_int(season) or now_local().year
+    if season >= 2027:
+        ctx = dict(REGULATION_CONTEXTS["2026+"])
+        ctx["era"] = REGULATION_CONTEXTS["2027+"]["era"]
+        ctx["notes"] = REGULATION_CONTEXTS["2026+"]["notes"] + REGULATION_CONTEXTS["2027+"]["notes"]
+        ctx["boost_traits"] = sorted(set(REGULATION_CONTEXTS["2026+"]["boost_traits"] + REGULATION_CONTEXTS["2027+"]["boost_traits"]))
+        ctx["source_urls"] = ["https://www.fia.com/news/fia-statement-amendments-2026-f1-regulations", "https://www.fia.com/news/new-era-competition-fia-showcases-future-focused-formula-1-regulations-2026-and-beyond"]
+        return ctx
+    if season == 2026:
+        ctx = dict(REGULATION_CONTEXTS["2026+"])
+        ctx["source_urls"] = ["https://www.fia.com/news/new-era-competition-fia-showcases-future-focused-formula-1-regulations-2026-and-beyond"]
+        return ctx
+    if season == 2025:
+        ctx = dict(REGULATION_CONTEXTS["2025"])
+        ctx["source_urls"] = ["FIA bodywork flexibility directive reporting"]
+        return ctx
+    return {"era": "stable pre-2026 regulation era", "notes": ["No special regulation-era modifier beyond normal track and car traits."], "boost_traits": [], "source_urls": []}
+
+
+def regulation_fit_score_for_driver(team, profile, weather_summary, regulation_context, car_performance=None, reliability=None, openf1_car=None):
+    base = weighted_average([
+        (team_track_fit_score(team, profile), 0.42),
+        (car_performance, 0.30),
+        (reliability, 0.16),
+        (openf1_car, 0.12),
+    ])
+    if base is None:
+        base = 50
+    boosts = regulation_context.get("boost_traits", [])
+    dominance = str(profile.get("dominance", "")).lower()
+    speed = str(profile.get("speed_profile", "")).lower()
+    if "straight_line" in boosts and "straight" in speed:
+        base += 4
+    if "aero_efficiency" in boosts and ("aero" in dominance or "downforce" in dominance):
+        base += 4
+    if "power_efficiency" in boosts and "straight" in speed:
+        base += 2
+    if "cooling" in boosts and (safe_float(weather_summary.get("heat_score")) or 0) >= 60:
+        base += 3
+    return max(0, min(100, base))
+
+
+def fetch_upgrade_package_context(race, drivers, profile, weather_summary, regulation_context):
+    if not UPGRADES_ENABLED:
+        return {"provider_status": "disabled", "sources": [], "team_scores": {}, "team_traits": {}, "notes": []}
+    teams = sorted(set(d.get("team") for d in drivers if d.get("team")))
+    sources = []
+    team_traits = {team: {} for team in teams}
+    notes = []
+    for url in candidate_fia_upgrade_urls(race):
+        text = fetch_text_from_trusted_url(url)
+        if not text or len(text) < 400:
+            continue
+        sources.append(url)
+        sections = extract_team_upgrade_sections(text, teams)
+        for team, section in sections.items():
+            traits, components = classify_upgrade_text(section)
+            if not traits:
+                continue
+            merged = team_traits.setdefault(team, {})
+            for trait, value in traits.items():
+                merged[trait] = max(merged.get(trait, 0), value)
+            notes.append({"team": team, "source": url, "components": components, "excerpt": section[:420]})
+    team_scores = {}
+    for team, traits in team_traits.items():
+        score = trait_alignment_score(traits, profile, weather_summary, regulation_context)
+        if score is not None:
+            # Conservative cap: upgrades can move predictions, but they must not overwhelm race pace, grid, or car data.
+            team_scores[team] = max(40, min(88, score))
+    status = "official_upgrade_data_used" if team_scores else "no_current_official_upgrade_data_found"
+    return {"provider_status": status, "sources": sources, "team_scores": team_scores, "team_traits": team_traits, "notes": notes[:20]}
+
+
+def official_calendar_context_for_season(season, race=None):
+    ctx = {"enabled": OFFICIAL_CALENDAR_ENABLED, "source": "Jolpica/ICS primary", "official_url": None, "status": "not_checked", "race_name_seen": False}
+    if not OFFICIAL_CALENDAR_ENABLED:
+        ctx["status"] = "disabled"
+        return ctx
+    url = OFFICIAL_F1_CALENDAR_URL.format(year=season)
+    ctx["official_url"] = url
+    response = safe_get(url, timeout=25, use_cache=False, optional_404=True)
+    if not response:
+        ctx["status"] = "official_f1_calendar_unavailable_using_ics_jolpica"
+        return ctx
+    text = strip_html(response.text).lower()
+    race_name = str((race or {}).get("raceName", "")).lower()
+    ctx["status"] = "official_f1_calendar_page_reachable"
+    ctx["race_name_seen"] = bool(race_name and any(token in text for token in tokenize(race_name)))
+    return ctx
+
+
+def fetch_latest_available_standings_with_fallback(season):
+    for year in range(safe_int(season) or now_local().year, ML_START_YEAR - 1, -1):
+        drivers = fetch_driver_standings(year)
+        constructors = fetch_constructor_standings(year)
+        if drivers and constructors:
+            return drivers, constructors, {"standings_season_used": year, "fallback_used": year != season}
+    return [], [], {"standings_season_used": None, "fallback_used": True}
 
 def get_prediction_stage(current_round_data, event_start):
     has_qualifying = bool(current_round_data.get("qualifying"))
@@ -1735,7 +2522,7 @@ def get_prediction_stage(current_round_data, event_start):
     return "pre-weekend", "Pre-weekend prediction"
 
 
-def get_prediction_weights(profile, weather_summary, stage):
+def get_prediction_weights(profile, weather_summary, stage, regulation_context=None, upgrade_context=None):
     overtaking = str(profile.get("overtaking", "unknown")).lower()
     tyre = str(profile.get("tyre_stress", "unknown")).lower()
     dominance = str(profile.get("dominance", "")).lower()
@@ -1743,6 +2530,8 @@ def get_prediction_weights(profile, weather_summary, stage):
     rain = weather_summary.get("rain_score", 0)
     heat = weather_summary.get("heat_score", 0)
     wind = weather_summary.get("wind_score", 0)
+    regulation_context = regulation_context or {}
+    upgrade_context = upgrade_context or {}
 
     weights = {
         "ml_win_probability": 0.08,
@@ -1763,6 +2552,18 @@ def get_prediction_weights(profile, weather_summary, stage):
         "weather_adaptation": 0.04,
         "track_trait_fit": 0.05,
         "sprint_performance": 0.03,
+        "current_season_car_performance": 0.06,
+        "current_season_recent_form": 0.04,
+        "openf1_session_result": 0.04,
+        "openf1_starting_grid": 0.04,
+        "openf1_lap_pace": 0.05,
+        "openf1_pit_execution": 0.03,
+        "openf1_stint_strength": 0.03,
+        "openf1_telemetry_speed": 0.04,
+        "openf1_car_performance": 0.07,
+        "upgrade_package_impact": 0.05,
+        "regulation_fit": 0.04,
+        "calendar_confidence": 0.01,
         "fastf1_race_pace": 0.06,
         "fastf1_consistency": 0.03,
         "fastf1_tyre_stint": 0.02,
@@ -1801,17 +2602,37 @@ def get_prediction_weights(profile, weather_summary, stage):
         weights["car_performance"] += 0.04
         weights["team_track_fit"] += 0.04
         weights["track_trait_fit"] += 0.03
+    if regulation_context.get("boost_traits"):
+        weights["regulation_fit"] += 0.04
+        weights["car_performance"] += 0.02
+    if upgrade_context.get("team_scores"):
+        weights["upgrade_package_impact"] += 0.05
+        weights["track_trait_fit"] += 0.02
 
     total = sum(max(0, value) for value in weights.values())
     return {key: max(0, value) / total for key, value in weights.items()}
 
 
-def rank_prediction(drivers, constructor_standings, last_results, current_round_data, historical_records, profile, weather_summary, ml_outputs, fastf1_scores, stage):
-    weights = get_prediction_weights(profile, weather_summary, stage)
+def rank_prediction(drivers, constructor_standings, last_results, current_round_data, historical_records, profile, weather_summary, ml_outputs, fastf1_scores, openf1_scores, upgrade_context, regulation_context, calendar_context, season, current_round, stage):
+    weights = get_prediction_weights(profile, weather_summary, stage, regulation_context, upgrade_context)
 
     driver_points = {d["driver_id"]: d["points"] for d in drivers}
     driver_form = normalize_scores(driver_points)
     constructor_form = constructor_score_map(constructor_standings)
+    current_season_car = collect_current_season_constructor_performance(season, current_round)
+    recent_current_season_car = collect_recent_current_season_constructor_form(season, current_round)
+    openf1_team_scores = openf1_scores.get("team_scores", {}) if openf1_scores else {}
+    upgrade_team_scores = upgrade_context.get("team_scores", {}) if upgrade_context else {}
+
+    for team in set(constructor_form) | set(current_season_car) | set(recent_current_season_car) | set(openf1_team_scores) | set(upgrade_team_scores):
+        constructor_form[team] = weighted_average([
+            (constructor_form.get(team), 0.38),
+            (current_season_car.get(team), 0.30),
+            (recent_current_season_car.get(team), 0.18),
+            (openf1_team_scores.get(team), 0.12),
+            (upgrade_team_scores.get(team), 0.08),
+        ])
+
     recent = current_result_score_map(last_results)
     qualifying = qualifying_score_map(current_round_data)
     sprint = sprint_score_map(current_round_data)
@@ -1829,10 +2650,20 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
         code = driver_code_guess(driver["name"])
         ml = ml_outputs.get(driver_id, {})
 
-        car_performance = weighted_average([(constructor_form.get(team), 0.7), (constructor_circuit.get(team), 0.3)])
+        openf1_driver_car = openf1_scores.get("openf1_car_performance", {}).get(driver_id) if openf1_scores else None
+        upgrade_score = upgrade_team_scores.get(team)
+        track_fit = team_track_fit_score(team, profile, constructor_circuit.get(team))
+        car_performance = weighted_average([
+            (constructor_form.get(team), 0.42),
+            (current_season_car.get(team), 0.20),
+            (recent_current_season_car.get(team), 0.10),
+            (constructor_circuit.get(team), 0.08),
+            (track_fit, 0.08),
+            (openf1_driver_car, 0.08),
+            (upgrade_score, 0.08),
+        ])
         pit_execution = weighted_average([(driver_pit.get(driver_id), 0.45), (team_pit.get(team), 0.55)])
         team_strategy = weighted_average([(driver_strategy.get(driver_id), 0.45), (team_strategy_map.get(team), 0.4), (team_pit.get(team), 0.15)])
-        track_fit = team_track_fit_score(team, profile, constructor_circuit.get(team))
         driver_skill = weighted_average([
             (driver_form.get(driver_id), 0.4),
             (circuit.get(driver_id), 0.25),
@@ -1850,6 +2681,8 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
             (car_performance, 0.35),
             (pit_execution, 0.15),
         ])
+        regulation_fit = regulation_fit_score_for_driver(team, profile, weather_summary, regulation_context, car_performance, reliability.get(driver_id), openf1_driver_car)
+        calendar_confidence = 80 if calendar_context.get("status") == "official_f1_calendar_page_reachable" else 55
 
         component_scores = {
             "ml_win_probability": ml.get("ml_win_probability"),
@@ -1859,6 +2692,18 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
             "driver_skill": driver_skill,
             "car_performance": car_performance,
             "constructor_form": constructor_form.get(team),
+            "current_season_car_performance": current_season_car.get(team),
+            "current_season_recent_form": recent_current_season_car.get(team),
+            "openf1_session_result": openf1_scores.get("openf1_session_result", {}).get(driver_id) if openf1_scores else None,
+            "openf1_starting_grid": openf1_scores.get("openf1_starting_grid", {}).get(driver_id) if openf1_scores else None,
+            "openf1_lap_pace": openf1_scores.get("openf1_lap_pace", {}).get(driver_id) if openf1_scores else None,
+            "openf1_pit_execution": openf1_scores.get("openf1_pit_execution", {}).get(driver_id) if openf1_scores else None,
+            "openf1_stint_strength": openf1_scores.get("openf1_stint_strength", {}).get(driver_id) if openf1_scores else None,
+            "openf1_telemetry_speed": openf1_scores.get("openf1_telemetry_speed", {}).get(driver_id) if openf1_scores else None,
+            "openf1_car_performance": openf1_scores.get("openf1_car_performance", {}).get(driver_id) if openf1_scores else None,
+            "upgrade_package_impact": upgrade_score,
+            "regulation_fit": regulation_fit,
+            "calendar_confidence": calendar_confidence,
             "recent_result": recent.get(driver_id),
             "qualifying": qualifying.get(driver_id),
             "circuit_history": circuit.get(driver_id),
@@ -1905,14 +2750,23 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
         for idx, item in enumerate(top10, start=1)
     )
     model = {
-        "source": "Hybrid full-data cache model: Jolpica full history + FastF1 + Open-Meteo + ICS",
-        "logic": "Mintlify-style feature groups plus full-data racing ensemble: grid, driver history, team form, car performance, circuit experience, track traits, weather traits, tyre strategy, lap pace, pit stops, sprint, reliability, and race simulation scenarios",
+        "source": "Hybrid full-data cache model: Jolpica full history + OpenF1 when free/working + FastF1 + Open-Meteo + ICS",
+        "logic": "Mintlify-style feature groups plus full-data racing ensemble: grid, driver history, current-season car performance, team form, car telemetry, circuit experience, track traits, weather traits, tyre strategy, lap pace, pit stops, sprint, reliability, and race simulation scenarios",
         "prediction_stage": stage,
         "weights": {k: round(v, 4) for k, v in weights.items()},
         "available_components": {
             "ml_outputs": len(ml_outputs),
             "driver_form": len(driver_form),
             "constructor_form": len(constructor_form),
+            "current_season_car_performance": len(current_season_car),
+            "current_season_recent_form": len(recent_current_season_car),
+            "openf1_provider_status": openf1_scores.get("provider_status") if openf1_scores else "not_used",
+            "openf1_car_performance": len(openf1_scores.get("openf1_car_performance", {})) if openf1_scores else 0,
+            "openf1_telemetry_speed": len(openf1_scores.get("openf1_telemetry_speed", {})) if openf1_scores else 0,
+            "upgrade_provider_status": upgrade_context.get("provider_status") if upgrade_context else "not_used",
+            "upgrade_package_impact": len(upgrade_team_scores),
+            "regulation_era": regulation_context.get("era"),
+            "official_calendar_status": calendar_context.get("status"),
             "recent_result": len(recent),
             "qualifying": len(qualifying),
             "sprint": len(sprint),
@@ -1954,13 +2808,87 @@ def pit_window_from_profile(profile, weather_summary):
     return "Unavailable until more cached pit-stop history is available."
 
 
-def generate_briefing(event, race, profile, weather, top10_text, prediction_model, team_fit):
+
+def notification_status(event):
+    """
+    Predictions are generated on every run.
+    Email and GitHub Issue notifications are gated to avoid spam.
+
+    Notifications are allowed when:
+    - FORCE_NOTIFY=true, or
+    - the matched upcoming calendar event is within NOTIFICATION_WINDOW_HOURS.
+    """
+    if FORCE_NOTIFY:
+        return {
+            "allowed": True,
+            "reason": "FORCE_NOTIFY=true",
+            "hours_until_event": None,
+        }
+
+    start = event.get("start") if event else None
+    if start is None:
+        return {
+            "allowed": False,
+            "reason": "No event start time found.",
+            "hours_until_event": None,
+        }
+
+    hours_until = (start - now_local()).total_seconds() / 3600
+
+    if 0 <= hours_until <= NOTIFICATION_WINDOW_HOURS:
+        return {
+            "allowed": True,
+            "reason": f"Event starts within {NOTIFICATION_WINDOW_HOURS} hours.",
+            "hours_until_event": round(hours_until, 2),
+        }
+
+    if hours_until < 0:
+        return {
+            "allowed": False,
+            "reason": "Matched event has already started or passed.",
+            "hours_until_event": round(hours_until, 2),
+        }
+
+    return {
+        "allowed": False,
+        "reason": f"Event is more than {NOTIFICATION_WINDOW_HOURS} hours away.",
+        "hours_until_event": round(hours_until, 2),
+    }
+
+
+def maybe_send_outputs(title, briefing, event):
+    """
+    Always generate and commit dashboard data.
+    Only send email and update GitHub issue inside notification window.
+    """
+    status = notification_status(event)
+    print(f"Notification gate: allowed={status['allowed']} reason={status['reason']} hours_until_event={status['hours_until_event']}")
+
+    if not status["allowed"]:
+        return status
+
+    safe_step("Create or update issue", create_or_update_issue, title, briefing)
+    safe_step("Send email", send_email, title, briefing)
+    return status
+
+
+def generate_briefing(event, race, profile, weather, top10_text, prediction_model, team_fit, upgrade_context, regulation_context, calendar_context):
     title = f"F1 Briefing: {event['title']}"
     start_str = event["start"].strftime("%A, %d %B %Y, %I:%M %p %Z")
     reasons = profile["dynamic_reasons"]
     metrics = profile["dynamic_track_metrics"]
     weights_text = "\n".join(f"- {k.replace('_', ' ')}: {v * 100:.1f}%" for k, v in prediction_model.get("weights", {}).items())
     team_text = "\n".join([f"- {idx + 1}. {team}" for idx, team in enumerate(team_fit)]) if team_fit else "- Unavailable"
+    upgrade_lines = []
+    for team, score in sorted((upgrade_context.get("team_scores") or {}).items(), key=lambda item: item[1], reverse=True):
+        traits = upgrade_context.get("team_traits", {}).get(team, {})
+        upgrade_lines.append(f"- {team}: impact {score:.1f}/100, traits {traits}")
+    if not upgrade_lines:
+        upgrade_lines = [f"- {upgrade_context.get('provider_status', 'No official upgrade data found for this event.')}"]
+    upgrade_text = "\n".join(upgrade_lines)
+    regulation_text = "\n".join([f"- {note}" for note in regulation_context.get("notes", [])]) or "- No special regulation-era modifier beyond normal car and track traits."
+    calendar_text = f"- Status: {calendar_context.get('status')}\n- Official URL: {calendar_context.get('official_url')}\n- Race name seen: {calendar_context.get('race_name_seen')}"
+    checklist_text = "\n".join([f"- {item}: included" for item in PROMPT_REQUIREMENT_CHECKLIST])
 
     briefing = f"""# {title}
 
@@ -2034,9 +2962,25 @@ Generated: {now_local().strftime("%A, %d %B %Y, %I:%M %p %Z")}
 
 {profile['setup']}
 
+## 7A. Official upgrade package impact
+
+Upgrade data is taken first from official FIA/F1 trusted pages when reachable. The model classifies each package into traits, then only boosts a team if the upgrade matches the circuit and weather traits.
+
+{upgrade_text}
+
+## 7B. Regulation-era context
+
+Regulation era: {regulation_context.get('era')}
+
+{regulation_text}
+
+## 7C. Calendar resilience check
+
+{calendar_text}
+
 ## 8. Potential top 10 prediction
 
-Prediction status: dynamic but not guaranteed. This model uses Mintlify-style F1 feature groups plus your own full cached free-data system: grid position, driver skills, constructor and car performance, previous results, same-circuit results, track traits, weather traits, tyre degradation proxy, pit-stop data, lap pace, sprint data, reliability, and FastF1 signals where available.
+Prediction status: dynamic but not guaranteed. This model uses Mintlify-style F1 feature groups plus your own full cached free-data system: grid position, driver skills, constructor and current-season car performance, OpenF1 telemetry/session data when the free historical API works, previous results, same-circuit results, official upgrade packages, F1 regulation-era context, same-circuit results, track traits, weather traits, tyre degradation proxy, pit-stop data, lap pace, sprint data, reliability, and FastF1 signals where available.
 
 {top10_text if top10_text else "Unavailable until enough data is cached."}
 
@@ -2044,8 +2988,14 @@ Prediction status: dynamic but not guaranteed. This model uses Mintlify-style F1
 
 {weights_text}
 
+## 8B. Prompt requirement verification
+
+{checklist_text}
+
 ## 9. What to watch
 
+- Whether a team’s upgrade package matches this circuit instead of only sounding large in news copy.
+- Whether current regulations reward the same traits as the circuit: active aero, energy deployment, drag, downforce, braking, and tyre control.
 - Qualifying and grid position if this is a low-overtaking circuit.
 - Tyre degradation and pit timing if cached history shows high pit-stop frequency.
 - Weather changes if rain, wind, heat, or cloud cover moves before race start.
@@ -2075,7 +3025,7 @@ def save_run_status(status, details):
     return path
 
 
-def update_index(event, race, profile, weather, markdown_path, title, top10, team_fit, prediction_model):
+def update_index(event, race, profile, weather, markdown_path, title, top10, team_fit, prediction_model, upgrade_context, regulation_context, calendar_context):
     index_path = BRIEFINGS_DIR / "index.json"
     entry = {
         "title": title,
@@ -2106,6 +3056,10 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
         "weather": weather,
         "top10": top10,
         "prediction_model": prediction_model,
+        "upgrade_context": upgrade_context,
+        "regulation_context": regulation_context,
+        "official_calendar_context": calendar_context,
+        "prompt_requirement_checklist": PROMPT_REQUIREMENT_CHECKLIST,
         "dynamic_track_source": profile["dynamic_track_source"],
         "dynamic_track_metrics": profile["dynamic_track_metrics"],
         "dynamic_reasons": profile["dynamic_reasons"],
@@ -2250,9 +3204,15 @@ def run(force_retrain=False):
     season = safe_int(race.get("season")) or event["start"].year
     round_no = race.get("round")
 
-    current_round_data = fetch_round_data_cached(season, round_no, allow_backfill=False, force_fetch=True)
-    driver_standings = fetch_driver_standings(season)
-    constructor_standings = fetch_constructor_standings(season)
+    current_round_data = fetch_round_data_cached(
+        season,
+        round_no,
+        allow_backfill=False,
+        force_fetch=True,
+        race=race,
+        training_mode=False,
+    )
+    driver_standings, constructor_standings, standings_context = fetch_latest_available_standings_with_fallback(season)
     last_results = fetch_last_results(season)
     historical_records = fetch_historical_same_circuit(race, years_back=5)
 
@@ -2266,9 +3226,13 @@ def run(force_retrain=False):
     weather = fetch_weather_for_race(race, event["start"])
     historical_weather = safe_step("Historical weather", fetch_historical_weather_summary, race, 5) or {}
     profile = infer_track_profile(race, historical_records, weather, historical_weather)
+    regulation_context = regulation_context_for_season(season) if F1_REGULATIONS_ENABLED else {"era": "disabled", "notes": [], "boost_traits": []}
+    upgrade_context = fetch_upgrade_package_context(race, drivers, profile, weather, regulation_context)
+    calendar_context = official_calendar_context_for_season(season, race)
 
     stage, stage_label = get_prediction_stage(current_round_data, event["start"])
     ml_outputs, ml_debug = ml_predict_probabilities(drivers, race, current_round_data, bundle)
+    openf1_scores = safe_step("OpenF1 enhancement", openf1_enhancement_scores, race, drivers) or {"provider_status": "failed"}
     fastf1_scores = safe_step("FastF1 enhancement", fastf1_enhancement_scores, season, round_no) or {"sessions_loaded": []}
 
     top10_text, top10, prediction_model = rank_prediction(
@@ -2281,6 +3245,12 @@ def run(force_retrain=False):
         weather_summary=weather,
         ml_outputs=ml_outputs,
         fastf1_scores=fastf1_scores,
+        openf1_scores=openf1_scores,
+        upgrade_context=upgrade_context,
+        regulation_context=regulation_context,
+        calendar_context=calendar_context,
+        season=season,
+        current_round=round_no,
         stage=stage,
     )
     prediction_model["prediction_stage_label"] = stage_label
@@ -2292,10 +3262,10 @@ def run(force_retrain=False):
     }
 
     team_fit = get_dynamic_team_fit(top10, constructor_standings)
-    title, briefing = generate_briefing(event, race, profile, weather, top10_text, prediction_model, team_fit)
+    title, briefing = generate_briefing(event, race, profile, weather, top10_text, prediction_model, team_fit, upgrade_context, regulation_context, calendar_context)
 
     markdown_path = save_markdown(event, briefing)
-    index_path = update_index(event, race, profile, weather, markdown_path, title, top10, team_fit, prediction_model)
+    index_path = update_index(event, race, profile, weather, markdown_path, title, top10, team_fit, prediction_model, upgrade_context, regulation_context, calendar_context)
     status_path = save_run_status("Success", f"Generated full-data hybrid F1 briefing.\n\nTitle: {title}\nBackfill used this run: {BACKFILL_BUDGET.used}")
     debug_path = save_debug({
         "generated_at": now_local().isoformat(),
@@ -2307,12 +3277,19 @@ def run(force_retrain=False):
         "historical_weather": historical_weather,
         "track_profile": profile,
         "ml_debug": ml_debug,
+        "openf1_scores": openf1_scores,
+        "upgrade_context": upgrade_context,
+        "regulation_context": regulation_context,
+        "official_calendar_context": calendar_context,
+        "standings_context": standings_context,
+        "prompt_requirement_checklist": PROMPT_REQUIREMENT_CHECKLIST,
         "fastf1_scores": fastf1_scores,
         "backfill": {
             "limit": BACKFILL_BUDGET.limit,
             "used": BACKFILL_BUDGET.used,
             "races": BACKFILL_BUDGET.fetched,
         },
+        "notification_gate": notification_status(event),
     })
 
     paths = [
@@ -2326,9 +3303,11 @@ def run(force_retrain=False):
         DATA_CACHE_DIR / "ml_full_race_features.csv",
     ]
 
+    notification_gate = notification_status(event)
+    debug_payload_path = debug_path
+
     safe_step("Commit generated files", commit_and_push, paths)
-    safe_step("Create or update issue", create_or_update_issue, title, briefing)
-    safe_step("Send email", send_email, title, briefing)
+    maybe_send_outputs(title, briefing, event)
 
 
 def parse_args():
