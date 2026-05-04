@@ -6,8 +6,6 @@ function isAllowedAudioUrl(url) {
     const parsed = new URL(url);
     return parsed.protocol === "https:" && (
       parsed.hostname.includes("openf1") ||
-      parsed.hostname.includes("formula1.com") ||
-      parsed.hostname.includes("livetiming.formula1.com") ||
       parsed.hostname.includes("amazonaws.com") ||
       parsed.hostname.includes("cloudfront.net")
     );

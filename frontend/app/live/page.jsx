@@ -13,7 +13,6 @@ import {
   Flag,
   Gauge,
   History,
-  Map,
   Pause,
   Play,
   Radio,
@@ -75,7 +74,7 @@ function color(teamColour) {
   return /^[0-9a-fA-F]{6}$/.test(raw) ? `#${raw}` : "#e10600";
 }
 function latestRows(rows, key = "driver_number") {
-  const map = new Map();
+  const map = new globalThis.Map();
   for (const row of rows || []) {
     map.set(row[key] ?? row.driver_number ?? Math.random(), row);
   }
@@ -246,13 +245,13 @@ export default function LivePage() {
 
   useEffect(() => {
     if (!autoRefresh) return;
-    const id = setInterval(() => loadLiveData(activeSessionKey), 30000);
+    const id = setInterval(() => loadLiveData(activeSessionKey), 15000);
     return () => clearInterval(id);
   }, [autoRefresh, activeSessionKey]);
 
   const drivers = useMemo(() => normalizeArray(payloads.drivers), [payloads.drivers]);
   const driverMap = useMemo(() => {
-    const map = new Map();
+    const map = new globalThis.Map();
     for (const driver of drivers) map.set(driver.driver_number, driver);
     return map;
   }, [drivers]);
@@ -312,7 +311,7 @@ export default function LivePage() {
           <div className="live-kicker"><Radio size={16} /> Race Intel Live</div>
           <h1>Live details</h1>
           <p>
-            Configurable race-weekend dashboard using OpenF1 where public data is available.
+            Configurable race-weekend dashboard inspired by f1-dash. It uses OpenF1 when public data is available.
             If live data is blocked or paid, the page keeps working with historical/latest public data and clear fallback states.
           </p>
         </div>
@@ -484,7 +483,7 @@ export default function LivePage() {
       </section>
 
       <footer className="live-footer">
-        This page uses available OpenF1 data and degrades cleanly when live feeds are restricted. It does not stream F1 video.
+        OpenF1 historical data is public from 2023 onward. Real-time feeds may require paid OpenF1 access. This page degrades to available public/latest data and does not stream F1 video.
       </footer>
     </main>
   );
