@@ -654,13 +654,15 @@ function OfficialCircuitImage({ circuit }) {
 
   return (
     <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-black/70 p-4">
-      <img
-        src={circuit.image}
-        alt={`${circuit.name} official Formula 1 circuit map`}
-        className="mx-auto max-h-[390px] w-full object-contain"
-        loading="lazy"
-        onError={() => setFailed(true)}
-      />
+      <div className="grid h-[360px] place-items-center overflow-hidden rounded-[1.25rem] bg-black/80">
+        <img
+          src={circuit.image}
+          alt={`${circuit.name} official Formula 1 circuit map`}
+          className="h-full w-full object-contain object-center"
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      </div>
     </div>
   );
 }
