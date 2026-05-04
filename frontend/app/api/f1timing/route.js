@@ -4,7 +4,7 @@ export const runtime = "nodejs";
 import { inflateRawSync } from "node:zlib";
 
 const F1_BASE = "https://livetiming.formula1.com/static";
-const OPENF1_BASE = "https://api.openf1.org/v1";
+const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 
 const FEEDS = [
   "SessionInfo.jsonStream",
@@ -17,6 +17,7 @@ const FEEDS = [
   "WeatherData.jsonStream",
   "RaceControlMessages.jsonStream",
   "PitLaneTimeCollection.jsonStream",
+  "TeamRadio.jsonStream",
   "CarData.z.jsonStream",
   "Position.z.jsonStream"
 ];
@@ -106,6 +107,10 @@ function sessionStart(session) {
   return getDate(session?.StartDate || session?.startDate || session?.Date || session?.date_start || session?.GmtOffset);
 }
 
+function sessionEnd(session) {
+  return getDate(session?.EndDate || session?.endDate || session?.DateEnd || session?.date_end);
+}
+
 function normalizeSessionName(name) {
   return String(name || "").replace(/_/g, " ").trim();
 }
@@ -120,22 +125,48 @@ function chooseSession(meetings, requestedSession) {
   for (const meeting of meetings) {
     for (const session of pickSessions(meeting)) {
       if (!isRealSession(session)) continue;
-      sessions.push({ meeting, session, start: sessionStart(session) });
+      sessions.push({
+        meeting,
+        session,
+        start: sessionStart(session),
+        end: sessionEnd(session)
+      });
     }
   }
+
   sessions.sort((a, b) => (a.start?.getTime() || 0) - (b.start?.getTime() || 0));
 
   if (requestedSession && requestedSession !== "latest") {
     const exact = sessions.find((item) => String(item.session?.Path || item.session?.path || item.session?.Key || item.session?.session_key) === requestedSession);
     if (exact) return exact;
-    const byName = sessions.find((item) => normalizeSessionName(item.session?.Name || item.session?.name).toLowerCase().includes(requestedSession.toLowerCase()));
+
+    const byName = sessions.find((item) =>
+      normalizeSessionName(item.session?.Name || item.session?.name)
+        .toLowerCase()
+        .includes(requestedSession.toLowerCase())
+    );
     if (byName) return byName;
   }
 
   const now = Date.now();
-  const tolerance = 6 * 60 * 60 * 1000;
-  const started = sessions.filter((item) => item.start && item.start.getTime() <= now + tolerance);
-  return started[started.length - 1] || sessions[0] || null;
+  const preWindow = 90 * 60 * 1000;
+  const postWindow = 3 * 60 * 60 * 1000;
+
+  // Prefer a session that is currently active or about to start.
+  const active = sessions.find((item) => {
+    if (!item.start) return false;
+    const start = item.start.getTime();
+    const end = item.end?.getTime() || start + 3 * 60 * 60 * 1000;
+    return now >= start - preWindow && now <= end + postWindow;
+  });
+  if (active) return active;
+
+  // If nothing is live, show the latest completed/started session.
+  const completedOrStarted = sessions.filter((item) => item.start && item.start.getTime() <= now);
+  if (completedOrStarted.length) return completedOrStarted[completedOrStarted.length - 1];
+
+  // Before the season/weekend starts, show the next upcoming session.
+  return sessions[0] || null;
 }
 
 function sessionPath(meeting, session) {
@@ -243,21 +274,70 @@ function normalizeLapCount(entries) {
   };
 }
 
-async function fetchOpenF1Fallback() {
+
+function normalizeTeamRadio(entries, basePath) {
+  return (entries || []).map((entry) => {
+    const data = entry?.data || {};
+    const path = data.Path || data.path || data.Url || data.url || data.RecordingUrl || data.recording_url || "";
+    const recordingUrl = path
+      ? path.startsWith("http")
+        ? path
+        : endpoint(`${basePath}${String(path).replace(/^\/+/, "")}`)
+      : "";
+
+    return {
+      date: entry.time || data.Utc || data.utc || data.Date || data.date || "",
+      driver_number: Number(data.RacingNumber || data.driver_number || data.DriverNumber || 0),
+      recording_url: recordingUrl,
+      message: data.Message || data.message || "",
+      raw: data
+    };
+  }).filter((item) => item.recording_url || item.message).slice(-30).reverse();
+}
+
+async function fetchJolpicaFallback() {
+  const endpoints = {
+    currentSchedule: "/current.json",
+    latestResults: "/current/last/results.json",
+    driverStandings: "/current/driverStandings.json",
+    constructorStandings: "/current/constructorStandings.json"
+  };
+
   const result = {};
-  const endpoints = ["sessions", "drivers", "intervals", "laps", "stints", "pit", "race_control", "weather", "position", "car_data", "team_radio"];
-  await Promise.all(endpoints.map(async (endpointName) => {
+  await Promise.all(Object.entries(endpoints).map(async ([key, path]) => {
     try {
-      const url = new URL(`${OPENF1_BASE}/${endpointName}`);
-      url.searchParams.set("session_key", "latest");
-      const res = await fetch(url.toString(), { cache: "no-store", headers: { Accept: "application/json" } });
-      const data = await res.json().catch(() => []);
-      result[endpointName] = { ok: res.ok, status: res.status, data };
+      const res = await fetch(`${JOLPICA_BASE}${path}`, {
+        cache: "no-store",
+        headers: {
+          Accept: "application/json",
+          "User-Agent": "f1-race-intel-live-dashboard/1.0"
+        }
+      });
+      const data = await res.json().catch(() => null);
+      result[key] = { ok: res.ok, status: res.status, data };
     } catch (error) {
-      result[endpointName] = { ok: false, error: String(error?.message || error), data: [] };
+      result[key] = { ok: false, error: String(error?.message || error), data: null };
     }
   }));
+
   return result;
+}
+
+function normalizeJolpicaFallback(fallback) {
+  const races = fallback?.latestResults?.data?.MRData?.RaceTable?.Races || [];
+  const latestRace = races[0] || null;
+  const results = latestRace?.Results || [];
+  const driverStandings =
+    fallback?.driverStandings?.data?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings || [];
+  const constructorStandings =
+    fallback?.constructorStandings?.data?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings || [];
+
+  return {
+    race: latestRace,
+    results,
+    driverStandings,
+    constructorStandings
+  };
 }
 
 async function fetchFeeds(basePath) {
@@ -291,7 +371,7 @@ export async function GET(request) {
       reason: "No F1 live timing session found for selected year.",
       root_status: rootIndex.status,
       year_status: yearIndexResponse.status,
-      openf1_fallback: await fetchOpenF1Fallback()
+      jolpica_fallback: await fetchJolpicaFallback()
     }, { headers: { "Cache-Control": "no-store" } });
   }
 
@@ -326,19 +406,24 @@ export async function GET(request) {
     lapCount: normalizeLapCount(feeds["LapCount.jsonStream"]?.entries || []),
     trackStatus: feeds["TrackStatus.jsonStream"]?.entries?.slice(-1)?.[0]?.data || null,
     pits: [],
-    radio: []
+    radio: normalizeTeamRadio(feeds["TeamRadio.jsonStream"]?.entries || [], basePath)
   };
 
   const hasUsefulF1Data = drivers.length > 0 || leaderboard.length > 0 || normalized.weather || normalized.raceControl.length > 0;
 
+  const jolpicaFallback = hasUsefulF1Data ? null : await fetchJolpicaFallback();
+
   return Response.json({
-    ok: hasUsefulF1Data,
-    source: "Formula1LiveTiming",
-    source_note: "Primary source uses Formula 1 livetiming static feeds. OpenF1 remains fallback for public historical/latest data.",
+    ok: hasUsefulF1Data || Boolean(jolpicaFallback?.latestResults?.ok),
+    source: hasUsefulF1Data ? "Formula1LiveTiming" : "JolpicaFallback",
+    source_note: hasUsefulF1Data
+      ? "Primary source uses Formula 1 livetiming static feeds."
+      : "Formula 1 live timing did not return useful data, so this response shows the latest public Jolpica event data.",
     base_path: basePath,
     selected,
     feed_status: Object.fromEntries(Object.entries(feeds).map(([key, value]) => [key, { ok: value.ok, status: value.status, count: value.count || (value.json ? 1 : 0) }])),
     normalized,
-    openf1_fallback: hasUsefulF1Data ? null : await fetchOpenF1Fallback()
+    jolpica_fallback: jolpicaFallback,
+    normalized_fallback: jolpicaFallback ? normalizeJolpicaFallback(jolpicaFallback) : null
   }, { headers: { "Cache-Control": "no-store" } });
 }

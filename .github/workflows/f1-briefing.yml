@@ -96,8 +96,6 @@ jobs:
           FORCE_RETRAIN: ${{ github.event.inputs.force_retrain || 'false' }}
           ML_START_YEAR: "2018"
           USE_FULL_HISTORICAL_DATA: "true"
-          OPENF1_ENABLED: "true"
-          OPENF1_BASE: "https://api.openf1.org/v1"
           UPGRADES_ENABLED: "true"
           F1_REGULATIONS_ENABLED: "true"
           OFFICIAL_CALENDAR_ENABLED: "true"

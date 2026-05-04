@@ -430,7 +430,7 @@ export default function Home() {
           <div className="fact"><span>Output mode</span><strong>{debug?.output_mode || "Latest"}</strong></div>
           <div className="fact"><span>Backfill used</span><strong>{debug?.backfill?.used ?? "-"}</strong></div>
           <div className="fact"><span>ML model</span><strong>{model.ml_model_loaded ? "Loaded" : "Fallback"}</strong></div>
-          <div className="fact"><span>OpenF1</span><strong>{model.available_components?.openf1_provider_status || "Fallback if unavailable"}</strong></div>
+          <div className="fact"><span>Timing source</span><strong>{model.available_components?.timing_provider_status || "Jolpica/FastF1 fallback"}</strong></div>
         </article>
 
         <article className="card">
