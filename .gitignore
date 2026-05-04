@@ -1,16 +1,5 @@
-.venv/
-fastf1_cache/
-__pycache__/
-*.pyc
+# macOS
 .DS_Store
-.env
-.env.local
-
-# Frontend dependencies/build output
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/.vercel/
 
 # Logs
 *.log
@@ -18,18 +7,26 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Frontend dependencies/build output
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+
 # Local env
 .env
 .env.local
 frontend/.env.local
 
-# Python
+# Python local
 .venv/
 __pycache__/
 *.pyc
 fastf1_cache/
 
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/.vercel/
+# Generated runtime state
+data_cache/http/
+data_cache/full_races/
+data_cache/ml_*_features.csv
+data_cache/ml_*_results_raw.csv
+models/saved_models/

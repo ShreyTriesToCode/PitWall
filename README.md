@@ -1,107 +1,163 @@
-# F1 Hybrid Prediction Bot + Vercel Dashboard
+# F1 Race Intel
 
-This is the full upgraded version of your F1 briefing project.
+F1 Race Intel generates Formula 1 sprint and race predictions, publishes readable briefings, sends optional email/GitHub notifications, and serves a Next.js dashboard with a live timing view.
 
-## What is included
+The backend keeps a cache-first pipeline around Jolpica, official Formula 1 live timing feeds, optional OpenF1 free historical timing, FastF1, Open-Meteo, FIA/F1 upgrade context, and local historical race caches.
 
-### Backend
+## What It Produces
 
-- `f1_briefing.py`
-- Free data core: Jolpica + Open-Meteo + ICS
-- Optional FastF1 session enhancement
-- ML training pipeline inspired by the Mintlify F1 prediction project
-- Saved model auto-retraining after a newer completed race is detected
-- Hybrid prediction scoring:
-  - ML win probability
-  - ML podium probability
-  - ML top 10 probability
-  - driver form
-  - car/team performance
-  - recent result
-  - qualifying/grid position
-  - circuit history
-  - race pace
-  - pit-stop execution
-  - team strategy gain
-  - reliability
-  - team-track fit
-  - weather adaptation
-  - FastF1 pace/consistency/stint signals where available
-- Markdown briefing generation
-- `briefings/index.json` generation for the dashboard
-- `data_cache/latest-model-debug.json` for model transparency
-- GitHub issue update
-- Email notification
+- Sprint Race prediction
+- Final Race prediction
+- Briefing markdown in `briefings/`
+- Dashboard data in `briefings/index.json` and `data_cache/latest-model-debug.json`
+- Latest model/accuracy report in `MODEL_STATUS.md`
+- Optional GitHub issue and Gmail output when notification gates open
 
-### GitHub Actions
+## Prediction System
 
-- `.github/workflows/f1-briefing.yml`
-- Runs daily
-- Runs every 6 hours during race-weekend days
-- Supports manual force retrain
-- Caches pip, FastF1, and HTTP data
-- Uploads generated files as workflow artifacts
-- Commits and pushes updated briefings, model files, and debug JSON
+The current model is a hybrid ensemble:
 
-### Vercel dashboard
+- RF/HGB/ExtraTrees classifiers for win, podium, and top 10 probabilities
+- RF/HGB/ExtraTrees regressors for predicted finishing position
+- scaled `MLPRegressor` neural submodel for lap-time pace forecasting
+- official F1 timing signals: sectors, speed trap/telemetry speed, stints, pits, starting grid, session result, and position gain
+- optional OpenF1 free historical timing signals: drivers, laps, session results, pits, stints, sector pace, speed, and grid/result cross-checks
+- driver traits: form, racecraft, reliability, qualifying delta, circuit history, grid gain, consistency
+- car/team traits: constructor form, current-season pace, recent form, pit execution, team strategy, official upgrade-package traits
+- track/weather traits: overtaking, tyre stress, safety-car/DNF proxy, rain, heat, wind, track-position sensitivity
+- regulation context for 2025 wing-flex, 2026 active-aero/power-unit reset, and later rules
 
-- `frontend/`
-- Next.js app
-- F1-style animated UI
-- prediction cards
-- driver detail modal
-- strategy simulator
-- live race hub with official viewing links
-- model transparency panel
-- archive viewer
-- official media mappings with fallbacks
+Model design notes live in `MODEL_DESIGN.md`.
 
-## Setup in your existing repo
-
-Copy these files into the root of your existing `f1-briefing-bot` repo:
+## Local Setup
 
 ```bash
-cp f1_briefing.py /path/to/f1-briefing-bot/
-cp requirements.txt /path/to/f1-briefing-bot/
-mkdir -p /path/to/f1-briefing-bot/.github/workflows
-cp .github/workflows/f1-briefing.yml /path/to/f1-briefing-bot/.github/workflows/f1-briefing.yml
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cd frontend
+npm install
 ```
 
-Then commit:
+Run backend validation:
 
 ```bash
-git add f1_briefing.py requirements.txt .github/workflows/f1-briefing.yml
-git commit -m "Add hybrid ML F1 prediction bot and auto retraining workflow"
-git push
+.venv/bin/python -m py_compile f1_briefing.py
+.venv/bin/python -m unittest discover -s tests
 ```
 
-## Required GitHub secrets
+Run the frontend:
 
-Add these in your repo:
-
-```text
-F1_ICS_URL
-EMAIL_ADDRESS
-EMAIL_APP_PASSWORD
-EMAIL_TO
+```bash
+cd frontend
+npm run dev
 ```
 
-`GITHUB_TOKEN` is provided automatically by GitHub Actions.
+Dashboard: `http://localhost:3000`
 
-## Vercel setup
+## Generate A Briefing
 
-Deploy the `frontend` folder to Vercel.
+Required for calendar matching:
 
-Set this environment variable in Vercel:
-
-```text
-NEXT_PUBLIC_F1_DATA_BASE_URL=https://raw.githubusercontent.com/ShreyTriesToCode/f1-briefing-bot/main
+```bash
+export F1_ICS_URL="https://your-calendar-feed.ics"
 ```
 
-## Important note about Mintlify model
+Optional email settings:
 
-This project does not copy a trained model from the Mintlify project. It uses the same kind of feature logic and ensemble design, then combines that with your own free-data backend. Directly using their trained model would require cloning that project, reproducing its training data, maintaining saved model files, and adapting feature schemas.
+```bash
+export EMAIL_ENABLED=true
+export EMAIL_ADDRESS="..."
+export EMAIL_APP_PASSWORD="..."
+export EMAIL_TO="..."
+```
 
-## Legal live dashboard note
+Run:
 
-The dashboard does not stream race video. It provides a timing-style hub and official links to F1 TV/live timing.
+```bash
+.venv/bin/python f1_briefing.py
+```
+
+Useful controls:
+
+```bash
+FORCE_RETRAIN=true
+FULL_DATA_BACKFILL_LIMIT=10
+OUTPUT_MODE=auto
+FORCE_NOTIFY=false
+NOTIFICATION_WINDOW_HOURS=8
+```
+
+Use `FORCE_RETRAIN=true` after model schema changes. Increase `FULL_DATA_BACKFILL_LIMIT` only when intentionally refreshing historical cache.
+
+## Frontend
+
+Pages:
+
+- `/` prediction dashboard
+- `/live` live timing dashboard
+- `/api/f1timing` Formula 1 live timing proxy with Jolpica fallback
+- `/api/audio` radio/audio proxy
+
+The live page auto-selects the active or latest useful F1 session. It formats driver names, leaderboard, tyres/stints, weather, race control, and team radio when the source allows access.
+
+## GitHub Workflow
+
+`.github/workflows/f1-briefing.yml` runs on schedule and manual dispatch.
+
+Workflow shape:
+
+1. Restore FastF1, HTTP, full-race, and model caches.
+2. Install Python dependencies.
+3. Compile and run unit tests.
+4. Check whether Jolpica has a newly completed GP result after `FINAL_RESULTS_DELAY_HOURS`.
+5. Retrain automatically if a new result exists, the model is missing, the schema changed, or manual force retrain was requested.
+6. Generate sprint/race predictions.
+7. Update `MODEL_STATUS.md`, `briefings/`, `briefings/index.json`, and `data_cache/latest-model-debug.json`.
+8. Upload complete artifacts for inspection.
+
+Automatic behavior:
+
+- Scheduled runs happen daily and every 6 hours Thursday through Monday around race weekends.
+- Scheduled `OUTPUT_MODE=auto` resolves to today-only Sprint/Race output.
+- If a Grand Prix has just ended, the workflow waits until `FINAL_RESULTS_DELAY_HOURS` has passed.
+- After that cutoff, it bypasses stale HTTP result cache and retrains only once the API returns final `Results` rows.
+- If the API still has no final results, it records that state in `MODEL_STATUS.md` and keeps the current model for predictions.
+- Email/GitHub issue output is sent only inside the notification window unless `FORCE_NOTIFY=true`.
+
+Manual controls from `workflow_dispatch`:
+
+- `force_retrain`: retrain even when no new race result is available.
+- `full_data_backfill_limit`: fetch more uncached historical races.
+- `lookahead_days`: search further ahead in the calendar.
+- `output_mode`: choose `auto`, `weekend`, `today`, or `next`.
+- `send_email`: allow or suppress email output.
+- `force_notify`: send notifications outside the normal gate.
+- `notification_window_hours`: change the event notification window.
+
+Generated runtime state is ignored for new files. Existing tracked caches are left alone to avoid a noisy repository rewrite.
+
+## Data Policy
+
+Primary backend sources:
+
+- Jolpica/Ergast-compatible race, standings, qualifying, laps, pit stops, sprint data
+- official Formula 1 live timing static feeds
+- OpenF1 free historical timing/session API when reachable
+- FastF1 session data when available
+- Open-Meteo forecast and historical weather
+- Formula1.com calendar checks
+- FIA/F1 upgrade and regulation pages, including car-presentation PDFs when reachable
+
+The project degrades gracefully. If a source is unavailable, it records source status and falls back to cached or lower-confidence signals instead of stopping the run.
+
+## Do Not Commit
+
+New generated cache/model churn is ignored:
+
+- `data_cache/http/`
+- `data_cache/full_races/`
+- `data_cache/ml_*`
+- `models/saved_models/`
+- `fastf1_cache/`
+- `frontend/.next/`
+- `frontend/node_modules/`

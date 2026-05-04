@@ -2,30 +2,27 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  BarChart3,
   CalendarDays,
   CheckCircle2,
+  ChevronRight,
   Clock,
   Copy,
-  ExternalLink,
   Flag,
-  Gauge,
+  Map,
+  Radio,
   RefreshCw,
   ShieldCheck,
-  Timer,
   Trophy
 } from "lucide-react";
 
 const DATA_BASE =
   process.env.NEXT_PUBLIC_F1_DATA_BASE_URL ||
   "https://raw.githubusercontent.com/ShreyTriesToCode/f1-race-intel/main";
-
-const OFFICIAL_LINKS = {
-  timing: "https://www.formula1.com/en/timing/f1-live",
-  schedule: "https://www.formula1.com/en/racing/2026",
-  f1tv: "https://www.formula1.com/en/subscribe-to-f1-tv"
-};
+const LOCAL_DATA_ENDPOINT = "/api/local-data";
 
 const F1_IMG = "https://media.formula1.com/image/upload";
+const F1_MEDIA = "https://media.formula1.com";
 
 const DRIVER_IMAGES = {
   "lando norris": `${F1_IMG}/c_fill%2Cw_720/q_auto/v1740000001/common/f1/2026/mclaren/lannor01/2026mclarenlannor01right.webp`,
@@ -48,17 +45,81 @@ const DRIVER_IMAGES = {
   "valtteri bottas": `${F1_IMG}/c_fill%2Cw_720/q_auto/v1740000001/common/f1/2026/cadillac/valbot01/2026cadillacvalbot01right.webp`
 };
 
+const DRIVER_MEDIA = {
+  "lando norris": { slug: "lannor01", team: "mclaren", display: "Lando_Norris" },
+  "oscar piastri": { slug: "oscpia01", team: "mclaren", display: "Oscar_Piastri" },
+  "max verstappen": { slug: "maxver01", team: "redbullracing", display: "Max_Verstappen" },
+  "charles leclerc": { slug: "chalec01", team: "ferrari", display: "Charles_Leclerc" },
+  "lewis hamilton": { slug: "lewham01", team: "ferrari", display: "Lewis_Hamilton" },
+  "george russell": { slug: "georus01", team: "mercedes", display: "George_Russell" },
+  "kimi antonelli": { slug: "andant01", team: "mercedes", display: "Kimi_Antonelli" },
+  "andrea kimi antonelli": { slug: "andant01", team: "mercedes", display: "Kimi_Antonelli" },
+  "fernando alonso": { slug: "feralo01", team: "astonmartin", display: "Fernando_Alonso" },
+  "lance stroll": { slug: "lanstr01", team: "astonmartin", display: "Lance_Stroll" },
+  "carlos sainz": { slug: "carsai01", team: "williams", display: "Carlos_Sainz" },
+  "alex albon": { slug: "alealb01", team: "williams", display: "Alexander_Albon" },
+  "alexander albon": { slug: "alealb01", team: "williams", display: "Alexander_Albon" },
+  "nico hulkenberg": { slug: "nichul01", team: "audi", display: "Nico_Hulkenberg" },
+  "nico hülkenberg": { slug: "nichul01", team: "audi", display: "Nico_Hulkenberg" },
+  "gabriel bortoleto": { slug: "gabbor01", team: "audi", display: "Gabriel_Bortoleto" },
+  "sergio perez": { slug: "serper01", team: "cadillac", display: "Sergio_Perez" },
+  "sergio pérez": { slug: "serper01", team: "cadillac", display: "Sergio_Perez" },
+  "valtteri bottas": { slug: "valbot01", team: "cadillac", display: "Valtteri_Bottas" },
+  "pierre gasly": { slug: "piegas01", team: "alpine", display: "Pierre_Gasly" },
+  "franco colapinto": { slug: "fracol01", team: "alpine", display: "Franco_Colapinto" },
+  "isack hadjar": { slug: "isahad01", team: "redbullracing", display: "Isack_Hadjar" },
+  "liam lawson": { slug: "lialaw01", team: "racingbulls", display: "Liam_Lawson" },
+  "esteban ocon": { slug: "estoco01", team: "haas", display: "Esteban_Ocon" },
+  "oliver bearman": { slug: "olibea01", team: "haas", display: "Oliver_Bearman" },
+  "arvid lindblad": { slug: "arvlin01", team: "racingbulls", display: "Arvid_Lindblad" }
+};
+
 const TEAM_CARS = {
-  "mclaren": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarencarright.webp`,
-  "ferrari": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/ferrari/2026ferraricarright.webp`,
-  "mercedes": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedescarright.webp`,
-  "red bull racing": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracingcarright.webp`,
-  "red bull": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracingcarright.webp`,
-  "williams": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/williams/2026williamscarright.webp`,
-  "aston martin": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartincarright.webp`,
-  "audi": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/audi/2026audicarright.webp`,
-  "kick sauber": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/audi/2026audicarright.webp`,
-  "cadillac": `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaccarright.webp`
+  "mclaren": ["mclaren"],
+  "ferrari": ["ferrari"],
+  "mercedes": ["mercedes"],
+  "red bull racing": ["redbullracing", "red-bull-racing"],
+  "red bull": ["redbullracing", "red-bull-racing"],
+  "williams": ["williams"],
+  "aston martin": ["astonmartin", "aston-martin"],
+  "aston martin aramco f1 team": ["astonmartin", "aston-martin"],
+  "alpine": ["alpine"],
+  "alpine f1 team": ["alpine"],
+  "bwt alpine f1 team": ["alpine"],
+  "haas": ["haas", "haasf1team"],
+  "haas f1 team": ["haas", "haasf1team"],
+  "moneygram haas f1 team": ["haas", "haasf1team"],
+  "racing bulls": ["racingbulls", "rb"],
+  "visa cash app rb": ["racingbulls", "rb"],
+  "rb": ["racingbulls", "rb"],
+  "sauber": ["audi", "kicksauber", "sauber"],
+  "kick sauber": ["audi", "kicksauber", "sauber"],
+  "audi": ["audi", "kicksauber", "sauber"],
+  "cadillac": ["cadillac"]
+};
+
+const TEAM_THEMES = {
+  "mclaren": ["#ff8700", "#47c7fc"],
+  "ferrari": ["#e10600", "#ffd200"],
+  "mercedes": ["#00d2be", "#c7c7c7"],
+  "red bull racing": ["#1e41ff", "#fcd700"],
+  "red bull": ["#1e41ff", "#fcd700"],
+  "williams": ["#00a0de", "#ffffff"],
+  "aston martin": ["#006f62", "#cedc00"],
+  "aston martin aramco f1 team": ["#006f62", "#cedc00"],
+  "alpine": ["#0090ff", "#ff4fa3"],
+  "alpine f1 team": ["#0090ff", "#ff4fa3"],
+  "bwt alpine f1 team": ["#0090ff", "#ff4fa3"],
+  "haas": ["#ffffff", "#e6002b"],
+  "haas f1 team": ["#ffffff", "#e6002b"],
+  "moneygram haas f1 team": ["#ffffff", "#e6002b"],
+  "racing bulls": ["#2b4562", "#ffffff"],
+  "visa cash app rb": ["#2b4562", "#ffffff"],
+  "rb": ["#2b4562", "#ffffff"],
+  "sauber": ["#52e252", "#111111"],
+  "kick sauber": ["#52e252", "#111111"],
+  "audi": ["#e31b23", "#d8d8d8"],
+  "cadillac": ["#b9975b", "#d50032"]
 };
 
 function key(value) {
@@ -73,11 +134,64 @@ function cleanTitle(title) {
 function initials(name) {
   return String(name || "?").split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
 }
-function driverImage(driver) {
-  return driver?.image || DRIVER_IMAGES[key(driver?.name || driver)] || "";
+function unique(list) {
+  return Array.from(new Set(list.filter(Boolean)));
 }
-function teamCar(team) {
-  return TEAM_CARS[key(team)] || "";
+function driverMedia(driver) {
+  const normalized = key(driver?.name || driver);
+  if (DRIVER_MEDIA[normalized]) return DRIVER_MEDIA[normalized];
+  const compact = normalized.replace(/[^a-z0-9]+/g, "");
+  const entry = Object.entries(DRIVER_MEDIA).find(([alias]) => {
+    const aliasCompact = alias.replace(/[^a-z0-9]+/g, "");
+    return compact.includes(aliasCompact) || aliasCompact.includes(compact);
+  });
+  return entry?.[1] || null;
+}
+function driverBodyUrl(meta, year = 2026) {
+  if (!meta?.slug || !meta?.team) return "";
+  return `${F1_IMG}/c_fill%2Cw_720/q_auto/v1740000001/common/f1/${year}/${meta.team}/${meta.slug}/${year}${meta.team}${meta.slug}right.webp`;
+}
+function driverHeadshotUrl(meta) {
+  if (!meta?.slug || !meta?.display) return "";
+  const folder = meta.display.slice(0, 1).toUpperCase();
+  return `${F1_MEDIA}/d_driver_fallback_image.png/content/dam/fom-website/drivers/${folder}/${meta.slug.toUpperCase()}_${meta.display}/${meta.slug}.png.transform/1col/image.png`;
+}
+function driverImageCandidates(driver) {
+  const mapped = DRIVER_IMAGES[key(driver?.name || driver)];
+  const mappedList = Array.isArray(mapped) ? mapped : [mapped];
+  const meta = driverMedia(driver);
+  return unique([
+    driver?.image,
+    driver?.headshot_url,
+    ...mappedList,
+    driverBodyUrl(meta, 2026),
+    driverBodyUrl(meta, 2025),
+    driverBodyUrl(meta, 2024),
+    driverHeadshotUrl(meta)
+  ]);
+}
+function teamLookup(team, table) {
+  const normalized = key(team);
+  if (table[normalized]) return table[normalized];
+  const compact = normalized.replace(/[^a-z0-9]+/g, "");
+  const entry = Object.entries(table)
+    .sort((a, b) => b[0].length - a[0].length)
+    .find(([alias]) => {
+      const aliasCompact = alias.replace(/[^a-z0-9]+/g, "");
+      return normalized.includes(alias) || alias.includes(normalized) || compact.includes(aliasCompact) || aliasCompact.includes(compact);
+    });
+  return entry?.[1];
+}
+function mediaCar(slug, year = 2026) {
+  return `${F1_IMG}/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/${year}/${slug}/${year}${slug}carright.webp`;
+}
+function teamCarCandidates(team) {
+  const slugs = teamLookup(team, TEAM_CARS) || [key(team).replace(/[^a-z0-9]+/g, "")].filter(Boolean);
+  return unique(slugs.flatMap((slug) => [mediaCar(slug, 2026), mediaCar(slug, 2025), mediaCar(slug, 2024)]));
+}
+function teamTheme(team) {
+  const [primary, secondary] = teamLookup(team, TEAM_THEMES) || ["#e10600", "#ffffff"];
+  return { "--team-primary": primary, "--team-secondary": secondary };
 }
 function esc(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
@@ -130,6 +244,28 @@ function mdToHtml(md) {
   close();
   return html;
 }
+function cleanDataPath(path) {
+  return String(path || "").replace(/^\/+/, "");
+}
+function remoteDataUrl(path) {
+  return `${DATA_BASE}/${cleanDataPath(path)}?v=${Date.now()}`;
+}
+function localDataUrl(path) {
+  return `${LOCAL_DATA_ENDPOINT}?path=${encodeURIComponent(cleanDataPath(path))}&v=${Date.now()}`;
+}
+async function fetchProjectData(path, type = "json") {
+  let lastError = null;
+  for (const url of [remoteDataUrl(path), localDataUrl(path)]) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(`${url} HTTP ${res.status}`);
+      return type === "text" ? await res.text() : await res.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError || new Error(`Unable to load ${path}`);
+}
 function level(value) {
   const t = String(value || "").toLowerCase();
   if (t.includes("high")) return 82;
@@ -151,6 +287,20 @@ function formatTime(value) {
   const date = new Date(value || "");
   if (Number.isNaN(date.getTime())) return "Start unavailable";
   return date.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+}
+function dateParts(value) {
+  const date = new Date(value || "");
+  if (Number.isNaN(date.getTime())) return { day: "--", month: "---", time: "--" };
+  return {
+    day: date.toLocaleDateString([], { day: "2-digit" }),
+    month: date.toLocaleDateString([], { month: "short" }).toUpperCase(),
+    time: date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+  };
+}
+function metric(value, suffix = "") {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "-";
+  return `${number.toFixed(number >= 10 ? 1 : 2)}${suffix}`;
 }
 
 function Countdown({ startIso }) {
@@ -182,36 +332,127 @@ function Countdown({ startIso }) {
   );
 }
 
+function RaceWeekendSchedule({ targets, activeIndex, setActiveIndex, active, status }) {
+  const rows = (targets?.length ? targets : [{
+    target_type: active?.prediction_model?.output_target_type || "race",
+    event: { title: active?.event_title || active?.title || "Prediction target", start: active?.start_iso || active?.start }
+  }]).slice(0, 4);
+  return (
+    <div className="monaco-schedule-grid">
+      {rows.map((target, index) => {
+        const parts = dateParts(target.event?.start);
+        return (
+          <button
+            className={`monaco-schedule-row ${activeIndex === index ? "active" : ""}`}
+            key={`${target.target_type}-${target.event?.title || index}`}
+            onClick={() => setActiveIndex(index)}
+          >
+            <span className="schedule-date"><b>{parts.day}</b><small>{parts.month}</small></span>
+            <span className="schedule-copy">
+              <strong>{target.event?.title || "F1 prediction"}</strong>
+              <small>{String(target.target_type || "target").toUpperCase()} · {parts.time}</small>
+            </span>
+            <span className="schedule-action">Open <ChevronRight size={15} /></span>
+          </button>
+        );
+      })}
+      <a className="monaco-schedule-row live-link" href="/live">
+        <span className="schedule-date"><b>LIVE</b><small>F1</small></span>
+        <span className="schedule-copy">
+          <strong>Timing room</strong>
+          <small>Leaderboard, race control, radio</small>
+        </span>
+        <span className="schedule-action">Launch <ChevronRight size={15} /></span>
+      </a>
+      <div className="monaco-schedule-status">
+        <span><Radio size={15} /> Data state</span>
+        <strong>{status}</strong>
+      </div>
+    </div>
+  );
+}
+
+function ModelSignalMarquee({ predictions, profile, modelMetrics }) {
+  const top = predictions?.slice(0, 4) || [];
+  const signals = [
+    { label: "Track trait", value: profile.car_trait || "Car balance", note: profile.speed_profile || "Circuit profile" },
+    { label: "Finish MAE", value: metric(modelMetrics.finish_position?.mae), note: "Backtest regression" },
+    { label: "Podium AUC", value: metric(modelMetrics.podium?.auc), note: "Classifier quality" },
+    { label: "Lap MAE", value: metric(modelMetrics.neural_lap_time_forecast?.mae_seconds, "s"), note: "Neural pace model" },
+    ...top.map((driver, index) => ({
+      label: `P${index + 1} pick`,
+      value: driver.name || "Driver",
+      note: driver.team || driver.reason || "Prediction signal"
+    }))
+  ].filter((item) => item.value && item.value !== "-");
+  const loop = [...signals, ...signals];
+  return (
+    <section className="signal-strip" aria-label="Model signal stream">
+      <div className="signal-track">
+        {loop.map((item, index) => (
+          <article className="signal-card" key={`${item.label}-${item.value}-${index}`}>
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+            <small>{item.note}</small>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CircuitIntelCard({ profile, weather }) {
+  return (
+    <article className="card circuit-card" id="circuit">
+      <div className="section-head"><h2>Circuit Intel</h2><Map size={18} /></div>
+      <div className="track-orbit" aria-hidden="true">
+        <span className="track-path" />
+        <i className="track-dot one" />
+        <i className="track-dot two" />
+        <i className="track-dot three" />
+      </div>
+      <div className="fact"><span>Car trait</span><strong>{profile.car_trait || "-"}</strong></div>
+      <div className="fact"><span>Speed profile</span><strong>{profile.speed_profile || "-"}</strong></div>
+      <div className="fact"><span>Overtaking</span><strong>{profile.overtaking || "-"}</strong></div>
+      <div className="bar"><i style={{ "--value": `${level(profile.overtaking)}%` }} /></div>
+      <div className="fact"><span>Tyre stress</span><strong>{profile.tyre_stress || "-"}</strong></div>
+      <div className="bar"><i style={{ "--value": `${level(profile.tyre_stress)}%` }} /></div>
+      <p className="note">{weather.impact || "Weather and tyre effects update after the next workflow run."}</p>
+    </article>
+  );
+}
+
 function DriverArt({ driver }) {
-  const [failed, setFailed] = useState(false);
-  const src = driverImage(driver);
-  if (!src || failed) return <div className="driver-fallback">{initials(driver?.name)}</div>;
-  return <img src={src} alt={driver?.name || "Driver"} onError={() => setFailed(true)} />;
+  const candidates = driverImageCandidates(driver);
+  const [index, setIndex] = useState(0);
+  useEffect(() => setIndex(0), [driver?.name, driver?.team, driver?.image, driver?.headshot_url]);
+  const src = candidates[index];
+  if (!src) return <div className="driver-fallback">{initials(driver?.name)}</div>;
+  return <img src={src} alt={driver?.name || "Driver"} onError={() => setIndex((value) => value + 1)} />;
 }
 
 function TeamCar({ team }) {
-  const [failed, setFailed] = useState(false);
-  const src = teamCar(team);
-  if (!src || failed) return <span className="team-fallback">{initials(team)}</span>;
-  return <img className="team-car" src={src} alt={`${team} car`} onError={() => setFailed(true)} />;
+  const candidates = teamCarCandidates(team);
+  const [index, setIndex] = useState(0);
+  useEffect(() => setIndex(0), [team]);
+  const src = candidates[index];
+  if (!src) {
+    return (
+      <span className="team-fallback-car" style={teamTheme(team)} aria-label={`${team} livery`}>
+        <i /><b>{initials(team)}</b>
+      </span>
+    );
+  }
+  return <img className="team-car" src={src} alt={`${team} car`} onError={() => setIndex((value) => value + 1)} />;
 }
 
-function TargetTabs({ targets, activeIndex, setActiveIndex }) {
-  if (!targets.length) return null;
-  return (
-    <div className="target-tabs">
-      {targets.map((target, index) => (
-        <button
-          key={`${target.target_type}-${target.event?.title || index}`}
-          className={activeIndex === index ? "active" : ""}
-          onClick={() => setActiveIndex(index)}
-        >
-          <span>{String(target.target_type || "target").toUpperCase()}</span>
-          <strong>{target.event?.title || target.title || "F1 target"}</strong>
-        </button>
-      ))}
-    </div>
-  );
+function HeroCar({ team }) {
+  const candidates = teamCarCandidates(team);
+  const [index, setIndex] = useState(0);
+  useEffect(() => setIndex(0), [team]);
+  const src = candidates[index];
+  if (!src) return <span className="hero-car-fallback team-fallback-car" style={teamTheme(team)}><i /><b>{initials(team)}</b></span>;
+  return <img className="hero-car" src={src} alt="" onError={() => setIndex((value) => value + 1)} />;
 }
 
 function PredictionList({ predictions }) {
@@ -228,6 +469,8 @@ function PredictionList({ predictions }) {
             <div className="chips tight">
               {driver.score !== undefined && <small>Score {driver.score}</small>}
               {driver.confidence !== undefined && <small>{driver.confidence}% confidence</small>}
+              {driver.predicted_finish_position !== undefined && driver.predicted_finish_position !== null && <small>Model P{Number(driver.predicted_finish_position).toFixed(1)}</small>}
+              {driver.predicted_lap_pace_seconds !== undefined && driver.predicted_lap_pace_seconds !== null && <small>Lap {Number(driver.predicted_lap_pace_seconds).toFixed(2)}s</small>}
             </div>
           </div>
           <div className="driver-art"><DriverArt driver={driver} /></div>
@@ -248,8 +491,7 @@ export default function Home() {
 
   async function loadDebug() {
     try {
-      const res = await fetch(`${DATA_BASE}/data_cache/latest-model-debug.json?v=${Date.now()}`);
-      if (res.ok) setDebug(await res.json());
+      setDebug(await fetchProjectData("data_cache/latest-model-debug.json"));
     } catch {
       setDebug(null);
     }
@@ -258,18 +500,14 @@ export default function Home() {
   async function loadBriefing(item) {
     setStatus("Loading briefing");
     setActive(item);
-    const res = await fetch(`${DATA_BASE}/${item.path}?v=${Date.now()}`);
-    if (!res.ok) throw new Error(`briefing HTTP ${res.status}`);
-    setMarkdown(await res.text());
+    setMarkdown(await fetchProjectData(item.path, "text"));
     setTargetIndex(0);
     setStatus("Ready");
   }
 
   async function loadIndex() {
     setStatus("Syncing");
-    const res = await fetch(`${DATA_BASE}/briefings/index.json?v=${Date.now()}`);
-    if (!res.ok) throw new Error(`index HTTP ${res.status}`);
-    const data = await res.json();
+    const data = await fetchProjectData("briefings/index.json");
     const list = Array.isArray(data) ? data : data.briefings || [];
     list.sort((a, b) => String(b.generated_iso || b.generated || b.start || "").localeCompare(String(a.generated_iso || a.generated || a.start || "")));
     setIndexData(list);
@@ -304,11 +542,14 @@ export default function Home() {
   const profile = selectedTarget.profile || active || {};
   const weather = selectedTarget.weather || active?.weather || {};
   const model = selectedTarget.prediction_model || active?.prediction_model || {};
+  const modelMetrics = model.ml_model_meta?.metrics || {};
+  const finishMetrics = modelMetrics.finish_position || {};
+  const lapMetrics = modelMetrics.neural_lap_time_forecast || {};
+  const rankingMetrics = finishMetrics.ranking || modelMetrics.win_probability_ranking || {};
   const predictions = selectedTarget.top10?.length ? selectedTarget.top10 : active?.top10?.length ? active.top10 : parseBriefingTop10(markdown);
   const topDriver = predictions[0] || {};
   const title = cleanTitle(active?.title || selectedTarget?.event?.title || "Race Intel");
   const html = useMemo(() => mdToHtml(markdown), [markdown]);
-  const car = teamCar(topDriver.team);
   const canCopy = Boolean(markdown);
 
   async function copyBriefing() {
@@ -319,47 +560,48 @@ export default function Home() {
   }
 
   return (
-    <main className="app">
-      <nav className="nav">
-        <div className="brand">
-          <div className="brand-mark">F1</div>
-          <div>
-            <strong>Race Intel</strong>
-            <span>Sprint and Race predictions</span>
-          </div>
+    <main className="app monaco-app">
+      <nav className="monaco-nav">
+        <a className="monaco-logo" href="#latest" aria-label="Race Intel home">
+          <span>F1</span>
+        </a>
+        <div className="monaco-links">
+          <a href="#schedule">Schedule</a>
+          <a href="#predictions">Standings</a>
+          <a href="#circuit">Circuit</a>
+          <a href="#teams">Teams</a>
+          <a href="/live">Live Timing</a>
         </div>
-        <div className="nav-actions">
-          <a href="/live"><Timer size={15} /> Live page</a>
-          <a href={OFFICIAL_LINKS.timing} target="_blank" rel="noreferrer"><Timer size={15} /> F1 timing</a>
-          <a href={OFFICIAL_LINKS.schedule} target="_blank" rel="noreferrer"><CalendarDays size={15} /> Calendar</a>
-          <button onClick={() => loadIndex().catch(() => setStatus("Refresh failed"))}><RefreshCw size={15} /> Refresh</button>
-        </div>
-        <div className="status"><i /><span>{status}</span></div>
+        <button className="monaco-menu-button" onClick={() => loadIndex().catch(() => setStatus("Refresh failed"))} aria-label="Refresh data">
+          <i /><i />
+        </button>
       </nav>
 
-      <section className="hero">
-        <article className="hero-panel">
-          {car && <img className="hero-car" src={car} alt="" />}
-          <div className="hero-content">
-            <div className="chips">
-              <span>Weekend mode ready</span>
-              <span>{model.prediction_stage_label || "Model active"}</span>
-              <span>{model.output_target_type || "Sprint/Race"}</span>
-            </div>
-            <h1>{title}</h1>
-            <p>
-              Clean view of the next Sprint and Race predictions. Qualifying, practice, weather, upgrades,
-              track traits, current-season car form, and historical data remain inputs.
-            </p>
-          </div>
-          <div className="hero-stats">
-            <div><span>Circuit</span><strong>{profile.circuit || active?.circuit || "-"}</strong></div>
-            <div><span>Target</span><strong>{String(selectedTarget.target_type || model.output_target_type || "Race").toUpperCase()}</strong></div>
-            <div><span>Generated</span><strong>{active?.generated || "-"}</strong></div>
-          </div>
-        </article>
+      <section className="monaco-hero" id="latest">
+        <div className="monaco-hero-media">
+          <HeroCar team={topDriver.team} />
+          <div className="monaco-title-mask" aria-hidden="true">{title}</div>
+          <div className="speed-light" aria-hidden="true" />
+        </div>
 
-        <aside className="side-card">
+        <div className="monaco-hero-copy">
+          <div className="chips">
+            <span>Race Intel</span>
+            <span>{model.prediction_stage_label || "Model active"}</span>
+            <span>{model.output_target_type || "Sprint/Race"}</span>
+          </div>
+          <h1>{title}</h1>
+          <p>
+            Sprint and Race predictions shaped by qualifying, practice, weather, upgrades, track traits,
+            current-season car form, live timing signals, and the high-accuracy model audit.
+          </p>
+          <div className="monaco-hero-actions">
+            <a href="#predictions">View prediction <ChevronRight size={16} /></a>
+            <a href="/live">Live timing <Radio size={16} /></a>
+          </div>
+        </div>
+
+        <aside className="monaco-countdown">
           <div className="section-head">
             <h2>Next target</h2>
             <Clock size={18} />
@@ -368,29 +610,42 @@ export default function Home() {
           <strong className="time">{formatTime(selectedTarget.event?.start || active?.start_iso || active?.start)}</strong>
           <Countdown startIso={selectedTarget.event?.start || active?.start_iso} />
         </aside>
+
+        <div className="hero-stats monaco-hero-stats">
+          <div><span>Circuit</span><strong>{profile.circuit || active?.circuit || "-"}</strong></div>
+          <div><span>Target</span><strong>{String(selectedTarget.target_type || model.output_target_type || "Race").toUpperCase()}</strong></div>
+          <div><span>Generated</span><strong>{active?.generated || "-"}</strong></div>
+        </div>
       </section>
 
-      <TargetTabs targets={targets} activeIndex={targetIndex} setActiveIndex={setTargetIndex} />
+      <section className="race-weekend-panel" id="schedule">
+        <div className="race-weekend-heading">
+          <span>Race Weekend</span>
+          <h2>{selectedTarget.event?.title || active?.event_title || "Prediction schedule"}</h2>
+          <p>Automatic workflow outputs, timing room, and current sync state in one race-weekend control surface.</p>
+        </div>
+        <RaceWeekendSchedule
+          targets={targets}
+          activeIndex={targetIndex}
+          setActiveIndex={setTargetIndex}
+          active={active}
+          status={status}
+        />
+      </section>
 
-      <section className="layout">
+      <ModelSignalMarquee predictions={predictions} profile={profile} modelMetrics={modelMetrics} />
+
+      <section className="layout monaco-grid-main" id="predictions">
         <article className="card prediction-section">
           <div className="section-head">
-            <h2>Prediction</h2>
+            <h2>Prediction Standings</h2>
             <Trophy size={18} />
           </div>
           <PredictionList predictions={predictions} />
         </article>
 
         <aside className="stack">
-          <article className="card">
-            <div className="section-head"><h2>Track</h2><Gauge size={18} /></div>
-            <div className="fact"><span>Car trait</span><strong>{profile.car_trait || active?.car_trait || "-"}</strong></div>
-            <div className="fact"><span>Speed profile</span><strong>{profile.speed_profile || active?.speed_profile || "-"}</strong></div>
-            <div className="fact"><span>Overtaking</span><strong>{profile.overtaking || active?.overtaking || "-"}</strong></div>
-            <div className="bar"><i style={{ "--value": `${level(profile.overtaking || active?.overtaking)}%` }} /></div>
-            <div className="fact"><span>Tyre stress</span><strong>{profile.tyre_stress || active?.tyre_stress || "-"}</strong></div>
-            <div className="bar"><i style={{ "--value": `${level(profile.tyre_stress || active?.tyre_stress)}%` }} /></div>
-          </article>
+          <CircuitIntelCard profile={profile} weather={weather} />
 
           <article className="card">
             <div className="section-head"><h2>Weather</h2><Flag size={18} /></div>
@@ -412,8 +667,8 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="layout small">
-        <article className="card">
+      <section className="layout small monaco-support-grid" id="teams">
+        <article className="card team-fit-card">
           <div className="section-head"><h2>Team fit</h2><CheckCircle2 size={18} /></div>
           <div className="team-list">
             {(selectedTarget.team_fit || active?.team_fit || []).slice(0, 5).map((team, index) => (
@@ -425,15 +680,18 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="card">
-          <div className="section-head"><h2>Data status</h2><ExternalLink size={18} /></div>
+        <article className="card model-status-card">
+          <div className="section-head"><h2>Model Status</h2><BarChart3 size={18} /></div>
           <div className="fact"><span>Output mode</span><strong>{debug?.output_mode || "Latest"}</strong></div>
           <div className="fact"><span>Backfill used</span><strong>{debug?.backfill?.used ?? "-"}</strong></div>
           <div className="fact"><span>ML model</span><strong>{model.ml_model_loaded ? "Loaded" : "Fallback"}</strong></div>
           <div className="fact"><span>Timing source</span><strong>{model.available_components?.timing_provider_status || "Jolpica/FastF1 fallback"}</strong></div>
+          <div className="fact"><span>Finish MAE</span><strong>{metric(finishMetrics.mae)}</strong></div>
+          <div className="fact"><span>Lap MAE</span><strong>{metric(lapMetrics.mae_seconds, "s")}</strong></div>
+          <div className="fact"><span>Top-5 recall</span><strong>{rankingMetrics.top5_recall !== undefined ? metric(rankingMetrics.top5_recall * 100, "%") : "-"}</strong></div>
         </article>
 
-        <article className="card">
+        <article className="card archive-card">
           <div className="section-head"><h2>Archive</h2><CalendarDays size={18} /></div>
           <div className="archive-list">
             {indexData.slice(0, 8).map((item) => (

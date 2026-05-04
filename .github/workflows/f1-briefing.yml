@@ -1,9 +1,9 @@
-name: F1 Briefing, Full Data Backfill, ML Retrain, Issue, Email
+name: F1 Race Intel
 
 on:
   schedule:
     - cron: "30 3 * * *"
-    - cron: "0 */6 * * 4,5,6,0"
+    - cron: "0 */6 * * 4,5,6,0,1"
   workflow_dispatch:
     inputs:
       force_retrain:
@@ -38,11 +38,10 @@ on:
 permissions:
   contents: write
   issues: write
-  actions: read
 
 concurrency:
   group: f1-race-intel
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   generate:
@@ -69,6 +68,8 @@ jobs:
           path: |
             fastf1_cache
             data_cache/http
+            data_cache/full_races
+            models/saved_models
           key: f1-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py') }}
           restore-keys: |
             f1-runtime-cache-${{ runner.os }}-
@@ -77,6 +78,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Validate briefing pipeline
+        run: |
+          python -m py_compile f1_briefing.py
+          python -m unittest discover -s tests
 
       - name: Run F1 hybrid briefing
         env:
@@ -99,6 +105,10 @@ jobs:
           UPGRADES_ENABLED: "true"
           F1_REGULATIONS_ENABLED: "true"
           OFFICIAL_CALENDAR_ENABLED: "true"
+          F1_LIVE_TIMING_STATIC_BASE: "https://livetiming.formula1.com/static"
+          OPENF1_ENABLED: "true"
+          OPENF1_BASE: "https://api.openf1.org/v1"
+          OPENF1_REQUEST_SLEEP: "0.45"
           FIA_TECH_UPDATE_BASE: "https://www.fia.com/news"
           OFFICIAL_F1_CALENDAR_URL: "https://www.formula1.com/en/racing/{year}"
           FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '10' }}
@@ -109,6 +119,19 @@ jobs:
           FASTF1_CACHE_DIR: "fastf1_cache"
         run: python f1_briefing.py
 
+      - name: Commit readable briefing outputs
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add briefings data_cache/latest-model-debug.json MODEL_STATUS.md || true
+          if git diff --cached --quiet; then
+            echo "No briefing output changes to commit."
+          else
+            git commit -m "chore: update f1 race intel outputs"
+            git push
+          fi
+
       - name: Upload generated artifacts
         uses: actions/upload-artifact@v4
         if: always()
@@ -116,6 +139,7 @@ jobs:
           name: f1-race-intel-output
           path: |
             briefings/**
+            MODEL_STATUS.md
             data_cache/latest-model-debug.json
             data_cache/full_races/**
             models/saved_models/**

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Activity,
   AudioLines,
@@ -137,6 +137,16 @@ function gap(row) {
   return fmt(row?.interval ?? row?.gap_to_leader ?? row?.status);
 }
 
+function raceControlTone(message) {
+  const text = `${message?.category || ""} ${message?.status || ""} ${message?.message || ""}`.toLowerCase();
+  if (text.includes("red")) return "red";
+  if (text.includes("safety") || text.includes("vsc")) return "safety";
+  if (text.includes("yellow")) return "yellow";
+  if (text.includes("green") || text.includes("clear")) return "green";
+  if (text.includes("investig") || text.includes("noted") || text.includes("penalty")) return "warning";
+  return "";
+}
+
 function normalizeJolpicaFallback(fallback) {
   if (!fallback) return null;
 
@@ -198,10 +208,10 @@ function normalizeJolpicaFallback(fallback) {
   return null;
 }
 
-async function fetchF1Timing() {
+async function fetchF1Timing(signal) {
   const url = new URL("/api/f1timing", window.location.origin);
   url.searchParams.set("year", String(new Date().getUTCFullYear()));
-  const res = await fetch(url.toString(), { cache: "no-store" });
+  const res = await fetch(url.toString(), { cache: "no-store", signal });
   return res.json();
 }
 
@@ -289,10 +299,12 @@ function SettingsPanel({ settings, patch }) {
 }
 
 function StatusPill({ payload, normalized }) {
-  const live = payload?.source === "Formula1LiveTiming" && payload?.ok;
+  const live = Boolean(payload?.is_live);
+  const sourceOk = payload?.source === "Formula1LiveTiming" && payload?.ok;
+  const state = String(payload?.session_state || "").replace("-", " ");
   return (
-    <div className={cx("dash-status-pill", live ? "live" : "fallback")}>
-      <span>{live ? "Live timing" : "Latest event"}</span>
+    <div className={cx("dash-status-pill", live ? "live" : sourceOk ? "synced" : "fallback")}>
+      <span>{live ? "Live timing" : sourceOk ? state || "Timing data" : "Latest event"}</span>
       <strong>{normalized?.source || payload?.source || "Loading"}</strong>
     </div>
   );
@@ -353,28 +365,42 @@ export default function LivePage() {
   const [lastUpdated, setLastUpdated] = useState(null);
   const [loading, setLoading] = useState(false);
   const [auto, setAuto] = useState(true);
+  const [error, setError] = useState("");
+  const inFlight = useRef(false);
+  const controllerRef = useRef(null);
 
   async function loadLiveData() {
+    if (inFlight.current) return;
+    controllerRef.current?.abort?.();
+    const controller = new AbortController();
+    controllerRef.current = controller;
+    inFlight.current = true;
     setLoading(true);
+    setError("");
     try {
-      const data = await fetchF1Timing();
+      const data = await fetchF1Timing(controller.signal);
       setPayload(data);
       setLastUpdated(new Date());
+    } catch (err) {
+      if (err?.name !== "AbortError") setError(String(err?.message || err || "Live timing sync failed"));
     } finally {
+      inFlight.current = false;
       setLoading(false);
     }
   }
 
   useEffect(() => {
     loadLiveData();
+    return () => controllerRef.current?.abort?.();
   }, []);
+
+  const refreshMs = Math.max(3000, Number(payload?.refresh_after_ms || 15000) + (Number(settings.delay) || 0) * 1000);
 
   useEffect(() => {
     if (!auto) return;
-    const intervalMs = Math.max(5000, (Number(settings.delay) || 0) * 1000 + 15000);
-    const id = setInterval(loadLiveData, intervalMs);
+    const id = setInterval(loadLiveData, refreshMs);
     return () => clearInterval(id);
-  }, [auto, settings.delay]);
+  }, [auto, refreshMs]);
 
   const normalized = useMemo(() => {
     if (payload?.ok && payload.normalized) return { ...payload.normalized, source: "Formula 1 live timing" };
@@ -382,6 +408,7 @@ export default function LivePage() {
   }, [payload]);
 
   const session = normalized.session || {};
+  const drivers = normalized.drivers || [];
   const leaderboard = normalized.leaderboard || [];
   const weather = normalized.weather || null;
   const raceControl = normalized.raceControl || [];
@@ -389,6 +416,7 @@ export default function LivePage() {
   const trackStatus = normalized.trackStatus || null;
   const lapCount = normalized.lapCount || {};
   const oledClass = settings.oled ? "oled" : "";
+  const refreshSeconds = Math.round(refreshMs / 1000);
 
   return (
     <main className={cx("f1dash-shell", oledClass)}>
@@ -416,7 +444,7 @@ export default function LivePage() {
               <RefreshCcw size={16} /> {loading ? "Syncing" : "Refresh"}
             </button>
             <button className={cx("dash-btn", auto && "active")} onClick={() => setAuto(!auto)}>
-              {auto ? <Pause size={16} /> : <Play size={16} />} {auto ? "Auto" : "Manual"}
+              {auto ? <Pause size={16} /> : <Play size={16} />} {auto ? `Auto ${refreshSeconds}s` : "Manual"}
             </button>
             <SettingsPanel settings={settings} patch={patchSettings} />
           </div>
@@ -424,10 +452,21 @@ export default function LivePage() {
 
         <div className="sync-strip">
           <span>Updated: <strong>{lastUpdated ? lastUpdated.toLocaleTimeString() : "-"}</strong></span>
+          <span>Mode: <strong>{fmt(payload?.session_state, auto ? "auto" : "manual")}</strong></span>
           <span>Delay: <strong>{settings.delay}s</strong></span>
           <span>Lap: <strong>{fmt(lapCount.current_lap)}/{fmt(lapCount.total_laps)}</strong></span>
           <span>Track: <strong>{fmt(trackStatus?.Status || trackStatus?.Message || trackStatus?.status)}</strong></span>
         </div>
+
+        {error && (
+          <section className="dash-warning">
+            <BadgeInfo size={18} />
+            <div>
+              <strong>Auto-sync could not complete.</strong>
+              <p>{error}</p>
+            </div>
+          </section>
+        )}
 
         {!payload?.ok && (
           <section className="dash-warning">
@@ -527,8 +566,13 @@ export default function LivePage() {
           <Card id="race-control" title="Race control" icon={<ShieldAlert size={18} />} show={settings.raceControl} empty={!raceControl.length && "No race-control messages available."}>
             <div className="race-control-stack">
               {raceControl.map((message, index) => (
-                <article key={`${message.date}-${index}`}>
-                  <time>{time(message.date)}</time>
+                <article className={raceControlTone(message)} key={`${message.date}-${index}`}>
+                  <div className="race-control-meta">
+                    <time>{time(message.date)}</time>
+                    {message.lap && <span>Lap {fmt(message.lap)}</span>}
+                    {message.racing_number && <span>#{fmt(message.racing_number)}</span>}
+                    {message.status && <span>{fmt(message.status)}</span>}
+                  </div>
                   <strong>{fmt(message.category)}</strong>
                   <p>{fmt(message.message)}</p>
                 </article>
@@ -540,12 +584,14 @@ export default function LivePage() {
             <div className="radio-stack">
               {radio.map((item, index) => {
                 const row = leaderboard.find((driver) => Number(driver.driver_number) === Number(item.driver_number));
+                const radioDriver = row || { driver_number: item.driver_number, driver: drivers.find((driver) => Number(driver.driver_number) === Number(item.driver_number)) || {} };
                 return (
                   <article key={`${item.date}-${item.driver_number}-${index}`}>
                     <div>
-                      <strong>{row ? driverName(row) : fmt(item.driver_number, "Radio")}</strong>
+                      <strong>{driverName(radioDriver)}</strong>
                       <span>{time(item.date)}</span>
                     </div>
+                    {item.message && <p>{fmt(item.message)}</p>}
                     <TeamRadioPlayer item={item} />
                   </article>
                 );
