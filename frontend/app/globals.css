@@ -2058,6 +2058,541 @@ body::before {
   }
 }
 
+/* Premium minimal visual pass */
+:root {
+  --bg: #050506;
+  --panel: rgba(16, 16, 18, .72);
+  --panel-2: rgba(22, 22, 25, .78);
+  --ink: #f7f3ec;
+  --soft: #c9c2b8;
+  --muted: #817b73;
+  --line: rgba(255,255,255,.105);
+  --line-2: rgba(255,255,255,.18);
+  --red: #e10600;
+  --red-2: #ff2a22;
+  --lime: #d7ff43;
+  --shadow: 0 18px 58px rgba(0,0,0,.36);
+}
+body {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.028), transparent 20rem),
+    linear-gradient(120deg, rgba(225,6,0,.08), transparent 34%),
+    #050506;
+  animation: none;
+}
+body::before {
+  opacity: .045;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.monaco-app {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.025), transparent 24rem),
+    #050506;
+}
+.monaco-app .card,
+.monaco-app .side-card,
+.monaco-app .prediction-card,
+.monaco-app .team,
+.monaco-schedule-row,
+.signal-card,
+.monaco-countdown,
+.race-weekend-heading,
+.monaco-schedule-status {
+  border-radius: 8px;
+  border-color: rgba(255,255,255,.095);
+  background-color: rgba(255,255,255,.034);
+  box-shadow: none;
+}
+.monaco-app .card,
+.monaco-countdown,
+.race-weekend-heading {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)),
+    rgba(8,8,10,.76);
+  backdrop-filter: blur(20px);
+}
+.monaco-nav {
+  min-height: 66px;
+  padding: 12px clamp(16px, 4vw, 58px);
+  background: rgba(5,5,7,.74);
+  border-bottom-color: rgba(255,255,255,.09);
+  box-shadow: none;
+}
+.monaco-logo {
+  width: 88px;
+  height: 34px;
+  border-color: rgba(225,6,0,.48);
+  background: rgba(225,6,0,.07);
+}
+.monaco-logo span {
+  font-size: 18px;
+}
+.monaco-links {
+  color: var(--soft);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: .08em;
+}
+.monaco-links a {
+  background-size: 0% 1px;
+  opacity: .82;
+}
+.monaco-links a:hover {
+  opacity: 1;
+  color: #fff;
+  background-size: 100% 1px;
+}
+.monaco-menu-button {
+  width: 46px;
+  height: 30px;
+}
+.monaco-menu-button i {
+  left: 8px;
+  width: 32px;
+  height: 2px;
+  background: rgba(255,255,255,.9);
+  transform: none;
+}
+.monaco-menu-button i:first-child { top: 10px; }
+.monaco-menu-button i:last-child { bottom: 10px; left: 8px; }
+.monaco-menu-button:hover i {
+  background: var(--red);
+  transform: translateX(3px);
+}
+
+.monaco-hero {
+  min-height: min(730px, calc(100vh - 12px));
+  border-bottom-color: rgba(255,255,255,.08);
+  background:
+    linear-gradient(90deg, rgba(5,5,6,.96), rgba(5,5,6,.54) 48%, rgba(5,5,6,.90)),
+    linear-gradient(180deg, rgba(255,255,255,.03), transparent 42%),
+    #070708;
+}
+.monaco-hero::before {
+  background:
+    linear-gradient(180deg, #050506 0%, transparent 22%, transparent 80%, #050506 100%),
+    linear-gradient(90deg, rgba(225,6,0,.16), transparent 32%, rgba(31,143,255,.08) 74%, transparent);
+}
+.monaco-hero::after {
+  top: 49%;
+  height: 1px;
+  opacity: .52;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.8), rgba(225,6,0,.9), transparent);
+  mix-blend-mode: normal;
+}
+.monaco-title-mask {
+  top: 24%;
+  opacity: .18;
+  -webkit-text-stroke-color: rgba(255,255,255,.16);
+  background: none;
+  animation: none;
+}
+.monaco-hero-media .hero-car {
+  right: -7vw;
+  bottom: 5vh;
+  width: min(790px, 62vw);
+  opacity: .38;
+  filter: saturate(1.05) contrast(1.02) drop-shadow(0 30px 46px rgba(0,0,0,.62));
+  animation: carGlide 7s ease-in-out infinite;
+}
+.speed-light {
+  height: 1px;
+  opacity: .72;
+  background: linear-gradient(90deg, transparent, rgba(225,6,0,.72), rgba(255,255,255,.86), transparent);
+}
+.monaco-hero-copy {
+  width: min(860px, 72vw);
+  padding: clamp(112px, 16vh, 168px) clamp(18px, 5vw, 72px) 214px;
+}
+.monaco-hero-copy .chips {
+  margin-bottom: 18px;
+}
+.monaco-hero-copy .chips span,
+.monaco-app .chips small,
+.monaco-app .chips span {
+  border-color: rgba(255,255,255,.11);
+  background: rgba(255,255,255,.045);
+  color: rgba(247,243,236,.78);
+}
+.monaco-hero-copy h1 {
+  max-width: 900px;
+  font-size: clamp(52px, 8.4vw, 112px);
+  line-height: .88;
+  font-weight: 920;
+}
+.monaco-hero-copy p {
+  max-width: 650px;
+  color: rgba(247,243,236,.72);
+  line-height: 1.58;
+}
+.monaco-hero-actions a {
+  min-height: 40px;
+  border-radius: 999px;
+  border-color: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.055);
+  transform: none;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.monaco-hero-actions a > * {
+  transform: none;
+}
+.monaco-hero-actions a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(225,6,0,.58);
+  background: rgba(225,6,0,.13);
+}
+.monaco-countdown {
+  padding: 20px;
+  background: rgba(9,9,11,.72);
+}
+.monaco-hero-stats div,
+.countdown div,
+.mini-grid div {
+  border-color: rgba(255,255,255,.09);
+  background: rgba(255,255,255,.04);
+}
+.hero-stats span,
+.countdown span,
+.mini-grid span,
+.section-head h2 {
+  letter-spacing: .02em;
+}
+
+.race-weekend-panel,
+.monaco-grid-main,
+.monaco-support-grid,
+.briefing,
+.monaco-app footer {
+  width: min(1240px, calc(100% - 36px));
+}
+.race-weekend-panel {
+  margin-top: 34px;
+  gap: 16px;
+}
+.race-weekend-heading {
+  min-height: 240px;
+  padding: 26px;
+}
+.race-weekend-heading::after {
+  opacity: .72;
+  color: rgba(255,255,255,.028);
+}
+.race-weekend-heading span,
+.schedule-action {
+  color: rgba(225,6,0,.92);
+}
+.race-weekend-heading h2 {
+  font-size: clamp(31px, 3.6vw, 56px);
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.monaco-schedule-row {
+  min-height: 72px;
+  background: rgba(255,255,255,.032);
+}
+.monaco-schedule-row:hover,
+.monaco-schedule-row.active {
+  transform: translateX(3px);
+  border-color: rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06);
+}
+.monaco-schedule-row.active {
+  box-shadow: inset 3px 0 0 var(--red);
+}
+.schedule-date {
+  background: rgba(255,255,255,.92);
+}
+.signal-strip {
+  margin: 30px 0;
+  border-color: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.018);
+}
+.signal-track {
+  padding: 14px 18px;
+}
+.signal-card {
+  width: 244px;
+  min-height: 118px;
+  padding: 18px;
+  background: rgba(255,255,255,.025);
+}
+.signal-card strong {
+  font-size: 19px;
+}
+
+.monaco-grid-main .prediction-section .section-head {
+  padding: 22px 24px 6px;
+}
+.monaco-app .prediction-card {
+  min-height: 118px;
+  grid-template-columns: 72px minmax(0, 1fr) 148px;
+  background: rgba(255,255,255,.026);
+}
+.monaco-app .prediction-card::before {
+  width: 2px;
+  opacity: .82;
+}
+.monaco-app .prediction-card.leader {
+  min-height: 152px;
+  background:
+    linear-gradient(90deg, rgba(225,6,0,.13), transparent 42%),
+    rgba(255,255,255,.03);
+}
+.monaco-app .prediction-card:hover {
+  transform: translateX(3px);
+  background: rgba(255,255,255,.047);
+}
+.monaco-app .rank {
+  color: #08080b;
+  font-size: clamp(39px, 3.7vw, 54px);
+  text-shadow:
+    -1.3px -1.3px 0 rgba(255,255,255,.94),
+    1.3px -1.3px 0 rgba(255,255,255,.94),
+    -1.3px 1.3px 0 rgba(255,255,255,.94),
+    1.3px 1.3px 0 rgba(255,255,255,.94),
+    0 0 10px rgba(255,255,255,.56);
+}
+.monaco-app .prediction-copy strong {
+  font-size: clamp(22px, 1.7vw, 29px);
+  font-weight: 900;
+}
+.monaco-app .prediction-copy p {
+  color: rgba(247,243,236,.72);
+}
+.monaco-app .driver-art img,
+.monaco-app .driver-fallback {
+  max-height: 122px;
+  filter: drop-shadow(0 16px 18px rgba(0,0,0,.48));
+}
+.track-path {
+  border-color: rgba(255,255,255,.16);
+  border-left-color: rgba(225,6,0,.86);
+  border-bottom-color: rgba(31,143,255,.52);
+  box-shadow:
+    0 0 0 16px rgba(255,255,255,.018),
+    0 20px 46px rgba(0,0,0,.36),
+    inset 0 0 26px rgba(225,6,0,.08);
+}
+.note {
+  border-color: rgba(255,255,255,.1);
+  background: rgba(255,255,255,.035);
+  color: rgba(247,243,236,.72);
+}
+.team-fit-card .team,
+.archive-list button {
+  background: rgba(255,255,255,.026);
+}
+.team-fit-card .team:hover,
+.archive-list button:hover {
+  background: rgba(255,255,255,.055);
+}
+.archive-list button.active {
+  border-color: rgba(225,6,0,.52);
+  background: rgba(225,6,0,.10);
+}
+.briefing-text {
+  max-width: 920px;
+  color: rgba(247,243,236,.74);
+}
+.briefing-text h1,
+.briefing-text h2 {
+  color: var(--ink);
+}
+
+.f1dash-shell {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.026), transparent 260px),
+    linear-gradient(115deg, rgba(225,6,0,.07), transparent 36%),
+    #050506;
+}
+.f1dash-sidebar {
+  background: rgba(5,5,7,.76);
+  border-right-color: rgba(255,255,255,.09);
+}
+.side-logo {
+  background: rgba(225,6,0,.11);
+  border: 1px solid rgba(225,6,0,.46);
+}
+.f1dash-sidebar a {
+  border-radius: 8px;
+}
+.f1dash-sidebar a:hover {
+  background: rgba(255,255,255,.055);
+}
+.f1dash-topbar,
+.dash-card,
+.dash-settings-panel {
+  border-radius: 8px;
+  border-color: rgba(255,255,255,.095);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.024)),
+    rgba(9,9,11,.78);
+  box-shadow: none;
+}
+.f1dash-topbar::after {
+  height: 1px;
+  opacity: .58;
+}
+.f1dash-topbar p {
+  color: rgba(247,243,236,.7);
+}
+.dash-btn,
+.dash-status-pill,
+.sync-strip span,
+.race-control-meta time,
+.race-control-meta span,
+.radio-player button,
+.radio-player a {
+  border-color: rgba(255,255,255,.105);
+  background: rgba(255,255,255,.04);
+}
+.dash-btn:hover,
+.dash-btn.active {
+  border-color: rgba(225,6,0,.5);
+  background: rgba(225,6,0,.11);
+}
+.dash-row,
+.compact-stack div,
+.sector-list div,
+.fact-grid div,
+.track-status,
+.race-control-stack article,
+.radio-stack article {
+  border-color: rgba(255,255,255,.09);
+  background: rgba(255,255,255,.028);
+}
+.dash-row:hover,
+.race-control-stack article:hover,
+.radio-stack article:hover {
+  background: rgba(255,255,255,.052);
+  border-color: rgba(255,255,255,.18);
+}
+
+@keyframes carGlide {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-10px, -5px, 0); }
+}
+
+@media (max-width: 1050px) {
+  .monaco-hero-copy {
+    padding-bottom: 34px;
+  }
+  .monaco-countdown,
+  .monaco-hero-stats {
+    width: min(100% - 36px, 740px);
+  }
+}
+
+@media (max-width: 720px) {
+  .monaco-nav {
+    min-height: 64px;
+    padding: 10px 12px;
+  }
+  .monaco-logo {
+    width: 76px;
+    height: 32px;
+  }
+  .monaco-links {
+    gap: 16px;
+    padding-top: 2px;
+    font-size: 11px;
+  }
+  .monaco-menu-button i {
+    width: 30px;
+  }
+  .monaco-hero-copy {
+    padding: 82px 18px 24px;
+  }
+  .monaco-title-mask {
+    top: 13%;
+    opacity: .14;
+    font-size: clamp(60px, 25vw, 120px);
+  }
+  .monaco-hero-media .hero-car {
+    right: -30vw;
+    bottom: 20vh;
+    width: 112vw;
+    opacity: .21;
+  }
+  .monaco-hero-copy h1 {
+    max-width: 10ch;
+    font-size: clamp(39px, 12.8vw, 58px);
+  }
+  .monaco-hero-copy p {
+    width: min(100%, 34rem);
+    max-width: calc(100vw - 36px);
+    color: rgba(247,243,236,.70);
+  }
+  .monaco-countdown,
+  .monaco-hero-stats,
+  .race-weekend-panel,
+  .monaco-grid-main,
+  .monaco-support-grid,
+  .briefing,
+  .monaco-app footer {
+    width: calc(100% - 20px);
+  }
+  .monaco-app .prediction-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    min-height: 132px;
+    padding: 18px 14px 18px 8px;
+  }
+  .race-weekend-heading h2 {
+    max-width: 13ch;
+    font-size: clamp(27px, 7.4vw, 38px);
+    line-height: 1;
+  }
+  .monaco-app .prediction-card.leader {
+    min-height: 142px;
+  }
+  .monaco-app .rank {
+    width: 48px;
+    height: 52px;
+    margin: 2px 0 0 6px;
+    font-size: 39px;
+  }
+  .monaco-app .prediction-copy {
+    padding: 0 40px 0 0;
+  }
+  .monaco-app .driver-art {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 92px;
+    height: 112px;
+    opacity: .25;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .race-weekend-heading {
+    padding: 18px;
+  }
+  .race-weekend-heading h2 {
+    max-width: 12ch;
+    font-size: clamp(26px, 7.8vw, 36px);
+    line-height: 1;
+  }
+  .monaco-app .prediction-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+  .monaco-app .prediction-copy strong {
+    font-size: clamp(19px, 5.4vw, 24px);
+  }
+  .monaco-app .prediction-copy {
+    padding-right: 30px;
+  }
+  .signal-card {
+    width: 184px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;
