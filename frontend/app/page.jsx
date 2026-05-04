@@ -401,18 +401,375 @@ function ModelSignalMarquee({ predictions, profile, modelMetrics }) {
   );
 }
 
-function CircuitIntelCard({ profile, weather }) {
-  const circuitName = String(profile?.circuit || profile?.race_name || "").toLowerCase();
+const CIRCUIT_REGISTRY = {
+  gilles_villeneuve: {
+    aliases: ["gilles", "villeneuve", "canadian", "canada", "montreal", "circuit gilles villeneuve"],
+    name: "Circuit Gilles Villeneuve",
+    countrySlug: "canada",
+    officialPage: "https://www.formula1.com/en/racing/2026/canada",
+    raceLaps: 70,
+    sprintLaps: null,
+    lengthKm: 4.361,
+    raceDistanceKm: 305.27,
+    viewBox: "0 0 900 520",
+    path:
+      "M126 330 C114 280 145 242 210 226 C286 207 363 193 433 181 C510 168 587 162 648 184 C707 205 746 252 751 303 C756 356 720 394 654 414 C576 438 455 434 330 417 C221 402 144 370 126 330 Z",
+    turns: [
+      [130, 326, "T1"],
+      [170, 246, "T5"],
+      [207, 226, "T7"],
+      [492, 173, "T9"],
+      [724, 254, "T12"],
+      [656, 414, "T14"],
+    ],
+  },
 
-  const isCanada =
-    circuitName.includes("gilles") ||
-    circuitName.includes("villeneuve") ||
-    circuitName.includes("canada") ||
-    circuitName.includes("canadian");
+  interlagos: {
+    aliases: ["interlagos", "sao paulo", "são paulo", "brazil", "brasil", "autodromo jose carlos pace", "autódromo josé carlos pace"],
+    name: "Autódromo José Carlos Pace",
+    countrySlug: "brazil",
+    officialPage: "https://www.formula1.com/en/racing/2026/brazil",
+    raceLaps: 71,
+    sprintLaps: null,
+    lengthKm: 4.309,
+    raceDistanceKm: 305.879,
+    viewBox: "0 0 900 520",
+    path:
+      "M138 352 C118 297 143 245 196 224 C246 205 300 226 333 255 C372 291 421 283 449 241 C486 187 548 160 617 179 C691 200 742 256 735 315 C728 371 658 415 560 414 C475 413 416 389 356 399 C273 413 166 429 138 352 Z",
+    turns: [
+      [148, 345, "S/F"],
+      [198, 224, "Senna S"],
+      [333, 255, "T4"],
+      [448, 241, "Ferradura"],
+      [617, 179, "T8"],
+      [735, 315, "Juncao"],
+      [560, 414, "Subida"],
+    ],
+  },
 
-  const sourceLabel = isCanada
-    ? "Using 2025 DRS zones. No confirmed 2026 DRS-zone update found yet."
-    : "Circuit zone map unavailable. Showing generated circuit model.";
+  monaco: {
+    aliases: ["monaco", "monte carlo", "monte-carlo"],
+    name: "Circuit de Monaco",
+    countrySlug: "monaco",
+    officialPage: "https://www.formula1.com/en/racing/2026/monaco",
+    raceLaps: 78,
+    sprintLaps: null,
+    lengthKm: 3.337,
+    raceDistanceKm: 260.286,
+    viewBox: "0 0 900 520",
+    path:
+      "M130 345 C160 250 230 208 318 235 C370 251 384 186 442 160 C520 126 618 166 636 238 C652 300 575 327 522 354 C450 391 365 430 264 408 C199 394 145 386 130 345 Z",
+    turns: [
+      [146, 333, "T1"],
+      [302, 236, "Casino"],
+      [438, 163, "Mirabeau"],
+      [636, 238, "Tunnel"],
+      [520, 355, "Tabac"],
+      [263, 408, "Rascasse"],
+    ],
+  },
+
+  silverstone: {
+    aliases: ["silverstone", "british", "great britain", "uk", "united kingdom"],
+    name: "Silverstone Circuit",
+    countrySlug: "great-britain",
+    officialPage: "https://www.formula1.com/en/racing/2026/great-britain",
+    raceLaps: 52,
+    sprintLaps: null,
+    lengthKm: 5.891,
+    raceDistanceKm: 306.198,
+    viewBox: "0 0 900 520",
+    path:
+      "M115 330 L225 242 C295 186 407 182 496 202 L705 250 C764 264 780 323 725 356 L552 438 C486 470 373 445 324 390 L270 330 C242 300 190 304 115 330 Z",
+    turns: [
+      [125, 327, "Abbey"],
+      [229, 243, "Village"],
+      [495, 203, "Copse"],
+      [704, 250, "Maggotts"],
+      [552, 438, "Stowe"],
+      [323, 389, "Club"],
+    ],
+  },
+
+  monza: {
+    aliases: ["monza", "italian", "italy", "autodromo nazionale monza"],
+    name: "Autodromo Nazionale Monza",
+    countrySlug: "italy",
+    officialPage: "https://www.formula1.com/en/racing/2026/italy",
+    raceLaps: 53,
+    sprintLaps: null,
+    lengthKm: 5.793,
+    raceDistanceKm: 306.72,
+    viewBox: "0 0 900 520",
+    path:
+      "M145 375 L280 178 C318 122 407 111 466 164 L712 379 C760 420 723 476 657 450 L495 387 C430 362 366 388 297 420 C235 449 122 421 145 375 Z",
+    turns: [
+      [276, 181, "T1"],
+      [464, 165, "T4"],
+      [607, 289, "Ascari"],
+      [710, 380, "Parabolica"],
+      [494, 388, "Straight"],
+      [146, 375, "Start"],
+    ],
+  },
+
+  spa: {
+    aliases: ["spa", "belgian", "belgium", "spa-francorchamps", "francorchamps"],
+    name: "Circuit de Spa-Francorchamps",
+    countrySlug: "belgium",
+    officialPage: "https://www.formula1.com/en/racing/2026/belgium",
+    raceLaps: 44,
+    sprintLaps: null,
+    lengthKm: 7.004,
+    raceDistanceKm: 308.052,
+    viewBox: "0 0 900 520",
+    path:
+      "M110 362 C166 253 252 185 350 179 C437 174 464 239 532 230 C614 220 664 154 735 194 C788 224 776 298 713 337 C639 383 554 376 492 421 C433 464 335 458 280 400 C235 353 168 390 110 362 Z",
+    turns: [
+      [116, 360, "La Source"],
+      [280, 400, "Eau Rouge"],
+      [350, 179, "Kemmel"],
+      [532, 230, "Bruxelles"],
+      [713, 337, "Stavelot"],
+      [492, 421, "Bus Stop"],
+    ],
+  },
+
+  suzuka: {
+    aliases: ["suzuka", "japanese", "japan"],
+    name: "Suzuka Circuit",
+    countrySlug: "japan",
+    officialPage: "https://www.formula1.com/en/racing/2026/japan",
+    raceLaps: 53,
+    sprintLaps: null,
+    lengthKm: 5.807,
+    raceDistanceKm: 307.471,
+    viewBox: "0 0 900 520",
+    path:
+      "M130 310 C170 210 284 170 384 204 C462 231 486 302 555 302 C633 302 697 238 745 280 C788 318 742 394 650 407 C556 420 506 372 426 367 C333 361 262 420 183 390 C142 374 116 345 130 310 Z",
+    turns: [
+      [135, 310, "T1"],
+      [384, 204, "S Curves"],
+      [555, 302, "Degner"],
+      [745, 280, "130R"],
+      [650, 407, "Chicane"],
+      [426, 367, "S/F"],
+    ],
+  },
+
+  yas_marina: {
+    aliases: ["yas marina", "abu dhabi", "united arab emirates", "uae"],
+    name: "Yas Marina Circuit",
+    countrySlug: "abu-dhabi",
+    officialPage: "https://www.formula1.com/en/racing/2026/abu-dhabi",
+    raceLaps: 58,
+    sprintLaps: null,
+    lengthKm: 5.281,
+    raceDistanceKm: 306.183,
+    viewBox: "0 0 900 520",
+    path:
+      "M150 360 L306 188 C354 136 438 142 475 200 L540 302 L730 316 C776 320 786 378 742 402 L562 430 C485 442 423 411 386 350 L330 258 L206 390 C184 414 130 391 150 360 Z",
+    turns: [
+      [150, 360, "T1"],
+      [306, 188, "T5"],
+      [540, 302, "T9"],
+      [730, 316, "T12"],
+      [562, 430, "T16"],
+      [386, 350, "T1"],
+    ],
+  },
+};
+
+function getCircuitMap(profile) {
+  const lookupText = key(
+    [
+      profile?.circuit,
+      profile?.race_name,
+      profile?.event_title,
+      profile?.country,
+      profile?.city,
+      profile?.circuit_key,
+      profile?.jolpica_race?.raceName,
+      profile?.jolpica_race?.Circuit?.circuitName,
+      profile?.jolpica_race?.Circuit?.circuitId,
+      profile?.jolpica_race?.Circuit?.Location?.country,
+    ]
+      .filter(Boolean)
+      .join(" ")
+  );
+
+  return (
+    Object.values(CIRCUIT_REGISTRY).find((circuit) =>
+      circuit.aliases.some((alias) => lookupText.includes(key(alias)))
+    ) || null
+  );
+}
+
+function sessionLaps(profile, circuitMap, selectedTarget) {
+  const targetType = key(
+    selectedTarget?.target_type ||
+      profile?.prediction_model?.output_target_type ||
+      profile?.output_target_type ||
+      profile?.event_title ||
+      profile?.title
+  );
+
+  const explicitSprint =
+    selectedTarget?.sprint_laps ??
+    profile?.sprint_laps ??
+    profile?.weekend?.sprint_laps ??
+    profile?.race_info?.sprint_laps;
+
+  const explicitRace =
+    selectedTarget?.race_laps ??
+    profile?.race_laps ??
+    profile?.laps ??
+    profile?.weekend?.race_laps ??
+    profile?.race_info?.race_laps;
+
+  const isSprint = targetType.includes("sprint");
+
+  if (isSprint) {
+    return {
+      label: "Sprint laps",
+      value: explicitSprint ?? circuitMap?.sprintLaps ?? "Not confirmed",
+      note:
+        explicitSprint || circuitMap?.sprintLaps
+          ? "Sprint lap count from generated data or circuit registry."
+          : "Sprint lap count not present in generated data yet.",
+    };
+  }
+
+  return {
+    label: "Race laps",
+    value: explicitRace ?? circuitMap?.raceLaps ?? "Not confirmed",
+    note:
+      explicitRace || circuitMap?.raceLaps
+        ? "Race lap count from generated data or circuit registry."
+        : "Race lap count not present in generated data yet.",
+  };
+}
+
+function CircuitShapeMap({ circuitMap }) {
+  if (!circuitMap) {
+    return (
+      <div className="grid min-h-[330px] place-items-center">
+        <div className="text-center">
+          <div className="mx-auto mb-5 h-40 w-72 rounded-[50%] border-4 border-red-600/80 shadow-[0_0_60px_rgba(225,6,0,0.25)]" />
+          <p className="text-sm text-zinc-400">
+            Exact circuit SVG is not mapped yet for this venue.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <svg
+      viewBox={circuitMap.viewBox}
+      className="h-[360px] w-full"
+      role="img"
+      aria-label={`${circuitMap.name} circuit map`}
+    >
+      <defs>
+        <filter id="trackGlowPlain" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="blur" />
+          <feColorMatrix
+            in="blur"
+            type="matrix"
+            values="1 0 0 0 0.85  0 1 0 0 0.06  0 0 1 0 0.04  0 0 0 0.75 0"
+          />
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <linearGradient id="trackBasePlain" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#28282d" />
+          <stop offset="45%" stopColor="#8b8b92" />
+          <stop offset="100%" stopColor="#2f3036" />
+        </linearGradient>
+
+        <linearGradient id="trackHighlightPlain" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#e10600" />
+          <stop offset="50%" stopColor="#f5efe7" />
+          <stop offset="100%" stopColor="#c1e328" />
+        </linearGradient>
+      </defs>
+
+      <rect width="900" height="520" rx="28" fill="#0a0a0c" />
+
+      <path
+        d={circuitMap.path}
+        fill="none"
+        stroke="rgba(255,255,255,0.05)"
+        strokeWidth="62"
+      />
+
+      <path
+        d={circuitMap.path}
+        fill="none"
+        stroke="url(#trackBasePlain)"
+        strokeWidth="20"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        filter="url(#trackGlowPlain)"
+      />
+
+      <path
+        d={circuitMap.path}
+        fill="none"
+        stroke="url(#trackHighlightPlain)"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.9"
+      />
+
+      {circuitMap.turns.map(([x, y, label]) => (
+        <g key={label}>
+          <circle
+            cx={x}
+            cy={y}
+            r="16"
+            fill="rgba(255,255,255,0.08)"
+            stroke="rgba(255,255,255,0.22)"
+          />
+          <text
+            x={x}
+            y={y + 5}
+            textAnchor="middle"
+            fontSize="13"
+            fontWeight="800"
+            fill="#f5efe7"
+          >
+            {label}
+          </text>
+        </g>
+      ))}
+
+      <g>
+        <rect
+          x="36"
+          y="30"
+          width={Math.min(380, 100 + circuitMap.name.length * 8)}
+          height="38"
+          rx="19"
+          fill="rgba(225,6,0,0.16)"
+          stroke="rgba(225,6,0,0.45)"
+        />
+        <text x="56" y="55" fill="#f5efe7" fontSize="14" fontWeight="800">
+          {circuitMap.name}
+        </text>
+      </g>
+    </svg>
+  );
+}
+
+function CircuitIntelCard({ profile, weather, selectedTarget }) {
+  const circuitMap = getCircuitMap(profile);
+  const lapInfo = sessionLaps(profile, circuitMap, selectedTarget);
 
   return (
     <section className="rounded-[2rem] border border-white/10 bg-[#111113] p-6 shadow-2xl">
@@ -422,7 +779,7 @@ function CircuitIntelCard({ profile, weather }) {
             Circuit Intel
           </h2>
           <p className="mt-1 text-sm text-zinc-400">
-            {profile?.circuit || "Circuit data"}
+            {profile?.circuit || circuitMap?.name || "Circuit data"}
           </p>
         </div>
 
@@ -432,220 +789,49 @@ function CircuitIntelCard({ profile, weather }) {
       </div>
 
       <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-black/40 p-4">
-        {isCanada ? (
-          <div>
-            <svg
-              viewBox="0 0 900 520"
-              className="h-[360px] w-full"
-              role="img"
-              aria-label="Circuit Gilles Villeneuve DRS zone map"
-            >
-              <defs>
-                <filter id="trackGlow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="6" result="blur" />
-                  <feColorMatrix
-                    in="blur"
-                    type="matrix"
-                    values="1 0 0 0 0.85  0 1 0 0 0.1  0 0 1 0 0.08  0 0 0 0.8 0"
-                  />
-                  <feMerge>
-                    <feMergeNode />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-
-                <linearGradient id="trackBase" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3a3a3f" />
-                  <stop offset="50%" stopColor="#77777c" />
-                  <stop offset="100%" stopColor="#2d2d31" />
-                </linearGradient>
-
-                <linearGradient id="drsRed" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ff1e1e" />
-                  <stop offset="100%" stopColor="#ff7a18" />
-                </linearGradient>
-
-                <linearGradient id="drsBlue" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1685ff" />
-                  <stop offset="100%" stopColor="#67e8f9" />
-                </linearGradient>
-
-                <linearGradient id="drsLime" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#c1e328" />
-                  <stop offset="100%" stopColor="#22c55e" />
-                </linearGradient>
-              </defs>
-
-              <rect width="900" height="520" rx="28" fill="#0a0a0c" />
-
-              {/* Background glow */}
-              <path
-                d="M118 326 C110 278 148 238 212 224 L356 194 C442 176 520 160 607 177 C678 191 726 225 746 272 C763 311 747 356 701 383 C642 418 548 426 437 420 C313 413 213 391 157 364 C135 353 123 341 118 326 Z"
-                fill="none"
-                stroke="rgba(255,255,255,0.06)"
-                strokeWidth="54"
-              />
-
-              {/* Approximate Circuit Gilles Villeneuve layout */}
-              <path
-                d="M125 328 C117 281 150 246 211 229 L354 198 C445 178 523 163 607 178 C677 190 724 224 743 268 C760 306 746 349 704 378 C646 418 547 430 438 423 C315 416 214 394 158 365 C137 354 126 341 125 328 Z"
-                fill="none"
-                stroke="url(#trackBase)"
-                strokeWidth="16"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-
-              {/* DRS Zone 1, after T7 */}
-              <path
-                d="M126 328 C118 288 144 255 192 237"
-                fill="none"
-                stroke="url(#drsRed)"
-                strokeWidth="18"
-                strokeLinecap="round"
-                filter="url(#trackGlow)"
-              />
-
-              {/* DRS Zone 2, before T12 */}
-              <path
-                d="M520 163 C580 165 656 184 708 229 C732 250 747 277 747 303"
-                fill="none"
-                stroke="url(#drsBlue)"
-                strokeWidth="18"
-                strokeLinecap="round"
-                filter="url(#trackGlow)"
-              />
-
-              {/* DRS Zone 3, start/finish straight after T14 */}
-              <path
-                d="M705 378 C642 416 548 429 438 423 C328 417 236 400 175 374"
-                fill="none"
-                stroke="url(#drsLime)"
-                strokeWidth="18"
-                strokeLinecap="round"
-                filter="url(#trackGlow)"
-              />
-
-              {/* Detection points */}
-              <circle cx="206" cy="231" r="8" fill="#ffffff" />
-              <circle cx="492" cy="169" r="8" fill="#ffffff" />
-
-              {/* Turn labels */}
-              {[
-                [139, 323, "T1"],
-                [171, 250, "T5"],
-                [209, 231, "T7"],
-                [492, 169, "T9"],
-                [720, 235, "T12"],
-                [710, 378, "T14"],
-              ].map(([x, y, label]) => (
-                <g key={label}>
-                  <circle cx={x} cy={y} r="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" />
-                  <text
-                    x={x}
-                    y={y + 5}
-                    textAnchor="middle"
-                    fontSize="13"
-                    fontWeight="800"
-                    fill="#f5efe7"
-                  >
-                    {label}
-                  </text>
-                </g>
-              ))}
-
-              {/* Labels */}
-              <g>
-                <rect x="36" y="30" width="230" height="38" rx="19" fill="rgba(225,6,0,0.16)" stroke="rgba(225,6,0,0.45)" />
-                <text x="56" y="55" fill="#f5efe7" fontSize="14" fontWeight="800">
-                  Circuit Gilles Villeneuve
-                </text>
-              </g>
-
-              <g>
-                <rect x="48" y="410" width="190" height="34" rx="17" fill="rgba(255,30,30,0.14)" />
-                <circle cx="66" cy="427" r="6" fill="#ff1e1e" />
-                <text x="82" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
-                  DRS Zone 1
-                </text>
-              </g>
-
-              <g>
-                <rect x="258" y="410" width="190" height="34" rx="17" fill="rgba(22,133,255,0.14)" />
-                <circle cx="276" cy="427" r="6" fill="#1685ff" />
-                <text x="292" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
-                  DRS Zone 2
-                </text>
-              </g>
-
-              <g>
-                <rect x="468" y="410" width="190" height="34" rx="17" fill="rgba(193,227,40,0.14)" />
-                <circle cx="486" cy="427" r="6" fill="#c1e328" />
-                <text x="502" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
-                  DRS Zone 3
-                </text>
-              </g>
-
-              <g>
-                <rect x="678" y="410" width="160" height="34" rx="17" fill="rgba(255,255,255,0.08)" />
-                <circle cx="696" cy="427" r="6" fill="#ffffff" />
-                <text x="712" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
-                  Detection
-                </text>
-              </g>
-            </svg>
-
-            <div className="mt-4 grid gap-3 md:grid-cols-3">
-              <div className="rounded-2xl border border-red-500/25 bg-red-500/10 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-300">
-                  DRS Zone 1
-                </p>
-                <p className="mt-2 text-sm text-zinc-300">
-                  Detection 15 m after Turn 5. Activation 95 m after Turn 7.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-blue-500/25 bg-blue-500/10 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-300">
-                  DRS Zone 2
-                </p>
-                <p className="mt-2 text-sm text-zinc-300">
-                  Detection 110 m after Turn 9. Activation 155 m before Turn 12.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-lime-400/25 bg-lime-400/10 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-lime-300">
-                  DRS Zone 3
-                </p>
-                <p className="mt-2 text-sm text-zinc-300">
-                  Uses the Turn 9 detection point. Activation 70 m after Turn 14.
-                </p>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="grid min-h-[330px] place-items-center">
-            <div className="text-center">
-              <div className="mx-auto mb-5 h-40 w-72 rounded-[50%] border-4 border-red-600/80 shadow-[0_0_60px_rgba(225,6,0,0.25)]" />
-              <p className="text-sm text-zinc-400">
-                Exact circuit SVG not mapped yet for this venue.
-              </p>
-            </div>
-          </div>
-        )}
+        <CircuitShapeMap circuitMap={circuitMap} />
 
         <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c1e328]">
-            Zone source
+            Circuit image
           </p>
           <p className="mt-2 text-sm leading-6 text-zinc-300">
-            {sourceLabel}
+            Showing the mapped circuit shape only. Zone markings are intentionally removed.
           </p>
+
+          {circuitMap?.officialPage && (
+            <a
+              href={circuitMap.officialPage}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-zinc-200 hover:bg-white/10"
+            >
+              Open official F1 race page
+            </a>
+          )}
         </div>
       </div>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
+        <div className="rounded-2xl border border-lime-400/20 bg-lime-400/10 p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-lime-300">
+            {lapInfo.label}
+          </p>
+          <p className="mt-2 text-3xl font-black text-[#f5efe7]">
+            {lapInfo.value}
+          </p>
+          <p className="mt-2 text-xs leading-5 text-zinc-400">{lapInfo.note}</p>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+            Circuit length
+          </p>
+          <p className="mt-2 text-lg font-black text-[#f5efe7]">
+            {circuitMap?.lengthKm ? `${circuitMap.lengthKm} km` : "-"}
+          </p>
+        </div>
+
         <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
             Car trait
@@ -691,6 +877,7 @@ function CircuitIntelCard({ profile, weather }) {
     </section>
   );
 }
+
 
 function DriverArt({ driver }) {
   const candidates = driverImageCandidates(driver);
@@ -915,7 +1102,7 @@ export default function Home() {
         </article>
 
         <aside className="stack">
-          <CircuitIntelCard profile={profile} weather={weather} />
+          <CircuitIntelCard profile={profile} weather={weather} selectedTarget={selectedTarget} />
 
           <article className="card">
             <div className="section-head"><h2>Weather</h2><Flag size={18} /></div>
