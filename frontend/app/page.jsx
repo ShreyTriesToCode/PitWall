@@ -402,23 +402,293 @@ function ModelSignalMarquee({ predictions, profile, modelMetrics }) {
 }
 
 function CircuitIntelCard({ profile, weather }) {
+  const circuitName = String(profile?.circuit || profile?.race_name || "").toLowerCase();
+
+  const isCanada =
+    circuitName.includes("gilles") ||
+    circuitName.includes("villeneuve") ||
+    circuitName.includes("canada") ||
+    circuitName.includes("canadian");
+
+  const sourceLabel = isCanada
+    ? "Using 2025 DRS zones. No confirmed 2026 DRS-zone update found yet."
+    : "Circuit zone map unavailable. Showing generated circuit model.";
+
   return (
-    <article className="card circuit-card" id="circuit">
-      <div className="section-head"><h2>Circuit Intel</h2><Map size={18} /></div>
-      <div className="track-orbit" aria-hidden="true">
-        <span className="track-path" />
-        <i className="track-dot one" />
-        <i className="track-dot two" />
-        <i className="track-dot three" />
+    <section className="rounded-[2rem] border border-white/10 bg-[#111113] p-6 shadow-2xl">
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <div>
+          <h2 className="text-3xl font-black tracking-tight text-[#f5efe7]">
+            Circuit Intel
+          </h2>
+          <p className="mt-1 text-sm text-zinc-400">
+            {profile?.circuit || "Circuit data"}
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 text-zinc-200">
+          <Map size={26} />
+        </div>
       </div>
-      <div className="fact"><span>Car trait</span><strong>{profile.car_trait || "-"}</strong></div>
-      <div className="fact"><span>Speed profile</span><strong>{profile.speed_profile || "-"}</strong></div>
-      <div className="fact"><span>Overtaking</span><strong>{profile.overtaking || "-"}</strong></div>
-      <div className="bar"><i style={{ "--value": `${level(profile.overtaking)}%` }} /></div>
-      <div className="fact"><span>Tyre stress</span><strong>{profile.tyre_stress || "-"}</strong></div>
-      <div className="bar"><i style={{ "--value": `${level(profile.tyre_stress)}%` }} /></div>
-      <p className="note">{weather.impact || "Weather and tyre effects update after the next workflow run."}</p>
-    </article>
+
+      <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-black/40 p-4">
+        {isCanada ? (
+          <div>
+            <svg
+              viewBox="0 0 900 520"
+              className="h-[360px] w-full"
+              role="img"
+              aria-label="Circuit Gilles Villeneuve DRS zone map"
+            >
+              <defs>
+                <filter id="trackGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feColorMatrix
+                    in="blur"
+                    type="matrix"
+                    values="1 0 0 0 0.85  0 1 0 0 0.1  0 0 1 0 0.08  0 0 0 0.8 0"
+                  />
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+
+                <linearGradient id="trackBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3a3a3f" />
+                  <stop offset="50%" stopColor="#77777c" />
+                  <stop offset="100%" stopColor="#2d2d31" />
+                </linearGradient>
+
+                <linearGradient id="drsRed" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#ff1e1e" />
+                  <stop offset="100%" stopColor="#ff7a18" />
+                </linearGradient>
+
+                <linearGradient id="drsBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#1685ff" />
+                  <stop offset="100%" stopColor="#67e8f9" />
+                </linearGradient>
+
+                <linearGradient id="drsLime" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#c1e328" />
+                  <stop offset="100%" stopColor="#22c55e" />
+                </linearGradient>
+              </defs>
+
+              <rect width="900" height="520" rx="28" fill="#0a0a0c" />
+
+              {/* Background glow */}
+              <path
+                d="M118 326 C110 278 148 238 212 224 L356 194 C442 176 520 160 607 177 C678 191 726 225 746 272 C763 311 747 356 701 383 C642 418 548 426 437 420 C313 413 213 391 157 364 C135 353 123 341 118 326 Z"
+                fill="none"
+                stroke="rgba(255,255,255,0.06)"
+                strokeWidth="54"
+              />
+
+              {/* Approximate Circuit Gilles Villeneuve layout */}
+              <path
+                d="M125 328 C117 281 150 246 211 229 L354 198 C445 178 523 163 607 178 C677 190 724 224 743 268 C760 306 746 349 704 378 C646 418 547 430 438 423 C315 416 214 394 158 365 C137 354 126 341 125 328 Z"
+                fill="none"
+                stroke="url(#trackBase)"
+                strokeWidth="16"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+
+              {/* DRS Zone 1, after T7 */}
+              <path
+                d="M126 328 C118 288 144 255 192 237"
+                fill="none"
+                stroke="url(#drsRed)"
+                strokeWidth="18"
+                strokeLinecap="round"
+                filter="url(#trackGlow)"
+              />
+
+              {/* DRS Zone 2, before T12 */}
+              <path
+                d="M520 163 C580 165 656 184 708 229 C732 250 747 277 747 303"
+                fill="none"
+                stroke="url(#drsBlue)"
+                strokeWidth="18"
+                strokeLinecap="round"
+                filter="url(#trackGlow)"
+              />
+
+              {/* DRS Zone 3, start/finish straight after T14 */}
+              <path
+                d="M705 378 C642 416 548 429 438 423 C328 417 236 400 175 374"
+                fill="none"
+                stroke="url(#drsLime)"
+                strokeWidth="18"
+                strokeLinecap="round"
+                filter="url(#trackGlow)"
+              />
+
+              {/* Detection points */}
+              <circle cx="206" cy="231" r="8" fill="#ffffff" />
+              <circle cx="492" cy="169" r="8" fill="#ffffff" />
+
+              {/* Turn labels */}
+              {[
+                [139, 323, "T1"],
+                [171, 250, "T5"],
+                [209, 231, "T7"],
+                [492, 169, "T9"],
+                [720, 235, "T12"],
+                [710, 378, "T14"],
+              ].map(([x, y, label]) => (
+                <g key={label}>
+                  <circle cx={x} cy={y} r="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" />
+                  <text
+                    x={x}
+                    y={y + 5}
+                    textAnchor="middle"
+                    fontSize="13"
+                    fontWeight="800"
+                    fill="#f5efe7"
+                  >
+                    {label}
+                  </text>
+                </g>
+              ))}
+
+              {/* Labels */}
+              <g>
+                <rect x="36" y="30" width="230" height="38" rx="19" fill="rgba(225,6,0,0.16)" stroke="rgba(225,6,0,0.45)" />
+                <text x="56" y="55" fill="#f5efe7" fontSize="14" fontWeight="800">
+                  Circuit Gilles Villeneuve
+                </text>
+              </g>
+
+              <g>
+                <rect x="48" y="410" width="190" height="34" rx="17" fill="rgba(255,30,30,0.14)" />
+                <circle cx="66" cy="427" r="6" fill="#ff1e1e" />
+                <text x="82" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
+                  DRS Zone 1
+                </text>
+              </g>
+
+              <g>
+                <rect x="258" y="410" width="190" height="34" rx="17" fill="rgba(22,133,255,0.14)" />
+                <circle cx="276" cy="427" r="6" fill="#1685ff" />
+                <text x="292" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
+                  DRS Zone 2
+                </text>
+              </g>
+
+              <g>
+                <rect x="468" y="410" width="190" height="34" rx="17" fill="rgba(193,227,40,0.14)" />
+                <circle cx="486" cy="427" r="6" fill="#c1e328" />
+                <text x="502" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
+                  DRS Zone 3
+                </text>
+              </g>
+
+              <g>
+                <rect x="678" y="410" width="160" height="34" rx="17" fill="rgba(255,255,255,0.08)" />
+                <circle cx="696" cy="427" r="6" fill="#ffffff" />
+                <text x="712" y="432" fill="#d8d2cb" fontSize="13" fontWeight="700">
+                  Detection
+                </text>
+              </g>
+            </svg>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div className="rounded-2xl border border-red-500/25 bg-red-500/10 p-4">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-300">
+                  DRS Zone 1
+                </p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  Detection 15 m after Turn 5. Activation 95 m after Turn 7.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-blue-500/25 bg-blue-500/10 p-4">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-300">
+                  DRS Zone 2
+                </p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  Detection 110 m after Turn 9. Activation 155 m before Turn 12.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-lime-400/25 bg-lime-400/10 p-4">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-lime-300">
+                  DRS Zone 3
+                </p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  Uses the Turn 9 detection point. Activation 70 m after Turn 14.
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="grid min-h-[330px] place-items-center">
+            <div className="text-center">
+              <div className="mx-auto mb-5 h-40 w-72 rounded-[50%] border-4 border-red-600/80 shadow-[0_0_60px_rgba(225,6,0,0.25)]" />
+              <p className="text-sm text-zinc-400">
+                Exact circuit SVG not mapped yet for this venue.
+              </p>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c1e328]">
+            Zone source
+          </p>
+          <p className="mt-2 text-sm leading-6 text-zinc-300">
+            {sourceLabel}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 md:grid-cols-2">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+            Car trait
+          </p>
+          <p className="mt-2 text-lg font-black text-[#f5efe7]">
+            {profile?.car_trait || profile?.dominance || "-"}
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+            Speed profile
+          </p>
+          <p className="mt-2 text-lg font-black text-[#f5efe7]">
+            {profile?.speed_profile || "-"}
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+            Overtaking
+          </p>
+          <p className="mt-2 text-lg font-black text-[#f5efe7]">
+            {profile?.overtaking || "-"}
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+            Tyre stress
+          </p>
+          <p className="mt-2 text-lg font-black text-[#f5efe7]">
+            {profile?.tyre_stress || "-"}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-2xl border border-lime-400/20 bg-lime-400/10 p-4">
+        <p className="text-sm leading-6 text-zinc-200">
+          {weather?.impact || "Weather and tyre effects update after the next workflow run."}
+        </p>
+      </div>
+    </section>
   );
 }
 
