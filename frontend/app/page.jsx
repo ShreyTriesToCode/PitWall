@@ -401,186 +401,170 @@ function ModelSignalMarquee({ predictions, profile, modelMetrics }) {
   );
 }
 
-const CIRCUIT_REGISTRY = {
-  gilles_villeneuve: {
+const OFFICIAL_CIRCUIT_REGISTRY = {
+  canada: {
     aliases: ["gilles", "villeneuve", "canadian", "canada", "montreal", "circuit gilles villeneuve"],
     name: "Circuit Gilles Villeneuve",
-    countrySlug: "canada",
     officialPage: "https://www.formula1.com/en/racing/2026/canada",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
     raceLaps: 70,
     sprintLaps: null,
     lengthKm: 4.361,
     raceDistanceKm: 305.27,
-    viewBox: "0 0 900 520",
-    path:
-      "M126 330 C114 280 145 242 210 226 C286 207 363 193 433 181 C510 168 587 162 648 184 C707 205 746 252 751 303 C756 356 720 394 654 414 C576 438 455 434 330 417 C221 402 144 370 126 330 Z",
-    turns: [
-      [130, 326, "T1"],
-      [170, 246, "T5"],
-      [207, 226, "T7"],
-      [492, 173, "T9"],
-      [724, 254, "T12"],
-      [656, 414, "T14"],
-    ],
   },
-
-  interlagos: {
+  brazil: {
     aliases: ["interlagos", "sao paulo", "são paulo", "brazil", "brasil", "autodromo jose carlos pace", "autódromo josé carlos pace"],
     name: "Autódromo José Carlos Pace",
-    countrySlug: "brazil",
     officialPage: "https://www.formula1.com/en/racing/2026/brazil",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
     raceLaps: 71,
     sprintLaps: null,
     lengthKm: 4.309,
     raceDistanceKm: 305.879,
-    viewBox: "0 0 900 520",
-    path:
-      "M138 352 C118 297 143 245 196 224 C246 205 300 226 333 255 C372 291 421 283 449 241 C486 187 548 160 617 179 C691 200 742 256 735 315 C728 371 658 415 560 414 C475 413 416 389 356 399 C273 413 166 429 138 352 Z",
-    turns: [
-      [148, 345, "S/F"],
-      [198, 224, "Senna S"],
-      [333, 255, "T4"],
-      [448, 241, "Ferradura"],
-      [617, 179, "T8"],
-      [735, 315, "Juncao"],
-      [560, 414, "Subida"],
-    ],
   },
-
   monaco: {
     aliases: ["monaco", "monte carlo", "monte-carlo"],
     name: "Circuit de Monaco",
-    countrySlug: "monaco",
     officialPage: "https://www.formula1.com/en/racing/2026/monaco",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonacodetailed.webp",
     raceLaps: 78,
     sprintLaps: null,
     lengthKm: 3.337,
     raceDistanceKm: 260.286,
-    viewBox: "0 0 900 520",
-    path:
-      "M130 345 C160 250 230 208 318 235 C370 251 384 186 442 160 C520 126 618 166 636 238 C652 300 575 327 522 354 C450 391 365 430 264 408 C199 394 145 386 130 345 Z",
-    turns: [
-      [146, 333, "T1"],
-      [302, 236, "Casino"],
-      [438, 163, "Mirabeau"],
-      [636, 238, "Tunnel"],
-      [520, 355, "Tabac"],
-      [263, 408, "Rascasse"],
-    ],
   },
-
-  silverstone: {
+  great_britain: {
     aliases: ["silverstone", "british", "great britain", "uk", "united kingdom"],
     name: "Silverstone Circuit",
-    countrySlug: "great-britain",
     officialPage: "https://www.formula1.com/en/racing/2026/great-britain",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026tracksilverstonedetailed.webp",
     raceLaps: 52,
     sprintLaps: null,
     lengthKm: 5.891,
     raceDistanceKm: 306.198,
-    viewBox: "0 0 900 520",
-    path:
-      "M115 330 L225 242 C295 186 407 182 496 202 L705 250 C764 264 780 323 725 356 L552 438 C486 470 373 445 324 390 L270 330 C242 300 190 304 115 330 Z",
-    turns: [
-      [125, 327, "Abbey"],
-      [229, 243, "Village"],
-      [495, 203, "Copse"],
-      [704, 250, "Maggotts"],
-      [552, 438, "Stowe"],
-      [323, 389, "Club"],
-    ],
   },
-
-  monza: {
+  italy: {
     aliases: ["monza", "italian", "italy", "autodromo nazionale monza"],
     name: "Autodromo Nazionale Monza",
-    countrySlug: "italy",
     officialPage: "https://www.formula1.com/en/racing/2026/italy",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
     raceLaps: 53,
     sprintLaps: null,
     lengthKm: 5.793,
     raceDistanceKm: 306.72,
-    viewBox: "0 0 900 520",
-    path:
-      "M145 375 L280 178 C318 122 407 111 466 164 L712 379 C760 420 723 476 657 450 L495 387 C430 362 366 388 297 420 C235 449 122 421 145 375 Z",
-    turns: [
-      [276, 181, "T1"],
-      [464, 165, "T4"],
-      [607, 289, "Ascari"],
-      [710, 380, "Parabolica"],
-      [494, 388, "Straight"],
-      [146, 375, "Start"],
-    ],
   },
-
-  spa: {
+  belgium: {
     aliases: ["spa", "belgian", "belgium", "spa-francorchamps", "francorchamps"],
     name: "Circuit de Spa-Francorchamps",
-    countrySlug: "belgium",
     officialPage: "https://www.formula1.com/en/racing/2026/belgium",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackspadetailed.webp",
     raceLaps: 44,
     sprintLaps: null,
     lengthKm: 7.004,
     raceDistanceKm: 308.052,
-    viewBox: "0 0 900 520",
-    path:
-      "M110 362 C166 253 252 185 350 179 C437 174 464 239 532 230 C614 220 664 154 735 194 C788 224 776 298 713 337 C639 383 554 376 492 421 C433 464 335 458 280 400 C235 353 168 390 110 362 Z",
-    turns: [
-      [116, 360, "La Source"],
-      [280, 400, "Eau Rouge"],
-      [350, 179, "Kemmel"],
-      [532, 230, "Bruxelles"],
-      [713, 337, "Stavelot"],
-      [492, 421, "Bus Stop"],
-    ],
   },
-
-  suzuka: {
+  japan: {
     aliases: ["suzuka", "japanese", "japan"],
     name: "Suzuka Circuit",
-    countrySlug: "japan",
     officialPage: "https://www.formula1.com/en/racing/2026/japan",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp",
     raceLaps: 53,
     sprintLaps: null,
     lengthKm: 5.807,
     raceDistanceKm: 307.471,
-    viewBox: "0 0 900 520",
-    path:
-      "M130 310 C170 210 284 170 384 204 C462 231 486 302 555 302 C633 302 697 238 745 280 C788 318 742 394 650 407 C556 420 506 372 426 367 C333 361 262 420 183 390 C142 374 116 345 130 310 Z",
-    turns: [
-      [135, 310, "T1"],
-      [384, 204, "S Curves"],
-      [555, 302, "Degner"],
-      [745, 280, "130R"],
-      [650, 407, "Chicane"],
-      [426, 367, "S/F"],
-    ],
   },
-
-  yas_marina: {
+  abu_dhabi: {
     aliases: ["yas marina", "abu dhabi", "united arab emirates", "uae"],
     name: "Yas Marina Circuit",
-    countrySlug: "abu-dhabi",
     officialPage: "https://www.formula1.com/en/racing/2026/abu-dhabi",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackabudhabidetailed.webp",
     raceLaps: 58,
     sprintLaps: null,
     lengthKm: 5.281,
     raceDistanceKm: 306.183,
-    viewBox: "0 0 900 520",
-    path:
-      "M150 360 L306 188 C354 136 438 142 475 200 L540 302 L730 316 C776 320 786 378 742 402 L562 430 C485 442 423 411 386 350 L330 258 L206 390 C184 414 130 391 150 360 Z",
-    turns: [
-      [150, 360, "T1"],
-      [306, 188, "T5"],
-      [540, 302, "T9"],
-      [730, 316, "T12"],
-      [562, 430, "T16"],
-      [386, 350, "T1"],
-    ],
+  },
+  miami: {
+    aliases: ["miami", "miami international"],
+    name: "Miami International Autodrome",
+    officialPage: "https://www.formula1.com/en/racing/2026/miami",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
+    raceLaps: 57,
+    sprintLaps: null,
+    lengthKm: 5.412,
+    raceDistanceKm: 308.326,
+  },
+  barcelona: {
+    aliases: ["barcelona", "catalunya", "spain", "spanish", "barcelona-catalunya"],
+    name: "Circuit de Barcelona-Catalunya",
+    officialPage: "https://www.formula1.com/en/racing/2026/spain",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackbarcelonadetailed.webp",
+    raceLaps: 66,
+    sprintLaps: null,
+    lengthKm: 4.657,
+    raceDistanceKm: 307.236,
+  },
+  austria: {
+    aliases: ["spielberg", "austrian", "austria", "red bull ring"],
+    name: "Red Bull Ring",
+    officialPage: "https://www.formula1.com/en/racing/2026/austria",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackaustriadetailed.webp",
+    raceLaps: 71,
+    sprintLaps: null,
+    lengthKm: 4.318,
+    raceDistanceKm: 306.452,
+  },
+  hungary: {
+    aliases: ["hungaroring", "hungarian", "hungary"],
+    name: "Hungaroring",
+    officialPage: "https://www.formula1.com/en/racing/2026/hungary",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackhungarydetailed.webp",
+    raceLaps: 70,
+    sprintLaps: null,
+    lengthKm: 4.381,
+    raceDistanceKm: 306.63,
+  },
+  zandvoort: {
+    aliases: ["zandvoort", "dutch", "netherlands"],
+    name: "Circuit Zandvoort",
+    officialPage: "https://www.formula1.com/en/racing/2026/netherlands",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackzandvoortdetailed.webp",
+    raceLaps: 72,
+    sprintLaps: null,
+    lengthKm: 4.259,
+    raceDistanceKm: 306.587,
+  },
+  singapore: {
+    aliases: ["singapore", "marina bay"],
+    name: "Marina Bay Street Circuit",
+    officialPage: "https://www.formula1.com/en/racing/2026/singapore",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026tracksingaporedetailed.webp",
+    raceLaps: 62,
+    sprintLaps: null,
+    lengthKm: 4.94,
+    raceDistanceKm: 306.143,
+  },
+  las_vegas: {
+    aliases: ["las vegas", "vegas"],
+    name: "Las Vegas Strip Circuit",
+    officialPage: "https://www.formula1.com/en/racing/2026/las-vegas",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026tracklasvegasdetailed.webp",
+    raceLaps: 50,
+    sprintLaps: null,
+    lengthKm: 6.201,
+    raceDistanceKm: 309.958,
+  },
+  qatar: {
+    aliases: ["qatar", "lusail", "losail"],
+    name: "Lusail International Circuit",
+    officialPage: "https://www.formula1.com/en/racing/2026/qatar",
+    image: "https://media.formula1.com/image/upload/c_fit%2Ch_704/q_auto/v1740000001/common/f1/2026/track/2026trackqatardetailed.webp",
+    raceLaps: 57,
+    sprintLaps: null,
+    lengthKm: 5.419,
+    raceDistanceKm: 308.611,
   },
 };
 
-function getCircuitMap(profile) {
+function getOfficialCircuit(profile) {
   const lookupText = key(
     [
       profile?.circuit,
@@ -599,13 +583,13 @@ function getCircuitMap(profile) {
   );
 
   return (
-    Object.values(CIRCUIT_REGISTRY).find((circuit) =>
+    Object.values(OFFICIAL_CIRCUIT_REGISTRY).find((circuit) =>
       circuit.aliases.some((alias) => lookupText.includes(key(alias)))
     ) || null
   );
 }
 
-function sessionLaps(profile, circuitMap, selectedTarget) {
+function sessionLaps(profile, circuit, selectedTarget) {
   const targetType = key(
     selectedTarget?.target_type ||
       profile?.prediction_model?.output_target_type ||
@@ -632,32 +616,36 @@ function sessionLaps(profile, circuitMap, selectedTarget) {
   if (isSprint) {
     return {
       label: "Sprint laps",
-      value: explicitSprint ?? circuitMap?.sprintLaps ?? "Not confirmed",
+      value: explicitSprint ?? circuit?.sprintLaps ?? "Not confirmed",
       note:
-        explicitSprint || circuitMap?.sprintLaps
+        explicitSprint || circuit?.sprintLaps
           ? "Sprint lap count from generated data or circuit registry."
-          : "Sprint lap count not present in generated data yet.",
+          : "Sprint lap count is not confirmed in generated data yet.",
     };
   }
 
   return {
     label: "Race laps",
-    value: explicitRace ?? circuitMap?.raceLaps ?? "Not confirmed",
+    value: explicitRace ?? circuit?.raceLaps ?? "Not confirmed",
     note:
-      explicitRace || circuitMap?.raceLaps
-        ? "Race lap count from generated data or circuit registry."
-        : "Race lap count not present in generated data yet.",
+      explicitRace || circuit?.raceLaps
+        ? "Race lap count from generated data or Formula 1 race-page data."
+        : "Race lap count is not confirmed in generated data yet.",
   };
 }
 
-function CircuitShapeMap({ circuitMap }) {
-  if (!circuitMap) {
+function OfficialCircuitImage({ circuit }) {
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => setFailed(false), [circuit?.image]);
+
+  if (!circuit || !circuit.image || failed) {
     return (
-      <div className="grid min-h-[330px] place-items-center">
+      <div className="grid min-h-[330px] place-items-center rounded-[1.7rem] bg-black/40">
         <div className="text-center">
-          <div className="mx-auto mb-5 h-40 w-72 rounded-[50%] border-4 border-red-600/80 shadow-[0_0_60px_rgba(225,6,0,0.25)]" />
+          <Map className="mx-auto mb-4 text-zinc-500" size={54} />
           <p className="text-sm text-zinc-400">
-            Exact circuit SVG is not mapped yet for this venue.
+            Official circuit image is not mapped yet for this venue.
           </p>
         </div>
       </div>
@@ -665,111 +653,21 @@ function CircuitShapeMap({ circuitMap }) {
   }
 
   return (
-    <svg
-      viewBox={circuitMap.viewBox}
-      className="h-[360px] w-full"
-      role="img"
-      aria-label={`${circuitMap.name} circuit map`}
-    >
-      <defs>
-        <filter id="trackGlowPlain" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="7" result="blur" />
-          <feColorMatrix
-            in="blur"
-            type="matrix"
-            values="1 0 0 0 0.85  0 1 0 0 0.06  0 0 1 0 0.04  0 0 0 0.75 0"
-          />
-          <feMerge>
-            <feMergeNode />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-
-        <linearGradient id="trackBasePlain" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#28282d" />
-          <stop offset="45%" stopColor="#8b8b92" />
-          <stop offset="100%" stopColor="#2f3036" />
-        </linearGradient>
-
-        <linearGradient id="trackHighlightPlain" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#e10600" />
-          <stop offset="50%" stopColor="#f5efe7" />
-          <stop offset="100%" stopColor="#c1e328" />
-        </linearGradient>
-      </defs>
-
-      <rect width="900" height="520" rx="28" fill="#0a0a0c" />
-
-      <path
-        d={circuitMap.path}
-        fill="none"
-        stroke="rgba(255,255,255,0.05)"
-        strokeWidth="62"
+    <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-black/70 p-4">
+      <img
+        src={circuit.image}
+        alt={`${circuit.name} official Formula 1 circuit map`}
+        className="mx-auto max-h-[390px] w-full object-contain"
+        loading="lazy"
+        onError={() => setFailed(true)}
       />
-
-      <path
-        d={circuitMap.path}
-        fill="none"
-        stroke="url(#trackBasePlain)"
-        strokeWidth="20"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        filter="url(#trackGlowPlain)"
-      />
-
-      <path
-        d={circuitMap.path}
-        fill="none"
-        stroke="url(#trackHighlightPlain)"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity="0.9"
-      />
-
-      {circuitMap.turns.map(([x, y, label]) => (
-        <g key={label}>
-          <circle
-            cx={x}
-            cy={y}
-            r="16"
-            fill="rgba(255,255,255,0.08)"
-            stroke="rgba(255,255,255,0.22)"
-          />
-          <text
-            x={x}
-            y={y + 5}
-            textAnchor="middle"
-            fontSize="13"
-            fontWeight="800"
-            fill="#f5efe7"
-          >
-            {label}
-          </text>
-        </g>
-      ))}
-
-      <g>
-        <rect
-          x="36"
-          y="30"
-          width={Math.min(380, 100 + circuitMap.name.length * 8)}
-          height="38"
-          rx="19"
-          fill="rgba(225,6,0,0.16)"
-          stroke="rgba(225,6,0,0.45)"
-        />
-        <text x="56" y="55" fill="#f5efe7" fontSize="14" fontWeight="800">
-          {circuitMap.name}
-        </text>
-      </g>
-    </svg>
+    </div>
   );
 }
 
 function CircuitIntelCard({ profile, weather, selectedTarget }) {
-  const circuitMap = getCircuitMap(profile);
-  const lapInfo = sessionLaps(profile, circuitMap, selectedTarget);
+  const circuit = getOfficialCircuit(profile);
+  const lapInfo = sessionLaps(profile, circuit, selectedTarget);
 
   return (
     <section className="rounded-[2rem] border border-white/10 bg-[#111113] p-6 shadow-2xl">
@@ -779,7 +677,7 @@ function CircuitIntelCard({ profile, weather, selectedTarget }) {
             Circuit Intel
           </h2>
           <p className="mt-1 text-sm text-zinc-400">
-            {profile?.circuit || circuitMap?.name || "Circuit data"}
+            {profile?.circuit || circuit?.name || "Circuit data"}
           </p>
         </div>
 
@@ -788,28 +686,28 @@ function CircuitIntelCard({ profile, weather, selectedTarget }) {
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-black/40 p-4">
-        <CircuitShapeMap circuitMap={circuitMap} />
+      <OfficialCircuitImage circuit={circuit} />
 
-        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c1e328]">
-            Circuit image
-          </p>
-          <p className="mt-2 text-sm leading-6 text-zinc-300">
-            Showing the mapped circuit shape only. Zone markings are intentionally removed.
-          </p>
+      <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c1e328]">
+          Circuit source
+        </p>
+        <p className="mt-2 text-sm leading-6 text-zinc-300">
+          {circuit
+            ? "Using the official Formula 1 circuit map image for this venue."
+            : "No official Formula 1 circuit image is mapped for this venue yet."}
+        </p>
 
-          {circuitMap?.officialPage && (
-            <a
-              href={circuitMap.officialPage}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-zinc-200 hover:bg-white/10"
-            >
-              Open official F1 race page
-            </a>
-          )}
-        </div>
+        {circuit?.officialPage && (
+          <a
+            href={circuit.officialPage}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-zinc-200 hover:bg-white/10"
+          >
+            Open official F1 race page
+          </a>
+        )}
       </div>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
@@ -828,7 +726,16 @@ function CircuitIntelCard({ profile, weather, selectedTarget }) {
             Circuit length
           </p>
           <p className="mt-2 text-lg font-black text-[#f5efe7]">
-            {circuitMap?.lengthKm ? `${circuitMap.lengthKm} km` : "-"}
+            {circuit?.lengthKm ? `${circuit.lengthKm} km` : "-"}
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+            Race distance
+          </p>
+          <p className="mt-2 text-lg font-black text-[#f5efe7]">
+            {circuit?.raceDistanceKm ? `${circuit.raceDistanceKm} km` : "-"}
           </p>
         </div>
 
@@ -847,15 +754,6 @@ function CircuitIntelCard({ profile, weather, selectedTarget }) {
           </p>
           <p className="mt-2 text-lg font-black text-[#f5efe7]">
             {profile?.speed_profile || "-"}
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
-            Overtaking
-          </p>
-          <p className="mt-2 text-lg font-black text-[#f5efe7]">
-            {profile?.overtaking || "-"}
           </p>
         </div>
 
