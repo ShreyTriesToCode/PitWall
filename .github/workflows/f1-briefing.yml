@@ -23,7 +23,7 @@ on:
         required: false
         default: "true"
       force_notify:
-        description: "Force email and GitHub Issue notification even outside 8-hour window"
+        description: "Force email and GitHub Issue notification even outside notification window"
         required: false
         default: "false"
       notification_window_hours:
@@ -31,7 +31,7 @@ on:
         required: false
         default: "8"
       output_mode:
-        description: "Output mode. auto = manual weekend, scheduled today. weekend = Sprint + Race weekend. today = only today's Sprint/Race. next = next Sprint/Race."
+        description: "auto = scheduled logic. weekend = Sprint + Race weekend. today = today's Sprint/Race. next = next Sprint/Race."
         required: false
         default: "auto"
 
@@ -40,8 +40,11 @@ permissions:
   issues: write
 
 concurrency:
-  group: f1-race-intel
+  group: f1-race-intel-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   generate:
@@ -54,6 +57,13 @@ jobs:
         with:
           persist-credentials: true
           fetch-depth: 0
+          lfs: true
+
+      - name: Sync with remote before generation
+        run: |
+          git fetch origin main
+          git checkout main
+          git pull --ff-only origin main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -70,7 +80,7 @@ jobs:
             data_cache/http
             data_cache/full_races
             models/saved_models
-          key: f1-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py') }}
+          key: f1-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py', 'requirements.txt') }}
           restore-keys: |
             f1-runtime-cache-${{ runner.os }}-
 
@@ -91,45 +101,91 @@ jobs:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+
           USER_TIMEZONE: "Asia/Kolkata"
           LOOKAHEAD_DAYS: ${{ github.event.inputs.lookahead_days || '90' }}
           FINAL_RESULTS_DELAY_HOURS: "8"
           NOTIFICATION_WINDOW_HOURS: ${{ github.event.inputs.notification_window_hours || '8' }}
           FORCE_NOTIFY: ${{ github.event.inputs.force_notify || 'false' }}
           OUTPUT_MODE: ${{ github.event.inputs.output_mode || 'auto' }}
+
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+
           FORCE_RETRAIN: ${{ github.event.inputs.force_retrain || 'false' }}
           ML_START_YEAR: "2018"
           USE_FULL_HISTORICAL_DATA: "true"
-          UPGRADES_ENABLED: "true"
-          F1_REGULATIONS_ENABLED: "true"
+          FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '10' }}
+
+          # Keep these disabled by default because they produced repeated 403/noisy failures.
+          # The main model still uses Jolpica, Open-Meteo, FastF1, saved models, and local caches.
+          UPGRADES_ENABLED: "false"
+          F1_REGULATIONS_ENABLED: "false"
+          OPENF1_ENABLED: "false"
+
           OFFICIAL_CALENDAR_ENABLED: "true"
+          OFFICIAL_F1_CALENDAR_URL: "https://www.formula1.com/en/racing/{year}"
+
           F1_LIVE_TIMING_STATIC_BASE: "https://livetiming.formula1.com/static"
-          OPENF1_ENABLED: "true"
           OPENF1_BASE: "https://api.openf1.org/v1"
           OPENF1_REQUEST_SLEEP: "0.45"
           FIA_TECH_UPDATE_BASE: "https://www.fia.com/news"
-          OFFICIAL_F1_CALENDAR_URL: "https://www.formula1.com/en/racing/{year}"
-          FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '10' }}
           JOLPICA_REQUEST_SLEEP: "1.2"
+
           MODEL_DIR: "models/saved_models"
           HTTP_CACHE_DIR: "data_cache/http"
           FULL_RACE_CACHE_DIR: "data_cache/full_races"
           FASTF1_CACHE_DIR: "fastf1_cache"
+
+          # If f1_briefing.py supports this flag, it prevents the script from pushing by itself.
+          # The workflow commit step below is the source of truth.
+          AUTO_COMMIT_ENABLED: "false"
         run: python f1_briefing.py
 
-      - name: Commit readable briefing outputs
+      - name: Commit generated outputs and caches
         if: success()
         run: |
+          set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add briefings data_cache/latest-model-debug.json MODEL_STATUS.md || true
-          if git diff --cached --quiet; then
-            echo "No briefing output changes to commit."
-          else
+
+          # Refresh remote state. This prevents rejected pushes when main moved.
+          git fetch origin main
+
+          # If f1_briefing.py made a local commit despite AUTO_COMMIT_ENABLED=false,
+          # rebase that commit onto the current remote before pushing.
+          if ! git rebase origin/main; then
+            echo "Rebase conflict occurred. Generated files will prefer this run's local output."
+            git status --short
+            for file in briefings/latest-run-status.md briefings/index.json data_cache/latest-model-debug.json MODEL_STATUS.md; do
+              if [ -e "$file" ]; then
+                git checkout --ours "$file" || true
+                git add "$file" || true
+              fi
+            done
+            git rebase --continue || {
+              echo "Automatic rebase recovery failed."
+              git rebase --abort || true
+              exit 1
+            }
+          fi
+
+          # Commit readable outputs and reusable caches. Keeping caches in the repo is intentional
+          # for this project, so future runs do not need to redownload as much data.
+          git add briefings MODEL_STATUS.md data_cache/latest-model-debug.json 2>/dev/null || true
+          git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
+
+          if ! git diff --cached --quiet; then
             git commit -m "chore: update f1 race intel outputs"
-            git push
+          else
+            echo "No generated file changes to commit."
+          fi
+
+          if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
+            git push origin HEAD:main
+          else
+            echo "No local commits to push."
           fi
 
       - name: Upload generated artifacts
@@ -141,6 +197,8 @@ jobs:
             briefings/**
             MODEL_STATUS.md
             data_cache/latest-model-debug.json
+            data_cache/http/**
             data_cache/full_races/**
+            fastf1_cache/**
             models/saved_models/**
           if-no-files-found: ignore
