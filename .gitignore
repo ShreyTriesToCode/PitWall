@@ -1,32 +1,29 @@
 # macOS
 .DS_Store
 
+# Python local environment
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node / Next.js local build folders
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+
 # Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Frontend dependencies/build output
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/.vercel/
-
-# Local env
+# Local secrets
 .env
 .env.local
+frontend/.env
 frontend/.env.local
-
-# Python local
-.venv/
-__pycache__/
-*.pyc
-fastf1_cache/
-
-# Generated runtime state
-data_cache/http/
-data_cache/full_races/
-data_cache/ml_*_features.csv
-data_cache/ml_*_results_raw.csv
-models/saved_models/
