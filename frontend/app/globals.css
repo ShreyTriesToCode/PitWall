@@ -982,11 +982,15 @@ footer {
   .dash-table.compact .dash-row:not(.head) > span:nth-child(n+2) {
     grid-column: 1 / -1;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 12px;
     border-top: 1px solid rgba(255,255,255,.08);
     padding-top: 8px;
     font-size: 12px;
+  }
+  .dash-row:not(.head) > span:nth-child(n+3)::before,
+  .dash-table.compact .dash-row:not(.head) > span:nth-child(n+2)::before {
+    min-width: 64px;
   }
   .dash-row:not(.head) > span:nth-child(3)::before { content: "Gap"; color: var(--muted); }
   .dash-row:not(.head) > span:nth-child(4)::before { content: "Last lap"; color: var(--muted); }
@@ -1594,16 +1598,26 @@ body::before {
   transform: translateX(4px);
 }
 .monaco-app .rank {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 58px;
   margin-left: 14px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255,255,255,.2);
-  background: #fff;
-  color: #09090d;
-  transform: skewX(-13deg);
-  font-size: 20px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #08080b;
+  transform: skewX(-10deg);
+  font-size: clamp(42px, 4.2vw, 58px);
+  font-style: italic;
+  line-height: .85;
+  text-shadow:
+    -1.6px -1.6px 0 rgba(255,255,255,.96),
+    1.6px -1.6px 0 rgba(255,255,255,.96),
+    -1.6px 1.6px 0 rgba(255,255,255,.96),
+    1.6px 1.6px 0 rgba(255,255,255,.96),
+    0 0 12px rgba(255,255,255,.78);
+  filter: drop-shadow(0 10px 16px rgba(0,0,0,.5));
 }
 .monaco-app .prediction-copy strong {
   font-size: clamp(22px, 2vw, 32px);
@@ -1613,6 +1627,22 @@ body::before {
 .monaco-app .driver-fallback {
   max-height: 132px;
   filter: drop-shadow(0 18px 20px rgba(0,0,0,.55));
+}
+.monaco-app .prediction-copy,
+.monaco-app .prediction-copy strong,
+.monaco-app .prediction-copy p,
+.monaco-app .prediction-copy .chips {
+  min-width: 0;
+  max-width: 100%;
+}
+.monaco-app .prediction-copy strong,
+.monaco-app .prediction-copy p {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.monaco-app .prediction-copy .chips {
+  display: flex;
+  flex-wrap: wrap;
 }
 .circuit-card {
   overflow: hidden;
@@ -1718,34 +1748,170 @@ body::before {
   }
 }
 
+@media (max-width: 900px) {
+  .monaco-grid-main {
+    width: calc(100% - 20px);
+  }
+  .monaco-app .prediction-card {
+    grid-template-columns: 62px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    min-height: 0;
+    padding: 22px 16px 20px 10px;
+  }
+  .monaco-app .prediction-card.leader {
+    min-height: 0;
+  }
+  .monaco-app .rank {
+    width: 52px;
+    height: 58px;
+    margin: 2px 0 0 10px;
+  }
+  .monaco-app .prediction-copy {
+    padding: 0;
+  }
+  .monaco-app .prediction-copy strong {
+    font-size: clamp(24px, 5.2vw, 38px);
+    line-height: 1.05;
+  }
+  .monaco-app .prediction-copy p {
+    line-height: 1.38;
+  }
+  .monaco-app .prediction-copy .chips {
+    gap: 8px;
+  }
+  .monaco-app .driver-art {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 132px;
+    height: 132px;
+    opacity: .24;
+    pointer-events: none;
+  }
+  .monaco-app .driver-art img,
+  .monaco-app .driver-fallback {
+    max-width: 130px;
+    max-height: 128px;
+  }
+}
+
 @media (max-width: 720px) {
   .monaco-nav {
     grid-template-columns: auto auto;
+    gap: 10px;
+    min-height: 68px;
+    padding: 10px 12px;
+  }
+  .monaco-logo {
+    width: 88px;
+    height: 36px;
+  }
+  .monaco-logo span {
+    font-size: 18px;
+  }
+  .monaco-menu-button {
+    width: 50px;
+    height: 32px;
+    justify-self: end;
+  }
+  .monaco-menu-button i {
+    width: 38px;
+    height: 7px;
   }
   .monaco-links {
     grid-column: 1 / -1;
     order: 3;
+    gap: 18px;
+    padding: 2px 0 4px;
+    font-size: 12px;
+    scrollbar-width: none;
+  }
+  .monaco-links::-webkit-scrollbar {
+    display: none;
   }
   .monaco-hero-copy {
-    padding-top: 92px;
+    width: 100%;
+    max-width: 100%;
+    padding: 74px 16px 24px;
   }
   .monaco-title-mask {
-    top: 18%;
-    font-size: clamp(72px, 28vw, 150px);
+    top: 14%;
+    font-size: clamp(62px, 28vw, 132px);
   }
   .monaco-hero-media .hero-car {
     right: -28vw;
     width: 112vw;
-    opacity: .30;
+    bottom: 24vh;
+    opacity: .24;
   }
   .monaco-hero-copy h1 {
-    font-size: clamp(42px, 14vw, 78px);
+    max-width: 9.5ch;
+    font-size: 46px;
+    line-height: .92;
+    text-wrap: auto;
+    overflow-wrap: anywhere;
+  }
+  .monaco-hero-copy p {
+    width: min(100%, 420px, calc(100vw - 80px));
+    max-width: min(420px, calc(100vw - 80px));
+    line-height: 1.52;
+    font-size: 14px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .monaco-hero-actions a {
+    flex: 1 1 156px;
+    justify-content: center;
+  }
+  .monaco-countdown,
+  .monaco-hero-stats,
+  .race-weekend-panel,
+  .monaco-grid-main,
+  .monaco-support-grid,
+  .briefing,
+  .monaco-app footer {
+    width: calc(100% - 20px);
+  }
+  .monaco-countdown {
+    padding: 16px;
+  }
+  .race-weekend-panel {
+    margin-top: 18px;
+  }
+  .race-weekend-heading {
+    min-height: auto;
+    padding: 18px;
+  }
+  .race-weekend-heading h2 {
+    font-size: clamp(30px, 10vw, 44px);
+  }
+  .race-weekend-heading::after {
+    font-size: 60px;
+  }
+  .monaco-grid-main .prediction-section .section-head {
+    padding: 16px 16px 0;
   }
   .monaco-schedule-row {
-    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px;
+  }
+  .schedule-date {
+    min-height: 46px;
+  }
+  .schedule-copy strong {
+    font-size: 14px;
+    overflow-wrap: anywhere;
   }
   .schedule-action {
     grid-column: 2;
+    font-size: 11px;
+  }
+  .monaco-schedule-status {
+    display: grid;
+    padding: 12px;
   }
   .monaco-app .prediction-card {
     grid-template-columns: 48px minmax(0, 1fr) 84px;
@@ -1780,25 +1946,115 @@ body::before {
   .track-orbit {
     height: 190px;
   }
+  .team {
+    grid-template-columns: 66px minmax(0, 1fr);
+  }
+  .team-car,
+  .team-fallback-car {
+    width: 66px;
+  }
+  .fact {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .fact strong {
+    max-width: 58%;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (max-width: 520px) {
   .monaco-app .prediction-card {
-    grid-template-columns: 44px minmax(0, 1fr) 64px;
+    grid-template-columns: 62px minmax(0, 1fr);
+    min-height: 142px;
+    isolation: isolate;
   }
   .monaco-app .rank {
-    width: 40px;
-    height: 40px;
-    margin-left: 8px;
+    width: 48px;
+    height: 56px;
+    margin-left: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .monaco-app .prediction-copy {
+    position: relative;
+    z-index: 1;
+    padding-right: 42px;
+  }
+  .monaco-app .prediction-copy strong {
+    font-size: clamp(18px, 5vw, 22px);
+  }
+  .monaco-app .prediction-copy p {
+    font-size: 12px;
+    line-height: 1.4;
   }
   .monaco-app .driver-art {
-    width: 64px;
-    height: 88px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 92px;
+    height: 112px;
+    opacity: .34;
   }
   .monaco-app .driver-art img,
   .monaco-app .driver-fallback {
-    max-width: 62px;
-    max-height: 84px;
+    max-width: 90px;
+    max-height: 108px;
+  }
+  .monaco-hero-copy h1 {
+    font-size: 39px;
+  }
+  .monaco-hero-actions {
+    display: grid;
+  }
+  .monaco-hero-actions a {
+    width: 100%;
+  }
+  .monaco-countdown .countdown {
+    gap: 6px;
+  }
+  .countdown div {
+    padding: 10px 6px;
+  }
+  .countdown strong {
+    font-size: 22px;
+  }
+  .signal-card {
+    width: 190px;
+    padding: 16px;
+  }
+  .team {
+    grid-template-columns: 58px minmax(0, 1fr);
+    padding: 10px;
+  }
+  .team-car,
+  .team-fallback-car {
+    width: 58px;
+    height: 36px;
+  }
+  .fact {
+    grid-template-columns: 1fr;
+  }
+  .fact strong {
+    max-width: none;
+    text-align: left;
+  }
+  .briefing-text h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .monaco-hero-copy h1 {
+    font-size: 34px;
+  }
+  .monaco-links {
+    gap: 14px;
+    font-size: 11px;
+  }
+  .monaco-logo {
+    width: 80px;
   }
 }
 
