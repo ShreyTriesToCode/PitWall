@@ -246,7 +246,7 @@ export default function LivePage() {
 
   useEffect(() => {
     if (!autoRefresh) return;
-    const id = setInterval(() => loadLiveData(activeSessionKey), 15000);
+    const id = setInterval(() => loadLiveData(activeSessionKey), 30000);
     return () => clearInterval(id);
   }, [autoRefresh, activeSessionKey]);
 
@@ -312,7 +312,7 @@ export default function LivePage() {
           <div className="live-kicker"><Radio size={16} /> Race Intel Live</div>
           <h1>Live details</h1>
           <p>
-            Configurable race-weekend dashboard inspired by f1-dash. It uses OpenF1 when public data is available.
+            Configurable race-weekend dashboard using OpenF1 where public data is available.
             If live data is blocked or paid, the page keeps working with historical/latest public data and clear fallback states.
           </p>
         </div>
@@ -484,7 +484,7 @@ export default function LivePage() {
       </section>
 
       <footer className="live-footer">
-        OpenF1 historical data is public from 2023 onward. Real-time feeds may require paid OpenF1 access. This page degrades to available public/latest data and does not stream F1 video.
+        This page uses available OpenF1 data and degrades cleanly when live feeds are restricted. It does not stream F1 video.
       </footer>
     </main>
   );
