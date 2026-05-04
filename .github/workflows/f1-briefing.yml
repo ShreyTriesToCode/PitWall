@@ -117,11 +117,11 @@ jobs:
           USE_FULL_HISTORICAL_DATA: "true"
           FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '10' }}
 
-          # Keep these disabled by default because they produced repeated 403/noisy failures.
-          # The main model still uses Jolpica, Open-Meteo, FastF1, saved models, and local caches.
-          UPGRADES_ENABLED: "false"
-          F1_REGULATIONS_ENABLED: "false"
-          OPENF1_ENABLED: "false"
+          # Enabled intentionally. These sources can improve predictions when data is available.
+          # If a source has not published data yet or blocks a request, f1_briefing.py should skip/fallback.
+          UPGRADES_ENABLED: "true"
+          F1_REGULATIONS_ENABLED: "true"
+          OPENF1_ENABLED: "true"
 
           OFFICIAL_CALENDAR_ENABLED: "true"
           OFFICIAL_F1_CALENDAR_URL: "https://www.formula1.com/en/racing/{year}"
