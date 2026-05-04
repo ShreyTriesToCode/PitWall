@@ -52,6 +52,50 @@ function safeJson(text, fallback = null) {
   try { return JSON.parse(text); } catch { return fallback; }
 }
 
+function readValue(value, fallback = "") {
+  if (value === null || value === undefined || value === "") return fallback;
+
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    return value;
+  }
+
+  if (typeof value === "object") {
+    return (
+      value.Value ??
+      value.value ??
+      value.Time ??
+      value.time ??
+      value.Gap ??
+      value.gap ??
+      value.Interval ??
+      value.interval ??
+      value.Status ??
+      value.status ??
+      value.Message ??
+      value.message ??
+      fallback
+    );
+  }
+
+  return fallback;
+}
+
+function readNumber(value, fallback = "") {
+  const clean = readValue(value, "");
+  const number = Number(clean);
+  return Number.isFinite(number) ? number : fallback;
+}
+
+function lastObject(value) {
+  if (!value) return {};
+  if (Array.isArray(value)) return value[value.length - 1] || {};
+  if (typeof value === "object") {
+    const values = Object.values(value);
+    return values[values.length - 1] || {};
+  }
+  return {};
+}
+
 function decompressFormula1Payload(value) {
   if (typeof value !== "string") return value;
   try {
@@ -179,24 +223,90 @@ function sessionPath(meeting, session) {
   return "";
 }
 
-function driverDisplay(raw) {
-  return raw?.FullName || raw?.full_name || raw?.BroadcastName || raw?.Tla || raw?.RacingNumber || "-";
+function driverDisplay(raw, num = "") {
+  const firstLast = [raw?.FirstName || raw?.first_name || raw?.givenName, raw?.LastName || raw?.last_name || raw?.familyName]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    raw?.FullName ||
+    raw?.full_name ||
+    raw?.BroadcastName ||
+    raw?.broadcast_name ||
+    firstLast ||
+    raw?.Tla ||
+    raw?.tla ||
+    raw?.Code ||
+    raw?.code ||
+    raw?.RacingNumber ||
+    num ||
+    "-"
+  );
 }
 
 function normalizeDrivers(driverList) {
-  const lines = latestByMerge(driverList)?.Drivers || latestByMerge(driverList) || {};
-  return Object.entries(lines).map(([num, raw]) => ({
-    driver_number: Number(raw?.RacingNumber || num),
-    full_name: driverDisplay(raw),
-    name_acronym: raw?.Tla || raw?.tla || "",
-    team_name: raw?.TeamName || raw?.team_name || "",
-    team_colour: raw?.TeamColour || raw?.team_colour || "e10600",
-    headshot_url: raw?.HeadshotUrl || ""
-  }));
+  const merged = latestByMerge(driverList);
+  const lines = merged?.Drivers || merged?.drivers || merged || {};
+
+  return Object.entries(lines)
+    .filter(([key, raw]) => raw && typeof raw === "object" && !["_kf", "timestamp", "Utc"].includes(key))
+    .map(([num, raw]) => {
+      const racingNumber = Number(raw?.RacingNumber || raw?.racing_number || raw?.DriverNumber || num);
+      return {
+        driver_number: Number.isFinite(racingNumber) ? racingNumber : num,
+        full_name: driverDisplay(raw, num),
+        name_acronym: raw?.Tla || raw?.tla || raw?.Code || raw?.code || "",
+        team_name: raw?.TeamName || raw?.team_name || raw?.Team || raw?.team || "",
+        team_colour: raw?.TeamColour || raw?.team_colour || "e10600",
+        headshot_url: raw?.HeadshotUrl || raw?.headshot_url || ""
+      };
+    });
+}
+
+function normalizeJolpicaDrivers(fallback) {
+  const standings = fallback?.driverStandings?.data?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings || [];
+  const latestResults = fallback?.latestResults?.data?.MRData?.RaceTable?.Races?.[0]?.Results || [];
+  const map = new Map();
+
+  function add(driver, constructor = {}) {
+    if (!driver) return;
+    const number = Number(driver.permanentNumber || driver.number);
+    if (!Number.isFinite(number)) return;
+    const name = [driver.givenName, driver.familyName].filter(Boolean).join(" ") || driver.code || driver.driverId || `#${number}`;
+    map.set(String(number), {
+      driver_number: number,
+      full_name: name,
+      name_acronym: driver.code || "",
+      team_name: constructor.name || "",
+      team_colour: "e10600",
+      headshot_url: ""
+    });
+  }
+
+  for (const row of standings) add(row.Driver, row.Constructors?.[0] || {});
+  for (const row of latestResults) add(row.Driver, row.Constructor || {});
+
+  return map;
+}
+
+function mergeDriverSources(primary, fallbackMap) {
+  const map = new Map();
+  for (const driver of primary || []) {
+    map.set(String(driver.driver_number), driver);
+  }
+  for (const [num, fallback] of fallbackMap || []) {
+    const current = map.get(String(num));
+    if (!current || !current.full_name || current.full_name === "-") {
+      map.set(String(num), fallback);
+    } else if (!current.team_name && fallback.team_name) {
+      map.set(String(num), { ...current, team_name: fallback.team_name });
+    }
+  }
+  return Array.from(map.values());
 }
 
 function normalizeTiming(timingData, drivers, timingAppData, carData) {
-  const driverMap = new Map(drivers.map((d) => [String(d.driver_number), d]));
+  const driverMap = new Map((drivers || []).map((d) => [String(d.driver_number), d]));
   const lines = {};
   const appLines = {};
 
@@ -219,30 +329,42 @@ function normalizeTiming(timingData, drivers, timingAppData, carData) {
     const data = entry?.data?.Entries || entry?.data?.entries || entry?.data || {};
     for (const item of Array.isArray(data) ? data : Object.values(data)) {
       const cars = item?.Cars || item?.cars || {};
-      for (const [num, car] of Object.entries(cars)) latestCar[num] = { ...(latestCar[num] || {}), ...car };
+      for (const [num, car] of Object.entries(cars)) {
+        latestCar[num] = { ...(latestCar[num] || {}), ...car };
+      }
     }
   }
 
-  return Object.entries(lines).map(([num, raw]) => {
-    const driver = driverMap.get(String(num)) || {};
-    const stint = appLines[num]?.Stints ? Object.values(appLines[num].Stints).slice(-1)[0] : appLines[num]?.Stint || {};
-    const lastLap = raw?.LastLapTime?.Value || raw?.LastLapTime || raw?.Sectors?.[2]?.Value || "";
+  const rows = Object.entries(lines).map(([num, raw]) => {
+    const driver = driverMap.get(String(Number(num))) || driverMap.get(String(num)) || {};
+    const stint = lastObject(appLines[num]?.Stints || appLines[num]?.stints) || appLines[num]?.Stint || appLines[num]?.stint || {};
+    const channels = latestCar[num]?.Channels || latestCar[num]?.channels || {};
+    const lastLap = readValue(raw?.LastLapTime, readValue(raw?.Sectors?.[2], ""));
+    const interval = readValue(raw?.IntervalToPositionAhead, readValue(raw?.GapToLeader, readValue(raw?.Status, "")));
+    const gapToLeader = readValue(raw?.GapToLeader, interval);
+
     return {
       driver_number: Number(num),
-      position: Number(raw?.Position || raw?.position || 999),
-      interval: raw?.IntervalToPositionAhead?.Value || raw?.IntervalToPositionAhead || raw?.GapToLeader || raw?.GapToLeader?.Value || "",
-      gap_to_leader: raw?.GapToLeader?.Value || raw?.GapToLeader || "",
+      position: readNumber(raw?.Position || raw?.position, 999),
+      interval,
+      gap_to_leader: gapToLeader,
+      status: readValue(raw?.Status || raw?.status, ""),
       lap_duration: lastLap,
-      compound: stint?.Compound || stint?.compound || "",
-      tyre_age: stint?.TotalLaps || stint?.StartLaps || "",
-      speed: latestCar[num]?.Channels?.[2] || latestCar[num]?.Speed || "",
-      n_gear: latestCar[num]?.Channels?.[3] || latestCar[num]?.Gear || "",
-      rpm: latestCar[num]?.Channels?.[0] || latestCar[num]?.Rpm || "",
-      drs: latestCar[num]?.Channels?.[45] || latestCar[num]?.Drs || "",
-      brake: latestCar[num]?.Channels?.[5] || latestCar[num]?.Brake || "",
+      compound: readValue(stint?.Compound || stint?.compound, ""),
+      tyre_age: readValue(stint?.TotalLaps || stint?.StartLaps || stint?.LapCount || stint?.tyre_age, ""),
+      speed: readValue(channels?.[2] || latestCar[num]?.Speed || latestCar[num]?.speed, ""),
+      n_gear: readValue(channels?.[3] || latestCar[num]?.Gear || latestCar[num]?.gear, ""),
+      rpm: readValue(channels?.[0] || latestCar[num]?.Rpm || latestCar[num]?.rpm, ""),
+      drs: readValue(channels?.[45] || latestCar[num]?.Drs || latestCar[num]?.drs, ""),
+      brake: readValue(channels?.[5] || latestCar[num]?.Brake || latestCar[num]?.brake, ""),
+      sectors: raw?.Sectors || raw?.sectors || [],
       driver
     };
-  }).sort((a, b) => a.position - b.position || a.driver_number - b.driver_number);
+  });
+
+  return rows
+    .filter((row) => Number.isFinite(row.position) && row.position < 999)
+    .sort((a, b) => a.position - b.position || a.driver_number - b.driver_number);
 }
 
 function normalizeWeather(weatherEntries) {
@@ -377,7 +499,12 @@ export async function GET(request) {
 
   const basePath = sessionPath(selected.meeting, selected.session);
   const feeds = basePath ? await fetchFeeds(basePath) : {};
-  const drivers = normalizeDrivers(feeds["DriverList.jsonStream"]?.entries || []);
+  const jolpicaFallback = await fetchJolpicaFallback();
+  const fallbackDriverMap = normalizeJolpicaDrivers(jolpicaFallback);
+  const drivers = mergeDriverSources(
+    normalizeDrivers(feeds["DriverList.jsonStream"]?.entries || []),
+    fallbackDriverMap
+  );
   const leaderboard = normalizeTiming(
     feeds["TimingData.jsonStream"]?.entries || [],
     drivers,
@@ -409,9 +536,7 @@ export async function GET(request) {
     radio: normalizeTeamRadio(feeds["TeamRadio.jsonStream"]?.entries || [], basePath)
   };
 
-  const hasUsefulF1Data = drivers.length > 0 || leaderboard.length > 0 || normalized.weather || normalized.raceControl.length > 0;
-
-  const jolpicaFallback = hasUsefulF1Data ? null : await fetchJolpicaFallback();
+  const hasUsefulF1Data = leaderboard.length > 0 || normalized.weather || normalized.raceControl.length > 0;
 
   return Response.json({
     ok: hasUsefulF1Data || Boolean(jolpicaFallback?.latestResults?.ok),
@@ -423,7 +548,7 @@ export async function GET(request) {
     selected,
     feed_status: Object.fromEntries(Object.entries(feeds).map(([key, value]) => [key, { ok: value.ok, status: value.status, count: value.count || (value.json ? 1 : 0) }])),
     normalized,
-    jolpica_fallback: jolpicaFallback,
-    normalized_fallback: jolpicaFallback ? normalizeJolpicaFallback(jolpicaFallback) : null
+    jolpica_fallback: hasUsefulF1Data ? null : jolpicaFallback,
+    normalized_fallback: hasUsefulF1Data ? null : normalizeJolpicaFallback(jolpicaFallback)
   }, { headers: { "Cache-Control": "no-store" } });
 }

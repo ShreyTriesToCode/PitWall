@@ -54,9 +54,38 @@ function cx(...parts) {
   return parts.filter(Boolean).join(" ");
 }
 
+function primitive(value) {
+  if (value === null || value === undefined || value === "") return null;
+
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    return value;
+  }
+
+  if (typeof value === "object") {
+    return (
+      value.Value ??
+      value.value ??
+      value.Time ??
+      value.time ??
+      value.Gap ??
+      value.gap ??
+      value.Interval ??
+      value.interval ??
+      value.Status ??
+      value.status ??
+      value.Message ??
+      value.message ??
+      null
+    );
+  }
+
+  return null;
+}
+
 function fmt(value, fallback = "-") {
-  if (value === null || value === undefined || value === "") return fallback;
-  return String(value);
+  const clean = primitive(value);
+  if (clean === null || clean === undefined || clean === "") return fallback;
+  return String(clean);
 }
 
 function time(value) {
@@ -77,18 +106,35 @@ function color(teamColour) {
 }
 
 function driverName(row) {
-  return row?.name || row?.driver?.full_name || row?.driver?.name_acronym || row?.driver_number || "-";
+  const driver = row?.driver || {};
+  const fullName =
+    row?.name ||
+    driver.full_name ||
+    driver.FullName ||
+    driver.BroadcastName ||
+    driver.broadcast_name ||
+    [driver.first_name || driver.givenName, driver.last_name || driver.familyName].filter(Boolean).join(" ") ||
+    driver.name_acronym ||
+    driver.Tla ||
+    driver.code;
+
+  if (fullName) return fullName;
+  if (row?.driver_number) return `#${row.driver_number}`;
+  return "-";
 }
 
 function speed(value, metric) {
-  const n = Number(value);
-  if (!Number.isFinite(n)) return fmt(value);
+  const clean = primitive(value);
+  if (clean === null || clean === undefined || clean === "") return "-";
+
+  const n = Number(clean);
+  if (!Number.isFinite(n) || n <= 0) return fmt(clean);
   if (metric === "mph") return `${Math.round(n * 0.621371)} mph`;
   return `${Math.round(n)} km/h`;
 }
 
 function gap(row) {
-  return fmt(row?.interval || row?.gap_to_leader || row?.status);
+  return fmt(row?.interval ?? row?.gap_to_leader ?? row?.status);
 }
 
 function normalizeJolpicaFallback(fallback) {
