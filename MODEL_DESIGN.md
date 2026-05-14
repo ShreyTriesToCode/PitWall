@@ -37,6 +37,7 @@ It combines:
    - high tyre degradation
    - low overtaking
    - baseline
+   - high wind when weather data supports it
 
 5. Official Formula 1 timing layer:
    - sector performance
@@ -64,3 +65,21 @@ The 2026.05 model schema keeps the hybrid approach but makes accuracy auditable:
 - ranking metrics: winner hit rate, top-3 recall, top-5 recall, top-10 recall, exact position accuracy, mean position error, finish-position MAE/RMSE, and lap-time MAE/RMSE
 - feature groups: qualifying/grid, driver form, constructor form, same-circuit history, recent grid gain, finish consistency, momentum, reliability, pit execution, lap pace, car-vs-field pace, track overtake sensitivity, track pit/lap baselines, tyre/degradation era, weather, regulation fit, official upgrade-package traits, official F1 timing, optional OpenF1 timing, and optional FastF1 signals
 - output surfaces: dashboard, markdown, GitHub issue, and HTML email all expose compact model-quality evidence
+
+## Frontend contract and audit layer
+
+The backend now writes frontend-friendly JSON contracts in addition to markdown:
+
+- `data_cache/frontend-contract.json`: latest briefing, archive, scenarios, strategy, source health, prediction explainability, and top 10 driver fields
+- `data_cache/model-status.json`: schema version, trained-at state, latest result readiness, metrics, source health, correction summary, champion/challenger status, promotion decision, and limitations
+- `data_cache/backtest-history.json`: race-by-race model-card history for the archive and Model Center
+- `data_cache/model_corrections.json`: post-race correction records when actual result rows are available
+- `data_cache/features/*.json`: race, driver, team, and session feature stores for audit/debug UI
+
+Prediction stages are first-class contract values: `pre_weekend`, `post_practice`, `post_qualifying`, `pre_race`, `live_adjusted`, and `post_race_audited`.
+
+Ranking score predicts order. Confidence predicts trust. Confidence and reliability use model agreement, data completeness, source freshness, stage, validation history, and missing-data penalties.
+
+The 2026 layer uses official-style terminology: Overtake Mode, Boost, Manual Override, energy deployment, ERS-K, Active Aero, Straight Mode, and Corner Mode. Exact 2026 telemetry is not always available yet, so those fields are explicit explainable proxies derived from regulation context, track traits, speed/pace evidence, strategy, and source health.
+
+Champion/challenger promotion is controlled. A challenger can replace the champion only when validation metrics and acceptance rules pass, critical sources did not fail, generated contracts remain valid, tests pass, and artifacts save correctly.

@@ -6,6 +6,8 @@
 venv/
 env/
 __pycache__/
+.pytest_cache/
+.ruff_cache/
 *.pyc
 *.pyo
 *.pyd
@@ -15,6 +17,7 @@ frontend/node_modules/
 frontend/.next/
 frontend/out/
 frontend/.vercel/
+frontend/.turbo/
 
 # Logs
 *.log
@@ -27,3 +30,9 @@ yarn-error.log*
 .env.local
 frontend/.env
 frontend/.env.local
+
+# Intentionally tracked for PitWall model/data reproducibility:
+# - briefings/
+# - data_cache/
+# - fastf1_cache/
+# - models/saved_models/

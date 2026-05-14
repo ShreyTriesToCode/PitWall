@@ -1,13 +1,21 @@
 # Frontend
 
-Next.js dashboard for F1 Race Intel.
+Next.js dashboard for PitWall.
 
 ## Pages
 
 ```text
-/      Prediction dashboard
-/live  Live details dashboard
+/             Race Control overview
+/predictions  Prediction intelligence
+/drivers      Driver analysis
+/teams        Constructor intelligence
+/strategy     Strategy Lab
+/live         Live timing
+/model        Model Center
+/archive      Race archive
 ```
+
+The UI uses a shared Race Control shell, desktop sidebar, fixed viewport bottom navigation on mobile, animated ticker, loading states, bottom-sheet details on mobile, and generated backend contracts from `data_cache/frontend-contract.json`.
 
 ## Live data policy
 
@@ -35,7 +43,7 @@ Output Directory: leave empty
 Environment variable:
 
 ```text
-NEXT_PUBLIC_F1_DATA_BASE_URL=https://raw.githubusercontent.com/ShreyTriesToCode/f1-race-intel/main
+NEXT_PUBLIC_F1_DATA_BASE_URL=https://raw.githubusercontent.com/ShreyTriesToCode/PitWall/main
 ```
 
 Do not commit:
@@ -44,4 +52,10 @@ Do not commit:
 node_modules/
 .next/
 .vercel/
+```
+
+GitHub repository target:
+
+```text
+https://github.com/ShreyTriesToCode/PitWall
 ```

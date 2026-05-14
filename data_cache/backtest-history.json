@@ -1,0 +1,38 @@
+{
+  "schema_version": "2026.05-high-accuracy-v4",
+  "generated_at": "2026-05-14T14:44:27.739055+05:30",
+  "history": [
+    {
+      "race_id": "2026-5-canadian-grand-prix",
+      "prediction_id": "2026-5-canadian-grand-prix-sprint-pre_weekend-4861fe16c0e9",
+      "race_name": "Canadian Grand Prix",
+      "season": 2026,
+      "round": 5,
+      "stage": "pre_weekend",
+      "model_version": "2026.05-high-accuracy-v4",
+      "top_pick": "Andrea Kimi Antonelli",
+      "top_pick_confidence": 80.4,
+      "finish_position_mae": 3.9216664185391914,
+      "finish_position_rmse": 4.911994860857176,
+      "winner_hit_rate": 0.25,
+      "top3_recall": 0.6667,
+      "top10_recall": 0.75
+    },
+    {
+      "race_id": "2026-5-canadian-grand-prix",
+      "prediction_id": "2026-5-canadian-grand-prix-race-pre-weekend",
+      "race_name": "Canadian Grand Prix",
+      "season": 2026,
+      "round": 5,
+      "stage": "pre-weekend",
+      "model_version": "2026.05-high-accuracy-v4",
+      "top_pick": "Andrea Kimi Antonelli",
+      "top_pick_confidence": 83.5,
+      "finish_position_mae": 3.9216664185391914,
+      "finish_position_rmse": 4.911994860857176,
+      "winner_hit_rate": 0.25,
+      "top3_recall": 0.6667,
+      "top10_recall": 0.75
+    }
+  ]
+}

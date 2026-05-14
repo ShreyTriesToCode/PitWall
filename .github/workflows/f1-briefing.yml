@@ -1,4 +1,4 @@
-name: F1 Race Intel
+name: PitWall
 
 on:
   schedule:
@@ -40,7 +40,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: f1-race-intel-${{ github.ref }}
+  group: pitwall-${{ github.ref }}
   cancel-in-progress: true
 
 env:
@@ -80,9 +80,9 @@ jobs:
             data_cache/http
             data_cache/full_races
             models/saved_models
-          key: f1-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py', 'requirements.txt') }}
+          key: pitwall-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py', 'requirements.txt') }}
           restore-keys: |
-            f1-runtime-cache-${{ runner.os }}-
+            pitwall-runtime-cache-${{ runner.os }}-
 
       - name: Install dependencies
         run: |
@@ -92,9 +92,22 @@ jobs:
       - name: Validate briefing pipeline
         run: |
           python -m py_compile f1_briefing.py
-          python -m unittest discover -s tests
+          python -m unittest discover -s ./tests -p "test_*.py" -t .
 
-      - name: Run F1 hybrid briefing
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: "frontend/package-lock.json"
+
+      - name: Validate frontend build
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run PitWall hybrid briefing
         env:
           F1_ICS_URL: ${{ secrets.F1_ICS_URL }}
           EMAIL_ENABLED: ${{ github.event.inputs.send_email || 'true' }}
@@ -142,6 +155,16 @@ jobs:
           AUTO_COMMIT_ENABLED: "false"
         run: python f1_briefing.py
 
+      - name: Validate generated frontend contracts
+        run: |
+          python -m json.tool briefings/index.json >/dev/null
+          python -m json.tool data_cache/latest-model-debug.json >/dev/null
+          python -m json.tool data_cache/frontend-contract.json >/dev/null
+          python -m json.tool data_cache/model-status.json >/dev/null
+          python -m json.tool data_cache/backtest-history.json >/dev/null
+          python -m json.tool data_cache/model_corrections.json >/dev/null
+          python -m unittest discover -s ./tests -p "test_*.py" -t .
+
       - name: Commit generated outputs and caches
         if: success()
         run: |
@@ -156,10 +179,11 @@ jobs:
           # Stage outputs first. The previous workflow failed because it tried to rebase
           # while fastf1_cache/data_cache had unstaged changes.
           git add briefings MODEL_STATUS.md data_cache/latest-model-debug.json 2>/dev/null || true
+          git add data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/features data_cache/model-input-snapshots 2>/dev/null || true
           git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
 
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update f1 race intel outputs"
+            git commit -m "chore: update PitWall generated outputs"
           else
             echo "No generated file changes to commit before sync."
           fi
@@ -173,7 +197,7 @@ jobs:
               echo "Rebase conflict occurred. Keeping this run's generated output for generated files."
               git status --short
 
-              for file in briefings/latest-run-status.md briefings/index.json data_cache/latest-model-debug.json MODEL_STATUS.md; do
+              for file in briefings/latest-run-status.md briefings/index.json data_cache/latest-model-debug.json data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json MODEL_STATUS.md; do
                 if [ -e "$file" ]; then
                   git checkout --ours "$file" || true
                   git add "$file" || true
@@ -206,11 +230,17 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: f1-race-intel-output
+          name: pitwall-output
           path: |
             briefings/**
             MODEL_STATUS.md
             data_cache/latest-model-debug.json
+            data_cache/frontend-contract.json
+            data_cache/model-status.json
+            data_cache/backtest-history.json
+            data_cache/model_corrections.json
+            data_cache/features/**
+            data_cache/model-input-snapshots/**
             data_cache/http/**
             data_cache/full_races/**
             fastf1_cache/**

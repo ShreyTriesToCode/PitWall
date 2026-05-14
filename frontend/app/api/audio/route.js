@@ -4,12 +4,14 @@ export const runtime = "nodejs";
 function isAllowedAudioUrl(url) {
   try {
     const parsed = new URL(url);
-    return parsed.protocol === "https:" && (
-      parsed.hostname.includes("livetiming.formula1.com") ||
-      parsed.hostname.includes("formula1.com") ||
-      parsed.hostname.includes("amazonaws.com") ||
-      parsed.hostname.includes("cloudfront.net")
-    );
+    const host = parsed.hostname.toLowerCase();
+    const allowedHosts = [
+      "livetiming.formula1.com",
+      "formula1.com",
+      "amazonaws.com",
+      "cloudfront.net",
+    ];
+    return parsed.protocol === "https:" && allowedHosts.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
   } catch {
     return false;
   }
@@ -34,7 +36,7 @@ export async function GET(request) {
     const res = await fetch(url, {
       headers: {
         ...headers,
-        "User-Agent": "f1-race-intel-audio-proxy/1.0"
+        "User-Agent": "pitwall-audio-proxy/1.0"
       },
       cache: "no-store"
     });

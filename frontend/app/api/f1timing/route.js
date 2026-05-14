@@ -6,6 +6,7 @@ import { inflateRawSync } from "node:zlib";
 const F1_BASE = "https://livetiming.formula1.com/static";
 const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OPENF1_BASE = "https://api.openf1.org/v1";
+const OFFICIAL_VISUAL_CACHE = new Map();
 
 const FEEDS = [
   "SessionInfo.json",
@@ -36,8 +37,45 @@ const FEEDS = [
   "Position.z.jsonStream"
 ];
 
+const FAST_FEEDS = [
+  "SessionInfo.json",
+  "DriverList.json",
+  "DriverList.jsonStream",
+  "TimingData.json",
+  "TimingData.jsonStream",
+  "TimingAppData.json",
+  "LapCount.json",
+  "TrackStatus.json",
+  "WeatherData.json",
+  "RaceControlMessages.json",
+  "CarData.z.json"
+];
+
 function endpoint(path) {
   return `${F1_BASE}/${String(path || "").replace(/^\/+/, "")}`;
+}
+
+function jsonNoStore(payload, init = {}) {
+  return Response.json(payload, {
+    ...init,
+    headers: {
+      "Cache-Control": "no-store",
+      ...(init.headers || {})
+    }
+  });
+}
+
+function normalizedYear(value) {
+  const year = Number(String(value || "").trim());
+  const current = new Date().getUTCFullYear();
+  if (!Number.isInteger(year) || year < 2018 || year > Math.max(2030, current + 1)) return null;
+  return String(year);
+}
+
+function normalizedSelector(value, fallback = "latest") {
+  const raw = String(value || fallback).trim();
+  if (!raw) return fallback;
+  return raw.replace(/[^\w\s./:-]/g, " ").replace(/\s+/g, " ").slice(0, 120);
 }
 
 async function getText(url, timeoutMs = 12000) {
@@ -117,6 +155,48 @@ function lastObject(value) {
     return values[values.length - 1] || {};
   }
   return {};
+}
+
+function mergeIndexedCollection(previous, update) {
+  if (!previous) return update;
+  if (!update) return previous;
+
+  if (Array.isArray(previous) || Array.isArray(update)) {
+    const prevArray = Array.isArray(previous) ? previous : Object.values(previous || {});
+    const updateArray = Array.isArray(update) ? update : Object.values(update || {});
+    const max = Math.max(prevArray.length, updateArray.length);
+    return Array.from({ length: max }, (_, index) => {
+      const prevItem = prevArray[index];
+      const updateItem = updateArray[index];
+      if (prevItem && updateItem && typeof prevItem === "object" && typeof updateItem === "object") {
+        return mergeTimingLine(prevItem, updateItem);
+      }
+      return updateItem ?? prevItem;
+    });
+  }
+
+  if (typeof previous === "object" && typeof update === "object") {
+    const merged = { ...previous };
+    for (const [key, value] of Object.entries(update)) {
+      const current = merged[key];
+      merged[key] = current && value && typeof current === "object" && typeof value === "object"
+        ? mergeTimingLine(current, value)
+        : value;
+    }
+    return merged;
+  }
+
+  return update;
+}
+
+function mergeTimingLine(previous = {}, update = {}) {
+  const merged = { ...previous, ...update };
+  for (const key of ["Sectors", "sectors", "Segments", "segments", "Speeds", "speeds"]) {
+    if (previous?.[key] || update?.[key]) {
+      merged[key] = mergeIndexedCollection(previous?.[key], update?.[key]);
+    }
+  }
+  return merged;
 }
 
 function decompressFormula1Payload(value) {
@@ -212,14 +292,56 @@ function normalizeSessionName(name) {
   return String(name || "").replace(/_/g, " ").trim();
 }
 
+function normalizeToken(value) {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/formula 1|grand prix|gp|prix|airways|aramco|aws|lenovo|emirates|msc|crypto.com/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function meetingName(meeting) {
+  return normalizeSessionName(meeting?.Name || meeting?.name || meeting?.MeetingName || meeting?.meeting_name || meeting?.Location || meeting?.location || meeting?.Path || meeting?.path);
+}
+
+function meetingKey(meeting) {
+  return String(meeting?.Key || meeting?.key || meeting?.MeetingKey || meeting?.meeting_key || meeting?.Path || meeting?.path || meetingName(meeting));
+}
+
+function meetingMatches(meeting, requestedMeeting) {
+  const requested = normalizeToken(requestedMeeting);
+  if (!requested || requested === "latest" || requested === "current") return true;
+  const haystack = normalizeToken([
+    meetingName(meeting),
+    meeting?.Location,
+    meeting?.Country?.Name,
+    meeting?.Country?.Code,
+    meeting?.Path,
+    meetingKey(meeting),
+  ].filter(Boolean).join(" "));
+  return requested.split(/\s+/).every((part) => haystack.includes(part));
+}
+
 function isRealSession(session) {
   const name = normalizeSessionName(session?.Name || session?.name || session?.SessionName || session?.session_name).toLowerCase();
   return Boolean(name) && !name.includes("test");
 }
 
-function chooseSession(meetings, requestedSession) {
+function isGrandPrixMeeting(meeting) {
+  const name = meetingName(meeting).toLowerCase();
+  const path = String(meeting?.Path || meeting?.path || "").toLowerCase();
+  const text = `${name} ${path}`;
+  if (!name) return false;
+  if (text.includes("pre-season") || text.includes("preseason") || text.includes("testing") || text.includes("test")) return false;
+  return pickSessions(meeting).some(isRealSession);
+}
+
+function chooseSession(meetings, requestedSession, requestedMeeting = "latest") {
   const sessions = [];
   for (const meeting of meetings) {
+    if (!meetingMatches(meeting, requestedMeeting)) continue;
     for (const session of pickSessions(meeting)) {
       if (!isRealSession(session)) continue;
       sessions.push({
@@ -264,6 +386,207 @@ function chooseSession(meetings, requestedSession) {
 
   // Before the season/weekend starts, show the next upcoming session.
   return sessions[0] || null;
+}
+
+function meetingOptions(meetings) {
+  return (meetings || []).filter(isGrandPrixMeeting).map((meeting) => ({
+    key: meetingKey(meeting),
+    name: meetingName(meeting),
+    path: meeting?.Path || meeting?.path || "",
+    country: meeting?.Country?.Name || meeting?.country || "",
+    location: meeting?.Location || meeting?.location || "",
+    date_start: meeting?.DateStart || meeting?.date_start || pickSessions(meeting)?.[0]?.StartDate || "",
+  })).filter((meeting) => meeting.name);
+}
+
+function sessionOptions(meeting) {
+  return pickSessions(meeting).filter(isRealSession).map((session) => ({
+    key: String(session?.Path || session?.path || session?.Key || session?.session_key || normalizeSessionName(session?.Name || session?.name)),
+    name: normalizeSessionName(session?.Name || session?.name || session?.SessionName || session?.session_name),
+    type: session?.Type || session?.type || "",
+    date_start: session?.StartDate || session?.startDate || "",
+  }));
+}
+
+const OFFICIAL_RACE_SLUGS = {
+  australia: "australia",
+  melbourne: "australia",
+  china: "china",
+  shanghai: "china",
+  japan: "japan",
+  suzuka: "japan",
+  bahrain: "bahrain",
+  saudi: "saudi-arabia",
+  jeddah: "saudi-arabia",
+  miami: "miami",
+  canada: "canada",
+  montreal: "canada",
+  monaco: "monaco",
+  spain: "spain",
+  barcelona: "spain",
+  austria: "austria",
+  britain: "great-britain",
+  silverstone: "great-britain",
+  belgium: "belgium",
+  spa: "belgium",
+  hungary: "hungary",
+  zandvoort: "netherlands",
+  dutch: "netherlands",
+  netherlands: "netherlands",
+  italy: "italy",
+  monza: "italy",
+  madrid: "spain",
+  azerbaijan: "azerbaijan",
+  baku: "azerbaijan",
+  singapore: "singapore",
+  "united states": "united-states",
+  austin: "united-states",
+  mexico: "mexico",
+  "mexico city": "mexico",
+  brazil: "brazil",
+  "sao paulo": "brazil",
+  vegas: "las-vegas",
+  "las vegas": "las-vegas",
+  qatar: "qatar",
+  lusail: "qatar",
+  abu: "abu-dhabi",
+  "abu dhabi": "abu-dhabi",
+};
+
+const TRACK_IMAGE_SLUGS = {
+  australia: "melbourne",
+  china: "shanghai",
+  japan: "suzuka",
+  bahrain: "bahrain",
+  "saudi-arabia": "jeddah",
+  miami: "miami",
+  canada: "montreal",
+  monaco: "monaco",
+  spain: "barcelona",
+  austria: "austria",
+  "great-britain": "silverstone",
+  belgium: "spa",
+  hungary: "hungary",
+  netherlands: "zandvoort",
+  italy: "monza",
+  azerbaijan: "baku",
+  singapore: "singapore",
+  "united-states": "austin",
+  mexico: "mexico",
+  brazil: "interlagos",
+  "las-vegas": "lasvegas",
+  qatar: "lusail",
+  "abu-dhabi": "abudhabi",
+};
+
+const OFFICIAL_CIRCUIT_MAP_ASSETS = {
+  australia: "Australia_Circuit",
+  china: "China_Circuit",
+  japan: "Japan_Circuit",
+  bahrain: "Bahrain_Circuit",
+  "saudi-arabia": "Saudi_Arabia_Circuit",
+  miami: "Miami_Circuit",
+  canada: "Canada_Circuit",
+  monaco: "Monaco_Circuit",
+  spain: "Spain_Circuit",
+  austria: "Austria_Circuit",
+  "great-britain": "Great_Britain_Circuit",
+  belgium: "Belgium_Circuit",
+  hungary: "Hungary_Circuit",
+  netherlands: "Netherlands_Circuit",
+  italy: "Italy_Circuit",
+  azerbaijan: "Azerbaijan_Circuit",
+  singapore: "Singapore_Circuit",
+  "united-states": "United_States_Circuit",
+  mexico: "Mexico_Circuit",
+  brazil: "Brazil_Circuit",
+  "las-vegas": "Las_Vegas_Circuit",
+  qatar: "Qatar_Circuit",
+  "abu-dhabi": "Abu_Dhabi_Circuit",
+};
+
+function officialRaceSlug(meeting) {
+  const text = normalizeToken([meetingName(meeting), meeting?.Location, meeting?.Country?.Name, meeting?.Path].filter(Boolean).join(" "));
+  const match = Object.entries(OFFICIAL_RACE_SLUGS)
+    .sort((a, b) => b[0].length - a[0].length)
+    .find(([needle]) => text.includes(needle));
+  return match?.[1] || "";
+}
+
+async function officialRaceVisual(year, meeting) {
+  const raceSlug = officialRaceSlug(meeting);
+  if (!raceSlug) return null;
+  const trackSlug = TRACK_IMAGE_SLUGS[raceSlug] || raceSlug.replace(/-/g, "");
+  const circuitAsset = OFFICIAL_CIRCUIT_MAP_ASSETS[raceSlug] || `${raceSlug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join("_")}_Circuit`;
+  const cleanYear = String(year || new Date().getUTCFullYear());
+  const pageUrl = `https://www.formula1.com/en/racing/${cleanYear}/${raceSlug}/`;
+  const cacheKey = `${cleanYear}:${raceSlug}`;
+  if (OFFICIAL_VISUAL_CACHE.has(cacheKey)) return OFFICIAL_VISUAL_CACHE.get(cacheKey);
+
+  const visual = {
+    source: "Formula 1",
+    page_url: pageUrl,
+    image_url: `https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/${circuitAsset}.webp`,
+    fallback_image_url: `https://media.formula1.com/image/upload/c_fit%2Cw_900%2Ch_520/q_auto/v1740000001/common/f1/${cleanYear}/track/${cleanYear}track${trackSlug}detailed.webp`,
+    image_status: "official-circuit-map",
+    alt: `${meetingName(meeting)} official circuit and grid visual`,
+  };
+  OFFICIAL_VISUAL_CACHE.set(cacheKey, visual);
+  return visual;
+}
+
+function normalizeMiniSectorTone(value) {
+  const text = String(readValue(value, value) || "").toLowerCase();
+  if (text.includes("2048") || text.includes("purple") || text.includes("overall") || text.includes("fastest")) return "purple";
+  if (text.includes("2049") || text.includes("green") || text.includes("personal")) return "green";
+  if (text.includes("2051") || text.includes("yellow")) return "yellow";
+  if (text.includes("2064") || text.includes("pit")) return "pit";
+  if (text.includes("0") || text.includes("normal")) return "neutral";
+  return "neutral";
+}
+
+function normalizeMiniSectors(rawSectors) {
+  const sectors = Array.isArray(rawSectors)
+    ? rawSectors
+    : rawSectors && typeof rawSectors === "object"
+      ? Object.values(rawSectors)
+      : [];
+
+  const output = [];
+  sectors.forEach((sector, sectorIndex) => {
+    const sectorNumber = readValue(sector?.Number || sector?.number || sector?.SectorNumber || sector?.sector_number, sectorIndex + 1);
+    const rawSegments = sector?.Segments || sector?.segments || sector?.MiniSectors || sector?.mini_sectors || [];
+    const segments = Array.isArray(rawSegments)
+      ? rawSegments
+      : rawSegments && typeof rawSegments === "object"
+        ? Object.values(rawSegments)
+        : [];
+
+    if (segments.length) {
+      segments.forEach((segment, segmentIndex) => {
+        const status = readValue(segment?.Status || segment?.status || segment?.Value || segment?.value || segment, "");
+        output.push({
+          sector: sectorNumber,
+          segment: readValue(segment?.Number || segment?.number || segmentIndex + 1, segmentIndex + 1),
+          status,
+          tone: normalizeMiniSectorTone(status),
+        });
+      });
+      return;
+    }
+
+    const status = readValue(sector?.Status || sector?.status || sector?.Value || sector?.value || sector, "");
+    if (status !== "") {
+      output.push({
+        sector: sectorNumber,
+        segment: 1,
+        status,
+        tone: normalizeMiniSectorTone(status),
+      });
+    }
+  });
+
+  return output;
 }
 
 function sessionPath(meeting, session) {
@@ -366,6 +689,45 @@ function mergeDriverSources(primary, fallbackMap) {
   return Array.from(map.values());
 }
 
+function objectList(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.filter(Boolean);
+  if (typeof value === "object") return Object.values(value).filter(Boolean);
+  return [];
+}
+
+function latestStint(rawStints) {
+  const stints = objectList(rawStints);
+  return [...stints].reverse().find((stint) => readValue(stint?.Compound || stint?.compound || stint?.tyre_compound, "")) || stints[stints.length - 1] || {};
+}
+
+function stintCompound(stint) {
+  return readValue(
+    stint?.Compound ||
+    stint?.compound ||
+    stint?.Tyre ||
+    stint?.tyre ||
+    stint?.tyre_compound ||
+    stint?.compound_name,
+    ""
+  );
+}
+
+function stintTyreAge(stint) {
+  return readValue(
+    stint?.TotalLaps ||
+    stint?.total_laps ||
+    stint?.TyreAge ||
+    stint?.tyre_age ||
+    stint?.tyre_age_at_start ||
+    stint?.LapCount ||
+    stint?.lap_count ||
+    stint?.StartLaps ||
+    stint?.start_laps,
+    ""
+  );
+}
+
 function normalizeTiming(timingData, drivers, timingAppData, carData) {
   const driverMap = new Map((drivers || []).map((d) => [String(d.driver_number), d]));
   const lines = {};
@@ -374,14 +736,14 @@ function normalizeTiming(timingData, drivers, timingAppData, carData) {
   for (const entry of timingData || []) {
     const data = entry?.data?.Lines || entry?.data?.lines || {};
     for (const [num, update] of Object.entries(data)) {
-      lines[num] = { ...(lines[num] || {}), ...update };
+      lines[num] = mergeTimingLine(lines[num] || {}, update);
     }
   }
 
   for (const entry of timingAppData || []) {
     const data = entry?.data?.Lines || entry?.data?.lines || {};
     for (const [num, update] of Object.entries(data)) {
-      appLines[num] = { ...(appLines[num] || {}), ...update };
+      appLines[num] = mergeTimingLine(appLines[num] || {}, update);
     }
   }
 
@@ -398,7 +760,7 @@ function normalizeTiming(timingData, drivers, timingAppData, carData) {
 
   const rows = Object.entries(lines).map(([num, raw]) => {
     const driver = driverMap.get(String(Number(num))) || driverMap.get(String(num)) || {};
-    const stint = lastObject(appLines[num]?.Stints || appLines[num]?.stints) || appLines[num]?.Stint || appLines[num]?.stint || {};
+    const stint = latestStint(appLines[num]?.Stints || appLines[num]?.stints) || appLines[num]?.Stint || appLines[num]?.stint || {};
     const channels = latestCar[num]?.Channels || latestCar[num]?.channels || {};
     const lastLap = readValue(raw?.LastLapTime, readValue(raw?.Sectors?.[2], ""));
     const interval = readValue(raw?.IntervalToPositionAhead, readValue(raw?.GapToLeader, readValue(raw?.Status, "")));
@@ -411,14 +773,15 @@ function normalizeTiming(timingData, drivers, timingAppData, carData) {
       gap_to_leader: gapToLeader,
       status: readValue(raw?.Status || raw?.status, ""),
       lap_duration: lastLap,
-      compound: readValue(stint?.Compound || stint?.compound, ""),
-      tyre_age: readValue(stint?.TotalLaps || stint?.StartLaps || stint?.LapCount || stint?.tyre_age, ""),
+      compound: stintCompound(stint),
+      tyre_age: stintTyreAge(stint),
       speed: readValue(channels?.[2] || latestCar[num]?.Speed || latestCar[num]?.speed, ""),
       n_gear: readValue(channels?.[3] || latestCar[num]?.Gear || latestCar[num]?.gear, ""),
       rpm: readValue(channels?.[0] || latestCar[num]?.Rpm || latestCar[num]?.rpm, ""),
-      drs: readValue(channels?.[45] || latestCar[num]?.Drs || latestCar[num]?.drs, ""),
+      aero_mode: readValue(channels?.[45] || latestCar[num]?.Drs || latestCar[num]?.drs, ""),
       brake: readValue(channels?.[5] || latestCar[num]?.Brake || latestCar[num]?.brake, ""),
       sectors: raw?.Sectors || raw?.sectors || [],
+      mini_sectors: normalizeMiniSectors(raw?.Sectors || raw?.sectors || []),
       driver
     };
   });
@@ -566,7 +929,7 @@ async function fetchJolpicaFallback() {
         cache: "no-store",
         headers: {
           Accept: "application/json",
-          "User-Agent": "f1-race-intel-live-dashboard/1.0"
+          "User-Agent": "pitwall-live-dashboard/1.0"
         }
       });
       const data = await res.json().catch(() => null);
@@ -609,6 +972,8 @@ async function fetchOpenF1Fallback() {
   await sleep(380);
   const pits = await getJson(`${OPENF1_BASE}/pit?session_key=${encodeURIComponent(session.session_key)}`);
   await sleep(380);
+  const stints = await getJson(`${OPENF1_BASE}/stints?session_key=${encodeURIComponent(session.session_key)}`);
+  await sleep(380);
   const teamRadio = await fetchOpenF1TeamRadio(session.session_key);
   return {
     ok: sessions.ok && drivers.ok && Array.isArray(drivers.data),
@@ -616,12 +981,14 @@ async function fetchOpenF1Fallback() {
     drivers: Array.isArray(drivers.data) ? drivers.data : [],
     results: Array.isArray(results.data) ? results.data : [],
     pits: Array.isArray(pits.data) ? pits.data : [],
+    stints: Array.isArray(stints.data) ? stints.data : [],
     team_radio: teamRadio.rows,
     status: {
       sessions: sessions.status,
       drivers: drivers.status,
       session_result: results.status,
       pit: pits.status,
+      stints: stints.status,
       team_radio: teamRadio.status
     }
   };
@@ -638,9 +1005,19 @@ function normalizeOpenF1Fallback(openf1) {
     team_colour: driver.team_colour || "",
     headshot_url: driver.headshot_url || ""
   }));
+  const latestStints = new Map();
+  for (const stint of openf1.stints || []) {
+    const driverNumber = Number(stint.driver_number);
+    if (!Number.isFinite(driverNumber)) continue;
+    const current = latestStints.get(driverNumber);
+    const stintNumber = Number(stint.stint_number || stint.stint || 0);
+    const currentNumber = Number(current?.stint_number || current?.stint || 0);
+    if (!current || stintNumber >= currentNumber) latestStints.set(driverNumber, stint);
+  }
   const leaderboard = (openf1.results || []).map((row) => {
     const driver = driverMap.get(String(row.driver_number)) || {};
     const position = Number(row.position);
+    const stint = latestStints.get(Number(row.driver_number)) || {};
     return {
       position: Number.isFinite(position) ? position : "",
       driver_number: Number(row.driver_number),
@@ -650,8 +1027,8 @@ function normalizeOpenF1Fallback(openf1) {
       gap_to_leader: row.gap_to_leader ?? "",
       interval: row.gap_to_leader ?? "",
       lap_duration: "",
-      compound: "",
-      tyre_age: "",
+      compound: stintCompound(stint),
+      tyre_age: stintTyreAge(stint),
       speed: "",
       status: row.dnf ? "DNF" : row.dns ? "DNS" : row.dsq ? "DSQ" : "",
       points: row.points ?? ""
@@ -679,22 +1056,29 @@ function normalizeOpenF1Fallback(openf1) {
     leaderboard,
     intervals: leaderboard,
     laps: [],
-    stints: [],
     carData: [],
     weather: null,
     raceControl: [],
     lapCount: { current_lap: Math.max(0, ...leaderboard.map((row) => Number((openf1.results || []).find((item) => Number(item.driver_number) === row.driver_number)?.number_of_laps || 0))), total_laps: "" },
     trackStatus: null,
     pits,
+    stints: Array.from(latestStints.entries()).map(([driverNumber, stint]) => ({
+      driver_number: driverNumber,
+      compound: stintCompound(stint),
+      tyre_age_at_start: stintTyreAge(stint),
+      raw: stint
+    })),
     radio: normalizeOpenF1TeamRadio(openf1.team_radio || [], drivers)
   };
 }
 
-async function fetchFeeds(basePath) {
+async function fetchFeeds(basePath, { fast = false } = {}) {
   const feeds = {};
-  await Promise.all(FEEDS.map(async (feed) => {
+  const feedList = fast ? FAST_FEEDS : FEEDS;
+  const timeoutMs = fast ? 4200 : 7000;
+  await Promise.all(feedList.map(async (feed) => {
     const url = endpoint(`${basePath}${feed}`);
-    const response = await getText(url, 12000);
+    const response = await getText(url, timeoutMs);
     const zipped = feed.includes(".z.");
     const json = feed.endsWith(".json") ? decompressFormula1Payload(safeJson(response.text, response.text)) : null;
     const stream = feed.endsWith(".jsonStream") ? parseJsonStream(response.text, zipped) : [];
@@ -705,18 +1089,29 @@ async function fetchFeeds(basePath) {
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const year = searchParams.get("year") || String(new Date().getUTCFullYear());
-  const requestedSession = searchParams.get("session") || "latest";
+  const year = normalizedYear(searchParams.get("year") || String(new Date().getUTCFullYear()));
+  if (!year) {
+    return jsonNoStore({
+      ok: false,
+      error: "Invalid year. Choose a season between 2018 and the next available F1 season.",
+      normalized: null,
+      meeting_options: [],
+      session_options: [],
+    }, { status: 400 });
+  }
+  const requestedSession = normalizedSelector(searchParams.get("session"), "latest");
+  const requestedMeeting = normalizedSelector(searchParams.get("meeting"), "latest");
+  const fast = searchParams.get("fast") === "1" || searchParams.get("fast") === "true";
 
   const rootIndex = await getText(endpoint("Index.json"));
   const yearIndexResponse = await getText(endpoint(`${year}/Index.json`));
   const yearIndex = safeJson(yearIndexResponse.text, null);
   const meetings = pickMeetings(yearIndex);
-  const selected = chooseSession(meetings, requestedSession);
+  const selected = chooseSession(meetings, requestedSession, requestedMeeting);
 
   if (!selected) {
     const openf1Fallback = await fetchOpenF1Fallback();
-    return Response.json({
+    return jsonNoStore({
       ok: Boolean(openf1Fallback?.ok),
       source: openf1Fallback?.ok ? "OpenF1Fallback" : "Formula1LiveTiming",
       reason: openf1Fallback?.ok ? "No F1 live timing session found, using latest OpenF1 free historical session." : "No F1 live timing session found for selected year.",
@@ -726,22 +1121,27 @@ export async function GET(request) {
       refresh_after_ms: 60000,
       root_status: rootIndex.status,
       year_status: yearIndexResponse.status,
+      meeting_options: meetingOptions(meetings),
+      session_options: [],
+      official_visual: null,
       normalized: normalizeOpenF1Fallback(openf1Fallback),
       openf1_fallback: openf1Fallback,
       jolpica_fallback: await fetchJolpicaFallback()
-    }, { headers: { "Cache-Control": "no-store" } });
+    });
   }
 
   const basePath = sessionPath(selected.meeting, selected.session);
-  const feeds = basePath ? await fetchFeeds(basePath) : {};
-  const jolpicaFallback = await fetchJolpicaFallback();
-  const fallbackDriverMap = normalizeJolpicaDrivers(jolpicaFallback);
+  const feeds = basePath ? await fetchFeeds(basePath, { fast }) : {};
+  let jolpicaFallback = null;
+  let fallbackDriverMap = new Map();
   const keyframeDrivers = normalizeDriverKeyframe(feeds["DriverList.json"]?.json || {});
   const streamDrivers = normalizeDrivers(feeds["DriverList.jsonStream"]?.entries || []);
-  const drivers = mergeDriverSources(
-    mergeDriverSources(keyframeDrivers, new Map(streamDrivers.map((driver) => [String(driver.driver_number), driver]))),
-    fallbackDriverMap
-  );
+  let drivers = mergeDriverSources(keyframeDrivers, new Map(streamDrivers.map((driver) => [String(driver.driver_number), driver])));
+  if (!drivers.length && !fast) {
+    jolpicaFallback = await fetchJolpicaFallback();
+    fallbackDriverMap = normalizeJolpicaDrivers(jolpicaFallback);
+    drivers = mergeDriverSources(drivers, fallbackDriverMap);
+  }
   const leaderboard = normalizeTiming(
     entriesWithKeyframe(feeds["TimingData.jsonStream"]?.entries || [], feeds["TimingData.json"]?.json),
     drivers,
@@ -752,6 +1152,7 @@ export async function GET(request) {
   const normalized = {
     session: {
       meeting_name: selected.meeting?.Name || selected.meeting?.name || "",
+      meeting_key: meetingKey(selected.meeting),
       meeting_path: selected.meeting?.Path || selected.meeting?.path || "",
       session_name: selected.session?.Name || selected.session?.name || "",
       session_type: selected.session?.Type || selected.session?.type || "",
@@ -764,7 +1165,7 @@ export async function GET(request) {
     intervals: leaderboard,
     laps: leaderboard.map((row) => ({ driver_number: row.driver_number, lap_duration: row.lap_duration })),
     stints: leaderboard.map((row) => ({ driver_number: row.driver_number, compound: row.compound, tyre_age_at_start: row.tyre_age })),
-    carData: leaderboard.map((row) => ({ driver_number: row.driver_number, speed: row.speed, n_gear: row.n_gear, rpm: row.rpm, drs: row.drs, brake: row.brake })),
+    carData: leaderboard.map((row) => ({ driver_number: row.driver_number, speed: row.speed, n_gear: row.n_gear, rpm: row.rpm, aero_mode: row.aero_mode, brake: row.brake })),
     weather: normalizeWeather(entriesWithKeyframe(feeds["WeatherData.jsonStream"]?.entries || [], feeds["WeatherData.json"]?.json)),
     raceControl: normalizeRaceControl(entriesWithKeyframe(feeds["RaceControlMessages.jsonStream"]?.entries || [], feeds["RaceControlMessages.json"]?.json)),
     lapCount: normalizeLapCount(entriesWithKeyframe(feeds["LapCount.jsonStream"]?.entries || [], feeds["LapCount.json"]?.json)),
@@ -781,12 +1182,16 @@ export async function GET(request) {
 
   const hasUsefulF1Data = leaderboard.length > 0 || normalized.weather || normalized.raceControl.length > 0;
   const lifecycle = sessionLifecycle(selected, hasUsefulF1Data);
-  const openf1Fallback = hasUsefulF1Data ? null : await fetchOpenF1Fallback();
+  if (!hasUsefulF1Data && !jolpicaFallback && !fast) {
+    jolpicaFallback = await fetchJolpicaFallback();
+  }
+  const openf1Fallback = hasUsefulF1Data || fast ? null : await fetchOpenF1Fallback();
   const normalizedOpenF1 = normalizeOpenF1Fallback(openf1Fallback);
   const outputNormalized = hasUsefulF1Data ? normalized : normalizedOpenF1 || normalized;
   const outputOk = hasUsefulF1Data || Boolean(normalizedOpenF1?.leaderboard?.length) || Boolean(jolpicaFallback?.latestResults?.ok);
+  const officialVisual = await officialRaceVisual(year, selected.meeting);
 
-  return Response.json({
+  return jsonNoStore({
     ok: outputOk,
     source: hasUsefulF1Data ? "Formula1LiveTiming" : normalizedOpenF1 ? "OpenF1Fallback" : "JolpicaFallback",
     source_note: hasUsefulF1Data
@@ -799,7 +1204,11 @@ export async function GET(request) {
     is_live: lifecycle.is_live && hasUsefulF1Data,
     session_state: hasUsefulF1Data ? lifecycle.state : normalizedOpenF1 ? "openf1-fallback" : "fallback",
     refresh_after_ms: hasUsefulF1Data ? lifecycle.refresh_after_ms : 60000,
+    fast_sync: fast,
     selected,
+    meeting_options: meetingOptions(meetings),
+    session_options: sessionOptions(selected.meeting),
+    official_visual: officialVisual,
     feed_status: {
       ...Object.fromEntries(Object.entries(feeds).map(([key, value]) => [key, { ok: value.ok, status: value.status, count: value.count || (value.json ? 1 : 0) }])),
       OpenF1TeamRadio: { ok: openf1Radio.ok, status: openf1Radio.status, count: openf1Radio.rows.length },
@@ -809,5 +1218,5 @@ export async function GET(request) {
     openf1_fallback: openf1Fallback,
     jolpica_fallback: hasUsefulF1Data ? null : jolpicaFallback,
     normalized_fallback: hasUsefulF1Data ? null : normalizeJolpicaFallback(jolpicaFallback)
-  }, { headers: { "Cache-Control": "no-store" } });
+  });
 }

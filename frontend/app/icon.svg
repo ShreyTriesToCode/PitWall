@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="carbon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050506"/>
+      <stop offset="0.48" stop-color="#121010"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6a5f"/>
+      <stop offset="0.45" stop-color="#e10600"/>
+      <stop offset="1" stop-color="#ff2010"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2f3f5"/>
+      <stop offset="0.45" stop-color="#8c9098"/>
+      <stop offset="1" stop-color="#f7f8fa"/>
+    </linearGradient>
+    <pattern id="weave" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <path d="M0 0h18v3H0zM0 9h18v2H0z" fill="#ffffff" opacity=".055"/>
+      <path d="M0 4h18v2H0zM0 13h18v3H0z" fill="#e10600" opacity=".035"/>
+    </pattern>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1  0 0 .05 0 0  0 0 .03 0 0  0 0 0 .88 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="tile">
+      <rect x="24" y="24" width="464" height="464" rx="92"/>
+    </clipPath>
+  </defs>
+
+  <rect width="512" height="512" rx="100" fill="#050506"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#carbon)" stroke="#24262d" stroke-width="12"/>
+  <rect x="31" y="31" width="450" height="450" rx="84" fill="url(#weave)" opacity=".95"/>
+
+  <g clip-path="url(#tile)" opacity=".72">
+    <path d="M48 92h96m48 0v88m52-136v112m47-112v76m61-48h112M55 407h122m91 0v-92m64 136V321m71 54h78M62 198h70m50 0h71m130 0h76M64 314h104m38 0h58m87 0h99" fill="none" stroke="#e10600" stroke-width="5" stroke-linecap="square" opacity=".48"/>
+    <path d="M144 92v57h71m29 7h116m43 0v42M176 407v-48h74m18-44h96m39 0v-64" fill="none" stroke="#ff2010" stroke-width="2.5" opacity=".7"/>
+    <g fill="#ff2010">
+      <circle cx="144" cy="92" r="5"/>
+      <circle cx="244" cy="156" r="4"/>
+      <circle cx="403" cy="198" r="4"/>
+      <circle cx="176" cy="407" r="5"/>
+      <circle cx="268" cy="315" r="4"/>
+      <circle cx="403" cy="251" r="4"/>
+    </g>
+  </g>
+
+  <rect x="42" y="42" width="428" height="428" rx="74" fill="none" stroke="#e10600" stroke-width="5" opacity=".7" filter="url(#glow)"/>
+  <rect x="51" y="51" width="410" height="410" rx="66" fill="none" stroke="#ffffff" stroke-width="2" opacity=".18"/>
+
+  <g filter="url(#glow)">
+    <path d="M118 166h174c54 0 86 25 86 67 0 38-27 66-77 72h-66l-25 82h-71l43-143h98c16 0 25-5 25-15s-9-15-25-15H104z" fill="#121010" stroke="url(#redGlow)" stroke-width="17" stroke-linejoin="round"/>
+    <path d="M138 186h151c39 0 61 16 61 44 0 26-21 42-58 42h-79l-28 92h-24l40-133h81c28 0 43-10 43-28 0-14-13-23-39-23H132z" fill="url(#metal)" opacity=".9"/>
+    <path d="M298 304h72l21-76h67l-49 159h-70l-18-76-57 76h-76l91-116h55z" fill="#121010" stroke="url(#redGlow)" stroke-width="16" stroke-linejoin="round"/>
+    <path d="M318 319h37l15 62 38-138h24l-38 122h-36l-18-74-56 74h-34z" fill="url(#metal)" opacity=".92"/>
+  </g>
+
+  <path d="M108 166h61m41 0h29m-47 84h43m-64 137h38m93-83h35m-13 83h31" fill="none" stroke="#ff6a5f" stroke-width="4" stroke-linecap="square" opacity=".82"/>
+</svg>
