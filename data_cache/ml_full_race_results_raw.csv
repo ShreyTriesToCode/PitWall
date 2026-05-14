@@ -674,7 +674,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,grosjean,Romain Grosjean,Haas F1 Team,9.0,11.0,,13,0.0,+1 Lap,1,0,0,0,109.274,109.274,,0,1,22.912,22.912
 2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,ricciardo,Daniel Ricciardo,Renault,10.0,6.0,,14,0.0,+1 Lap,1,0,0,0,110.451,110.451,,0,1,27.62,27.62
 2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,russell,George Russell,Williams,14.0,19.0,,15,0.0,+1 Lap,1,0,0,0,108.86,108.86,,0,1,22.442,22.442
-2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,raikkonen,Kimi Räikkönen,Alfa Romeo,6.0,8.0,,16,0.0,+1 Lap,1,0,0,0,108.753,108.753,,0,3,30.313999999999997,25.005
+2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,raikkonen,Kimi Räikkönen,Alfa Romeo,6.0,8.0,,16,0.0,+1 Lap,1,0,0,0,108.753,108.753,,0,3,30.314000000000004,25.005
 2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,kubica,Robert Kubica,Williams,20.0,20.0,,17,0.0,+1 Lap,1,0,0,0,109.22,109.22,,0,1,24.247,24.247
 2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,giovinazzi,Antonio Giovinazzi,Alfa Romeo,18.0,15.0,,18,0.0,Accident,0,0,0,0,107.56,107.56,,0,1,23.044,23.044
 2019-13,2019,13,2019-09-01T18:40:00+05:30,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,sainz,Carlos Sainz,McLaren,15.0,17.0,,19,0.0,Power loss,0,0,0,0,,,,0,1,59.291,59.291
@@ -851,7 +851,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,vettel,Sebastian Vettel,Ferrari,11.0,11.0,,10,1.0,Finished,1,0,0,1,68.623,68.623,,0,2,22.4845,22.231
 2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,latifi,Nicholas Latifi,Williams,20.0,20.0,,11,0.0,Finished,1,0,0,0,69.662,69.662,,0,2,21.988,21.918
 2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,kvyat,Daniil Kvyat,AlphaTauri,13.0,13.0,,12,0.0,Suspension,0,0,0,0,69.135,69.135,,0,2,22.1955,21.622
-2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,albon,Alexander Albon,Red Bull,4.0,5.0,,13,0.0,Electronics,0,0,0,0,68.432,68.432,,0,3,20.052,17.035
+2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,albon,Alexander Albon,Red Bull,4.0,5.0,,13,0.0,Electronics,0,0,0,0,68.432,68.432,,0,3,20.051999999999996,17.035
 2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,raikkonen,Kimi Räikkönen,Alfa Romeo,19.0,19.0,,14,0.0,Wheel,0,0,0,0,69.031,69.031,,0,2,22.399,21.569
 2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,russell,George Russell,Williams,17.0,17.0,,15,0.0,Fuel pressure,0,0,0,0,69.31700000000001,69.31700000000001,,0,1,21.417,21.417
 2020-1,2020,1,2020-07-05T18:40:00+05:30,Austrian Grand Prix,red_bull_ring,Red Bull Ring,grosjean,Romain Grosjean,Haas F1 Team,15.0,15.0,,16,0.0,Brakes,0,0,0,0,70.228,70.228,,0,1,23.28,23.28
@@ -1753,7 +1753,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,ocon,Esteban Ocon,Alpine F1 Team,10.0,10.0,,12,0.0,Finished,1,0,0,0,77.571,77.571,,0,1,24.875,24.875
 2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,ricciardo,Daniel Ricciardo,McLaren,14.0,14.0,,13,0.0,Finished,1,0,0,0,77.532,77.532,,0,1,26.056,26.056
 2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,stroll,Lance Stroll,Aston Martin,18.0,18.0,,14,0.0,Finished,1,0,0,0,77.672,77.672,,0,2,29.7405,26.731
-2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,latifi,Nicholas Latifi,Williams,19.0,19.0,,15,0.0,+1 Lap,1,0,0,0,78.57900000000001,78.57900000000001,,0,3,33.34466666666667,26.91
+2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,latifi,Nicholas Latifi,Williams,19.0,19.0,,15,0.0,+1 Lap,1,0,0,0,78.57900000000001,78.57900000000001,,0,3,33.34466666666666,26.91
 2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,zhou,Guanyu Zhou,Alfa Romeo,20.0,20.0,,16,0.0,+1 Lap,1,0,0,0,78.2,78.2,,0,1,25.594,25.594
 2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,tsunoda,Yuki Tsunoda,AlphaTauri,11.0,11.0,,17,0.0,+1 Lap,1,0,0,0,75.334,75.334,,0,2,25.5445,25.068
 2022-7,2022,7,2022-05-29T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,albon,Alexander Albon,Williams,16.0,16.0,,18,0.0,Mechanical,0,0,0,0,78.023,78.023,,0,1,27.231,27.231
@@ -2022,7 +2022,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,russell,George Russell,Mercedes,1.0,3.0,1.0,1,26.0,Finished,1,1,1,1,73.785,73.785,,0,1,23.521,23.521
 2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,hamilton,Lewis Hamilton,Mercedes,2.0,8.0,3.0,2,18.0,Finished,1,0,1,1,73.94200000000001,73.94200000000001,,0,1,24.081,24.081
 2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,sainz,Carlos Sainz,Ferrari,7.0,5.0,2.0,3,15.0,Finished,1,0,1,1,73.953,73.953,,0,2,24.3445,23.483
-2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,leclerc,Charles Leclerc,Ferrari,5.0,10.0,6.0,4,12.0,Finished,1,0,0,1,74.253,74.253,,0,3,25.45866666666667,23.124
+2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,leclerc,Charles Leclerc,Ferrari,5.0,10.0,6.0,4,12.0,Finished,1,0,0,1,74.253,74.253,,0,3,25.458666666666662,23.124
 2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,alonso,Fernando Alonso,Alpine F1 Team,17.0,7.0,18.0,5,10.0,Finished,1,0,0,1,74.164,74.164,,0,2,26.1665,23.478
 2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,max_verstappen,Max Verstappen,Red Bull,3.0,2.0,4.0,6,8.0,Finished,1,0,0,1,74.195,74.195,,0,2,31.311999999999998,30.942
 2022-21,2022,21,2022-11-13T23:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,perez,Sergio Pérez,Red Bull,4.0,9.0,5.0,7,6.0,Finished,1,0,0,1,74.283,74.283,,0,1,22.869,22.869
@@ -2075,7 +2075,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,de_vries,Nyck de Vries,AlphaTauri,19.0,19.0,,14,0.0,Lapped,0,0,0,0,97.709,97.709,,0,2,25.126,25.018
 2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,hulkenberg,Nico Hülkenberg,Haas F1 Team,10.0,10.0,,15,0.0,Lapped,0,0,0,0,96.616,96.616,,0,2,31.921999999999997,26.075
 2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,zhou,Guanyu Zhou,Alfa Romeo,13.0,13.0,,16,0.0,Lapped,0,0,0,0,93.99600000000001,93.99600000000001,,0,1,25.787,25.787
-2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,norris,Lando Norris,McLaren,11.0,11.0,,17,0.0,Lapped,0,0,0,0,95.822,95.822,,0,3,33.298,32.766
+2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,norris,Lando Norris,McLaren,11.0,11.0,,17,0.0,Lapped,0,0,0,0,95.822,95.822,,0,3,33.297999999999995,32.766
 2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,ocon,Esteban Ocon,Alpine F1 Team,9.0,9.0,,18,0.0,Retired,0,0,0,0,96.797,96.797,,0,2,33.214,24.966
 2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,leclerc,Charles Leclerc,Ferrari,3.0,3.0,,19,0.0,Retired,0,0,0,0,97.17,97.17,,0,1,24.345,24.345
 2023-1,2023,1,2023-03-05T20:30:00+05:30,Bahrain Grand Prix,bahrain,Bahrain International Circuit,piastri,Oscar Piastri,McLaren,18.0,18.0,,20,0.0,Retired,0,0,0,0,100.691,100.691,,0,0,,
@@ -2253,7 +2253,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,bottas,Valtteri Bottas,Alfa Romeo,20.0,15.0,,12,0.0,Finished,1,0,0,0,91.852,91.852,,0,1,29.662,29.662
 2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,hulkenberg,Nico Hülkenberg,Haas F1 Team,11.0,11.0,,13,0.0,Finished,1,0,0,0,91.776,91.776,,0,2,35.9875,30.003
 2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,stroll,Lance Stroll,Aston Martin,12.0,12.0,,14,0.0,Finished,1,0,0,0,91.508,91.508,,0,1,28.561,28.561
-2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,zhou,Guanyu Zhou,Alfa Romeo,17.0,17.0,,15,0.0,Finished,1,0,0,0,91.769,91.769,,0,3,30.753333333333334,28.709
+2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,zhou,Guanyu Zhou,Alfa Romeo,17.0,17.0,,15,0.0,Finished,1,0,0,0,91.769,91.769,,0,3,30.75333333333333,28.709
 2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,tsunoda,Yuki Tsunoda,AlphaTauri,16.0,16.0,,16,0.0,Finished,1,0,0,0,92.084,92.084,,0,2,28.478,28.353
 2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,de_vries,Nyck de Vries,AlphaTauri,18.0,18.0,,17,0.0,Finished,1,0,0,0,92.35300000000001,92.35300000000001,,0,2,28.3275,28.242
 2023-10,2023,10,2023-07-09T19:30:00+05:30,British Grand Prix,silverstone,Silverstone Circuit,gasly,Pierre Gasly,Alpine F1 Team,10.0,10.0,,18,0.0,Retired,0,0,0,0,91.539,91.539,,0,1,28.458,28.458
@@ -2917,7 +2917,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2024-21,2024,21,2024-11-03T22:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,colapinto,Franco Colapinto,Williams,16.0,18.0,12.0,17,0.0,Retired,0,0,0,0,84.29599999999999,84.29599999999999,,0,2,25.262999999999998,25.239
 2024-21,2024,21,2024-11-03T22:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,albon,Alexander Albon,Williams,7.0,7.0,10.0,18,0.0,Did not start,0,0,0,0,,,,0,0,,
 2024-21,2024,21,2024-11-03T22:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,stroll,Lance Stroll,Aston Martin,10.0,10.0,19.0,19,0.0,Did not start,0,0,0,0,,,,0,0,,
-2024-21,2024,21,2024-11-03T22:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,hulkenberg,Nico Hülkenberg,Haas F1 Team,18.0,19.0,20.0,20,0.0,Disqualified,0,0,0,0,,,,0,3,37.647666666666666,25.369
+2024-21,2024,21,2024-11-03T22:30:00+05:30,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,hulkenberg,Nico Hülkenberg,Haas F1 Team,18.0,19.0,20.0,20,0.0,Disqualified,0,0,0,0,,,,0,3,37.64766666666667,25.369
 2024-22,2024,22,2024-11-23T11:30:00+05:30,Las Vegas Grand Prix,vegas,Las Vegas Strip Street Circuit,russell,George Russell,Mercedes,1.0,1.0,,1,25.0,Finished,1,1,1,1,95.717,95.717,,0,1,21.072,21.072
 2024-22,2024,22,2024-11-23T11:30:00+05:30,Las Vegas Grand Prix,vegas,Las Vegas Strip Street Circuit,hamilton,Lewis Hamilton,Mercedes,10.0,10.0,,2,18.0,Finished,1,0,1,1,95.47999999999999,95.47999999999999,,0,2,21.211,21.067
 2024-22,2024,22,2024-11-23T11:30:00+05:30,Las Vegas Grand Prix,vegas,Las Vegas Strip Street Circuit,sainz,Carlos Sainz,Ferrari,2.0,2.0,,3,15.0,Finished,1,0,1,1,95.875,95.875,,0,2,20.9635,20.879
@@ -3131,7 +3131,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,russell,George Russell,Mercedes,14.0,14.0,,11,0.0,Lapped,0,0,0,0,73.405,73.405,,0,0,,
 2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,bearman,Oliver Bearman,Haas F1 Team,20.0,17.0,,12,0.0,Lapped,0,0,0,0,74.855,74.855,,0,2,37.3855,24.58
 2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,colapinto,Franco Colapinto,Alpine F1 Team,18.0,20.0,,13,0.0,Lapped,0,0,0,0,75.298,75.298,,0,2,24.426000000000002,24.355
-2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,bortoleto,Gabriel Bortoleto,Sauber,16.0,16.0,,14,0.0,Lapped,0,0,0,0,74.884,74.884,,0,3,28.657333333333337,24.246
+2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,bortoleto,Gabriel Bortoleto,Sauber,16.0,16.0,,14,0.0,Lapped,0,0,0,0,74.884,74.884,,0,3,28.65733333333333,24.246
 2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,stroll,Lance Stroll,Aston Martin,19.0,19.0,,15,0.0,Lapped,0,0,0,0,74.877,74.877,,0,1,23.978,23.978
 2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,hulkenberg,Nico Hülkenberg,Sauber,13.0,13.0,,16,0.0,Lapped,0,0,0,0,75.223,75.223,,0,2,24.231,24.065
 2025-8,2025,8,2025-05-25T18:30:00+05:30,Monaco Grand Prix,monaco,Circuit de Monaco,tsunoda,Yuki Tsunoda,Red Bull,12.0,12.0,,17,0.0,Lapped,0,0,0,0,74.913,74.913,,0,1,24.525,24.525
@@ -3520,7 +3520,7 @@ race_id,season,round,date,race_name,circuit_id,circuit_name,driver_id,driver_nam
 2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,perez,Sergio Pérez,Cadillac F1 Team,19.0,19.0,,17,0.0,Finished,1,0,0,0,95.637,95.637,,0,1,27.307,27.307
 2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,alonso,Fernando Alonso,Aston Martin,21.0,21.0,,18,0.0,Lapped,0,0,0,0,96.221,96.221,,0,2,25.235999999999997,24.014
 2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,bottas,Valtteri Bottas,Cadillac F1 Team,20.0,20.0,,19,0.0,Lapped,0,0,0,0,96.269,96.269,,0,1,25.129,25.129
-2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,albon,Alexander Albon,Williams,17.0,17.0,,20,0.0,Lapped,0,0,0,0,93.42699999999999,93.42699999999999,,0,6,25.816833333333335,23.072
+2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,albon,Alexander Albon,Williams,17.0,17.0,,20,0.0,Lapped,0,0,0,0,93.42699999999999,93.42699999999999,,0,6,25.81683333333333,23.072
 2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,stroll,Lance Stroll,Aston Martin,22.0,22.0,,21,0.0,Retired,0,0,0,0,97.217,97.217,,0,2,24.292,23.501
 2026-3,2026,3,2026-03-29T10:30:00+05:30,Japanese Grand Prix,suzuka,Suzuka Circuit,bearman,Oliver Bearman,Haas F1 Team,18.0,18.0,,22,0.0,Retired,0,0,0,0,95.604,95.604,,0,1,25.081,25.081
 2026-4,2026,4,2026-05-04T01:30:00+05:30,Miami Grand Prix,miami,Miami International Autodrome,antonelli,Andrea Kimi Antonelli,Mercedes,1.0,1.0,6.0,1,25.0,Finished,1,1,1,1,91.968,91.968,,0,1,22.128,22.128

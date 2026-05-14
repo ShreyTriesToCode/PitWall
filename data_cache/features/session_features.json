@@ -1,11 +1,11 @@
 [
   {
     "race_id": "2026-5-canadian-grand-prix",
-    "target_type": "sprint",
+    "target_type": "race",
     "stage": "pre_weekend",
     "start_iso": "2026-05-23T21:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-13T00:44:06.055757+05:30",
+      "generated_at": "2026-05-14T19:59:30.907432+05:30",
       "overall_score": 73.0,
       "status": "Fallback",
       "sources": [
@@ -59,18 +59,18 @@
   },
   {
     "race_id": "2026-5-canadian-grand-prix",
-    "target_type": "race",
-    "stage": "pre-weekend",
+    "target_type": "sprint",
+    "stage": "pre_weekend",
     "start_iso": "2026-05-23T21:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-14T14:44:27.724645+05:30",
-      "overall_score": 55.78,
+      "generated_at": "2026-05-13T00:44:06.055757+05:30",
+      "overall_score": 73.0,
       "status": "Fallback",
       "sources": [
         {
           "source": "F1 Live Timing",
-          "score": 42.0,
-          "status": "Stale"
+          "score": 88.0,
+          "status": "Available"
         },
         {
           "source": "Jolpica",
@@ -84,8 +84,8 @@
         },
         {
           "source": "FastF1",
-          "score": 42.0,
-          "status": "Stale"
+          "score": 78.0,
+          "status": "Available"
         },
         {
           "source": "Open-Meteo",
@@ -104,13 +104,13 @@
         },
         {
           "source": "Model bundle",
-          "score": 40.0,
-          "status": "Stale"
+          "score": 86.0,
+          "status": "Available"
         },
         {
           "source": "Calendar",
-          "score": 55.0,
-          "status": "Fallback"
+          "score": 82.0,
+          "status": "Available"
         }
       ]
     }

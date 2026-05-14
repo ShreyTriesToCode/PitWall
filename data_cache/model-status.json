@@ -2,8 +2,8 @@
   "schema_version": "2026.05-high-accuracy-v4",
   "model_version": "2026.05-high-accuracy-v4",
   "prediction_data_version": "2026.05-race-control-contract-v1",
-  "generated_at": "2026-05-13T00:44:25.352421+05:30",
-  "trained_at": "2026-05-13T00:40:39.588158+05:30",
+  "generated_at": "2026-05-14T19:59:33.449800+05:30",
+  "trained_at": "2026-05-14T19:53:46.927668+05:30",
   "latest_completed_race_included": "2026-4",
   "latest_available_api_result": "2026-4",
   "feature_count": 70,
@@ -79,14 +79,14 @@
     "regulation_era_factor",
     "season_progress"
   ],
-  "model_bundle_size_mb": null,
+  "model_bundle_size_mb": 21.41,
   "metrics": {
     "win_auc": 1.0,
-    "win_brier": 0.024062822738407114,
-    "podium_auc": 0.9435897435897436,
-    "podium_brier": 0.07290138348535462,
-    "top10_auc": 0.8157894736842105,
-    "top10_brier": 0.17482412755556273,
+    "win_brier": 0.02418516511997712,
+    "podium_auc": 0.9423076923076923,
+    "podium_brier": 0.07292131495084521,
+    "top10_auc": 0.8137651821862347,
+    "top10_brier": 0.1748384032226653,
     "finish_position_mae": 3.9216664185391914,
     "finish_position_rmse": 4.911994860857176,
     "winner_hit_rate": 0.25,
@@ -96,22 +96,22 @@
     "exact_position_accuracy": 0.0346,
     "mean_position_error": 3.9798,
     "lap_time_mae": 7.376759168813826,
-    "lap_time_rmse": 9.165638700117704
+    "lap_time_rmse": 9.165638700117702
   },
   "raw_metrics": {
     "win": {
       "auc": 1.0,
-      "brier": 0.024062822738407114,
+      "brier": 0.02418516511997712,
       "validation_rows": 77
     },
     "podium": {
-      "auc": 0.9435897435897436,
-      "brier": 0.07290138348535462,
+      "auc": 0.9423076923076923,
+      "brier": 0.07292131495084521,
       "validation_rows": 77
     },
     "top10": {
-      "auc": 0.8157894736842105,
-      "brier": 0.17482412755556273,
+      "auc": 0.8137651821862347,
+      "brier": 0.1748384032226653,
       "validation_rows": 77
     },
     "finish_position": {
@@ -130,19 +130,19 @@
     "win_probability_ranking": {
       "winner_hit": 1.0,
       "top3_recall": 0.5,
-      "top5_recall": 0.75,
-      "top10_recall": 0.65,
+      "top5_recall": 0.65,
+      "top10_recall": 0.675,
       "exact_position_accuracy": 0.0233,
-      "mean_position_error": 8.2381
+      "mean_position_error": 8.2528
     },
     "neural_lap_time_forecast": {
       "mae_seconds": 7.376759168813826,
-      "rmse_seconds": 9.165638700117704,
+      "rmse_seconds": 9.165638700117702,
       "validation_rows": 73
     }
   },
   "source_health": {
-    "generated_at": "2026-05-13T00:44:06.055757+05:30",
+    "generated_at": "2026-05-14T19:59:30.907432+05:30",
     "overall_score": 73.0,
     "status": "Fallback",
     "sources": [
@@ -213,7 +213,7 @@
     "blockers": []
   },
   "readiness_state": {
-    "checked_at": "2026-05-13T00:44:24.140800+05:30",
+    "checked_at": "2026-05-14T19:52:51.734832+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-4",
@@ -240,8 +240,19 @@
     },
     "status": "latest_results_available"
   },
-  "mode": null,
-  "selected_targets": [],
+  "mode": "weekend",
+  "selected_targets": [
+    {
+      "target_type": "sprint",
+      "title": "F1 Canadian GP - Sprint Race",
+      "start": "2026-05-23 21:30:00+05:30"
+    },
+    {
+      "target_type": "race",
+      "title": "F1 Canadian GP - Race",
+      "start": "2026-05-25 01:30:00+05:30"
+    }
+  ],
   "errors": [],
   "limitations": [
     "Live race adjustments only become official model output when timing data and generated contracts are refreshed.",

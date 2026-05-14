@@ -1,5 +1,5 @@
 {
-  "trained_at": "2026-05-13T00:40:39.588158+05:30",
+  "trained_at": "2026-05-14T19:53:46.927668+05:30",
   "model_schema_version": "2026.05-high-accuracy-v4",
   "ml_start_year": 2018,
   "rows_raw": 3546,
@@ -8,17 +8,17 @@
   "metrics": {
     "win": {
       "auc": 1.0,
-      "brier": 0.024062822738407114,
+      "brier": 0.02418516511997712,
       "validation_rows": 77
     },
     "podium": {
-      "auc": 0.9435897435897436,
-      "brier": 0.07290138348535462,
+      "auc": 0.9423076923076923,
+      "brier": 0.07292131495084521,
       "validation_rows": 77
     },
     "top10": {
-      "auc": 0.8157894736842105,
-      "brier": 0.17482412755556273,
+      "auc": 0.8137651821862347,
+      "brier": 0.1748384032226653,
       "validation_rows": 77
     },
     "finish_position": {
@@ -37,14 +37,14 @@
     "win_probability_ranking": {
       "winner_hit": 1.0,
       "top3_recall": 0.5,
-      "top5_recall": 0.75,
-      "top10_recall": 0.65,
+      "top5_recall": 0.65,
+      "top10_recall": 0.675,
       "exact_position_accuracy": 0.0233,
-      "mean_position_error": 8.2381
+      "mean_position_error": 8.2528
     },
     "neural_lap_time_forecast": {
       "mae_seconds": 7.376759168813826,
-      "rmse_seconds": 9.165638700117704,
+      "rmse_seconds": 9.165638700117702,
       "validation_rows": 73
     }
   },
@@ -124,10 +124,10 @@
   "backfilled_races_this_run": [],
   "training_action": "retrained_model",
   "training_reasons": [
-    "saved_bundle_load_failed"
+    "manual_force_retrain_requested"
   ],
   "result_readiness": {
-    "checked_at": "2026-05-13T00:40:03.377570+05:30",
+    "checked_at": "2026-05-14T19:52:51.734832+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-4",
