@@ -1,7 +1,7 @@
 {
   "schema_version": "2026.05-high-accuracy-v4",
   "prediction_data_version": "2026.05-race-control-contract-v1",
-  "generated_at": "2026-05-16T11:41:08.096816+05:30",
+  "generated_at": "2026-05-16T13:33:33.012775+05:30",
   "briefings": [
     {
       "title": "F1 Weekend Briefing: Canadian Grand Prix Sprint + Race",
@@ -54920,7 +54920,7 @@
     "schema_version": "2026.05-high-accuracy-v4",
     "model_version": "2026.05-high-accuracy-v4",
     "prediction_data_version": "2026.05-race-control-contract-v1",
-    "generated_at": "2026-05-16T11:41:08.082525+05:30",
+    "generated_at": "2026-05-16T13:33:32.997832+05:30",
     "trained_at": "2026-05-14T19:53:46.927668+05:30",
     "latest_completed_race_included": "2026-4",
     "latest_available_api_result": "2026-4",
@@ -55132,7 +55132,7 @@
       "blockers": []
     },
     "readiness_state": {
-      "checked_at": "2026-05-16T11:41:04.521037+05:30",
+      "checked_at": "2026-05-16T13:33:29.201468+05:30",
       "current_year": 2026,
       "final_results_delay_hours": 8,
       "latest_completed_race_id": "2026-4",
