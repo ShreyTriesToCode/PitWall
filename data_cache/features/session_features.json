@@ -5,9 +5,9 @@
     "stage": "pre_weekend",
     "start_iso": "2026-05-23T21:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-14T19:59:30.907432+05:30",
-      "overall_score": 73.0,
-      "status": "Fallback",
+      "generated_at": "2026-05-16T15:52:19.080272+05:30",
+      "overall_score": 78.67,
+      "status": "Available",
       "sources": [
         {
           "source": "F1 Live Timing",
@@ -21,8 +21,8 @@
         },
         {
           "source": "OpenF1",
-          "score": 48.0,
-          "status": "Stale"
+          "score": 70.0,
+          "status": "Fallback"
         },
         {
           "source": "FastF1",
@@ -36,8 +36,8 @@
         },
         {
           "source": "FIA/F1 upgrade/regulation sources",
-          "score": 45.0,
-          "status": "Stale"
+          "score": 74.0,
+          "status": "Fallback"
         },
         {
           "source": "Local cache",

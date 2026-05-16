@@ -1,6 +1,6 @@
 # F1 Weekend Briefing: Canadian Grand Prix Sprint + Race
 
-Generated: Thursday, 14 May 2026, 07:59 PM IST
+Generated: Saturday, 16 May 2026, 03:52 PM IST
 
 Output mode: weekend
 
@@ -24,16 +24,16 @@ This briefing deliberately outputs only Sprint and Race predictions. Practice, Q
 
 ## Prediction
 
-1. Andrea Kimi Antonelli, score 82.8, confidence 81%, car performance; driver form; ML podium probability; same-circuit history; pit-stop execution
-2. George Russell, score 77.8, confidence 81%, car performance; ML podium probability; driver form; pit-stop execution; ML finish-position model
-3. Charles Leclerc, score 69.8, confidence 81%, ML podium probability; car performance; ML finish-position model; official timing car performance; driver form
-4. Lewis Hamilton, score 66.4, confidence 81%, car performance; same-circuit history; reliability; weather adaptation; ML finish-position model
-5. Oscar Piastri, score 64.2, confidence 81%, car performance; same-circuit history; ML finish-position model; reliability; official timing car performance
-6. Lando Norris, score 63.6, confidence 81%, car performance; ML podium probability; ML finish-position model; official timing car performance; reliability
-7. Max Verstappen, score 61.0, confidence 81%, same-circuit history; car performance; reliability; weather adaptation; pit-stop execution
-8. Pierre Gasly, score 47.7, confidence 81%, team strategy gain; car performance; pit-stop execution; reliability; weather adaptation
-9. Franco Colapinto, score 44.9, confidence 81%, car performance; pit-stop execution; team strategy gain; official timing car performance; regulation-era fit
-10. Isack Hadjar, score 42.8, confidence 81%, car performance; pit-stop execution; team strategy gain; neural lap-time forecast; ML finish-position model
+1. Andrea Kimi Antonelli, score 81.8, confidence 64%, car performance; driver form; ML podium probability; same-circuit history; pit-stop execution
+2. George Russell, score 76.6, confidence 64%, car performance; ML podium probability; driver form; pit-stop execution; ML finish-position model
+3. Charles Leclerc, score 65.5, confidence 64%, ML podium probability; car performance; ML finish-position model; driver form; same-circuit history
+4. Lewis Hamilton, score 62.8, confidence 64%, car performance; same-circuit history; ML finish-position model; regulation-era fit; team strategy gain
+5. Oscar Piastri, score 58.8, confidence 64%, car performance; same-circuit history; ML finish-position model; pit-stop execution; ML top 10 probability
+6. Lando Norris, score 58.6, confidence 64%, car performance; ML podium probability; ML finish-position model; ML top 10 probability; driver form
+7. Max Verstappen, score 54.4, confidence 68%, same-circuit history; pit-stop execution; car performance; ML finish-position model; ML top 10 probability
+8. Pierre Gasly, score 42.8, confidence 64%, team strategy gain; pit-stop execution; car performance; ML finish-position model; neural lap-time forecast
+9. Franco Colapinto, score 39.4, confidence 64%, pit-stop execution; car performance; team strategy gain; same-circuit history; ML finish-position model
+10. Isack Hadjar, score 38.5, confidence 68%, car performance; pit-stop execution; team strategy gain; neural lap-time forecast; ML finish-position model
 
 ## Track and weather
 
@@ -42,8 +42,8 @@ This briefing deliberately outputs only Sprint and Race predictions. Practice, Q
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 13.4°C, rain 21%, wind 19.9 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
+- Weather: 17.6°C, rain 7%, wind 12.4 km/h
+- Weather impact: dry baseline more likely; cloud cover may reduce track-temperature growth
 
 ## Strategy
 
@@ -61,7 +61,8 @@ This briefing deliberately outputs only Sprint and Race predictions. Practice, Q
 
 ## Upgrade impact
 
-- No trusted upgrade-package signal found for this event.
+- Audi: 40.0/100, straight line, power efficiency
+- Red Bull: 40.0/100, power efficiency
 
 ## Regulation context
 
@@ -72,11 +73,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- race pace: 6.4%
+- race pace: 6.3%
 - car performance: 5.9%
 - ml podium probability: 5.1%
 - driver form: 4.2%
-- circuit history: 3.8%
+- upgrade package impact: 4.2%
 
 ## Model accuracy audit
 
@@ -90,7 +91,7 @@ Era: 2026+ active-aero and new power-unit era
 
 - Stage: Sprint prediction, Pre-weekend prediction
 - ML model: loaded
-- F1 timing: official_f1_live_timing_static_used
+- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_no_matching_free_sessions
 - FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']
 - Calendar check: official_f1_calendar_page_reachable
 
@@ -108,16 +109,16 @@ Predictions are estimates, not guaranteed race results.
 
 ## Prediction
 
-1. Andrea Kimi Antonelli, score 82.8, confidence 81%, car performance; driver form; ML podium probability; same-circuit history; pit-stop execution
-2. George Russell, score 77.8, confidence 81%, car performance; ML podium probability; driver form; pit-stop execution; ML finish-position model
-3. Charles Leclerc, score 69.8, confidence 81%, ML podium probability; car performance; ML finish-position model; official timing car performance; driver form
-4. Lewis Hamilton, score 66.4, confidence 81%, car performance; same-circuit history; reliability; weather adaptation; ML finish-position model
-5. Oscar Piastri, score 64.2, confidence 81%, car performance; same-circuit history; ML finish-position model; reliability; official timing car performance
-6. Lando Norris, score 63.6, confidence 81%, car performance; ML podium probability; ML finish-position model; official timing car performance; reliability
-7. Max Verstappen, score 61.0, confidence 81%, same-circuit history; car performance; reliability; weather adaptation; pit-stop execution
-8. Pierre Gasly, score 47.7, confidence 81%, team strategy gain; car performance; pit-stop execution; reliability; weather adaptation
-9. Franco Colapinto, score 44.9, confidence 81%, car performance; pit-stop execution; team strategy gain; official timing car performance; regulation-era fit
-10. Isack Hadjar, score 42.8, confidence 81%, car performance; pit-stop execution; team strategy gain; neural lap-time forecast; ML finish-position model
+1. Andrea Kimi Antonelli, score 82.0, confidence 65%, car performance; driver form; ML podium probability; same-circuit history; pit-stop execution
+2. George Russell, score 76.6, confidence 65%, car performance; ML podium probability; driver form; pit-stop execution; ML finish-position model
+3. Charles Leclerc, score 65.9, confidence 65%, ML podium probability; car performance; ML finish-position model; driver form; same-circuit history
+4. Lewis Hamilton, score 63.6, confidence 65%, car performance; same-circuit history; reliability; weather adaptation; ML finish-position model
+5. Oscar Piastri, score 59.6, confidence 65%, car performance; same-circuit history; ML finish-position model; reliability; pit-stop execution
+6. Lando Norris, score 58.9, confidence 65%, car performance; ML podium probability; ML finish-position model; reliability; ML top 10 probability
+7. Max Verstappen, score 55.6, confidence 69%, same-circuit history; reliability; weather adaptation; pit-stop execution; car performance
+8. Pierre Gasly, score 44.0, confidence 65%, team strategy gain; pit-stop execution; reliability; car performance; weather adaptation
+9. Franco Colapinto, score 40.0, confidence 65%, pit-stop execution; car performance; team strategy gain; same-circuit history; reliability
+10. Fernando Alonso, score 39.2, confidence 65%, same-circuit history; reliability; pit-stop execution; weather adaptation; team strategy gain
 
 ## Track and weather
 
@@ -126,7 +127,7 @@ Predictions are estimates, not guaranteed race results.
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 15.0°C, rain 21%, wind 22.2 km/h
+- Weather: 21.6°C, rain 8%, wind 16.9 km/h
 - Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
 
 ## Strategy
@@ -140,12 +141,13 @@ Predictions are estimates, not guaranteed race results.
 1. Mercedes
 2. Ferrari
 3. McLaren
-4. Red Bull
-5. Alpine F1 Team
+4. Alpine F1 Team
+5. Red Bull
 
 ## Upgrade impact
 
-- No trusted upgrade-package signal found for this event.
+- Audi: 40.0/100, straight line, power efficiency
+- Red Bull: 40.0/100, power efficiency
 
 ## Regulation context
 
@@ -156,11 +158,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- race pace: 6.4%
-- car performance: 5.9%
-- ml podium probability: 5.1%
-- driver form: 4.2%
-- circuit history: 3.8%
+- race pace: 6.2%
+- car performance: 5.8%
+- ml podium probability: 4.9%
+- driver form: 4.1%
+- upgrade package impact: 4.1%
 
 ## Model accuracy audit
 
@@ -174,7 +176,7 @@ Era: 2026+ active-aero and new power-unit era
 
 - Stage: Race prediction, Pre-weekend prediction
 - ML model: loaded
-- F1 timing: official_f1_live_timing_static_used
+- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_no_matching_free_sessions
 - FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']
 - Calendar check: official_f1_calendar_page_reachable
 

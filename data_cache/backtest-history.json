@@ -1,17 +1,17 @@
 {
   "schema_version": "2026.05-high-accuracy-v4",
-  "generated_at": "2026-05-16T13:33:33.073713+05:30",
+  "generated_at": "2026-05-16T15:52:21.691438+05:30",
   "history": [
     {
       "race_id": "2026-5-canadian-grand-prix",
-      "prediction_id": "2026-5-canadian-grand-prix-race-pre_weekend-78a36a552847",
+      "prediction_id": "2026-5-canadian-grand-prix-race-pre_weekend-32a356a64621",
       "race_name": "Canadian Grand Prix",
       "season": 2026,
       "round": 5,
       "stage": "pre_weekend",
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
-      "top_pick_confidence": 80.9,
+      "top_pick_confidence": 64.6,
       "finish_position_mae": 3.9216664185391914,
       "finish_position_rmse": 4.911994860857176,
       "winner_hit_rate": 0.25,
