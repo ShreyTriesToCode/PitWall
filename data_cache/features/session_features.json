@@ -2,11 +2,11 @@
   {
     "race_id": "2026-5-canadian-grand-prix",
     "target_type": "race",
-    "stage": "pre_weekend",
+    "stage": "post_practice",
     "start_iso": "2026-05-23T21:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-16T15:52:19.080272+05:30",
-      "overall_score": 78.67,
+      "generated_at": "2026-05-22T22:19:52.057026+05:30",
+      "overall_score": 76.22,
       "status": "Available",
       "sources": [
         {
@@ -21,8 +21,8 @@
         },
         {
           "source": "OpenF1",
-          "score": 70.0,
-          "status": "Fallback"
+          "score": 48.0,
+          "status": "Stale"
         },
         {
           "source": "FastF1",
