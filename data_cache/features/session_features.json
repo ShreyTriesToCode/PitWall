@@ -1,6 +1,64 @@
 [
   {
     "race_id": "2026-5-canadian-grand-prix",
+    "target_type": "sprint",
+    "stage": "post_practice",
+    "start_iso": "2026-05-23T21:30:00+05:30",
+    "source_health": {
+      "generated_at": "2026-05-23T01:16:10.669807+05:30",
+      "overall_score": 75.44,
+      "status": "Available",
+      "sources": [
+        {
+          "source": "F1 Live Timing",
+          "score": 88.0,
+          "status": "Available"
+        },
+        {
+          "source": "Jolpica",
+          "score": 62.0,
+          "status": "Fallback"
+        },
+        {
+          "source": "OpenF1",
+          "score": 70.0,
+          "status": "Fallback"
+        },
+        {
+          "source": "FastF1",
+          "score": 78.0,
+          "status": "Available"
+        },
+        {
+          "source": "Open-Meteo",
+          "score": 76.0,
+          "status": "Available"
+        },
+        {
+          "source": "FIA/F1 upgrade/regulation sources",
+          "score": 45.0,
+          "status": "Stale"
+        },
+        {
+          "source": "Local cache",
+          "score": 92.0,
+          "status": "Available"
+        },
+        {
+          "source": "Model bundle",
+          "score": 86.0,
+          "status": "Available"
+        },
+        {
+          "source": "Calendar",
+          "score": 82.0,
+          "status": "Available"
+        }
+      ]
+    }
+  },
+  {
+    "race_id": "2026-5-canadian-grand-prix",
     "target_type": "race",
     "stage": "post_practice",
     "start_iso": "2026-05-23T21:30:00+05:30",
@@ -38,64 +96,6 @@
           "source": "FIA/F1 upgrade/regulation sources",
           "score": 74.0,
           "status": "Fallback"
-        },
-        {
-          "source": "Local cache",
-          "score": 92.0,
-          "status": "Available"
-        },
-        {
-          "source": "Model bundle",
-          "score": 86.0,
-          "status": "Available"
-        },
-        {
-          "source": "Calendar",
-          "score": 82.0,
-          "status": "Available"
-        }
-      ]
-    }
-  },
-  {
-    "race_id": "2026-5-canadian-grand-prix",
-    "target_type": "sprint",
-    "stage": "pre_weekend",
-    "start_iso": "2026-05-23T21:30:00+05:30",
-    "source_health": {
-      "generated_at": "2026-05-13T00:44:06.055757+05:30",
-      "overall_score": 73.0,
-      "status": "Fallback",
-      "sources": [
-        {
-          "source": "F1 Live Timing",
-          "score": 88.0,
-          "status": "Available"
-        },
-        {
-          "source": "Jolpica",
-          "score": 62.0,
-          "status": "Fallback"
-        },
-        {
-          "source": "OpenF1",
-          "score": 48.0,
-          "status": "Stale"
-        },
-        {
-          "source": "FastF1",
-          "score": 78.0,
-          "status": "Available"
-        },
-        {
-          "source": "Open-Meteo",
-          "score": 76.0,
-          "status": "Available"
-        },
-        {
-          "source": "FIA/F1 upgrade/regulation sources",
-          "score": 45.0,
-          "status": "Stale"
         },
         {
           "source": "Local cache",
