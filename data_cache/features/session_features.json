@@ -5,8 +5,8 @@
     "stage": "post_practice",
     "start_iso": "2026-05-23T21:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-23T12:06:35.901282+05:30",
-      "overall_score": 78.67,
+      "generated_at": "2026-05-23T14:04:03.266521+05:30",
+      "overall_score": 75.44,
       "status": "Available",
       "sources": [
         {
@@ -36,8 +36,8 @@
         },
         {
           "source": "FIA/F1 upgrade/regulation sources",
-          "score": 74.0,
-          "status": "Fallback"
+          "score": 45.0,
+          "status": "Stale"
         },
         {
           "source": "Local cache",
