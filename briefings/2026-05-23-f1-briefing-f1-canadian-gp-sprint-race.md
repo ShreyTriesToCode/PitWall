@@ -1,6 +1,6 @@
 # F1 Sprint Briefing: F1 Canadian GP - Sprint Race
 
-Generated: Saturday, 23 May 2026, 01:16 AM IST
+Generated: Saturday, 23 May 2026, 08:36 AM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Saturday, 23 May 2026, 01:16 AM IST
 
 ## Prediction
 
-1. Andrea Kimi Antonelli, score 82.6, confidence 75%, car performance; ML podium probability; pit-stop execution; driver form; ML finish-position model
-2. George Russell, score 79.4, confidence 75%, car performance; ML podium probability; pit-stop execution; ML finish-position model; official timing car performance
-3. Charles Leclerc, score 68.2, confidence 75%, ML podium probability; car performance; ML finish-position model; team strategy gain; official timing car performance
-4. Lewis Hamilton, score 66.5, confidence 75%, car performance; official timing car performance; same-circuit history; ML finish-position model; regulation-era fit
-5. Oscar Piastri, score 62.6, confidence 75%, ML finish-position model; car performance; pit-stop execution; ML top 10 probability; official timing car performance
-6. Lando Norris, score 60.9, confidence 75%, ML podium probability; ML finish-position model; car performance; ML top 10 probability; official timing car performance
-7. Max Verstappen, score 58.5, confidence 75%, same-circuit history; pit-stop execution; ML finish-position model; ML top 10 probability; team strategy gain
-8. Pierre Gasly, score 43.7, confidence 75%, team strategy gain; pit-stop execution; car performance; ML finish-position model; neural lap-time forecast
-9. Isack Hadjar, score 42.4, confidence 75%, pit-stop execution; car performance; team strategy gain; neural lap-time forecast; ML finish-position model
-10. Carlos Sainz, score 40.0, confidence 75%, pit-stop execution; same-circuit history; team strategy gain; regulation-era fit; official timing car performance
+1. Andrea Kimi Antonelli, score 80.3, confidence 77%, ML podium probability; car performance; pit-stop execution; driver form; ML finish-position model
+2. George Russell, score 78.4, confidence 77%, car performance; ML podium probability; pit-stop execution; ML finish-position model; constructor form
+3. Charles Leclerc, score 67.3, confidence 77%, ML podium probability; car performance; ML finish-position model; team strategy gain; ML top 10 probability
+4. Lewis Hamilton, score 67.0, confidence 77%, car performance; official timing car performance; same-circuit history; ML finish-position model; regulation-era fit
+5. Oscar Piastri, score 61.8, confidence 77%, ML finish-position model; car performance; pit-stop execution; ML top 10 probability; same-circuit history
+6. Lando Norris, score 61.7, confidence 77%, ML podium probability; ML finish-position model; car performance; ML top 10 probability; official timing car performance
+7. Max Verstappen, score 58.9, confidence 77%, same-circuit history; pit-stop execution; ML finish-position model; ML top 10 probability; team strategy gain
+8. Isack Hadjar, score 44.4, confidence 77%, pit-stop execution; car performance; official timing car performance; team strategy gain; neural lap-time forecast
+9. Carlos Sainz, score 42.8, confidence 77%, pit-stop execution; same-circuit history; team strategy gain; official timing car performance; regulation-era fit
+10. Franco Colapinto, score 41.0, confidence 77%, pit-stop execution; team strategy gain; car performance; ML finish-position model; neural lap-time forecast
 
 ## Track and weather
 
@@ -29,7 +29,7 @@ Generated: Saturday, 23 May 2026, 01:16 AM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 21.0°C, rain 0%, wind 5.9 km/h
+- Weather: 21.1°C, rain 0%, wind 11.6 km/h
 - Weather impact: dry baseline more likely; cloud cover may reduce track-temperature growth
 
 ## Strategy
@@ -44,7 +44,7 @@ Generated: Saturday, 23 May 2026, 01:16 AM IST
 2. Ferrari
 3. McLaren
 4. Red Bull
-5. Alpine F1 Team
+5. Williams
 
 ## Upgrade impact
 
