@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v4",
   "model_version": "2026.05-high-accuracy-v4",
   "prediction_data_version": "2026.05-race-control-contract-v1",
-  "generated_at": "2026-05-23T08:37:00.864007+05:30",
+  "generated_at": "2026-05-23T12:06:38.431553+05:30",
   "trained_at": "2026-05-14T19:53:46.927668+05:30",
   "latest_completed_race_included": "2026-4",
   "latest_available_api_result": "2026-4",
@@ -142,8 +142,8 @@
     }
   },
   "source_health": {
-    "generated_at": "2026-05-23T08:36:58.337526+05:30",
-    "overall_score": 75.44,
+    "generated_at": "2026-05-23T12:06:35.901282+05:30",
+    "overall_score": 78.67,
     "status": "Available",
     "sources": [
       {
@@ -173,8 +173,8 @@
       },
       {
         "source": "FIA/F1 upgrade/regulation sources",
-        "score": 45.0,
-        "status": "Stale"
+        "score": 74.0,
+        "status": "Fallback"
       },
       {
         "source": "Local cache",
@@ -213,7 +213,7 @@
     "blockers": []
   },
   "readiness_state": {
-    "checked_at": "2026-05-23T08:21:45.159301+05:30",
+    "checked_at": "2026-05-23T11:52:34.426325+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-4",

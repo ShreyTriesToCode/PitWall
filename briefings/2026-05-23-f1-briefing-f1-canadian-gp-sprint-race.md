@@ -1,6 +1,6 @@
 # F1 Sprint Briefing: F1 Canadian GP - Sprint Race
 
-Generated: Saturday, 23 May 2026, 08:36 AM IST
+Generated: Saturday, 23 May 2026, 12:06 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Saturday, 23 May 2026, 08:36 AM IST
 
 ## Prediction
 
-1. Andrea Kimi Antonelli, score 80.3, confidence 77%, ML podium probability; car performance; pit-stop execution; driver form; ML finish-position model
-2. George Russell, score 78.4, confidence 77%, car performance; ML podium probability; pit-stop execution; ML finish-position model; constructor form
-3. Charles Leclerc, score 67.3, confidence 77%, ML podium probability; car performance; ML finish-position model; team strategy gain; ML top 10 probability
-4. Lewis Hamilton, score 67.0, confidence 77%, car performance; official timing car performance; same-circuit history; ML finish-position model; regulation-era fit
-5. Oscar Piastri, score 61.8, confidence 77%, ML finish-position model; car performance; pit-stop execution; ML top 10 probability; same-circuit history
-6. Lando Norris, score 61.7, confidence 77%, ML podium probability; ML finish-position model; car performance; ML top 10 probability; official timing car performance
-7. Max Verstappen, score 58.9, confidence 77%, same-circuit history; pit-stop execution; ML finish-position model; ML top 10 probability; team strategy gain
-8. Isack Hadjar, score 44.4, confidence 77%, pit-stop execution; car performance; official timing car performance; team strategy gain; neural lap-time forecast
-9. Carlos Sainz, score 42.8, confidence 77%, pit-stop execution; same-circuit history; team strategy gain; official timing car performance; regulation-era fit
-10. Franco Colapinto, score 41.0, confidence 77%, pit-stop execution; team strategy gain; car performance; ML finish-position model; neural lap-time forecast
+1. Andrea Kimi Antonelli, score 77.2, confidence 80%, ML podium probability; car performance; pit-stop execution; driver form; ML finish-position model
+2. George Russell, score 75.7, confidence 80%, car performance; ML podium probability; pit-stop execution; ML finish-position model; official timing car performance
+3. Charles Leclerc, score 65.4, confidence 80%, ML podium probability; car performance; ML finish-position model; team strategy gain; ML top 10 probability
+4. Lewis Hamilton, score 65.3, confidence 80%, car performance; same-circuit history; official timing car performance; ML finish-position model; regulation-era fit
+5. Oscar Piastri, score 60.2, confidence 80%, ML finish-position model; car performance; pit-stop execution; ML top 10 probability; same-circuit history
+6. Lando Norris, score 60.0, confidence 80%, ML podium probability; ML finish-position model; car performance; ML top 10 probability; regulation-era fit
+7. Max Verstappen, score 57.2, confidence 80%, same-circuit history; pit-stop execution; ML finish-position model; ML top 10 probability; team strategy gain
+8. Isack Hadjar, score 44.2, confidence 80%, pit-stop execution; car performance; team strategy gain; neural lap-time forecast; official timing car performance
+9. Carlos Sainz, score 42.7, confidence 80%, pit-stop execution; same-circuit history; team strategy gain; official timing car performance; official upgrade package impact
+10. Franco Colapinto, score 41.8, confidence 76%, pit-stop execution; team strategy gain; car performance; ML finish-position model; neural lap-time forecast
 
 ## Track and weather
 
@@ -29,7 +29,7 @@ Generated: Saturday, 23 May 2026, 08:36 AM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 21.1°C, rain 0%, wind 11.6 km/h
+- Weather: 20.5°C, rain 0%, wind 11.2 km/h
 - Weather impact: dry baseline more likely; cloud cover may reduce track-temperature growth
 
 ## Strategy
@@ -48,7 +48,9 @@ Generated: Saturday, 23 May 2026, 08:36 AM IST
 
 ## Upgrade impact
 
-- No trusted upgrade-package signal found for this event.
+- Aston Martin: 40.0/100, power efficiency
+- Audi: 40.0/100, straight line, power efficiency
+- Ferrari: 40.0/100, downforce, aero efficiency, traction
 
 ## Regulation context
 
@@ -59,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- race pace: 6.5%
-- ml podium probability: 5.2%
-- car performance: 4.8%
-- fastf1 race pace: 4.8%
-- ml win probability: 3.5%
+- race pace: 6.3%
+- ml podium probability: 5.1%
+- car performance: 4.6%
+- fastf1 race pace: 4.6%
+- upgrade package impact: 4.2%
 
 ## Model accuracy audit
 
@@ -77,7 +79,7 @@ Era: 2026+ active-aero and new power-unit era
 
 - Stage: Sprint prediction, Practice-aware race-weekend prediction
 - ML model: loaded
-- F1 timing: official_f1_live_timing_static_used+openf1_free_historical_timing_used
+- F1 timing: openf1_free_historical_timing_used
 - FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']
 - Calendar check: official_f1_calendar_page_reachable
 
