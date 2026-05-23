@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-5-canadian-grand-prix",
-    "prediction_id": "2026-5-canadian-grand-prix-sprint-post_practice-7c367ff8970a",
+    "prediction_id": "2026-5-canadian-grand-prix-sprint-post_practice-dd53ecbf9efb",
     "season": 2026,
     "round": 5,
     "circuit": "Circuit Gilles Villeneuve",
@@ -13,16 +13,16 @@
     "safety_car": "high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "20.1°C",
+      "temperature": "20.0°C",
       "rain": "0%",
-      "humidity": "31%",
-      "wind": "11.8 km/h",
-      "wind_gust": "14.8 km/h",
+      "humidity": "34%",
+      "wind": "14.1 km/h",
+      "wind_gust": "18.4 km/h",
       "cloud_cover": "100%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 0,
-      "wind_score": 38.480000000000004,
+      "wind_score": 47.839999999999996,
       "impact": "dry baseline more likely; cloud cover may reduce track-temperature growth"
     },
     "strategy": {
@@ -85,35 +85,35 @@
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 80.35,
+          "scenario_score": 79.25,
           "rank": 1
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 74.24,
+          "scenario_score": 73.15,
           "rank": 2
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 73.83,
+          "scenario_score": 73.07,
           "rank": 3
-        },
-        {
-          "driver_id": "leclerc",
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
-          "scenario_score": 71.82,
-          "rank": 4
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 71.54,
+          "scenario_score": 71.11,
+          "rank": 4
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 71.03,
           "rank": 5
         }
       ],
@@ -122,46 +122,46 @@
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 80.28,
+          "scenario_score": 79.01,
           "rank": 1
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 76.0,
+          "scenario_score": 74.78,
           "rank": 2
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 65.58,
+          "scenario_score": 64.73,
           "rank": 3
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 65.0,
+          "scenario_score": 64.53,
           "rank": 4
         },
         {
-          "driver_id": "leclerc",
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
-          "scenario_score": 62.44,
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "scenario_score": 62.08,
           "rank": 5
         }
       ],
       "active_aero": {
         "straight_mode": "low-drag straight configuration",
         "corner_mode": "high-downforce corner configuration",
-        "average_suitability": 60.87
+        "average_suitability": 60.17
       },
       "energy_deployment": {
         "title": "2026 Boost / Overtake Mode Intelligence",
-        "average_boost_advantage": 62.54,
+        "average_boost_advantage": 61.93,
         "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
       },
       "decision_log": [
