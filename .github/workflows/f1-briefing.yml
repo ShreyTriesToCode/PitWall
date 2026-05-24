@@ -11,9 +11,9 @@ on:
         required: false
         default: "false"
       full_data_backfill_limit:
-        description: "How many uncached full historical races to fetch this run"
+        description: "How many uncached full historical races to fetch this run; 0 means no artificial limit"
         required: false
-        default: "10"
+        default: "0"
       lookahead_days:
         description: "How many days ahead to search for F1 calendar events"
         required: false
@@ -34,6 +34,70 @@ on:
         description: "auto = scheduled logic. weekend = Sprint + Race weekend. today = today's Sprint/Race. next = next Sprint/Race."
         required: false
         default: "auto"
+      target_season:
+        description: "Target F1 season, or auto"
+        required: false
+        default: "auto"
+      target_event:
+        description: "Optional event slug/name to focus ingestion"
+        required: false
+        default: ""
+      target_session:
+        description: "Optional session to focus ingestion"
+        required: false
+        default: ""
+      force_session_ingest:
+        description: "Bypass normal post-session wait windows"
+        required: false
+        default: "false"
+      session_delay_minutes:
+        description: "Generic post-session delay for non-specialized sessions"
+        required: false
+        default: "30"
+      disable_live_mode:
+        description: "Disable true live timing labels"
+        required: false
+        default: "false"
+      use_social_upgrade_sources:
+        description: "Allow low-confidence social upgrade sources"
+        required: false
+        default: "false"
+      refresh_fia_documents:
+        description: "Refresh FIA document index metadata"
+        required: false
+        default: "false"
+      refresh_source_registry:
+        description: "Refresh source registry discovery"
+        required: false
+        default: "false"
+      run_frontend_build:
+        description: "Run Next.js frontend build"
+        required: false
+        default: "true"
+      dry_run_session_ingest:
+        description: "Discover/check sessions without overwriting production contracts"
+        required: false
+        default: "false"
+      force_reparse_fia_documents:
+        description: "Reparse cached FIA text/PDF without forcing redownload"
+        required: false
+        default: "false"
+      force_redownload_fia_documents:
+        description: "Redownload FIA PDFs and reparse"
+        required: false
+        default: "false"
+      enable_feature_ablation:
+        description: "Run heavier feature ablation diagnostics"
+        required: false
+        default: "false"
+      enable_hyperparameter_search:
+        description: "Run heavier hyperparameter search"
+        required: false
+        default: "false"
+      openf1_optional_only:
+        description: "Treat OpenF1 as optional enrichment and fall back when authentication is required"
+        required: false
+        default: "true"
 
 permissions:
   contents: write
@@ -79,10 +143,35 @@ jobs:
             fastf1_cache
             data_cache/http
             data_cache/full_races
+            data_cache/fia-documents
+            data_cache/source_registry
             models/saved_models
           key: pitwall-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py', 'requirements.txt') }}
           restore-keys: |
             pitwall-runtime-cache-${{ runner.os }}-
+
+      - name: Inspect restored runtime caches
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          checks = [
+              ("FastF1 cache", Path("fastf1_cache")),
+              ("HTTP cache", Path("data_cache/http")),
+              ("Full race cache", Path("data_cache/full_races")),
+              ("FIA document cache", Path("data_cache/fia-documents")),
+              ("Source registry", Path("data_cache/source_registry")),
+              ("Model cache", Path("models/saved_models")),
+          ]
+          missing = []
+          for label, path in checks:
+              files = sum(1 for item in path.rglob("*") if item.is_file()) if path.exists() else 0
+              print(f"{label}: {'present' if path.exists() else 'missing'} ({files} files)")
+              if not path.exists() or files == 0:
+                  missing.append(label)
+          if missing:
+              print("Cache diagnostics: missing or empty caches will be rebuilt as needed:", ", ".join(missing))
+          PY
 
       - name: Install dependencies
         run: |
@@ -102,6 +191,7 @@ jobs:
           cache-dependency-path: "frontend/package-lock.json"
 
       - name: Validate frontend build
+        if: ${{ github.event.inputs.run_frontend_build != 'false' }}
         working-directory: frontend
         run: |
           npm ci
@@ -121,29 +211,80 @@ jobs:
           NOTIFICATION_WINDOW_HOURS: ${{ github.event.inputs.notification_window_hours || '8' }}
           FORCE_NOTIFY: ${{ github.event.inputs.force_notify || 'false' }}
           OUTPUT_MODE: ${{ github.event.inputs.output_mode || 'auto' }}
+          TARGET_SEASON: ${{ github.event.inputs.target_season || 'auto' }}
+          TARGET_EVENT: ${{ github.event.inputs.target_event || '' }}
+          TARGET_SESSION: ${{ github.event.inputs.target_session || '' }}
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
 
           FORCE_RETRAIN: ${{ github.event.inputs.force_retrain || 'false' }}
+          TRAINING_MODE: "auto"
+          MODEL_TRAINING_MAX_SECONDS: "900"
+          ENABLE_FEATURE_ABLATION: ${{ github.event.inputs.enable_feature_ablation || 'false' }}
+          ENABLE_HYPERPARAMETER_SEARCH: ${{ github.event.inputs.enable_hyperparameter_search || 'false' }}
+          MAX_TRAINING_RACES: "auto"
+          MODEL_LIGHT_MODE: "false"
           ML_START_YEAR: "2018"
           USE_FULL_HISTORICAL_DATA: "true"
-          FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '10' }}
+          FULL_DATA_BACKFILL_LIMIT: ${{ github.event.inputs.full_data_backfill_limit || '0' }}
 
           # Enabled intentionally. These sources can improve predictions when data is available.
           # If a source has not published data yet or blocks a request, f1_briefing.py should skip/fallback.
           UPGRADES_ENABLED: "true"
           F1_REGULATIONS_ENABLED: "true"
+          SOURCE_DISCOVERY_ENABLED: "true"
+          REFRESH_SOURCE_REGISTRY: ${{ github.event.inputs.refresh_source_registry || 'false' }}
+          FIA_DOCUMENTS_ENABLED: "true"
+          FIA_DOCUMENTS_BASE_URL: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14"
+          FIA_DOCUMENTS_SEASON_URL_2026: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+          FIA_DOCUMENT_CACHE_DIR: "data_cache/fia-documents"
+          REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'false' }}
+          FORCE_REPARSE_FIA_DOCUMENTS: ${{ github.event.inputs.force_reparse_fia_documents || 'false' }}
+          FORCE_REDOWNLOAD_FIA_DOCUMENTS: ${{ github.event.inputs.force_redownload_fia_documents || 'false' }}
+          FIA_DOCUMENT_CACHE_TTL_MINUTES: "60"
+          FIA_REQUEST_SLEEP_SECONDS: "1.0"
+          MAX_FIA_DOCUMENTS_PER_RUN: "0"
+          MAX_FIA_PDFS_DOWNLOAD_PER_RUN: "0"
+          KEEP_FIA_PDFS: "false"
+          SESSION_INGESTION_ENABLED: "true"
+          SESSION_RESULT_DELAY_MINUTES: ${{ github.event.inputs.session_delay_minutes || '30' }}
+          PRACTICE_RESULT_DELAY_MINUTES: "20"
+          QUALIFYING_RESULT_DELAY_MINUTES: "30"
+          SPRINT_QUALIFYING_RESULT_DELAY_MINUTES: "30"
+          SPRINT_RESULT_DELAY_MINUTES: "45"
+          RACE_RESULT_DELAY_HOURS: "8"
+          SESSION_RETRY_INTERVAL_MINUTES: "20"
+          MAX_SESSION_RETRIES: "8"
+          FORCE_SESSION_INGEST: ${{ github.event.inputs.force_session_ingest || 'false' }}
+          DRY_RUN_SESSION_INGEST: ${{ github.event.inputs.dry_run_session_ingest || 'false' }}
+          USE_SOCIAL_UPGRADE_SOURCES: ${{ github.event.inputs.use_social_upgrade_sources || 'false' }}
           OPENF1_ENABLED: "true"
+          OPENF1_ACCESS_TOKEN: ${{ secrets.OPENF1_ACCESS_TOKEN }}
+          OPENF1_USERNAME: ${{ secrets.OPENF1_USERNAME }}
+          OPENF1_PASSWORD: ${{ secrets.OPENF1_PASSWORD }}
+          OPENF1_OPTIONAL_ONLY: ${{ github.event.inputs.openf1_optional_only || 'true' }}
 
           OFFICIAL_CALENDAR_ENABLED: "true"
           OFFICIAL_F1_CALENDAR_URL: "https://www.formula1.com/en/racing/{year}"
+          FORMULA1_CALENDAR_BASE_URL: "https://www.formula1.com/en/racing"
 
           F1_LIVE_TIMING_STATIC_BASE: "https://livetiming.formula1.com/static"
           OPENF1_BASE: "https://api.openf1.org/v1"
           OPENF1_REQUEST_SLEEP: "0.45"
+          LIVE_TIMING_ENABLED: "true"
+          LIVE_STALE_AFTER_SECONDS: "60"
+          F1_TIMING_RATE_LIMIT_MS: "5000"
+          DISABLE_LIVE_MODE: ${{ github.event.inputs.disable_live_mode || 'false' }}
+          TIMING_REPLAY_MODE_ALLOWED: "true"
           FIA_TECH_UPDATE_BASE: "https://www.fia.com/news"
           JOLPICA_REQUEST_SLEEP: "1.2"
+          ENABLE_RACE_SIMULATION: "true"
+          RACE_SIMULATION_RUNS: "5000"
+          GITHUB_ACTIONS_RACE_SIMULATION_RUNS: "1000"
+          LATEST_RUN_STATUS_PATH: "data_cache/latest-run-status.json"
+          USE_LAST_VALID_CONTRACT_ON_ERROR: "true"
+          SKIP_NETWORK_TESTS: "true"
 
           MODEL_DIR: "models/saved_models"
           HTTP_CACHE_DIR: "data_cache/http"
@@ -163,6 +304,7 @@ jobs:
           python -m json.tool data_cache/model-status.json >/dev/null
           python -m json.tool data_cache/backtest-history.json >/dev/null
           python -m json.tool data_cache/model_corrections.json >/dev/null
+          python -m json.tool data_cache/latest-run-status.json >/dev/null
           python -m unittest discover -s ./tests -p "test_*.py" -t .
 
       - name: Commit generated outputs and caches
@@ -179,7 +321,7 @@ jobs:
           # Stage outputs first. The previous workflow failed because it tried to rebase
           # while fastf1_cache/data_cache had unstaged changes.
           git add briefings MODEL_STATUS.md data_cache/latest-model-debug.json 2>/dev/null || true
-          git add data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/features data_cache/model-input-snapshots 2>/dev/null || true
+          git add data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/latest-run-status.json data_cache/features data_cache/model-input-snapshots data_cache/source_registry data_cache/fia-documents data_cache/mappings 2>/dev/null || true
           git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
 
           if ! git diff --cached --quiet; then
@@ -197,7 +339,7 @@ jobs:
               echo "Rebase conflict occurred. Keeping this run's generated output for generated files."
               git status --short
 
-              for file in briefings/latest-run-status.md briefings/index.json data_cache/latest-model-debug.json data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json MODEL_STATUS.md; do
+              for file in briefings/latest-run-status.md briefings/index.json data_cache/latest-model-debug.json data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/latest-run-status.json MODEL_STATUS.md; do
                 if [ -e "$file" ]; then
                   git checkout --ours "$file" || true
                   git add "$file" || true
@@ -205,6 +347,7 @@ jobs:
               done
 
               git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
+              git add data_cache/source_registry data_cache/fia-documents data_cache/mappings 2>/dev/null || true
 
               if ! git diff --cached --quiet; then
                 git commit --no-edit || true
@@ -239,7 +382,11 @@ jobs:
             data_cache/model-status.json
             data_cache/backtest-history.json
             data_cache/model_corrections.json
+            data_cache/latest-run-status.json
             data_cache/features/**
+            data_cache/source_registry/**
+            data_cache/fia-documents/**
+            data_cache/mappings/**
             data_cache/model-input-snapshots/**
             data_cache/http/**
             data_cache/full_races/**

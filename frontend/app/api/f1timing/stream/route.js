@@ -72,7 +72,7 @@ export async function GET(request) {
           await wait(delay, signal);
         } catch (error) {
           if (closed || signal?.aborted) break;
-          controller.enqueue(sse("error", { message: "Live stream retrying", detail: String(error?.message || error) }));
+          controller.enqueue(sse("error", { message: "Timing stream retrying", detail: String(error?.message || error) }));
           await wait(5000, signal);
         }
       }

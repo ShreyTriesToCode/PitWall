@@ -9,13 +9,57 @@ const fallbackConstructors = [
   "McLaren",
   "Red Bull",
   "Aston Martin",
-  "Alpine F1 Team",
+  "Alpine",
   "Williams",
-  "Racing Bulls",
-  "Haas F1 Team",
+  "RB F1 Team",
+  "Haas",
   "Audi",
-  "Cadillac F1 Team",
+  "Cadillac",
 ];
+
+const constructorAliases = {
+  "mercedes-amg petronas f1 team": "Mercedes",
+  "mercedes-amg": "Mercedes",
+  "scuderia ferrari": "Ferrari",
+  "scuderia ferrari hp": "Ferrari",
+  "mclaren mastercard f1 team": "McLaren",
+  "mclaren f1 team": "McLaren",
+  "oracle red bull racing": "Red Bull",
+  "red bull racing": "Red Bull",
+  "aston martin aramco formula one team": "Aston Martin",
+  "aston martin": "Aston Martin",
+  "racing point": "Aston Martin",
+  "force india": "Aston Martin",
+  "bwt alpine formula one team": "Alpine",
+  "alpine f1 team": "Alpine",
+  "renault": "Alpine",
+  "atlassian williams f1 team": "Williams",
+  "williams racing": "Williams",
+  "visa cash app rb formula one team": "RB F1 Team",
+  "visa cash app racing bulls formula one team": "RB F1 Team",
+  "racing bulls": "RB F1 Team",
+  "alphatauri": "RB F1 Team",
+  "toro rosso": "RB F1 Team",
+  "moneygram haas f1 team": "Haas",
+  "tgr haas f1 team": "Haas",
+  "haas f1 team": "Haas",
+  "audi revolut f1 team": "Audi",
+  "sauber": "Audi",
+  "kick sauber": "Audi",
+  "cadillac formula 1 team": "Cadillac",
+  "cadillac f1 team": "Cadillac",
+};
+
+function canonicalConstructorName(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "Unknown";
+  const key = raw.toLowerCase().replace(/&/g, "and").replace(/\s+/g, " ");
+  return constructorAliases[key] || raw
+    .replace(/\bF1 Team\b/gi, "")
+    .replace(/\bFormula One Team\b/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 function avg(rows, pick) {
   const values = rows.map(pick).map(Number).filter(Number.isFinite);
@@ -34,8 +78,12 @@ export default function TeamAnalysisPage() {
   const teams = useMemo(() => {
     const latest = data?.latest || {};
     const predictionRows = data?.full_grid || data?.all_predictions || latest.full_grid || latest.all_predictions || data?.top10 || [];
-    const grouped = predictionRows.reduce((acc, item) => ((acc[item.team] ||= []).push(item), acc), {});
-    const traitTeams = Object.keys(latest.upgrade_context?.team_traits || {});
+    const grouped = predictionRows.reduce((acc, item) => {
+      const team = canonicalConstructorName(item.team);
+      (acc[team] ||= []).push({ ...item, team });
+      return acc;
+    }, {});
+    const traitTeams = Object.keys(latest.upgrade_context?.team_traits || {}).map(canonicalConstructorName);
     const pitRows = latest.strategy?.pit_execution_model || [];
     const scenarioRows = [
       ...(latest.strategy?.rain_beneficiaries || []),
@@ -46,14 +94,14 @@ export default function TeamAnalysisPage() {
       ...fallbackConstructors,
       ...traitTeams,
       ...Object.keys(grouped),
-      ...pitRows.map((row) => row.team).filter(Boolean),
-      ...scenarioRows.map((row) => row.team).filter(Boolean),
-    ]));
+      ...pitRows.map((row) => canonicalConstructorName(row.team)).filter(Boolean),
+      ...scenarioRows.map((row) => canonicalConstructorName(row.team)).filter(Boolean),
+    ].map(canonicalConstructorName)));
     const q = normalizeQuery(query);
     return teamNames.map((team) => {
       const drivers = grouped[team] || [];
-      const teamPitRows = pitRows.filter((row) => row.team === team);
-      const scenarioMentions = scenarioRows.filter((row) => row.team === team).length;
+      const teamPitRows = pitRows.filter((row) => canonicalConstructorName(row.team) === team);
+      const scenarioMentions = scenarioRows.filter((row) => canonicalConstructorName(row.team) === team).length;
       return {
         team,
         drivers,

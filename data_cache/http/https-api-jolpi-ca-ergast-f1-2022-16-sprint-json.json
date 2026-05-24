@@ -1,1 +1,15 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2022/16/sprint.json","limit":"30","offset":"0","total":"0","RaceTable":{"season":"2022","round":"16","Races":[]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2022/16/sprint.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "0",
+    "RaceTable": {
+      "season": "2022",
+      "round": "16",
+      "Races": []
+    }
+  }
+}

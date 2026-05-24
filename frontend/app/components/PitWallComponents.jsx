@@ -37,7 +37,7 @@ export const navItems = [
   { href: "/drivers", label: "Driver Analysis", icon: Users },
   { href: "/teams", label: "Team Analysis", icon: Factory },
   { href: "/strategy", label: "Strategy Wall", icon: SlidersHorizontal },
-  { href: "/live", label: "Live Telemetry", icon: Radio },
+  { href: "/live", label: "Timing Replay", icon: Radio },
   { href: "/model", label: "System Config", icon: Bot },
   { href: "/archive", label: "Archive", icon: Archive },
 ];
@@ -248,7 +248,7 @@ export function ShellTopBar({ activeItem }) {
       </div>
       <div className="shell-telemetry" aria-label="System status">
         <span className="header-lights" aria-hidden="true">{[0, 1, 2, 3, 4].map((n) => <i key={n} />)}</span>
-        <span><i className="live-dot mini" /> Live-ready</span>
+        <span><i className="live-dot mini" /> Timing-aware</span>
         <span>Local {clock}</span>
         <span>2026 Boost</span>
       </div>
@@ -288,7 +288,7 @@ export function MobileBottomNav({ active }) {
         return (
           <Link className={cx(active === item.href && "active")} href={item.href} key={item.href}>
             <Icon size={19} />
-            <span>{item.label.replace("Command Center", "Command").replace("Prediction Board", "Predict").replace("Live Telemetry", "Live").replace("System Config", "Model").replace("Strategy Wall", "Strategy")}</span>
+            <span>{item.label.replace("Command Center", "Command").replace("Prediction Board", "Predict").replace("Timing Replay", "Timing").replace("System Config", "Model").replace("Strategy Wall", "Strategy")}</span>
           </Link>
         );
       })}
@@ -483,9 +483,23 @@ export function DataFreshnessBadge({ value }) {
 
 export function SourceHealthCard({ health }) {
   const sources = health?.sources || [];
+  const overallScore = Number(health?.overall_score ?? health?.score ?? health?.confidence);
+  const generatedAt = health?.generated_at || health?.last_checked_at || health?.last_success_at;
+  const openf1 = sources.find((source) => normalizeQuery(source.source).includes("openf1")) || health?.openf1 || health?.OpenF1;
+  const warnings = [
+    health?.fallback_reason,
+    health?.live_fallback_reason,
+    openf1?.auth_restricted ? "OpenF1 authenticated access required; using fallback timing/session sources." : "",
+    health?.fia_source_discovery_status ? `FIA: ${stageLabel(health.fia_source_discovery_status)}` : "",
+  ].filter(Boolean);
   return (
     <section className="panel reveal">
-      <SectionTitle icon={Activity} title="Source Health" action={<StatusBadge label={health?.status || "Pending"} tone="green" />} />
+      <SectionTitle icon={Activity} title="Source Health" action={<StatusBadge label={health?.status || "Pending"} tone={String(health?.status || "").toLowerCase().includes("fail") ? "red" : "green"} />} />
+      <div className="metric-grid compact">
+        <Metric label="Overall Score" value={Number.isFinite(overallScore) ? pct(overallScore) : "Pending"} />
+        <Metric label="Generated" value={generatedAt ? new Date(generatedAt).toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }) : "Pending"} />
+      </div>
+      {warnings.length > 0 && <div className="tag-row warning">{warnings.slice(0, 3).map((warning) => <span key={warning}>{warning}</span>)}</div>}
       <div className="source-list">
         {sources.length ? sources.map((source) => (
           <div className="source-row" key={source.source}>

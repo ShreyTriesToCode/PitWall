@@ -1,0 +1,26 @@
+{
+  "document_id": "74b7779cdee27be7",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_summons_-_car_30_-_alleged_breach_of_article_c9.3.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:36.700023+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The driver and team representative are required to report to the Stewards at 15:00, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 19 Date 22 May 2026 Time 13:43 No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe driver and team representative are required to report to the Stewards at 15:00, in relation to the\nincident below: \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 19\nDate 22 May 2026\nTime 13:43\nNo / Driver 30 - Liam Lawson\nReason Alleged breach of Article C9.3 of the FIA F1 Regulations\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}

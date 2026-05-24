@@ -1,6 +1,71 @@
 [
   {
     "race_id": "2026-5-canadian-grand-prix",
+    "target_type": "race",
+    "stage": "post_qualifying",
+    "start_iso": "2026-05-25T01:30:00+05:30",
+    "source_health": {
+      "generated_at": "2026-05-24T12:13:47.149218+05:30",
+      "overall_score": 78.44,
+      "status": "Available",
+      "sources": [
+        {
+          "source": "F1 timing/static feed",
+          "score": 88.0,
+          "status": "Available"
+        },
+        {
+          "source": "Jolpica",
+          "score": 82.0,
+          "status": "Available"
+        },
+        {
+          "source": "OpenF1",
+          "score": 48.0,
+          "status": "Stale"
+        },
+        {
+          "source": "FastF1",
+          "score": 78.0,
+          "status": "Available"
+        },
+        {
+          "source": "Open-Meteo",
+          "score": 76.0,
+          "status": "Available"
+        },
+        {
+          "source": "FIA/F1 upgrade/regulation sources",
+          "score": 74.0,
+          "status": "Fallback"
+        },
+        {
+          "source": "Local cache",
+          "score": 92.0,
+          "status": "Available"
+        },
+        {
+          "source": "Model bundle",
+          "score": 86.0,
+          "status": "Available"
+        },
+        {
+          "source": "Calendar",
+          "score": 82.0,
+          "status": "Available"
+        }
+      ],
+      "api_notes": {
+        "openf1": {
+          "status": "not_checked",
+          "auth_required": false,
+          "errors": []
+        }
+      }
+    }
+  },
+  {
+    "race_id": "2026-5-canadian-grand-prix",
     "target_type": "sprint",
     "stage": "post_practice",
     "start_iso": "2026-05-23T21:30:00+05:30",
@@ -10,7 +75,7 @@
       "status": "Available",
       "sources": [
         {
-          "source": "F1 Live Timing",
+          "source": "F1 timing/static feed",
           "score": 88.0,
           "status": "Available"
         },
@@ -68,7 +133,7 @@
       "status": "Available",
       "sources": [
         {
-          "source": "F1 Live Timing",
+          "source": "F1 timing/static feed",
           "score": 88.0,
           "status": "Available"
         },

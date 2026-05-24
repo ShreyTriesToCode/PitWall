@@ -1,0 +1,46 @@
+{
+  "document_id": "6ff79b1d5086363b",
+  "document_type": "new_pu_elements",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_new_pu_elements_for_this_competition_0.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:19.355367+05:30",
+  "confidence": 1.0,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {
+    "23": {
+      "new_ice": false,
+      "new_tc": false,
+      "new_mgu_h": false,
+      "new_mgu_k": false,
+      "new_es": false,
+      "new_ce": false,
+      "new_exhaust": false,
+      "new_pu_anc": false,
+      "component_count_used": null,
+      "component_limit_margin": null,
+      "reliability_boost": 0,
+      "grid_penalty_risk": 5,
+      "pu_change_reason_text": "23 Atlassian Williams Mercedes Alexander Albon 2",
+      "source_confidence": 1.0
+    },
+    "43": {
+      "new_ice": false,
+      "new_tc": false,
+      "new_mgu_h": false,
+      "new_mgu_k": false,
+      "new_es": false,
+      "new_ce": false,
+      "new_exhaust": false,
+      "new_pu_anc": false,
+      "component_count_used": null,
+      "component_limit_margin": null,
+      "reliability_boost": 0,
+      "grid_penalty_risk": 5,
+      "pu_change_reason_text": "43 Alpine Mercedes Franco Colapinto 1",
+      "source_confidence": 1.0
+    }
+  },
+  "infringements": {},
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 29\nDate 22 May 2026\nTime 18:32\nTitle Technical Delegate's Report\nDescription New PU elements for this Competition\nEnclosed 05 CAN GP 26 TDR5.pdf\nJo Bauer\n\n2026 CANADIAN GRAND PRIX \n22 - 24 May 2026 \n  \n \nFrom :  The FIA Formula 1 Technical Delegate  \nTo :  The Stewards Date :  22 May 2026 \n  \n \nTECHNICAL DELEGATE’S REPORT \n \n \nThe following driver will be is using a new motor generator unit-kinetic (MGU-K) for the \nremainder of the Competition: \n \nNumber Car Driver Previously used MGU-K \n    \n23 Atlassian Williams Mercedes Alexander Albon 1 \n \nThe motor generator unit-kinetic used by Alexander Albon is one (1) of the three (3) new motor \ngenerator units-kinetic allowed for the 2026 Championship season and this is in conformity with \nB8.2.2 f) of the 2026 Formula One Sporting Regulations. \n \n \nThe following driver will be using a new power unit ancillary component (PU-ANC) for the \nremainder of the Competition: \n \nNumber Car Driver Previously used PU-ANC \n    \n23 Atlassian Williams Mercedes Alexander Albon 2 \n \nThe power unit ancillary com"
+}

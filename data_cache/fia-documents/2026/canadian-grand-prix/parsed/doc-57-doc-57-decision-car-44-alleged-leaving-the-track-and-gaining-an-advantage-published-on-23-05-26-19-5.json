@@ -1,0 +1,26 @@
+{
+  "document_id": "f9d0a59ae6d1e44e",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_44_-_alleged_leaving_the_track_and_gaining_an_advantage.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:29.950639+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Scuderia Ferrari HP Document 57 Date 23 May 2026 Time 13:20 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 44 - ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 57\nDate 23 May 2026\nTime 13:20\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 44 - Lewis Hamilton\nCompetitor Scuderia Ferrari HP\nTime 12:29\nSession Sprint\nFact Car 44 left the track and rejoined at Turn 13\nInfringement Alleged breach of Article B1.8.6 of the FIA F1 Regulations.\nDecision No further action.\nReason The Stewards reviewed positioning/marshalling system data, video, timing, team radio\nand in-car video evidence.\nCar 44 was in front of Car 81 on the approach to Turn 13 and left the track, drove\nthrough the chicane and rejoined, in front of Car 81.\nHowever this incident differs from the previous incident in this Session involving Cars\n27 and 30 in that Car 81 was not in an overtaking position on Car 44.  Accordingly\nCar 44 was not deemed by the Stewards to be “defending” its position hence was not\ndeemed to gain a lasting advantage, consistent with the Driving Standards Guidelines.\nCompetitors are reminded that they have the right to appeal certain decisions of"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "bb0853a2b829dda5",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_summons_-_car_44_-_alleged_impeding_of_car_10.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:01.746202+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The driver and team representative are required to report to the Stewards at 18:20, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Scuderia Ferrari HP Document 69 Date 23 May 2026 Time 16:41 No / Driver 44 - Lewis Hami",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe driver and team representative are required to report to the Stewards at 18:20, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 69\nDate 23 May 2026\nTime 16:41\nNo / Driver 44 - Lewis Hamilton\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations – Car 44 allegedly\nimpeding Car 10 in turn 8 at 16:04.\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}

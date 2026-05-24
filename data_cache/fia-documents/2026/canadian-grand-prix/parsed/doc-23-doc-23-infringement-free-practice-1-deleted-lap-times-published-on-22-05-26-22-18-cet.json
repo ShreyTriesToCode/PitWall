@@ -1,0 +1,26 @@
+{
+  "document_id": "3a5dedb75394eb0e",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:29.130259+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 23 Date 22 May 2026 Time 16:15 Title Infringement - Free Practice 1 Deleted Lap Times Description Infringement - Free Practice 1 Deleted Lap Times Enclosed CAN DOC 23 - Free Practice 1 Delet",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 23\nDate 22 May 2026\nTime 16:15\nTitle Infringement - Free Practice 1 Deleted Lap Times\nDescription Infringement - Free Practice 1 Deleted Lap Times\nEnclosed CAN DOC 23 - Free Practice 1 Deleted Lap Times.pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 23 \n  \nTo All Officials, All Teams      Date  22 May 2026 \n \n        Time  16:15 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 1 \n  \nFact The F1 cars below did not use the track at turns 1, 2, 4, 8, 10, 13 and 14. \n \nNo. Turn Car Driver Competitor Time of Day  Lap Time \n1 14 1  Lando Norris McLaren Mastercard F1 Team 12:35:29 1:22.647 \n2 14 81 Oscar Piastri McLaren Mastercard F1 Team 12:50:15 1:19.876 \n3 8 55 Carlos Sainz Atlassian Williams F1 Team 12:53:08 1:29.887 \n4 8 14 Fernando Alonso Aston Martin Aramco F1 Team 12:56:25 1:30.798 \n5 1 55 Carlos Sainz Atlassian Williams F1 Team 12:56:56 PIT \n6 4 1 Lando Norris M"
+}

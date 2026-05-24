@@ -1,0 +1,26 @@
+{
+  "document_id": "5b7dc076793b15c1",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_released_in_an_unsafe_condition.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:09:48.564388+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 77 Date 23 May 2026 Time 18:55 The Stewards, having received a report from the Race Director, summoned (document 67) and heard from the team representative, have conside",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 77\nDate 23 May 2026\nTime 18:55\nThe Stewards, having received a report from the Race Director, summoned (document 67) and\nheard from the team representative, have considered the following matter and determine the\nfollowing:\nNo / Driver 18 - Lance Stroll\nCompetitor Aston Martin Aramco F1 Team\nTime 16:00\nSession Qualifying\nFact Car 18 was released from the garage with wheel covers still fitted.\nInfringement Breach of Article B1.6.2b.i of the FIA F1 Regulations.\nDecision The competitor (Aston Martin Aramco F1 Team) is fined €7,500.\nReason The Stewards heard from the team representative and reviewed video, team radio\nand in-car video evidence.\nOn its way down the pit lane at the start of the session, Car 18 lost an outer wheel\ntrim.  Then, on its first lap, the inner wheel cover also dislodged.  This particular part,\nalthough made from carbon fibre, is still potentially dangerous if it hit another car or a\nperson.  The driver was not aware of the situation and the team admitted that part of\nits inspection process had overlooked the correct fixation of the se"
+}

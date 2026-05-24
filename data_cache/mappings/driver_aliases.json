@@ -1,0 +1,14 @@
+{
+  "schema_version": "pitwall-driver-aliases-v1",
+  "aliases": {
+    "kimi antonelli": "antonelli",
+    "andrea kimi antonelli": "antonelli",
+    "max verstappen": "max_verstappen",
+    "nico hulkenberg": "hulkenberg",
+    "nico hülkenberg": "hulkenberg"
+  },
+  "notes": [
+    "Used to reconcile FIA PDF names, Jolpica driver IDs, OpenF1 driver rows, and frontend contracts.",
+    "Future-season aliases can be added without code changes."
+  ]
+}

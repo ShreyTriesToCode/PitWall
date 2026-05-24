@@ -835,6 +835,7 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   z-index: 60;
   border: 0;
   background: rgba(0,0,0,.55);
+  touch-action: none;
 }
 .detail-drawer {
   position: fixed;
@@ -1801,11 +1802,15 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   }
   .detail-drawer {
     top: auto;
+    right: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    max-height: 82vh;
+    max-height: min(88dvh, 720px);
+    padding: 22px 18px calc(24px + env(safe-area-inset-bottom));
     border-left: 0;
     border-top: 1px solid var(--line2);
+    overscroll-behavior: contain;
     animation: sheetUp .22s ease both;
   }
   .prediction-grid { grid-template-columns: 1fr 1fr; }

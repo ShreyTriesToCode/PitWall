@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2020/10/laps.json","limit":"30","offset":"0","total":"946","RaceTable":{"season":"2020","round":"10","Races":[{"season":"2020","round":"10","url":"https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix","raceName":"Russian Grand Prix","Circuit":{"circuitId":"sochi","url":"https://en.wikipedia.org/wiki/Sochi_Autodrom","circuitName":"Sochi Autodrom","Location":{"lat":"43.4057","long":"39.9578","locality":"Sochi","country":"Russia"}},"date":"2020-09-27","time":"11:10:00Z","Laps":[{"number":"1","Timings":[{"driverId":"hamilton","time":"2:07.166","position":"1"},{"driverId":"bottas","time":"2:08.585","position":"2"},{"driverId":"max_verstappen","time":"2:09.668","position":"3"},{"driverId":"ocon","time":"2:10.838","position":"4"},{"driverId":"ricciardo","time":"2:12.360","position":"5"},{"driverId":"perez","time":"2:13.978","position":"6"},{"driverId":"gasly","time":"2:16.746","position":"7"},{"driverId":"leclerc","time":"2:17.783","position":"8"},{"driverId":"kevin_magnussen","time":"2:19.727","position":"9"},{"driverId":"grosjean","time":"2:21.405","position":"10"},{"driverId":"kvyat","time":"2:22.921","position":"11"},{"driverId":"giovinazzi","time":"2:24.259","position":"12"},{"driverId":"vettel","time":"2:25.469","position":"13"},{"driverId":"latifi","time":"2:29.884","position":"14"},{"driverId":"raikkonen","time":"2:30.825","position":"15"},{"driverId":"russell","time":"2:31.428","position":"16"},{"driverId":"albon","time":"2:35.760","position":"17"},{"driverId":"norris","time":"2:36.870","position":"18"}]},{"number":"2","Timings":[{"driverId":"hamilton","time":"3:06.175","position":"1"},{"driverId":"bottas","time":"3:06.870","position":"2"},{"driverId":"max_verstappen","time":"3:07.172","position":"3"},{"driverId":"ocon","time":"3:06.908","position":"4"},{"driverId":"ricciardo","time":"3:06.508","position":"5"},{"driverId":"perez","time":"3:06.792","position":"6"},{"driverId":"gasly","time":"3:05.898","position":"7"},{"driverId":"leclerc","time":"3:05.851","position":"8"},{"driverId":"kevin_magnussen","time":"3:05.211","position":"9"},{"driverId":"grosjean","time":"3:06.991","position":"10"},{"driverId":"kvyat","time":"3:07.066","position":"11"},{"driverId":"giovinazzi","time":"3:06.907","position":"12"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2020/10/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "946",
+    "RaceTable": {
+      "season": "2020",
+      "round": "10",
+      "Races": [
+        {
+          "season": "2020",
+          "round": "10",
+          "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix",
+          "raceName": "Russian Grand Prix",
+          "Circuit": {
+            "circuitId": "sochi",
+            "url": "https://en.wikipedia.org/wiki/Sochi_Autodrom",
+            "circuitName": "Sochi Autodrom",
+            "Location": {
+              "lat": "43.4057",
+              "long": "39.9578",
+              "locality": "Sochi",
+              "country": "Russia"
+            }
+          },
+          "date": "2020-09-27",
+          "time": "11:10:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "hamilton",
+                  "time": "2:07.166",
+                  "position": "1"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "2:08.585",
+                  "position": "2"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "2:09.668",
+                  "position": "3"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "2:10.838",
+                  "position": "4"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "2:12.360",
+                  "position": "5"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "2:13.978",
+                  "position": "6"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "2:16.746",
+                  "position": "7"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "2:17.783",
+                  "position": "8"
+                },
+                {
+                  "driverId": "kevin_magnussen",
+                  "time": "2:19.727",
+                  "position": "9"
+                },
+                {
+                  "driverId": "grosjean",
+                  "time": "2:21.405",
+                  "position": "10"
+                },
+                {
+                  "driverId": "kvyat",
+                  "time": "2:22.921",
+                  "position": "11"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "2:24.259",
+                  "position": "12"
+                },
+                {
+                  "driverId": "vettel",
+                  "time": "2:25.469",
+                  "position": "13"
+                },
+                {
+                  "driverId": "latifi",
+                  "time": "2:29.884",
+                  "position": "14"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "2:30.825",
+                  "position": "15"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "2:31.428",
+                  "position": "16"
+                },
+                {
+                  "driverId": "albon",
+                  "time": "2:35.760",
+                  "position": "17"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "2:36.870",
+                  "position": "18"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "hamilton",
+                  "time": "3:06.175",
+                  "position": "1"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "3:06.870",
+                  "position": "2"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "3:07.172",
+                  "position": "3"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "3:06.908",
+                  "position": "4"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "3:06.508",
+                  "position": "5"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "3:06.792",
+                  "position": "6"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "3:05.898",
+                  "position": "7"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "3:05.851",
+                  "position": "8"
+                },
+                {
+                  "driverId": "kevin_magnussen",
+                  "time": "3:05.211",
+                  "position": "9"
+                },
+                {
+                  "driverId": "grosjean",
+                  "time": "3:06.991",
+                  "position": "10"
+                },
+                {
+                  "driverId": "kvyat",
+                  "time": "3:07.066",
+                  "position": "11"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "3:06.907",
+                  "position": "12"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

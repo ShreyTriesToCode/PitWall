@@ -41,7 +41,19 @@ export default function PredictionsPage() {
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, [latest?.target_type, generatedTargets]);
-  const targetMap = useMemo(() => new Map(generatedTargets.map((target) => [target.target_type, target])), [generatedTargets]);
+  const targetMap = useMemo(() => {
+    const map = new Map(generatedTargets.map((target) => [target.target_type, target]));
+    if (latest?.target_type && !map.has(latest.target_type)) {
+      map.set(latest.target_type, {
+        ...latest,
+        title: latest.title || latest.race_name,
+        top10: data?.top10 || latest.top10 || [],
+        target_type: latest.target_type,
+        stage: latest.stage,
+      });
+    }
+    return map;
+  }, [data?.top10, generatedTargets, latest]);
   const selectedTarget = targetMap.get(requestedTarget) || (!generatedTargets.length && latest ? {
     ...latest,
     title: latest.title || latest.race_name,
@@ -50,13 +62,18 @@ export default function PredictionsPage() {
     stage: latest.stage,
   } : null);
   const targetPending = Boolean(requestedTarget && !targetMap.has(requestedTarget) && generatedTargets.length);
+  const selectedPayload = targetPending ? {} : selectedTarget || latest || {};
   const selectedTop10 = targetPending ? [] : selectedTarget?.top10?.length ? selectedTarget.top10 : data?.top10 || [];
   const predictions = useFilteredDrivers(selectedTop10, query);
-  const generatedTargetTypes = new Set(generatedTargets.map((target) => target.target_type));
+  const generatedTargetTypes = useMemo(() => {
+    const values = new Set(generatedTargets.map((target) => target.target_type).filter(Boolean));
+    if (latest?.target_type) values.add(latest.target_type);
+    return values;
+  }, [generatedTargets, latest?.target_type]);
   const summary = useMemo(() => {
     const top = predictions.slice(0, 3).map((p) => `P${p.rank} ${p.name} (${p.team})`).join(", ");
-    return `${selectedTarget?.title || latest?.race_name || "PitWall"}: ${top || "No prediction rows available"}. Stage: ${selectedTarget?.stage || latest?.stage || "pending"}.`;
-  }, [latest, predictions, selectedTarget]);
+    return `${selectedPayload?.title || selectedPayload?.race_name || "PitWall"}: ${top || "No prediction rows available"}. Stage: ${selectedPayload?.stage || "pending"}.`;
+  }, [predictions, selectedPayload]);
 
   useEffect(() => {
     if (!predictions.length) {
@@ -97,10 +114,14 @@ export default function PredictionsPage() {
             <StatusBadge label={targetPending ? `${requestedTarget} pending` : selectedTarget?.stage || latest.stage} tone="red" />
           </section>
           <section className="metric-grid">
-            <Metric label="Prediction ID" value={targetPending ? "Pending generation" : latest.prediction_id} />
-            <Metric label="Target" value={targetPending ? requestedTarget : selectedTarget?.target_type || latest.target_type} />
+            <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
+            <Metric label="Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
             <Metric label="Model Agreement Leader" value={`${predictions[0]?.model_agreement_score ?? "Pending"}%`} />
             <Metric label="Dark Horse" value={predictions.find((p) => p.dark_horse_flag)?.name || "Not flagged"} />
+            <Metric label="Stage" value={selectedPayload.prediction_stage || selectedPayload.stage || latest.prediction_stage || "pending"} />
+            <Metric label="Avg Uncertainty" value={`${selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty ?? "Pending"}%`} />
+            <Metric label="FIA Documents" value={selectedPayload.fia_document_count ?? latest.fia_document_count ?? 0} />
+            <Metric label="Timing Mode" value={selectedPayload.timing_mode || latest.timing_mode || "unavailable"} />
           </section>
           {!predictions.length && <EmptyState title={targetPending ? `${requestedTarget} prediction pending` : "No prediction rows match"} body={targetPending ? "That target has not been generated yet. The next backend run will expose it when the data exists." : "Clear the search or try another driver/team."} />}
           {predictions.length > 0 && (view === "table" ? <PredictionTable predictions={predictions} onOpen={setSelected} /> : <div className="card-grid">{predictions.map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} />)}</div>)}
@@ -120,8 +141,16 @@ export default function PredictionsPage() {
                 {predictions.slice(0, 4).map((p) => <article key={p.driver_id}><span>P{p.rank}</span><strong>{p.name}</strong><small>{p.evidence_status?.available?.length || 0} signals · {p.evidence_status?.missing?.length || 0} missing</small></article>)}
               </div>
             </div>
+            <div className="panel reveal">
+              <SectionTitle title="Session And Source State" />
+              <div className="podium-list">
+                <article><span>{selectedPayload.pending_session_checks?.length ?? latest.pending_session_checks?.length ?? 0}</span><strong>Pending checks</strong><small>{selectedPayload.session_data_delay_status || latest.session_data_delay_status || "unknown"}</small></article>
+                <article><span>{selectedPayload.fia_cache_hits ?? latest.fia_cache_hits ?? 0}</span><strong>FIA cache hits</strong><small>{selectedPayload.fia_source_discovery_status || latest.fia_source_discovery_status || "not checked"}</small></article>
+                <article><span>{selectedPayload.source_conflicts?.length ?? latest.source_conflicts?.length ?? 0}</span><strong>Source conflicts</strong><small>{selectedPayload.source_health?.status || latest.source_health?.status || "Pending"}</small></article>
+              </div>
+            </div>
           </section>}
-          {predictions.length > 0 && <ScenarioCards scenarios={selectedTarget?.scenarios || latest.scenarios} />}
+          {predictions.length > 0 && <ScenarioCards scenarios={selectedPayload.scenarios || latest.scenarios} />}
           <DriverExplainabilityDrawer driver={selected} onClose={() => setSelected(null)} />
         </>
       )}

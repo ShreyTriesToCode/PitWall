@@ -1,0 +1,26 @@
+{
+  "document_id": "487cbb3cc1c42089",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_31_-_alleged_procedural_infringement.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:15.935590+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 64 Date 23 May 2026 Time 15:41 The Stewards, having received a report from the Race Director, summoned (document 59) and heard from the team representative, have considered the following matter",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 64\nDate 23 May 2026\nTime 15:41\nThe Stewards, having received a report from the Race Director, summoned (document 59) and\nheard from the team representative, have considered the following matter and determine the\nfollowing:\nNo / Driver 31 - Esteban Ocon\nCompetitor TGR Haas F1 Team\nTime 11:56\nSession Sprint\nFact Car 31 was reported as having air released on the left rear tyre with the wheel fitted\nto the car.\nInfringement Alleged breach of Point 2.5, Point 2.7 and Point 2.8 of  FIA-F1-DOC-062A Tyre\nOperating Procedure\nDecision No further action.\nReason The Stewards heard from the team Sporting Director, team Engineer, the FIA\nTechnical Delegate and the Grid Scrutineer assigned to Car 31, and reviewed video\nevidence from Car 11 (the car behind Car 31 on the grid), and from the FIA grid\ncamera for position 14 (the starting position for Car 31).\nThe Stewards also inspected the tyre blanket and tyre pressure guage from Car 31.\nThis video evidence proved conclusively that there was no breach of the regulations\nin that there was no contact with the tyre that would have resulted in pre"
+}

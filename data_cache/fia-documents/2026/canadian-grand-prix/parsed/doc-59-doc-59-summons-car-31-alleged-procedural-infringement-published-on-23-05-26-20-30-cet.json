@@ -1,0 +1,26 @@
+{
+  "document_id": "fc731f855ff03d45",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_summons_-_car_31_-_alleged_procedural_infringement.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:26.267387+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The driver and team representative are required to report to the Stewards at 14:45, in relation to the incident below: The Stewards From The Stewards To The Team Manager, TGR Haas F1 Team Document 59 Date 23 May 2026 Time 14:25 No / Driver 31 - Esteban Ocon ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe driver and team representative are required to report to the Stewards at 14:45, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 59\nDate 23 May 2026\nTime 14:25\nNo / Driver 31 - Esteban Ocon\nReason Alleged breach of Point 2.2, Point 2.7 and Point 2.8 of  FIA-F1-DOC-062A Tyre\nOperating Procedure\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}

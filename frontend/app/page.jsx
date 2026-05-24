@@ -74,7 +74,7 @@ export default function HomePage() {
               <div className="quick-links">
                 {[
                   ["/predictions", "Predictions"],
-                  ["/live", "Live Timing"],
+                  ["/live", "Timing"],
                   ["/strategy", "Strategy Lab"],
                   ["/model", "Model Center"],
                   ["/archive", "Archive"],
@@ -97,6 +97,8 @@ export default function HomePage() {
               <Metric label="Circuit" value={latest.circuit} />
               <Metric label="Source State" value={(latest.source_health || latest.source_status)?.status || "Pending"} />
               <Metric label="Stage" value={latest.stage} />
+              <Metric label="Timing Mode" value={latest.timing_mode || "unavailable"} />
+              <Metric label="FIA Docs" value={latest.fia_source_discovery_status || "pending"} />
             </div>
           </footer>
         </>

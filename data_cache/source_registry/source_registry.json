@@ -1,0 +1,50 @@
+{
+  "schema_version": "source-registry-v1",
+  "season": 2026,
+  "target_season_mode": "2026",
+  "discovered_at": "2026-05-24T02:00:10.573232+05:30",
+  "last_checked_at": "2026-05-24T02:00:10.573232+05:30",
+  "fia_championship_identifier": "fia-formula-one-world-championship-14",
+  "fia_base_championship_documents_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
+  "fia_season_document_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+  "formula1_season_url": "https://www.formula1.com/en/racing/2026",
+  "formula1_event_urls": [],
+  "jolpica_season_endpoint": "https://api.jolpi.ca/ergast/f1/2026.json",
+  "ics_calendar_source": null,
+  "discovered_event_slugs": [],
+  "discovered_fia_event_groups": [],
+  "fia_source_discovery_status": "configured",
+  "source_discovery_status": "available",
+  "fallback_source_used": null,
+  "errors": [],
+  "warnings": [],
+  "previous_valid_registry_path": "data_cache/source_registry/2026.json",
+  "cache_status": "refresh",
+  "source_health": {
+    "fia_decision_documents": {
+      "available": true,
+      "status": "configured",
+      "confidence": 1.0
+    },
+    "formula1_calendar": {
+      "available": true,
+      "status": "configured",
+      "confidence": 0.75
+    },
+    "jolpica": {
+      "available": true,
+      "status": "configured",
+      "confidence": 0.7
+    },
+    "fastf1": {
+      "available": true,
+      "status": "configured",
+      "confidence": 0.65
+    },
+    "openf1": {
+      "available": true,
+      "status": "configured",
+      "confidence": 0.65
+    }
+  }
+}

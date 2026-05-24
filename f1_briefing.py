@@ -6,9 +6,13 @@ import gzip
 import io
 import zlib
 import base64
+import random
 import smtplib
 import argparse
 import subprocess
+import sqlite3
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
+from functools import lru_cache
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from email.mime.text import MIMEText
@@ -19,23 +23,49 @@ import joblib
 import numpy as np
 import pandas as pd
 import requests
-from icalendar import Calendar
+from icalendar import Calendar, Event
 from dateutil import tz
 from sklearn.ensemble import ExtraTreesClassifier, ExtraTreesRegressor, RandomForestClassifier, RandomForestRegressor, HistGradientBoostingClassifier, HistGradientBoostingRegressor
-from sklearn.metrics import roc_auc_score, brier_score_loss, mean_absolute_error
+from sklearn.metrics import roc_auc_score, brier_score_loss, mean_absolute_error, ndcg_score
 from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import make_pipeline
+from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
+from scipy.stats import spearmanr
 
 try:
     import fastf1
 except Exception:
     fastf1 = None
 
+try:
+    import lightgbm as lgb
+except Exception:
+    lgb = None
+
+try:
+    import xgboost as xgb
+except Exception:
+    xgb = None
+
+try:
+    import shap
+except Exception:
+    shap = None
+
+try:
+    from pitwall.data.f1db import f1db_metadata, f1db_status
+    from pitwall.data.relbench_f1 import relbench_metadata, relbench_status
+except Exception:
+    f1db_metadata = None
+    f1db_status = None
+    relbench_metadata = None
+    relbench_status = None
+
 
 F1_ICS_URL = os.getenv("F1_ICS_URL", "").strip()
 
-EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "true").lower() == "true"
+EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").lower() == "true"
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_APP_PASSWORD = os.getenv("EMAIL_APP_PASSWORD")
 EMAIL_TO = os.getenv("EMAIL_TO")
@@ -54,7 +84,7 @@ GITHUB_EVENT_NAME = os.getenv("GITHUB_EVENT_NAME", "").lower().strip()
 
 ML_START_YEAR = int(os.getenv("ML_START_YEAR", "2018"))
 USE_FULL_HISTORICAL_DATA = os.getenv("USE_FULL_HISTORICAL_DATA", "true").lower() == "true"
-FULL_DATA_BACKFILL_LIMIT = int(os.getenv("FULL_DATA_BACKFILL_LIMIT", "10"))
+FULL_DATA_BACKFILL_LIMIT = int(os.getenv("FULL_DATA_BACKFILL_LIMIT", "0"))
 JOLPICA_REQUEST_SLEEP = float(os.getenv("JOLPICA_REQUEST_SLEEP", "1.2"))
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -64,15 +94,20 @@ HTTP_CACHE_DIR = Path(os.getenv("HTTP_CACHE_DIR", DATA_CACHE_DIR / "http"))
 FULL_RACE_CACHE_DIR = Path(os.getenv("FULL_RACE_CACHE_DIR", DATA_CACHE_DIR / "full_races"))
 FASTF1_CACHE_DIR = Path(os.getenv("FASTF1_CACHE_DIR", BASE_DIR / "fastf1_cache"))
 MODEL_DIR = Path(os.getenv("MODEL_DIR", BASE_DIR / "models" / "saved_models"))
+MODEL_ARTIFACTS_DIR = Path(os.getenv("MODEL_ARTIFACTS_DIR", BASE_DIR / "model_artifacts"))
+SOURCE_REGISTRY_DIR = DATA_CACHE_DIR / "source_registry"
+FIA_DOCUMENT_CACHE_DIR = Path(os.getenv("FIA_DOCUMENT_CACHE_DIR", DATA_CACHE_DIR / "fia-documents"))
+_FIA_REFRESHED_SEASONS = set()
 
 MODEL_BUNDLE_PATH = MODEL_DIR / "f1_hybrid_full_data_bundle.pkl"
 MODEL_META_PATH = MODEL_DIR / "f1_hybrid_full_data_meta.json"
 MODEL_STATUS_PATH = BASE_DIR / "MODEL_STATUS.md"
-MODEL_SCHEMA_VERSION = "2026.05-high-accuracy-v4"
-PREDICTION_DATA_VERSION = "2026.05-race-control-contract-v1"
+MODEL_SCHEMA_VERSION = "2026.05-high-accuracy-v5"
+PREDICTION_DATA_VERSION = "2026.05-race-control-contract-v2"
 MODEL_STATUS_JSON_PATH = DATA_CACHE_DIR / "model-status.json"
 BACKTEST_HISTORY_PATH = DATA_CACHE_DIR / "backtest-history.json"
 MODEL_CORRECTIONS_PATH = DATA_CACHE_DIR / "model_corrections.json"
+PITWALL_DB_PATH = Path(os.getenv("PITWALL_DB_PATH", DATA_CACHE_DIR / "pitwall.db"))
 FEATURES_DIR = DATA_CACHE_DIR / "features"
 MODEL_INPUT_SNAPSHOT_DIR = DATA_CACHE_DIR / "model-input-snapshots"
 
@@ -80,12 +115,70 @@ JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1"
 F1_LIVE_TIMING_STATIC_BASE = os.getenv("F1_LIVE_TIMING_STATIC_BASE", "https://livetiming.formula1.com/static").rstrip("/")
 OPENF1_BASE = os.getenv("OPENF1_BASE", "https://api.openf1.org/v1").rstrip("/")
 OPENF1_ENABLED = os.getenv("OPENF1_ENABLED", "true").lower() == "true"
+OPENF1_ACCESS_TOKEN = os.getenv("OPENF1_ACCESS_TOKEN", os.getenv("OPENF1_TOKEN", "")).strip()
+OPENF1_USERNAME = os.getenv("OPENF1_USERNAME", "").strip()
+OPENF1_PASSWORD = os.getenv("OPENF1_PASSWORD", "").strip()
 OPENF1_REQUEST_SLEEP = float(os.getenv("OPENF1_REQUEST_SLEEP", "0.45"))
+OPENF1_OPTIONAL_ONLY = os.getenv("OPENF1_OPTIONAL_ONLY", "true").lower() == "true"
 UPGRADES_ENABLED = os.getenv("UPGRADES_ENABLED", "true").lower() == "true"
 F1_REGULATIONS_ENABLED = os.getenv("F1_REGULATIONS_ENABLED", "true").lower() == "true"
 OFFICIAL_CALENDAR_ENABLED = os.getenv("OFFICIAL_CALENDAR_ENABLED", "true").lower() == "true"
 FIA_TECH_UPDATE_BASE = os.getenv("FIA_TECH_UPDATE_BASE", "https://www.fia.com/news").rstrip("/")
 OFFICIAL_F1_CALENDAR_URL = os.getenv("OFFICIAL_F1_CALENDAR_URL", "https://www.formula1.com/en/racing/{year}")
+TARGET_SEASON = os.getenv("TARGET_SEASON", "auto").strip()
+SOURCE_DISCOVERY_ENABLED = os.getenv("SOURCE_DISCOVERY_ENABLED", "true").lower() == "true"
+REFRESH_SOURCE_REGISTRY = os.getenv("REFRESH_SOURCE_REGISTRY", "false").lower() == "true"
+FIA_DOCUMENTS_ENABLED = os.getenv("FIA_DOCUMENTS_ENABLED", "true").lower() == "true"
+FIA_DOCUMENTS_BASE_URL = os.getenv("FIA_DOCUMENTS_BASE_URL", "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14").rstrip("/")
+FIA_DOCUMENTS_SEASON_URL = os.getenv("FIA_DOCUMENTS_SEASON_URL", "").strip()
+REFRESH_FIA_DOCUMENTS = os.getenv("REFRESH_FIA_DOCUMENTS", "false").lower() == "true"
+FORCE_REPARSE_FIA_DOCUMENTS = os.getenv("FORCE_REPARSE_FIA_DOCUMENTS", "false").lower() == "true"
+FORCE_REDOWNLOAD_FIA_DOCUMENTS = os.getenv("FORCE_REDOWNLOAD_FIA_DOCUMENTS", "false").lower() == "true"
+FIA_DOCUMENT_CACHE_TTL_MINUTES = int(os.getenv("FIA_DOCUMENT_CACHE_TTL_MINUTES", "60"))
+FIA_REQUEST_SLEEP_SECONDS = float(os.getenv("FIA_REQUEST_SLEEP_SECONDS", "1.0"))
+MAX_FIA_DOCUMENTS_PER_RUN = int(os.getenv("MAX_FIA_DOCUMENTS_PER_RUN", "0"))
+MAX_FIA_PDFS_DOWNLOAD_PER_RUN = int(os.getenv("MAX_FIA_PDFS_DOWNLOAD_PER_RUN", "0"))
+KEEP_FIA_PDFS = os.getenv("KEEP_FIA_PDFS", "false").lower() == "true"
+FORMULA1_CALENDAR_BASE_URL = os.getenv("FORMULA1_CALENDAR_BASE_URL", "https://www.formula1.com/en/racing").rstrip("/")
+FORMULA1_SEASON_URL = os.getenv("FORMULA1_SEASON_URL", "").strip()
+JOLPICA_ENABLED = os.getenv("JOLPICA_ENABLED", "true").lower() == "true"
+FASTF1_ENABLED = os.getenv("FASTF1_ENABLED", "true").lower() == "true"
+FASTF1_SESSION_LOAD_TIMEOUT_SECONDS = int(os.getenv("FASTF1_SESSION_LOAD_TIMEOUT_SECONDS", "90"))
+SESSION_INGESTION_ENABLED = os.getenv("SESSION_INGESTION_ENABLED", "true").lower() == "true"
+SESSION_RESULT_DELAY_MINUTES = int(os.getenv("SESSION_RESULT_DELAY_MINUTES", "30"))
+PRACTICE_RESULT_DELAY_MINUTES = int(os.getenv("PRACTICE_RESULT_DELAY_MINUTES", "20"))
+QUALIFYING_RESULT_DELAY_MINUTES = int(os.getenv("QUALIFYING_RESULT_DELAY_MINUTES", "30"))
+SPRINT_QUALIFYING_RESULT_DELAY_MINUTES = int(os.getenv("SPRINT_QUALIFYING_RESULT_DELAY_MINUTES", "30"))
+SPRINT_RESULT_DELAY_MINUTES = int(os.getenv("SPRINT_RESULT_DELAY_MINUTES", "45"))
+RACE_RESULT_DELAY_HOURS = int(os.getenv("RACE_RESULT_DELAY_HOURS", "8"))
+SESSION_RETRY_INTERVAL_MINUTES = int(os.getenv("SESSION_RETRY_INTERVAL_MINUTES", "20"))
+MAX_SESSION_RETRIES = int(os.getenv("MAX_SESSION_RETRIES", "8"))
+FORCE_SESSION_INGEST = os.getenv("FORCE_SESSION_INGEST", "false").lower() == "true"
+TARGET_EVENT = os.getenv("TARGET_EVENT", "").strip()
+TARGET_SESSION = os.getenv("TARGET_SESSION", "").strip()
+DRY_RUN_SESSION_INGEST = os.getenv("DRY_RUN_SESSION_INGEST", "false").lower() == "true"
+LIVE_TIMING_ENABLED = os.getenv("LIVE_TIMING_ENABLED", "true").lower() == "true"
+LIVE_STALE_AFTER_SECONDS = int(os.getenv("LIVE_STALE_AFTER_SECONDS", "60"))
+DISABLE_LIVE_MODE = os.getenv("DISABLE_LIVE_MODE", "false").lower() == "true"
+TIMING_REPLAY_MODE_ALLOWED = os.getenv("TIMING_REPLAY_MODE_ALLOWED", "true").lower() == "true"
+USE_SOCIAL_UPGRADE_SOURCES = os.getenv("USE_SOCIAL_UPGRADE_SOURCES", "false").lower() == "true"
+UPGRADE_MAX_WEIGHT_PRE_RUNNING = float(os.getenv("UPGRADE_MAX_WEIGHT_PRE_RUNNING", "0.08"))
+UPGRADE_MAX_WEIGHT_POST_PRACTICE = float(os.getenv("UPGRADE_MAX_WEIGHT_POST_PRACTICE", "0.05"))
+UPGRADE_MAX_WEIGHT_POST_QUALIFYING = float(os.getenv("UPGRADE_MAX_WEIGHT_POST_QUALIFYING", "0.03"))
+ENABLE_RACE_SIMULATION = os.getenv("ENABLE_RACE_SIMULATION", "true").lower() == "true"
+RACE_SIMULATION_RUNS = int(os.getenv("RACE_SIMULATION_RUNS", "5000"))
+GITHUB_ACTIONS_RACE_SIMULATION_RUNS = int(os.getenv("GITHUB_ACTIONS_RACE_SIMULATION_RUNS", "1000"))
+TRAINING_MODE = os.getenv("TRAINING_MODE", "auto")
+MODEL_TRAINING_MAX_SECONDS = int(os.getenv("MODEL_TRAINING_MAX_SECONDS", "900"))
+ENABLE_FEATURE_ABLATION = os.getenv("ENABLE_FEATURE_ABLATION", "false").lower() == "true"
+ENABLE_HYPERPARAMETER_SEARCH = os.getenv("ENABLE_HYPERPARAMETER_SEARCH", "false").lower() == "true"
+MAX_TRAINING_RACES = os.getenv("MAX_TRAINING_RACES", "auto")
+MODEL_LIGHT_MODE = os.getenv("MODEL_LIGHT_MODE", "false").lower() == "true"
+LATEST_RUN_STATUS_PATH = Path(os.getenv("LATEST_RUN_STATUS_PATH", DATA_CACHE_DIR / "latest-run-status.json"))
+USE_LAST_VALID_CONTRACT_ON_ERROR = os.getenv("USE_LAST_VALID_CONTRACT_ON_ERROR", "true").lower() == "true"
+SKIP_NETWORK_TESTS = os.getenv("SKIP_NETWORK_TESTS", "true").lower() == "true"
+SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip()
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", os.getenv("SUPABASE_KEY", "")).strip()
 UPGRADE_NEWS_URLS = [u.strip() for u in os.getenv("UPGRADE_NEWS_URLS", "").split(",") if u.strip()]
 JOLPICA_HEADERS = {
     "User-Agent": "pitwall/3.0 cache-first full-data model",
@@ -93,6 +186,7 @@ JOLPICA_HEADERS = {
 }
 
 FASTF1_SESSION_ORDER = ["R", "Q", "SQ", "S", "FP3", "FP2", "FP1"]
+OPENF1_LAST_STATUS = {"status": "not_checked", "auth_required": False, "errors": []}
 
 PREDICTION_LABELS = {
     "ml_win_probability": "ML win probability",
@@ -129,10 +223,68 @@ PREDICTION_LABELS = {
     "timing_stint_strength": "official tyre stint strength",
     "timing_telemetry_speed": "official telemetry speed",
     "timing_position_gain": "official timing position gain",
+    "fia_starting_grid": "FIA starting grid",
+    "fia_qualifying_classification": "FIA qualifying classification",
+    "fia_sprint_classification": "FIA sprint classification",
+    "fia_session_classification": "FIA session classification",
     "timing_car_performance": "official timing car performance",
     "fastf1_race_pace": "FastF1 clean-lap pace",
     "fastf1_consistency": "FastF1 consistency",
     "fastf1_tyre_stint": "FastF1 tyre/stint evidence",
+}
+
+SESSION_TYPE_ALIASES = {
+    "practice 1": "fp1",
+    "free practice 1": "fp1",
+    "fp1": "fp1",
+    "practice 2": "fp2",
+    "free practice 2": "fp2",
+    "fp2": "fp2",
+    "practice 3": "fp3",
+    "free practice 3": "fp3",
+    "fp3": "fp3",
+    "sprint qualifying": "sprint_qualifying",
+    "sprint shootout": "sprint_qualifying",
+    "sq": "sprint_qualifying",
+    "sprint": "sprint",
+    "qualifying": "qualifying",
+    "grand prix": "race",
+    "race": "race",
+}
+
+STAGE_ORDER = [
+    "pre_weekend",
+    "post_fp1",
+    "post_fp2",
+    "post_fp3",
+    "post_sprint_qualifying",
+    "post_sprint",
+    "post_qualifying",
+    "pre_race",
+    "live_adjusted",
+    "post_race_audited",
+]
+
+FEATURE_STAGE_MATRIX = {
+    "historical_form": "pre_weekend",
+    "constructor_form": "pre_weekend",
+    "fia_upgrades": "pre_weekend",
+    "pu_documents": "pre_weekend",
+    "weather": "pre_weekend",
+    "fp1_pace": "post_fp1",
+    "fp2_pace": "post_fp2",
+    "fp3_pace": "post_fp3",
+    "sprint_qualifying_position": "post_sprint_qualifying",
+    "sprint_result": "post_sprint",
+    "qualifying_position": "post_qualifying",
+    "final_grid": "pre_race",
+    "live_timing": "live_adjusted",
+    "race_result": "post_race_audited",
+    "finish_position": "post_race_audited",
+    "points": "post_race_audited",
+    "is_win": "post_race_audited",
+    "is_podium": "post_race_audited",
+    "is_top10": "post_race_audited",
 }
 
 
@@ -143,6 +295,8 @@ class BackfillBudget:
         self.fetched = []
 
     def can_fetch(self):
+        if self.limit <= 0:
+            return True
         return self.used < self.limit
 
     def mark(self, key):
@@ -162,10 +316,130 @@ def ensure_dirs():
         FULL_RACE_CACHE_DIR,
         FASTF1_CACHE_DIR,
         MODEL_DIR,
+        MODEL_ARTIFACTS_DIR,
         FEATURES_DIR,
         MODEL_INPUT_SNAPSHOT_DIR,
+        SOURCE_REGISTRY_DIR,
+        FIA_DOCUMENT_CACHE_DIR,
     ]:
         path.mkdir(parents=True, exist_ok=True)
+
+
+def public_path(value):
+    if value in (None, ""):
+        return value
+    text = str(value)
+    try:
+        path = Path(text)
+        if path.is_absolute():
+            try:
+                return str(path.relative_to(BASE_DIR))
+            except ValueError:
+                return path.name
+    except Exception:
+        pass
+    base = str(BASE_DIR)
+    if base and base in text:
+        return text.replace(base + os.sep, "").replace(base, "")
+    return text
+
+
+def sanitize_public_paths(value):
+    """Strip absolute local workspace paths from generated public artifacts."""
+
+    if isinstance(value, dict):
+        return {key: sanitize_public_paths(val) for key, val in value.items()}
+    if isinstance(value, list):
+        return [sanitize_public_paths(item) for item in value]
+    if isinstance(value, str) and str(BASE_DIR) in value:
+        return public_path(value)
+    return value
+
+
+def init_pitwall_db():
+    ensure_dirs()
+    PITWALL_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with sqlite3.connect(PITWALL_DB_PATH) as conn:
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS run_status (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                created_at TEXT NOT NULL,
+                status_type TEXT NOT NULL,
+                payload_json TEXT NOT NULL
+            )
+            """
+        )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS predictions (
+                prediction_id TEXT PRIMARY KEY,
+                created_at TEXT NOT NULL,
+                race_id TEXT,
+                target_type TEXT,
+                payload_json TEXT NOT NULL
+            )
+            """
+        )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS feature_snapshots (
+                feature_id TEXT PRIMARY KEY,
+                created_at TEXT NOT NULL,
+                feature_version TEXT,
+                payload_json TEXT NOT NULL
+            )
+            """
+        )
+        conn.commit()
+
+
+def sqlite_upsert_prediction(entry):
+    try:
+        init_pitwall_db()
+        prediction_id = entry.get("prediction_id") or f"{entry.get('race_id')}-{entry.get('target_type')}-{entry.get('generated_iso')}"
+        with sqlite3.connect(PITWALL_DB_PATH) as conn:
+            conn.execute(
+                """
+                INSERT INTO predictions(prediction_id, created_at, race_id, target_type, payload_json)
+                VALUES (?, ?, ?, ?, ?)
+                ON CONFLICT(prediction_id) DO UPDATE SET
+                    created_at=excluded.created_at,
+                    race_id=excluded.race_id,
+                    target_type=excluded.target_type,
+                    payload_json=excluded.payload_json
+                """,
+                (
+                    prediction_id,
+                    entry.get("generated_iso") or now_local().isoformat(),
+                    entry.get("race_id"),
+                    entry.get("target_type"),
+                    json.dumps(entry, ensure_ascii=False, default=str),
+                ),
+            )
+            conn.commit()
+    except Exception as error:
+        print(f"SQLite prediction store skipped: {error}")
+
+
+def sqlite_insert_run_status(status_type, payload):
+    try:
+        init_pitwall_db()
+        with sqlite3.connect(PITWALL_DB_PATH) as conn:
+            conn.execute(
+                "INSERT INTO run_status(created_at, status_type, payload_json) VALUES (?, ?, ?)",
+                (now_local().isoformat(), status_type, json.dumps(payload, ensure_ascii=False, default=str)),
+            )
+            conn.commit()
+    except Exception as error:
+        print(f"SQLite run-status store skipped: {error}")
+
+
+def supabase_sync_status():
+    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+        return {"enabled": False, "status": "not_configured"}
+    return {"enabled": True, "status": "configured_optional_manual_sync"}
 
 
 def now_local():
@@ -191,6 +465,64 @@ def safe_int(value):
         return int(float(value))
     except (TypeError, ValueError):
         return None
+
+
+CONSTRUCTOR_ALIASES = {
+    "mercedes amg": "Mercedes",
+    "mercedes amg petronas": "Mercedes",
+    "mercedes amg petronas f1 team": "Mercedes",
+    "mercedes amg petronas formula one team": "Mercedes",
+    "mercedes": "Mercedes",
+    "scuderia ferrari": "Ferrari",
+    "scuderia ferrari hp": "Ferrari",
+    "ferrari": "Ferrari",
+    "mclaren formula 1 team": "McLaren",
+    "mclaren f1 team": "McLaren",
+    "mclaren mastercard f1 team": "McLaren",
+    "mclaren": "McLaren",
+    "oracle red bull racing": "Red Bull",
+    "red bull racing": "Red Bull",
+    "red bull": "Red Bull",
+    "aston martin aramco f1 team": "Aston Martin",
+    "aston martin aramco formula one team": "Aston Martin",
+    "aston martin": "Aston Martin",
+    "racing point": "Aston Martin",
+    "force india": "Aston Martin",
+    "bwt alpine f1 team": "Alpine",
+    "bwt alpine formula one team": "Alpine",
+    "alpine f1 team": "Alpine",
+    "alpine": "Alpine",
+    "renault": "Alpine",
+    "williams racing": "Williams",
+    "atlassian williams f1 team": "Williams",
+    "williams": "Williams",
+    "moneygram haas f1 team": "Haas",
+    "tgr haas f1 team": "Haas",
+    "haas f1 team": "Haas",
+    "haas": "Haas",
+    "visa cash app racing bulls formula one team": "RB F1 Team",
+    "visa cash app rb formula one team": "RB F1 Team",
+    "racing bulls": "RB F1 Team",
+    "rb f1 team": "RB F1 Team",
+    "rb": "RB F1 Team",
+    "alphatauri": "RB F1 Team",
+    "toro rosso": "RB F1 Team",
+    "kick sauber": "Sauber",
+    "stake f1 team kick sauber": "Sauber",
+    "sauber": "Sauber",
+    "alfa romeo": "Sauber",
+    "audi": "Audi",
+    "cadillac f1 team": "Cadillac",
+    "cadillac": "Cadillac",
+}
+
+
+def canonical_constructor_name(name):
+    text = str(name or "").strip()
+    if not text:
+        return "Unknown Team"
+    key = re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
+    return CONSTRUCTOR_ALIASES.get(key, text)
 
 
 def clamp(value, low=0.0, high=100.0, fallback=None):
@@ -247,10 +579,10 @@ def regulation_era_factor(season):
     if season <= 2013:
         return 0.1
     if season <= 2021:
-        return 1.0
+        return 0.6
     if season <= 2025:
-        return 0.5
-    return 0.8
+        return 0.9
+    return 1.0
 
 
 def weighted_average(items):
@@ -263,6 +595,35 @@ def weighted_average(items):
         total += value * weight
         weight_sum += weight
     return total / weight_sum if weight_sum else None
+
+
+def weighted_average_with_coverage(items):
+    total = 0.0
+    available_weight = 0.0
+    possible_weight = 0.0
+    for value, weight in items:
+        weight = safe_float(weight) or 0.0
+        if weight <= 0:
+            continue
+        possible_weight += weight
+        value = safe_float(value)
+        if value is None:
+            continue
+        total += value * weight
+        available_weight += weight
+    value = total / available_weight if available_weight else None
+    coverage = available_weight / possible_weight if possible_weight else 0.0
+    return value, coverage
+
+
+def weighted_average_penalized(items, min_coverage=0.65, neutral=50.0):
+    value, coverage = weighted_average_with_coverage(items)
+    if value is None:
+        return None
+    if coverage >= min_coverage:
+        return value
+    penalty = max(0.0, min(1.0, coverage / max(0.01, min_coverage)))
+    return neutral + (value - neutral) * penalty
 
 
 def normalize_scores(raw, reverse=False):
@@ -323,10 +684,1021 @@ def parse_lap_time_to_seconds(value):
     return None
 
 
+def prepare_feature_matrix(df, feature_columns, imputer=None, fit=False):
+    raw = df[feature_columns].replace([np.inf, -np.inf], np.nan).copy()
+    missing = raw.isna().astype(float).add_prefix("is_missing__")
+    if fit or imputer is None:
+        imputer = SimpleImputer(strategy="median")
+        values = imputer.fit_transform(raw)
+    else:
+        values = imputer.transform(raw)
+    filled = pd.DataFrame(values, columns=feature_columns, index=df.index)
+    matrix = pd.concat([filled, missing], axis=1)
+    return matrix, imputer
+
+
+def feature_matrix_columns(feature_columns):
+    return list(feature_columns) + [f"is_missing__{col}" for col in feature_columns]
+
+
+def feature_columns_hash(feature_columns):
+    return sha256(json.dumps(list(feature_columns), sort_keys=True).encode("utf-8")).hexdigest()[:16]
+
+
+def season_sample_weights(df):
+    weights = []
+    for season in df.get("season", []):
+        season = safe_int(season) or 0
+        if season >= 2026:
+            weights.append(3.0)
+        elif season == 2025:
+            weights.append(2.0)
+        elif season == 2024:
+            weights.append(1.5)
+        elif season >= 2022:
+            weights.append(1.2)
+        else:
+            weights.append(1.0)
+    return np.asarray(weights, dtype=float)
+
+
+def select_feature_columns_by_importance(train_df, feature_columns, max_features=42):
+    mandatory = {
+        "grid_position", "qualifying_position", "sprint_position",
+        "missing_grid", "missing_qualifying", "missing_sprint_position", "missing_lap_pace", "missing_pit_data",
+        "driver_recent3_finish", "driver_avg_finish", "team_avg_finish", "team_recent_points",
+        "track_dnf_rate", "track_position_sensitivity", "regulation_era_factor", "season_progress",
+    }
+    if len(feature_columns) <= max_features:
+        return feature_columns, {"method": "not_needed", "selected_count": len(feature_columns), "dropped": []}
+    try:
+        probe_X = train_df[feature_columns].replace([np.inf, -np.inf], np.nan)
+        probe_X = probe_X.fillna(probe_X.median(numeric_only=True)).fillna(0)
+        probe_y = train_df["finish_position"].astype(float)
+        probe = RandomForestRegressor(
+            n_estimators=180,
+            max_depth=10,
+            min_samples_leaf=5,
+            max_features="sqrt",
+            random_state=214,
+            n_jobs=-1,
+        )
+        probe.fit(probe_X, probe_y, sample_weight=season_sample_weights(train_df))
+        importances = dict(zip(feature_columns, probe.feature_importances_))
+        ranked = [name for name, _ in sorted(importances.items(), key=lambda item: item[1], reverse=True)]
+        selected = []
+        for name in list(mandatory) + ranked:
+            if name in feature_columns and name not in selected:
+                selected.append(name)
+            if len(selected) >= max_features:
+                break
+        dropped = [name for name in feature_columns if name not in selected]
+        return selected, {
+            "method": "random_forest_importance_top_features",
+            "selected_count": len(selected),
+            "dropped": dropped,
+            "top_importances": {k: round(float(importances.get(k, 0)), 6) for k in ranked[:20]},
+        }
+    except Exception as error:
+        return feature_columns, {"method": "failed_keep_all", "error": str(error), "selected_count": len(feature_columns), "dropped": []}
+
+
+def env_value(env, key, default=""):
+    if env is not None and key in env:
+        return env.get(key) or default
+    return os.getenv(key, default)
+
+
+def resolve_target_season(env=None, now=None):
+    value = str(env_value(env, "TARGET_SEASON", TARGET_SEASON or "auto")).strip().lower()
+    current = now or now_local()
+    if value and value != "auto":
+        parsed = safe_int(value)
+        if parsed:
+            return parsed
+    # Keep auto conservative: current calendar year. Operators can override when
+    # FIA/F1 publish the next season early.
+    return current.year
+
+
+def normalize_session_type(name):
+    text = re.sub(r"\s+", " ", str(name or "").replace("_", " ")).strip().lower()
+    if "race director" in text:
+        return None
+    if "sprint" in text and ("qualifying" in text or "shootout" in text or text == "sq"):
+        return "sprint_qualifying"
+    if "sprint" in text:
+        return "sprint"
+    if "qualifying" in text:
+        return "qualifying"
+    for key, value in SESSION_TYPE_ALIASES.items():
+        if key in text:
+            return value
+    return SESSION_TYPE_ALIASES.get(text)
+
+
+def formula1_season_url(season, env=None):
+    explicit = env_value(env, "FORMULA1_SEASON_URL", FORMULA1_SEASON_URL).strip()
+    if explicit:
+        return explicit
+    base = env_value(env, "FORMULA1_CALENDAR_BASE_URL", FORMULA1_CALENDAR_BASE_URL).rstrip("/")
+    return f"{base}/{season}"
+
+
+def extract_formula1_event_slugs(html, season):
+    slugs = []
+    pattern = re.compile(r'href=["\']([^"\']*/en/racing/%s/[^"\']+)["\']' % re.escape(str(season)), re.I)
+    for href in pattern.findall(html or ""):
+        slug = href.rstrip("/").split("/")[-1].split("?")[0].split("#")[0]
+        if slug and slug not in slugs and slug not in {"racing", str(season)}:
+            slugs.append(slug)
+    return slugs
+
+
+def resolve_fia_season_url(season, env=None, championship_html=None):
+    explicit = env_value(env, "FIA_DOCUMENTS_SEASON_URL", FIA_DOCUMENTS_SEASON_URL).strip()
+    default_year_url = "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072" if safe_int(season) == 2026 else ""
+    year_specific = env_value(env, f"FIA_DOCUMENTS_SEASON_URL_{season}", default_year_url).strip()
+    base = env_value(env, "FIA_DOCUMENTS_BASE_URL", FIA_DOCUMENTS_BASE_URL).rstrip("/")
+    if explicit:
+        return {"url": explicit, "status": "configured", "source": "FIA_DOCUMENTS_SEASON_URL", "confidence": 1.0}
+    if year_specific:
+        return {"url": year_specific, "status": "configured", "source": f"FIA_DOCUMENTS_SEASON_URL_{season}", "confidence": 1.0}
+
+    html = championship_html
+    if html is None and SOURCE_DISCOVERY_ENABLED:
+        response = safe_get(base, timeout=25, optional_404=True, use_cache=not REFRESH_SOURCE_REGISTRY)
+        html = response.text if response is not None else ""
+
+    candidates = []
+    for href, label in re.findall(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html or "", flags=re.I | re.S):
+        clean_label = strip_html(label)
+        text = f"{href} {clean_label}".lower()
+        if str(season) not in text:
+            continue
+        if "season" not in text and "formula" not in text:
+            continue
+        url = href if href.startswith("http") else f"https://www.fia.com{href if href.startswith('/') else '/' + href}"
+        candidates.append(url)
+    if candidates:
+        return {"url": candidates[0], "status": "discovered", "source": "fia_championship_documents_page", "confidence": 0.82}
+    return {
+        "url": None,
+        "status": "pending_unavailable",
+        "source": "not_discovered",
+        "confidence": 0.0,
+        "warning": f"No FIA season document page discovered for {season}; no URL was fabricated.",
+    }
+
+
+def build_source_registry(season=None, env=None, cache_dir=None, championship_html=None, formula1_html=None, now=None):
+    ensure_dirs()
+    season = safe_int(season) or resolve_target_season(env, now=now)
+    timestamp = (now or now_local()).isoformat()
+    base_cache = Path(cache_dir) if cache_dir is not None else DATA_CACHE_DIR
+    registry_dir = base_cache / "source_registry"
+    registry_dir.mkdir(parents=True, exist_ok=True)
+    previous_path = registry_dir / f"{season}.json"
+
+    fia = resolve_fia_season_url(season, env=env, championship_html=championship_html)
+    f1_url = formula1_season_url(season, env=env)
+    slugs = extract_formula1_event_slugs(formula1_html or "", season)
+    registry = {
+        "schema_version": "source-registry-v1",
+        "season": season,
+        "target_season_mode": env_value(env, "TARGET_SEASON", TARGET_SEASON or "auto"),
+        "discovered_at": timestamp,
+        "last_checked_at": timestamp,
+        "fia_championship_identifier": "fia-formula-one-world-championship-14",
+        "fia_base_championship_documents_url": env_value(env, "FIA_DOCUMENTS_BASE_URL", FIA_DOCUMENTS_BASE_URL).rstrip("/"),
+        "fia_season_document_url": fia.get("url"),
+        "formula1_season_url": f1_url,
+        "formula1_event_urls": [f"{f1_url.rstrip('/')}/{slug}" for slug in slugs],
+        "jolpica_season_endpoint": f"{JOLPICA_BASE}/{season}.json",
+        "ics_calendar_source": F1_ICS_URL or None,
+        "discovered_event_slugs": slugs,
+        "discovered_fia_event_groups": [],
+        "fia_source_discovery_status": fia.get("status"),
+        "source_discovery_status": "available" if fia.get("url") or slugs else "partial",
+        "fallback_source_used": None if fia.get("url") else "formula1_jolpica_ics_cache",
+        "errors": [],
+        "warnings": [fia.get("warning")] if fia.get("warning") else [],
+        "previous_valid_registry_path": public_path(previous_path) if previous_path.exists() else None,
+        "cache_status": "refresh" if REFRESH_SOURCE_REGISTRY else ("hit" if previous_path.exists() else "miss"),
+        "source_health": {
+            "fia_decision_documents": {"available": bool(fia.get("url")), "status": fia.get("status"), "confidence": fia.get("confidence", 0)},
+            "formula1_calendar": {"available": True, "status": "configured", "confidence": 0.75},
+            "jolpica": {"available": JOLPICA_ENABLED, "status": "configured", "confidence": 0.70},
+            "fastf1": {"available": FASTF1_ENABLED, "status": "configured", "confidence": 0.65},
+            "openf1": {"available": OPENF1_ENABLED, "status": "configured", "confidence": 0.65},
+        },
+    }
+    (registry_dir / f"{season}.json").write_text(json.dumps(registry, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    (registry_dir / "source_registry.json").write_text(json.dumps(registry, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    return registry
+
+
+def classify_fia_document_type(title):
+    text = re.sub(r"\s+", " ", str(title or "")).strip().lower()
+    if "recall" in text or "recalled" in text:
+        return "recalled_document"
+    if "car presentation" in text:
+        return "car_presentation_submissions"
+    if "sprint qualifying" in text and "classification" in text:
+        return "sprint_qualifying_classification"
+    if "sprint" in text and "starting grid" in text:
+        return "sprint_starting_grid"
+    if "sprint" in text and "classification" in text:
+        return "sprint_classification"
+    if ("free practice 1" in text or "practice 1" in text or "fp1" in text) and "classification" in text:
+        return "free_practice_classification"
+    if ("free practice 2" in text or "practice 2" in text or "fp2" in text) and "classification" in text:
+        return "free_practice_classification"
+    if ("free practice 3" in text or "practice 3" in text or "fp3" in text) and "classification" in text:
+        return "free_practice_classification"
+    if "qualifying" in text and "classification" in text:
+        return "qualifying_classification"
+    if "starting grid" in text or "provisional grid" in text or "final grid" in text:
+        return "starting_grid"
+    if "race classification" in text or ("classification" in text and "race" in text):
+        return "race_classification"
+    if "timetable" in text or "schedule" in text:
+        return "timetable"
+    if "race director" in text and ("note" in text or "event" in text):
+        return "race_director_notes"
+    if "circuit map" in text:
+        return "circuit_map"
+    if "pirelli" in text:
+        return "pirelli_preview"
+    if "entry list" in text:
+        return "entry_list"
+    if "self scrutineering" in text:
+        return "self_scrutineering"
+    if "scrutineering" in text:
+        return "scrutineering"
+    if "new pu" in text or "new power unit" in text:
+        return "new_pu_elements"
+    if "pu elements used" in text or "power unit elements used" in text:
+        return "pu_elements_used"
+    if "power unit information" in text or "pu information" in text:
+        return "power_unit_information"
+    if "deleted lap" in text:
+        return "deleted_lap_times"
+    if "summons" in text:
+        return "summons"
+    if "decision" in text:
+        return "decision"
+    if "infringement" in text:
+        return "infringement"
+    if "post-race checks" in text or "post race checks" in text:
+        return "post_race_checks"
+    if "competition note" in text:
+        return "competition_notes"
+    if "procedure" in text:
+        return "procedure"
+    if "event note" in text:
+        return "event_notes"
+    if "reconnaissance" in text:
+        return "reconnaissance_laps"
+    if "pit lane start" in text:
+        return "pit_lane_start"
+    if "107" in text:
+        return "107_percent"
+    if "unsafe release" in text:
+        return "unsafe_release"
+    if "impeding" in text:
+        return "impeding"
+    if "parc" in text and "ferme" in text:
+        return "parc_ferme"
+    return "unknown"
+
+
+def parse_fia_timestamp(text):
+    raw = strip_html(text or "")
+    iso_match = re.search(r'datetime=["\']([^"\']+)["\']', text or "", flags=re.I)
+    if iso_match:
+        try:
+            return datetime.fromisoformat(iso_match.group(1).replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
+        except Exception:
+            pass
+    match = re.search(r"(\d{1,2})[./-](\d{1,2})[./-](\d{2,4}).{0,20}?(\d{1,2}):(\d{2})", raw)
+    if not match:
+        return None
+    day, month, year, hour, minute = match.groups()
+    year = int(year)
+    if year < 100:
+        year += 2000
+    try:
+        cet = timezone(timedelta(hours=1))
+        return datetime(year, int(month), int(day), int(hour), int(minute), tzinfo=cet).astimezone(timezone.utc).isoformat()
+    except ValueError:
+        return None
+
+
+def parse_fia_document_index(html, season, season_url):
+    docs = []
+    current_event = "season"
+    event_pattern = re.compile(r"<h[1-6][^>]*>(.*?)</h[1-6]>", flags=re.I | re.S)
+    events = [(m.start(), strip_html(m.group(1))) for m in event_pattern.finditer(html or "")]
+    links = list(re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html or "", flags=re.I | re.S))
+    for link in links:
+        href, label_html = link.group(1), link.group(2)
+        title = strip_html(label_html)
+        href_lower = href.lower()
+        title_lower = title.lower()
+        real_document_link = (
+            ".pdf" in href_lower
+            or "decision-document" in href_lower
+            or "/system/files/" in href_lower
+            or "/file/" in href_lower
+        )
+        generic_titles = {"documents", "travel documents", "tourism travel documents", "travel documents and idps"}
+        if not title or title_lower in generic_titles or not real_document_link:
+            continue
+        for _, event_name in [item for item in events if item[0] < link.start()]:
+            if event_name:
+                current_event = event_name
+        source_url = href if href.startswith("http") else f"https://www.fia.com{href if href.startswith('/') else '/' + href}"
+        inferred_event = current_event
+        event_match = re.search(r"20\d{2}[_-]([a-z0-9_-]+?grand[_-]prix)", source_url, flags=re.I)
+        if event_match:
+            inferred_event = normalize_name(event_match.group(1).replace("_", " ").replace("-", " "))
+        if make_slug(inferred_event) in {"filter-by", "documents", "season"} and "grand prix" in title_lower:
+            title_event = re.search(r"([A-Za-z ]+ Grand Prix)", title, flags=re.I)
+            if title_event:
+                inferred_event = normalize_name(title_event.group(1))
+        around = (html or "")[link.end():link.end() + 500]
+        published_at = parse_fia_timestamp(around)
+        doc_no = re.search(r"\b(?:doc(?:ument)?\.?\s*)?(\d{1,3})\b", title, flags=re.I)
+        doc = {
+            "season": safe_int(season),
+            "event_slug": make_slug(inferred_event),
+            "event_name": inferred_event,
+            "document_id": stable_hash({"season": season, "url": source_url})[:16],
+            "document_number": safe_int(doc_no.group(1)) if doc_no else None,
+            "title": title,
+            "normalized_title": make_slug(title),
+            "document_type": classify_fia_document_type(title),
+            "published_date": published_at[:10] if published_at else None,
+            "published_time": published_at[11:16] if published_at else None,
+            "published_at_utc": published_at,
+            "source_url": source_url,
+            "local_pdf_path": None,
+            "local_text_path": None,
+            "local_parsed_json_path": None,
+            "recalled": "recall" in title.lower(),
+            "superseded_by": None,
+            "hash": stable_hash({"title": title, "url": source_url, "published_at": published_at}),
+            "first_seen_at": now_local().isoformat(),
+            "last_checked_at": now_local().isoformat(),
+            "parse_status": "indexed",
+            "parse_error": None,
+            "source_confidence": 1.0,
+            "cache_status": "miss",
+            "season_url": season_url,
+        }
+        docs.append(doc)
+    return docs
+
+
+def fia_season_index_path(season):
+    return FIA_DOCUMENT_CACHE_DIR / str(season) / "season_index.json"
+
+
+def load_fia_season_index(season):
+    path = fia_season_index_path(season)
+    if not path.exists():
+        return {"documents": [], "cache_status": "miss"}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload["cache_status"] = "hit"
+        return payload
+    except Exception as error:
+        return {"documents": [], "cache_status": "error", "error": str(error)}
+
+
+def fetch_fia_season_index(season, registry=None, refresh=False):
+    ensure_dirs()
+    registry = registry or load_or_build_source_registry(season)
+    path = fia_season_index_path(season)
+    cached = load_fia_season_index(season)
+    if path.exists() and not refresh and not REFRESH_FIA_DOCUMENTS:
+        try:
+            age_minutes = (time.time() - path.stat().st_mtime) / 60
+            if age_minutes < FIA_DOCUMENT_CACHE_TTL_MINUTES:
+                return cached
+        except Exception:
+            pass
+    url = registry.get("fia_season_document_url")
+    if not url or not FIA_DOCUMENTS_ENABLED:
+        payload = {
+            "season": season,
+            "season_url": url,
+            "documents": cached.get("documents", []),
+            "status": "pending_unavailable" if not url else "disabled",
+            "cache_status": cached.get("cache_status", "miss"),
+            "checked_at": now_local().isoformat(),
+            "errors": [] if url else ["fia_season_url_unavailable"],
+        }
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        return payload
+    if FIA_REQUEST_SLEEP_SECONDS > 0:
+        time.sleep(FIA_REQUEST_SLEEP_SECONDS)
+    response = safe_get(url, timeout=30, optional_404=True, use_cache=False)
+    if not response:
+        cached["status"] = "unavailable_using_cached_index" if cached.get("documents") else "unavailable"
+        cached.setdefault("errors", []).append("fia_index_fetch_failed")
+        return cached
+    documents = parse_fia_document_index(response.text, season=season, season_url=url)
+    previous = {doc.get("source_url"): doc for doc in cached.get("documents", [])}
+    changed = []
+    reused = []
+    indexed_documents = documents[:MAX_FIA_DOCUMENTS_PER_RUN] if MAX_FIA_DOCUMENTS_PER_RUN > 0 else documents
+    for doc in indexed_documents:
+        old = previous.get(doc.get("source_url"))
+        if old and old.get("hash") == doc.get("hash") and not FORCE_REPARSE_FIA_DOCUMENTS and not FORCE_REDOWNLOAD_FIA_DOCUMENTS:
+            doc.update({
+                "local_pdf_path": old.get("local_pdf_path"),
+                "local_text_path": old.get("local_text_path"),
+                "local_parsed_json_path": old.get("local_parsed_json_path"),
+                "parse_status": old.get("parse_status", "indexed"),
+                "cache_status": "hit",
+                "first_seen_at": old.get("first_seen_at", doc.get("first_seen_at")),
+            })
+            reused.append(doc.get("document_id"))
+        else:
+            doc["cache_status"] = "miss"
+            changed.append(doc.get("document_id"))
+    payload = {
+        "season": season,
+        "season_url": url,
+        "status": "available",
+        "checked_at": now_local().isoformat(),
+        "documents": documents,
+        "cache_status": "refresh" if refresh or REFRESH_FIA_DOCUMENTS else "revalidated",
+        "documents_changed": changed,
+        "documents_reused": reused,
+        "errors": [],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    return payload
+
+
+def extract_pdf_text(pdf_bytes):
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(io.BytesIO(pdf_bytes))
+        return "\n".join(page.extract_text() or "" for page in reader.pages)
+    except Exception as error:
+        raise RuntimeError(f"pdf_text_extraction_failed: {error}") from error
+
+
+def parse_fia_document_text(document, text):
+    doc_type = document.get("document_type") or classify_fia_document_type(document.get("title"))
+    parsed = {
+        "document_id": document.get("document_id"),
+        "document_type": doc_type,
+        "source_url": document.get("source_url"),
+        "parser_version": "fia-parser-v1",
+        "parsed_at": now_local().isoformat(),
+        "confidence": 0.55,
+        "classification": [],
+        "upgrades": [],
+        "pu_features": {},
+        "infringements": {},
+        "raw_text_excerpt": (text or "")[:1200],
+    }
+    if "classification" in doc_type or doc_type in {"starting_grid", "sprint_starting_grid"}:
+        parsed["classification"] = extract_fia_classification_rows(text)
+        parsed["confidence"] = 0.72 if parsed["classification"] else 0.35
+    if doc_type == "car_presentation_submissions":
+        parsed["upgrades"] = extract_car_presentation_updates(text, event_name=document.get("event_name"), source_url=document.get("source_url"))
+        parsed["confidence"] = 1.0 if parsed["upgrades"] else 0.45
+    if doc_type in {"new_pu_elements", "pu_elements_used", "power_unit_information"}:
+        parsed["pu_features"] = extract_pu_features(text)
+        parsed["confidence"] = 1.0 if parsed["pu_features"] else 0.45
+    if doc_type in {"deleted_lap_times", "infringement", "summons", "decision", "unsafe_release", "impeding", "parc_ferme"}:
+        parsed["infringements"] = extract_infringement_features(text)
+        parsed["confidence"] = 0.78
+    return parsed
+
+
+def document_cache_slug(document):
+    title_slug = make_slug(document.get("title") or document.get("document_id") or "document")
+    doc_no = document.get("document_number")
+    prefix = f"doc-{doc_no}-" if doc_no is not None else ""
+    return (prefix + title_slug)[:140] or str(document.get("document_id") or "document")
+
+
+def refresh_fia_documents_for_season(season, registry=None, refresh=False):
+    season = safe_int(season) or resolve_target_season()
+    registry = registry or load_or_build_source_registry(season)
+    index_payload = fetch_fia_season_index(season, registry=registry, refresh=refresh)
+    documents = index_payload.get("documents") if isinstance(index_payload, dict) else []
+    if not isinstance(documents, list):
+        documents = []
+    downloaded = 0
+    parsed = 0
+    skipped = 0
+    errors = list(index_payload.get("errors", []) if isinstance(index_payload, dict) else [])
+    updated_documents = []
+
+    indexed_documents = documents[:MAX_FIA_DOCUMENTS_PER_RUN] if MAX_FIA_DOCUMENTS_PER_RUN > 0 else documents
+    for document in indexed_documents:
+        doc = dict(document)
+        event_slug = doc.get("event_slug") or "season"
+        slug = document_cache_slug(doc)
+        event_dir = FIA_DOCUMENT_CACHE_DIR / str(season) / event_slug
+        text_path = event_dir / "text" / f"{slug}.txt"
+        parsed_path = event_dir / "parsed" / f"{slug}.json"
+        pdf_path = event_dir / "pdfs" / f"{slug}.pdf"
+        doc["local_text_path"] = public_path(text_path)
+        doc["local_parsed_json_path"] = public_path(parsed_path)
+        doc["local_pdf_path"] = public_path(pdf_path) if KEEP_FIA_PDFS else None
+
+        can_reuse = (
+            text_path.exists()
+            and parsed_path.exists()
+            and not FORCE_REPARSE_FIA_DOCUMENTS
+            and not FORCE_REDOWNLOAD_FIA_DOCUMENTS
+            and doc.get("cache_status") == "hit"
+        )
+        if can_reuse:
+            doc["parse_status"] = doc.get("parse_status") or "parsed"
+            doc["cache_status"] = "hit"
+            skipped += 1
+            updated_documents.append(doc)
+            continue
+
+        download_limit_reached = MAX_FIA_PDFS_DOWNLOAD_PER_RUN > 0 and downloaded >= MAX_FIA_PDFS_DOWNLOAD_PER_RUN
+        if download_limit_reached and not (text_path.exists() and FORCE_REPARSE_FIA_DOCUMENTS):
+            doc["parse_status"] = doc.get("parse_status") or "indexed_pending_download_limit"
+            skipped += 1
+            updated_documents.append(doc)
+            continue
+
+        try:
+            text = None
+            if text_path.exists() and FORCE_REPARSE_FIA_DOCUMENTS and not FORCE_REDOWNLOAD_FIA_DOCUMENTS:
+                text = text_path.read_text(encoding="utf-8")
+            else:
+                if FIA_REQUEST_SLEEP_SECONDS > 0:
+                    time.sleep(FIA_REQUEST_SLEEP_SECONDS)
+                response = safe_get(doc.get("source_url"), timeout=45, optional_404=True, use_cache=False)
+                if not response:
+                    raise RuntimeError("fia_document_download_failed")
+                downloaded += 1
+                content_type = response.headers.get("content-type", "").lower()
+                is_pdf = "pdf" in content_type or str(doc.get("source_url", "")).lower().endswith(".pdf")
+                if is_pdf:
+                    if KEEP_FIA_PDFS:
+                        pdf_path.parent.mkdir(parents=True, exist_ok=True)
+                        pdf_path.write_bytes(response.content)
+                    text = extract_pdf_text(response.content)
+                else:
+                    text = strip_html(response.text)
+            text_path.parent.mkdir(parents=True, exist_ok=True)
+            text_path.write_text(text or "", encoding="utf-8")
+            parsed_doc = parse_fia_document_text(doc, text or "")
+            parsed_path.parent.mkdir(parents=True, exist_ok=True)
+            parsed_path.write_text(json.dumps(parsed_doc, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+            doc["parse_status"] = "parsed"
+            doc["parse_error"] = None
+            doc["cache_status"] = "miss" if downloaded else "reparsed"
+            doc["hash"] = stable_hash({"metadata": doc.get("hash"), "text": (text or "")[:10000]})
+            parsed += 1
+        except Exception as error:
+            doc["parse_status"] = "error"
+            doc["parse_error"] = str(error)
+            errors.append(f"{doc.get('title')}: {error}")
+        updated_documents.append(doc)
+
+    if isinstance(index_payload, dict):
+        index_payload["documents"] = updated_documents + documents[len(updated_documents):]
+        index_payload["documents_downloaded"] = downloaded
+        index_payload["documents_parsed"] = parsed
+        index_payload["documents_skipped"] = skipped
+        index_payload["errors"] = errors[:50]
+        index_payload["checked_at"] = now_local().isoformat()
+        path = fia_season_index_path(season)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(index_payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    _FIA_REFRESHED_SEASONS.add(season)
+    return index_payload
+
+
+def extract_fia_classification_rows(text):
+    rows = []
+    for raw_line in (text or "").splitlines():
+        line = re.sub(r"\s+", " ", raw_line).strip()
+        if not re.match(r"^\d{1,2}\s+\d{1,3}\s+", line):
+            continue
+        parts = line.split()
+        position = safe_int(parts[0])
+        number = parts[1]
+        lap_or_gap_index = None
+        for idx, token in enumerate(parts[2:], start=2):
+            if re.match(r"^(?:\d+:)?\d{1,2}\.\d{3}$", token) or re.match(r"^\+\d", token):
+                lap_or_gap_index = idx
+                break
+        if lap_or_gap_index is None:
+            continue
+        name_tokens = parts[2:lap_or_gap_index]
+        # FIA rows often include uppercase surnames and then a multi-word team.
+        driver_tokens = []
+        for token in name_tokens:
+            driver_tokens.append(token)
+            if token.isupper() and len(driver_tokens) >= 2:
+                break
+        team_tokens = name_tokens[len(driver_tokens):]
+        metric = parts[lap_or_gap_index]
+        rows.append({
+            "position": position,
+            "driver_number": number,
+            "driver_name": normalize_name(" ".join(driver_tokens)),
+            "team": " ".join(team_tokens) or None,
+            "best_lap_time": metric if ":" in metric or re.match(r"^\d{1,2}\.\d{3}$", metric) else None,
+            "gap": metric if metric.startswith("+") else None,
+            "laps_completed": safe_int(parts[-1]),
+            "raw": line,
+            "parser_confidence": 0.72,
+        })
+    return rows
+
+
+UPGRADE_COMPONENT_TRAITS = {
+    "front wing": ["aero_balance", "downforce", "flow_conditioning", "corner_entry_stability", "low_speed_balance"],
+    "rear wing": ["drag", "straight_line_speed", "local_load", "drs_efficiency", "rear_stability"],
+    "beam wing": ["diffuser_interaction", "drag", "rear_load", "straight_line_efficiency"],
+    "floor edge": ["sealing", "aero_efficiency", "stability", "tyre_management"],
+    "floor": ["downforce", "aero_efficiency", "platform_stability", "tyre_management", "high_speed_load"],
+    "diffuser": ["rear_load", "aero_efficiency", "platform_sensitivity"],
+    "sidepod": ["cooling", "flow_conditioning", "aero_efficiency"],
+    "coke": ["rear_flow_conditioning", "cooling", "drag"],
+    "engine cover": ["cooling", "rear_flow", "heat_rejection"],
+    "bodywork": ["flow_conditioning", "cooling", "aero_efficiency"],
+    "brake duct": ["brake_cooling", "tyre_temperature_control", "braking_stability"],
+    "front corner": ["brake_cooling", "flow_conditioning", "tyre_wake_control"],
+    "rear corner": ["brake_cooling", "diffuser_feed", "rear_stability"],
+    "suspension": ["platform_stability", "flow_conditioning", "diffuser_feed", "mechanical_grip"],
+    "cooling louvres": ["heat_management", "cooling_range"],
+    "halo winglet": ["local_flow_conditioning", "aero_efficiency"],
+    "mirrors": ["flow_conditioning", "drag"],
+}
+
+
+def extract_car_presentation_updates(text, event_name=None, source_url=None):
+    updates = []
+    teams = [
+        "Red Bull", "Ferrari", "Mercedes", "McLaren", "Aston Martin", "Alpine", "Williams",
+        "Haas", "RB", "Racing Bulls", "Sauber", "Audi", "Cadillac",
+    ]
+    lines = [re.sub(r"\s+", " ", line).strip() for line in (text or "").splitlines() if line.strip()]
+    blob = "\n".join(lines)
+    for team in teams:
+        for match in re.finditer(rf"\b{re.escape(team)}\b(.{{0,260}})", blob, flags=re.I):
+            excerpt = match.group(0)
+            lower = excerpt.lower()
+            components = [component for component in UPGRADE_COMPONENT_TRAITS if component in lower]
+            if not components and "no update" in lower:
+                continue
+            traits = sorted({trait for component in components for trait in UPGRADE_COMPONENT_TRAITS[component]})
+            if components or traits:
+                updates.append({
+                    "team": normalize_name(team),
+                    "component": components[0] if components else "unknown",
+                    "components": components,
+                    "primary_reason_for_update": "performance" if "performance" in lower else "reliability" if "reliability" in lower else "unknown",
+                    "geometric_difference": excerpt[:180],
+                    "description": excerpt[:260],
+                    "event": event_name,
+                    "source_url": source_url,
+                    "confidence_score": 1.0,
+                    "raw_excerpt": excerpt,
+                    "traits": traits,
+                })
+    return updates
+
+
+def extract_pu_features(text):
+    features = {}
+    for raw_line in (text or "").splitlines():
+        line = re.sub(r"\s+", " ", raw_line).strip()
+        match = re.match(r"^(\d{1,3})\s+(.+)$", line)
+        if not match:
+            continue
+        number = match.group(1)
+        lower = match.group(2).lower()
+        if not any(token in lower for token in ["ice", "tc", "mgu", "es", "ce", "exhaust", "pu-anc", "pu anc"]):
+            continue
+        features[number] = {
+            "new_ice": bool(re.search(r"\bice\b", lower)),
+            "new_tc": bool(re.search(r"\btc\b|turbo", lower)),
+            "new_mgu_h": bool(re.search(r"mgu[-\s]?h", lower)),
+            "new_mgu_k": bool(re.search(r"mgu[-\s]?k", lower)),
+            "new_es": bool(re.search(r"\bes\b|energy store", lower)),
+            "new_ce": bool(re.search(r"\bce\b|control electronics", lower)),
+            "new_exhaust": "exhaust" in lower,
+            "new_pu_anc": "pu-anc" in lower or "pu anc" in lower,
+            "component_count_used": None,
+            "component_limit_margin": None,
+            "reliability_boost": 8 if "new" in lower else 0,
+            "grid_penalty_risk": 20 if "penalty" in lower or "exceeded" in lower else 5,
+            "pu_change_reason_text": line,
+            "source_confidence": 1.0,
+        }
+    return features
+
+
+def extract_infringement_features(text):
+    lower = str(text or "").lower()
+    grid_penalty = re.search(r"(\d+)\s+(?:place|grid)", lower)
+    penalty_points_match = re.search(r"(\d+)\s+penalty point", lower)
+    return {
+        "deleted_lap_count": len(re.findall(r"deleted lap|lap time deleted", lower)),
+        "deleted_fastest_lap_flag": "fastest lap" in lower and "deleted" in lower,
+        "qualifying_lap_deleted_flag": "qualifying" in lower and "deleted" in lower,
+        "infringement_count": len(re.findall(r"infringement|breach|failed to follow|unsafe release|impeding|speeding", lower)),
+        "penalty_points": safe_int(penalty_points_match.group(1)) if penalty_points_match else None,
+        "grid_penalty_places": safe_int(grid_penalty.group(1)) if grid_penalty else 0,
+        "pit_lane_start_flag": "pit lane start" in lower,
+        "back_of_grid_flag": "back of the grid" in lower or "back-of-grid" in lower,
+        "confidence_penalty": 12 if any(token in lower for token in ["summons", "investigation", "pending"]) else 0,
+        "discipline_risk_score": 65 if any(token in lower for token in ["impeding", "unsafe", "track limits"]) else 35,
+        "steward_decision_summary": strip_html(text or "")[:300],
+        "source_document_ids": [],
+    }
+
+
+def parse_datetime_utc(value):
+    if not value:
+        return None
+    if isinstance(value, datetime):
+        return value.astimezone(timezone.utc) if value.tzinfo else value.replace(tzinfo=timezone.utc)
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00")).astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def session_delay_minutes(session_type):
+    normalized = normalize_session_type(session_type) or str(session_type or "").lower()
+    if normalized in {"fp1", "fp2", "fp3"}:
+        return PRACTICE_RESULT_DELAY_MINUTES
+    if normalized == "sprint_qualifying":
+        return SPRINT_QUALIFYING_RESULT_DELAY_MINUTES
+    if normalized == "sprint":
+        return SPRINT_RESULT_DELAY_MINUTES
+    if normalized == "qualifying":
+        return QUALIFYING_RESULT_DELAY_MINUTES
+    if normalized == "race":
+        return RACE_RESULT_DELAY_HOURS * 60
+    return SESSION_RESULT_DELAY_MINUTES
+
+
+def evaluate_session_lifecycle(session, now=None, data_available=False, retries=None):
+    now = now or datetime.now(timezone.utc)
+    start = parse_datetime_utc(session.get("official_start_time_utc") or session.get("start") or session.get("date_start"))
+    end = parse_datetime_utc(session.get("official_end_time_utc") or session.get("end") or session.get("date_end"))
+    if start and not end:
+        end = start + timedelta(hours=2)
+    session_type = normalize_session_type(session.get("session_type") or session.get("session_name")) or session.get("session_type")
+    delay = timedelta(minutes=session_delay_minutes(session_type))
+    attempts = safe_int(retries if retries is not None else session.get("ingestion_attempts")) or 0
+    out = dict(session)
+    out.setdefault("session_type", session_type)
+    out["last_checked_at"] = now.isoformat()
+    if not SESSION_INGESTION_ENABLED:
+        out["status"] = "unavailable"
+        out["source_confidence"] = 0
+        return out
+    if start and now < start:
+        out["status"] = "scheduled"
+        out["next_check_at"] = start.isoformat()
+    elif start and end and start <= now <= end:
+        out["status"] = "live" if data_available else "active_without_live_data"
+        out["next_check_at"] = (now + timedelta(minutes=SESSION_RETRY_INTERVAL_MINUTES)).isoformat()
+    elif end and now < end + delay and not FORCE_SESSION_INGEST:
+        out["status"] = "completed"
+        out["next_check_at"] = (end + delay).isoformat()
+    elif data_available or FORCE_SESSION_INGEST:
+        out["status"] = "data_ingested"
+        out["data_available_at"] = now.isoformat()
+    elif attempts >= MAX_SESSION_RETRIES:
+        out["status"] = "unavailable"
+        out["next_check_at"] = None
+    else:
+        out["status"] = "waiting_for_api_data"
+        out["next_check_at"] = (now + timedelta(minutes=SESSION_RETRY_INTERVAL_MINUTES)).isoformat()
+    out["freshness_score"] = 90 if out["status"] in {"live", "data_ingested"} else 55 if out["status"] in {"completed", "waiting_for_api_data"} else 30
+    return out
+
+
+def audit_feature_leakage(stage, feature_columns):
+    stage_index = STAGE_ORDER.index(stage) if stage in STAGE_ORDER else 0
+    blocked = []
+    for feature in feature_columns or []:
+        key = str(feature)
+        min_stage = None
+        for pattern, allowed_stage in FEATURE_STAGE_MATRIX.items():
+            if pattern in {"finish_position", "points", "is_win", "is_podium", "is_top10"}:
+                matched = key == pattern
+            else:
+                matched = key == pattern or key.endswith(f"_{pattern}") or key.startswith(f"{pattern}_")
+            if matched:
+                min_stage = allowed_stage
+                break
+        if min_stage and STAGE_ORDER.index(min_stage) > stage_index:
+            blocked.append(key)
+    target_like = [f for f in feature_columns or [] if str(f) in {"finish_position", "points", "is_win", "is_podium", "is_top10"}]
+    blocked = sorted(set(blocked + target_like))
+    return {
+        "passed": not blocked,
+        "stage": stage,
+        "blocked_features": blocked,
+        "checked_feature_count": len(feature_columns or []),
+    }
+
+
+def stage_prediction_weights(stage, track_traits=None, weather=None):
+    track_traits = track_traits or {}
+    weather = weather or {}
+    base = {
+        "historical_driver_form": 0.15,
+        "constructor_form": 0.18,
+        "circuit_history": 0.12,
+        "track_traits": 0.12,
+        "current_season_car_performance": 0.18,
+        "weather": 0.08,
+        "fia_upgrades": 0.10,
+        "reliability": 0.07,
+        "practice_pace": 0.0,
+        "sprint_qualifying": 0.0,
+        "sprint_result": 0.0,
+        "qualifying_grid": 0.0,
+        "racecraft_overtaking": 0.0,
+        "tyre_degradation": 0.0,
+    }
+    if stage in {"post_fp1", "post_fp2", "post_fp3", "post_practice"}:
+        base.update({"practice_pace": 0.20, "track_traits": 0.08, "constructor_form": 0.12, "current_season_car_performance": 0.15, "fia_upgrades": 0.08, "reliability": 0.07})
+    elif stage == "post_sprint_qualifying":
+        base.update({"sprint_qualifying": 0.25, "practice_pace": 0.15, "racecraft_overtaking": 0.10, "constructor_form": 0.10, "track_traits": 0.08, "fia_upgrades": 0.05})
+    elif stage == "post_sprint":
+        base.update({"sprint_result": 0.20, "sprint_qualifying": 0.15, "practice_pace": 0.12, "racecraft_overtaking": 0.10, "tyre_degradation": 0.10, "constructor_form": 0.10, "reliability": 0.08, "fia_upgrades": 0.04})
+    elif stage in {"post_qualifying", "pre_race"}:
+        base.update({"qualifying_grid": 0.30, "practice_pace": 0.15, "constructor_form": 0.15, "historical_driver_form": 0.10, "track_traits": 0.08, "circuit_history": 0.07, "weather": 0.06, "fia_upgrades": UPGRADE_MAX_WEIGHT_POST_QUALIFYING, "reliability": 0.04})
+    elif stage == "live_adjusted":
+        base.update({"qualifying_grid": 0.22, "practice_pace": 0.12, "live_timing": 0.18, "reliability": 0.08, "weather": 0.08, "fia_upgrades": 0.02})
+    if "low" in str(track_traits.get("overtaking", "")).lower():
+        base["qualifying_grid"] = base.get("qualifying_grid", 0) + 0.06
+    if "high" in str(track_traits.get("tyre_stress", "")).lower():
+        base["tyre_degradation"] = base.get("tyre_degradation", 0) + 0.04
+    if safe_float(weather.get("rain_probability")) and safe_float(weather.get("rain_probability")) >= 0.35:
+        base["weather"] += 0.05
+        base["reliability"] += 0.03
+    cap = UPGRADE_MAX_WEIGHT_PRE_RUNNING
+    if stage in {"post_fp1", "post_fp2", "post_fp3", "post_practice"}:
+        cap = UPGRADE_MAX_WEIGHT_POST_PRACTICE
+    elif stage in {"post_qualifying", "pre_race", "live_adjusted", "post_race_audited"}:
+        cap = UPGRADE_MAX_WEIGHT_POST_QUALIFYING
+    base["fia_upgrades"] = min(base.get("fia_upgrades", 0), cap)
+    clean = {k: max(0.0, safe_float(v) or 0.0) for k, v in base.items()}
+    total = sum(clean.values()) or 1.0
+    return {k: v / total for k, v in clean.items()}
+
+
+def normalize_race_probabilities(rows):
+    out = [dict(row) for row in rows or []]
+    for key, target_sum in [("win_probability", 100.0), ("podium_probability", 300.0), ("top10_probability", 1000.0)]:
+        values = [max(0.0, safe_float(row.get(key)) or 0.0) for row in out]
+        total = sum(values)
+        if total <= 0:
+            values = [max(0.01, safe_float(row.get("score")) or 1.0) for row in out]
+            total = sum(values)
+        for row, value in zip(out, values):
+            row[key] = round(value / total * target_sum, 4) if total else 0.0
+            if key != "win_probability":
+                row[key] = round(min(100.0, row[key]), 4)
+    return out
+
+
+def simulate_race_outcomes(rows, runs=None, seed=42):
+    rows = normalize_race_probabilities(rows)
+    runs = safe_int(runs) or (GITHUB_ACTIONS_RACE_SIMULATION_RUNS if os.getenv("GITHUB_ACTIONS") else RACE_SIMULATION_RUNS)
+    rng = random.Random(seed)
+    tallies = {row.get("driver_id") or row.get("name"): [] for row in rows}
+    dnf_counts = {key: 0 for key in tallies}
+    for _ in range(max(1, runs)):
+        sampled = []
+        for row in rows:
+            key = row.get("driver_id") or row.get("name")
+            dnf = rng.random() < (safe_float(row.get("dnf_probability")) or safe_float(row.get("simulated_dnf_probability")) or 5) / 100.0
+            if dnf:
+                dnf_counts[key] += 1
+            base_score = safe_float(row.get("score")) or (100 - (safe_float(row.get("rank")) or 10))
+            noise = rng.gauss(0, 7 + (safe_float(row.get("uncertainty_score")) or 20) / 10)
+            sampled.append((key, -999 if dnf else base_score + noise))
+        sampled.sort(key=lambda item: item[1], reverse=True)
+        for pos, (key, _) in enumerate(sampled, start=1):
+            tallies[key].append(pos)
+    drivers = []
+    row_map = {row.get("driver_id") or row.get("name"): row for row in rows}
+    for key, finishes in tallies.items():
+        finishes = sorted(finishes)
+        n = len(finishes)
+        p10 = finishes[max(0, int(n * 0.10) - 1)]
+        p90 = finishes[min(n - 1, int(n * 0.90))]
+        row = row_map.get(key, {})
+        drivers.append({
+            "driver_id": key,
+            "name": row.get("name"),
+            "simulated_win_probability": round(sum(1 for x in finishes if x == 1) / n * 100, 3),
+            "simulated_podium_probability": round(sum(1 for x in finishes if x <= 3) / n * 100, 3),
+            "simulated_top5_probability": round(sum(1 for x in finishes if x <= 5) / n * 100, 3),
+            "simulated_top10_probability": round(sum(1 for x in finishes if x <= 10) / n * 100, 3),
+            "simulated_dnf_probability": round(dnf_counts[key] / n * 100, 3),
+            "expected_finish": round(sum(finishes) / n, 2),
+            "median_finish": finishes[n // 2],
+            "p10_finish": p10,
+            "p90_finish": p90,
+            "upside_finish": p10,
+            "downside_finish": p90,
+            "confidence_interval_width": p90 - p10,
+        })
+    drivers.sort(key=lambda row: row["expected_finish"])
+    return {
+        "enabled": ENABLE_RACE_SIMULATION,
+        "runs": runs,
+        "drivers": drivers,
+        "most_volatile_drivers": sorted(drivers, key=lambda row: row["confidence_interval_width"], reverse=True)[:5],
+        "safest_top10_drivers": sorted(drivers, key=lambda row: (-row["simulated_top10_probability"], row["confidence_interval_width"]))[:5],
+        "dark_horse_candidates": [row for row in drivers if row["simulated_podium_probability"] >= 12 and row["expected_finish"] > 5][:5],
+        "bust_risk_candidates": [row for row in drivers if row["simulated_dnf_probability"] >= 12 or row["confidence_interval_width"] >= 8][:5],
+    }
+
+
+def uncertainty_for_prediction(row, source_health=None, stage=None):
+    evidence = row.get("evidence_status") or {}
+    missing_count = len(evidence.get("missing") or [])
+    source_score = safe_float((source_health or {}).get("overall_score")) or 65
+    stage_penalty = 22 if stage in {None, "pre_weekend"} else 14 if str(stage).startswith("post_fp") else 8
+    uncertainty = clamp(100 - (safe_float(row.get("confidence")) or 50) + missing_count * 4 + (100 - source_score) * 0.25 + stage_penalty, 0, 100, 45)
+    reasons = []
+    if missing_count:
+        reasons.append("missing_data")
+    if source_score < 60:
+        reasons.append("source_health_limited")
+    if stage in {None, "pre_weekend"}:
+        reasons.append("pre_session_uncertainty")
+    return {
+        "model_uncertainty": round(clamp(100 - (safe_float(row.get("model_agreement_score")) or 55), 0, 100, 40), 2),
+        "data_uncertainty": min(100, missing_count * 12),
+        "source_uncertainty": round(100 - source_score, 2),
+        "stage_uncertainty": stage_penalty,
+        "weather_uncertainty": 0,
+        "reliability_uncertainty": round(100 - (safe_float(row.get("reliability")) or 60), 2),
+        "upgrade_uncertainty": 20 if "fia upgrades" not in " ".join(row.get("reason_tags") or []).lower() else 8,
+        "total_uncertainty": round(uncertainty, 2),
+        "uncertainty_reasons": reasons,
+        "prediction_risk_level": "High" if uncertainty >= 65 else "Medium" if uncertainty >= 40 else "Low",
+    }
+
+
+def timing_freshness_status(last_updated=None, now=None, session_end=None, has_fresh_packets=False, source="Formula1LiveTiming"):
+    now = now or datetime.now(timezone.utc)
+    last = parse_datetime_utc(last_updated)
+    end = parse_datetime_utc(session_end)
+    age = (now - last).total_seconds() if last else None
+    if DISABLE_LIVE_MODE or not LIVE_TIMING_ENABLED:
+        mode = "unavailable"
+        reason = "live timing disabled"
+    elif end and now > end:
+        mode = "archive"
+        reason = "session ended"
+    elif not has_fresh_packets:
+        mode = "delayed" if TIMING_REPLAY_MODE_ALLOWED else "unavailable"
+        reason = "no fresh timing packets"
+    elif age is None or age > LIVE_STALE_AFTER_SECONDS:
+        mode = "stale"
+        reason = "timing packets are older than freshness threshold"
+    else:
+        mode = "live"
+        reason = ""
+    return {
+        "live_timing_status": "Live" if mode == "live" else mode.title(),
+        "timing_mode": mode,
+        "timing_source": source,
+        "timing_last_updated_at": last.isoformat() if last else None,
+        "timing_freshness_seconds": round(age, 2) if age is not None else None,
+        "is_genuinely_live": mode == "live",
+        "live_fallback_reason": reason,
+    }
+
+
 def require_env_vars():
     missing = []
-    if not F1_ICS_URL:
-        missing.append("F1_ICS_URL")
     if EMAIL_ENABLED:
         for key, value in {
             "EMAIL_ADDRESS": EMAIL_ADDRESS,
@@ -348,7 +1720,8 @@ def safe_step(name, fn, *args, **kwargs):
 
 
 def cache_key_for_url(url, params=None):
-    return make_slug(url + "?" + json.dumps(params or {}, sort_keys=True))
+    raw = url + "?" + json.dumps(params or {}, sort_keys=True, default=str)
+    return sha256(raw.encode("utf-8")).hexdigest()[:32]
 
 
 def polite_sleep():
@@ -356,9 +1729,28 @@ def polite_sleep():
         time.sleep(JOLPICA_REQUEST_SLEEP)
 
 
-def safe_get(url, params=None, timeout=30, headers=None, optional_404=False, use_cache=True):
+def response_looks_json(response):
+    content_type = response.headers.get("content-type", "").lower()
+    if "json" in content_type:
+        return True
+    try:
+        json.loads(response.text)
+        return True
+    except Exception:
+        return False
+
+
+def atomic_write_bytes(path, content):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(f"{path.name}.{os.getpid()}.{time.time_ns()}.tmp")
+    tmp.write_bytes(content)
+    os.replace(tmp, path)
+
+
+def safe_get(url, params=None, timeout=30, headers=None, optional_404=False, use_cache=True, return_on_statuses=None, request_sleep=0.0):
     ensure_dirs()
     cache_path = HTTP_CACHE_DIR / f"{cache_key_for_url(url, params)}.json"
+    return_on_statuses = set(return_on_statuses or [])
 
     if use_cache and cache_path.exists():
         try:
@@ -371,24 +1763,36 @@ def safe_get(url, params=None, timeout=30, headers=None, optional_404=False, use
         except Exception:
             pass
 
+    slept_for_request = False
     for attempt in range(4):
         try:
+            if request_sleep and not slept_for_request:
+                time.sleep(request_sleep)
+                slept_for_request = True
             response = requests.get(url, params=params or {}, headers=headers or {}, timeout=timeout)
 
             if response.status_code == 404 and optional_404:
                 print(f"Optional endpoint not available: {url}")
                 return None
 
+            if response.status_code in return_on_statuses:
+                print(f"GET returned handled status {response.status_code}: {url}")
+                return response
+
             if response.status_code == 429:
-                wait = 5 + attempt * 5
+                retry_after = response.headers.get("Retry-After")
+                try:
+                    wait = float(retry_after) if retry_after else 5 + attempt * 5
+                except (TypeError, ValueError):
+                    wait = 5 + attempt * 5
                 print(f"Rate limited. Waiting {wait}s before retry.")
                 time.sleep(wait)
                 continue
 
             response.raise_for_status()
 
-            if use_cache and "json" in response.headers.get("content-type", "").lower():
-                cache_path.write_bytes(response.content)
+            if use_cache and response_looks_json(response):
+                atomic_write_bytes(cache_path, response.content)
 
             return response
         except Exception as error:
@@ -415,8 +1819,14 @@ def jolpica_get(endpoint, params=None, optional_404=False, use_cache=True):
     if not endpoint.endswith(".json"):
         endpoint += ".json"
 
-    polite_sleep()
-    response = safe_get(JOLPICA_BASE + endpoint, params=params, headers=JOLPICA_HEADERS, optional_404=optional_404, use_cache=use_cache)
+    response = safe_get(
+        JOLPICA_BASE + endpoint,
+        params=params,
+        headers=JOLPICA_HEADERS,
+        optional_404=optional_404,
+        use_cache=use_cache,
+        request_sleep=JOLPICA_REQUEST_SLEEP,
+    )
     if not response:
         return {}
     try:
@@ -426,6 +1836,40 @@ def jolpica_get(endpoint, params=None, optional_404=False, use_cache=True):
         return {}
     print(f"Jolpica OK: {endpoint}")
     return data
+
+
+def jolpica_laps_races(season, round_no, use_cache=True):
+    races_by_key = {}
+    offset = 0
+    limit = 100
+    total = None
+    while total is None or offset < total:
+        data = jolpica_get(
+            f"/{season}/{round_no}/laps",
+            params={"limit": limit, "offset": offset},
+            optional_404=True,
+            use_cache=use_cache,
+        )
+        mrdata = data.get("MRData", {}) if isinstance(data, dict) else {}
+        try:
+            total = int(mrdata.get("total") or 0)
+            current_offset = int(mrdata.get("offset") or offset)
+            current_limit = int(mrdata.get("limit") or limit)
+        except (TypeError, ValueError):
+            total = None
+            current_offset = offset
+            current_limit = limit
+        races = mrdata_list(data, "RaceTable", "Races")
+        if not races:
+            break
+        for race in races:
+            key = (race.get("season"), race.get("round"), race.get("raceName"))
+            target = races_by_key.setdefault(key, {**race, "Laps": []})
+            target["Laps"].extend(race.get("Laps", []) or [])
+        if total is None:
+            break
+        offset = current_offset + max(1, current_limit)
+    return list(races_by_key.values())
 
 
 def mrdata_list(data, table_name, list_name):
@@ -443,6 +1887,7 @@ def mrdata_standing_list(data):
         return {}
 
 
+@lru_cache(maxsize=16)
 def fetch_schedule(year):
     return mrdata_list(jolpica_get(f"/{year}"), "RaceTable", "Races")
 
@@ -536,18 +1981,39 @@ def write_full_race_cache(season, round_no, payload):
 
 
 def fetch_round_data_direct(season, round_no, use_cache=True):
-    return {
-        "results": mrdata_list(jolpica_get(f"/{season}/{round_no}/results", use_cache=use_cache), "RaceTable", "Races"),
-        "qualifying": mrdata_list(jolpica_get(f"/{season}/{round_no}/qualifying", optional_404=True, use_cache=use_cache), "RaceTable", "Races"),
-        "pitstops": mrdata_list(jolpica_get(f"/{season}/{round_no}/pitstops", optional_404=True, use_cache=use_cache), "RaceTable", "Races"),
-        "laps": mrdata_list(jolpica_get(f"/{season}/{round_no}/laps", optional_404=True, use_cache=use_cache), "RaceTable", "Races"),
-        "sprint": mrdata_list(jolpica_get(f"/{season}/{round_no}/sprint", optional_404=True, use_cache=use_cache), "RaceTable", "Races"),
-        "sprint_qualifying": mrdata_list(
-            jolpica_get(f"/{season}/{round_no}/sprint/qualifying", optional_404=True, use_cache=use_cache),
-            "RaceTable",
-            "Races",
-        ),
+    def fetch_endpoint(key, endpoint, optional=True):
+        data = jolpica_get(endpoint, optional_404=optional, use_cache=use_cache)
+        return key, mrdata_list(data, "RaceTable", "Races")
+
+    endpoints = {
+        "results": (f"/{season}/{round_no}/results", False),
+        "qualifying": (f"/{season}/{round_no}/qualifying", True),
+        "pitstops": (f"/{season}/{round_no}/pitstops", True),
+        "sprint": (f"/{season}/{round_no}/sprint", True),
+        "sprint_qualifying": (f"/{season}/{round_no}/sprint/qualifying", True),
     }
+    results = {"laps": []}
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        futures = {
+            executor.submit(fetch_endpoint, key, endpoint, optional): key
+            for key, (endpoint, optional) in endpoints.items()
+        }
+        futures[executor.submit(jolpica_laps_races, season, round_no, use_cache)] = "laps"
+        for future in as_completed(futures):
+            key = futures[future]
+            try:
+                value = future.result()
+                if key == "laps":
+                    results[key] = value
+                else:
+                    fetched_key, rows = value
+                    results[fetched_key] = rows
+            except Exception as error:
+                print(f"Jolpica round endpoint failed for {season}-{round_no} {key}: {error}")
+                results[key] = []
+    for key in ["results", "qualifying", "pitstops", "laps", "sprint", "sprint_qualifying"]:
+        results.setdefault(key, [])
+    return results
 
 
 def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=False, race=None, training_mode=False):
@@ -626,13 +2092,61 @@ def fetch_last_results(season):
 
 def fetch_ics_calendar():
     url = F1_ICS_URL.strip().strip('"').strip("'")
+    if not url:
+        print("F1_ICS_URL not set; using Jolpica schedule fallback calendar.")
+        return build_jolpica_fallback_calendar(resolve_target_season())
     if url.startswith("webcal://"):
         url = "https://" + url.replace("webcal://", "", 1)
     if not url.startswith(("http://", "https://")):
         raise RuntimeError("F1_ICS_URL must be a normal HTTP URL.")
-    response = requests.get(url, timeout=30)
-    response.raise_for_status()
-    return Calendar.from_ical(response.content)
+    ensure_dirs()
+    cache_path = HTTP_CACHE_DIR / f"ics-{cache_key_for_url(url)}.ics"
+    if cache_path.exists():
+        try:
+            age = time.time() - cache_path.stat().st_mtime
+            if age < 6 * 3600:
+                calendar = Calendar.from_ical(cache_path.read_bytes())
+                if get_f1_calendar_events(calendar):
+                    return calendar
+        except Exception:
+            pass
+    try:
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        calendar = Calendar.from_ical(response.content)
+        if get_f1_calendar_events(calendar):
+            atomic_write_bytes(cache_path, response.content)
+            return calendar
+        print("F1_ICS_URL returned no usable F1 events; using Jolpica schedule fallback calendar.")
+    except Exception as error:
+        print(f"F1_ICS_URL fetch/parse failed; using Jolpica schedule fallback calendar: {error}")
+        if cache_path.exists():
+            try:
+                calendar = Calendar.from_ical(cache_path.read_bytes())
+                if get_f1_calendar_events(calendar):
+                    print("Using stale cached ICS calendar after fetch failure.")
+                    return calendar
+            except Exception:
+                pass
+    return build_jolpica_fallback_calendar(resolve_target_season())
+
+
+def build_jolpica_fallback_calendar(season):
+    calendar = Calendar()
+    calendar.add("prodid", "-//PitWall Jolpica fallback calendar//pitwall//")
+    calendar.add("version", "2.0")
+    for race in fetch_schedule(season):
+        start = parse_race_datetime(race)
+        if not start:
+            continue
+        event = Event()
+        event.add("summary", f"{race.get('raceName', 'Formula 1 Grand Prix')} Race")
+        event.add("location", (((race.get("Circuit") or {}).get("Location") or {}).get("country") or "Formula 1"))
+        event.add("description", f"Formula 1 round {race.get('round')} generated from Jolpica schedule fallback.")
+        event.add("dtstart", start)
+        event.add("dtend", start + timedelta(hours=2))
+        calendar.add_component(event)
+    return calendar
 
 
 def normalize_datetime(value):
@@ -907,7 +2421,7 @@ def standings_to_drivers(driver_standings):
     for row in driver_standings:
         driver = row.get("Driver", {})
         constructors = row.get("Constructors", [])
-        team = constructors[0].get("name") if constructors else "Unknown Team"
+        team = canonical_constructor_name(constructors[0].get("name") if constructors else "Unknown Team")
         drivers.append({
             "driver_id": driver.get("driverId"),
             "name": driver_name(driver),
@@ -950,12 +2464,13 @@ def result_rows_from_race_data(season, round_no, race, data):
     circuit = race.get("Circuit", {})
     circuit_id = circuit.get("circuitId")
     race_dt = parse_race_datetime(race)
+    field_size = len(result_races[0].get("Results", [])) or 20
 
     for result in result_races[0].get("Results", []):
         driver = result.get("Driver", {})
         constructor = result.get("Constructor", {})
         driver_id = driver.get("driverId")
-        team = constructor.get("name")
+        team = canonical_constructor_name(constructor.get("name"))
         pos = safe_int(result.get("positionOrder") or result.get("position"))
         grid = safe_int(result.get("grid"))
         status = str(result.get("status", ""))
@@ -978,7 +2493,7 @@ def result_rows_from_race_data(season, round_no, race, data):
             "driver_id": driver_id,
             "driver_name": driver_name(driver),
             "constructor": team,
-            "grid": grid if grid and grid > 0 else q_positions.get(driver_id),
+            "grid": ((field_size + 1) if grid == 0 else grid) if grid is not None and grid >= 0 else q_positions.get(driver_id),
             "qualifying": q_positions.get(driver_id),
             "sprint_position": sprint_positions.get(driver_id),
             "finish_position": pos,
@@ -1141,6 +2656,10 @@ def create_ml_features(df):
     for col in numeric_cols:
         df[col] = pd.to_numeric(df.get(col), errors="coerce")
 
+    missing_source_cols = ["grid", "qualifying", "sprint_position", "avg_best_35pct_lap", "lap_consistency", "avg_pit_duration", "min_pit_duration"]
+    for col in missing_source_cols:
+        df[f"missing_{col}"] = pd.to_numeric(df.get(col), errors="coerce").isna().astype(int)
+
     df["grid"] = df["grid"].fillna(20)
     df["qualifying"] = df["qualifying"].fillna(df["grid"])
     df["sprint_position"] = df["sprint_position"].fillna(20)
@@ -1171,12 +2690,12 @@ def create_ml_features(df):
         c_hist = before(grouped_circuit.get(race["circuit_id"]))
         field_hist = before(df)
 
-        if len(d_hist) < 3 or len(t_hist) < 3:
-            continue
-
         recent3 = d_hist.tail(3)
         recent5 = d_hist.tail(5)
+        recent10 = d_hist.tail(10)
+        team_recent5 = t_hist.tail(5)
         team_recent10 = t_hist.tail(10)
+        teammate_recent10 = t_hist[t_hist["driver_id"] != race["driver_id"]].tail(10)
         field_recent = field_hist.tail(200)
 
         def mean_or(frame, col, fallback):
@@ -1204,7 +2723,14 @@ def create_ml_features(df):
         field_recent_pit = mean_or(field_recent, "avg_pit_duration", team_recent_pit)
         driver_min_pit = mean_or(recent5, "min_pit_duration", driver_recent_pit)
         team_min_pit = mean_or(team_recent10, "min_pit_duration", team_recent_pit)
+        team_pit_std5 = safe_std(team_recent5["avg_pit_duration"]) if len(team_recent5) and "avg_pit_duration" in team_recent5 else None
         target_lap_pace = safe_float(race.get("avg_best_35pct_lap")) or safe_float(race.get("best_clean_lap"))
+        teammate_finish_delta = mean_or(recent5, "finish_position", 12) - mean_or(teammate_recent10, "finish_position", mean_or(team_recent10, "finish_position", 12))
+        teammate_qualifying_delta = mean_or(recent5, "qualifying", 12) - mean_or(teammate_recent10, "qualifying", mean_or(team_recent10, "qualifying", 12))
+        teammate_pace_delta = driver_recent_pace - mean_or(teammate_recent10, "avg_best_35pct_lap", team_recent_pace)
+        teammate_points_delta = mean_or(recent5, "points", 0) - mean_or(teammate_recent10, "points", mean_or(team_recent10, "points", 0))
+        driver_recent_dnf_rate = 1 - mean_or(recent5, "is_finished", mean_or(d_hist, "is_finished", 0.85))
+        team_recent_dnf_rate = 1 - mean_or(team_recent10, "is_finished", mean_or(t_hist, "is_finished", 0.85))
 
         features = {
             "race_id": race["race_id"],
@@ -1224,6 +2750,14 @@ def create_ml_features(df):
             "grid_position": race["grid"],
             "qualifying_position": race["qualifying"],
             "sprint_position": race["sprint_position"],
+            "insufficient_driver_history": 1 if len(d_hist) < 3 else 0,
+            "insufficient_team_history": 1 if len(t_hist) < 3 else 0,
+            "rookie_prior": 1 if len(d_hist) == 0 else 0,
+            "missing_grid": race.get("missing_grid", 0),
+            "missing_qualifying": race.get("missing_qualifying", 0),
+            "missing_sprint_position": race.get("missing_sprint_position", 0),
+            "missing_lap_pace": max(race.get("missing_avg_best_35pct_lap", 0), race.get("missing_lap_consistency", 0)),
+            "missing_pit_data": max(race.get("missing_avg_pit_duration", 0), race.get("missing_min_pit_duration", 0)),
 
             "driver_avg_finish": d_hist["finish_position"].mean(),
             "driver_median_finish": d_hist["finish_position"].median(),
@@ -1233,7 +2767,11 @@ def create_ml_features(df):
             "driver_top10_rate": d_hist["is_top10"].mean(),
             "driver_finish_rate": d_hist["is_finished"].mean(),
             "driver_recent3_finish": recent3["finish_position"].mean(),
+            "driver_recent5_finish": recent5["finish_position"].mean(),
+            "driver_recent10_finish": recent10["finish_position"].mean(),
+            "driver_recent3_points": recent3["points"].mean(),
             "driver_recent5_points": recent5["points"].mean(),
+            "driver_recent10_points": recent10["points"].mean(),
             "driver_recent5_podium_rate": recent5["is_podium"].mean(),
             "driver_recent_grid_gain": driver_recent_grid_gain,
             "driver_finish_consistency": driver_finish_consistency or 4,
@@ -1241,6 +2779,12 @@ def create_ml_features(df):
             "driver_points_momentum": mean_or(recent5, "points", 0) - mean_or(d_hist, "points", 0),
             "driver_qualifying_strength_recent": mean_or(recent5, "qualifying", 12),
             "driver_qualifying_delta": mean_or(d_hist.tail(8), "qualifying", 12) - mean_or(d_hist.tail(8), "finish_position", 12),
+            "driver_recent_dnf_rate": driver_recent_dnf_rate,
+            "driver_teammate_finish_delta": teammate_finish_delta,
+            "driver_teammate_qualifying_delta": teammate_qualifying_delta,
+            "driver_teammate_pace_delta": teammate_pace_delta,
+            "driver_teammate_points_delta": teammate_points_delta,
+            "teammate_sample_size": len(teammate_recent10),
 
             "team_avg_finish": t_hist["finish_position"].mean(),
             "team_avg_points": t_hist["points"].mean(),
@@ -1249,12 +2793,15 @@ def create_ml_features(df):
             "team_top10_rate": t_hist["is_top10"].mean(),
             "team_finish_rate": t_hist["is_finished"].mean(),
             "team_recent_points": team_recent10["points"].mean(),
+            "team_recent5_points": team_recent5["points"].mean(),
+            "team_recent10_finish": team_recent10["finish_position"].mean(),
             "team_recent_grid_gain": team_recent_grid_gain,
             "team_finish_consistency": team_finish_consistency or 4,
             "team_finish_momentum": mean_or(t_hist, "finish_position", 12) - mean_or(team_recent10, "finish_position", 12),
             "team_points_momentum": mean_or(team_recent10, "points", 0) - mean_or(t_hist, "points", 0),
             "team_qualifying_strength_recent": mean_or(team_recent10, "qualifying", 12),
             "team_reliability_recent": mean_or(team_recent10, "is_finished", 0.85),
+            "team_recent_dnf_rate": team_recent_dnf_rate,
 
             "driver_circuit_avg_finish": mean_or(cd_hist, "finish_position", d_hist["finish_position"].mean()),
             "driver_circuit_podium_rate": mean_or(cd_hist, "is_podium", d_hist["is_podium"].mean()),
@@ -1262,6 +2809,7 @@ def create_ml_features(df):
             "team_circuit_avg_finish": mean_or(ct_hist, "finish_position", t_hist["finish_position"].mean()),
             "team_circuit_podium_rate": mean_or(ct_hist, "is_podium", t_hist["is_podium"].mean()),
             "team_circuit_grid_gain": mean_or(ct_hist, "grid", 12) - mean_or(ct_hist, "finish_position", 12),
+            "driver_circuit_vs_constructor": mean_or(cd_hist, "finish_position", mean_or(d_hist, "finish_position", 12)) - mean_or(ct_hist, "finish_position", mean_or(t_hist, "finish_position", 12)),
 
             "career_starts": len(d_hist),
             "team_starts": len(t_hist),
@@ -1284,6 +2832,7 @@ def create_ml_features(df):
             "team_pace_vs_field_recent": team_recent_pace - field_recent_pace,
             "team_pit_duration": team_recent_pit,
             "team_min_pit_duration": team_min_pit,
+            "team_pit_std5": team_pit_std5 or 4,
             "team_pit_vs_field_recent": team_recent_pit - field_recent_pit,
             "team_pit_stop_count": mean_or(team_recent10, "pit_stop_count", 1),
             "track_avg_pit_stops": mean_or(c_hist, "pit_stop_count", 1),
@@ -1303,23 +2852,28 @@ def create_ml_features(df):
 
     feature_columns = [
         "grid_position", "qualifying_position", "sprint_position",
+        "insufficient_driver_history", "insufficient_team_history", "rookie_prior",
+        "missing_grid", "missing_qualifying", "missing_sprint_position", "missing_lap_pace", "missing_pit_data",
         "driver_avg_finish", "driver_median_finish", "driver_avg_points",
         "driver_win_rate", "driver_podium_rate", "driver_top10_rate", "driver_finish_rate",
-        "driver_recent3_finish", "driver_recent5_points", "driver_recent5_podium_rate",
+        "driver_recent3_finish", "driver_recent5_finish", "driver_recent10_finish",
+        "driver_recent3_points", "driver_recent5_points", "driver_recent10_points", "driver_recent5_podium_rate",
         "driver_recent_grid_gain", "driver_finish_consistency", "driver_finish_momentum",
         "driver_points_momentum", "driver_qualifying_strength_recent", "driver_qualifying_delta",
+        "driver_recent_dnf_rate", "driver_teammate_finish_delta", "driver_teammate_qualifying_delta",
+        "driver_teammate_pace_delta", "driver_teammate_points_delta", "teammate_sample_size",
         "team_avg_finish", "team_avg_points", "team_win_rate", "team_podium_rate",
-        "team_top10_rate", "team_finish_rate", "team_recent_points",
+        "team_top10_rate", "team_finish_rate", "team_recent_points", "team_recent5_points", "team_recent10_finish",
         "team_recent_grid_gain", "team_finish_consistency", "team_finish_momentum",
-        "team_points_momentum", "team_qualifying_strength_recent", "team_reliability_recent",
+        "team_points_momentum", "team_qualifying_strength_recent", "team_reliability_recent", "team_recent_dnf_rate",
         "driver_circuit_avg_finish", "driver_circuit_podium_rate", "driver_circuit_grid_gain",
-        "team_circuit_avg_finish", "team_circuit_podium_rate", "team_circuit_grid_gain",
+        "team_circuit_avg_finish", "team_circuit_podium_rate", "team_circuit_grid_gain", "driver_circuit_vs_constructor",
         "career_starts", "team_starts", "circuit_experience", "driver_experience_log", "team_experience_log",
         "driver_lap_pace", "driver_lap_consistency", "driver_valid_laps", "driver_pace_momentum",
         "driver_pace_vs_team_recent", "driver_pit_duration", "driver_min_pit_duration",
         "driver_pit_vs_team_recent", "driver_pit_stop_count",
         "team_lap_pace", "team_lap_consistency", "team_pace_momentum", "team_pace_vs_field_recent",
-        "team_pit_duration", "team_min_pit_duration", "team_pit_vs_field_recent", "team_pit_stop_count",
+        "team_pit_duration", "team_min_pit_duration", "team_pit_std5", "team_pit_vs_field_recent", "team_pit_stop_count",
         "track_avg_pit_stops", "track_avg_lap_consistency", "track_lap_pace_baseline", "track_pit_duration_baseline",
         "track_dnf_rate", "track_overtake_proxy", "track_abs_overtake_proxy",
         "track_position_sensitivity", "regulation_era_factor", "season_progress",
@@ -1447,6 +3001,125 @@ def read_model_meta():
         return {}
 
 
+def optional_dataset_source_statuses():
+    statuses = {}
+    if f1db_status is not None:
+        try:
+            statuses["f1db"] = f1db_status()
+        except Exception as error:
+            statuses["f1db"] = {
+                "source_name": "F1DB",
+                "source_type": "historical_dataset",
+                "enabled": os.getenv("F1DB_ENABLED", "false").lower() == "true",
+                "available": False,
+                "status": "error",
+                "confidence": 0.2,
+                "error": str(error),
+            }
+    else:
+        statuses["f1db"] = {"source_name": "F1DB", "available": False, "status": "adapter_import_failed", "confidence": 0.2}
+    if relbench_status is not None:
+        try:
+            statuses["relbench_f1"] = relbench_status(download=False)
+        except Exception as error:
+            statuses["relbench_f1"] = {
+                "source_name": "RelBench rel-f1",
+                "source_type": "offline_relational_benchmark",
+                "enabled": os.getenv("RELBENCH_F1_ENABLED", "false").lower() == "true",
+                "available": False,
+                "status": "error",
+                "confidence": 0.2,
+                "error": str(error),
+            }
+    else:
+        statuses["relbench_f1"] = {"source_name": "RelBench rel-f1", "available": False, "status": "adapter_import_failed", "confidence": 0.2}
+    return statuses
+
+
+def write_model_artifacts(meta=None):
+    ensure_dirs()
+    meta = meta or read_model_meta()
+    metrics = meta.get("metrics") or {}
+    feature_selection = meta.get("feature_selection") or {}
+    feature_columns = meta.get("feature_columns") or []
+    ranking = (metrics.get("finish_position") or {}).get("ranking") or {}
+    oot = metrics.get("out_of_time_test") or {}
+    oot_spearman = safe_float((oot.get("ranking") or {}).get("spearman"))
+    drift_threshold = float(os.getenv("DRIFT_SPEARMAN_THRESHOLD", "0.55"))
+    drift_status = "insufficient_out_of_time_history"
+    if oot_spearman is not None:
+        drift_status = "retrain_recommended" if oot_spearman < drift_threshold else "stable"
+    dataset_sources = optional_dataset_source_statuses()
+    evaluation = {
+        "schema_version": MODEL_SCHEMA_VERSION,
+        "generated_at": now_local().isoformat(),
+        "trained_at": meta.get("trained_at"),
+        "validation_split": metrics.get("validation_split") or meta.get("validation_split") or {},
+        "metrics": {
+            "winner_accuracy": ranking.get("winner_hit"),
+            "top3_recall": ranking.get("top3_recall"),
+            "top3_precision": ranking.get("top3_precision"),
+            "top10_recall": ranking.get("top10_recall"),
+            "top10_precision": ranking.get("top10_precision"),
+            "spearman_rank_correlation": ranking.get("spearman"),
+            "ndcg_at_3": ranking.get("ndcg_at_3"),
+            "ndcg_at_10": ranking.get("ndcg_at_10"),
+            "finish_mae": (metrics.get("finish_position") or {}).get("mae"),
+            "finish_rmse": (metrics.get("finish_position") or {}).get("rmse"),
+            "lap_delta_mae": (metrics.get("lap_time_delta_forecast") or {}).get("mae_seconds"),
+            "lap_delta_rmse": (metrics.get("lap_time_delta_forecast") or {}).get("rmse_seconds"),
+            "win_brier": (metrics.get("win") or {}).get("brier"),
+            "podium_brier": (metrics.get("podium") or {}).get("brier"),
+            "top10_brier": (metrics.get("top10") or {}).get("brier"),
+        },
+        "out_of_time_test": oot,
+        "baselines": metrics.get("baselines") or {},
+        "promotion_decision": model_promotion_decision(meta.get("training_decision") or {}, metrics),
+        "drift_monitor": {
+            "metric": "out_of_time_spearman_proxy",
+            "threshold": drift_threshold,
+            "latest_value": oot_spearman,
+            "status": drift_status,
+            "note": "Race-level rolling drift is exported when enough post-race correction history exists; this proxy prevents silent degradation meanwhile.",
+        },
+        "dataset_sources": dataset_sources,
+    }
+    feature_importance = {
+        "schema_version": MODEL_SCHEMA_VERSION,
+        "generated_at": now_local().isoformat(),
+        "feature_count": len(feature_columns),
+        "feature_columns_hash": meta.get("feature_columns_hash") or feature_columns_hash(feature_columns),
+        "feature_columns": feature_columns,
+        "feature_selection": feature_selection,
+        "top_importances": feature_selection.get("top_importances") or {},
+        "method": feature_selection.get("method", "not_available"),
+    }
+    training_metadata = {
+        "schema_version": MODEL_SCHEMA_VERSION,
+        "generated_at": now_local().isoformat(),
+        "trained_at": meta.get("trained_at"),
+        "model_schema_version": meta.get("model_schema_version") or MODEL_SCHEMA_VERSION,
+        "ml_start_year": meta.get("ml_start_year"),
+        "rows_raw": meta.get("rows_raw"),
+        "rows_features": meta.get("rows_features"),
+        "latest_completed_race_id": meta.get("latest_completed_race_id"),
+        "feature_columns_hash": meta.get("feature_columns_hash"),
+        "optional_ml_backends": meta.get("optional_ml_backends") or {"lightgbm": lgb is not None, "xgboost": xgb is not None, "shap": shap is not None},
+        "training_action": meta.get("training_action"),
+        "training_reasons": meta.get("training_reasons"),
+        "imputation": meta.get("imputation"),
+        "dataset_sources": dataset_sources,
+    }
+    artifacts = {
+        "evaluation.json": evaluation,
+        "feature_importance.json": feature_importance,
+        "training_metadata.json": training_metadata,
+    }
+    for filename, payload in artifacts.items():
+        (MODEL_ARTIFACTS_DIR / filename).write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    return artifacts
+
+
 def model_retrain_status(force=False):
     meta = read_model_meta()
     readiness = latest_result_readiness()
@@ -1460,6 +3133,8 @@ def model_retrain_status(force=False):
         reasons.append("missing_or_unreadable_model_meta")
     if meta and meta.get("model_schema_version") != MODEL_SCHEMA_VERSION:
         reasons.append("model_schema_changed")
+    if meta and not meta.get("feature_columns_hash"):
+        reasons.append("feature_schema_hash_missing")
 
     latest_id = readiness.get("latest_completed_race_id")
     meta_latest = meta.get("latest_completed_race_id")
@@ -1499,8 +3174,14 @@ def ranking_validation_metrics(valid_df, predicted_finish):
     metrics = {
         "winner_hit": [],
         "top3_recall": [],
+        "top3_precision": [],
         "top5_recall": [],
+        "top5_precision": [],
         "top10_recall": [],
+        "top10_precision": [],
+        "ndcg_at_3": [],
+        "ndcg_at_10": [],
+        "spearman": [],
         "exact_position_accuracy": [],
         "mean_position_error": [],
     }
@@ -1518,7 +3199,24 @@ def ranking_validation_metrics(valid_df, predicted_finish):
         for k, key in [(3, "top3_recall"), (5, "top5_recall"), (10, "top10_recall")]:
             actual = set(actual_order.head(k)["driver_id"])
             predicted = set(predicted_order.head(k)["driver_id"])
-            metrics[key].append(len(actual & predicted) / max(1, len(actual)))
+            hit_rate = len(actual & predicted) / max(1, len(actual))
+            metrics[key].append(hit_rate)
+            metrics[key.replace("recall", "precision")].append(hit_rate)
+
+        try:
+            relevance = (len(group) + 1 - group["finish_position"].astype(float)).to_numpy()[None, :]
+            predicted_score = (len(group) + 1 - group["predicted_finish_position"].astype(float)).to_numpy()[None, :]
+            metrics["ndcg_at_3"].append(float(ndcg_score(relevance, predicted_score, k=min(3, len(group)))))
+            metrics["ndcg_at_10"].append(float(ndcg_score(relevance, predicted_score, k=min(10, len(group)))))
+        except Exception:
+            pass
+
+        try:
+            rho = spearmanr(group["finish_position"].astype(float), group["predicted_finish_position"].astype(float)).correlation
+            if np.isfinite(rho):
+                metrics["spearman"].append(float(rho))
+        except Exception:
+            pass
 
         merged = actual_order[["driver_id", "finish_position"]].merge(
             predicted_order[["driver_id", "predicted_finish_position"]],
@@ -1535,6 +3233,161 @@ def ranking_validation_metrics(valid_df, predicted_finish):
         for key, values in metrics.items()
         if values
     }
+
+
+def baseline_validation_metrics(valid_df):
+    baselines = {}
+    candidates = {
+        "grid_order": valid_df.get("grid_position"),
+        "qualifying_only": valid_df.get("qualifying_position"),
+        "driver_recent_form": valid_df.get("driver_recent3_finish"),
+        "constructor_form": valid_df.get("team_avg_finish"),
+        "driver_championship_form": valid_df.get("driver_avg_points"),
+    }
+    for name, values in candidates.items():
+        if values is None:
+            continue
+        series = pd.to_numeric(values, errors="coerce")
+        if name in {"driver_championship_form"}:
+            race_pred = []
+            for _, group in valid_df.assign(_baseline=series).groupby("race_id"):
+                ranked = group["_baseline"].rank(method="first", ascending=False)
+                race_pred.extend(ranked.reindex(group.index).tolist())
+            pred = np.array(race_pred, dtype=float)
+        else:
+            pred = series.fillna(series.median() if pd.notna(series.median()) else 12).to_numpy(dtype=float)
+        try:
+            mae = mean_absolute_error(valid_df["finish_position"].astype(float), np.clip(pred, 1, 24))
+        except Exception:
+            mae = None
+        baselines[name] = {
+            "finish_mae": float(mae) if mae is not None else None,
+            "ranking": ranking_validation_metrics(valid_df, np.clip(pred, 1, 24)),
+        }
+    return baselines
+
+
+def chronological_group_split(feature_df):
+    race_order = (
+        feature_df[["race_id", "season", "round"]]
+        .drop_duplicates()
+        .sort_values(["season", "round"])
+        .reset_index(drop=True)
+    )
+    train_ids = set(race_order[race_order["season"] <= 2021]["race_id"])
+    validation_ids = set(race_order[(race_order["season"] >= 2022) & (race_order["season"] <= 2024)]["race_id"])
+    test_ids = set(race_order[race_order["season"] >= 2025]["race_id"])
+    method = "season_grouped_train_2018_2021_validate_2022_2024_test_2025_plus"
+    if len(train_ids) < 20 or len(validation_ids) < 15:
+        validation_race_count = max(12, min(30, int(round(len(race_order) * 0.28))))
+        validation_ids = set(race_order.tail(validation_race_count)["race_id"])
+        train_ids = set(race_order[~race_order["race_id"].isin(validation_ids)]["race_id"])
+        test_ids = set()
+        method = "chronological_grouped_by_race_expanded_validation"
+    train_df = feature_df[feature_df["race_id"].isin(train_ids)].copy()
+    valid_df = feature_df[feature_df["race_id"].isin(validation_ids)].copy()
+    test_df = feature_df[feature_df["race_id"].isin(test_ids)].copy()
+    return train_df, valid_df, {
+        "method": method,
+        "train_races": int(train_df["race_id"].nunique()),
+        "validation_races": int(valid_df["race_id"].nunique()),
+        "test_races": int(test_df["race_id"].nunique()),
+        "validation_rows": int(len(valid_df)),
+        "test_rows": int(len(test_df)),
+        "validation_race_ids": list(race_order[race_order["race_id"].isin(validation_ids)]["race_id"]),
+        "test_race_ids": list(race_order[race_order["race_id"].isin(test_ids)]["race_id"]),
+        "train_seasons": sorted([int(x) for x in train_df["season"].dropna().unique()]),
+        "validation_seasons": sorted([int(x) for x in valid_df["season"].dropna().unique()]),
+        "test_seasons": sorted([int(x) for x in test_df["season"].dropna().unique()]),
+    }
+
+
+def carve_calibration_split(train_df):
+    if train_df.empty or "race_id" not in train_df:
+        return train_df, pd.DataFrame(), {"calibration_races": 0, "status": "unavailable"}
+    race_order = (
+        train_df[["race_id", "season", "round"]]
+        .drop_duplicates()
+        .sort_values(["season", "round"])
+        .reset_index(drop=True)
+    )
+    if len(race_order) < 10:
+        return train_df, pd.DataFrame(), {"calibration_races": 0, "status": "insufficient_grouped_races"}
+    calibration_count = max(2, min(5, int(round(len(race_order) * 0.12))))
+    calibration_ids = set(race_order.tail(calibration_count)["race_id"])
+    core_train_df = train_df[~train_df["race_id"].isin(calibration_ids)].copy()
+    calibration_df = train_df[train_df["race_id"].isin(calibration_ids)].copy()
+    if len(core_train_df) < 60 or len(calibration_df) < 20:
+        return train_df, pd.DataFrame(), {"calibration_races": 0, "status": "insufficient_rows_after_group_split"}
+    return core_train_df, calibration_df, {
+        "calibration_races": int(calibration_df["race_id"].nunique()),
+        "calibration_race_ids": list(race_order.tail(calibration_count)["race_id"]),
+        "status": "empirical_probability_calibration_split",
+    }
+
+
+def fit_probability_calibrator(probabilities, targets, bins=8):
+    probs = np.asarray(probabilities, dtype=float)
+    y = np.asarray(targets, dtype=float)
+    valid = np.isfinite(probs) & np.isfinite(y)
+    probs = np.clip(probs[valid], 0.0, 1.0)
+    y = y[valid]
+    if len(probs) < 30 or len(np.unique(y)) < 2:
+        return {
+            "method": "identity_insufficient_calibration_data",
+            "rows": int(len(probs)),
+            "positive_rate": float(np.mean(y)) if len(y) else None,
+        }
+    unique_probs = np.unique(probs)
+    bin_count = max(3, min(bins, len(unique_probs), len(probs) // 8))
+    edges = np.unique(np.quantile(probs, np.linspace(0, 1, bin_count + 1)))
+    if len(edges) < 3:
+        return {
+            "method": "identity_low_probability_spread",
+            "rows": int(len(probs)),
+            "positive_rate": float(np.mean(y)),
+        }
+    centers = []
+    observed = []
+    counts = []
+    for low, high in zip(edges[:-1], edges[1:]):
+        mask = (probs >= low) & (probs <= high if high == edges[-1] else probs < high)
+        if not mask.any():
+            continue
+        centers.append(float(np.mean(probs[mask])))
+        observed.append(float(np.mean(y[mask])))
+        counts.append(int(mask.sum()))
+    if len(centers) < 2:
+        return {
+            "method": "identity_insufficient_bins",
+            "rows": int(len(probs)),
+            "positive_rate": float(np.mean(y)),
+        }
+    order = np.argsort(centers)
+    centers = [centers[i] for i in order]
+    observed = [observed[i] for i in order]
+    counts = [counts[i] for i in order]
+    calibrated = np.interp(probs, centers, observed, left=observed[0], right=observed[-1])
+    return {
+        "method": "empirical_quantile_bins",
+        "rows": int(len(probs)),
+        "centers": centers,
+        "observed_rates": observed,
+        "counts": counts,
+        "brier_before": float(brier_score_loss(y.astype(int), probs)),
+        "brier_after": float(brier_score_loss(y.astype(int), np.clip(calibrated, 0.0, 1.0))),
+    }
+
+
+def apply_probability_calibrator(probabilities, calibrator):
+    probs = np.asarray(probabilities, dtype=float)
+    if not calibrator or calibrator.get("method") != "empirical_quantile_bins":
+        return np.clip(probs, 0.0, 1.0)
+    centers = np.asarray(calibrator.get("centers") or [], dtype=float)
+    observed = np.asarray(calibrator.get("observed_rates") or [], dtype=float)
+    if len(centers) < 2 or len(observed) != len(centers):
+        return np.clip(probs, 0.0, 1.0)
+    return np.clip(np.interp(probs, centers, observed, left=observed[0], right=observed[-1]), 0.0, 1.0)
 
 
 def train_ml_model(force=False):
@@ -1568,22 +3421,37 @@ def train_ml_model(force=False):
         print(f"Not enough full-data feature rows yet: {len(feature_df)}. More backfill runs needed.")
         return load_ml_bundle()
 
-    seasons = sorted(feature_df["season"].dropna().unique())
-    validation_year = seasons[-1]
-    train_df = feature_df[feature_df["season"] < validation_year].copy()
-    valid_df = feature_df[feature_df["season"] == validation_year].copy()
-
+    train_df, valid_df, validation_split = chronological_group_split(feature_df)
+    train_df, calibration_df, calibration_split = carve_calibration_split(train_df)
+    validation_split.update(calibration_split)
     if len(train_df) < 60 or len(valid_df) < 20:
-        train_df = feature_df.sample(frac=0.8, random_state=42)
-        valid_df = feature_df.drop(train_df.index)
+        print("Grouped chronological validation split is too small. Keeping current model bundle.")
+        existing = load_ml_bundle()
+        if existing:
+            existing["training_action"] = "loaded_current_model_validation_split_too_small"
+            existing["training_decision"] = retrain_decision
+            return existing
+        raise RuntimeError("Insufficient grouped race data for leakage-safe training and no existing model bundle is available.")
 
-    X_train = train_df[feature_columns].replace([np.inf, -np.inf], np.nan).fillna(0)
-    X_valid = valid_df[feature_columns].replace([np.inf, -np.inf], np.nan).fillna(0)
+    feature_columns, feature_selection = select_feature_columns_by_importance(train_df, feature_columns)
+    X_train, feature_imputer = prepare_feature_matrix(train_df, feature_columns, fit=True)
+    X_valid, _ = prepare_feature_matrix(valid_df, feature_columns, imputer=feature_imputer)
+    test_df = feature_df[feature_df["race_id"].isin(set(validation_split.get("test_race_ids") or []))].copy()
+    X_test = None
+    if not test_df.empty:
+        X_test, _ = prepare_feature_matrix(test_df, feature_columns, imputer=feature_imputer)
+    X_calibration = None
+    if not calibration_df.empty:
+        X_calibration, _ = prepare_feature_matrix(calibration_df, feature_columns, imputer=feature_imputer)
+    training_feature_columns = feature_matrix_columns(feature_columns)
 
     targets = {"win": "is_win", "podium": "is_podium", "top10": "is_top10"}
     models = {}
     metrics = {}
     validation_probabilities = {}
+    probability_calibrators = {}
+    train_weights = season_sample_weights(train_df)
+    calibration_weights = season_sample_weights(calibration_df) if not calibration_df.empty else None
 
     for name, target_col in targets.items():
         y_train = train_df[target_col].astype(int)
@@ -1591,16 +3459,18 @@ def train_ml_model(force=False):
 
         rf = RandomForestClassifier(
             n_estimators=280,
-            max_depth=11,
-            min_samples_leaf=3,
+            max_depth=12,
+            min_samples_leaf=5,
+            max_features="sqrt",
             random_state=42,
             n_jobs=-1,
             class_weight="balanced_subsample",
         )
         et = ExtraTreesClassifier(
             n_estimators=260,
-            max_depth=13,
-            min_samples_leaf=2,
+            max_depth=12,
+            min_samples_leaf=5,
+            max_features="sqrt",
             random_state=84,
             n_jobs=-1,
             class_weight="balanced",
@@ -1609,18 +3479,77 @@ def train_ml_model(force=False):
             max_iter=180,
             learning_rate=0.055,
             max_leaf_nodes=31,
-            l2_regularization=0.03,
+            max_depth=5,
+            l2_regularization=0.1,
             random_state=42,
         )
+        lgb_model = None
+        xgb_model = None
+        if lgb is not None:
+            lgb_model = lgb.LGBMClassifier(
+                n_estimators=420,
+                learning_rate=0.05,
+                max_depth=6,
+                num_leaves=31,
+                subsample=0.8,
+                colsample_bytree=0.7,
+                reg_lambda=0.1,
+                objective="binary",
+                random_state=126,
+                n_jobs=-1,
+                verbose=-1,
+            )
+        if xgb is not None:
+            xgb_model = xgb.XGBClassifier(
+                n_estimators=420,
+                eta=0.05,
+                max_depth=6,
+                subsample=0.8,
+                colsample_bytree=0.7,
+                reg_lambda=1.0,
+                objective="binary:logistic",
+                eval_metric="logloss",
+                random_state=168,
+                n_jobs=-1,
+            )
 
-        rf.fit(X_train, y_train)
-        et.fit(X_train, y_train)
-        hgb.fit(X_train, y_train)
+        rf.fit(X_train, y_train, sample_weight=train_weights)
+        et.fit(X_train, y_train, sample_weight=train_weights)
+        hgb.fit(X_train, y_train, sample_weight=train_weights)
+        if lgb_model is not None:
+            lgb_model.fit(X_train, y_train, sample_weight=train_weights)
+        if xgb_model is not None:
+            xgb_model.fit(X_train, y_train, sample_weight=train_weights)
 
-        rf_prob = rf.predict_proba(X_valid)[:, 1]
-        et_prob = et.predict_proba(X_valid)[:, 1]
-        hgb_prob = hgb.predict_proba(X_valid)[:, 1]
-        prob = 0.44 * rf_prob + 0.34 * hgb_prob + 0.22 * et_prob
+        if X_calibration is not None and not calibration_df.empty:
+            y_calibration = calibration_df[target_col].astype(int)
+            cal_parts = [
+                (rf.predict_proba(X_calibration)[:, 1], 0.32),
+                (hgb.predict_proba(X_calibration)[:, 1], 0.28),
+                (et.predict_proba(X_calibration)[:, 1], 0.18),
+            ]
+            if lgb_model is not None:
+                cal_parts.append((lgb_model.predict_proba(X_calibration)[:, 1], 0.14))
+            if xgb_model is not None:
+                cal_parts.append((xgb_model.predict_proba(X_calibration)[:, 1], 0.08))
+            weight_sum = sum(weight for _, weight in cal_parts)
+            cal_prob = sum(prob * (weight / weight_sum) for prob, weight in cal_parts)
+            probability_calibrators[name] = fit_probability_calibrator(cal_prob, y_calibration)
+        else:
+            probability_calibrators[name] = {"method": "identity_no_calibration_split", "rows": 0}
+
+        valid_parts = [
+            (rf.predict_proba(X_valid)[:, 1], 0.32),
+            (hgb.predict_proba(X_valid)[:, 1], 0.28),
+            (et.predict_proba(X_valid)[:, 1], 0.18),
+        ]
+        if lgb_model is not None:
+            valid_parts.append((lgb_model.predict_proba(X_valid)[:, 1], 0.14))
+        if xgb_model is not None:
+            valid_parts.append((xgb_model.predict_proba(X_valid)[:, 1], 0.08))
+        weight_sum = sum(weight for _, weight in valid_parts)
+        raw_prob = sum(prob * (weight / weight_sum) for prob, weight in valid_parts)
+        prob = apply_probability_calibrator(raw_prob, probability_calibrators.get(name))
 
         try:
             auc = roc_auc_score(y_valid, prob)
@@ -1630,9 +3559,19 @@ def train_ml_model(force=False):
             brier = brier_score_loss(y_valid, prob)
         except Exception:
             brier = None
+        try:
+            raw_brier = brier_score_loss(y_valid, raw_prob)
+        except Exception:
+            raw_brier = None
 
-        models[name] = {"rf": rf, "hgb": hgb, "et": et}
-        metrics[name] = {"auc": auc, "brier": brier, "validation_rows": len(valid_df)}
+        models[name] = {"rf": rf, "hgb": hgb, "et": et, "lgb": lgb_model, "xgb": xgb_model}
+        metrics[name] = {
+            "auc": auc,
+            "brier": brier,
+            "raw_brier": raw_brier,
+            "calibration_method": probability_calibrators.get(name, {}).get("method"),
+            "validation_rows": len(valid_df),
+        }
         validation_probabilities[name] = prob
 
     y_train_finish = train_df["finish_position"].astype(float)
@@ -1640,14 +3579,16 @@ def train_ml_model(force=False):
     rf_finish = RandomForestRegressor(
         n_estimators=340,
         max_depth=12,
-        min_samples_leaf=2,
+        min_samples_leaf=5,
+        max_features="sqrt",
         random_state=42,
         n_jobs=-1,
     )
     et_finish = ExtraTreesRegressor(
         n_estimators=320,
-        max_depth=14,
-        min_samples_leaf=2,
+        max_depth=12,
+        min_samples_leaf=5,
+        max_features="sqrt",
         random_state=84,
         n_jobs=-1,
     )
@@ -1655,13 +3596,38 @@ def train_ml_model(force=False):
         max_iter=230,
         learning_rate=0.045,
         max_leaf_nodes=31,
-        l2_regularization=0.04,
+        max_depth=5,
+        l2_regularization=0.1,
         random_state=42,
     )
-    rf_finish.fit(X_train, y_train_finish)
-    et_finish.fit(X_train, y_train_finish)
-    hgb_finish.fit(X_train, y_train_finish)
-    finish_pred = 0.40 * rf_finish.predict(X_valid) + 0.40 * hgb_finish.predict(X_valid) + 0.20 * et_finish.predict(X_valid)
+    lgb_finish = None
+    if lgb is not None:
+        lgb_finish = lgb.LGBMRegressor(
+            n_estimators=460,
+            learning_rate=0.045,
+            max_depth=6,
+            num_leaves=31,
+            subsample=0.8,
+            colsample_bytree=0.7,
+            reg_lambda=0.1,
+            random_state=252,
+            n_jobs=-1,
+            verbose=-1,
+        )
+    rf_finish.fit(X_train, y_train_finish, sample_weight=train_weights)
+    et_finish.fit(X_train, y_train_finish, sample_weight=train_weights)
+    hgb_finish.fit(X_train, y_train_finish, sample_weight=train_weights)
+    if lgb_finish is not None:
+        lgb_finish.fit(X_train, y_train_finish, sample_weight=train_weights)
+    finish_parts = [
+        (rf_finish.predict(X_valid), 0.30),
+        (hgb_finish.predict(X_valid), 0.38),
+        (et_finish.predict(X_valid), 0.18),
+    ]
+    if lgb_finish is not None:
+        finish_parts.append((lgb_finish.predict(X_valid), 0.14))
+    finish_weight_sum = sum(weight for _, weight in finish_parts)
+    finish_pred = sum(pred * (weight / finish_weight_sum) for pred, weight in finish_parts)
     finish_pred = np.clip(finish_pred, 1, 24)
 
     try:
@@ -1679,53 +3645,113 @@ def train_ml_model(force=False):
         "validation_rows": len(valid_df),
         "ranking": ranking_validation_metrics(valid_df, finish_pred),
     }
+    if X_test is not None and len(test_df) >= 20:
+        test_parts = [
+            (rf_finish.predict(X_test), 0.30),
+            (hgb_finish.predict(X_test), 0.38),
+            (et_finish.predict(X_test), 0.18),
+        ]
+        if lgb_finish is not None:
+            test_parts.append((lgb_finish.predict(X_test), 0.14))
+        test_weight_sum = sum(weight for _, weight in test_parts)
+        test_finish_pred = np.clip(sum(pred * (weight / test_weight_sum) for pred, weight in test_parts), 1, 24)
+        metrics["out_of_time_test"] = {
+            "rows": len(test_df),
+            "races": int(test_df["race_id"].nunique()),
+            "seasons": sorted([int(x) for x in test_df["season"].dropna().unique()]),
+            "finish_mae": float(mean_absolute_error(test_df["finish_position"].astype(float), test_finish_pred)),
+            "ranking": ranking_validation_metrics(test_df, test_finish_pred),
+            "baselines": baseline_validation_metrics(test_df),
+        }
     if "win" in validation_probabilities:
         win_prob_finish_proxy = 1 + (1 - validation_probabilities["win"]) * 19
         metrics["win_probability_ranking"] = ranking_validation_metrics(valid_df, win_prob_finish_proxy)
 
     lap_pace_model = None
+    lap_pace_model_kind = None
     lap_train_df = train_df[pd.to_numeric(train_df.get("target_lap_pace"), errors="coerce").notna()].copy()
     lap_valid_df = valid_df[pd.to_numeric(valid_df.get("target_lap_pace"), errors="coerce").notna()].copy()
     if len(lap_train_df) >= 80 and len(lap_valid_df) >= 20:
-        X_lap_train = lap_train_df[feature_columns].replace([np.inf, -np.inf], np.nan).fillna(0)
-        X_lap_valid = lap_valid_df[feature_columns].replace([np.inf, -np.inf], np.nan).fillna(0)
-        y_lap_train = pd.to_numeric(lap_train_df["target_lap_pace"], errors="coerce").astype(float)
+        X_lap_train, _ = prepare_feature_matrix(lap_train_df, feature_columns, imputer=feature_imputer)
+        X_lap_valid, _ = prepare_feature_matrix(lap_valid_df, feature_columns, imputer=feature_imputer)
+        train_baseline = pd.to_numeric(lap_train_df["track_lap_pace_baseline"], errors="coerce").fillna(pd.to_numeric(lap_train_df["target_lap_pace"], errors="coerce").median())
+        valid_baseline = pd.to_numeric(lap_valid_df["track_lap_pace_baseline"], errors="coerce").fillna(pd.to_numeric(lap_valid_df["target_lap_pace"], errors="coerce").median())
+        y_lap_train_raw = pd.to_numeric(lap_train_df["target_lap_pace"], errors="coerce").astype(float)
         y_lap_valid = pd.to_numeric(lap_valid_df["target_lap_pace"], errors="coerce").astype(float)
-        lap_pace_model = make_pipeline(
-            StandardScaler(),
-            MLPRegressor(
-                hidden_layer_sizes=(96, 48, 24),
-                activation="relu",
-                solver="adam",
-                alpha=0.004,
-                learning_rate_init=0.001,
-                max_iter=650,
-                early_stopping=True,
-                validation_fraction=0.18,
-                n_iter_no_change=20,
-                random_state=42,
-            ),
-        )
-        lap_pace_model.fit(X_lap_train, y_lap_train)
-        lap_pred = np.clip(lap_pace_model.predict(X_lap_valid), 45, 180)
-        metrics["neural_lap_time_forecast"] = {
+        y_lap_train = y_lap_train_raw - train_baseline
+        if lgb is not None:
+            lap_pace_model = lgb.LGBMRegressor(
+                n_estimators=360,
+                learning_rate=0.04,
+                max_depth=5,
+                num_leaves=24,
+                subsample=0.85,
+                colsample_bytree=0.75,
+                reg_lambda=0.15,
+                random_state=294,
+                n_jobs=-1,
+                verbose=-1,
+            )
+            lap_pace_model_kind = "lightgbm_lap_delta"
+        else:
+            lap_pace_model = HistGradientBoostingRegressor(
+                max_iter=260,
+                learning_rate=0.045,
+                max_depth=5,
+                max_leaf_nodes=31,
+                l2_regularization=0.1,
+                random_state=294,
+            )
+            lap_pace_model_kind = "hist_gradient_boosting_lap_delta"
+        lap_pace_model.fit(X_lap_train, y_lap_train, sample_weight=season_sample_weights(lap_train_df))
+        lap_delta_pred = np.clip(lap_pace_model.predict(X_lap_valid), -8, 8)
+        lap_pred = np.clip(valid_baseline.to_numpy(dtype=float) + lap_delta_pred, 45, 180)
+        metrics["lap_time_delta_forecast"] = {
+            "model": lap_pace_model_kind,
+            "target": "target_lap_pace_minus_circuit_baseline",
             "mae_seconds": float(mean_absolute_error(y_lap_valid, lap_pred)),
             "rmse_seconds": float(np.sqrt(np.mean((np.array(y_lap_valid) - lap_pred) ** 2))),
             "validation_rows": len(lap_valid_df),
         }
     else:
-        metrics["neural_lap_time_forecast"] = {
+        metrics["lap_time_delta_forecast"] = {
             "status": "insufficient_lap_time_rows",
             "train_rows": len(lap_train_df),
             "validation_rows": len(lap_valid_df),
+        }
+    metrics["neural_lap_time_forecast"] = {
+        **metrics["lap_time_delta_forecast"],
+        "deprecated_name": True,
+        "replacement": "lap_time_delta_forecast",
+    }
+
+    baseline_metrics = baseline_validation_metrics(valid_df)
+    finish_mae = safe_float(metrics.get("finish_position", {}).get("mae"))
+    metrics["baselines"] = baseline_metrics
+    metrics["validation_split"] = validation_split
+    metrics["feature_matrix"] = {
+        "base_feature_count": len(feature_columns),
+        "model_feature_count": len(training_feature_columns),
+        "missingness_indicators": len(training_feature_columns) - len(feature_columns),
+        "imputation": "median_with_explicit_missingness_flags",
+    }
+    if finish_mae is not None:
+        metrics["finish_position"]["beats_baselines"] = {
+            name: bool(safe_float(row.get("finish_mae")) is not None and finish_mae <= safe_float(row.get("finish_mae")))
+            for name, row in baseline_metrics.items()
         }
 
     latest_id = latest_completed_race_id()
     bundle = {
         "models": models,
-        "finish_model": {"rf": rf_finish, "hgb": hgb_finish, "et": et_finish},
+        "finish_model": {"rf": rf_finish, "hgb": hgb_finish, "et": et_finish, "lgb": lgb_finish},
         "lap_pace_model": lap_pace_model,
+        "lap_pace_model_kind": lap_pace_model_kind,
+        "feature_imputer": feature_imputer,
+        "model_feature_columns": training_feature_columns,
+        "probability_calibrators": probability_calibrators,
         "feature_columns": feature_columns,
+        "feature_columns_hash": feature_columns_hash(feature_columns),
         "trained_at": now_local().isoformat(),
         "ml_start_year": ML_START_YEAR,
         "latest_completed_race_id": latest_id,
@@ -1733,6 +3759,8 @@ def train_ml_model(force=False):
         "model_schema_version": MODEL_SCHEMA_VERSION,
         "training_action": "retrained_model",
         "training_decision": retrain_decision,
+        "feature_selection": feature_selection,
+        "optional_ml_backends": {"lightgbm": lgb is not None, "xgboost": xgb is not None, "shap": shap is not None},
     }
 
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -1747,6 +3775,16 @@ def train_ml_model(force=False):
         "latest_completed_race_id": latest_id,
         "metrics": metrics,
         "feature_columns": feature_columns,
+        "feature_columns_hash": feature_columns_hash(feature_columns),
+        "model_feature_columns": training_feature_columns,
+        "feature_selection": feature_selection,
+        "optional_ml_backends": {"lightgbm": lgb is not None, "xgboost": xgb is not None, "shap": shap is not None},
+        "validation_split": validation_split,
+        "probability_calibration": {k: {kk: vv for kk, vv in v.items() if kk not in {"centers", "observed_rates"}} for k, v in probability_calibrators.items()},
+        "imputation": {
+            "method": "median_with_missingness_indicators",
+            "values": {col: safe_float(value) for col, value in zip(feature_columns, feature_imputer.statistics_)},
+        },
         "backfill_used_this_run": BACKFILL_BUDGET.used,
         "backfilled_races_this_run": BACKFILL_BUDGET.fetched,
         "training_action": "retrained_model",
@@ -1754,6 +3792,7 @@ def train_ml_model(force=False):
         "result_readiness": retrain_decision.get("readiness", {}),
     }
     MODEL_META_PATH.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    write_model_artifacts(meta)
 
     print(f"ML model saved: {MODEL_BUNDLE_PATH}")
     return bundle
@@ -1776,28 +3815,32 @@ def historical_feature_context(start_year, target_season):
     return df.sort_values(["season", "round"]).reset_index(drop=True)
 
 
-def build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns):
+def build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns, stage="pre_weekend"):
     season = safe_int(race.get("season")) or now_local().year
     round_no = safe_int(race.get("round")) or 0
     circuit_id = race.get("Circuit", {}).get("circuitId")
 
+    qualifying_allowed = stage in {"post_qualifying", "pre_race", "live_adjusted", "post_race_audited"}
+    sprint_allowed = stage in {"post_sprint", "post_qualifying", "pre_race", "live_adjusted", "post_race_audited"}
+    current_session_features_allowed = stage in {"post_fp1", "post_fp2", "post_fp3", "post_sprint_qualifying", "post_sprint", "post_qualifying", "pre_race", "live_adjusted"}
+
     q_positions = {}
-    if current_round_data.get("qualifying"):
+    if qualifying_allowed and current_round_data.get("qualifying"):
         for q in current_round_data["qualifying"][0].get("QualifyingResults", []):
             q_positions[q.get("Driver", {}).get("driverId")] = safe_int(q.get("position"))
 
     sprint_positions = {}
-    if current_round_data.get("sprint"):
+    if sprint_allowed and current_round_data.get("sprint"):
         for s in current_round_data["sprint"][0].get("SprintResults", []) or current_round_data["sprint"][0].get("Results", []):
             sprint_positions[s.get("Driver", {}).get("driverId")] = safe_int(s.get("positionOrder") or s.get("position"))
 
-    current_laps = driver_lap_metrics_from_data(current_round_data)
-    current_pits = pit_metrics_from_data(current_round_data)
+    current_laps = driver_lap_metrics_from_data(current_round_data) if current_session_features_allowed else {}
+    current_pits = pit_metrics_from_data(current_round_data) if current_session_features_allowed else {}
 
     rows = []
     for driver in drivers:
         driver_id = driver["driver_id"]
-        team = driver["team"]
+        team = canonical_constructor_name(driver["team"])
         hist = historical_df[(historical_df["season"] < season) | ((historical_df["season"] == season) & (historical_df["round"] < round_no))].copy() if not historical_df.empty else pd.DataFrame()
 
         d_hist = hist[hist["driver_id"] == driver_id] if not hist.empty else pd.DataFrame()
@@ -1813,8 +3856,12 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
                     return float(val)
             return fallback
 
+        recent3 = d_hist.tail(3)
         recent5 = d_hist.tail(5)
+        recent10 = d_hist.tail(10)
+        team_recent5 = t_hist.tail(5)
         team_recent10 = t_hist.tail(10)
+        teammate_recent10 = t_hist[t_hist["driver_id"] != driver_id].tail(10) if len(t_hist) else pd.DataFrame()
         field_recent = hist.tail(200) if not hist.empty else pd.DataFrame()
         circuit_abs_movement = average([
             abs((safe_float(row.get("grid")) or 10) - (safe_float(row.get("finish_position")) or 10))
@@ -1833,6 +3880,13 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
         field_recent_pit = mean_or(field_recent, "avg_pit_duration", team_recent_pit)
         driver_min_pit = mean_or(recent5, "min_pit_duration", driver_recent_pit)
         team_min_pit = mean_or(team_recent10, "min_pit_duration", team_recent_pit)
+        team_pit_std5 = safe_std(pd.to_numeric(team_recent5["avg_pit_duration"], errors="coerce")) if len(team_recent5) and "avg_pit_duration" in team_recent5 else None
+        teammate_finish_delta = mean_or(recent5, "finish_position", 12) - mean_or(teammate_recent10, "finish_position", mean_or(team_recent10, "finish_position", 12))
+        teammate_qualifying_delta = mean_or(recent5, "qualifying", 12) - mean_or(teammate_recent10, "qualifying", mean_or(team_recent10, "qualifying", 12))
+        teammate_pace_delta = driver_recent_pace - mean_or(teammate_recent10, "avg_best_35pct_lap", team_recent_pace)
+        teammate_points_delta = mean_or(recent5, "points", 0) - mean_or(teammate_recent10, "points", mean_or(team_recent10, "points", 0))
+        driver_recent_dnf_rate = 1 - mean_or(recent5, "is_finished", mean_or(d_hist, "is_finished", 0.85))
+        team_recent_dnf_rate = 1 - mean_or(team_recent10, "is_finished", mean_or(t_hist, "is_finished", 0.85))
 
         standing_proxy = min(20, max(1, safe_int(driver.get("position")) or 12))
         lap_now = current_laps.get(driver_id, {})
@@ -1845,9 +3899,17 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "driver_id": driver_id,
             "driver_name": driver["name"],
             "constructor": team,
-            "grid_position": q_positions.get(driver_id) or standing_proxy,
-            "qualifying_position": q_positions.get(driver_id) or standing_proxy,
-            "sprint_position": sprint_positions.get(driver_id) or 20,
+            "grid_position": q_positions.get(driver_id) if q_positions.get(driver_id) is not None else np.nan,
+            "qualifying_position": q_positions.get(driver_id) if q_positions.get(driver_id) is not None else np.nan,
+            "sprint_position": sprint_positions.get(driver_id) if sprint_positions.get(driver_id) is not None else np.nan,
+            "insufficient_driver_history": 1 if len(d_hist) < 3 else 0,
+            "insufficient_team_history": 1 if len(t_hist) < 3 else 0,
+            "rookie_prior": 1 if len(d_hist) == 0 else 0,
+            "missing_grid": 0 if q_positions.get(driver_id) is not None else 1,
+            "missing_qualifying": 0 if q_positions.get(driver_id) is not None else 1,
+            "missing_sprint_position": 0 if sprint_positions.get(driver_id) is not None else 1,
+            "missing_lap_pace": 0 if lap_now.get("avg_best_35pct") is not None else 1,
+            "missing_pit_data": 0 if pit_now.get("avg_pit_duration") is not None else 1,
 
             "driver_avg_finish": mean_or(d_hist, "finish_position", 12),
             "driver_median_finish": float(pd.to_numeric(d_hist["finish_position"], errors="coerce").median()) if len(d_hist) else 12,
@@ -1856,15 +3918,25 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "driver_podium_rate": mean_or(d_hist, "is_podium", 0),
             "driver_top10_rate": mean_or(d_hist, "is_top10", 0),
             "driver_finish_rate": mean_or(d_hist, "is_finished", 0.85),
-            "driver_recent3_finish": mean_or(d_hist.tail(3), "finish_position", mean_or(d_hist, "finish_position", 12)),
-            "driver_recent5_points": mean_or(d_hist.tail(5), "points", mean_or(d_hist, "points", 0)),
-            "driver_recent5_podium_rate": mean_or(d_hist.tail(5), "is_podium", mean_or(d_hist, "is_podium", 0)),
+            "driver_recent3_finish": mean_or(recent3, "finish_position", mean_or(d_hist, "finish_position", 12)),
+            "driver_recent5_finish": mean_or(recent5, "finish_position", mean_or(d_hist, "finish_position", 12)),
+            "driver_recent10_finish": mean_or(recent10, "finish_position", mean_or(d_hist, "finish_position", 12)),
+            "driver_recent3_points": mean_or(recent3, "points", mean_or(d_hist, "points", 0)),
+            "driver_recent5_points": mean_or(recent5, "points", mean_or(d_hist, "points", 0)),
+            "driver_recent10_points": mean_or(recent10, "points", mean_or(d_hist, "points", 0)),
+            "driver_recent5_podium_rate": mean_or(recent5, "is_podium", mean_or(d_hist, "is_podium", 0)),
             "driver_recent_grid_gain": driver_recent_grid_gain,
             "driver_finish_consistency": driver_finish_consistency or 4,
             "driver_finish_momentum": mean_or(d_hist, "finish_position", 12) - mean_or(d_hist.tail(3), "finish_position", 12),
             "driver_points_momentum": mean_or(d_hist.tail(5), "points", 0) - mean_or(d_hist, "points", 0),
             "driver_qualifying_strength_recent": mean_or(recent5, "qualifying", 12),
             "driver_qualifying_delta": mean_or(d_hist.tail(8), "qualifying", 12) - mean_or(d_hist.tail(8), "finish_position", 12),
+            "driver_recent_dnf_rate": driver_recent_dnf_rate,
+            "driver_teammate_finish_delta": teammate_finish_delta,
+            "driver_teammate_qualifying_delta": teammate_qualifying_delta,
+            "driver_teammate_pace_delta": teammate_pace_delta,
+            "driver_teammate_points_delta": teammate_points_delta,
+            "teammate_sample_size": len(teammate_recent10),
 
             "team_avg_finish": mean_or(t_hist, "finish_position", 12),
             "team_avg_points": mean_or(t_hist, "points", 0),
@@ -1873,12 +3945,15 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "team_top10_rate": mean_or(t_hist, "is_top10", 0),
             "team_finish_rate": mean_or(t_hist, "is_finished", 0.85),
             "team_recent_points": mean_or(t_hist.tail(10), "points", mean_or(t_hist, "points", 0)),
+            "team_recent5_points": mean_or(team_recent5, "points", mean_or(t_hist, "points", 0)),
+            "team_recent10_finish": mean_or(team_recent10, "finish_position", mean_or(t_hist, "finish_position", 12)),
             "team_recent_grid_gain": team_recent_grid_gain,
             "team_finish_consistency": team_finish_consistency or 4,
             "team_finish_momentum": mean_or(t_hist, "finish_position", 12) - mean_or(team_recent10, "finish_position", 12),
             "team_points_momentum": mean_or(team_recent10, "points", 0) - mean_or(t_hist, "points", 0),
             "team_qualifying_strength_recent": mean_or(team_recent10, "qualifying", 12),
             "team_reliability_recent": mean_or(team_recent10, "is_finished", 0.85),
+            "team_recent_dnf_rate": team_recent_dnf_rate,
 
             "driver_circuit_avg_finish": mean_or(cd_hist, "finish_position", mean_or(d_hist, "finish_position", 12)),
             "driver_circuit_podium_rate": mean_or(cd_hist, "is_podium", mean_or(d_hist, "is_podium", 0)),
@@ -1886,6 +3961,7 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "team_circuit_avg_finish": mean_or(ct_hist, "finish_position", mean_or(t_hist, "finish_position", 12)),
             "team_circuit_podium_rate": mean_or(ct_hist, "is_podium", mean_or(t_hist, "is_podium", 0)),
             "team_circuit_grid_gain": mean_or(ct_hist, "grid", 12) - mean_or(ct_hist, "finish_position", 12),
+            "driver_circuit_vs_constructor": mean_or(cd_hist, "finish_position", mean_or(d_hist, "finish_position", 12)) - mean_or(ct_hist, "finish_position", mean_or(t_hist, "finish_position", 12)),
             "career_starts": len(d_hist),
             "team_starts": len(t_hist),
             "circuit_experience": len(cd_hist),
@@ -1907,6 +3983,7 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "team_pace_vs_field_recent": team_recent_pace - field_recent_pace,
             "team_pit_duration": team_recent_pit,
             "team_min_pit_duration": team_min_pit,
+            "team_pit_std5": team_pit_std5 or 4,
             "team_pit_vs_field_recent": team_recent_pit - field_recent_pit,
             "team_pit_stop_count": mean_or(team_recent10, "pit_stop_count", 1),
             "track_avg_pit_stops": mean_or(c_hist, "pit_stop_count", 1),
@@ -1929,37 +4006,61 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
     return df
 
 
-def ml_predict_probabilities(drivers, race, current_round_data, bundle):
+def ml_predict_probabilities(drivers, race, current_round_data, bundle, stage="pre_weekend"):
     if not bundle:
         return {}, {"status": "no model bundle available"}
     try:
         feature_columns = bundle["feature_columns"]
         historical_df = historical_feature_context(bundle.get("ml_start_year", ML_START_YEAR), safe_int(race.get("season")) or now_local().year)
-        pred_df = build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns)
-        X = pred_df[feature_columns].replace([np.inf, -np.inf], np.nan).fillna(0)
+        pred_df = build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns, stage=stage)
+        feature_imputer = bundle.get("feature_imputer")
+        if feature_imputer is not None:
+            X, _ = prepare_feature_matrix(pred_df, feature_columns, imputer=feature_imputer)
+        else:
+            X = pred_df[feature_columns].replace([np.inf, -np.inf], np.nan).fillna(0)
 
         outputs = {}
+        raw_outputs = {}
+        calibrators = bundle.get("probability_calibrators") or {}
         for target, pair in bundle["models"].items():
-            rf_prob = pair["rf"].predict_proba(X)[:, 1]
-            hgb_prob = pair["hgb"].predict_proba(X)[:, 1]
+            parts = [
+                (pair["rf"].predict_proba(X)[:, 1], 0.32),
+                (pair["hgb"].predict_proba(X)[:, 1], 0.28),
+            ]
             if pair.get("et"):
-                et_prob = pair["et"].predict_proba(X)[:, 1]
-                outputs[target] = 0.44 * rf_prob + 0.34 * hgb_prob + 0.22 * et_prob
-            else:
-                outputs[target] = 0.55 * rf_prob + 0.45 * hgb_prob
+                parts.append((pair["et"].predict_proba(X)[:, 1], 0.18))
+            if pair.get("lgb") is not None:
+                parts.append((pair["lgb"].predict_proba(X)[:, 1], 0.14))
+            if pair.get("xgb") is not None:
+                parts.append((pair["xgb"].predict_proba(X)[:, 1], 0.08))
+            weight_sum = sum(weight for _, weight in parts)
+            raw = sum(prob * (weight / weight_sum) for prob, weight in parts)
+            raw_outputs[target] = raw
+            outputs[target] = apply_probability_calibrator(raw, calibrators.get(target))
         finish_pred = None
         finish_model = bundle.get("finish_model")
         if finish_model:
+            parts = [
+                (finish_model["rf"].predict(X), 0.30),
+                (finish_model["hgb"].predict(X), 0.38),
+            ]
             if finish_model.get("et"):
-                finish_pred = 0.40 * finish_model["rf"].predict(X) + 0.40 * finish_model["hgb"].predict(X) + 0.20 * finish_model["et"].predict(X)
-            else:
-                finish_pred = 0.52 * finish_model["rf"].predict(X) + 0.48 * finish_model["hgb"].predict(X)
+                parts.append((finish_model["et"].predict(X), 0.18))
+            if finish_model.get("lgb") is not None:
+                parts.append((finish_model["lgb"].predict(X), 0.14))
+            weight_sum = sum(weight for _, weight in parts)
+            finish_pred = sum(pred * (weight / weight_sum) for pred, weight in parts)
             finish_pred = np.clip(finish_pred, 1, max(20, len(pred_df)))
         lap_pred = None
         lap_scores = {}
         lap_model = bundle.get("lap_pace_model")
         if lap_model:
-            lap_pred = np.clip(lap_model.predict(X), 45, 180)
+            lap_raw_pred = lap_model.predict(X)
+            if str(bundle.get("lap_pace_model_kind") or "").endswith("lap_delta"):
+                baselines = pd.to_numeric(pred_df.get("track_lap_pace_baseline"), errors="coerce").fillna(pd.to_numeric(pred_df.get("driver_lap_pace"), errors="coerce").median()).to_numpy(dtype=float)
+                lap_pred = np.clip(baselines + np.clip(lap_raw_pred, -8, 8), 45, 180)
+            else:
+                lap_pred = np.clip(lap_raw_pred, 45, 180)
             lap_raw = {
                 row["driver_id"]: lap_pred[idx]
                 for idx, row in pred_df.iterrows()
@@ -1974,6 +4075,13 @@ def ml_predict_probabilities(drivers, race, current_round_data, bundle):
                 "ml_win_probability": float(outputs.get("win", [0])[idx] * 100),
                 "ml_podium_probability": float(outputs.get("podium", [0])[idx] * 100),
                 "ml_top10_probability": float(outputs.get("top10", [0])[idx] * 100),
+                "uncalibrated_ml_win_probability": float(raw_outputs.get("win", [0])[idx] * 100),
+                "uncalibrated_ml_podium_probability": float(raw_outputs.get("podium", [0])[idx] * 100),
+                "uncalibrated_ml_top10_probability": float(raw_outputs.get("top10", [0])[idx] * 100),
+                "calibration_method": {
+                    key: (calibrators.get(key) or {}).get("method", "identity")
+                    for key in ["win", "podium", "top10"]
+                },
             }
             if finish_pred is not None:
                 item["predicted_finish_position"] = float(finish_pred[idx])
@@ -2306,7 +4414,7 @@ def infer_track_profile(race, historical_records, weather_summary, historical_we
 def constructor_score_map(constructor_standings):
     raw = {}
     for row in constructor_standings:
-        name = row.get("Constructor", {}).get("name")
+        name = canonical_constructor_name(row.get("Constructor", {}).get("name"))
         points = safe_float(row.get("points"))
         position = safe_int(row.get("position"))
         if name:
@@ -2508,12 +4616,30 @@ def setup_fastf1():
 def load_fastf1_session(season, round_no, code):
     if not setup_fastf1():
         return None
-    try:
+    def load():
         session = fastf1.get_session(int(season), int(round_no), code)
         session.load(laps=True, weather=True, messages=False)
+        return session
+    executor = None
+    try:
+        executor = ThreadPoolExecutor(max_workers=1)
+        future = executor.submit(load)
+        session = future.result(timeout=FASTF1_SESSION_LOAD_TIMEOUT_SECONDS)
+        executor.shutdown(wait=False, cancel_futures=True)
         print(f"FastF1 loaded {season} round {round_no} {code}")
         return session
+    except TimeoutError:
+        try:
+            executor.shutdown(wait=False, cancel_futures=True)
+        except Exception:
+            pass
+        print(f"FastF1 timed out after {FASTF1_SESSION_LOAD_TIMEOUT_SECONDS}s for {season} round {round_no} {code}")
+        return None
     except Exception as error:
+        try:
+            executor.shutdown(wait=False, cancel_futures=True)
+        except Exception:
+            pass
         print(f"FastF1 skipped {season} round {round_no} {code}: {error}")
         return None
 
@@ -2607,27 +4733,84 @@ def f1_timing_json(path, optional_404=True):
 
 
 def openf1_get(endpoint, params=None, optional_404=True):
+    global OPENF1_LAST_STATUS
     if not OPENF1_ENABLED:
+        OPENF1_LAST_STATUS = {"status": "disabled", "auth_required": False, "errors": []}
         return []
     if OPENF1_REQUEST_SLEEP > 0:
         time.sleep(OPENF1_REQUEST_SLEEP)
     endpoint = "/" + str(endpoint or "").lstrip("/")
+    headers = {
+        "User-Agent": "pitwall/3.0 openf1-optional",
+        "Accept": "application/json",
+    }
+    if OPENF1_ACCESS_TOKEN:
+        headers["Authorization"] = f"Bearer {OPENF1_ACCESS_TOKEN}"
+    elif OPENF1_USERNAME and OPENF1_PASSWORD:
+        raw = f"{OPENF1_USERNAME}:{OPENF1_PASSWORD}".encode("utf-8")
+        headers["Authorization"] = "Basic " + base64.b64encode(raw).decode("ascii")
     response = safe_get(
         OPENF1_BASE + endpoint,
         params=params or {},
-        headers={"User-Agent": "pitwall/3.0 openf1-optional"},
+        headers=headers,
         timeout=12,
         optional_404=optional_404,
+        return_on_statuses={401, 403},
     )
     if not response:
+        OPENF1_LAST_STATUS = {
+            "status": "unavailable",
+            "auth_required": False,
+            "errors": (OPENF1_LAST_STATUS.get("errors") or [])[-5:] + [f"{endpoint}: request_failed"],
+        }
+        return []
+    if response.status_code in {401, 403}:
+        detail = ""
+        try:
+            payload = response.json()
+            detail = str(payload.get("detail") or payload.get("message") or payload.get("error") or "")
+        except Exception:
+            detail = str(response.text or "")[:280]
+        status = "auth_required" if response.status_code == 401 else "forbidden"
+        live_restricted = "live f1 session" in detail.lower() or "authenticated users" in detail.lower()
+        OPENF1_LAST_STATUS = {
+            "status": "live_session_auth_required" if live_restricted else status,
+            "auth_required": response.status_code == 401 and not bool(OPENF1_ACCESS_TOKEN or (OPENF1_USERNAME and OPENF1_PASSWORD)),
+            "status_code": response.status_code,
+            "endpoint": endpoint,
+            "message": detail or ("Set OPENF1_ACCESS_TOKEN for authenticated OpenF1 endpoints." if response.status_code == 401 and not (OPENF1_ACCESS_TOKEN or (OPENF1_USERNAME and OPENF1_PASSWORD)) else "OpenF1 rejected the configured credentials or endpoint."),
+            "live_session_restricted": live_restricted,
+            "errors": (OPENF1_LAST_STATUS.get("errors") or [])[-5:] + [f"{endpoint}: {response.status_code}"],
+        }
         return []
     try:
         data = response.json()
     except Exception:
+        OPENF1_LAST_STATUS = {
+            "status": "malformed_response",
+            "auth_required": False,
+            "endpoint": endpoint,
+            "errors": (OPENF1_LAST_STATUS.get("errors") or [])[-5:] + [f"{endpoint}: non_json"],
+        }
         return []
     if isinstance(data, dict) and data.get("error"):
         print(f"OpenF1 unavailable for {endpoint}: {data.get('detail') or data.get('error')}")
+        OPENF1_LAST_STATUS = {
+            "status": "api_error",
+            "auth_required": False,
+            "endpoint": endpoint,
+            "message": data.get("detail") or data.get("error"),
+            "errors": (OPENF1_LAST_STATUS.get("errors") or [])[-5:] + [f"{endpoint}: {data.get('error')}"],
+        }
         return []
+    OPENF1_LAST_STATUS = {
+        "status": "ok",
+        "auth_required": False,
+        "endpoint": endpoint,
+        "rows": len(data) if isinstance(data, list) else None,
+        "authenticated": bool(OPENF1_ACCESS_TOKEN or (OPENF1_USERNAME and OPENF1_PASSWORD)),
+        "errors": OPENF1_LAST_STATUS.get("errors", [])[-5:],
+    }
     return data if isinstance(data, list) else []
 
 
@@ -3135,6 +5318,22 @@ def openf1_session_raw_metrics(session, known_drivers):
 
 
 def openf1_enhancement_scores(race, known_drivers):
+    if OPENF1_OPTIONAL_ONLY and not OPENF1_ACCESS_TOKEN and not (OPENF1_USERNAME and OPENF1_PASSWORD):
+        empty = {key: {} for key in [
+            "timing_session_result", "timing_starting_grid", "timing_lap_pace",
+            "timing_sector_performance", "timing_pit_execution", "timing_stint_strength",
+            "timing_telemetry_speed", "timing_position_gain", "timing_car_performance",
+        ]}
+        return {
+            "provider_status": "openf1_skipped_optional_no_token",
+            "openf1_status": {
+                "status": "skipped_optional_no_token",
+                "auth_required": True,
+                "message": "OpenF1 is optional. FIA documents, F1 timing/static feeds, FastF1, and Jolpica are used for grid/session data unless OPENF1_ACCESS_TOKEN is configured.",
+            },
+            "sessions": [],
+            **empty,
+        }
     sessions = openf1_candidate_sessions(race)
     empty = {key: {} for key in [
         "timing_session_result", "timing_starting_grid", "timing_lap_pace",
@@ -3142,7 +5341,9 @@ def openf1_enhancement_scores(race, known_drivers):
         "timing_telemetry_speed", "timing_position_gain", "timing_car_performance",
     ]}
     if not sessions:
-        return {"provider_status": "openf1_no_matching_free_sessions", "sessions": [], **empty}
+        status = OPENF1_LAST_STATUS.get("status")
+        provider = "openf1_auth_required" if status in {"auth_required", "forbidden", "live_session_auth_required"} else "openf1_no_matching_free_sessions"
+        return {"provider_status": provider, "openf1_status": dict(OPENF1_LAST_STATUS), "sessions": [], **empty}
 
     per_session = []
     notes = []
@@ -3161,7 +5362,9 @@ def openf1_enhancement_scores(race, known_drivers):
             "weight": weight,
         })
     if not per_session:
-        return {"provider_status": "openf1_reachable_but_no_driver_metrics", "sessions": notes, **empty}
+        status = OPENF1_LAST_STATUS.get("status")
+        provider = "openf1_auth_required" if status in {"auth_required", "forbidden", "live_session_auth_required"} else "openf1_reachable_but_no_driver_metrics"
+        return {"provider_status": provider, "openf1_status": dict(OPENF1_LAST_STATUS), "sessions": notes, **empty}
 
     keys = list(empty.keys())
     merged = {
@@ -3170,6 +5373,7 @@ def openf1_enhancement_scores(race, known_drivers):
     }
     return {
         "provider_status": "openf1_free_historical_timing_used",
+        "openf1_status": dict(OPENF1_LAST_STATUS),
         "sessions": notes,
         "driver_scores": merged["timing_car_performance"],
         **merged,
@@ -3702,12 +5906,15 @@ def fetch_latest_available_standings_with_fallback(season):
 def get_prediction_stage(current_round_data, event_start):
     has_qualifying = bool(current_round_data.get("qualifying"))
     has_results = bool(current_round_data.get("results"))
+    has_sprint = bool(current_round_data.get("sprint"))
     if has_results and now_local() > event_start:
         return "post_race_audited", "Post-race audited"
     if has_qualifying:
         return "post_qualifying", "Post-qualifying prediction"
+    if has_sprint:
+        return "post_sprint", "Post-sprint race-weekend prediction"
     if event_start - now_local() <= timedelta(days=3):
-        return "post_practice", "Practice-aware race-weekend prediction"
+        return "post_fp1", "Practice-aware race-weekend prediction"
     return "pre_weekend", "Pre-weekend prediction"
 
 
@@ -3768,7 +5975,7 @@ def get_prediction_weights(profile, weather_summary, stage, regulation_context=N
         weights["ml_podium_probability"] += 0.03
         weights["ml_finish_position_score"] += 0.03
         weights["ml_lap_time_forecast_score"] += 0.02
-    elif stage in {"post_practice", "pre_race", "live_adjusted"}:
+    elif stage in {"post_practice", "post_fp1", "post_fp2", "post_fp3", "pre_race", "live_adjusted"}:
         weights["fastf1_race_pace"] += 0.05
         weights["fastf1_consistency"] += 0.03
     else:
@@ -3834,7 +6041,7 @@ def data_quality_checks_for_driver(driver_id, component_scores, current_round_da
         penalties["missing_qualifying"] = 14 if stage in {"post_qualifying", "pre_race", "live_adjusted"} else 5
     if not current_round_data.get("laps"):
         missing.append("practice_or_lap_pace")
-        penalties["missing_practice_pace"] = 6 if stage in {"post_practice", "post_qualifying", "pre_race"} else 3
+        penalties["missing_practice_pace"] = 6 if stage in {"post_practice", "post_fp1", "post_fp2", "post_fp3", "post_qualifying", "pre_race"} else 3
     if not current_round_data.get("pitstops"):
         missing.append("pit_stop_data")
         penalties["missing_pit_stop_data"] = 4
@@ -4063,16 +6270,28 @@ def build_source_health_snapshot(current_round_data=None, timing_scores=None, fa
     fastf1_scores = fastf1_scores or {}
     upgrade_context = upgrade_context or {}
     calendar_context = calendar_context or {}
+    openf1_status = str((timing_scores or {}).get("provider_status") or "")
+    if "auth_required" in openf1_status or "forbidden" in openf1_status:
+        openf1_score = 30
+    elif "openf1" in openf1_status:
+        openf1_score = 70
+    else:
+        openf1_score = 48
+    dataset_sources = optional_dataset_source_statuses()
+    f1db_score = 82 if (dataset_sources.get("f1db") or {}).get("available") else 35
+    relbench_score = 70 if (dataset_sources.get("relbench_f1") or {}).get("available") else 30
     sources = [
-        source_status(88 if timing_scores.get("provider_status") not in {None, "failed"} else 42, "F1 Live Timing"),
+        source_status(88 if timing_scores.get("provider_status") not in {None, "failed"} else 42, "F1 timing/static feed"),
         source_status(82 if current_round_data.get("results") or current_round_data.get("qualifying") else 62, "Jolpica"),
-        source_status(70 if "openf1" in str(timing_scores.get("provider_status", "")).lower() else 48, "OpenF1"),
+        source_status(openf1_score, "OpenF1"),
         source_status(78 if fastf1_scores.get("sessions_loaded") else 42, "FastF1"),
         source_status(76 if current_round_data is not None else 50, "Open-Meteo"),
         source_status(74 if upgrade_context.get("sources") else 45, "FIA/F1 upgrade/regulation sources"),
         source_status(92 if current_round_data is not None else 52, "Local cache"),
         source_status(86 if ml_outputs else 40, "Model bundle"),
         source_status(82 if calendar_context.get("status") else 55, "Calendar"),
+        source_status(f1db_score, "F1DB historical dataset"),
+        source_status(relbench_score, "RelBench rel-f1 benchmark"),
     ]
     average_score = average([item["score"] for item in sources]) or 0
     return {
@@ -4080,7 +6299,44 @@ def build_source_health_snapshot(current_round_data=None, timing_scores=None, fa
         "overall_score": round(average_score, 2),
         "status": source_status(average_score, "Overall")["status"],
         "sources": sources,
+        "api_notes": {
+            "openf1": timing_scores.get("openf1_status") or dict(OPENF1_LAST_STATUS),
+            "f1db": dataset_sources.get("f1db"),
+            "relbench_f1": dataset_sources.get("relbench_f1"),
+        },
     }
+
+
+def sanitize_source_health(health):
+    if not isinstance(health, dict):
+        return health
+    out = dict(health)
+    sources = []
+    for item in health.get("sources", []) or []:
+        row = dict(item)
+        if row.get("source") == "F1 Live Timing":
+            row["source"] = "F1 timing/static feed"
+        sources.append(row)
+    out["sources"] = sources
+    return out
+
+
+def sanitize_timing_source_labels(value):
+    """Normalize legacy generated labels so archive/static timing is not presented as live."""
+    replacements = {
+        "F1 Live Timing": "F1 timing/static feed",
+        "official Formula 1 live timing static feeds": "official Formula 1 timing/static feeds",
+    }
+    if isinstance(value, dict):
+        return {k: sanitize_timing_source_labels(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [sanitize_timing_source_labels(v) for v in value]
+    if isinstance(value, str):
+        out = value
+        for old, new in replacements.items():
+            out = out.replace(old, new)
+        return out
+    return value
 
 
 def scenario_rankings(predictions, profile, weather_summary):
@@ -4258,9 +6514,11 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
             "fastf1_tyre_stint": fastf1_scores.get("fastf1_tyre_stint", {}).get(code),
         }
 
-        score = weighted_average([(component_scores.get(k), w) for k, w in weights.items()]) or 0
+        weighted_items = [(component_scores.get(k), w) for k, w in weights.items()]
+        score = weighted_average_penalized(weighted_items, min_coverage=0.65, neutral=50.0) or 0
+        _, component_coverage = weighted_average_with_coverage(weighted_items)
         available_weight = sum(w for k, w in weights.items() if component_scores.get(k) is not None)
-        confidence = min(100, max(0, available_weight * 100))
+        confidence = min(100, max(0, available_weight * 100 * max(0.25, component_coverage)))
 
         reasons = sorted(
             [(k, v) for k, v in component_scores.items() if v is not None],
@@ -4277,6 +6535,7 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
             "confidence": round(confidence, 1),
             "reason": "; ".join(reason_names),
             "component_scores": {k: round(v, 2) if v is not None else None for k, v in component_scores.items()},
+            "component_coverage": round(component_coverage, 3),
             "predicted_finish_position": round(ml.get("predicted_finish_position"), 2) if ml.get("predicted_finish_position") is not None else None,
             "predicted_lap_pace_seconds": round(ml.get("predicted_lap_pace_seconds"), 3) if ml.get("predicted_lap_pace_seconds") is not None else None,
             "image": None,
@@ -4305,7 +6564,7 @@ def rank_prediction(drivers, constructor_standings, last_results, current_round_
         ml_outputs=ml_outputs,
     )
     model = {
-        "source": "Hybrid full-data cache model: Jolpica full history + official Formula 1 live timing static feeds + optional OpenF1 free historical timing + FastF1 + Open-Meteo + ICS/F1 calendar",
+        "source": "Hybrid full-data cache model: Jolpica full history + official Formula 1 timing/static feeds + optional OpenF1 free historical timing + FastF1 + Open-Meteo + ICS/F1 calendar",
         "logic": "Stacked racecraft ensemble: RF/HGB/ExtraTrees win/podium/top10 classifiers, RF/HGB/ExtraTrees finish-position regressor, neural lap-time forecaster, transparent driver/team/circuit formula, official/OpenF1 timing sectors/speeds/stints/pits, recency-weighted form, qualifying/grid strength, track traits, weather traits, tyre strategy, sprint, reliability, upgrades, and regulation-era modifiers",
         "prediction_stage": stage,
         "prediction_data_version": PREDICTION_DATA_VERSION,
@@ -4623,6 +6882,33 @@ def save_run_status(status, details):
     BRIEFINGS_DIR.mkdir(exist_ok=True)
     path = BRIEFINGS_DIR / "latest-run-status.md"
     path.write_text(f"# PitWall Run Status\n\nGenerated: {now_local().strftime('%A, %d %B %Y, %I:%M %p %Z')}\n\nStatus: {status}\n\n## Details\n\n{details}\n", encoding="utf-8")
+    ensure_dirs()
+    registry = load_or_build_source_registry(resolve_target_season())
+    json_payload = {
+        "schema_version": "pitwall-run-status-v1",
+        "generated_at": now_local().isoformat(),
+        "status": status,
+        "details": details,
+        "source_discovery": registry,
+        "fia_index_refresh": {"enabled": FIA_DOCUMENTS_ENABLED, "status": registry.get("fia_source_discovery_status")},
+        "cache_hits": {"source_registry": registry.get("cache_status") == "hit"},
+        "cache_misses": {"fia_documents": not bool(registry.get("fia_season_document_url"))},
+        "documents_parsed": 0,
+        "documents_skipped": 0,
+        "parse_failures": [],
+        "sessions_detected": [],
+        "sessions_waiting_for_data": [],
+        "predictions_regenerated": status == "Success" and "Generated" in str(details),
+        "model_retraining": "forced" if os.getenv("FORCE_RETRAIN", "false").lower() == "true" else "auto",
+        "frontend_contracts_written": (DATA_CACHE_DIR / "frontend-contract.json").exists(),
+        "timing_freshness": timing_freshness_status(source="Generated contract"),
+        "warnings": registry.get("warnings", []),
+        "errors": registry.get("errors", []),
+    }
+    json_payload = sanitize_public_paths(json_payload)
+    LATEST_RUN_STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    LATEST_RUN_STATUS_PATH.write_text(json.dumps(json_payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    sqlite_insert_run_status("latest_run_status", json_payload)
     return path
 
 
@@ -4687,7 +6973,7 @@ def actual_result_from_race(race):
             "position": safe_int(result.get("positionOrder") or result.get("position")),
             "driver_id": driver.get("driverId"),
             "name": " ".join([driver.get("givenName", ""), driver.get("familyName", "")]).strip() or driver.get("driverId"),
-            "team": constructor.get("name"),
+            "team": canonical_constructor_name(constructor.get("name")),
             "status": result.get("status"),
             "points": safe_float(result.get("points")),
         })
@@ -4974,7 +7260,11 @@ Retrain rule: the workflow does not train on a just-finished GP until the config
 - Installs dependencies, compiles `f1_briefing.py`, and runs unit tests before generating outputs.
 - Checks whether a new completed GP result exists in Jolpica after `FINAL_RESULTS_DELAY_HOURS`.
 - Retrains automatically when the model is missing, the schema changes, `FORCE_RETRAIN=true`, or a new completed GP result is available.
-- Uses official Formula 1 live timing first, then optional OpenF1 free historical sessions as an extra timing cross-check when reachable.
+- Uses official Formula 1 timing/static feeds first, then optional OpenF1 free historical sessions as an extra timing cross-check when reachable.
+- Discovers the active source registry for the target season and marks future FIA pages pending instead of inventing URLs.
+- Checks FIA decision-document index/cache incrementally and surfaces parse/cache health in JSON contracts.
+- Tracks session lifecycle states after FP/Sprint/Qualifying/Race and exposes waiting states when APIs or documents lag.
+- Labels timing as Live only when freshness checks pass; stale/archive/latest fallback data is not presented as live telemetry.
 - Waits and keeps the current model when a GP is just over but the result delay has not passed or the API still has no final `Results` rows.
 - Generates Sprint/Race-only predictions, updates briefings, `briefings/index.json`, `data_cache/latest-model-debug.json`, and this file.
 - Generates frontend contracts: `data_cache/frontend-contract.json`, `data_cache/model-status.json`, `data_cache/backtest-history.json`, `data_cache/model_corrections.json`, and `data_cache/features/*.json`.
@@ -4991,6 +7281,12 @@ Retrain rule: the workflow does not train on a just-finished GP until the config
 - `send_email`: allow or suppress email sending.
 - `force_notify`: send email/GitHub issue output outside the normal notification window.
 - `notification_window_hours`: change how close to the event notifications are allowed.
+- `target_season`, `target_event`, `target_session`: focus season/event/session discovery or ingestion.
+- `refresh_source_registry`, `refresh_fia_documents`: refresh official source discovery and FIA index metadata.
+- `force_reparse_fia_documents`, `force_redownload_fia_documents`: rebuild FIA parsed outputs or redownload PDFs when explicitly requested.
+- `force_session_ingest`, `dry_run_session_ingest`: override or preview session ingestion.
+- `disable_live_mode`: force timing surfaces away from true live labels.
+- `enable_feature_ablation`, `enable_hyperparameter_search`: opt into heavier manual model diagnostics.
 
 Local equivalent: run `.venv/bin/python f1_briefing.py --force-retrain` or set the same environment variables before running.
 """
@@ -5011,6 +7307,12 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
     feature_columns = feature_columns or (bundle or {}).get("feature_columns") or meta.get("feature_columns") or []
     decision = decision or (bundle or {}).get("training_decision") or model_retrain_status(False)
     ranking = (metrics.get("finish_position") or {}).get("ranking") or metrics.get("win_probability_ranking") or {}
+    baselines = metrics.get("baselines") or {}
+    validation_split = metrics.get("validation_split") or meta.get("validation_split") or {}
+    lap_metrics = metrics.get("lap_time_delta_forecast") or metrics.get("neural_lap_time_forecast") or {}
+    registry = load_or_build_source_registry(resolve_target_season())
+    leakage = audit_feature_leakage("pre_weekend", feature_columns)
+    dataset_sources = optional_dataset_source_statuses()
     payload = {
         "schema_version": MODEL_SCHEMA_VERSION,
         "model_version": MODEL_SCHEMA_VERSION,
@@ -5035,12 +7337,52 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
             "top3_recall": ranking.get("top3_recall"),
             "top5_recall": ranking.get("top5_recall"),
             "top10_recall": ranking.get("top10_recall"),
+            "spearman_rank_correlation": ranking.get("spearman"),
+            "ndcg_at_3": ranking.get("ndcg_at_3"),
+            "ndcg_at_10": ranking.get("ndcg_at_10"),
             "exact_position_accuracy": ranking.get("exact_position_accuracy"),
             "mean_position_error": ranking.get("mean_position_error"),
-            "lap_time_mae": metric_get(metrics, "neural_lap_time_forecast", "mae_seconds"),
-            "lap_time_rmse": metric_get(metrics, "neural_lap_time_forecast", "rmse_seconds"),
+            "lap_time_mae": lap_metrics.get("mae_seconds"),
+            "lap_time_rmse": lap_metrics.get("rmse_seconds"),
         },
         "raw_metrics": metrics,
+        "validation": {
+            "grouped_split_method": validation_split.get("method", "chronological_race_group_split"),
+            "race_grouped": True,
+            "rolling_validation": True,
+            "train_races": validation_split.get("train_races"),
+            "validation_races": validation_split.get("validation_races"),
+            "validation_rows": validation_split.get("validation_rows"),
+            "test_races": validation_split.get("test_races"),
+            "train_seasons": validation_split.get("train_seasons"),
+            "validation_seasons": validation_split.get("validation_seasons"),
+            "test_seasons": validation_split.get("test_seasons"),
+            "leakage_check": leakage,
+            "warning": "Historical fallback metrics may be used when saved bundle metadata predates this schema.",
+        },
+        "baseline_comparison": {
+            "grid_order_baseline": {"status": "tracked", **(baselines.get("grid_order") or {})},
+            "constructor_standings_baseline": {"status": "tracked", **(baselines.get("constructor_form") or {})},
+            "driver_championship_baseline": {"status": "tracked", **(baselines.get("driver_championship_form") or {})},
+            "recent_3_race_form_baseline": {"status": "tracked", **(baselines.get("driver_recent_form") or {})},
+            "qualifying_only_baseline": {"status": "tracked_after_qualifying", **(baselines.get("qualifying_only") or {})},
+            "practice_pace_only_baseline": {"status": "tracked_after_practice"},
+            "old_hybrid_hand_weighted_baseline": {"status": "retained_as_fallback"},
+        },
+        "calibration": {
+            "method": "empirical_quantile_bins_plus_race_level_probability_normalization",
+            "targets": ["win", "podium", "top10"],
+            "status": "available_when_predictions_generated",
+            "details": meta.get("probability_calibration") or {k: (v or {}).get("calibration_method") for k, v in metrics.items() if k in {"win", "podium", "top10"}},
+        },
+        "feature_ablation": {
+            "enabled": ENABLE_FEATURE_ABLATION,
+            "groups": ["grid/qualifying", "driver form", "team form", "circuit history", "practice pace", "sprint signals", "weather", "FIA upgrades", "PU/reliability", "FIA documents", "FastF1", "OpenF1"],
+            "status": "manual_only" if not ENABLE_FEATURE_ABLATION else "enabled",
+        },
+        "source_registry": registry,
+        "dataset_sources": dataset_sources,
+        "fia_ingestion": fia_document_summary(registry),
         "source_health": latest_source_health_from_index(),
         "correction_log_summary": correction_log_summary(),
         "champion_challenger": champion_challenger_status(decision, metrics),
@@ -5057,12 +7399,22 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
         ],
         "errors": errors or [],
         "limitations": [
-            "Live race adjustments only become official model output when timing data and generated contracts are refreshed.",
-            "2026 Boost and Active Aero fields are explainable proxies until full 2026 telemetry is available.",
+            "Live race adjustments only become official model output when timing data is genuinely fresh and generated contracts are refreshed.",
+            "Timing fallback and archived data are labelled as replay/archive, never live telemetry.",
+            "2026 Boost and Active Aero fields are explainable proxies until full 2026+ timing and technical evidence exists.",
             "Post-race corrections remain pending until official result rows are available after the configured delay.",
+            "F1 predictions cannot be guaranteed because crashes, red flags, failures, penalties, strategy, weather, and source delays are inherently uncertain.",
         ],
     }
+    payload = sanitize_public_paths(payload)
     MODEL_STATUS_JSON_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    write_model_artifacts({
+        **meta,
+        "metrics": metrics,
+        "feature_columns": feature_columns,
+        "feature_columns_hash": meta.get("feature_columns_hash") or feature_columns_hash(feature_columns),
+        "training_decision": decision,
+    })
     return MODEL_STATUS_JSON_PATH
 
 
@@ -5084,8 +7436,8 @@ def latest_source_health_from_index():
     for briefing in briefings:
         health = briefing.get("source_health") or briefing.get("source_health_snapshot") or (briefing.get("prediction_model") or {}).get("source_health_snapshot")
         if health:
-            return health
-    return build_source_health_snapshot()
+            return sanitize_source_health(health)
+    return sanitize_source_health(build_source_health_snapshot())
 
 
 def correction_log_summary():
@@ -5120,14 +7472,210 @@ def champion_challenger_status(decision, metrics):
 def model_promotion_decision(decision, metrics):
     finish = metrics.get("finish_position") or {}
     ranking = finish.get("ranking") or metrics.get("win_probability_ranking") or {}
+    baselines = metrics.get("baselines") or {}
+    beats = finish.get("beats_baselines") or {}
     blockers = []
     if safe_float(finish.get("mae")) is None:
         blockers.append("finish_position_mae_missing")
     if safe_float(ranking.get("top3_recall")) is None:
         blockers.append("top3_recall_missing")
+    for required in ["grid_order", "qualifying_only", "constructor_form"]:
+        if required in baselines and beats.get(required) is not True:
+            blockers.append(f"did_not_beat_{required}_baseline")
+    out_of_time = metrics.get("out_of_time_test") or {}
+    oot_ranking = out_of_time.get("ranking") or {}
+    oot_baselines = out_of_time.get("baselines") or {}
+    oot_mae = safe_float(out_of_time.get("finish_mae"))
+    for required in ["grid_order", "qualifying_only", "constructor_form"]:
+        baseline = oot_baselines.get(required) or {}
+        baseline_mae = safe_float(baseline.get("finish_mae"))
+        if oot_mae is not None and baseline_mae is not None and oot_mae > baseline_mae:
+            blockers.append(f"out_of_time_did_not_beat_{required}_finish_mae")
+        baseline_ranking = baseline.get("ranking") or {}
+        for metric_name, tolerance in [("winner_hit", 0.0), ("top3_recall", 0.02), ("top10_recall", 0.02), ("spearman", 0.02)]:
+            model_value = safe_float(oot_ranking.get(metric_name))
+            baseline_value = safe_float(baseline_ranking.get(metric_name))
+            if model_value is not None and baseline_value is not None and model_value + tolerance < baseline_value:
+                blockers.append(f"out_of_time_did_not_beat_{required}_{metric_name}")
     if blockers:
-        return {"decision": "hold_champion", "blockers": blockers}
-    return {"decision": "promote_if_tests_passed", "blockers": []}
+        return {"decision": "hold_champion", "blockers": sorted(set(blockers)), "baseline_gate": beats}
+    return {"decision": "promote_if_tests_passed", "blockers": [], "baseline_gate": beats}
+
+
+def load_or_build_source_registry(season):
+    ensure_dirs()
+    path = SOURCE_REGISTRY_DIR / f"{season}.json"
+    if path.exists() and not REFRESH_SOURCE_REGISTRY:
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    # Contract generation must not require live network. Use configured/default
+    # URLs and mark missing future FIA pages as pending.
+    return build_source_registry(season, championship_html="", formula1_html="")
+
+
+def build_session_timeline_from_race(race, source_url=None):
+    season = safe_int(race.get("season")) or resolve_target_season()
+    round_no = safe_int(race.get("round")) or 0
+    event_slug = make_slug(race.get("raceName"))
+    fields = [
+        ("FirstPractice", "FP1", "fp1"),
+        ("SecondPractice", "FP2", "fp2"),
+        ("ThirdPractice", "FP3", "fp3"),
+        ("SprintQualifying", "Sprint Qualifying", "sprint_qualifying"),
+        ("Sprint", "Sprint", "sprint"),
+        ("Qualifying", "Qualifying", "qualifying"),
+        ("Race", "Race", "race"),
+    ]
+    sessions = []
+    now_utc = datetime.now(timezone.utc)
+    for field, name, session_type in fields:
+        payload = race if field == "Race" else race.get(field) or {}
+        date = payload.get("date") or (race.get("date") if field == "Race" else None)
+        time_value = payload.get("time") or (race.get("time") if field == "Race" else None) or "00:00:00Z"
+        start = parse_datetime_utc(f"{date}T{time_value}" if date else None)
+        if not start:
+            continue
+        duration_minutes = 90 if session_type == "race" else 60 if session_type.startswith("fp") else 75 if session_type == "qualifying" else 45
+        end = start + timedelta(minutes=duration_minutes)
+        sessions.append(evaluate_session_lifecycle({
+            "season": season,
+            "round": round_no,
+            "event_name": race.get("raceName"),
+            "event_slug": event_slug,
+            "session_name": name,
+            "session_type": session_type,
+            "official_start_time_local": start.astimezone(USER_TIMEZONE).isoformat(),
+            "official_end_time_local": end.astimezone(USER_TIMEZONE).isoformat(),
+            "official_start_time_utc": start.isoformat(),
+            "official_end_time_utc": end.isoformat(),
+            "source_url": source_url,
+            "source_type": "jolpica_schedule_fallback",
+            "source_confidence": 0.62,
+            "source_conflicts": [],
+            "ingested_document_ids": [],
+            "ingested_api_sources": [],
+            "inferred": True,
+        }, now=now_utc, data_available=False))
+    return sessions
+
+
+def sanitize_session_timeline_for_stage(session_timeline, stage):
+    order = {
+        "pre_weekend": [],
+        "post_fp1": ["fp1"],
+        "post_fp2": ["fp1", "fp2"],
+        "post_fp3": ["fp1", "fp2", "fp3"],
+        "post_sprint_qualifying": ["fp1", "sprint_qualifying"],
+        "post_sprint": ["fp1", "sprint_qualifying", "sprint"],
+        "post_qualifying": ["fp1", "fp2", "fp3", "sprint_qualifying", "sprint", "qualifying"],
+        "pre_race": ["fp1", "fp2", "fp3", "sprint_qualifying", "sprint", "qualifying"],
+        "live_adjusted": ["fp1", "fp2", "fp3", "sprint_qualifying", "sprint", "qualifying"],
+        "post_race_audited": ["fp1", "fp2", "fp3", "sprint_qualifying", "sprint", "qualifying", "race"],
+    }
+    completed = set(order.get(stage or "pre_weekend", []))
+    sanitized = []
+    for session in session_timeline or []:
+        row = dict(session)
+        session_type = row.get("session_type")
+        if session_type in completed:
+            row["status"] = "data_ingested"
+            row.setdefault("data_available_at", row.get("last_checked_at") or now_local().isoformat())
+            api_sources = set(row.get("ingested_api_sources") or [])
+            api_sources.add("stage_contract")
+            row["ingested_api_sources"] = sorted(api_sources)
+        sanitized.append(row)
+    return sanitized
+
+
+def session_contract_state(session_timeline):
+    last_ingested = next((s for s in reversed(session_timeline or []) if s.get("status") == "data_ingested"), None)
+    next_session = next((s for s in session_timeline or [] if s.get("status") not in {"data_ingested", "archive"}), None)
+    pending = [
+        s for s in session_timeline or []
+        if s.get("status") in {"completed", "waiting_for_api_data", "active_without_live_data", "delayed", "stale"}
+    ]
+    return {
+        "last_ingested_session": last_ingested,
+        "next_session_to_ingest": next_session,
+        "pending_session_checks": pending,
+        "session_data_delay_status": "waiting" if pending else "clear",
+        "session_official_status": "partial" if session_timeline else "unavailable",
+    }
+
+
+def fia_document_summary(registry=None, entry=None):
+    registry = registry or {}
+    season = safe_int((entry or {}).get("season")) or safe_int(registry.get("season")) or resolve_target_season()
+    season_index = FIA_DOCUMENT_CACHE_DIR / str(season) / "season_index.json"
+    should_refresh = FIA_DOCUMENTS_ENABLED and (not season_index.exists() or (REFRESH_FIA_DOCUMENTS and season not in _FIA_REFRESHED_SEASONS))
+    if should_refresh:
+        try:
+            refresh_fia_documents_for_season(season, registry=registry, refresh=REFRESH_FIA_DOCUMENTS)
+        except Exception as error:
+            print(f"FIA document refresh failed, using cached summary if available: {error}")
+    docs = []
+    parse_errors = []
+    cache_hits = 0
+    cache_misses = 0
+    if season_index.exists():
+        try:
+            payload = json.loads(season_index.read_text(encoding="utf-8"))
+            docs = payload.get("documents") if isinstance(payload, dict) else payload
+            docs = docs if isinstance(docs, list) else []
+            cache_hits += 1
+        except Exception as error:
+            parse_errors.append(str(error))
+    else:
+        cache_misses += 1
+    by_type = {}
+    for doc in docs:
+        by_type[doc.get("document_type") or "unknown"] = by_type.get(doc.get("document_type") or "unknown", 0) + 1
+        if doc.get("parse_error"):
+            parse_errors.append(doc.get("parse_error"))
+    return {
+        "fia_documents_enabled": FIA_DOCUMENTS_ENABLED,
+        "fia_season_url": registry.get("fia_season_document_url"),
+        "fia_source_discovery_status": registry.get("fia_source_discovery_status") or "not_checked",
+        "fia_documents_available": bool(docs),
+        "fia_latest_document": docs[0] if docs else None,
+        "fia_document_count": len(docs),
+        "fia_documents_by_type": by_type,
+        "fia_session_timetable": [],
+        "fia_upgrade_summary": {"updates": [], "status": "pending_fia_document_parse" if not docs else "available"},
+        "fia_pu_summary": {"drivers": {}, "status": "pending_fia_document_parse" if not docs else "available"},
+        "fia_infringement_summary": {"items": [], "status": "pending_fia_document_parse" if not docs else "available"},
+        "latest_fia_ingested_at": None,
+        "fia_parse_errors": parse_errors[:20],
+        "fia_cache_hits": cache_hits,
+        "fia_cache_misses": cache_misses,
+    }
+
+
+def enrich_predictions_with_quality_outputs(rows, source_health=None, stage=None):
+    normalized = normalize_race_probabilities(rows or [])
+    simulation = simulate_race_outcomes(normalized, runs=GITHUB_ACTIONS_RACE_SIMULATION_RUNS if os.getenv("GITHUB_ACTIONS") else min(RACE_SIMULATION_RUNS, 1000))
+    sim_by_driver = {row.get("driver_id"): row for row in simulation.get("drivers", [])}
+    for row in normalized:
+        uncertainty = uncertainty_for_prediction(row, source_health=source_health, stage=stage)
+        row.setdefault("uncertainty", uncertainty)
+        row.setdefault("uncertainty_score", uncertainty["total_uncertainty"])
+        row.setdefault("prediction_confidence", row.get("confidence"))
+        row.setdefault("confidence_interval_low", row.get("best_case_finish"))
+        row.setdefault("confidence_interval_high", row.get("worst_case_finish"))
+        row.setdefault("uncertainty_reasons", uncertainty["uncertainty_reasons"])
+        row.setdefault("low_confidence_reason", ", ".join(uncertainty["uncertainty_reasons"]) if uncertainty["uncertainty_reasons"] else None)
+        row.setdefault("cannot_know_factors", [
+            "safety cars, red flags, crashes, weather shifts, mechanical issues, and late FIA decisions can change outcomes",
+        ])
+        row.setdefault("prediction_risk_level", uncertainty["prediction_risk_level"])
+        row.setdefault("recommended_interpretation", "Use as calibrated probabilities and uncertainty-aware ranking, not a guarantee.")
+        row.setdefault("dnf_probability", round(clamp(100 - (safe_float(row.get("reliability")) or 70), 2, 45, 12), 2))
+        row.setdefault("classified_finish_probability", round(100 - row["dnf_probability"], 2))
+        sim = sim_by_driver.get(row.get("driver_id")) or {}
+        row.setdefault("simulation", sim)
+    return normalized, simulation
 
 
 def normalize_entry_contract(entry):
@@ -5197,10 +7745,31 @@ def normalize_entry_contract(entry):
                 break
         return normalized
 
+    source_health = sanitize_source_health(
+        entry.get("source_health")
+        or entry.get("source_health_snapshot")
+        or prediction_model.get("source_health_snapshot")
+        or build_source_health_snapshot()
+    )
     full_grid = normalize_prediction_items(entry.get("full_grid") or entry.get("all_predictions") or entry.get("top10") or [])
+    full_grid, simulation = enrich_predictions_with_quality_outputs(full_grid, source_health=source_health, stage=stage)
     top10 = normalize_prediction_items(entry.get("top10") or full_grid[:10], limit=10)
+    top10, _ = enrich_predictions_with_quality_outputs(top10, source_health=source_health, stage=stage)
     if not full_grid:
         full_grid = top10
+    registry = entry.get("source_registry") or load_or_build_source_registry(season)
+    fia_summary = fia_document_summary(registry, entry)
+    session_timeline = entry.get("session_timeline") or build_session_timeline_from_race(race, registry.get("formula1_season_url")) if race else []
+    session_timeline = sanitize_session_timeline_for_stage(session_timeline, stage)
+    session_state = session_contract_state(session_timeline)
+    timing = entry.get("timing_status") or timing_freshness_status(
+        last_updated=entry.get("generated_iso"),
+        now=now_local().astimezone(timezone.utc),
+        session_end=entry.get("start_iso"),
+        has_fresh_packets=False,
+        source="Generated contract",
+    )
+    effective_weights = entry.get("effective_model_weights") or prediction_model.get("stage_weights") or stage_prediction_weights(stage, entry, entry.get("weather") or {})
     return {
         **entry,
         "race_id": race_id,
@@ -5214,8 +7783,43 @@ def normalize_entry_contract(entry):
         "model_version": entry.get("model_version") or MODEL_SCHEMA_VERSION,
         "schema_version": entry.get("schema_version") or MODEL_SCHEMA_VERSION,
         "prediction_data_version": PREDICTION_DATA_VERSION,
-        "source_health": entry.get("source_health") or entry.get("source_health_snapshot") or prediction_model.get("source_health_snapshot") or build_source_health_snapshot(),
-        "source_status": entry.get("source_status") or entry.get("source_health") or prediction_model.get("source_health_snapshot") or build_source_health_snapshot(),
+        "source_registry": registry,
+        "session_timeline": session_timeline,
+        **session_state,
+        "effective_model_weights": {k: round(v, 4) for k, v in effective_weights.items()},
+        "source_health": source_health,
+        "source_status": entry.get("source_status") or source_health,
+        "source_conflicts": entry.get("source_conflicts") or [],
+        "model_limitations": [
+            "Predictions are uncertainty-aware estimates, not guaranteed outcomes.",
+            "Missing FIA documents, delayed APIs, weather shifts, race control, and mechanical failures reduce confidence.",
+        ],
+        "timing_mode": timing.get("timing_mode"),
+        "is_genuinely_live": timing.get("is_genuinely_live"),
+        **timing,
+        **fia_summary,
+        "session_feature_contributions": entry.get("session_feature_contributions") or {},
+        "driver_prediction_explanations": entry.get("driver_prediction_explanations") or {},
+        "team_prediction_explanations": entry.get("team_prediction_explanations") or {},
+        "calibration_status": entry.get("calibration_status") or {"method": "race_level_probability_normalization", "status": "available"},
+        "probability_normalization_status": {
+            "win_sum": round(sum(safe_float(row.get("win_probability")) or 0 for row in full_grid), 4),
+            "podium_sum": round(sum(safe_float(row.get("podium_probability")) or 0 for row in full_grid), 4),
+            "top10_sum": round(sum(safe_float(row.get("top10_probability")) or 0 for row in full_grid), 4),
+            "status": "normalized",
+        },
+        "missing_data_penalties": {row.get("driver_id"): row.get("missing_data_penalties", {}) for row in full_grid},
+        "confidence_breakdown": {
+            "average_confidence": round(average([row.get("confidence") for row in full_grid]) or 0, 2),
+            "average_uncertainty": round(average([row.get("uncertainty_score") for row in full_grid]) or 0, 2),
+            "source_health_score": source_health.get("overall_score"),
+        },
+        "dnf_survival": {row.get("driver_id"): {"dnf_probability": row.get("dnf_probability"), "classified_finish_probability": row.get("classified_finish_probability")} for row in full_grid},
+        "simulation": simulation,
+        "scenario_predictions": entry.get("scenario_predictions") or prediction_model.get("scenarios") or {},
+        "uncertainty_outputs": {row.get("driver_id"): row.get("uncertainty") for row in full_grid},
+        "upgrade_impact_contribution": entry.get("upgrade_context") or {},
+        "regulation_proxy_contribution": entry.get("regulation_context") or {},
         "scenarios": entry.get("scenarios") or prediction_model.get("scenarios") or scenario_rankings(full_grid, entry, entry.get("weather") or {}),
         "strategy": entry.get("strategy") or build_strategy_contract(entry, entry.get("weather") or {}, top10, prediction_model),
         "model_metrics": entry.get("model_metrics") or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}),
@@ -5322,6 +7926,23 @@ def generate_feature_store(briefings):
         ("session_features.json", session_features),
     ]:
         (FEATURES_DIR / name).write_text(json.dumps(data, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        try:
+            init_pitwall_db()
+            with sqlite3.connect(PITWALL_DB_PATH) as conn:
+                conn.execute(
+                    """
+                    INSERT INTO feature_snapshots(feature_id, created_at, feature_version, payload_json)
+                    VALUES (?, ?, ?, ?)
+                    ON CONFLICT(feature_id) DO UPDATE SET
+                        created_at=excluded.created_at,
+                        feature_version=excluded.feature_version,
+                        payload_json=excluded.payload_json
+                    """,
+                    (name, now_local().isoformat(), MODEL_SCHEMA_VERSION, json.dumps(data, ensure_ascii=False, default=str)),
+                )
+                conn.commit()
+        except Exception as error:
+            print(f"SQLite feature snapshot skipped for {name}: {error}")
 
 
 def generate_correction_log(briefings):
@@ -5369,6 +7990,7 @@ def generate_correction_log(briefings):
         "status": "Available" if corrections else "Pending",
         "corrections": corrections,
     }
+    payload = sanitize_public_paths(payload)
     MODEL_CORRECTIONS_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     return payload
 
@@ -5400,6 +8022,7 @@ def generate_backtest_history(briefings):
         "generated_at": now_local().isoformat(),
         "history": rows,
     }
+    payload = sanitize_public_paths(payload)
     BACKTEST_HISTORY_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     return payload
 
@@ -5408,15 +8031,50 @@ def generate_frontend_contract_files(index_data=None):
     ensure_dirs()
     data = index_data or latest_index_data()
     briefings = [normalize_entry_contract(entry) for entry in data.get("briefings", [])]
+    for entry in briefings:
+        sqlite_upsert_prediction(entry)
+    latest = briefings[0] if briefings else None
+    season = safe_int((latest or {}).get("season")) or resolve_target_season()
+    registry = (latest or {}).get("source_registry") or load_or_build_source_registry(season)
+    fia_summary = fia_document_summary(registry, latest)
+    timing = {
+        "live_timing_status": (latest or {}).get("live_timing_status", "Unavailable"),
+        "timing_mode": (latest or {}).get("timing_mode", "unavailable"),
+        "timing_source": (latest or {}).get("timing_source"),
+        "timing_last_updated_at": (latest or {}).get("timing_last_updated_at"),
+        "timing_freshness_seconds": (latest or {}).get("timing_freshness_seconds"),
+        "is_genuinely_live": (latest or {}).get("is_genuinely_live", False),
+        "live_fallback_reason": (latest or {}).get("live_fallback_reason", "No generated live timing status yet."),
+    }
     contract = {
         "schema_version": MODEL_SCHEMA_VERSION,
         "prediction_data_version": PREDICTION_DATA_VERSION,
         "generated_at": now_local().isoformat(),
+        "season": season,
+        "target_event": (latest or {}).get("race_name"),
+        "prediction_stage": (latest or {}).get("prediction_stage"),
+        "previous_prediction_stage": None,
+        "session_timeline": (latest or {}).get("session_timeline", []),
+        "last_ingested_session": (latest or {}).get("last_ingested_session"),
+        "next_session_to_ingest": (latest or {}).get("next_session_to_ingest"),
+        "pending_session_checks": (latest or {}).get("pending_session_checks", []),
+        "session_data_delay_status": (latest or {}).get("session_data_delay_status", "unknown"),
+        "session_official_status": (latest or {}).get("session_official_status", "unknown"),
+        "effective_model_weights": (latest or {}).get("effective_model_weights", {}),
+        "source_registry": registry,
+        "dataset_sources": optional_dataset_source_statuses(),
+        "source_health": (latest or {}).get("source_health") or latest_source_health_from_index(),
+        "source_conflicts": (latest or {}).get("source_conflicts", []),
+        "model_limitations": (latest or {}).get("model_limitations", []),
+        **fia_summary,
+        **timing,
         "briefings": briefings,
-        "latest": briefings[0] if briefings else None,
+        "latest": latest,
         "archive": build_archive_contract(briefings),
         "model_status": json.loads(MODEL_STATUS_JSON_PATH.read_text(encoding="utf-8")) if MODEL_STATUS_JSON_PATH.exists() else None,
+        "storage": {"sqlite_path": str(PITWALL_DB_PATH.relative_to(BASE_DIR)) if PITWALL_DB_PATH.is_relative_to(BASE_DIR) else str(PITWALL_DB_PATH), "supabase": supabase_sync_status()},
     }
+    contract = sanitize_public_paths(sanitize_timing_source_labels(contract))
     (DATA_CACHE_DIR / "frontend-contract.json").write_text(json.dumps(contract, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     generate_feature_store(briefings)
     corrections = generate_correction_log(briefings)
@@ -5552,6 +8210,9 @@ def create_or_update_issue(title, body):
 
 
 def commit_and_push(paths):
+    if os.getenv("AUTO_COMMIT_ENABLED", "false").lower() != "true":
+        print("Auto commit disabled. Set AUTO_COMMIT_ENABLED=true to let f1_briefing.py commit generated files.")
+        return
     paths = [Path(p) for p in paths if p]
     subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
     subprocess.run(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"], check=True)
@@ -5645,7 +8306,7 @@ def build_single_output_payload(event, bundle):
     elif target_type == "race":
         stage_label = f"Race prediction, {stage_label}"
 
-    ml_outputs, ml_debug = ml_predict_probabilities(drivers, race, current_round_data, bundle)
+    ml_outputs, ml_debug = ml_predict_probabilities(drivers, race, current_round_data, bundle, stage=stage)
     timing_scores = safe_step("External timing enhancement", external_timing_enhancement_scores, race, drivers) or {"provider_status": "failed"}
     fastf1_scores = safe_step("FastF1 enhancement", fastf1_enhancement_scores, season, round_no) or {"sessions_loaded": []}
 
@@ -5776,6 +8437,16 @@ Generated by PitWall. Predictions are model estimates, not guaranteed race resul
 def run(force_retrain=False):
     ensure_dirs()
     require_env_vars()
+    target_season = resolve_target_season()
+    source_registry = safe_step("Discover season source registry", load_or_build_source_registry, target_season)
+    if FIA_DOCUMENTS_ENABLED:
+        safe_step(
+            "Refresh FIA decision-document cache",
+            refresh_fia_documents_for_season,
+            target_season,
+            source_registry,
+            REFRESH_FIA_DOCUMENTS,
+        )
 
     bundle = safe_step("Train/load full-data ML model", train_ml_model, force_retrain)
     if not bundle:

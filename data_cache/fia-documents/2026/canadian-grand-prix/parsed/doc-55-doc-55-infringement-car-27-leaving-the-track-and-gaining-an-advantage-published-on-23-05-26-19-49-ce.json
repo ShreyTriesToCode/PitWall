@@ -1,0 +1,26 @@
+{
+  "document_id": "f9cb82cd4a9a8a66",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_27_-_leaving_the_track_and_gaining_an_advantage.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:33.509540+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Audi Revolut F1 Team Document 55 Date 23 May 2026 Time 13:20 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 27 -",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 55\nDate 23 May 2026\nTime 13:20\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 27 - Nico Hulkenberg\nCompetitor Audi Revolut F1 Team\nTime 12:17\nSession Sprint\nFact Car 27 left the track and rejoined in the same position, whilst defending against Car\n30\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations.\nDecision 10 second time penalty.\nReason The Stewards reviewed positioning/marshalling system data, video, team radio and\nin-car video evidence.\nCar 27 left the track at Turn 13 whilst defending against Car 30 into Turn 13, and by\ndoing so, gained a lasting advantage over car 30 by maintaining the position. The\ndriver rejoined the track in front of Car 30 and did not give the position back.\nThe Stewards deemed Car 27 was “defending” its position.\nThe Stewards determine that Car 27 gained a sporting advantage in position and that\nthis advantage was not relinquished. Consistent with the Driving Standards Guidelines\nthis is deemed to be a breach and the base lin"
+}

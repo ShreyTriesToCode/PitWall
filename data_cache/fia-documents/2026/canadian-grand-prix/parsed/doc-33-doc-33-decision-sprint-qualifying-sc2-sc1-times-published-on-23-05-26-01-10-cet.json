@@ -1,0 +1,26 @@
+{
+  "document_id": "1845a74ffdf8c7c6",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_sprint_qualifying_sc2-sc1_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:11.190662+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 33 Date 22 May 2026 Time 19:09 Title Decision - Sprint Qualifying SC2-SC1 Times Description Decision - Sprint Qualifying SC2-SC1 Times Enclosed CAN DOC 33 - Sprint Qualifying SC2-SC1 Times.p",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 33\nDate 22 May 2026\nTime 19:09\nTitle Decision - Sprint Qualifying SC2-SC1 Times\nDescription Decision - Sprint Qualifying SC2-SC1 Times\nEnclosed CAN DOC 33 - Sprint Qualifying SC2-SC1 Times.pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 33 \n  \nTo All Officials, All Teams      Date  22 May 2026 \n \n        Time  19:09 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Sprint Qualifying \n  \nFact The F1 cars below exceeded the 1:22.0 time limit between the Safety Car lines. \n \nNo. Car Driver Competitor Time of Day Lap Time \n1 6 Isack Hadjar Oracle Red Bull Racing 16:33:54 L2 (SQ1) \n2 5 Gabriel Bortoleto Audi Revolut F1 Team 16:34:08 L3 (SQ1) \n3 81 Oscar Piastri McLaren Mastercard F1 Team 16:34:26 L3 (SQ1) \n4 41 Arvid Lindblad Visa Cash App Racing Bulls F1 Team 16:36:38 L5 (SQ1) \n5 27 Nico Hulkenberg Audi Revolut F1 Team 16:37:12 L5 (SQ1) \n6 10 Pierre Gasly BWT Alpine F1 Team 16:37:56 "
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "9659c8933594198d",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_31_-_leaving_the_pitlane_after_the_end_of_the_session.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:31.127019+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 22 Date 22 May 2026 Time 14:29 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 31 - Esteban Ocon Com",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 22\nDate 22 May 2026\nTime 14:29\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 31 - Esteban Ocon\nCompetitor TGR Haas F1 Team\nTime 13:49\nSession Free Practice 1\nFact Car 31 left the pit lane when the light at the end of the pit lane was red.\nInfringement Breach of Article B1.6.3e of the FIA F1 Regulations.\nDecision No penalty is applied.\nReason The Stewards reviewed positioning/marshalling system data, video,\ntiming, telemetry and in-car video evidence.\n \nThe timing data shows the car crossed the line 1.11 seconds after the\nend of the session.\n \nHowever video evidence shows it is almost certain that the driver\ncould not have seen the light change from green to red due to his\nclose proximity to the line at the pit exit.\n \nTherefore although a breach of regulation was commited, in view of\nthe mitigating circumstances of the driver being unable to see the red\nlight, no penalty is applied.\n \nCompetitors are reminded that they have the right to appeal certain\ndecisions of the Stewards, in ac"
+}

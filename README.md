@@ -1,8 +1,8 @@
 # PitWall
 
-PitWall generates Formula 1 sprint and race predictions, publishes readable briefings, sends optional email/GitHub notifications, and serves a Next.js dashboard with a live timing view.
+PitWall generates Formula 1 sprint and race predictions, publishes readable briefings, sends optional email/GitHub notifications, and serves a Next.js dashboard with an honest timing/replay view.
 
-The backend keeps a cache-first pipeline around Jolpica, official Formula 1 live timing feeds, optional OpenF1 free historical timing, FastF1, Open-Meteo, FIA/F1 upgrade context, and local historical race caches.
+The backend keeps a cache-first pipeline around Jolpica, official Formula 1 timing/static feeds, optional OpenF1 free historical timing, FastF1, Open-Meteo, FIA decision documents, Formula1.com calendar context, and local historical race caches.
 
 ## What It Produces
 
@@ -15,6 +15,9 @@ The backend keeps a cache-first pipeline around Jolpica, official Formula 1 live
 - Backtest history in `data_cache/backtest-history.json`
 - Post-race correction log in `data_cache/model_corrections.json`
 - Feature store JSON in `data_cache/features/`
+- Source registry data in `data_cache/source_registry/`
+- Incremental FIA document cache in `data_cache/fia-documents/`
+- Latest run status in `data_cache/latest-run-status.json`
 - Latest model/accuracy report in `MODEL_STATUS.md`
 - Optional GitHub issue and Gmail output when notification gates open
 
@@ -22,17 +25,22 @@ The backend keeps a cache-first pipeline around Jolpica, official Formula 1 live
 
 The current model is a hybrid ensemble:
 
-- RF/HGB/ExtraTrees classifiers for win, podium, and top 10 probabilities
-- RF/HGB/ExtraTrees regressors for predicted finishing position
-- scaled `MLPRegressor` neural submodel for lap-time pace forecasting
+- regularized RF/HGB/ExtraTrees classifiers for win, podium, and top 10 probabilities, with optional LightGBM/XGBoost heads when installed
+- RF/HGB/ExtraTrees regressors for predicted finishing position, with optional LightGBM finishing/lap-delta models when installed
+- calibrated win/podium/top-10 probability outputs and race-level normalization
+- circuit-median lap-delta pace forecasting instead of raw lap-second prediction
+- season/race-group chronological validation; random row splits are not used for promotion
+- Spearman, NDCG@3/NDCG@10, finish MAE/RMSE, Brier, top-N precision/recall, and baseline comparisons
 - official F1 timing signals: sectors, speed trap/telemetry speed, stints, pits, starting grid, session result, and position gain
-- optional OpenF1 free historical timing signals: drivers, laps, session results, pits, stints, sector pace, speed, and grid/result cross-checks
+- optional OpenF1 enrichment: drivers, laps, session results, pits, stints, sector pace, speed, and grid/result cross-checks when public or authenticated access is available
 - driver traits: form, racecraft, reliability, qualifying delta, circuit history, grid gain, consistency
-- car/team traits: constructor form, current-season pace, recent form, pit execution, team strategy, official upgrade-package traits
+- car/team traits: constructor form, normalized constructor aliases, current-season pace, rolling 3/5/10-race form, pit execution, team strategy, official upgrade-package traits
+- FIA decision-document traits: timetable, classifications, grid, car presentation submissions, PU documents, deleted laps, infringements, decisions, and parse/cache health where available
 - track/weather traits: overtaking, tyre stress, safety-car/DNF proxy, rain, heat, wind, track-position sensitivity
 - regulation context for 2025 wing-flex, 2026 active-aero/power-unit reset, and later rules
 - 2026 Boost / Overtake Mode Intelligence using Boost, Manual Override, energy deployment, ERS-K, and Active Aero proxy fields
 - separate ranking score and confidence model, with confidence reduced by source health and missing-data penalties
+- uncertainty, DNF/survival, scenario, and Monte Carlo simulation outputs
 
 Model design notes live in `MODEL_DESIGN.md`.
 
@@ -77,7 +85,7 @@ Leave it unset when running locally with generated `data_cache/` and `briefings/
 
 ## Generate A Briefing
 
-Required for calendar matching:
+Optional for calendar matching. If this is unset or the feed is unavailable, PitWall now falls back to the Jolpica season schedule so local generation and retraining still run:
 
 ```bash
 export F1_ICS_URL="https://your-calendar-feed.ics"
@@ -102,13 +110,171 @@ Useful controls:
 
 ```bash
 FORCE_RETRAIN=true
-FULL_DATA_BACKFILL_LIMIT=10
+FULL_DATA_BACKFILL_LIMIT=0
 OUTPUT_MODE=auto
+AUTO_COMMIT_ENABLED=false
 FORCE_NOTIFY=false
 NOTIFICATION_WINDOW_HOURS=8
+TARGET_SEASON=auto
+TARGET_EVENT=
+TARGET_SESSION=
 ```
 
-Use `FORCE_RETRAIN=true` after model schema changes. Increase `FULL_DATA_BACKFILL_LIMIT` only when intentionally refreshing historical cache.
+Use `FORCE_RETRAIN=true` after model schema changes. `FULL_DATA_BACKFILL_LIMIT=0` means no artificial cap; set a positive value only when you deliberately want to bound a run for CI time or upstream politeness.
+
+Full retrain with FIA enabled and OpenF1 optional:
+
+```bash
+TARGET_SEASON=auto \
+FIA_DOCUMENTS_ENABLED=true \
+OPENF1_OPTIONAL_ONLY=true \
+FULL_DATA_BACKFILL_LIMIT=0 \
+FORCE_RETRAIN=true \
+.venv/bin/python f1_briefing.py
+```
+
+## Season Replenishment And FIA Documents
+
+PitWall is season-replenishable. `TARGET_SEASON=auto` resolves to the current calendar year, and operators can override future seasons without code edits:
+
+```bash
+TARGET_SEASON=2027
+FIA_DOCUMENTS_SEASON_URL_2027="https://www.fia.com/..."
+FORMULA1_CALENDAR_BASE_URL="https://www.formula1.com/en/racing"
+```
+
+Source discovery writes `data_cache/source_registry/{season}.json`. If a future FIA page is not configured or discoverable yet, PitWall marks FIA documents `pending_unavailable` and continues with Formula1.com, Jolpica, ICS, OpenF1, FastF1, and local cache. It never fabricates a future FIA URL and never treats a previous season page as active current-season truth.
+
+FIA decision documents are treated as highest-confidence official evidence when available. The incremental cache lives under:
+
+```text
+data_cache/fia-documents/{season}/season_index.json
+data_cache/fia-documents/{season}/{event_slug}/text/
+data_cache/fia-documents/{season}/{event_slug}/parsed/
+```
+
+The index can be refreshed without redownloading every PDF:
+
+```bash
+REFRESH_FIA_DOCUMENTS=true .venv/bin/python f1_briefing.py
+```
+
+Reparse cached FIA text/PDF output:
+
+```bash
+FORCE_REPARSE_FIA_DOCUMENTS=true .venv/bin/python f1_briefing.py
+```
+
+Redownload FIA PDFs only when intentionally needed:
+
+```bash
+FORCE_REDOWNLOAD_FIA_DOCUMENTS=true KEEP_FIA_PDFS=false .venv/bin/python f1_briefing.py
+```
+
+Session ingestion uses official session windows when available, waits after completed sessions, then marks `waiting_for_api_data`, `data_ingested`, or `unavailable` in the contract. Common controls:
+
+```bash
+SESSION_INGESTION_ENABLED=true
+SESSION_RESULT_DELAY_MINUTES=30
+PRACTICE_RESULT_DELAY_MINUTES=20
+QUALIFYING_RESULT_DELAY_MINUTES=30
+SPRINT_RESULT_DELAY_MINUTES=45
+RACE_RESULT_DELAY_HOURS=8
+FORCE_SESSION_INGEST=false
+DRY_RUN_SESSION_INGEST=false
+```
+
+To ingest one event/session:
+
+```bash
+TARGET_EVENT=canadian-grand-prix TARGET_SESSION=qualifying FORCE_SESSION_INGEST=true .venv/bin/python f1_briefing.py
+```
+
+Refresh FIA index only:
+
+```bash
+REFRESH_FIA_DOCUMENTS=true MAX_FIA_PDFS_DOWNLOAD_PER_RUN=0 .venv/bin/python f1_briefing.py
+```
+
+Regenerate frontend contracts from the latest backend artifacts:
+
+```bash
+.venv/bin/python -c "import f1_briefing as f; f.save_model_status_json(); f.generate_frontend_contract_files()"
+```
+
+## OpenF1 Auth And Live Timing
+
+OpenF1 is optional enrichment. During live sessions, OpenF1 can require authenticated API access. PitWall exposes that as `openf1_auth_required`/source-health state and falls back to Formula 1 timing/static feeds, FastF1, Jolpica, and cache-backed data. It does not hide 401/403 responses and does not fake live telemetry.
+
+Optional OpenF1 credentials:
+
+```bash
+OPENF1_ACCESS_TOKEN=
+OPENF1_USERNAME=
+OPENF1_PASSWORD=
+OPENF1_OPTIONAL_ONLY=true
+```
+
+The `/live` page shows `Live`, `Delayed`, `Stale`, `Archive`, or `Unavailable` based on actual freshness. `/api/f1timing` is rate-limited by IP so a deployed frontend does not hammer upstream timing sources:
+
+```bash
+F1_TIMING_RATE_LIMIT_MS=5000
+```
+
+## Local Store And Optional Supabase
+
+PitWall keeps JSON contracts for the Next.js app, and also writes run status, feature snapshots, and prediction history into `data_cache/pitwall.db`. Supabase sync is optional and disabled unless credentials are present:
+
+```bash
+PITWALL_DB_PATH=data_cache/pitwall.db
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+Supabase is not required for local tests, retraining, or Vercel deployment.
+
+## Optional Historical Datasets
+
+PitWall has optional adapters for F1DB and RelBench rel-f1. They are not live
+race-week sources and they are disabled by default so CI and local prediction
+runs never download heavy datasets unexpectedly.
+
+```bash
+F1DB_ENABLED=false
+F1DB_RELEASE_TAG=v2026.4.2
+F1DB_SQLITE_PATH=
+F1DB_CSV_DIR=
+RELBENCH_F1_ENABLED=false
+RELBENCH_F1_DOWNLOAD=false
+MODEL_ARTIFACTS_DIR=model_artifacts
+DRIFT_SPEARMAN_THRESHOLD=0.55
+```
+
+Use F1DB by downloading a release artifact from `https://github.com/f1db/f1db`
+and pointing `F1DB_SQLITE_PATH` at the local SQLite file, or `F1DB_CSV_DIR` at
+the extracted CSV directory. F1DB is CC-BY-4.0 and is used for historical
+circuit/pit-stop/relational context only when explicitly configured. RelBench
+rel-f1 is treated as an offline benchmark source, not direct live prediction
+truth.
+
+Dry-run discovery without publishing production contracts:
+
+```bash
+DRY_RUN_SESSION_INGEST=true REFRESH_SOURCE_REGISTRY=true .venv/bin/python f1_briefing.py
+```
+
+## Timing Status
+
+The `/live` page is a timing dashboard, not a fake telemetry stream. It shows `Live` only when fresh timing packets are available during an active session. Otherwise it downgrades to `Delayed`, `Stale`, `Archive`, or `Unavailable`, and exposes `timing_mode`, `timing_source`, `timing_last_updated_at`, `timing_freshness_seconds`, `is_genuinely_live`, and `live_fallback_reason`.
+
+Controls:
+
+```bash
+LIVE_TIMING_ENABLED=true
+LIVE_STALE_AFTER_SECONDS=60
+DISABLE_LIVE_MODE=false
+TIMING_REPLAY_MODE_ALLOWED=true
+```
 
 ## Frontend
 
@@ -119,7 +285,7 @@ Pages:
 - `/drivers` driver analysis
 - `/teams` constructor/team analysis
 - `/strategy` Strategy Lab
-- `/live` live timing dashboard
+- `/live` timing replay/live-status dashboard
 - `/model` Model Center
 - `/archive` race archive
 
@@ -133,7 +299,7 @@ API routes:
 - `/api/f1timing`
 - `/api/audio`
 
-The live page auto-selects the active or latest useful F1 session. It formats driver names, leaderboard, tyres/stints, weather, race control, and team radio when the source allows access.
+The timing page auto-selects the active or latest useful F1 session. It formats driver names, leaderboard, tyres/stints, weather, race control, and team radio when the source allows access. It only labels a feed live when freshness checks pass.
 
 ## GitHub Workflow
 
@@ -141,15 +307,15 @@ The live page auto-selects the active or latest useful F1 session. It formats dr
 
 Workflow shape:
 
-1. Restore FastF1, HTTP, full-race, and model caches.
+1. Restore FastF1, HTTP, full-race, FIA document, source-registry, and model caches.
 2. Install Python dependencies.
 3. Compile and run unit tests.
 4. Install frontend dependencies and run the Next.js build.
 5. Check whether Jolpica has a newly completed GP result after `FINAL_RESULTS_DELAY_HOURS`.
 6. Retrain automatically if a new result exists, the model is missing, the schema changed, or manual force retrain was requested.
-7. Generate sprint/race predictions and frontend JSON contracts.
+7. Refresh source registry/FIA index incrementally, ingest eligible sessions, generate sprint/race predictions, and write frontend JSON contracts.
 8. Validate generated JSON contracts and run unit tests again.
-9. Update `MODEL_STATUS.md`, `briefings/`, `briefings/index.json`, `data_cache/latest-model-debug.json`, `data_cache/frontend-contract.json`, `data_cache/model-status.json`, `data_cache/backtest-history.json`, and `data_cache/model_corrections.json`.
+9. Update `MODEL_STATUS.md`, `briefings/`, `briefings/index.json`, `data_cache/latest-model-debug.json`, `data_cache/frontend-contract.json`, `data_cache/model-status.json`, `data_cache/backtest-history.json`, `data_cache/model_corrections.json`, `data_cache/latest-run-status.json`, `data_cache/source_registry/`, and FIA/session feature artifacts.
 10. Upload complete artifacts for inspection.
 
 Automatic behavior:
@@ -171,6 +337,11 @@ Manual controls from `workflow_dispatch`:
 - `send_email`: allow or suppress email output.
 - `force_notify`: send notifications outside the normal gate.
 - `notification_window_hours`: change the event notification window.
+- `target_season`, `target_event`, `target_session`: focus a season/event/session.
+- `force_session_ingest`, `session_delay_minutes`, `dry_run_session_ingest`: control session lifecycle ingestion.
+- `refresh_fia_documents`, `refresh_source_registry`, `force_reparse_fia_documents`, `force_redownload_fia_documents`: control official source refreshes.
+- `disable_live_mode`: force timing UI away from true live labels.
+- `enable_feature_ablation`, `enable_hyperparameter_search`: opt into heavier manual model diagnostics.
 
 ## GitHub Ready Checklist
 
@@ -233,14 +404,89 @@ If the local repository already exists, use `git remote set-url origin https://g
 Primary backend sources:
 
 - Jolpica/Ergast-compatible race, standings, qualifying, laps, pit stops, sprint data
-- official Formula 1 live timing static feeds
+- FIA decision documents: timetable, classifications, starting grids, car presentation submissions, PU documents, race director notes, infringements, deleted laps, decisions, scrutineering, and post-race checks
+- Formula1.com season calendar and event pages
+- official Formula 1 timing/static feeds
 - OpenF1 free historical timing/session API when reachable
 - FastF1 session data when available
 - Open-Meteo forecast and historical weather
-- Formula1.com calendar checks
-- FIA/F1 upgrade and regulation pages, including car-presentation PDFs when reachable
+- FIA/F1 regulation pages
+
+Source confidence is explicit. FIA decision documents are highest confidence, Formula1.com and structured APIs are official/fallback context, and social upgrade sources are disabled by default because they are low-confidence and easy to misread.
 
 The project degrades gracefully. If a source is unavailable, it records source status and falls back to cached or lower-confidence signals instead of stopping the run.
+
+## Environment Reference
+
+Supported season/source/session/model controls include:
+
+```text
+TARGET_SEASON=auto
+SOURCE_DISCOVERY_ENABLED=true
+REFRESH_SOURCE_REGISTRY=false
+FIA_DOCUMENTS_ENABLED=true
+FIA_DOCUMENTS_BASE_URL=https://www.fia.com/documents/championships/fia-formula-one-world-championship-14
+FIA_DOCUMENTS_SEASON_URL=
+FIA_DOCUMENTS_SEASON_URL_2026=https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072
+FIA_DOCUMENTS_SEASON_URL_2027=
+FIA_DOCUMENTS_SEASON_URL_2028=
+FIA_DOCUMENT_CACHE_DIR=data_cache/fia-documents
+REFRESH_FIA_DOCUMENTS=false
+FORCE_REPARSE_FIA_DOCUMENTS=false
+FORCE_REDOWNLOAD_FIA_DOCUMENTS=false
+FIA_DOCUMENT_CACHE_TTL_MINUTES=60
+FIA_REQUEST_SLEEP_SECONDS=1.0
+MAX_FIA_DOCUMENTS_PER_RUN=0
+MAX_FIA_PDFS_DOWNLOAD_PER_RUN=0
+KEEP_FIA_PDFS=false
+FORMULA1_CALENDAR_BASE_URL=https://www.formula1.com/en/racing
+FORMULA1_SEASON_URL=
+SESSION_INGESTION_ENABLED=true
+SESSION_RESULT_DELAY_MINUTES=30
+PRACTICE_RESULT_DELAY_MINUTES=20
+QUALIFYING_RESULT_DELAY_MINUTES=30
+SPRINT_QUALIFYING_RESULT_DELAY_MINUTES=30
+SPRINT_RESULT_DELAY_MINUTES=45
+RACE_RESULT_DELAY_HOURS=8
+SESSION_RETRY_INTERVAL_MINUTES=20
+MAX_SESSION_RETRIES=8
+FORCE_SESSION_INGEST=false
+TARGET_EVENT=
+TARGET_SESSION=
+DRY_RUN_SESSION_INGEST=false
+LIVE_TIMING_ENABLED=true
+LIVE_STALE_AFTER_SECONDS=60
+DISABLE_LIVE_MODE=false
+TIMING_REPLAY_MODE_ALLOWED=true
+USE_SOCIAL_UPGRADE_SOURCES=false
+UPGRADE_MAX_WEIGHT_PRE_RUNNING=0.08
+UPGRADE_MAX_WEIGHT_POST_PRACTICE=0.05
+UPGRADE_MAX_WEIGHT_POST_QUALIFYING=0.03
+REGULATION_CONTEXT_URL_2026=https://www.fia.com/news/new-era-competition-fia-showcases-future-focused-formula-1-regulations-2026-and-beyond
+REGULATION_CONTEXT_URL_2027=
+REGULATION_CONTEXT_URL_2028=
+ENABLE_RACE_SIMULATION=true
+RACE_SIMULATION_RUNS=5000
+GITHUB_ACTIONS_RACE_SIMULATION_RUNS=1000
+TRAINING_MODE=auto
+MODEL_TRAINING_MAX_SECONDS=900
+ENABLE_FEATURE_ABLATION=false
+ENABLE_HYPERPARAMETER_SEARCH=false
+MAX_TRAINING_RACES=auto
+MODEL_LIGHT_MODE=false
+LATEST_RUN_STATUS_PATH=data_cache/latest-run-status.json
+MODEL_ARTIFACTS_DIR=model_artifacts
+PITWALL_DB_PATH=data_cache/pitwall.db
+F1DB_ENABLED=false
+F1DB_RELEASE_TAG=v2026.4.2
+F1DB_SQLITE_PATH=
+F1DB_CSV_DIR=
+RELBENCH_F1_ENABLED=false
+RELBENCH_F1_DOWNLOAD=false
+DRIFT_SPEARMAN_THRESHOLD=0.55
+USE_LAST_VALID_CONTRACT_ON_ERROR=true
+SKIP_NETWORK_TESTS=true
+```
 
 ## Repository Hygiene
 

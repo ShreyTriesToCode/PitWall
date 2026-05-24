@@ -1,0 +1,26 @@
+{
+  "document_id": "31a1a142babf8726",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_14_-_unsafe_release_from_garage.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:09:50.463191+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 76 Date 23 May 2026 Time 18:54 The Stewards, having received a report from the Race Director, summoned (document 66) and heard from the team representative, have conside",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 76\nDate 23 May 2026\nTime 18:54\nThe Stewards, having received a report from the Race Director, summoned (document 66) and\nheard from the team representative, have considered the following matter and determine the\nfollowing:\nNo / Driver 14 - Fernando Alonso\nCompetitor Aston Martin Aramco F1 Team\nTime 15:59\nSession Qualifying\nFact Car 14 was released from the garage into the path of Car 43\nInfringement Breach of Article B1.6.2a of the FIA F1 Regulations.\nDecision The competitor (Aston Martin Aramco F1 Team) is fined €5,000.\nReason The Stewards heard from the team representative and reviewed position video and\nin-car video evidence.\nIt was apparent that Car 43 had to swerve and locked the front wheels to avoid a\ncollision with Car 14. This was determined by the Stewards to be an unsafe release.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions "
+}

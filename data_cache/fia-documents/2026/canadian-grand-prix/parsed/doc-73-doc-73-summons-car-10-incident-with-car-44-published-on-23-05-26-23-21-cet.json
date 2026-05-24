@@ -1,0 +1,26 @@
+{
+  "document_id": "d83c1eb5900b234a",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_summons_-_car_10_-_incident_with_car_44_.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:09:55.980963+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The driver and team representative are required to report to the Stewards at 18:20, in relation to the incident below: The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 73 Date 23 May 2026 Time 16:52 No / Driver 10 - Pierre Gasl",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe driver and team representative are required to report to the Stewards at 18:20, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 73\nDate 23 May 2026\nTime 16:52\nNo / Driver 10 - Pierre Gasly\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations – Car 44 allegedly\nimpeding Car 10 in turn 8 at 16:04.\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}

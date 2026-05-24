@@ -43,6 +43,8 @@ export default function ModelCenterPage() {
             <ModelMetricCard label="Feature Count" value={status.data.feature_count} icon={Database} />
             <ModelMetricCard label="Bundle Size" value={status.data.model_bundle_size_mb ? `${status.data.model_bundle_size_mb} MB` : "Pending"} icon={Database} />
             <ModelMetricCard label="Promotion" value={status.data.promotion_decision?.decision} icon={GitBranch} />
+            <ModelMetricCard label="Validation" value={status.data.validation?.grouped_split_method || "Pending"} icon={ShieldCheck} />
+            <ModelMetricCard label="FIA Ingestion" value={status.data.fia_ingestion?.fia_source_discovery_status || "Pending"} icon={Database} />
           </section>
           <section className="metric-grid">{cards.map(([label, value, Icon]) => <ModelMetricCard label={label} value={value ?? "Pending"} icon={Icon} key={label} />)}</section>
           <section className="dashboard-grid">
@@ -66,6 +68,15 @@ export default function ModelCenterPage() {
                 <ModelMetricCard label="Status" value={status.data.champion_challenger?.status} icon={ShieldCheck} />
                 <ModelMetricCard label="Corrections" value={status.data.correction_log_summary?.status} icon={Activity} />
               </div>
+            </section>
+            <section className="panel reveal">
+              <SectionTitle title="Baselines And Calibration" />
+              <RaceControlTimeline items={[
+                `Grid baseline: ${status.data.baseline_comparison?.grid_order_baseline?.status || "pending"}`,
+                `Constructor baseline: ${status.data.baseline_comparison?.constructor_standings_baseline?.status || "pending"}`,
+                `Calibration: ${status.data.calibration?.method || "pending"}`,
+                `Feature ablation: ${status.data.feature_ablation?.status || "manual only"}`,
+              ]} />
             </section>
           </section>
         </>

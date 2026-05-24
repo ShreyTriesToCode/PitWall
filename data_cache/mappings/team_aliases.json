@@ -1,0 +1,21 @@
+{
+  "schema_version": "pitwall-team-aliases-v1",
+  "aliases": {
+    "scuderia ferrari hp": "Ferrari",
+    "ferrari": "Ferrari",
+    "mercedes-amg petronas formula one team": "Mercedes",
+    "mercedes": "Mercedes",
+    "mclaren mastercard f1 team": "McLaren",
+    "oracle red bull racing": "Red Bull",
+    "red bull racing": "Red Bull",
+    "atlassian williams racing": "Williams",
+    "bwt alpine formula one team": "Alpine F1 Team",
+    "aston martin aramco formula one team": "Aston Martin",
+    "stake f1 team kick sauber": "Sauber",
+    "audi revolut f1 team": "Audi",
+    "cadillac formula 1 team": "Cadillac F1 Team"
+  },
+  "notes": [
+    "Used for FIA car presentation submissions, PU documents, and constructor lineage matching."
+  ]
+}

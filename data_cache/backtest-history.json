@@ -1,7 +1,23 @@
 {
-  "schema_version": "2026.05-high-accuracy-v4",
-  "generated_at": "2026-05-24T18:54:04.572211+05:30",
+  "schema_version": "2026.05-high-accuracy-v5",
+  "generated_at": "2026-05-24T20:58:19.690924+05:30",
   "history": [
+    {
+      "race_id": "2026-5-canadian-grand-prix",
+      "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-cc89fbae1225",
+      "race_name": "Canadian Grand Prix",
+      "season": 2026,
+      "round": 5,
+      "stage": "post_qualifying",
+      "model_version": "2026.05-high-accuracy-v5",
+      "top_pick": "George Russell",
+      "top_pick_confidence": 76.1,
+      "finish_position_mae": 3.2158484860877996,
+      "finish_position_rmse": 4.111492710135723,
+      "winner_hit_rate": 0.2941,
+      "top3_recall": 0.6127,
+      "top10_recall": 0.8206
+    },
     {
       "race_id": "2026-5-canadian-grand-prix",
       "prediction_id": "2026-5-canadian-grand-prix-sprint-post_practice-dd53ecbf9efb",
@@ -12,11 +28,11 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.9216664185391914,
-      "finish_position_rmse": 4.911994860857176,
-      "winner_hit_rate": 0.25,
-      "top3_recall": 0.6667,
-      "top10_recall": 0.75
+      "finish_position_mae": 3.2158484860877996,
+      "finish_position_rmse": 4.111492710135723,
+      "winner_hit_rate": 0.2941,
+      "top3_recall": 0.6127,
+      "top10_recall": 0.8206
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -28,11 +44,11 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.9216664185391914,
-      "finish_position_rmse": 4.911994860857176,
-      "winner_hit_rate": 0.25,
-      "top3_recall": 0.6667,
-      "top10_recall": 0.75
+      "finish_position_mae": 3.2158484860877996,
+      "finish_position_rmse": 4.111492710135723,
+      "winner_hit_rate": 0.2941,
+      "top3_recall": 0.6127,
+      "top10_recall": 0.8206
     }
   ]
 }

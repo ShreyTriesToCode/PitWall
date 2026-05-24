@@ -6,7 +6,13 @@ import { inflateRawSync } from "node:zlib";
 const F1_BASE = "https://livetiming.formula1.com/static";
 const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OPENF1_BASE = "https://api.openf1.org/v1";
+const OPENF1_ACCESS_TOKEN = (process.env.OPENF1_ACCESS_TOKEN || process.env.OPENF1_TOKEN || "").trim();
+const OPENF1_USERNAME = (process.env.OPENF1_USERNAME || "").trim();
+const OPENF1_PASSWORD = (process.env.OPENF1_PASSWORD || "").trim();
+const RATE_LIMIT_MS = Math.max(1000, Number(process.env.F1_TIMING_RATE_LIMIT_MS || 5000));
 const OFFICIAL_VISUAL_CACHE = new Map();
+const RATE_LIMIT_BUCKET = globalThis.__pitwallF1TimingRateLimit || new Map();
+globalThis.__pitwallF1TimingRateLimit = RATE_LIMIT_BUCKET;
 
 const FEEDS = [
   "SessionInfo.json",
@@ -108,9 +114,68 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function requestIp(request) {
+  const forwarded = request.headers.get("x-forwarded-for") || "";
+  const first = forwarded.split(",")[0]?.trim();
+  return first || request.headers.get("x-real-ip") || "local";
+}
+
+function checkRateLimit(request) {
+  const key = requestIp(request);
+  const now = Date.now();
+  const previous = RATE_LIMIT_BUCKET.get(key) || 0;
+  const waitMs = RATE_LIMIT_MS - (now - previous);
+  if (waitMs > 0) {
+    return {
+      limited: true,
+      retryAfterSeconds: Math.max(1, Math.ceil(waitMs / 1000)),
+      key
+    };
+  }
+  RATE_LIMIT_BUCKET.set(key, now);
+  for (const [bucketKey, timestamp] of RATE_LIMIT_BUCKET.entries()) {
+    if (now - timestamp > Math.max(60000, RATE_LIMIT_MS * 12)) RATE_LIMIT_BUCKET.delete(bucketKey);
+  }
+  return { limited: false, retryAfterSeconds: 0, key };
+}
+
 async function getJson(url, timeoutMs = 12000) {
   const response = await getText(url, timeoutMs);
   return { ...response, data: safeJson(response.text, null), text: undefined };
+}
+
+async function getOpenF1Json(path, timeoutMs = 12000) {
+  const url = `${OPENF1_BASE}/${String(path || "").replace(/^\/+/, "")}`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const headers = {
+      Accept: "application/json",
+      "User-Agent": "pitwall-live-dashboard/1.0"
+    };
+    if (OPENF1_ACCESS_TOKEN) {
+      headers.Authorization = `Bearer ${OPENF1_ACCESS_TOKEN}`;
+    } else if (OPENF1_USERNAME && OPENF1_PASSWORD) {
+      headers.Authorization = `Basic ${Buffer.from(`${OPENF1_USERNAME}:${OPENF1_PASSWORD}`).toString("base64")}`;
+    }
+    const res = await fetch(url, { signal: controller.signal, headers, cache: "no-store" });
+    const text = await res.text();
+    const data = safeJson(text, null);
+    const detail = data?.detail || data?.message || data?.error || text.slice(0, 280);
+    const authRestricted = (res.status === 401 || res.status === 403) && /authenticated users|live f1 session|api key/i.test(String(detail || ""));
+    return {
+      ok: res.ok,
+      status: res.status,
+      data,
+      auth_restricted: authRestricted,
+      auth_configured: Boolean(OPENF1_ACCESS_TOKEN || (OPENF1_USERNAME && OPENF1_PASSWORD)),
+      detail: authRestricted ? detail : ""
+    };
+  } catch (error) {
+    return { ok: false, status: 0, data: null, auth_restricted: false, auth_configured: Boolean(OPENF1_ACCESS_TOKEN || (OPENF1_USERNAME && OPENF1_PASSWORD)), detail: String(error?.message || error) };
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 function readValue(value, fallback = "") {
@@ -271,7 +336,6 @@ function sessionLifecycle(selected, hasUsefulF1Data = false) {
   const start = selected?.start?.getTime?.() || sessionStart(selected?.session)?.getTime?.() || 0;
   const end = selected?.end?.getTime?.() || sessionEnd(selected?.session)?.getTime?.() || (start ? start + 3 * 60 * 60 * 1000 : 0);
   const preWindow = 90 * 60 * 1000;
-  const postWindow = 3 * 60 * 60 * 1000;
 
   if (!start) {
     return { state: hasUsefulF1Data ? "active" : "unknown", is_live: Boolean(hasUsefulF1Data), refresh_after_ms: hasUsefulF1Data ? 7000 : 60000 };
@@ -282,10 +346,44 @@ function sessionLifecycle(selected, hasUsefulF1Data = false) {
   if (now < start) {
     return { state: "pre-session", is_live: false, refresh_after_ms: 15000 };
   }
-  if (now <= end + postWindow) {
-    return { state: "active", is_live: true, refresh_after_ms: 5000 };
+  if (now <= end) {
+    return { state: hasUsefulF1Data ? "active" : "active_without_live_data", is_live: Boolean(hasUsefulF1Data), refresh_after_ms: hasUsefulF1Data ? 5000 : 30000 };
   }
   return { state: "archive", is_live: false, refresh_after_ms: 90000 };
+}
+
+function timingFreshness(lifecycle, hasUsefulF1Data, source) {
+  const liveDisabled = String(process.env.DISABLE_LIVE_MODE || "false").toLowerCase() === "true";
+  const liveEnabled = String(process.env.LIVE_TIMING_ENABLED || "true").toLowerCase() === "true";
+  const staleAfter = Number(process.env.LIVE_STALE_AFTER_SECONDS || 60);
+  const lastUpdated = hasUsefulF1Data ? new Date() : null;
+  const freshnessSeconds = lastUpdated ? Math.max(0, Math.round((Date.now() - lastUpdated.getTime()) / 1000)) : null;
+  let timingMode = "unavailable";
+  let reason = "No fresh timing packets are available for the selected session.";
+  if (liveDisabled || !liveEnabled) {
+    timingMode = "unavailable";
+    reason = "Live timing is disabled by configuration.";
+  } else if (lifecycle.state === "archive") {
+    timingMode = "archive";
+    reason = "The selected session has ended; this is archived/latest available timing data.";
+  } else if (hasUsefulF1Data && lifecycle.is_live && freshnessSeconds <= staleAfter) {
+    timingMode = "live";
+    reason = "";
+  } else if (hasUsefulF1Data) {
+    timingMode = "stale";
+    reason = "Timing data exists but is older than the freshness threshold.";
+  } else {
+    timingMode = source === "OpenF1Fallback" || source === "JolpicaFallback" ? "archive" : "unavailable";
+  }
+  return {
+    live_timing_status: timingMode === "live" ? "Live" : timingMode.charAt(0).toUpperCase() + timingMode.slice(1),
+    timing_mode: timingMode,
+    timing_source: source,
+    timing_last_updated_at: lastUpdated?.toISOString() || null,
+    timing_freshness_seconds: freshnessSeconds,
+    is_genuinely_live: timingMode === "live",
+    live_fallback_reason: reason
+  };
 }
 
 function normalizeSessionName(name) {
@@ -886,11 +984,14 @@ function normalizeTeamRadio(entries, basePath) {
 
 async function fetchOpenF1TeamRadio(sessionKey) {
   if (!sessionKey) return { ok: false, status: "no_session_key", rows: [] };
-  const response = await getJson(`${OPENF1_BASE}/team_radio?session_key=${encodeURIComponent(sessionKey)}`);
+  const response = await getOpenF1Json(`team_radio?session_key=${encodeURIComponent(sessionKey)}`);
   const rows = Array.isArray(response.data) ? response.data : [];
   return {
     ok: response.ok && rows.length > 0,
     status: response.status,
+    auth_restricted: response.auth_restricted,
+    auth_configured: response.auth_configured,
+    detail: response.detail,
     rows
   };
 }
@@ -960,23 +1061,39 @@ function normalizeJolpicaFallback(fallback) {
 }
 
 async function fetchOpenF1Fallback() {
-  const sessions = await getJson(`${OPENF1_BASE}/sessions?session_key=latest`);
+  const sessions = await getOpenF1Json("sessions?session_key=latest");
   const session = Array.isArray(sessions.data) ? sessions.data[0] : null;
+  if (sessions.auth_restricted) {
+    return {
+      ok: false,
+      status: "auth_required_during_live_session",
+      auth_restricted: true,
+      auth_configured: sessions.auth_configured,
+      detail: sessions.detail,
+      session: null,
+      drivers: [],
+      results: []
+    };
+  }
   if (!session?.session_key) {
     return { ok: false, sessions_status: sessions.status, session: null, drivers: [], results: [] };
   }
   await sleep(380);
-  const drivers = await getJson(`${OPENF1_BASE}/drivers?session_key=${encodeURIComponent(session.session_key)}`);
+  const drivers = await getOpenF1Json(`drivers?session_key=${encodeURIComponent(session.session_key)}`);
   await sleep(380);
-  const results = await getJson(`${OPENF1_BASE}/session_result?session_key=${encodeURIComponent(session.session_key)}`);
+  const results = await getOpenF1Json(`session_result?session_key=${encodeURIComponent(session.session_key)}`);
   await sleep(380);
-  const pits = await getJson(`${OPENF1_BASE}/pit?session_key=${encodeURIComponent(session.session_key)}`);
+  const pits = await getOpenF1Json(`pit?session_key=${encodeURIComponent(session.session_key)}`);
   await sleep(380);
-  const stints = await getJson(`${OPENF1_BASE}/stints?session_key=${encodeURIComponent(session.session_key)}`);
+  const stints = await getOpenF1Json(`stints?session_key=${encodeURIComponent(session.session_key)}`);
   await sleep(380);
   const teamRadio = await fetchOpenF1TeamRadio(session.session_key);
+  const authRestricted = [drivers, results, pits, stints, teamRadio].some((item) => item?.auth_restricted);
   return {
-    ok: sessions.ok && drivers.ok && Array.isArray(drivers.data),
+    ok: sessions.ok && drivers.ok && Array.isArray(drivers.data) && !authRestricted,
+    auth_restricted: authRestricted,
+    auth_configured: Boolean(OPENF1_ACCESS_TOKEN || (OPENF1_USERNAME && OPENF1_PASSWORD)),
+    detail: [drivers, results, pits, stints, teamRadio].find((item) => item?.auth_restricted)?.detail || "",
     session,
     drivers: Array.isArray(drivers.data) ? drivers.data : [],
     results: Array.isArray(results.data) ? results.data : [],
@@ -1088,6 +1205,20 @@ async function fetchFeeds(basePath, { fast = false } = {}) {
 }
 
 export async function GET(request) {
+  const rateLimit = checkRateLimit(request);
+  if (rateLimit.limited) {
+    return jsonNoStore({
+      ok: false,
+      error: "Timing endpoint rate limit exceeded.",
+      retry_after_seconds: rateLimit.retryAfterSeconds,
+      reason: "PitWall limits timing proxy requests to protect upstream Formula 1 and fallback data sources."
+    }, {
+      status: 429,
+      headers: {
+        "Retry-After": String(rateLimit.retryAfterSeconds)
+      }
+    });
+  }
   const { searchParams } = new URL(request.url);
   const year = normalizedYear(searchParams.get("year") || String(new Date().getUTCFullYear()));
   if (!year) {
@@ -1111,12 +1242,17 @@ export async function GET(request) {
 
   if (!selected) {
     const openf1Fallback = await fetchOpenF1Fallback();
+    const openf1AuthReason = openf1Fallback?.auth_restricted
+      ? `OpenF1 requires authentication right now: ${openf1Fallback.detail || "live-session restriction"}`
+      : "";
+    const timing = timingFreshness({ state: "unavailable", ended: true }, false, openf1Fallback?.ok ? "OpenF1Fallback" : "Formula1LiveTiming");
     return jsonNoStore({
       ok: Boolean(openf1Fallback?.ok),
       source: openf1Fallback?.ok ? "OpenF1Fallback" : "Formula1LiveTiming",
-      reason: openf1Fallback?.ok ? "No F1 live timing session found, using latest OpenF1 free historical session." : "No F1 live timing session found for selected year.",
+      reason: openf1Fallback?.ok ? "No F1 live timing session found, using latest OpenF1 free historical session." : (openf1AuthReason || "No F1 live timing session found for selected year."),
       server_time: new Date().toISOString(),
       is_live: false,
+      ...timing,
       session_state: openf1Fallback?.ok ? "openf1-fallback" : "unavailable",
       refresh_after_ms: 60000,
       root_status: rootIndex.status,
@@ -1137,7 +1273,7 @@ export async function GET(request) {
   const keyframeDrivers = normalizeDriverKeyframe(feeds["DriverList.json"]?.json || {});
   const streamDrivers = normalizeDrivers(feeds["DriverList.jsonStream"]?.entries || []);
   let drivers = mergeDriverSources(keyframeDrivers, new Map(streamDrivers.map((driver) => [String(driver.driver_number), driver])));
-  if (!drivers.length && !fast) {
+  if (!drivers.length) {
     jolpicaFallback = await fetchJolpicaFallback();
     fallbackDriverMap = normalizeJolpicaDrivers(jolpicaFallback);
     drivers = mergeDriverSources(drivers, fallbackDriverMap);
@@ -1182,26 +1318,35 @@ export async function GET(request) {
 
   const hasUsefulF1Data = leaderboard.length > 0 || normalized.weather || normalized.raceControl.length > 0;
   const lifecycle = sessionLifecycle(selected, hasUsefulF1Data);
-  if (!hasUsefulF1Data && !jolpicaFallback && !fast) {
+  if (!hasUsefulF1Data && !jolpicaFallback) {
     jolpicaFallback = await fetchJolpicaFallback();
   }
   const openf1Fallback = hasUsefulF1Data || fast ? null : await fetchOpenF1Fallback();
   const normalizedOpenF1 = normalizeOpenF1Fallback(openf1Fallback);
-  const outputNormalized = hasUsefulF1Data ? normalized : normalizedOpenF1 || normalized;
+  const normalizedJolpica = normalizeJolpicaFallback(jolpicaFallback);
+  const outputNormalized = hasUsefulF1Data ? normalized : normalizedOpenF1 || normalizedJolpica || normalized;
   const outputOk = hasUsefulF1Data || Boolean(normalizedOpenF1?.leaderboard?.length) || Boolean(jolpicaFallback?.latestResults?.ok);
   const officialVisual = await officialRaceVisual(year, selected.meeting);
+  const source = hasUsefulF1Data ? "Formula1LiveTiming" : normalizedOpenF1 ? "OpenF1Fallback" : "JolpicaFallback";
+  const timing = timingFreshness(lifecycle, hasUsefulF1Data, source);
+  const openf1AuthReason = openf1Fallback?.auth_restricted
+    ? `OpenF1 requires authentication right now: ${openf1Fallback.detail || "live-session restriction"}`
+    : "";
 
   return jsonNoStore({
     ok: outputOk,
-    source: hasUsefulF1Data ? "Formula1LiveTiming" : normalizedOpenF1 ? "OpenF1Fallback" : "JolpicaFallback",
+    source,
     source_note: hasUsefulF1Data
       ? "Primary source uses Formula 1 livetiming static feeds."
       : normalizedOpenF1
         ? "Formula 1 live timing did not return useful data, so this response uses the latest OpenF1 free historical session."
-        : "Formula 1 live timing did not return useful data, so this response shows the latest public Jolpica event data.",
+        : openf1AuthReason
+          ? `${openf1AuthReason}. Showing Jolpica fallback data instead.`
+          : "Formula 1 live timing did not return useful data, so this response shows the latest public Jolpica event data.",
     base_path: basePath,
     server_time: new Date().toISOString(),
-    is_live: lifecycle.is_live && hasUsefulF1Data,
+    is_live: timing.is_genuinely_live,
+    ...timing,
     session_state: hasUsefulF1Data ? lifecycle.state : normalizedOpenF1 ? "openf1-fallback" : "fallback",
     refresh_after_ms: hasUsefulF1Data ? lifecycle.refresh_after_ms : 60000,
     fast_sync: fast,
@@ -1212,11 +1357,17 @@ export async function GET(request) {
     feed_status: {
       ...Object.fromEntries(Object.entries(feeds).map(([key, value]) => [key, { ok: value.ok, status: value.status, count: value.count || (value.json ? 1 : 0) }])),
       OpenF1TeamRadio: { ok: openf1Radio.ok, status: openf1Radio.status, count: openf1Radio.rows.length },
-      OpenF1: openf1Fallback ? { ok: openf1Fallback.ok, status: openf1Fallback.status } : { ok: false, status: "not_used_primary_f1_available" }
+      OpenF1: openf1Fallback ? {
+        ok: openf1Fallback.ok,
+        status: openf1Fallback.status,
+        auth_restricted: Boolean(openf1Fallback.auth_restricted),
+        auth_configured: Boolean(openf1Fallback.auth_configured),
+        detail: openf1Fallback.auth_restricted ? openf1Fallback.detail : ""
+      } : { ok: false, status: "not_used_primary_f1_available" }
     },
     normalized: outputNormalized,
     openf1_fallback: openf1Fallback,
     jolpica_fallback: hasUsefulF1Data ? null : jolpicaFallback,
-    normalized_fallback: hasUsefulF1Data ? null : normalizeJolpicaFallback(jolpicaFallback)
+    normalized_fallback: hasUsefulF1Data ? null : normalizedJolpica
   });
 }

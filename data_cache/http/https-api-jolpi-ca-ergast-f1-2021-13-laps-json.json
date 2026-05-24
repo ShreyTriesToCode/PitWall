@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2021/13/laps.json","limit":"30","offset":"0","total":"1361","RaceTable":{"season":"2021","round":"13","Races":[{"season":"2021","round":"13","url":"https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix","raceName":"Dutch Grand Prix","Circuit":{"circuitId":"zandvoort","url":"https://en.wikipedia.org/wiki/Circuit_Zandvoort","circuitName":"Circuit Park Zandvoort","Location":{"lat":"52.3888","long":"4.54092","locality":"Zandvoort","country":"Netherlands"}},"date":"2021-09-05","time":"13:00:00Z","Laps":[{"number":"1","Timings":[{"driverId":"max_verstappen","time":"1:17.665","position":"1"},{"driverId":"hamilton","time":"1:19.399","position":"2"},{"driverId":"bottas","time":"1:20.387","position":"3"},{"driverId":"gasly","time":"1:21.662","position":"4"},{"driverId":"leclerc","time":"1:22.599","position":"5"},{"driverId":"sainz","time":"1:23.478","position":"6"},{"driverId":"alonso","time":"1:24.243","position":"7"},{"driverId":"ocon","time":"1:24.840","position":"8"},{"driverId":"ricciardo","time":"1:25.571","position":"9"},{"driverId":"giovinazzi","time":"1:26.167","position":"10"},{"driverId":"russell","time":"1:26.802","position":"11"},{"driverId":"stroll","time":"1:27.168","position":"12"},{"driverId":"norris","time":"1:27.415","position":"13"},{"driverId":"tsunoda","time":"1:27.952","position":"14"},{"driverId":"vettel","time":"1:28.261","position":"15"},{"driverId":"kubica","time":"1:29.108","position":"16"},{"driverId":"mazepin","time":"1:29.556","position":"17"},{"driverId":"mick_schumacher","time":"1:29.661","position":"18"},{"driverId":"perez","time":"1:36.074","position":"19"},{"driverId":"latifi","time":"1:37.259","position":"20"}]},{"number":"2","Timings":[{"driverId":"max_verstappen","time":"1:14.978","position":"1"},{"driverId":"hamilton","time":"1:15.395","position":"2"},{"driverId":"bottas","time":"1:15.861","position":"3"},{"driverId":"gasly","time":"1:16.839","position":"4"},{"driverId":"leclerc","time":"1:17.903","position":"5"},{"driverId":"sainz","time":"1:18.168","position":"6"},{"driverId":"alonso","time":"1:18.102","position":"7"},{"driverId":"ocon","time":"1:18.287","position":"8"},{"driverId":"ricciardo","time":"1:18.441","position":"9"},{"driverId":"giovinazzi","time":"1:18.815","position":"10"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2021/13/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "1361",
+    "RaceTable": {
+      "season": "2021",
+      "round": "13",
+      "Races": [
+        {
+          "season": "2021",
+          "round": "13",
+          "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix",
+          "raceName": "Dutch Grand Prix",
+          "Circuit": {
+            "circuitId": "zandvoort",
+            "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort",
+            "circuitName": "Circuit Park Zandvoort",
+            "Location": {
+              "lat": "52.3888",
+              "long": "4.54092",
+              "locality": "Zandvoort",
+              "country": "Netherlands"
+            }
+          },
+          "date": "2021-09-05",
+          "time": "13:00:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:17.665",
+                  "position": "1"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:19.399",
+                  "position": "2"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "1:20.387",
+                  "position": "3"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "1:21.662",
+                  "position": "4"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "1:22.599",
+                  "position": "5"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "1:23.478",
+                  "position": "6"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "1:24.243",
+                  "position": "7"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "1:24.840",
+                  "position": "8"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "1:25.571",
+                  "position": "9"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "1:26.167",
+                  "position": "10"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "1:26.802",
+                  "position": "11"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "1:27.168",
+                  "position": "12"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "1:27.415",
+                  "position": "13"
+                },
+                {
+                  "driverId": "tsunoda",
+                  "time": "1:27.952",
+                  "position": "14"
+                },
+                {
+                  "driverId": "vettel",
+                  "time": "1:28.261",
+                  "position": "15"
+                },
+                {
+                  "driverId": "kubica",
+                  "time": "1:29.108",
+                  "position": "16"
+                },
+                {
+                  "driverId": "mazepin",
+                  "time": "1:29.556",
+                  "position": "17"
+                },
+                {
+                  "driverId": "mick_schumacher",
+                  "time": "1:29.661",
+                  "position": "18"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "1:36.074",
+                  "position": "19"
+                },
+                {
+                  "driverId": "latifi",
+                  "time": "1:37.259",
+                  "position": "20"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:14.978",
+                  "position": "1"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:15.395",
+                  "position": "2"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "1:15.861",
+                  "position": "3"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "1:16.839",
+                  "position": "4"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "1:17.903",
+                  "position": "5"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "1:18.168",
+                  "position": "6"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "1:18.102",
+                  "position": "7"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "1:18.287",
+                  "position": "8"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "1:18.441",
+                  "position": "9"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "1:18.815",
+                  "position": "10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2018/3/laps.json","limit":"30","offset":"0","total":"1115","RaceTable":{"season":"2018","round":"3","Races":[{"season":"2018","round":"3","url":"https://en.wikipedia.org/wiki/2018_Chinese_Grand_Prix","raceName":"Chinese Grand Prix","Circuit":{"circuitId":"shanghai","url":"https://en.wikipedia.org/wiki/Shanghai_International_Circuit","circuitName":"Shanghai International Circuit","Location":{"lat":"31.3389","long":"121.22","locality":"Shanghai","country":"China"}},"date":"2018-04-15","time":"06:10:00Z","Laps":[{"number":"1","Timings":[{"driverId":"vettel","time":"1:40.327","position":"1"},{"driverId":"bottas","time":"1:41.407","position":"2"},{"driverId":"max_verstappen","time":"1:42.561","position":"3"},{"driverId":"raikkonen","time":"1:43.610","position":"4"},{"driverId":"hamilton","time":"1:44.362","position":"5"},{"driverId":"ricciardo","time":"1:44.974","position":"6"},{"driverId":"hulkenberg","time":"1:45.727","position":"7"},{"driverId":"sainz","time":"1:46.138","position":"8"},{"driverId":"grosjean","time":"1:46.682","position":"9"},{"driverId":"kevin_magnussen","time":"1:47.340","position":"10"},{"driverId":"alonso","time":"1:48.139","position":"11"},{"driverId":"stroll","time":"1:48.995","position":"12"},{"driverId":"ocon","time":"1:49.720","position":"13"},{"driverId":"perez","time":"1:50.081","position":"14"},{"driverId":"sirotkin","time":"1:50.776","position":"15"},{"driverId":"vandoorne","time":"1:51.030","position":"16"},{"driverId":"brendon_hartley","time":"1:51.539","position":"17"},{"driverId":"leclerc","time":"1:51.646","position":"18"},{"driverId":"gasly","time":"1:52.141","position":"19"},{"driverId":"ericsson","time":"1:52.842","position":"20"}]},{"number":"2","Timings":[{"driverId":"vettel","time":"1:38.417","position":"1"},{"driverId":"bottas","time":"1:39.357","position":"2"},{"driverId":"max_verstappen","time":"1:39.367","position":"3"},{"driverId":"raikkonen","time":"1:39.580","position":"4"},{"driverId":"hamilton","time":"1:39.660","position":"5"},{"driverId":"ricciardo","time":"1:40.480","position":"6"},{"driverId":"hulkenberg","time":"1:40.964","position":"7"},{"driverId":"sainz","time":"1:41.594","position":"8"},{"driverId":"grosjean","time":"1:42.127","position":"9"},{"driverId":"kevin_magnussen","time":"1:42.220","position":"10"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2018/3/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "1115",
+    "RaceTable": {
+      "season": "2018",
+      "round": "3",
+      "Races": [
+        {
+          "season": "2018",
+          "round": "3",
+          "url": "https://en.wikipedia.org/wiki/2018_Chinese_Grand_Prix",
+          "raceName": "Chinese Grand Prix",
+          "Circuit": {
+            "circuitId": "shanghai",
+            "url": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit",
+            "circuitName": "Shanghai International Circuit",
+            "Location": {
+              "lat": "31.3389",
+              "long": "121.22",
+              "locality": "Shanghai",
+              "country": "China"
+            }
+          },
+          "date": "2018-04-15",
+          "time": "06:10:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "vettel",
+                  "time": "1:40.327",
+                  "position": "1"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "1:41.407",
+                  "position": "2"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:42.561",
+                  "position": "3"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "1:43.610",
+                  "position": "4"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:44.362",
+                  "position": "5"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "1:44.974",
+                  "position": "6"
+                },
+                {
+                  "driverId": "hulkenberg",
+                  "time": "1:45.727",
+                  "position": "7"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "1:46.138",
+                  "position": "8"
+                },
+                {
+                  "driverId": "grosjean",
+                  "time": "1:46.682",
+                  "position": "9"
+                },
+                {
+                  "driverId": "kevin_magnussen",
+                  "time": "1:47.340",
+                  "position": "10"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "1:48.139",
+                  "position": "11"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "1:48.995",
+                  "position": "12"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "1:49.720",
+                  "position": "13"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "1:50.081",
+                  "position": "14"
+                },
+                {
+                  "driverId": "sirotkin",
+                  "time": "1:50.776",
+                  "position": "15"
+                },
+                {
+                  "driverId": "vandoorne",
+                  "time": "1:51.030",
+                  "position": "16"
+                },
+                {
+                  "driverId": "brendon_hartley",
+                  "time": "1:51.539",
+                  "position": "17"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "1:51.646",
+                  "position": "18"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "1:52.141",
+                  "position": "19"
+                },
+                {
+                  "driverId": "ericsson",
+                  "time": "1:52.842",
+                  "position": "20"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "vettel",
+                  "time": "1:38.417",
+                  "position": "1"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "1:39.357",
+                  "position": "2"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:39.367",
+                  "position": "3"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "1:39.580",
+                  "position": "4"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:39.660",
+                  "position": "5"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "1:40.480",
+                  "position": "6"
+                },
+                {
+                  "driverId": "hulkenberg",
+                  "time": "1:40.964",
+                  "position": "7"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "1:41.594",
+                  "position": "8"
+                },
+                {
+                  "driverId": "grosjean",
+                  "time": "1:42.127",
+                  "position": "9"
+                },
+                {
+                  "driverId": "kevin_magnussen",
+                  "time": "1:42.220",
+                  "position": "10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

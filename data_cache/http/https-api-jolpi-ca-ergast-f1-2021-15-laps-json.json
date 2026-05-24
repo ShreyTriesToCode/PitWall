@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2021/15/laps.json","limit":"30","offset":"0","total":"1025","RaceTable":{"season":"2021","round":"15","Races":[{"season":"2021","round":"15","url":"https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix","raceName":"Russian Grand Prix","Circuit":{"circuitId":"sochi","url":"https://en.wikipedia.org/wiki/Sochi_Autodrom","circuitName":"Sochi Autodrom","Location":{"lat":"43.4057","long":"39.9578","locality":"Sochi","country":"Russia"}},"date":"2021-09-26","time":"12:00:00Z","Laps":[{"number":"1","Timings":[{"driverId":"sainz","time":"1:42.997","position":"1"},{"driverId":"norris","time":"1:44.272","position":"2"},{"driverId":"russell","time":"1:46.318","position":"3"},{"driverId":"stroll","time":"1:47.279","position":"4"},{"driverId":"ricciardo","time":"1:48.221","position":"5"},{"driverId":"alonso","time":"1:49.347","position":"6"},{"driverId":"hamilton","time":"1:49.826","position":"7"},{"driverId":"perez","time":"1:50.617","position":"8"},{"driverId":"ocon","time":"1:51.098","position":"9"},{"driverId":"raikkonen","time":"1:51.778","position":"10"},{"driverId":"vettel","time":"1:52.276","position":"11"},{"driverId":"leclerc","time":"1:52.660","position":"12"},{"driverId":"mazepin","time":"1:53.218","position":"13"},{"driverId":"gasly","time":"1:53.699","position":"14"},{"driverId":"bottas","time":"1:54.016","position":"15"},{"driverId":"latifi","time":"1:54.413","position":"16"},{"driverId":"max_verstappen","time":"1:54.968","position":"17"},{"driverId":"mick_schumacher","time":"1:55.780","position":"18"},{"driverId":"giovinazzi","time":"1:56.132","position":"19"},{"driverId":"tsunoda","time":"1:56.581","position":"20"}]},{"number":"2","Timings":[{"driverId":"sainz","time":"1:42.076","position":"1"},{"driverId":"norris","time":"1:42.204","position":"2"},{"driverId":"russell","time":"1:42.795","position":"3"},{"driverId":"stroll","time":"1:42.732","position":"4"},{"driverId":"ricciardo","time":"1:42.835","position":"5"},{"driverId":"hamilton","time":"1:42.034","position":"6"},{"driverId":"alonso","time":"1:44.282","position":"7"},{"driverId":"perez","time":"1:43.853","position":"8"},{"driverId":"ocon","time":"1:44.295","position":"9"},{"driverId":"raikkonen","time":"1:44.594","position":"10"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2021/15/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "1025",
+    "RaceTable": {
+      "season": "2021",
+      "round": "15",
+      "Races": [
+        {
+          "season": "2021",
+          "round": "15",
+          "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix",
+          "raceName": "Russian Grand Prix",
+          "Circuit": {
+            "circuitId": "sochi",
+            "url": "https://en.wikipedia.org/wiki/Sochi_Autodrom",
+            "circuitName": "Sochi Autodrom",
+            "Location": {
+              "lat": "43.4057",
+              "long": "39.9578",
+              "locality": "Sochi",
+              "country": "Russia"
+            }
+          },
+          "date": "2021-09-26",
+          "time": "12:00:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "sainz",
+                  "time": "1:42.997",
+                  "position": "1"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "1:44.272",
+                  "position": "2"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "1:46.318",
+                  "position": "3"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "1:47.279",
+                  "position": "4"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "1:48.221",
+                  "position": "5"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "1:49.347",
+                  "position": "6"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:49.826",
+                  "position": "7"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "1:50.617",
+                  "position": "8"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "1:51.098",
+                  "position": "9"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "1:51.778",
+                  "position": "10"
+                },
+                {
+                  "driverId": "vettel",
+                  "time": "1:52.276",
+                  "position": "11"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "1:52.660",
+                  "position": "12"
+                },
+                {
+                  "driverId": "mazepin",
+                  "time": "1:53.218",
+                  "position": "13"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "1:53.699",
+                  "position": "14"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "1:54.016",
+                  "position": "15"
+                },
+                {
+                  "driverId": "latifi",
+                  "time": "1:54.413",
+                  "position": "16"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:54.968",
+                  "position": "17"
+                },
+                {
+                  "driverId": "mick_schumacher",
+                  "time": "1:55.780",
+                  "position": "18"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "1:56.132",
+                  "position": "19"
+                },
+                {
+                  "driverId": "tsunoda",
+                  "time": "1:56.581",
+                  "position": "20"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "sainz",
+                  "time": "1:42.076",
+                  "position": "1"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "1:42.204",
+                  "position": "2"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "1:42.795",
+                  "position": "3"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "1:42.732",
+                  "position": "4"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "1:42.835",
+                  "position": "5"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:42.034",
+                  "position": "6"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "1:44.282",
+                  "position": "7"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "1:43.853",
+                  "position": "8"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "1:44.295",
+                  "position": "9"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "1:44.594",
+                  "position": "10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

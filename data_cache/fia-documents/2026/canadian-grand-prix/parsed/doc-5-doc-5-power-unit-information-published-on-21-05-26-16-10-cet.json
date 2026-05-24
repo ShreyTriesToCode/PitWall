@@ -1,0 +1,13 @@
+{
+  "document_id": "821d1f4b4ab304e4",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:12:05.897928+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 5\nDate 21 May 2026\nTime 10:00\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R05_Canada_Power_Unit_Information.pdf\nRui Marques\n\nROUND No. R05\nVENUE Montréal\nCENTRELINE 4.361 km\nFORMAT Alternative\nDATE 22-24 May\nOvertake not active Overtake active\n8.0 MJ 8.5 MJ 6.0 MJ 8.5 MJ 8.5 MJ 2682 m 100 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT1-T6 220-1200 T5-T6\n[T13-Exit T14]\n980-1100\n[3850-4050]\n350kW\n[350kW] [Exit T14] [4000-4400]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n- - - 1.0 s 3870 m\n(L18/SC1)\n3982 m\n(L19)\nOVERTAKEArticle C5.12.7\nSectors with a higher speed threshold Article B7.2\nMain Overtaking Zones\nArticle C5.2.8\nMaximum DC power"
+}

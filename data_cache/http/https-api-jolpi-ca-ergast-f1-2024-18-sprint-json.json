@@ -1,1 +1,15 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2024/18/sprint.json","limit":"30","offset":"0","total":"0","RaceTable":{"season":"2024","round":"18","Races":[]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2024/18/sprint.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "0",
+    "RaceTable": {
+      "season": "2024",
+      "round": "18",
+      "Races": []
+    }
+  }
+}

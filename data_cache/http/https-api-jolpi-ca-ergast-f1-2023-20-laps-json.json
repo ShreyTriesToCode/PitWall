@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2023/20/laps.json","limit":"30","offset":"0","total":"1106","RaceTable":{"season":"2023","round":"20","Races":[{"season":"2023","round":"20","url":"https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix","raceName":"São Paulo Grand Prix","Circuit":{"circuitId":"interlagos","url":"https://en.wikipedia.org/wiki/Interlagos_Circuit","circuitName":"Autódromo José Carlos Pace","Location":{"lat":"-23.7036","long":"-46.6997","locality":"São Paulo","country":"Brazil"}},"date":"2023-11-05","time":"17:00:00Z","Laps":[{"number":"1","Timings":[{"driverId":"max_verstappen","time":"1:59.857","position":"1"},{"driverId":"norris","time":"2:01.881","position":"2"},{"driverId":"hamilton","time":"2:04.866","position":"3"},{"driverId":"alonso","time":"2:07.301","position":"4"},{"driverId":"stroll","time":"2:08.727","position":"5"},{"driverId":"russell","time":"2:11.238","position":"6"},{"driverId":"perez","time":"2:13.140","position":"7"},{"driverId":"sainz","time":"2:14.431","position":"8"},{"driverId":"ocon","time":"2:15.909","position":"9"},{"driverId":"piastri","time":"2:17.108","position":"10"},{"driverId":"tsunoda","time":"2:19.969","position":"11"},{"driverId":"gasly","time":"2:21.630","position":"12"},{"driverId":"bottas","time":"2:22.202","position":"13"},{"driverId":"zhou","time":"2:26.873","position":"14"},{"driverId":"sargeant","time":"2:27.935","position":"15"},{"driverId":"ricciardo","time":"2:29.416","position":"16"},{"driverId":"hulkenberg","time":"2:31.032","position":"17"}]},{"number":"2","Timings":[{"driverId":"max_verstappen","time":"2:23.356","position":"1"},{"driverId":"norris","time":"2:22.520","position":"2"},{"driverId":"hamilton","time":"2:21.894","position":"3"},{"driverId":"alonso","time":"2:21.143","position":"4"},{"driverId":"stroll","time":"2:22.163","position":"5"},{"driverId":"russell","time":"2:23.590","position":"6"},{"driverId":"perez","time":"2:24.049","position":"7"},{"driverId":"sainz","time":"2:24.671","position":"8"},{"driverId":"ocon","time":"2:24.717","position":"9"},{"driverId":"tsunoda","time":"2:24.126","position":"10"},{"driverId":"gasly","time":"2:24.561","position":"11"},{"driverId":"bottas","time":"2:26.231","position":"12"},{"driverId":"zhou","time":"2:24.885","position":"13"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2023/20/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "1106",
+    "RaceTable": {
+      "season": "2023",
+      "round": "20",
+      "Races": [
+        {
+          "season": "2023",
+          "round": "20",
+          "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix",
+          "raceName": "São Paulo Grand Prix",
+          "Circuit": {
+            "circuitId": "interlagos",
+            "url": "https://en.wikipedia.org/wiki/Interlagos_Circuit",
+            "circuitName": "Autódromo José Carlos Pace",
+            "Location": {
+              "lat": "-23.7036",
+              "long": "-46.6997",
+              "locality": "São Paulo",
+              "country": "Brazil"
+            }
+          },
+          "date": "2023-11-05",
+          "time": "17:00:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:59.857",
+                  "position": "1"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "2:01.881",
+                  "position": "2"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "2:04.866",
+                  "position": "3"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "2:07.301",
+                  "position": "4"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "2:08.727",
+                  "position": "5"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "2:11.238",
+                  "position": "6"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "2:13.140",
+                  "position": "7"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "2:14.431",
+                  "position": "8"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "2:15.909",
+                  "position": "9"
+                },
+                {
+                  "driverId": "piastri",
+                  "time": "2:17.108",
+                  "position": "10"
+                },
+                {
+                  "driverId": "tsunoda",
+                  "time": "2:19.969",
+                  "position": "11"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "2:21.630",
+                  "position": "12"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "2:22.202",
+                  "position": "13"
+                },
+                {
+                  "driverId": "zhou",
+                  "time": "2:26.873",
+                  "position": "14"
+                },
+                {
+                  "driverId": "sargeant",
+                  "time": "2:27.935",
+                  "position": "15"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "2:29.416",
+                  "position": "16"
+                },
+                {
+                  "driverId": "hulkenberg",
+                  "time": "2:31.032",
+                  "position": "17"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "max_verstappen",
+                  "time": "2:23.356",
+                  "position": "1"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "2:22.520",
+                  "position": "2"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "2:21.894",
+                  "position": "3"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "2:21.143",
+                  "position": "4"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "2:22.163",
+                  "position": "5"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "2:23.590",
+                  "position": "6"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "2:24.049",
+                  "position": "7"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "2:24.671",
+                  "position": "8"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "2:24.717",
+                  "position": "9"
+                },
+                {
+                  "driverId": "tsunoda",
+                  "time": "2:24.126",
+                  "position": "10"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "2:24.561",
+                  "position": "11"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "2:26.231",
+                  "position": "12"
+                },
+                {
+                  "driverId": "zhou",
+                  "time": "2:24.885",
+                  "position": "13"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

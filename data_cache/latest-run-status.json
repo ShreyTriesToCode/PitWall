@@ -1,0 +1,85 @@
+{
+  "schema_version": "pitwall-run-status-v1",
+  "generated_at": "2026-05-24T12:23:14.509782+05:30",
+  "status": "Success",
+  "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: weekend\\nTargets: race=Canadian Grand Prix Race\\nBackfill used this run: 0\\nErrors: None",
+  "source_discovery": {
+    "schema_version": "source-registry-v1",
+    "season": 2026,
+    "target_season_mode": "2026",
+    "discovered_at": "2026-05-24T02:00:10.573232+05:30",
+    "last_checked_at": "2026-05-24T02:00:10.573232+05:30",
+    "fia_championship_identifier": "fia-formula-one-world-championship-14",
+    "fia_base_championship_documents_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
+    "fia_season_document_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+    "formula1_season_url": "https://www.formula1.com/en/racing/2026",
+    "formula1_event_urls": [],
+    "jolpica_season_endpoint": "https://api.jolpi.ca/ergast/f1/2026.json",
+    "ics_calendar_source": null,
+    "discovered_event_slugs": [],
+    "discovered_fia_event_groups": [],
+    "fia_source_discovery_status": "configured",
+    "source_discovery_status": "available",
+    "fallback_source_used": null,
+    "errors": [],
+    "warnings": [],
+    "previous_valid_registry_path": "data_cache/source_registry/2026.json",
+    "cache_status": "refresh",
+    "source_health": {
+      "fia_decision_documents": {
+        "available": true,
+        "status": "configured",
+        "confidence": 1.0
+      },
+      "formula1_calendar": {
+        "available": true,
+        "status": "configured",
+        "confidence": 0.75
+      },
+      "jolpica": {
+        "available": true,
+        "status": "configured",
+        "confidence": 0.7
+      },
+      "fastf1": {
+        "available": true,
+        "status": "configured",
+        "confidence": 0.65
+      },
+      "openf1": {
+        "available": true,
+        "status": "configured",
+        "confidence": 0.65
+      }
+    }
+  },
+  "fia_index_refresh": {
+    "enabled": true,
+    "status": "configured"
+  },
+  "cache_hits": {
+    "source_registry": false
+  },
+  "cache_misses": {
+    "fia_documents": false
+  },
+  "documents_parsed": 0,
+  "documents_skipped": 0,
+  "parse_failures": [],
+  "sessions_detected": [],
+  "sessions_waiting_for_data": [],
+  "predictions_regenerated": true,
+  "model_retraining": "forced",
+  "frontend_contracts_written": true,
+  "timing_freshness": {
+    "live_timing_status": "Delayed",
+    "timing_mode": "delayed",
+    "timing_source": "Generated contract",
+    "timing_last_updated_at": null,
+    "timing_freshness_seconds": null,
+    "is_genuinely_live": false,
+    "live_fallback_reason": "no fresh timing packets"
+  },
+  "warnings": [],
+  "errors": []
+}

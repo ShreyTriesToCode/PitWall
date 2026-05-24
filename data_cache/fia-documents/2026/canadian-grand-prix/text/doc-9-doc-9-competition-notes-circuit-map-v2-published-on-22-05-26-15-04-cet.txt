@@ -1,0 +1,128 @@
+2026 CANADIAN GRAND PRIX
+22 - 24 May 2026
+The FIA Formula 1 Race Director
+From The FIA Formula 1 Race Director
+To All Teams, All Officials
+Document 9
+Date 22 May 2026
+Time 08:57
+Title Circuit Map V2
+Description Circuit Map V2
+Enclosed CANADA_CIRCUIT_26 FIA V3.pdf
+Rui Marques
+
+S2
+T
+S1
+M3
+M4
+M7
+M2
+M2.5
+M7.3
+M7.7
+M10
+M5
+M6
+M8
+M9
+M12
+M12.2
+M13
+M14
+M4.5
+M9.3
+M9.7
+M11
+M12.5
+M12.8
+1
+23
+4
+5
+6
+15
+7
+8
+14
+9
+10
+13
+11
+12
+M1
+1
+2
+3
+4
+5
+6
+7
+8 9
+10
+12
+13
+14
+11
+SM     A1
+OT    D
+OT     A
+SM     A1
+SMA4
+SMA4
+SM     A3
+SM     A2SM     A2
+N
+M6
+VERSION 3 - ISSUED 22.05.26
+© 2026 Formula One World Championship Limited
+The F1 FORMULA 1 logo, F1 logo, FORMULA 1, FORMULA ONE, F1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing BV, a Formula 1 company.
+The FIA logo is a trade mark of the Fédération Internationale de l'Automobile. All rights reserved.
+FORMULA 1 LENOVO GRAND PRIX DU CANADA 2026 - Montréal
+CIRCUIT DATA
+SECTOR 3
+SECTOR 2
+SECTOR 1
+-  1.873km
+-  1.396km
+-  1.092km
+ SPEED TRAP  [T]
+ INTERMEDIATE 2  [S2]
+-  250m before T13
+-  190m before T10
+-  150m before T6 INTERMEDIATE 1  [S1]
+CIRCUIT CENTRELINE LENGTH -  4.361km
+Circuit Map
+OVERTAKE STRAIGHT MODE
+-   ZONE A1   -
+-   ZONE A2   -
+-   ZONE A3   -
+-   ZONE A4   -
+ACTIVATION
+DETECTION 100m after T14
+50m after T7
+60m after T9
+30m after T11
+160m after T14
+110m after T7
+n/a
+120m after T11
+-  70m after T14
+-  Entry T13
+15
+LEGEND
+START LINE
+CONTROL LINE
+CORNER NUMBER
+SM A [ZONE No.]
+STRAIGHT MODE
+NORMAL GRIP ACTIVATION
+SM A [ZONE No.]
+ STRAIGHT MODE
+LOW GRIP ACTIVATION
+OT A
+OT D
+OVERTAKE ACTIVATION
+OVERTAKE DETECTION
+FIA LIGHT PANEL22
+M2 MARSHAL POST

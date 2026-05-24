@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2018/8/laps.json","limit":"30","offset":"0","total":"915","RaceTable":{"season":"2018","round":"8","Races":[{"season":"2018","round":"8","url":"https://en.wikipedia.org/wiki/2018_French_Grand_Prix","raceName":"French Grand Prix","Circuit":{"circuitId":"ricard","url":"https://en.wikipedia.org/wiki/Circuit_Paul_Ricard","circuitName":"Circuit Paul Ricard","Location":{"lat":"43.2506","long":"5.79167","locality":"Le Castellet","country":"France"}},"date":"2018-06-24","time":"14:10:00Z","Laps":[{"number":"1","Timings":[{"driverId":"hamilton","time":"2:09.395","position":"1"},{"driverId":"max_verstappen","time":"2:10.952","position":"2"},{"driverId":"sainz","time":"2:12.426","position":"3"},{"driverId":"ricciardo","time":"2:13.704","position":"4"},{"driverId":"kevin_magnussen","time":"2:14.863","position":"5"},{"driverId":"leclerc","time":"2:16.033","position":"6"},{"driverId":"raikkonen","time":"2:16.641","position":"7"},{"driverId":"grosjean","time":"2:17.779","position":"8"},{"driverId":"perez","time":"2:18.853","position":"9"},{"driverId":"hulkenberg","time":"2:20.783","position":"10"},{"driverId":"ericsson","time":"2:21.606","position":"11"},{"driverId":"vandoorne","time":"2:33.120","position":"12"},{"driverId":"brendon_hartley","time":"2:35.398","position":"13"},{"driverId":"stroll","time":"2:46.147","position":"14"},{"driverId":"sirotkin","time":"2:54.616","position":"15"},{"driverId":"alonso","time":"2:55.624","position":"16"},{"driverId":"vettel","time":"3:01.679","position":"17"},{"driverId":"bottas","time":"3:39.223","position":"18"}]},{"number":"2","Timings":[{"driverId":"hamilton","time":"2:38.989","position":"1"},{"driverId":"max_verstappen","time":"2:38.770","position":"2"},{"driverId":"sainz","time":"2:38.455","position":"3"},{"driverId":"ricciardo","time":"2:38.378","position":"4"},{"driverId":"kevin_magnussen","time":"2:38.292","position":"5"},{"driverId":"leclerc","time":"2:38.564","position":"6"},{"driverId":"raikkonen","time":"2:39.413","position":"7"},{"driverId":"grosjean","time":"2:39.925","position":"8"},{"driverId":"perez","time":"2:40.896","position":"9"},{"driverId":"hulkenberg","time":"2:40.333","position":"10"},{"driverId":"ericsson","time":"2:41.585","position":"11"},{"driverId":"vandoorne","time":"2:31.743","position":"12"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2018/8/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "915",
+    "RaceTable": {
+      "season": "2018",
+      "round": "8",
+      "Races": [
+        {
+          "season": "2018",
+          "round": "8",
+          "url": "https://en.wikipedia.org/wiki/2018_French_Grand_Prix",
+          "raceName": "French Grand Prix",
+          "Circuit": {
+            "circuitId": "ricard",
+            "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard",
+            "circuitName": "Circuit Paul Ricard",
+            "Location": {
+              "lat": "43.2506",
+              "long": "5.79167",
+              "locality": "Le Castellet",
+              "country": "France"
+            }
+          },
+          "date": "2018-06-24",
+          "time": "14:10:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "hamilton",
+                  "time": "2:09.395",
+                  "position": "1"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "2:10.952",
+                  "position": "2"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "2:12.426",
+                  "position": "3"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "2:13.704",
+                  "position": "4"
+                },
+                {
+                  "driverId": "kevin_magnussen",
+                  "time": "2:14.863",
+                  "position": "5"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "2:16.033",
+                  "position": "6"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "2:16.641",
+                  "position": "7"
+                },
+                {
+                  "driverId": "grosjean",
+                  "time": "2:17.779",
+                  "position": "8"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "2:18.853",
+                  "position": "9"
+                },
+                {
+                  "driverId": "hulkenberg",
+                  "time": "2:20.783",
+                  "position": "10"
+                },
+                {
+                  "driverId": "ericsson",
+                  "time": "2:21.606",
+                  "position": "11"
+                },
+                {
+                  "driverId": "vandoorne",
+                  "time": "2:33.120",
+                  "position": "12"
+                },
+                {
+                  "driverId": "brendon_hartley",
+                  "time": "2:35.398",
+                  "position": "13"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "2:46.147",
+                  "position": "14"
+                },
+                {
+                  "driverId": "sirotkin",
+                  "time": "2:54.616",
+                  "position": "15"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "2:55.624",
+                  "position": "16"
+                },
+                {
+                  "driverId": "vettel",
+                  "time": "3:01.679",
+                  "position": "17"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "3:39.223",
+                  "position": "18"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "hamilton",
+                  "time": "2:38.989",
+                  "position": "1"
+                },
+                {
+                  "driverId": "max_verstappen",
+                  "time": "2:38.770",
+                  "position": "2"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "2:38.455",
+                  "position": "3"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "2:38.378",
+                  "position": "4"
+                },
+                {
+                  "driverId": "kevin_magnussen",
+                  "time": "2:38.292",
+                  "position": "5"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "2:38.564",
+                  "position": "6"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "2:39.413",
+                  "position": "7"
+                },
+                {
+                  "driverId": "grosjean",
+                  "time": "2:39.925",
+                  "position": "8"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "2:40.896",
+                  "position": "9"
+                },
+                {
+                  "driverId": "hulkenberg",
+                  "time": "2:40.333",
+                  "position": "10"
+                },
+                {
+                  "driverId": "ericsson",
+                  "time": "2:41.585",
+                  "position": "11"
+                },
+                {
+                  "driverId": "vandoorne",
+                  "time": "2:31.743",
+                  "position": "12"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

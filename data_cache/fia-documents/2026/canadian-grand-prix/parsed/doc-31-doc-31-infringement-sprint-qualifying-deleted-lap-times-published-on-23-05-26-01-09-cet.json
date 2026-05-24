@@ -1,0 +1,26 @@
+{
+  "document_id": "058c9a5ebdb39a0a",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_sprint_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:15.402086+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 31 Date 22 May 2026 Time 19:00 Title Infringement - Sprint Qualifying Deleted Lap Times Description Infringement - Sprint Qualifying Deleted Lap Times Enclosed CAN DOC 31 - Sprint Qualifying",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 31\nDate 22 May 2026\nTime 19:00\nTitle Infringement - Sprint Qualifying Deleted Lap Times\nDescription Infringement - Sprint Qualifying Deleted Lap Times\nEnclosed CAN DOC 31 - Sprint Qualifying Deleted Lap Times .pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 31 \n  \nTo All Officials, All Teams      Date  22 May 2026 \n \n        Time  19:00 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Sprint Qualifying \n  \nFact The F1 cars below did not use the track at turns 2, 3, 4, 8, 10 and 14. \n \nNo. Turn Car Driver Competitor Time of Day  Lap Time \n1 2 44  Lewis Hamilton Scuderia Ferrari HP 16:34:32 1:26.505 \n2 2 16  Charles Leclerc Scuderia Ferrari HP 16:36:06 1:35.328 \n3 14 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:37:23 1:18.246 \n4 14 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:37:23 1:40.999 \n5 8 16 Charles Leclerc Scuderia Ferrari HP 16:38:14 1:32.072 \n6 3 6 Isack Hadj"
+}

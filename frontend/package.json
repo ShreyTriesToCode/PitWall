@@ -9,10 +9,12 @@
     "check": "next build"
   },
   "dependencies": {
-    "next": "latest",
+    "lucide-react": "latest",
+    "next": "^16.2.6",
     "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest"
+    "react-dom": "latest"
   },
-  "devDependencies": {}
+  "overrides": {
+    "postcss": "8.5.10"
+  }
 }

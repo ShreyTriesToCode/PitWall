@@ -1,0 +1,26 @@
+{
+  "document_id": "52a5bede45378235",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_30_-_breach_of_article_c9.3.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:25.222843+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 26 Date 22 May 2026 Time 17:18 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 30 ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 26\nDate 22 May 2026\nTime 17:18\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 30 - Liam Lawson\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 15:00\nSession Free Practice 1\nFact The CDS did not function when the car stopped on the track.\nInfringement Breach of Article C9.3 of the FIA F1 Regulations.\nDecision The competitor (Visa Cash App Racing Bulls F1 Team) is fined €30,000, €20,000 of\nwhich is suspended for a period of 12 months subject to no further breach of this\nregulation by the Competitor, for either of its cars. \nReason The Stewards heard from the driver of Car 30 (Liam Lawson), team representatives,\nthe FIA Technical Delegate and FIA Electronics Engineer and reviewed telemetry and\nin-car video evidence.\nThe team’s engineer explained how the CDS system worked.  It was noted that the\nsystem on this car performs two roles – the one for which is it primarily intended,\nnamely to release the clutch when the car is stopped and the engine is not working,\nand the"
+}

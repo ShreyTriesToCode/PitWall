@@ -1,0 +1,26 @@
+{
+  "document_id": "c6570f7cdcdc7d87",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_sprint_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:37.625199+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 53 Date 23 May 2026 Time 13:17 Title Infringement - Sprint Deleted Lap Times Description Infringement - Sprint Deleted Lap Times Enclosed CAN DOC 53 - Sprint Deleted Lap Times .pdf Garry Con",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 53\nDate 23 May 2026\nTime 13:17\nTitle Infringement - Sprint Deleted Lap Times\nDescription Infringement - Sprint Deleted Lap Times\nEnclosed CAN DOC 53 - Sprint Deleted Lap Times .pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 53 \n  \nTo All Officials, All Teams      Date  23 May 2026 \n \n        Time  13:17 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns Pit Entry, 1, 2, 8, 9 and 14. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 2 12  Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 12:09:42 1:18.995 \n2 9 12  Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 12:10:18 1:18.995 \n3 14 5 Gabriel Bortoleto Audi Revolut F1 Team 12:09:54 1:17.562 \n4 14 11 Sergio Perez Cadillac Formula 1 Team 12:12:23 1:17.633 \n5 14 87 Oliver Bearman TGR Haas F1 Team 12:13:50 1:17.144 \n6 14 27 Nico Hulkenberg Audi Revolut F1 Team 12:17:32 1"
+}

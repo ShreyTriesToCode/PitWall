@@ -1,1 +1,197 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2021/18/laps.json","limit":"30","offset":"0","total":"1259","RaceTable":{"season":"2021","round":"18","Races":[{"season":"2021","round":"18","url":"https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix","raceName":"Mexico City Grand Prix","Circuit":{"circuitId":"rodriguez","url":"https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez","circuitName":"Autódromo Hermanos Rodríguez","Location":{"lat":"19.4042","long":"-99.0907","locality":"Mexico City","country":"Mexico"}},"date":"2021-11-07","time":"19:00:00Z","Laps":[{"number":"1","Timings":[{"driverId":"max_verstappen","time":"1:44.815","position":"1"},{"driverId":"hamilton","time":"1:46.593","position":"2"},{"driverId":"perez","time":"1:47.610","position":"3"},{"driverId":"gasly","time":"1:49.377","position":"4"},{"driverId":"leclerc","time":"1:50.713","position":"5"},{"driverId":"giovinazzi","time":"1:53.070","position":"6"},{"driverId":"sainz","time":"1:54.373","position":"7"},{"driverId":"vettel","time":"1:55.910","position":"8"},{"driverId":"russell","time":"1:58.711","position":"9"},{"driverId":"raikkonen","time":"2:00.645","position":"10"},{"driverId":"mazepin","time":"2:02.852","position":"11"},{"driverId":"alonso","time":"2:04.519","position":"12"},{"driverId":"latifi","time":"2:05.882","position":"13"},{"driverId":"ocon","time":"2:07.654","position":"14"},{"driverId":"norris","time":"2:09.119","position":"15"},{"driverId":"ricciardo","time":"2:09.523","position":"16"},{"driverId":"stroll","time":"2:10.437","position":"17"},{"driverId":"bottas","time":"2:14.035","position":"18"}]},{"number":"2","Timings":[{"driverId":"max_verstappen","time":"2:11.572","position":"1"},{"driverId":"hamilton","time":"2:11.403","position":"2"},{"driverId":"perez","time":"2:11.575","position":"3"},{"driverId":"gasly","time":"2:11.585","position":"4"},{"driverId":"leclerc","time":"2:13.504","position":"5"},{"driverId":"giovinazzi","time":"2:12.779","position":"6"},{"driverId":"sainz","time":"2:13.559","position":"7"},{"driverId":"vettel","time":"2:13.316","position":"8"},{"driverId":"russell","time":"2:13.014","position":"9"},{"driverId":"raikkonen","time":"2:14.411","position":"10"},{"driverId":"mazepin","time":"2:13.765","position":"11"},{"driverId":"alonso","time":"2:12.938","position":"12"}]}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2021/18/laps.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "1259",
+    "RaceTable": {
+      "season": "2021",
+      "round": "18",
+      "Races": [
+        {
+          "season": "2021",
+          "round": "18",
+          "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix",
+          "raceName": "Mexico City Grand Prix",
+          "Circuit": {
+            "circuitId": "rodriguez",
+            "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez",
+            "circuitName": "Autódromo Hermanos Rodríguez",
+            "Location": {
+              "lat": "19.4042",
+              "long": "-99.0907",
+              "locality": "Mexico City",
+              "country": "Mexico"
+            }
+          },
+          "date": "2021-11-07",
+          "time": "19:00:00Z",
+          "Laps": [
+            {
+              "number": "1",
+              "Timings": [
+                {
+                  "driverId": "max_verstappen",
+                  "time": "1:44.815",
+                  "position": "1"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "1:46.593",
+                  "position": "2"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "1:47.610",
+                  "position": "3"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "1:49.377",
+                  "position": "4"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "1:50.713",
+                  "position": "5"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "1:53.070",
+                  "position": "6"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "1:54.373",
+                  "position": "7"
+                },
+                {
+                  "driverId": "vettel",
+                  "time": "1:55.910",
+                  "position": "8"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "1:58.711",
+                  "position": "9"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "2:00.645",
+                  "position": "10"
+                },
+                {
+                  "driverId": "mazepin",
+                  "time": "2:02.852",
+                  "position": "11"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "2:04.519",
+                  "position": "12"
+                },
+                {
+                  "driverId": "latifi",
+                  "time": "2:05.882",
+                  "position": "13"
+                },
+                {
+                  "driverId": "ocon",
+                  "time": "2:07.654",
+                  "position": "14"
+                },
+                {
+                  "driverId": "norris",
+                  "time": "2:09.119",
+                  "position": "15"
+                },
+                {
+                  "driverId": "ricciardo",
+                  "time": "2:09.523",
+                  "position": "16"
+                },
+                {
+                  "driverId": "stroll",
+                  "time": "2:10.437",
+                  "position": "17"
+                },
+                {
+                  "driverId": "bottas",
+                  "time": "2:14.035",
+                  "position": "18"
+                }
+              ]
+            },
+            {
+              "number": "2",
+              "Timings": [
+                {
+                  "driverId": "max_verstappen",
+                  "time": "2:11.572",
+                  "position": "1"
+                },
+                {
+                  "driverId": "hamilton",
+                  "time": "2:11.403",
+                  "position": "2"
+                },
+                {
+                  "driverId": "perez",
+                  "time": "2:11.575",
+                  "position": "3"
+                },
+                {
+                  "driverId": "gasly",
+                  "time": "2:11.585",
+                  "position": "4"
+                },
+                {
+                  "driverId": "leclerc",
+                  "time": "2:13.504",
+                  "position": "5"
+                },
+                {
+                  "driverId": "giovinazzi",
+                  "time": "2:12.779",
+                  "position": "6"
+                },
+                {
+                  "driverId": "sainz",
+                  "time": "2:13.559",
+                  "position": "7"
+                },
+                {
+                  "driverId": "vettel",
+                  "time": "2:13.316",
+                  "position": "8"
+                },
+                {
+                  "driverId": "russell",
+                  "time": "2:13.014",
+                  "position": "9"
+                },
+                {
+                  "driverId": "raikkonen",
+                  "time": "2:14.411",
+                  "position": "10"
+                },
+                {
+                  "driverId": "mazepin",
+                  "time": "2:13.765",
+                  "position": "11"
+                },
+                {
+                  "driverId": "alonso",
+                  "time": "2:12.938",
+                  "position": "12"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

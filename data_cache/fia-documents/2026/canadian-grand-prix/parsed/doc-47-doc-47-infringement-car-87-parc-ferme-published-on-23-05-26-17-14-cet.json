@@ -1,0 +1,26 @@
+{
+  "document_id": "7bdae0bc03ce2a43",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_87_-_parc_ferme.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:10:47.453526+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, TGR Haas F1 Team Document 47 Date 23 May 2026 Time 11:12 The Stewards, having received a report from the Technical Delegate (document 44), have considered the following matter and determine the following: N",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 47\nDate 23 May 2026\nTime 11:12\nThe Stewards, having received a report from the Technical Delegate (document 44), have\nconsidered the following matter and determine the following:\nNo / Driver 87 - Oliver Bearman\nCompetitor TGR Haas F1 Team\nTime 10:44\nSession Sprint Qualifying\nFact The setup of the car has been changed while under Parc Ferme.\nInfringement Breach of Article B3.5.3 of the FIA F1 Regulations.\nDecision Required to start the Sprint from the pit lane.\nTGR Haas F1 Team changed the setup of Car 87 under Parc Ferme, without the\napproval of the Technical Delegate, this not being in accordance with Article B3.5.3 of\nthe FIA F1 Regulations.\nThe F1 car is therefore required to start the Sprint from pit lane as per Article B3.5.3b\nof the FIA F1 Regulations.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of t"
+}

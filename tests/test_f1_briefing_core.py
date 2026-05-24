@@ -1,8 +1,13 @@
 import unittest
 import json
+import os
+import sqlite3
+import tempfile
 from pathlib import Path
+from unittest.mock import patch
 
 import f1_briefing as f1
+from pitwall.data import f1db, relbench_f1
 
 
 class F1BriefingCoreTests(unittest.TestCase):
@@ -46,6 +51,151 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertAlmostEqual(rows[0]["best_clean_lap"], 91.869)
         self.assertAlmostEqual(rows[0]["avg_best_35pct_lap"], 91.869)
+
+    def test_jolpica_cache_hit_does_not_sleep_or_fetch_network(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_dir = Path(tmp)
+            url = "https://api.jolpi.ca/ergast/f1/2025/1/results.json"
+            cache_path = cache_dir / f"{f1.cache_key_for_url(url, {})}.json"
+            cache_path.write_text('{"MRData": {"RaceTable": {"Races": []}}}', encoding="utf-8")
+            with patch.object(f1, "HTTP_CACHE_DIR", cache_dir), \
+                 patch.object(f1.time, "sleep") as sleep_mock, \
+                 patch.object(f1.requests, "get", side_effect=AssertionError("network should not be called")):
+                response = f1.safe_get(url, use_cache=True, request_sleep=9.0)
+            self.assertEqual(response.status_code, 200)
+            sleep_mock.assert_not_called()
+
+    def test_safe_get_honors_retry_after_and_atomic_json_cache(self):
+        first = f1.requests.Response()
+        first.status_code = 429
+        first.headers["Retry-After"] = "0"
+        first._content = b'{"detail":"rate limited"}'
+        second = f1.requests.Response()
+        second.status_code = 200
+        second.headers["content-type"] = ""
+        second._content = b'{"ok":true}'
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_dir = Path(tmp)
+            url = "https://api.jolpi.ca/ergast/f1/2025.json"
+            with patch.object(f1, "HTTP_CACHE_DIR", cache_dir), \
+                 patch.object(f1.requests, "get", side_effect=[first, second]) as get_mock, \
+                 patch.object(f1.time, "sleep") as sleep_mock:
+                response = f1.safe_get(url, use_cache=True)
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(get_mock.call_count, 2)
+            sleep_mock.assert_any_call(0.0)
+            self.assertTrue((cache_dir / f"{f1.cache_key_for_url(url, {})}.json").exists())
+
+    def test_cache_key_uses_hash_not_sluggable_url(self):
+        key_a = f1.cache_key_for_url("https://example.test/path", {"offset": 0, "limit": 100})
+        key_b = f1.cache_key_for_url("https://example.test/path", {"offset": 100, "limit": 100})
+        self.assertRegex(key_a, r"^[0-9a-f]{32}$")
+        self.assertNotEqual(key_a, key_b)
+
+    def test_jolpica_lap_pagination_fetches_all_offsets(self):
+        pages = [
+            {
+                "MRData": {
+                    "total": "101",
+                    "offset": "0",
+                    "limit": "100",
+                    "RaceTable": {"Races": [{"season": "2025", "round": "1", "raceName": "Race", "Laps": [{"number": "1"}]}]},
+                }
+            },
+            {
+                "MRData": {
+                    "total": "101",
+                    "offset": "100",
+                    "limit": "100",
+                    "RaceTable": {"Races": [{"season": "2025", "round": "1", "raceName": "Race", "Laps": [{"number": "101"}]}]},
+                }
+            },
+        ]
+        with patch.object(f1, "jolpica_get", side_effect=pages) as get_mock:
+            races = f1.jolpica_laps_races(2025, 1)
+        self.assertEqual([lap["number"] for lap in races[0]["Laps"]], ["1", "101"])
+        self.assertEqual(get_mock.call_args_list[0].kwargs["params"]["offset"], 0)
+        self.assertEqual(get_mock.call_args_list[1].kwargs["params"]["offset"], 100)
+
+    def test_grid_zero_is_pit_lane_not_qualifying_fallback(self):
+        race = {
+            "raceName": "Example Grand Prix",
+            "Circuit": {"circuitId": "example", "circuitName": "Example Circuit"},
+            "date": "2025-05-04",
+            "time": "12:00:00Z",
+        }
+        data = {
+            "results": [{
+                "Results": [
+                    {
+                        "positionOrder": "1",
+                        "grid": "0",
+                        "points": "25",
+                        "status": "Finished",
+                        "Driver": {"driverId": "driver_a", "givenName": "Driver", "familyName": "A"},
+                        "Constructor": {"name": "Team A"},
+                    },
+                    {
+                        "positionOrder": "2",
+                        "grid": "1",
+                        "points": "18",
+                        "status": "Finished",
+                        "Driver": {"driverId": "driver_b", "givenName": "Driver", "familyName": "B"},
+                        "Constructor": {"name": "Team B"},
+                    },
+                ]
+            }],
+            "qualifying": [{
+                "QualifyingResults": [
+                    {"position": "5", "Driver": {"driverId": "driver_a"}},
+                    {"position": "1", "Driver": {"driverId": "driver_b"}},
+                ]
+            }],
+            "sprint": [],
+            "laps": [],
+            "pitstops": [],
+        }
+        rows = f1.result_rows_from_race_data(2025, 1, race, data)
+        self.assertEqual(rows[0]["grid"], 3)
+
+    def test_constructor_alias_normalization_preserves_cross_season_form(self):
+        self.assertEqual(f1.canonical_constructor_name("Mercedes-AMG Petronas F1 Team"), "Mercedes")
+        self.assertEqual(f1.canonical_constructor_name("MoneyGram Haas F1 Team"), "Haas")
+        self.assertEqual(f1.canonical_constructor_name("Renault"), "Alpine")
+        self.assertEqual(f1.canonical_constructor_name("Force India"), "Aston Martin")
+
+    def test_weighted_average_reports_completeness_penalty(self):
+        raw, coverage = f1.weighted_average_with_coverage([(100, 1), (None, 3)])
+        penalized = f1.weighted_average_penalized([(100, 1), (None, 3)], neutral=0)
+        self.assertEqual(raw, 100)
+        self.assertAlmostEqual(coverage, 0.25)
+        self.assertLess(penalized, raw)
+
+    def test_feature_hash_is_stable_and_order_sensitive(self):
+        self.assertEqual(f1.feature_columns_hash(["a", "b"]), f1.feature_columns_hash(["a", "b"]))
+        self.assertNotEqual(f1.feature_columns_hash(["a", "b"]), f1.feature_columns_hash(["b", "a"]))
+
+    def test_frontend_timing_route_has_rate_limit_guard(self):
+        route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
+        self.assertIn("F1_TIMING_RATE_LIMIT_MS", route)
+        self.assertIn("Timing endpoint rate limit exceeded", route)
+        self.assertIn("const normalizedJolpica = normalizeJolpicaFallback(jolpicaFallback)", route)
+        self.assertIn("normalizedOpenF1 || normalizedJolpica || normalized", route)
+
+    def test_mobile_driver_drawer_is_viewport_fixed_bottom_sheet(self):
+        css = Path("frontend/app/globals.css").read_text(encoding="utf-8")
+        component = Path("frontend/app/components/PitWallComponents.jsx").read_text(encoding="utf-8")
+        self.assertIn("position: fixed", css)
+        self.assertIn("bottom: 0", css)
+        self.assertIn("88dvh", css)
+        self.assertIn("env(safe-area-inset-bottom)", css)
+        self.assertIn('document.body.style.overflow = "hidden"', component)
+
+    def test_predictions_page_uses_selected_target_payload(self):
+        page = Path("frontend/app/predictions/page.jsx").read_text(encoding="utf-8")
+        self.assertIn("selectedPayload", page)
+        self.assertIn("selectedPayload.fia_document_count", page)
+        self.assertIn("selectedPayload.timing_mode", page)
 
     def test_f1_driver_number_map_uses_permanent_number(self):
         driver_list = {
@@ -134,6 +284,67 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("strategy", latest)
         self.assertIn("scenarios", latest)
         self.assertIn("archive", contract)
+
+    def test_f1db_adapter_reports_disabled_without_downloading(self):
+        with patch.dict(os.environ, {"F1DB_ENABLED": "false", "F1DB_SQLITE_PATH": "", "F1DB_CSV_DIR": ""}, clear=False):
+            status = f1db.f1db_status()
+        self.assertEqual(status["source_name"], "F1DB")
+        self.assertFalse(status["available"])
+        self.assertEqual(status["license"], "CC-BY-4.0")
+        self.assertIn("v2026.4.2", f1db.f1db_metadata()["latest_verified_release"])
+
+    def test_f1db_adapter_reads_local_sqlite_circuits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "f1db.sqlite"
+            with sqlite3.connect(path) as conn:
+                conn.execute("CREATE TABLE circuits (id INTEGER, ref TEXT, name TEXT, country TEXT, locality TEXT, latitude REAL, longitude REAL)")
+                conn.execute("INSERT INTO circuits VALUES (1, 'monza', 'Autodromo Nazionale Monza', 'Italy', 'Monza', 45.62, 9.28)")
+                conn.commit()
+            with patch.dict(os.environ, {"F1DB_ENABLED": "true", "F1DB_SQLITE_PATH": str(path), "F1DB_CSV_DIR": ""}, clear=False):
+                status = f1db.f1db_status()
+                rows = f1db.read_circuits()
+        self.assertTrue(status["available"])
+        self.assertEqual(rows[0]["circuit_ref"], "monza")
+        self.assertEqual(rows[0]["source"], "F1DB")
+
+    def test_relbench_adapter_is_offline_optional(self):
+        with patch.dict(os.environ, {"RELBENCH_F1_ENABLED": "false"}, clear=False):
+            status = relbench_f1.relbench_status(download=False)
+        self.assertEqual(status["source_name"], "RelBench rel-f1")
+        self.assertFalse(status["available"])
+        self.assertIn("driver-top3", relbench_f1.relbench_metadata()["tasks"])
+
+    def test_model_artifacts_export_from_existing_meta(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with patch.object(f1, "MODEL_ARTIFACTS_DIR", Path(tmp)):
+                artifacts = f1.write_model_artifacts()
+                self.assertIn("evaluation.json", artifacts)
+                evaluation_path = Path(tmp) / "evaluation.json"
+                self.assertTrue(evaluation_path.exists())
+                evaluation = json.loads(evaluation_path.read_text(encoding="utf-8"))
+                self.assertIn("dataset_sources", evaluation)
+                self.assertIn("drift_monitor", evaluation)
+
+    def test_auto_commit_is_env_gated(self):
+        source = Path("f1_briefing.py").read_text(encoding="utf-8")
+        self.assertIn('os.getenv("AUTO_COMMIT_ENABLED", "false")', source)
+        self.assertIn("Auto commit disabled", source)
+
+    def test_public_path_sanitizer_strips_workspace_prefix(self):
+        absolute = str(Path.cwd() / "data_cache" / "frontend-contract.json")
+        self.assertEqual(f1.public_path(absolute), "data_cache/frontend-contract.json")
+
+    def test_session_timeline_stage_sanitizer_marks_ingested_session(self):
+        timeline = [
+            {"session_type": "fp1", "status": "waiting_for_api_data"},
+            {"session_type": "qualifying", "status": "waiting_for_api_data"},
+            {"session_type": "race", "status": "scheduled"},
+        ]
+        sanitized = f1.sanitize_session_timeline_for_stage(timeline, "post_qualifying")
+        state = f1.session_contract_state(sanitized)
+        self.assertEqual(state["last_ingested_session"]["session_type"], "qualifying")
+        self.assertEqual(state["next_session_to_ingest"]["session_type"], "race")
+        self.assertEqual(state["session_data_delay_status"], "clear")
 
     def test_model_status_and_audit_contracts_are_valid(self):
         model_status = json.loads(Path("data_cache/model-status.json").read_text(encoding="utf-8"))

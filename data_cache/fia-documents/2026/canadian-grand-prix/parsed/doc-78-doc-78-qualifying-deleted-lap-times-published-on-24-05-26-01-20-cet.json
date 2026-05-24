@@ -1,0 +1,26 @@
+{
+  "document_id": "4700eabb22e78578",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:09:46.534602+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 78 Date 23 May 2026 Time 19:18 Title Qualifying Deleted Lap Times Description Qualifying Deleted Lap Times Enclosed CAN DOC 78 - Qualifying Deleted Lap Times .pdf Garry Connelly Tanja Geilha",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 78\nDate 23 May 2026\nTime 19:18\nTitle Qualifying Deleted Lap Times\nDescription Qualifying Deleted Lap Times\nEnclosed CAN DOC 78 - Qualifying Deleted Lap Times .pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 78 \n  \nTo All Officials, All Teams      Date  23 May 2026 \n \n        Time  19:18 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 cars below did not use the track at turns 1, 4, 8 and 14. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 14 16  Charles Leclerc Scuderia Ferrari HP 16:06:29 1:16.346 \n2 1 27  Nico Hulkenberg Audi Revolut F1 Team 16:07:37 PIT \n3 4 5 Gabriel Bortoleto Audi Revolut F1 Team 16:08:01 1:19.122 \n4 1 44 Lewis Hamilton Scuderia Ferrari HP 16:13:55 1:30.923 \n5 1 77 Valtteri Bottas Cadillac Formula 1 Team 16:14:45 1:42.934 \n6 14 41 Arvid Lindblad Visa Cash App Racing Bulls F1 Team 16:16:36 1:14.785 \n7 14 41 Arvid Lindbl"
+}

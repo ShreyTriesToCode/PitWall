@@ -335,12 +335,13 @@ function SettingsPanel({ settings, patch }) {
 }
 
 function StatusPill({ payload, normalized }) {
-  const live = Boolean(payload?.is_live);
+  const live = Boolean(payload?.is_genuinely_live);
   const sourceOk = payload?.source === "Formula1LiveTiming" && payload?.ok;
   const state = String(payload?.session_state || "").replace("-", " ");
+  const mode = String(payload?.timing_mode || (live ? "live" : sourceOk ? state : "archive")).replace("-", " ");
   return (
     <div className={cx("dash-status-pill", live ? "live" : sourceOk ? "synced" : "fallback")}>
-      <span>{live ? "Live timing" : sourceOk ? state || "Timing data" : "Latest event"}</span>
+      <span>{live ? "Live timing" : mode || "Timing data"}</span>
       <strong>{normalized?.source || payload?.source || "Loading"}</strong>
     </div>
   );
@@ -483,6 +484,7 @@ export default function LivePage() {
     if (controlError) {
       setError(controlError);
       setLoading(false);
+      setSelectionPending(false);
       return;
     }
     const requestId = requestIdRef.current + 1;
@@ -557,9 +559,11 @@ export default function LivePage() {
   }, [auto, controlError, controls.year, controls.meeting, controls.session]);
 
   const normalized = useMemo(() => {
-    if (payload?.ok && payload.normalized) return { ...payload.normalized, source: "Formula 1 live timing" };
+    if (payload?.ok && payload.normalized) return { ...payload.normalized, source: payload?.is_genuinely_live ? "Formula 1 live timing" : payload?.source || "Latest timing data" };
+    if (!settings.fallbackResults) return {};
     return normalizeJolpicaFallback(payload?.normalized_fallback || payload?.jolpica_fallback) || {};
-  }, [payload]);
+  }, [payload, settings.fallbackResults]);
+  const openf1AuthRestricted = Boolean(payload?.feed_status?.OpenF1?.auth_restricted || payload?.openf1_fallback?.auth_restricted);
 
   const session = normalized.session || {};
   const drivers = normalized.drivers || [];
@@ -619,8 +623,8 @@ export default function LivePage() {
       <section className={cx("f1dash-shell", "f1dash-main", oledClass)}>
         <header className="f1dash-topbar">
           <div>
-            <p>Live timing</p>
-            <h1>{fmt(session.meeting_name, "F1 live dashboard")}</h1>
+            <p>{payload?.is_genuinely_live ? "Live timing" : "Timing replay"}</p>
+            <h1>{fmt(session.meeting_name, "F1 timing dashboard")}</h1>
             <span>{fmt(session.session_name || session.session_type, "Auto-selected event")} · {dateTime(session.date_start)}</span>
           </div>
 
@@ -630,7 +634,7 @@ export default function LivePage() {
               <RefreshCcw size={16} /> {loading ? "Syncing" : "Refresh"}
             </button>
             <button className={cx("dash-btn", auto && "active")} onClick={() => setAuto(!auto)}>
-              {auto ? <Pause size={16} /> : <Play size={16} />} {auto ? "Live stream" : "Manual"}
+              {auto ? <Pause size={16} /> : <Play size={16} />} {auto ? "Auto sync" : "Manual"}
             </button>
             <SettingsPanel settings={settings} patch={patchSettings} />
           </div>
@@ -740,7 +744,7 @@ export default function LivePage() {
           <section className="dash-warning" role="alert">
             <BadgeInfo size={18} />
             <div>
-              <strong>Check live timing controls.</strong>
+              <strong>Check timing controls.</strong>
               <p>{controlError}</p>
             </div>
           </section>
@@ -748,7 +752,8 @@ export default function LivePage() {
 
         <div className="sync-strip">
           <span>Updated: <strong>{lastUpdated ? lastUpdated.toLocaleTimeString() : "-"}</strong></span>
-          <span>Mode: <strong>{auto ? `stream ${streamState}` : "manual"}</strong></span>
+          <span>Mode: <strong>{payload?.timing_mode || (auto ? `auto ${streamState}` : "manual")}</strong></span>
+          <span>Source: <strong>{payload?.timing_source || payload?.source || "-"}</strong></span>
           <span>Delay: <strong>{settings.delay}s</strong></span>
           <span>Lap: <strong>{fmt(lapCount.current_lap)}/{fmt(lapCount.total_laps)}</strong></span>
           <span>Track: <strong>{fmt(trackStatus?.Status || trackStatus?.Message || trackStatus?.status)}</strong></span>
@@ -770,8 +775,18 @@ export default function LivePage() {
           <section className="dash-warning">
             <BadgeInfo size={18} />
             <div>
-              <strong>Live timing is not available right now.</strong>
-              <p>The page is showing latest completed event data from Jolpica where possible. During an active race weekend, Formula 1 live timing feeds are used automatically.</p>
+              <strong>Fresh live timing is not available right now.</strong>
+              <p>The page is showing latest available timing or completed event data where possible. It only shows Live when fresh timing packets are present during an active session.</p>
+            </div>
+          </section>
+        )}
+
+        {openf1AuthRestricted && (
+          <section className="dash-warning">
+            <ShieldAlert size={18} />
+            <div>
+              <strong>OpenF1 authenticated access is required for this live-session request.</strong>
+              <p>{payload?.feed_status?.OpenF1?.detail || payload?.openf1_fallback?.detail || "PitWall is using Formula 1 timing, FastF1, Jolpica, and cached fallbacks instead of inventing live data."}</p>
             </div>
           </section>
         )}
@@ -840,7 +855,7 @@ export default function LivePage() {
             </div>
           </Card>
 
-          <Card id="weather" title="Weather" icon={<CloudRain size={18} />} show={settings.weather} empty={!weather && "No live weather data available."}>
+          <Card id="weather" title="Weather" icon={<CloudRain size={18} />} show={settings.weather} empty={!weather && "No timing-feed weather data available."}>
             <div className="fact-grid">
               <div><span>Air</span><strong>{fmt(weather?.air_temperature)}°C</strong></div>
               <div><span>Track</span><strong>{fmt(weather?.track_temperature)}°C</strong></div>
@@ -917,7 +932,7 @@ export default function LivePage() {
         </section>
 
         <footer className="dash-footer">
-          Inspired by f1-dash layout principles, but implemented independently. Data comes from Formula 1 live timing feeds and Jolpica fallback. This site does not stream video.
+          Inspired by f1-dash layout principles, but implemented independently. Data comes from Formula 1 timing feeds, OpenF1, and Jolpica fallback; archived or stale data is labelled accordingly. This site does not stream video.
         </footer>
       </section>
     </AppShell>

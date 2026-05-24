@@ -1,0 +1,30 @@
+{
+  "schema_version": "pitwall-constructor-lineage-v1",
+  "lineage": {
+    "Red Bull": [
+      "Red Bull Racing",
+      "Oracle Red Bull Racing"
+    ],
+    "RB F1 Team": [
+      "AlphaTauri",
+      "Toro Rosso",
+      "Racing Bulls"
+    ],
+    "Audi": [
+      "Sauber",
+      "Stake F1 Team Kick Sauber"
+    ],
+    "Aston Martin": [
+      "Racing Point",
+      "Force India"
+    ],
+    "Alpine F1 Team": [
+      "Renault",
+      "Lotus F1"
+    ],
+    "Cadillac F1 Team": []
+  },
+  "notes": [
+    "Keeps new-team, rename, and constructor-prior handling season-replenishable."
+  ]
+}

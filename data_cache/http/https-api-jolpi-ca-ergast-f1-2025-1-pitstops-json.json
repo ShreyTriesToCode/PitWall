@@ -1,1 +1,247 @@
-{"MRData":{"xmlns":"","series":"f1","url":"https://api.jolpi.ca/ergast/f1/2025/1/pitstops.json","limit":"30","offset":"0","total":"82","RaceTable":{"season":"2025","round":"1","Races":[{"season":"2025","round":"1","url":"https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix","raceName":"Australian Grand Prix","Circuit":{"circuitId":"albert_park","url":"https://en.wikipedia.org/wiki/Albert_Park_Circuit","circuitName":"Albert Park Grand Prix Circuit","Location":{"lat":"-37.8497","long":"144.968","locality":"Melbourne","country":"Australia"}},"date":"2025-03-16","time":"04:00:00Z","PitStops":[{"driverId":"norris","lap":"2","stop":"1","time":"15:22:58","duration":"13.341"},{"driverId":"max_verstappen","lap":"2","stop":"1","time":"15:23:00","duration":"13.416"},{"driverId":"piastri","lap":"2","stop":"1","time":"15:23:02","duration":"13.078"},{"driverId":"russell","lap":"2","stop":"1","time":"15:23:03","duration":"13.672"},{"driverId":"leclerc","lap":"2","stop":"1","time":"15:23:06","duration":"14.182"},{"driverId":"tsunoda","lap":"2","stop":"1","time":"15:23:08","duration":"14.957"},{"driverId":"albon","lap":"2","stop":"1","time":"15:23:10","duration":"15.020"},{"driverId":"hamilton","lap":"2","stop":"1","time":"15:23:13","duration":"15.002"},{"driverId":"gasly","lap":"2","stop":"1","time":"15:23:15","duration":"15.104"},{"driverId":"alonso","lap":"2","stop":"1","time":"15:23:16","duration":"15.535"},{"driverId":"stroll","lap":"2","stop":"1","time":"15:23:19","duration":"15.505"},{"driverId":"hulkenberg","lap":"2","stop":"1","time":"15:23:21","duration":"15.130"},{"driverId":"antonelli","lap":"2","stop":"1","time":"15:23:23","duration":"14.658"},{"driverId":"bortoleto","lap":"2","stop":"1","time":"15:23:25","duration":"14.432"},{"driverId":"ocon","lap":"2","stop":"1","time":"15:23:27","duration":"14.395"},{"driverId":"lawson","lap":"2","stop":"1","time":"15:23:29","duration":"14.790"},{"driverId":"bearman","lap":"2","stop":"1","time":"15:23:30","duration":"14.605"},{"driverId":"norris","lap":"3","stop":"2","time":"15:25:40","duration":"12.910"},{"driverId":"max_verstappen","lap":"3","stop":"2","time":"15:25:42","duration":"13.740"},{"driverId":"piastri","lap":"3","stop":"2","time":"15:25:43","duration":"13.838"},{"driverId":"russell","lap":"3","stop":"2","time":"15:25:45","duration":"14.104"},{"driverId":"leclerc","lap":"3","stop":"2","time":"15:25:48","duration":"14.621"},{"driverId":"tsunoda","lap":"3","stop":"2","time":"15:25:51","duration":"15.223"},{"driverId":"albon","lap":"3","stop":"2","time":"15:25:53","duration":"16.993"},{"driverId":"hamilton","lap":"3","stop":"2","time":"15:25:56","duration":"16.191"},{"driverId":"gasly","lap":"3","stop":"2","time":"15:25:58","duration":"15.744"},{"driverId":"alonso","lap":"3","stop":"2","time":"15:25:59","duration":"16.241"},{"driverId":"stroll","lap":"3","stop":"2","time":"15:26:02","duration":"16.014"},{"driverId":"hulkenberg","lap":"3","stop":"2","time":"15:26:03","duration":"15.971"},{"driverId":"antonelli","lap":"3","stop":"2","time":"15:26:05","duration":"16.374"}]}]}}}
+{
+  "MRData": {
+    "xmlns": "",
+    "series": "f1",
+    "url": "https://api.jolpi.ca/ergast/f1/2025/1/pitstops.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "82",
+    "RaceTable": {
+      "season": "2025",
+      "round": "1",
+      "Races": [
+        {
+          "season": "2025",
+          "round": "1",
+          "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix",
+          "raceName": "Australian Grand Prix",
+          "Circuit": {
+            "circuitId": "albert_park",
+            "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit",
+            "circuitName": "Albert Park Grand Prix Circuit",
+            "Location": {
+              "lat": "-37.8497",
+              "long": "144.968",
+              "locality": "Melbourne",
+              "country": "Australia"
+            }
+          },
+          "date": "2025-03-16",
+          "time": "04:00:00Z",
+          "PitStops": [
+            {
+              "driverId": "norris",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:22:58",
+              "duration": "13.341"
+            },
+            {
+              "driverId": "max_verstappen",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:00",
+              "duration": "13.416"
+            },
+            {
+              "driverId": "piastri",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:02",
+              "duration": "13.078"
+            },
+            {
+              "driverId": "russell",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:03",
+              "duration": "13.672"
+            },
+            {
+              "driverId": "leclerc",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:06",
+              "duration": "14.182"
+            },
+            {
+              "driverId": "tsunoda",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:08",
+              "duration": "14.957"
+            },
+            {
+              "driverId": "albon",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:10",
+              "duration": "15.020"
+            },
+            {
+              "driverId": "hamilton",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:13",
+              "duration": "15.002"
+            },
+            {
+              "driverId": "gasly",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:15",
+              "duration": "15.104"
+            },
+            {
+              "driverId": "alonso",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:16",
+              "duration": "15.535"
+            },
+            {
+              "driverId": "stroll",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:19",
+              "duration": "15.505"
+            },
+            {
+              "driverId": "hulkenberg",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:21",
+              "duration": "15.130"
+            },
+            {
+              "driverId": "antonelli",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:23",
+              "duration": "14.658"
+            },
+            {
+              "driverId": "bortoleto",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:25",
+              "duration": "14.432"
+            },
+            {
+              "driverId": "ocon",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:27",
+              "duration": "14.395"
+            },
+            {
+              "driverId": "lawson",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:29",
+              "duration": "14.790"
+            },
+            {
+              "driverId": "bearman",
+              "lap": "2",
+              "stop": "1",
+              "time": "15:23:30",
+              "duration": "14.605"
+            },
+            {
+              "driverId": "norris",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:40",
+              "duration": "12.910"
+            },
+            {
+              "driverId": "max_verstappen",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:42",
+              "duration": "13.740"
+            },
+            {
+              "driverId": "piastri",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:43",
+              "duration": "13.838"
+            },
+            {
+              "driverId": "russell",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:45",
+              "duration": "14.104"
+            },
+            {
+              "driverId": "leclerc",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:48",
+              "duration": "14.621"
+            },
+            {
+              "driverId": "tsunoda",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:51",
+              "duration": "15.223"
+            },
+            {
+              "driverId": "albon",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:53",
+              "duration": "16.993"
+            },
+            {
+              "driverId": "hamilton",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:56",
+              "duration": "16.191"
+            },
+            {
+              "driverId": "gasly",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:58",
+              "duration": "15.744"
+            },
+            {
+              "driverId": "alonso",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:25:59",
+              "duration": "16.241"
+            },
+            {
+              "driverId": "stroll",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:26:02",
+              "duration": "16.014"
+            },
+            {
+              "driverId": "hulkenberg",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:26:03",
+              "duration": "15.971"
+            },
+            {
+              "driverId": "antonelli",
+              "lap": "3",
+              "stop": "2",
+              "time": "15:26:05",
+              "duration": "16.374"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

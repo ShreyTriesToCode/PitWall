@@ -1,0 +1,26 @@
+{
+  "document_id": "d67934c12e12e910",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_30_-_failing_to_set_a_lap_time_within_107.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-24T12:11:23.386076+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards have received a request from Visa Cash App Racing Bulls F1 Team to allow car 30 to start the Sprint despite Failing to set a lap time in SQ1. In accordance with Article B2.2.3b of the FIA F1 Regulations, the Stewards grant permission for car 30,",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards have received a request from Visa Cash App Racing Bulls F1 Team to allow car 30 to\nstart the Sprint despite\nFailing to set a lap time in SQ1.\nIn accordance with Article B2.2.3b of the FIA F1 Regulations, the Stewards grant permission for car\n30, Liam Lawson, to start the Sprint, as the driver has set satisfactory times in practice at this\nCompetition. The car will be placed on the grid in accordance with Article B2.3.4 of the FIA F1\nRegulations\nCompetitors are reminded that they have the right to appeal certain decisions of the Stewards, in\naccordance with Article 15 of the FIA International Sporting Code and Chapter 5 of the FIA Judicial\nand Disciplinary Rules, within the applicable time limits. \nDecisions of the Stewards are taken independently of the FIA and are based solely on the relevant\nregulations, guidelines and evidence presented.\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 27\nDate 22 May 2026\nTime 17:40\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}
