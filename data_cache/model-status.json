@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-05-24T23:35:16.628081+05:30",
+  "generated_at": "2026-05-25T00:49:28.155417+05:30",
   "trained_at": "2026-05-24T12:12:55.906446+05:30",
   "latest_completed_race_included": "2026-4",
   "latest_available_api_result": "2026-4",
@@ -758,7 +758,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-24T18:05:16.627924+00:00",
+      "checked_at": "2026-05-24T19:19:28.155280+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -778,7 +778,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-24T18:05:16.628053+00:00",
+      "checked_at": "2026-05-24T19:19:28.155394+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -796,44 +796,44 @@
       "season": 2026,
       "event_slug": "canadian-grand-prix",
       "event_name": "canadian grand prix",
-      "document_id": "384073123f33fe86",
-      "document_number": 85,
-      "title": "Doc 85 - Provisional Starting Grid Published on 24.05.26 01:53 CET",
-      "normalized_title": "doc-85-provisional-starting-grid-published-on-24-05-26-01-53-cet",
+      "document_id": "d4dcf52a98264538",
+      "document_number": 91,
+      "title": "Doc 91 - Final Starting Grid Published on 24.05.26 21:00 CET",
+      "normalized_title": "doc-91-final-starting-grid-published-on-24-05-26-21-00-cet",
       "document_type": "starting_grid",
-      "published_date": "2026-05-24",
-      "published_time": "00:41",
-      "published_at_utc": "2026-05-24T00:41:00+00:00",
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_provisional_starting_grid.pdf",
+      "published_date": null,
+      "published_time": null,
+      "published_at_utc": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_final_starting_grid.pdf",
       "local_pdf_path": null,
-      "local_text_path": "data_cache/fia-documents/2026/canadian-grand-prix/text/doc-85-doc-85-provisional-starting-grid-published-on-24-05-26-01-53-cet.txt",
-      "local_parsed_json_path": "data_cache/fia-documents/2026/canadian-grand-prix/parsed/doc-85-doc-85-provisional-starting-grid-published-on-24-05-26-01-53-cet.json",
+      "local_text_path": "data_cache/fia-documents/2026/canadian-grand-prix/text/doc-91-doc-91-final-starting-grid-published-on-24-05-26-21-00-cet.txt",
+      "local_parsed_json_path": "data_cache/fia-documents/2026/canadian-grand-prix/parsed/doc-91-doc-91-final-starting-grid-published-on-24-05-26-21-00-cet.json",
       "recalled": false,
       "superseded_by": null,
-      "hash": "b2be5fc8d330d20fd7edad5b74c15dadcf16491de66bec09b95eaaf0f89a61c4",
-      "first_seen_at": "2026-05-24T12:09:32.287832+05:30",
-      "last_checked_at": "2026-05-24T12:09:32.287885+05:30",
+      "hash": "fcb23ae4c2ce82e134b4cb37aff3a4df6bfc8e716b0fd56ea57531d7ce8647cb",
+      "first_seen_at": "2026-05-25T00:46:18.131129+05:30",
+      "last_checked_at": "2026-05-25T00:46:18.131175+05:30",
       "parse_status": "parsed",
       "parse_error": null,
       "source_confidence": 1.0,
       "cache_status": "miss",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
     },
-    "fia_document_count": 85,
+    "fia_document_count": 91,
     "fia_documents_by_type": {
-      "starting_grid": 1,
+      "starting_grid": 2,
+      "unknown": 17,
+      "infringement": 15,
+      "procedure": 7,
       "qualifying_classification": 2,
       "decision": 7,
       "race_director_notes": 3,
-      "unknown": 15,
       "deleted_lap_times": 6,
-      "infringement": 14,
       "scrutineering": 3,
       "summons": 9,
       "new_pu_elements": 3,
       "sprint_classification": 2,
       "sprint_starting_grid": 2,
-      "procedure": 5,
       "sprint_qualifying_classification": 2,
       "free_practice_classification": 1,
       "entry_list": 1,
@@ -865,7 +865,7 @@
     "fia_cache_misses": 0
   },
   "source_health": {
-    "generated_at": "2026-05-24T23:35:16.017087+05:30",
+    "generated_at": "2026-05-25T00:49:27.581562+05:30",
     "overall_score": 72.09,
     "status": "Fallback",
     "sources": [
@@ -943,7 +943,7 @@
         "source_url": "https://github.com/f1db/f1db",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-05-24T18:05:16.016853+00:00",
+        "checked_at": "2026-05-24T19:19:27.581368+00:00",
         "errors": [],
         "warnings": [
           "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -963,7 +963,7 @@
         "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-05-24T18:05:16.017012+00:00",
+        "checked_at": "2026-05-24T19:19:27.581501+00:00",
         "errors": [],
         "warnings": [
           "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -1006,7 +1006,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-05-24T23:34:54.318624+05:30",
+    "checked_at": "2026-05-25T00:49:07.741119+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-4",
@@ -1033,7 +1033,7 @@
     },
     "status": "latest_results_available"
   },
-  "mode": "weekend",
+  "mode": "today",
   "selected_targets": [
     {
       "target_type": "race",
@@ -1049,5 +1049,5 @@
     "Post-race corrections remain pending until official result rows are available after the configured delay.",
     "F1 predictions cannot be guaranteed because crashes, red flags, failures, penalties, strategy, weather, and source delays are inherently uncertain."
   ],
-  "backtest_history_count": 3
+  "backtest_history_count": 4
 }

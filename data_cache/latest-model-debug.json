@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T23:35:16.609035+05:30",
-  "output_mode": "weekend",
+  "generated_at": "2026-05-25T00:49:28.139746+05:30",
+  "output_mode": "today",
   "selected_targets": [
     {
       "title": "F1 Canadian GP - Race",
@@ -101,7 +101,7 @@
       "round_no": "5",
       "target_type": "race",
       "title": "F1 Race Briefing: F1 Canadian GP - Race",
-      "briefing": "# F1 Race Briefing: F1 Canadian GP - Race\n\nGenerated: Sunday, 24 May 2026, 11:35 PM IST\n\n## Event\n\n- Target: Race\n- Start: Monday, 25 May 2026, 01:30 AM IST\n- Circuit: Circuit Gilles Villeneuve\n- Location: Montreal, Canada\n\n## Prediction\n\n1. George Russell, score 74.3, confidence 55%, qualifying and grid position; ML podium probability; car performance; pit-stop execution; constructor form\n2. Andrea Kimi Antonelli, score 74.1, confidence 55%, qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability\n3. Lewis Hamilton, score 58.1, confidence 55%, qualifying and grid position; car performance; reliability; same-circuit history; weather adaptation\n4. Lando Norris, score 58.0, confidence 55%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; reliability\n5. Oscar Piastri, score 58.0, confidence 55%, qualifying and grid position; neural lap-time forecast; reliability; car performance; pit-stop execution\n6. Max Verstappen, score 55.5, confidence 55%, qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation\n7. Charles Leclerc, score 54.5, confidence 55%, qualifying and grid position; car performance; team strategy gain; reliability; ML finish-position model\n8. Isack Hadjar, score 41.8, confidence 55%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; team strategy gain\n9. Nico Hülkenberg, score 37.8, confidence 55%, qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation\n10. Pierre Gasly, score 37.6, confidence 44%, team strategy gain; pit-stop execution; qualifying and grid position; reliability; weather adaptation\n\n## Track and weather\n\n- Key car trait: balanced aero, traction, braking, and tyre management\n- Track profile: balanced speed profile\n- Overtaking: medium-good\n- Tyre stress: medium-high\n- Safety car/DNF risk proxy: high\n- Weather: 12.9°C, rain 7%, wind 16.5 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: two-stop risk if degradation appears in long runs\n- Pit window: Lap 16-28, with safety car flexibility.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. McLaren\n3. Ferrari\n4. Red Bull\n5. Audi\n\n## Upgrade impact\n\n- Audi: 40.0/100, straight line, power efficiency\n- Ferrari: 40.0/100, downforce, aero efficiency, traction\n- McLaren: 40.0/100, downforce, aero efficiency, cooling\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.4%\n- ml podium probability: 6.0%\n- race pace: 6.0%\n- ml finish position score: 4.4%\n- car performance: 4.4%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.22; RMSE: 4.11\n- Neural lap-time MAE: 4.67s; RMSE: 6.17s\n- Backtest winner hit: 29.4%; top-3 recall: 61.3%; top-5 recall: 74.4%\n- Win model AUC/Brier: 0.963 / 0.032\n- Podium model AUC/Brier: 0.934 / 0.074\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
+      "briefing": "# F1 Race Briefing: F1 Canadian GP - Race\n\nGenerated: Monday, 25 May 2026, 12:49 AM IST\n\n## Event\n\n- Target: Race\n- Start: Monday, 25 May 2026, 01:30 AM IST\n- Circuit: Circuit Gilles Villeneuve\n- Location: Montreal, Canada\n\n## Prediction\n\n1. George Russell, score 74.3, confidence 55%, qualifying and grid position; ML podium probability; car performance; pit-stop execution; constructor form\n2. Andrea Kimi Antonelli, score 74.1, confidence 55%, qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability\n3. Lewis Hamilton, score 58.1, confidence 55%, qualifying and grid position; car performance; reliability; same-circuit history; weather adaptation\n4. Lando Norris, score 58.0, confidence 55%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; reliability\n5. Oscar Piastri, score 58.0, confidence 55%, qualifying and grid position; neural lap-time forecast; reliability; car performance; pit-stop execution\n6. Max Verstappen, score 55.5, confidence 55%, qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation\n7. Charles Leclerc, score 54.5, confidence 55%, qualifying and grid position; car performance; team strategy gain; reliability; ML finish-position model\n8. Isack Hadjar, score 41.8, confidence 55%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; team strategy gain\n9. Nico Hülkenberg, score 37.8, confidence 55%, qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation\n10. Pierre Gasly, score 37.6, confidence 44%, team strategy gain; pit-stop execution; qualifying and grid position; reliability; weather adaptation\n\n## Track and weather\n\n- Key car trait: balanced aero, traction, braking, and tyre management\n- Track profile: balanced speed profile\n- Overtaking: medium-good\n- Tyre stress: medium-high\n- Safety car/DNF risk proxy: high\n- Weather: 12.7°C, rain 5%, wind 15.2 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: two-stop risk if degradation appears in long runs\n- Pit window: Lap 16-28, with safety car flexibility.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. McLaren\n3. Ferrari\n4. Red Bull\n5. Audi\n\n## Upgrade impact\n\n- Audi: 40.0/100, straight line, power efficiency\n- Ferrari: 40.0/100, downforce, aero efficiency, traction\n- McLaren: 40.0/100, downforce, aero efficiency, cooling\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.4%\n- ml podium probability: 6.0%\n- race pace: 6.0%\n- ml finish position score: 4.4%\n- car performance: 4.4%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.22; RMSE: 4.11\n- Neural lap-time MAE: 4.67s; RMSE: 6.17s\n- Backtest winner hit: 29.4%; top-3 recall: 61.3%; top-5 recall: 74.4%\n- Win model AUC/Brier: 0.963 / 0.032\n- Podium model AUC/Brier: 0.934 / 0.074\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
       "profile": {
         "race_name": "Canadian Grand Prix",
         "circuit": "Circuit Gilles Villeneuve",
@@ -181,14 +181,14 @@
       },
       "weather": {
         "source": "Open-Meteo forecast",
-        "temperature": "12.9°C",
-        "rain": "7%",
-        "humidity": "80%",
-        "wind": "16.5 km/h",
-        "wind_gust": "40.3 km/h",
+        "temperature": "12.7°C",
+        "rain": "5%",
+        "humidity": "81%",
+        "wind": "15.2 km/h",
+        "wind_gust": "43.2 km/h",
         "cloud_cover": "100%",
         "track_temperature": "Unavailable",
-        "rain_score": 7.0,
+        "rain_score": 5.0,
         "heat_score": 55,
         "wind_score": 100,
         "impact": "dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth"
@@ -385,7 +385,7 @@
           "short_explanation": "qualifying and grid position; ML podium probability; car performance; pit-stop execution; constructor form",
           "teammate_prediction_gap": 0.2,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -393,8 +393,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -549,7 +549,7 @@
           "short_explanation": "qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability",
           "teammate_prediction_gap": 0.2,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -557,8 +557,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -714,7 +714,7 @@
           "short_explanation": "qualifying and grid position; car performance; reliability; same-circuit history; weather adaptation",
           "teammate_prediction_gap": 3.7,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -722,8 +722,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -876,7 +876,7 @@
           "short_explanation": "qualifying and grid position; ML podium probability; car performance; ML finish-position model; reliability",
           "teammate_prediction_gap": 0.06,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -884,8 +884,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1041,7 +1041,7 @@
           "short_explanation": "qualifying and grid position; neural lap-time forecast; reliability; car performance; pit-stop execution",
           "teammate_prediction_gap": 0.06,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -1049,8 +1049,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1206,7 +1206,7 @@
           "short_explanation": "qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation",
           "teammate_prediction_gap": 13.72,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -1214,8 +1214,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1371,7 +1371,7 @@
           "short_explanation": "qualifying and grid position; car performance; team strategy gain; reliability; ML finish-position model",
           "teammate_prediction_gap": 3.7,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -1379,8 +1379,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1533,7 +1533,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; car performance; team strategy gain",
           "teammate_prediction_gap": 13.72,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -1541,8 +1541,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1698,7 +1698,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation",
           "teammate_prediction_gap": 2.52,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -1706,8 +1706,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1860,7 +1860,7 @@
           "short_explanation": "team strategy gain; pit-stop execution; qualifying and grid position; reliability; weather adaptation",
           "teammate_prediction_gap": 0.98,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -1868,8 +1868,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -2024,7 +2024,7 @@
           "short_explanation": "qualifying and grid position; ML podium probability; car performance; pit-stop execution; constructor form",
           "teammate_prediction_gap": 0.2,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -2032,8 +2032,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2188,7 +2188,7 @@
           "short_explanation": "qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability",
           "teammate_prediction_gap": 0.2,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -2196,8 +2196,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2353,7 +2353,7 @@
           "short_explanation": "qualifying and grid position; car performance; reliability; same-circuit history; weather adaptation",
           "teammate_prediction_gap": 3.7,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -2361,8 +2361,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2515,7 +2515,7 @@
           "short_explanation": "qualifying and grid position; ML podium probability; car performance; ML finish-position model; reliability",
           "teammate_prediction_gap": 0.06,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -2523,8 +2523,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2680,7 +2680,7 @@
           "short_explanation": "qualifying and grid position; neural lap-time forecast; reliability; car performance; pit-stop execution",
           "teammate_prediction_gap": 0.06,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -2688,8 +2688,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2845,7 +2845,7 @@
           "short_explanation": "qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation",
           "teammate_prediction_gap": 13.72,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -2853,8 +2853,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3010,7 +3010,7 @@
           "short_explanation": "qualifying and grid position; car performance; team strategy gain; reliability; ML finish-position model",
           "teammate_prediction_gap": 3.7,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3018,8 +3018,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3172,7 +3172,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; car performance; team strategy gain",
           "teammate_prediction_gap": 13.72,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3180,8 +3180,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3337,7 +3337,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation",
           "teammate_prediction_gap": 2.52,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3345,8 +3345,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3499,7 +3499,7 @@
           "short_explanation": "team strategy gain; pit-stop execution; qualifying and grid position; reliability; weather adaptation",
           "teammate_prediction_gap": 0.98,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3507,8 +3507,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3661,7 +3661,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; team strategy gain; reliability",
           "teammate_prediction_gap": 0.98,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3669,8 +3669,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3826,7 +3826,7 @@
           "short_explanation": "pit-stop execution; qualifying and grid position; team strategy gain; ML finish-position model; official upgrade package impact",
           "teammate_prediction_gap": 2.52,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3834,8 +3834,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3988,7 +3988,7 @@
           "short_explanation": "pit-stop execution; team strategy gain; weather adaptation; reliability",
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -3996,8 +3996,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4150,7 +4150,7 @@
           "short_explanation": "team strategy gain; pit-stop execution; reliability; weather adaptation; same-circuit history",
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -4158,8 +4158,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4315,7 +4315,7 @@
           "short_explanation": "pit-stop execution; reliability; weather adaptation; same-circuit history",
           "teammate_prediction_gap": 4.5,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -4323,8 +4323,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4479,7 +4479,7 @@
           "short_explanation": "reliability; pit-stop execution; weather adaptation; team strategy gain; same-circuit history",
           "teammate_prediction_gap": 3.43,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -4487,8 +4487,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4641,7 +4641,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; reliability; regulation-era fit",
           "teammate_prediction_gap": 1.7,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -4649,8 +4649,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4803,7 +4803,7 @@
           "short_explanation": "team strategy gain; reliability; pit-stop execution; weather adaptation; same-circuit history",
           "teammate_prediction_gap": 4.64,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -4811,8 +4811,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4967,7 +4967,7 @@
           "short_explanation": "team strategy gain; reliability; weather adaptation; pit-stop execution; regulation-era fit",
           "teammate_prediction_gap": 3.43,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -4975,8 +4975,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5124,7 +5124,7 @@
           "short_explanation": "qualifying and grid position; ML finish-position model; pit-stop execution; regulation-era fit",
           "teammate_prediction_gap": 1.7,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -5132,8 +5132,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5288,7 +5288,7 @@
           "short_explanation": "pit-stop execution; reliability; official upgrade package impact; regulation-era fit",
           "teammate_prediction_gap": 4.5,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -5296,8 +5296,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5448,7 +5448,7 @@
           "short_explanation": "team strategy gain; reliability; ML finish-position model; weather adaptation; pit-stop execution",
           "teammate_prediction_gap": 4.64,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -5456,8 +5456,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -5612,7 +5612,7 @@
           "short_explanation": "qualifying and grid position; ML podium probability; car performance; pit-stop execution; constructor form",
           "teammate_prediction_gap": 0.2,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -5620,8 +5620,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5776,7 +5776,7 @@
           "short_explanation": "qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability",
           "teammate_prediction_gap": 0.2,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -5784,8 +5784,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5941,7 +5941,7 @@
           "short_explanation": "qualifying and grid position; car performance; reliability; same-circuit history; weather adaptation",
           "teammate_prediction_gap": 3.7,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -5949,8 +5949,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6103,7 +6103,7 @@
           "short_explanation": "qualifying and grid position; ML podium probability; car performance; ML finish-position model; reliability",
           "teammate_prediction_gap": 0.06,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -6111,8 +6111,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6268,7 +6268,7 @@
           "short_explanation": "qualifying and grid position; neural lap-time forecast; reliability; car performance; pit-stop execution",
           "teammate_prediction_gap": 0.06,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -6276,8 +6276,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6433,7 +6433,7 @@
           "short_explanation": "qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation",
           "teammate_prediction_gap": 13.72,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -6441,8 +6441,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6598,7 +6598,7 @@
           "short_explanation": "qualifying and grid position; car performance; team strategy gain; reliability; ML finish-position model",
           "teammate_prediction_gap": 3.7,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -6606,8 +6606,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6760,7 +6760,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; car performance; team strategy gain",
           "teammate_prediction_gap": 13.72,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -6768,8 +6768,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6925,7 +6925,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation",
           "teammate_prediction_gap": 2.52,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -6933,8 +6933,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7087,7 +7087,7 @@
           "short_explanation": "team strategy gain; pit-stop execution; qualifying and grid position; reliability; weather adaptation",
           "teammate_prediction_gap": 0.98,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -7095,8 +7095,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7249,7 +7249,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; team strategy gain; reliability",
           "teammate_prediction_gap": 0.98,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -7257,8 +7257,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7414,7 +7414,7 @@
           "short_explanation": "pit-stop execution; qualifying and grid position; team strategy gain; ML finish-position model; official upgrade package impact",
           "teammate_prediction_gap": 2.52,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -7422,8 +7422,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7576,7 +7576,7 @@
           "short_explanation": "pit-stop execution; team strategy gain; weather adaptation; reliability",
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -7584,8 +7584,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7738,7 +7738,7 @@
           "short_explanation": "team strategy gain; pit-stop execution; reliability; weather adaptation; same-circuit history",
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -7746,8 +7746,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7903,7 +7903,7 @@
           "short_explanation": "pit-stop execution; reliability; weather adaptation; same-circuit history",
           "teammate_prediction_gap": 4.5,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -7911,8 +7911,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8067,7 +8067,7 @@
           "short_explanation": "reliability; pit-stop execution; weather adaptation; team strategy gain; same-circuit history",
           "teammate_prediction_gap": 3.43,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -8075,8 +8075,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8229,7 +8229,7 @@
           "short_explanation": "qualifying and grid position; pit-stop execution; ML finish-position model; reliability; regulation-era fit",
           "teammate_prediction_gap": 1.7,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -8237,8 +8237,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8391,7 +8391,7 @@
           "short_explanation": "team strategy gain; reliability; pit-stop execution; weather adaptation; same-circuit history",
           "teammate_prediction_gap": 4.64,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -8399,8 +8399,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8555,7 +8555,7 @@
           "short_explanation": "team strategy gain; reliability; weather adaptation; pit-stop execution; regulation-era fit",
           "teammate_prediction_gap": 3.43,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -8563,8 +8563,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8712,7 +8712,7 @@
           "short_explanation": "qualifying and grid position; ML finish-position model; pit-stop execution; regulation-era fit",
           "teammate_prediction_gap": 1.7,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -8720,8 +8720,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8876,7 +8876,7 @@
           "short_explanation": "pit-stop execution; reliability; official upgrade package impact; regulation-era fit",
           "teammate_prediction_gap": 4.5,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -8884,8 +8884,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9036,7 +9036,7 @@
           "short_explanation": "team strategy gain; reliability; ML finish-position model; weather adaptation; pit-stop execution",
           "teammate_prediction_gap": 4.64,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
+          "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-c6f0bd58f5fc",
           "race_id": "2026-5-canadian-grand-prix",
           "season": 2026,
           "round": 5,
@@ -9044,8 +9044,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-24T23:35:16.019168+05:30",
-          "input_data_hash": "05610ffb0f30a1cff6c1e2fff1fd08eb16ffd47200c21709d0ad19c3a7e483c6",
+          "generated_at": "2026-05-25T00:49:27.583203+05:30",
+          "input_data_hash": "4ae5ae1c2450add5b223f6cdab43106a7bbe4a4604879763edc977ce093e4759",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -9104,7 +9104,7 @@
           "fastf1_tyre_stint": 0.0199
         },
         "source_health_snapshot": {
-          "generated_at": "2026-05-24T23:35:16.017087+05:30",
+          "generated_at": "2026-05-25T00:49:27.581562+05:30",
           "overall_score": 72.09,
           "status": "Fallback",
           "sources": [
@@ -9182,7 +9182,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-05-24T18:05:16.016853+00:00",
+              "checked_at": "2026-05-24T19:19:27.581368+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -9202,7 +9202,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-05-24T18:05:16.017012+00:00",
+              "checked_at": "2026-05-24T19:19:27.581501+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -12962,7 +12962,7 @@
             "model_latest_completed_race_id": "2026-4",
             "api_latest_completed_race_id": "2026-4",
             "readiness": {
-              "checked_at": "2026-05-24T23:34:54.318624+05:30",
+              "checked_at": "2026-05-25T00:49:07.741119+05:30",
               "current_year": 2026,
               "final_results_delay_hours": 8,
               "latest_completed_race_id": "2026-4",
@@ -14393,7 +14393,7 @@
   "notification_gate": {
     "allowed": true,
     "reason": "Event starts within 8 hours.",
-    "hours_until_event": 1.91,
+    "hours_until_event": 0.68,
     "matched_event": "F1 Canadian GP - Race"
   },
   "backfill": {

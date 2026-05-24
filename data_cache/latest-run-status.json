@@ -1,8 +1,8 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-05-24T23:35:16.607784+05:30",
+  "generated_at": "2026-05-25T00:49:28.138624+05:30",
   "status": "Success",
-  "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: weekend\\nTargets: race=F1 Canadian GP - Race\\nBackfill used this run: 0\\nErrors: None",
+  "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: race=F1 Canadian GP - Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {
     "schema_version": "source-registry-v1",
     "season": 2026,

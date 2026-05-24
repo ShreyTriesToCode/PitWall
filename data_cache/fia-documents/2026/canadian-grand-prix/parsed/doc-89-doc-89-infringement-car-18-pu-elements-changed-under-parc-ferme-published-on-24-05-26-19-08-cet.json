@@ -1,0 +1,26 @@
+{
+  "document_id": "2966283073e862a0",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T00:46:22.841249+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 89 Date 24 May 2026 Time 13:01 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driv",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 89\nDate 24 May 2026\nTime 13:01\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 18 - Lance Stroll\nCompetitor Aston Martin Aramco F1 Team\nTime 11:34\nSession Race\nFact The following Power Unit elements have been used:\n4th Energy Store (ES)\n4th Control Electronics Unit (PU-CE)\nAll Power Unit elements were replaced without the approval of the FIA Technical\nDelegate during parc fermé.\nInfringement Breaches of Articles B8.2.2 (read with B8.2.3) and B3.5.3 of the FIA F1 Regulations.\nDecision Required to start the Race from the pit lane.\nReason The use of the 4th Energy Store and Control Electronics Unit would have resulted in a\ngrid drop penalty, however as the Technical Delegates approval was not obtained,\nthis means, in accordance with Article B3.5.3 of the FIA F1 Regulations a start from\nthe pit lane.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\n"
+}
