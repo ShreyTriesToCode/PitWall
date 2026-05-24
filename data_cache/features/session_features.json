@@ -5,9 +5,9 @@
     "stage": "post_qualifying",
     "start_iso": "2026-05-25T01:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-24T12:13:47.149218+05:30",
-      "overall_score": 78.44,
-      "status": "Available",
+      "generated_at": "2026-05-24T23:35:16.017087+05:30",
+      "overall_score": 72.09,
+      "status": "Fallback",
       "sources": [
         {
           "source": "F1 timing/static feed",
@@ -21,8 +21,8 @@
         },
         {
           "source": "OpenF1",
-          "score": 48.0,
-          "status": "Stale"
+          "score": 70.0,
+          "status": "Fallback"
         },
         {
           "source": "FastF1",
@@ -53,6 +53,16 @@
           "source": "Calendar",
           "score": 82.0,
           "status": "Available"
+        },
+        {
+          "source": "F1DB historical dataset",
+          "score": 35.0,
+          "status": "Stale"
+        },
+        {
+          "source": "RelBench rel-f1 benchmark",
+          "score": 30.0,
+          "status": "Stale"
         }
       ],
       "api_notes": {
@@ -60,6 +70,46 @@
           "status": "not_checked",
           "auth_required": false,
           "errors": []
+        },
+        "f1db": {
+          "source_name": "F1DB",
+          "source_type": "historical_dataset",
+          "enabled": false,
+          "available": false,
+          "status": "disabled",
+          "confidence": 0.35,
+          "license": "CC-BY-4.0",
+          "version": "v2026.4.2",
+          "source_url": "https://github.com/f1db/f1db",
+          "schema_url": null,
+          "artifact_path": null,
+          "checked_at": "2026-05-24T18:05:16.016853+00:00",
+          "errors": [],
+          "warnings": [
+            "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
+          ],
+          "supported_categories": [],
+          "notes": {}
+        },
+        "relbench_f1": {
+          "source_name": "RelBench rel-f1",
+          "source_type": "offline_relational_benchmark",
+          "enabled": false,
+          "available": false,
+          "status": "disabled",
+          "confidence": 0.3,
+          "license": "CC-BY-4.0",
+          "version": null,
+          "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
+          "schema_url": null,
+          "artifact_path": null,
+          "checked_at": "2026-05-24T18:05:16.017012+00:00",
+          "errors": [],
+          "warnings": [
+            "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
+          ],
+          "supported_categories": [],
+          "notes": {}
         }
       }
     }

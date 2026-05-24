@@ -36,5 +36,5 @@ Cadillac Formula 1 Team1:16.8668104.02916:37:25  POLE POSITION LAP63George RUSSE
 Mercedes-AMG PETRONAS F1 Team1:12.965215.166 KM/HFASTEST LAP63George RUSSELL
 Mercedes-AMG PETRONAS F1 Team1:12.965215.166 KM/H
 Timekeeper:
-Doc 35 Time 20:00
-Garry Connelly  Tanja Geilhausen   Pedro Lamy           Marcel Demers  The Stewards
+Doc 35 Time 20:00 
+Garry Connelly  Tanja Geilhausen   Pedro Lamy           Marcel Demers  The Stewards 

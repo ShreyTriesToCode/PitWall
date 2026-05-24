@@ -1,6 +1,6 @@
-# F1 Race Briefing: Canadian Grand Prix Race
+# F1 Race Briefing: F1 Canadian GP - Race
 
-Generated: Sunday, 24 May 2026, 12:13 PM IST
+Generated: Sunday, 24 May 2026, 11:35 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Sunday, 24 May 2026, 12:13 PM IST
 
 ## Prediction
 
-1. George Russell, score 76.6, confidence 76%, qualifying and grid position; ML podium probability; car performance; pit-stop execution; official timing car performance
-2. Andrea Kimi Antonelli, score 76.3, confidence 76%, qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability
-3. Lewis Hamilton, score 62.2, confidence 76%, qualifying and grid position; car performance; reliability; official timing car performance; same-circuit history
-4. Lando Norris, score 61.8, confidence 76%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; official timing car performance
-5. Oscar Piastri, score 61.6, confidence 76%, qualifying and grid position; neural lap-time forecast; car performance; reliability; pit-stop execution
-6. Max Verstappen, score 58.5, confidence 76%, qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation
-7. Charles Leclerc, score 58.1, confidence 76%, qualifying and grid position; car performance; team strategy gain; reliability; official timing car performance
-8. Isack Hadjar, score 46.6, confidence 78%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; official timing car performance
-9. Nico Hülkenberg, score 40.6, confidence 76%, qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation
-10. Franco Colapinto, score 40.5, confidence 63%, qualifying and grid position; pit-stop execution; ML finish-position model; team strategy gain; reliability
+1. George Russell, score 74.3, confidence 55%, qualifying and grid position; ML podium probability; car performance; pit-stop execution; constructor form
+2. Andrea Kimi Antonelli, score 74.1, confidence 55%, qualifying and grid position; car performance; pit-stop execution; driver form; ML podium probability
+3. Lewis Hamilton, score 58.1, confidence 55%, qualifying and grid position; car performance; reliability; same-circuit history; weather adaptation
+4. Lando Norris, score 58.0, confidence 55%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; reliability
+5. Oscar Piastri, score 58.0, confidence 55%, qualifying and grid position; neural lap-time forecast; reliability; car performance; pit-stop execution
+6. Max Verstappen, score 55.5, confidence 55%, qualifying and grid position; same-circuit history; reliability; ML finish-position model; weather adaptation
+7. Charles Leclerc, score 54.5, confidence 55%, qualifying and grid position; car performance; team strategy gain; reliability; ML finish-position model
+8. Isack Hadjar, score 41.8, confidence 55%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; team strategy gain
+9. Nico Hülkenberg, score 37.8, confidence 55%, qualifying and grid position; pit-stop execution; team strategy gain; reliability; weather adaptation
+10. Pierre Gasly, score 37.6, confidence 44%, team strategy gain; pit-stop execution; qualifying and grid position; reliability; weather adaptation
 
 ## Track and weather
 
@@ -29,7 +29,7 @@ Generated: Sunday, 24 May 2026, 12:13 PM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 12.4°C, rain 10%, wind 18.2 km/h
+- Weather: 12.9°C, rain 7%, wind 16.5 km/h
 - Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
 
 ## Strategy
@@ -79,7 +79,7 @@ Era: 2026+ active-aero and new power-unit era
 
 - Stage: Race prediction, Post-qualifying prediction
 - ML model: loaded
-- F1 timing: official_f1_live_timing_static_used
+- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token
 - FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']
 - Calendar check: official_f1_calendar_page_reachable
 

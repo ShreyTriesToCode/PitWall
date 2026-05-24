@@ -1,17 +1,17 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-05-24T20:58:19.690924+05:30",
+  "generated_at": "2026-05-24T23:35:17.093870+05:30",
   "history": [
     {
       "race_id": "2026-5-canadian-grand-prix",
-      "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-cc89fbae1225",
+      "prediction_id": "2026-5-canadian-grand-prix-race-post_qualifying-78c066c30dc5",
       "race_name": "Canadian Grand Prix",
       "season": 2026,
       "round": 5,
       "stage": "post_qualifying",
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
-      "top_pick_confidence": 76.1,
+      "top_pick_confidence": 54.9,
       "finish_position_mae": 3.2158484860877996,
       "finish_position_rmse": 4.111492710135723,
       "winner_hit_rate": 0.2941,

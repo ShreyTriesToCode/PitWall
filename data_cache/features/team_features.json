@@ -2,10 +2,10 @@
   {
     "team": "Mercedes",
     "expected_team_points": 47.62,
-    "average_score": 76.81,
-    "average_confidence": 79.1,
-    "average_active_aero_suitability": 74.39,
-    "average_energy_boost_advantage": 72.18,
+    "average_score": 76.06,
+    "average_confidence": 72.03,
+    "average_active_aero_suitability": 74.18,
+    "average_energy_boost_advantage": 71.02,
     "drivers": [
       "George Russell",
       "Andrea Kimi Antonelli",
@@ -18,10 +18,10 @@
   {
     "team": "Ferrari",
     "expected_team_points": 32.6,
-    "average_score": 64.27,
-    "average_confidence": 79.1,
-    "average_active_aero_suitability": 65.36,
-    "average_energy_boost_advantage": 68.89,
+    "average_score": 62.98,
+    "average_confidence": 72.03,
+    "average_active_aero_suitability": 64.97,
+    "average_energy_boost_advantage": 67.45,
     "drivers": [
       "Lewis Hamilton",
       "Charles Leclerc",
@@ -34,10 +34,10 @@
   {
     "team": "McLaren",
     "expected_team_points": 34.59,
-    "average_score": 61.62,
-    "average_confidence": 79.1,
-    "average_active_aero_suitability": 59.99,
-    "average_energy_boost_advantage": 58.12,
+    "average_score": 60.4,
+    "average_confidence": 72.03,
+    "average_active_aero_suitability": 59.51,
+    "average_energy_boost_advantage": 56.49,
     "drivers": [
       "Lando Norris",
       "Oscar Piastri",
@@ -50,10 +50,10 @@
   {
     "team": "Red Bull",
     "expected_team_points": 13.76,
-    "average_score": 52.21,
-    "average_confidence": 79.45,
-    "average_active_aero_suitability": 55.47,
-    "average_energy_boost_advantage": 59.49,
+    "average_score": 50.93,
+    "average_confidence": 72.03,
+    "average_active_aero_suitability": 54.85,
+    "average_energy_boost_advantage": 57.19,
     "drivers": [
       "Max Verstappen",
       "Isack Hadjar",
@@ -66,10 +66,10 @@
   {
     "team": "Audi",
     "expected_team_points": 2.07,
-    "average_score": 40.12,
-    "average_confidence": 77.8,
-    "average_active_aero_suitability": 46.03,
-    "average_energy_boost_advantage": 54.44,
+    "average_score": 39.12,
+    "average_confidence": 70.73,
+    "average_active_aero_suitability": 45.45,
+    "average_energy_boost_advantage": 51.85,
     "drivers": [
       "Nico Hülkenberg",
       "Gabriel Bortoleto",
@@ -82,22 +82,34 @@
   {
     "team": "Alpine",
     "expected_team_points": 1.08,
-    "average_score": 39.15,
-    "average_confidence": 63.85,
-    "average_active_aero_suitability": 45.2,
-    "average_energy_boost_advantage": 54.17,
+    "average_score": 37.14,
+    "average_confidence": 43.7,
+    "average_active_aero_suitability": 41.69,
+    "average_energy_boost_advantage": 45.61,
     "drivers": [
-      "Franco Colapinto",
-      "Pierre Gasly"
+      "Pierre Gasly",
+      "Franco Colapinto"
+    ]
+  },
+  {
+    "team": "Haas",
+    "expected_team_points": 0.66,
+    "average_score": 35.09,
+    "average_confidence": 43.7,
+    "average_active_aero_suitability": 41.81,
+    "average_energy_boost_advantage": 47.25,
+    "drivers": [
+      "Oliver Bearman",
+      "Esteban Ocon"
     ]
   },
   {
     "team": "Williams",
     "expected_team_points": 1.4,
-    "average_score": 38.02,
-    "average_confidence": 79.25,
-    "average_active_aero_suitability": 43.35,
-    "average_energy_boost_advantage": 51.18,
+    "average_score": 37.21,
+    "average_confidence": 71.83,
+    "average_active_aero_suitability": 43.1,
+    "average_energy_boost_advantage": 49.07,
     "drivers": [
       "Carlos Sainz",
       "Alexander Albon",
@@ -108,40 +120,12 @@
     ]
   },
   {
-    "team": "RB F1 Team",
-    "expected_team_points": 2.46,
-    "average_score": 34.69,
-    "average_confidence": 70.27,
-    "average_active_aero_suitability": 41.95,
-    "average_energy_boost_advantage": 49.52,
-    "drivers": [
-      "Arvid Lindblad",
-      "Liam Lawson",
-      "Arvid Lindblad",
-      "Liam Lawson",
-      "Liam Lawson",
-      "Arvid Lindblad"
-    ]
-  },
-  {
-    "team": "Haas",
-    "expected_team_points": 0.66,
-    "average_score": 36.69,
-    "average_confidence": 62.9,
-    "average_active_aero_suitability": 44.89,
-    "average_energy_boost_advantage": 51.39,
-    "drivers": [
-      "Oliver Bearman",
-      "Esteban Ocon"
-    ]
-  },
-  {
     "team": "Aston Martin",
     "expected_team_points": 1.08,
-    "average_score": 34.82,
-    "average_confidence": 75.87,
-    "average_active_aero_suitability": 47.01,
-    "average_energy_boost_advantage": 42.12,
+    "average_score": 35.28,
+    "average_confidence": 68.83,
+    "average_active_aero_suitability": 47.13,
+    "average_energy_boost_advantage": 44.59,
     "drivers": [
       "Fernando Alonso",
       "Lance Stroll",
@@ -152,12 +136,28 @@
     ]
   },
   {
+    "team": "RB F1 Team",
+    "expected_team_points": 2.46,
+    "average_score": 33.24,
+    "average_confidence": 63.8,
+    "average_active_aero_suitability": 41.49,
+    "average_energy_boost_advantage": 45.55,
+    "drivers": [
+      "Liam Lawson",
+      "Arvid Lindblad",
+      "Arvid Lindblad",
+      "Liam Lawson",
+      "Liam Lawson",
+      "Arvid Lindblad"
+    ]
+  },
+  {
     "team": "Cadillac",
     "expected_team_points": 0,
-    "average_score": 27.57,
-    "average_confidence": 62.9,
-    "average_active_aero_suitability": 40.04,
-    "average_energy_boost_advantage": 42.72,
+    "average_score": 28.19,
+    "average_confidence": 43.7,
+    "average_active_aero_suitability": 38.61,
+    "average_energy_boost_advantage": 43.94,
     "drivers": [
       "Valtteri Bottas",
       "Sergio Pérez"

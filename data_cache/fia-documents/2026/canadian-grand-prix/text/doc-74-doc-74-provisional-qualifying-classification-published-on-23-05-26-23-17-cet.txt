@@ -38,5 +38,5 @@ Cadillac Formula 1 Team1:16.27210103.94116:08:03  POLE POSITION LAP63George RUSS
 Mercedes-AMG PETRONAS F1 Team1:12.578216.313 KM/HFASTEST LAP63George RUSSELL
 Mercedes-AMG PETRONAS F1 Team1:12.578216.313 KM/H
 Timekeeper:
-Doc 74 Time 17:17
+Doc 74 Time 17:17 
 Iskandar Saikali  Clerk of the Course

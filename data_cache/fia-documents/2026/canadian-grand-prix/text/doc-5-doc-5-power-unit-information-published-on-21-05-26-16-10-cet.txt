@@ -20,19 +20,19 @@ Overtake not active Overtake active
 8.0 MJ 8.5 MJ 6.0 MJ 8.5 MJ 8.5 MJ 2682 m 100 kW/s
 Overtake not active Overtake active
 Base - Standard Base - Overtake Alt 1 Base - Overtake
-Identification of
+Identification of 
 Sectors
-Lap distance window
+Lap distance window 
 [m]
-Identification of
+Identification of 
 Sectors
-Lap distance window
+Lap distance window 
 [m]
-Maximum PU power
+Maximum PU power 
 reduction permitted
-Identification of
+Identification of 
 Sectors
-Lap distance window
+Lap distance window 
 [m]
 T1-T6 220-1200 T5-T6
 [T13-Exit T14]
@@ -40,10 +40,10 @@ T1-T6 220-1200 T5-T6
 [3850-4050]
 350kW
 [350kW] [Exit T14] [4000-4400]
-Identification of
+Identification of 
 Sectors
-Lap distance window
-[m] Speed threshold Detection Gap
+Lap distance window 
+[m] Speed threshold Detection Gap 
 Detection Line
 [sLap & Loop]
 (Art. B7.2.1b.viii)
@@ -61,8 +61,8 @@ Article C5.2.8
 Maximum DC power of
 ERS-K function of car speed
 Other parts of the Lap
-Sprint & Race Any Practice Session
-incl. Qualifying
+Sprint & Race Any Practice Session 
+incl. Qualifying 
 Sessions
 IDENTIFICATION OF SECTORS WHERE EXCEPTIONS APPLY
 Article C5.12.4
@@ -70,23 +70,23 @@ Sectors where the PU power reduction at the start of a Power
 Limited Pending period can be greater than 150kW
 (sectors indicated by [ ] are for SQ and Q only)
 Article C5.12.5
-Sectors where a reset of MGUK power
+Sectors where a reset of MGUK power 
 reduction is permitted
 (sectors indicated by [ ] are for SQ and Q only)
 Article C5.2.8iii
-Sectors where the alternative power curve
+Sectors where the alternative power curve 
 defined above applies in Sprint & Race
 Article C5.2.10
 Maximum Recharge per lap
 Article C5.12.8
 Maximum PU Power Reduction Rate
-Sprint & Race Sprint Qualifying &
+Sprint & Race Sprint Qualifying & 
 Qualifying
 Free Practice
 sessions
-Out laps other than in
+Out laps other than in 
 Sprint and Race
-Power Limited
+Power Limited 
 Distance Rate Limit
 POWER AND ENERGY LIMITS
 F1 POWER UNIT INFORMATION TO THE TEAMS AND PUMs
