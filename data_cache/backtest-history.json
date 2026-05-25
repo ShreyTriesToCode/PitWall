@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-05-25T11:46:36.387122+05:30",
+  "generated_at": "2026-05-25T13:38:52.032514+05:30",
   "history": [
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -12,10 +12,10 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 52.7,
-      "finish_position_mae": 3.215819040981529,
-      "finish_position_rmse": 4.110524917484137,
+      "finish_position_mae": 3.221649187890685,
+      "finish_position_rmse": 4.116123424209661,
       "winner_hit_rate": 0.2941,
-      "top3_recall": 0.6275,
+      "top3_recall": 0.6127,
       "top10_recall": 0.8176
     },
     {
@@ -28,10 +28,10 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
       "top_pick_confidence": 54.9,
-      "finish_position_mae": 3.215819040981529,
-      "finish_position_rmse": 4.110524917484137,
+      "finish_position_mae": 3.221649187890685,
+      "finish_position_rmse": 4.116123424209661,
       "winner_hit_rate": 0.2941,
-      "top3_recall": 0.6275,
+      "top3_recall": 0.6127,
       "top10_recall": 0.8176
     },
     {
@@ -44,10 +44,10 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
       "top_pick_confidence": 54.9,
-      "finish_position_mae": 3.215819040981529,
-      "finish_position_rmse": 4.110524917484137,
+      "finish_position_mae": 3.221649187890685,
+      "finish_position_rmse": 4.116123424209661,
       "winner_hit_rate": 0.2941,
-      "top3_recall": 0.6275,
+      "top3_recall": 0.6127,
       "top10_recall": 0.8176
     },
     {
@@ -60,10 +60,10 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.215819040981529,
-      "finish_position_rmse": 4.110524917484137,
+      "finish_position_mae": 3.221649187890685,
+      "finish_position_rmse": 4.116123424209661,
       "winner_hit_rate": 0.2941,
-      "top3_recall": 0.6275,
+      "top3_recall": 0.6127,
       "top10_recall": 0.8176
     },
     {
@@ -76,10 +76,10 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.215819040981529,
-      "finish_position_rmse": 4.110524917484137,
+      "finish_position_mae": 3.221649187890685,
+      "finish_position_rmse": 4.116123424209661,
       "winner_hit_rate": 0.2941,
-      "top3_recall": 0.6275,
+      "top3_recall": 0.6127,
       "top10_recall": 0.8176
     }
   ]
