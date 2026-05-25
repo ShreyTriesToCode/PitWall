@@ -176,6 +176,8 @@ Redownload FIA PDFs only when intentionally needed:
 FORCE_REDOWNLOAD_FIA_DOCUMENTS=true KEEP_FIA_PDFS=false .venv/bin/python f1_briefing.py
 ```
 
+If FIA serves a deterministic `403` for an individual decision PDF, PitWall now makes one browser-header request, reuses cached official text/parsed JSON when present, marks the document `stale_cache_forbidden`, and continues the run. Without cache it marks the document `forbidden` in source health instead of retrying four times or hiding the failure.
+
 Session ingestion uses official session windows when available, waits after completed sessions, then marks `waiting_for_api_data`, `data_ingested`, or `unavailable` in the contract. Common controls:
 
 ```bash
@@ -444,6 +446,9 @@ FIA_REQUEST_SLEEP_SECONDS=1.0
 MAX_FIA_DOCUMENTS_PER_RUN=0
 MAX_FIA_PDFS_DOWNLOAD_PER_RUN=0
 KEEP_FIA_PDFS=false
+FIA_DOCUMENT_USER_AGENT=Mozilla/5.0 (compatible; PitWall/3.0; +https://github.com/ShreyTriesToCode/PitWall)
+FIA_DOCUMENT_REFERER=https://www.fia.com/documents/championships/fia-formula-one-world-championship-14
+FIA_DOCUMENT_STRICT_DOWNLOADS=false
 FORMULA1_CALENDAR_BASE_URL=https://www.formula1.com/en/racing
 FORMULA1_SEASON_URL=
 SESSION_INGESTION_ENABLED=true

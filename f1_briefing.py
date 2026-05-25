@@ -55,12 +55,22 @@ except Exception:
 
 try:
     from pitwall.data.f1db import f1db_metadata, f1db_status
+    from pitwall.data.fia_documents import fetch_fia_document_text as pitwall_fetch_fia_document_text
     from pitwall.data.relbench_f1 import relbench_metadata, relbench_status
+    from pitwall.features import strategy as pitwall_strategy
+    from pitwall.models import contract as pitwall_contract
+    from pitwall.models import simulation as pitwall_simulation
+    from pitwall import storage as pitwall_storage
 except Exception:
     f1db_metadata = None
     f1db_status = None
+    pitwall_fetch_fia_document_text = None
     relbench_metadata = None
     relbench_status = None
+    pitwall_strategy = None
+    pitwall_contract = None
+    pitwall_simulation = None
+    pitwall_storage = None
 
 
 F1_ICS_URL = os.getenv("F1_ICS_URL", "").strip()
@@ -139,6 +149,9 @@ FIA_REQUEST_SLEEP_SECONDS = float(os.getenv("FIA_REQUEST_SLEEP_SECONDS", "1.0"))
 MAX_FIA_DOCUMENTS_PER_RUN = int(os.getenv("MAX_FIA_DOCUMENTS_PER_RUN", "0"))
 MAX_FIA_PDFS_DOWNLOAD_PER_RUN = int(os.getenv("MAX_FIA_PDFS_DOWNLOAD_PER_RUN", "0"))
 KEEP_FIA_PDFS = os.getenv("KEEP_FIA_PDFS", "false").lower() == "true"
+FIA_DOCUMENT_USER_AGENT = os.getenv("FIA_DOCUMENT_USER_AGENT", "Mozilla/5.0 (compatible; PitWall/3.0; +https://github.com/ShreyTriesToCode/PitWall)")
+FIA_DOCUMENT_REFERER = os.getenv("FIA_DOCUMENT_REFERER", FIA_DOCUMENTS_BASE_URL)
+FIA_DOCUMENT_STRICT_DOWNLOADS = os.getenv("FIA_DOCUMENT_STRICT_DOWNLOADS", "false").lower() == "true"
 FORMULA1_CALENDAR_BASE_URL = os.getenv("FORMULA1_CALENDAR_BASE_URL", "https://www.formula1.com/en/racing").rstrip("/")
 FORMULA1_SEASON_URL = os.getenv("FORMULA1_SEASON_URL", "").strip()
 JOLPICA_ENABLED = os.getenv("JOLPICA_ENABLED", "true").lower() == "true"
@@ -166,7 +179,7 @@ UPGRADE_MAX_WEIGHT_PRE_RUNNING = float(os.getenv("UPGRADE_MAX_WEIGHT_PRE_RUNNING
 UPGRADE_MAX_WEIGHT_POST_PRACTICE = float(os.getenv("UPGRADE_MAX_WEIGHT_POST_PRACTICE", "0.05"))
 UPGRADE_MAX_WEIGHT_POST_QUALIFYING = float(os.getenv("UPGRADE_MAX_WEIGHT_POST_QUALIFYING", "0.03"))
 ENABLE_RACE_SIMULATION = os.getenv("ENABLE_RACE_SIMULATION", "true").lower() == "true"
-RACE_SIMULATION_RUNS = int(os.getenv("RACE_SIMULATION_RUNS", "5000"))
+RACE_SIMULATION_RUNS = int(os.getenv("RACE_SIMULATION_RUNS", "10000"))
 GITHUB_ACTIONS_RACE_SIMULATION_RUNS = int(os.getenv("GITHUB_ACTIONS_RACE_SIMULATION_RUNS", "1000"))
 TRAINING_MODE = os.getenv("TRAINING_MODE", "auto")
 MODEL_TRAINING_MAX_SECONDS = int(os.getenv("MODEL_TRAINING_MAX_SECONDS", "900"))
@@ -358,88 +371,35 @@ def sanitize_public_paths(value):
 
 def init_pitwall_db():
     ensure_dirs()
-    PITWALL_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with sqlite3.connect(PITWALL_DB_PATH) as conn:
-        conn.execute("PRAGMA journal_mode=WAL")
-        conn.execute(
-            """
-            CREATE TABLE IF NOT EXISTS run_status (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                created_at TEXT NOT NULL,
-                status_type TEXT NOT NULL,
-                payload_json TEXT NOT NULL
-            )
-            """
-        )
-        conn.execute(
-            """
-            CREATE TABLE IF NOT EXISTS predictions (
-                prediction_id TEXT PRIMARY KEY,
-                created_at TEXT NOT NULL,
-                race_id TEXT,
-                target_type TEXT,
-                payload_json TEXT NOT NULL
-            )
-            """
-        )
-        conn.execute(
-            """
-            CREATE TABLE IF NOT EXISTS feature_snapshots (
-                feature_id TEXT PRIMARY KEY,
-                created_at TEXT NOT NULL,
-                feature_version TEXT,
-                payload_json TEXT NOT NULL
-            )
-            """
-        )
-        conn.commit()
+    if pitwall_storage is None:
+        raise RuntimeError("pitwall.storage import failed")
+    return pitwall_storage.init_pitwall_db(PITWALL_DB_PATH)
 
 
 def sqlite_upsert_prediction(entry):
     try:
-        init_pitwall_db()
-        prediction_id = entry.get("prediction_id") or f"{entry.get('race_id')}-{entry.get('target_type')}-{entry.get('generated_iso')}"
-        with sqlite3.connect(PITWALL_DB_PATH) as conn:
-            conn.execute(
-                """
-                INSERT INTO predictions(prediction_id, created_at, race_id, target_type, payload_json)
-                VALUES (?, ?, ?, ?, ?)
-                ON CONFLICT(prediction_id) DO UPDATE SET
-                    created_at=excluded.created_at,
-                    race_id=excluded.race_id,
-                    target_type=excluded.target_type,
-                    payload_json=excluded.payload_json
-                """,
-                (
-                    prediction_id,
-                    entry.get("generated_iso") or now_local().isoformat(),
-                    entry.get("race_id"),
-                    entry.get("target_type"),
-                    json.dumps(entry, ensure_ascii=False, default=str),
-                ),
-            )
-            conn.commit()
+        if pitwall_storage is None:
+            raise RuntimeError("pitwall.storage import failed")
+        pitwall_storage.sqlite_upsert_prediction(PITWALL_DB_PATH, entry, generated_at=now_local().isoformat())
     except Exception as error:
         print(f"SQLite prediction store skipped: {error}")
 
 
 def sqlite_insert_run_status(status_type, payload):
     try:
-        init_pitwall_db()
-        with sqlite3.connect(PITWALL_DB_PATH) as conn:
-            conn.execute(
-                "INSERT INTO run_status(created_at, status_type, payload_json) VALUES (?, ?, ?)",
-                (now_local().isoformat(), status_type, json.dumps(payload, ensure_ascii=False, default=str)),
-            )
-            conn.commit()
+        if pitwall_storage is None:
+            raise RuntimeError("pitwall.storage import failed")
+        pitwall_storage.sqlite_insert_run_status(PITWALL_DB_PATH, status_type, payload, created_at=now_local().isoformat())
     except Exception as error:
         print(f"SQLite run-status store skipped: {error}")
 
 
 def supabase_sync_status():
-    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
-        return {"enabled": False, "status": "not_configured"}
-    return {"enabled": True, "status": "configured_optional_manual_sync"}
+    if pitwall_storage is None:
+        if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+            return {"enabled": False, "status": "not_configured"}
+        return {"enabled": True, "status": "configured_optional_manual_sync"}
+    return pitwall_storage.supabase_sync_status(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
 
 def now_local():
@@ -1155,6 +1115,22 @@ def extract_pdf_text(pdf_bytes):
         raise RuntimeError(f"pdf_text_extraction_failed: {error}") from error
 
 
+def fetch_fia_document_text(document, text_path, parsed_path, pdf_path):
+    if pitwall_fetch_fia_document_text is None:
+        raise RuntimeError("pitwall.data.fia_documents import failed")
+    return pitwall_fetch_fia_document_text(
+        document,
+        text_path,
+        parsed_path,
+        pdf_path,
+        extract_pdf_text=extract_pdf_text,
+        strip_html=strip_html,
+        keep_pdf=KEEP_FIA_PDFS,
+        timeout=45,
+        strict_downloads=FIA_DOCUMENT_STRICT_DOWNLOADS,
+    )
+
+
 def parse_fia_document_text(document, text):
     doc_type = document.get("document_type") or classify_fia_document_type(document.get("title"))
     parsed = {
@@ -1241,32 +1217,40 @@ def refresh_fia_documents_for_season(season, registry=None, refresh=False):
 
         try:
             text = None
+            fetch_result = None
             if text_path.exists() and FORCE_REPARSE_FIA_DOCUMENTS and not FORCE_REDOWNLOAD_FIA_DOCUMENTS:
                 text = text_path.read_text(encoding="utf-8")
             else:
                 if FIA_REQUEST_SLEEP_SECONDS > 0:
                     time.sleep(FIA_REQUEST_SLEEP_SECONDS)
-                response = safe_get(doc.get("source_url"), timeout=45, optional_404=True, use_cache=False)
-                if not response:
-                    raise RuntimeError("fia_document_download_failed")
-                downloaded += 1
-                content_type = response.headers.get("content-type", "").lower()
-                is_pdf = "pdf" in content_type or str(doc.get("source_url", "")).lower().endswith(".pdf")
-                if is_pdf:
-                    if KEEP_FIA_PDFS:
-                        pdf_path.parent.mkdir(parents=True, exist_ok=True)
-                        pdf_path.write_bytes(response.content)
-                    text = extract_pdf_text(response.content)
-                else:
-                    text = strip_html(response.text)
-            text_path.parent.mkdir(parents=True, exist_ok=True)
-            text_path.write_text(text or "", encoding="utf-8")
+                fetch_result = fetch_fia_document_text(doc, text_path, parsed_path, pdf_path)
+                text = fetch_result.get("text")
+                doc["http_status"] = fetch_result.get("http_status")
+                if fetch_result.get("parse_status") == "downloaded":
+                    downloaded += 1
+                if text is None:
+                    doc["parse_status"] = fetch_result.get("parse_status") or "error"
+                    doc["parse_error"] = fetch_result.get("error") or "fia_document_download_failed"
+                    doc["cache_status"] = fetch_result.get("cache_status") or "miss"
+                    if doc["parse_status"] in {"forbidden", "not_found"}:
+                        errors.append(f"{doc.get('title')}: {doc['parse_error']}")
+                    updated_documents.append(doc)
+                    continue
+            if text is not None:
+                text_path.parent.mkdir(parents=True, exist_ok=True)
+                text_path.write_text(text or "", encoding="utf-8")
             parsed_doc = parse_fia_document_text(doc, text or "")
             parsed_path.parent.mkdir(parents=True, exist_ok=True)
             parsed_path.write_text(json.dumps(parsed_doc, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
-            doc["parse_status"] = "parsed"
-            doc["parse_error"] = None
-            doc["cache_status"] = "miss" if downloaded else "reparsed"
+            if fetch_result and fetch_result.get("parse_status", "").startswith("stale_cache_"):
+                doc["parse_status"] = fetch_result.get("parse_status")
+                doc["parse_error"] = fetch_result.get("error")
+                doc["cache_status"] = "stale"
+                errors.append(f"{doc.get('title')}: {fetch_result.get('error')}")
+            else:
+                doc["parse_status"] = "parsed"
+                doc["parse_error"] = None
+                doc["cache_status"] = "miss" if fetch_result and fetch_result.get("parse_status") == "downloaded" else "reparsed"
             doc["hash"] = stable_hash({"metadata": doc.get("hash"), "text": (text or "")[:10000]})
             parsed += 1
         except Exception as error:
@@ -1570,249 +1554,42 @@ def stage_prediction_weights(stage, track_traits=None, weather=None):
 
 
 def normalize_race_probabilities(rows):
-    out = [dict(row) for row in rows or []]
-    for key, target_sum in [("win_probability", 100.0), ("podium_probability", 300.0), ("top10_probability", 1000.0)]:
-        values = [max(0.0, safe_float(row.get(key)) or 0.0) for row in out]
-        total = sum(values)
-        if total <= 0:
-            values = [max(0.01, safe_float(row.get("score")) or 1.0) for row in out]
-            total = sum(values)
-        for row, value in zip(out, values):
-            row[key] = round(value / total * target_sum, 4) if total else 0.0
-            if key != "win_probability":
-                row[key] = round(min(100.0, row[key]), 4)
-    return out
+    return pitwall_simulation.normalize_race_probabilities(rows)
 
 
 def simulate_race_outcomes(rows, runs=None, seed=42):
-    rows = normalize_race_probabilities(rows)
-    runs = safe_int(runs) or (GITHUB_ACTIONS_RACE_SIMULATION_RUNS if os.getenv("GITHUB_ACTIONS") else RACE_SIMULATION_RUNS)
-    rng = random.Random(seed)
-    tallies = {row.get("driver_id") or row.get("name"): [] for row in rows}
-    dnf_counts = {key: 0 for key in tallies}
-    for _ in range(max(1, runs)):
-        sampled = []
-        for row in rows:
-            key = row.get("driver_id") or row.get("name")
-            dnf = rng.random() < (safe_float(row.get("dnf_probability")) or safe_float(row.get("simulated_dnf_probability")) or 5) / 100.0
-            if dnf:
-                dnf_counts[key] += 1
-            base_score = safe_float(row.get("score")) or (100 - (safe_float(row.get("rank")) or 10))
-            noise = rng.gauss(0, 7 + (safe_float(row.get("uncertainty_score")) or 20) / 10)
-            sampled.append((key, -999 if dnf else base_score + noise))
-        sampled.sort(key=lambda item: item[1], reverse=True)
-        for pos, (key, _) in enumerate(sampled, start=1):
-            tallies[key].append(pos)
-    drivers = []
-    row_map = {row.get("driver_id") or row.get("name"): row for row in rows}
-    for key, finishes in tallies.items():
-        finishes = sorted(finishes)
-        n = len(finishes)
-        p10 = finishes[max(0, int(n * 0.10) - 1)]
-        p90 = finishes[min(n - 1, int(n * 0.90))]
-        row = row_map.get(key, {})
-        drivers.append({
-            "driver_id": key,
-            "name": row.get("name"),
-            "simulated_win_probability": round(sum(1 for x in finishes if x == 1) / n * 100, 3),
-            "simulated_podium_probability": round(sum(1 for x in finishes if x <= 3) / n * 100, 3),
-            "simulated_top5_probability": round(sum(1 for x in finishes if x <= 5) / n * 100, 3),
-            "simulated_top10_probability": round(sum(1 for x in finishes if x <= 10) / n * 100, 3),
-            "simulated_dnf_probability": round(dnf_counts[key] / n * 100, 3),
-            "expected_finish": round(sum(finishes) / n, 2),
-            "median_finish": finishes[n // 2],
-            "p10_finish": p10,
-            "p90_finish": p90,
-            "upside_finish": p10,
-            "downside_finish": p90,
-            "confidence_interval_width": p90 - p10,
-        })
-    drivers.sort(key=lambda row: row["expected_finish"])
-    return {
-        "enabled": ENABLE_RACE_SIMULATION,
-        "runs": runs,
-        "drivers": drivers,
-        "most_volatile_drivers": sorted(drivers, key=lambda row: row["confidence_interval_width"], reverse=True)[:5],
-        "safest_top10_drivers": sorted(drivers, key=lambda row: (-row["simulated_top10_probability"], row["confidence_interval_width"]))[:5],
-        "dark_horse_candidates": [row for row in drivers if row["simulated_podium_probability"] >= 12 and row["expected_finish"] > 5][:5],
-        "bust_risk_candidates": [row for row in drivers if row["simulated_dnf_probability"] >= 12 or row["confidence_interval_width"] >= 8][:5],
-    }
+    return pitwall_simulation.simulate_race_outcomes(
+        rows,
+        runs=runs,
+        seed=seed,
+        default_runs=RACE_SIMULATION_RUNS,
+        github_actions_runs=GITHUB_ACTIONS_RACE_SIMULATION_RUNS,
+        enabled=ENABLE_RACE_SIMULATION,
+    )
 
 
 def confidence_label(value):
-    value = safe_float(value)
-    if value is None:
-        return "low"
-    if value >= 72:
-        return "high"
-    if value >= 48:
-        return "medium"
-    return "low"
+    return pitwall_simulation.confidence_label(value)
 
 
 def probability_from_score(score, low=1.0, high=18.0):
-    score = clamp(score, 0, 100, 50)
-    return round(low + (high - low) * (score / 100.0), 3)
+    return pitwall_simulation.probability_from_score(score, low=low, high=high)
 
 
 def strategy_profile_for_row(row, profile=None, weather=None):
-    profile = profile or {}
-    weather = weather or {}
-    tyre_score = text_level(profile.get("tyre_stress"))
-    rain_score = safe_float(weather.get("rain_score")) or safe_float(weather.get("rain_probability")) or text_level(weather.get("rain"))
-    overtaking_score = text_level(profile.get("overtaking"))
-
-    if rain_score and rain_score >= 55:
-        sequence = ["intermediate", "slick"]
-        stops = 2 if tyre_score >= 65 else 1
-        first_pit_lap = None
-        basis = "Rain risk is high enough that crossover timing dominates the dry pit window."
-    elif tyre_score >= 70:
-        sequence = ["medium", "hard", "medium"]
-        stops = 2
-        first_pit_lap = 16
-        basis = "High tyre-stress profile makes a two-stop strategy plausible."
-    elif overtaking_score <= 38:
-        sequence = ["medium", "hard"]
-        stops = 1
-        first_pit_lap = 24
-        basis = "Low-overtaking profile increases track-position value."
-    else:
-        sequence = ["medium", "hard"]
-        stops = 1
-        first_pit_lap = 20
-        basis = "Default dry strategy from historical pit-window and tyre-stress profile."
-
-    return {
-        "stops": stops,
-        "first_pit_lap": first_pit_lap,
-        "compound_sequence": sequence,
-        "confidence": confidence_label(row.get("confidence")),
-        "basis": basis,
-    }
+    return pitwall_strategy.strategy_profile_for_row(row, profile, weather)
 
 
 def detect_strategy_context_annotations(strategy_context=None, weather_context=None):
-    """Flag post-race strategy context without rewriting the race result as car pace."""
-    if os.getenv("STRATEGY_CONTEXT_ENABLED", "true").lower() == "false":
-        return []
-    strategy_context = strategy_context or {}
-    weather_context = weather_context or {}
-    annotations = []
-
-    starting_compound = str(strategy_context.get("starting_compound") or strategy_context.get("compound") or "").lower()
-    first_pit_lap = safe_int(strategy_context.get("first_pit_lap") or strategy_context.get("first_stop_lap"))
-    rainfall_actual = safe_float(weather_context.get("rainfall_actual") or weather_context.get("rainfall") or 0) or 0
-    rain_probability = safe_float(weather_context.get("rain_probability") or weather_context.get("forecast_rain_probability") or 0) or 0
-    track_status_events = [str(item).lower() for item in weather_context.get("track_status_events") or strategy_context.get("track_status_events") or []]
-    pit_context = str(strategy_context.get("pit_context") or "").lower()
-    post_switch_delta = safe_float(strategy_context.get("post_switch_pace_delta"))
-    degradation_slope = safe_float(strategy_context.get("degradation_slope"))
-    double_stack_loss = safe_float(strategy_context.get("double_stack_loss"))
-
-    wet_start = any(token in starting_compound for token in ["inter", "wet"])
-    if wet_start and rainfall_actual <= 0.01:
-        annotations.append({
-            "label": "wrong_starting_tyre_for_actual_weather",
-            "message": "Started on a wet-weather tyre but actual early-session rain evidence was dry or negligible.",
-            "confidence": "medium" if rain_probability >= 0.35 else "high",
-            "source": "tyre/weather strategy annotation",
-        })
-    if first_pit_lap is not None and first_pit_lap <= 6:
-        annotations.append({
-            "label": "early_tyre_correction",
-            "message": f"First stop on lap {first_pit_lap} suggests an early tyre or setup correction rather than pure car pace.",
-            "confidence": "high",
-            "source": "pit-stop timing",
-        })
-    if post_switch_delta is not None and post_switch_delta < -0.15:
-        annotations.append({
-            "label": "competitive_after_compound_switch",
-            "message": "Pace improved after the tyre change, so final result should not be treated as only weak baseline pace.",
-            "confidence": "medium",
-            "source": "post-switch pace delta",
-        })
-    if "safety" in pit_context or any("safety" in item for item in track_status_events):
-        annotations.append({
-            "label": "safety_car_aided_stop",
-            "message": "Pit timing overlapped with safety-car context, which can distort normal strategy evaluation.",
-            "confidence": "medium",
-            "source": "race-control context",
-        })
-    if "vsc" in pit_context or any("vsc" in item or "virtual safety" in item for item in track_status_events):
-        annotations.append({
-            "label": "vsc_aided_stop",
-            "message": "Pit timing overlapped with VSC context, reducing pit-loss comparability.",
-            "confidence": "medium",
-            "source": "race-control context",
-        })
-    if "red" in pit_context or any("red flag" in item for item in track_status_events):
-        annotations.append({
-            "label": "red_flag_free_tyre_change",
-            "message": "Red-flag context may have allowed tyre reset outside normal green-flag strategy.",
-            "confidence": "medium",
-            "source": "race-control context",
-        })
-    if double_stack_loss is not None and double_stack_loss >= 1.5:
-        annotations.append({
-            "label": "double_stack_time_loss",
-            "message": "Detected double-stack time loss that should be separated from driver/car pace.",
-            "confidence": "medium",
-            "source": "pit-stop timing",
-        })
-    if degradation_slope is not None and degradation_slope >= 0.16:
-        annotations.append({
-            "label": "degradation_cliff",
-            "message": "Stint degradation slope points to tyre drop-off as a race-outcome driver.",
-            "confidence": "medium",
-            "source": "stint pace trend",
-        })
-
-    return annotations
+    return pitwall_strategy.detect_strategy_context_annotations(strategy_context, weather_context)
 
 
 def explanation_for_prediction_row(row, profile=None, weather=None):
-    components = row.get("component_scores") or {}
-    strategy = row.get("expected_strategy") or strategy_profile_for_row(row, profile, weather)
-    missing = (row.get("evidence_status") or {}).get("missing") or []
-    pace_score = weighted_average([
-        (components.get("race_pace"), 0.35),
-        (components.get("timing_lap_pace"), 0.25),
-        (components.get("ml_finish_position_score"), 0.20),
-        (row.get("score"), 0.20),
-    ])
-    qualifying_score = components.get("qualifying") or components.get("timing_starting_grid")
-    reliability = row.get("reliability") or components.get("reliability")
-    rain = safe_float((weather or {}).get("rain_score")) or safe_float((weather or {}).get("rain_probability"))
-    return {
-        "pace": f"Pace signal {round(pace_score, 1) if pace_score is not None else 'pending'} from race-pace, timing, and finish-position components.",
-        "strategy": strategy.get("basis") or "Strategy estimate uses pit-window, tyre-stress, and team-strategy components where available.",
-        "tyres": f"Expected sequence: {', '.join(strategy.get('compound_sequence') or []) or 'not enough tyre data'}; tyre risk {profile.get('tyre_stress', 'unknown') if profile else 'unknown'}.",
-        "weather": f"Rain impact score {round(rain, 1) if rain is not None else 'pending'}; weather confidence depends on source freshness.",
-        "risk": f"Reliability/DNF risk is reflected by {round(reliability, 1) if reliability is not None else 'pending'} reliability and {row.get('dnf_probability', 'pending')}% DNF probability.",
-        "qualifying": f"Qualifying/grid component {round(safe_float(qualifying_score), 1) if safe_float(qualifying_score) is not None else 'pending'} affects track-position confidence.",
-        "key_reasons": row.get("reason_tags") or [],
-        "missing_data": missing,
-    }
+    return pitwall_contract.explanation_for_prediction_row(row, profile, weather)
 
 
 def race_factors_from_context(profile=None, weather=None, source_health=None):
-    profile = profile or {}
-    weather = weather or {}
-    safety_score = text_level(profile.get("safety_car"))
-    rain_score = safe_float(weather.get("rain_score")) or safe_float(weather.get("rain_probability")) or text_level(weather.get("rain"))
-    tyre_score = text_level(profile.get("tyre_stress"))
-    overtaking_score = text_level(profile.get("overtaking"))
-    source_score = safe_float((source_health or {}).get("overall_score")) or 50
-    return {
-        "safety_car_probability": round(clamp(safety_score, 0, 100, 50), 2),
-        "vsc_probability": round(clamp(safety_score * 0.72, 0, 100, 36), 2),
-        "red_flag_probability": round(clamp(safety_score * 0.28 + max(0, rain_score - 50) * 0.20, 0, 100, 12), 2),
-        "rain_impact": "high" if rain_score >= 60 else "medium" if rain_score >= 30 else "low",
-        "track_overtaking_difficulty": profile.get("overtaking", "unknown"),
-        "tyre_degradation_risk": profile.get("tyre_stress", "unknown"),
-        "source_confidence": confidence_label(source_score),
-    }
+    return pitwall_contract.race_factors_from_context(profile, weather, source_health)
 
 
 def uncertainty_for_prediction(row, source_health=None, stage=None):
@@ -2635,6 +2412,12 @@ def result_rows_from_race_data(season, round_no, race, data):
 
     lap_metrics = driver_lap_metrics_from_data(data)
     pit_metrics = pit_metrics_from_data(data)
+    all_pitstops = []
+    for pit_race in data.get("pitstops", []) or []:
+        all_pitstops.extend(pit_race.get("PitStops", []) or [])
+    all_stints = data.get("stints", []) or data.get("Stints", []) or []
+    race_control_events = data.get("race_control", []) or data.get("raceControl", []) or data.get("race_control_messages", []) or []
+    weather_context = data.get("weather", {}) if isinstance(data.get("weather", {}), dict) else {}
 
     race_id = f"{season}-{round_no}"
     circuit = race.get("Circuit", {})
@@ -2657,6 +2440,14 @@ def result_rows_from_race_data(season, round_no, race, data):
         dm = lap_metrics.get(driver_id, {})
         pm = pit_metrics.get(driver_id, {})
         fastest_lap_seconds = parse_lap_time_to_seconds(((result.get("FastestLap") or {}).get("Time") or {}).get("time"))
+        strategy_context = pitwall_strategy.build_strategy_context_for_driver(
+            driver_id,
+            pitstops=all_pitstops,
+            stints=all_stints,
+            race_control=race_control_events,
+            weather=weather_context,
+            lap_metrics=dm,
+        )
 
         rows.append({
             "race_id": race_id,
@@ -2686,6 +2477,8 @@ def result_rows_from_race_data(season, round_no, race, data):
             "pit_stop_count": pm.get("pit_stop_count", 0),
             "avg_pit_duration": pm.get("avg_pit_duration"),
             "min_pit_duration": pm.get("min_pit_duration"),
+            "strategy_context": strategy_context,
+            "strategy_annotations": strategy_context.get("annotations", []),
         })
     return rows
 
@@ -7977,6 +7770,24 @@ def normalize_entry_contract(entry):
         full_grid = top10
     registry = entry.get("source_registry") or load_or_build_source_registry(season)
     fia_summary = fia_document_summary(registry, entry)
+    contract_warnings = []
+    for warning_source in [
+        entry.get("warnings"),
+        (entry.get("source_registry") or {}).get("warnings", []),
+        source_health.get("warnings", []),
+        fia_summary.get("fia_parse_errors", []),
+    ]:
+        for warning in warning_source or []:
+            if warning and warning not in contract_warnings:
+                contract_warnings.append(warning)
+    if contract_warnings:
+        for row in full_grid + top10:
+            notes = row.setdefault("source_notes", {})
+            row_warnings = list(notes.get("warnings") or [])
+            for warning in contract_warnings[:8]:
+                if warning not in row_warnings:
+                    row_warnings.append(warning)
+            notes["warnings"] = row_warnings
     session_timeline = entry.get("session_timeline") or build_session_timeline_from_race(race, registry.get("formula1_season_url")) if race else []
     session_timeline = sanitize_session_timeline_for_stage(session_timeline, stage)
     session_state = session_contract_state(session_timeline)
@@ -8044,7 +7855,7 @@ def normalize_entry_contract(entry):
         "model_metrics": entry.get("model_metrics") or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}),
         "correction_summary": entry.get("correction_summary") or correction_summary_for_entry(race_id),
         "actual_result": entry.get("actual_result"),
-        "warnings": entry.get("warnings") or (entry.get("source_registry") or {}).get("warnings", []) or source_health.get("warnings", []),
+        "warnings": contract_warnings,
         "top10": top10,
         "top_10": top10,
         "full_grid": full_grid,

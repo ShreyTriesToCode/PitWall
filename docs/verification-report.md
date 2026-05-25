@@ -19,6 +19,49 @@ Generated on 2026-05-24.
 
 Follow-up reliability/UI release pass on 2026-05-25:
 
+Remaining partial/missing closure pass on 2026-05-25:
+
+```bash
+.venv/bin/python -m py_compile f1_briefing.py pitwall/config.py pitwall/storage.py pitwall/models/simulation.py pitwall/models/contract.py pitwall/features/strategy.py pitwall/data/fia_documents.py pitwall/data/bootstrap.py scripts/bootstrap_datasets.py
+```
+
+Result: passed.
+
+```bash
+.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
+```
+
+Result: passed, 52 tests.
+
+```bash
+.venv/bin/python -c "import f1_briefing as f; f.save_model_status_json(); f.generate_frontend_contract_files()"
+```
+
+Result: passed and regenerated model-status/frontend-contract artifacts.
+
+```bash
+.venv/bin/python scripts/bootstrap_datasets.py f1db
+.venv/bin/python scripts/bootstrap_datasets.py relbench
+```
+
+Result: passed after fixing the script wrapper to add the repo root to `sys.path`. Both commands print dry-run setup plans and do not download datasets by default.
+
+```bash
+cd frontend && npm install
+cd frontend && npm run build
+```
+
+Result: passed. The timing route now prefers season-based Formula1.com track images, for example the 2026 Montreal and Monte Carlo detailed track images, with legacy circuit maps as fallback.
+
+```bash
+node -e "...parse data_cache/frontend-contract.json..."
+node -e "...inspect frontend/app/api/f1timing/route.js..."
+```
+
+Result: passed. The static contract check confirmed `top10=10`, `top_10=10`, `full_grid=22`, `all_predictions=22`, `race_factors`, warnings, strategy, explanation, and source notes. The route check confirmed season-track image helpers and timing auto-selection metadata.
+
+Skipped: final live `npm run dev` route smoke was blocked because this environment rejected the required elevated server start approval. The production build and static route/contract checks passed, and previous local route smoke for the same app shape returned HTTP 200.
+
 ```bash
 .venv/bin/python -m py_compile f1_briefing.py
 ```
@@ -210,3 +253,42 @@ Promotion decision: hold champion. The challenger did not beat grid/qualifying b
 - Historical odds, Pirelli allocation, and technical-directive timeline sources remain optional future improvements unless legal, reliable APIs or curated fixtures are added.
 - F1DB and RelBench rel-f1 are integrated as optional adapters/source-health entries only. No F1DB release artifact or RelBench package/data is bundled by default, so they did not affect the retrained metrics in this run.
 - The challenger model is better than several baselines but still fails the strict out-of-time promotion gate against grid/qualifying on some ranking metrics.
+
+## Remaining Partial Closure Pass
+
+Date: 2026-05-25.
+
+Additional implementation completed:
+
+- Extracted stable simulation, contract, strategy, FIA document, SQLite storage, and dataset-bootstrap helpers into `pitwall/` modules while keeping `f1_briefing.py` public wrappers intact.
+- Added deterministic FIA PDF `403/404` handling so forbidden decision documents do not retry four times. Cached parsed text is reused with `stale_cache_forbidden`; uncached documents are marked `forbidden` and surfaced through warnings.
+- Added strategy-context annotations for tyre/weather mismatch, early tyre correction, safety-car/VSC/red-flag pit context, double-stack loss, traffic hints, degradation cliffs, and post-switch pace improvement.
+- Added dry-run F1DB and RelBench bootstrap tooling. No external dataset artifacts are downloaded or committed by default.
+- Updated timing track visuals to prefer season-based Formula1.com detailed track images, including 2026 Montreal and Monte Carlo examples.
+
+Commands run:
+
+```bash
+.venv/bin/python -m py_compile f1_briefing.py pitwall/config.py pitwall/storage.py pitwall/models/simulation.py pitwall/models/contract.py pitwall/features/strategy.py pitwall/data/fia_documents.py pitwall/data/bootstrap.py scripts/bootstrap_datasets.py
+.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
+.venv/bin/python -c "import f1_briefing as f; f.save_model_status_json(); f.generate_frontend_contract_files()"
+.venv/bin/python scripts/bootstrap_datasets.py f1db
+.venv/bin/python scripts/bootstrap_datasets.py relbench
+cd frontend && npm install
+cd frontend && npm run build
+```
+
+Results:
+
+- Python compile passed.
+- Unit tests passed: 52 tests.
+- Frontend contracts/model status regenerated.
+- F1DB and RelBench bootstrap commands produced dry-run plans only.
+- Frontend install passed with 0 vulnerabilities.
+- Next.js production build passed on Next.js 16.2.6.
+- Static contract smoke passed: `top10`, `top_10`, `full_grid`, `all_predictions`, `race_factors`, row explanations, source notes, and strategy fields are present under the latest prediction contract.
+- Static timing smoke passed: season-based track-image URL builder, 2026 Montreal and Monte Carlo image examples, auto session selection fields, warnings, and safe normalized timing payload handling are present.
+
+Skipped:
+
+- Final live `npm run dev` HTTP smoke was skipped because the required elevated local server start was rejected by the app approval layer. Production build, unit tests, contract checks, and static route-code checks passed.

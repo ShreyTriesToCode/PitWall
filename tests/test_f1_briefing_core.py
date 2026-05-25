@@ -1,4 +1,5 @@
 import unittest
+import importlib
 import json
 import os
 import sqlite3
@@ -424,6 +425,110 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("session_resolution", route)
         self.assertIn("warnings", route)
         self.assertIn("safeNormalizedTimingPayload", route)
+
+    def test_f1timing_uses_season_based_track_images_first(self):
+        route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
+        self.assertIn("seasonTrackImageUrl", route)
+        self.assertIn("common/f1/${cleanYear}/track/${cleanYear}track${trackSlug}detailed.webp", route)
+        self.assertIn("2026trackmontrealdetailed.webp", route)
+        self.assertIn("2026trackmontecarlodetailed.webp", route)
+
+    def test_extracted_modules_preserve_public_wrapper_outputs(self):
+        simulation = importlib.import_module("pitwall.models.simulation")
+        strategy = importlib.import_module("pitwall.features.strategy")
+        rows = [
+            {"driver_id": "a", "rank": 1, "score": 82, "reliability": 88, "top10_probability": 96},
+            {"driver_id": "b", "rank": 2, "score": 76, "reliability": 82, "top10_probability": 91},
+            {"driver_id": "c", "rank": 3, "score": 64, "reliability": 69, "top10_probability": 80},
+        ]
+
+        self.assertEqual(
+            f1.simulate_race_outcomes(rows, runs=50, seed=7),
+            simulation.simulate_race_outcomes(rows, runs=50, seed=7),
+        )
+        self.assertEqual(f1.confidence_label(73), simulation.confidence_label(73))
+        strategy_context = {"starting_compound": "INTERMEDIATE", "first_pit_lap": 4}
+        weather_context = {"rainfall_actual": 0, "rain_probability": 0.7}
+        self.assertEqual(
+            f1.detect_strategy_context_annotations(strategy_context, weather_context),
+            strategy.detect_strategy_context_annotations(strategy_context, weather_context),
+        )
+
+    def test_fia_pdf_403_uses_cached_text_without_retry_storm(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            text_path = Path(tmp) / "doc.txt"
+            parsed_path = Path(tmp) / "doc.json"
+            pdf_path = Path(tmp) / "doc.pdf"
+            text_path.write_text("cached official FIA text", encoding="utf-8")
+            response = f1.requests.Response()
+            response.status_code = 403
+            response._content = b"forbidden"
+            with patch.object(f1.requests, "get", return_value=response) as get_mock:
+                result = f1.fetch_fia_document_text(
+                    {"source_url": "https://www.fia.com/system/files/decision-document/example.pdf"},
+                    text_path,
+                    parsed_path,
+                    pdf_path,
+                )
+
+        self.assertEqual(get_mock.call_count, 1)
+        self.assertEqual(result["parse_status"], "stale_cache_forbidden")
+        self.assertEqual(result["text"], "cached official FIA text")
+        self.assertEqual(result["http_status"], 403)
+
+    def test_fia_pdf_403_without_cache_is_marked_forbidden(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            response = f1.requests.Response()
+            response.status_code = 403
+            response._content = b"forbidden"
+            with patch.object(f1.requests, "get", return_value=response) as get_mock:
+                result = f1.fetch_fia_document_text(
+                    {"source_url": "https://www.fia.com/system/files/decision-document/example.pdf"},
+                    Path(tmp) / "missing.txt",
+                    Path(tmp) / "missing.json",
+                    Path(tmp) / "missing.pdf",
+                )
+
+        self.assertEqual(get_mock.call_count, 1)
+        self.assertEqual(result["parse_status"], "forbidden")
+        self.assertIsNone(result["text"])
+        self.assertIn("403", result["error"])
+
+    def test_strategy_context_builder_uses_pit_weather_race_control_and_pace(self):
+        strategy = importlib.import_module("pitwall.features.strategy")
+        context = strategy.build_strategy_context_for_driver(
+            "driver_a",
+            pitstops=[
+                {"driverId": "driver_a", "lap": "4", "duration": "4.2"},
+                {"driverId": "driver_b", "lap": "20", "duration": "2.4"},
+            ],
+            stints=[{"driver_id": "driver_a", "compound": "INTERMEDIATE", "stint_number": 1}],
+            race_control=[{"lap_number": 4, "message": "SAFETY CAR DEPLOYED"}],
+            weather={"rainfall_actual": 0, "rain_probability": 0.68},
+            lap_metrics={"post_switch_pace_delta": -0.34, "degradation_slope": 0.18},
+        )
+
+        labels = {item["label"] for item in context["annotations"]}
+        self.assertEqual(context["first_pit_lap"], 4)
+        self.assertEqual(context["starting_compound"], "INTERMEDIATE")
+        self.assertIn("early_tyre_correction", labels)
+        self.assertIn("wrong_starting_tyre_for_actual_weather", labels)
+        self.assertIn("safety_car_aided_stop", labels)
+        self.assertIn("competitive_after_compound_switch", labels)
+        self.assertIn("degradation_cliff", labels)
+
+    def test_dataset_bootstrap_plans_are_dry_run_and_no_download_by_default(self):
+        bootstrap = importlib.import_module("pitwall.data.bootstrap")
+        with tempfile.TemporaryDirectory() as tmp:
+            f1db_plan = bootstrap.dataset_bootstrap_plan("f1db", base_dir=Path(tmp), dry_run=True)
+            relbench_plan = bootstrap.dataset_bootstrap_plan("relbench", base_dir=Path(tmp), dry_run=True)
+
+        self.assertTrue(f1db_plan["dry_run"])
+        self.assertEqual(f1db_plan["source"], "f1db")
+        self.assertIn("F1DB_SQLITE_PATH", f1db_plan["env"])
+        self.assertTrue(relbench_plan["dry_run"])
+        self.assertEqual(relbench_plan["source"], "relbench")
+        self.assertFalse(relbench_plan["will_download"])
 
     def test_f1db_adapter_reports_disabled_without_downloading(self):
         with patch.dict(os.environ, {"F1DB_ENABLED": "false", "F1DB_SQLITE_PATH": "", "F1DB_CSV_DIR": ""}, clear=False):

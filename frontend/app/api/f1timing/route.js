@@ -664,6 +664,11 @@ const TRACK_IMAGE_SLUGS = {
   "abu-dhabi": "abudhabi",
 };
 
+const TRACK_IMAGE_EXAMPLES = [
+  "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
+  "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
+];
+
 const OFFICIAL_CIRCUIT_MAP_ASSETS = {
   australia: "Australia_Circuit",
   china: "China_Circuit",
@@ -698,6 +703,10 @@ function officialRaceSlug(meeting) {
   return match?.[1] || "";
 }
 
+function seasonTrackImageUrl(cleanYear, trackSlug) {
+  return `https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/${cleanYear}/track/${cleanYear}track${trackSlug}detailed.webp`;
+}
+
 async function officialRaceVisual(year, meeting) {
   const raceSlug = officialRaceSlug(meeting);
   if (!raceSlug) return null;
@@ -711,9 +720,9 @@ async function officialRaceVisual(year, meeting) {
   const visual = {
     source: "Formula 1",
     page_url: pageUrl,
-    image_url: `https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/${circuitAsset}.webp`,
-    fallback_image_url: `https://media.formula1.com/image/upload/c_fit%2Cw_900%2Ch_520/q_auto/v1740000001/common/f1/${cleanYear}/track/${cleanYear}track${trackSlug}detailed.webp`,
-    image_status: "official-circuit-map",
+    image_url: seasonTrackImageUrl(cleanYear, trackSlug),
+    fallback_image_url: `https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/${circuitAsset}.webp`,
+    image_status: "season-track-detailed",
     alt: `${meetingName(meeting)} official circuit and grid visual`,
   };
   OFFICIAL_VISUAL_CACHE.set(cacheKey, visual);

@@ -42,6 +42,15 @@ F1DB_CSV_DIR=
 RELBENCH_F1_ENABLED=false
 ```
 
+Plan optional dataset setup without downloading large artifacts:
+
+```bash
+.venv/bin/python scripts/bootstrap_datasets.py f1db
+.venv/bin/python scripts/bootstrap_datasets.py relbench
+```
+
+FIA PDF access can occasionally return deterministic `403` responses. Leave `FIA_DOCUMENT_STRICT_DOWNLOADS=false` for normal runs so PitWall reuses cached official text when available and reports forbidden documents as source warnings.
+
 ## 3. Verify Backend
 
 ```bash

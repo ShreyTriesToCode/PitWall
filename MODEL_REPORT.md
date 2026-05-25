@@ -11,9 +11,13 @@ PitWall predicts a Formula 1 race as a chain of uncertain outcomes: qualifying/g
 - Baseline strength: driver, constructor, circuit, current-season, and regulation-era form.
 - Qualifying/grid: qualifying score, timing grid evidence, low-overtaking weighting, and FIA grid documents when available.
 - Race pace: historical lap pace, timing lap pace, FastF1/OpenF1/F1 timing signals, and circuit-normalized lap-delta modelling.
-- Tyre/strategy: tyre-stress profile, pit-window profile, pit execution, team strategy gain, stint evidence where available, and post-race strategy annotations.
+- Tyre/strategy: tyre-stress profile, pit-window profile, pit execution, team strategy gain, stint evidence where available, post-race strategy context builder, and strategy annotations.
 - Reliability/DNF: historical finish rate, status-derived DNF signals, source completeness, and simulation DNF variation.
 - Final ranking: transparent component weighting plus ML probability/finish-position outputs and Monte Carlo race simulation.
+
+## Modularization
+
+`f1_briefing.py` remains the public orchestrator, while stable helpers now live under `pitwall.models`, `pitwall.features`, `pitwall.data`, and `pitwall.storage`. This is a strangler split: wrappers preserve old command behavior while new modules get direct tests.
 
 ## Contract Outputs
 

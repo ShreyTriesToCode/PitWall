@@ -4,6 +4,10 @@
 
 ### Added
 
+- Strangler modules for config, SQLite storage, model simulation helpers, prediction-contract helpers, and strategy-context features.
+- FIA decision-document fetch handling that avoids retry storms on deterministic `403/404`, reuses cached official text where available, and reports forbidden documents.
+- Optional dataset bootstrap planning script for F1DB and RelBench without committing full external artifacts.
+- Season-based Formula1.com track images for the timing page, including the 2026 Montreal and Monte Carlo detailed track images.
 - Canonical `top_10` alias, `race_factors`, and warning fields in normalized prediction contracts.
 - Rich per-driver prediction fields: points probability, fastest-lap probability, DNF risk, position range, expected strategy, structured explanation, data freshness, and source notes.
 - Strategy-context annotations for wrong tyre/weather mismatch, early tyre correction, safety-car/VSC/red-flag pit context, double-stack loss, and degradation cliff.
