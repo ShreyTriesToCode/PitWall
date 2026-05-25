@@ -1,0 +1,26 @@
+{
+  "document_id": "e1edeebc94bf387e",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:11:37.828715+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 108 Date 24 May 2026 Time 20:32 Title Infringement - Race Deleted Lap Times Description Infringement - Race Deleted Lap Times Enclosed CAN DOC 108 - Race Deleted Lap Times .pdf Garry Connell",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 108\nDate 24 May 2026\nTime 20:32\nTitle Infringement - Race Deleted Lap Times\nDescription Infringement - Race Deleted Lap Times\nEnclosed CAN DOC 108 - Race Deleted Lap Times .pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 108 \n  \nTo All Officials, All Teams      Date  24 May 2026 \n \n        Time  20:32 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 1, 2, 4, 8, 10, and 14. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 14 23  Alexander Albon Atlassian Williams F1 Team 16:12:46 1:25.514 \n2 4 1  Lando Norris McLaren Mastercard F1 Team 16:14:33 1:21.170 \n3 14 6 Isack Hadjar Oracle Red Bull Racing 16:15:12 1:18.960 \n4 14 10 Pierre Gasly BWT Alpine F1 Team 16:15:23 1:20.937 \n5 14 27 Nico Hulkenberg Audi Revolut F1 Team 16:15:43 1:21.051 \n6 14 12 Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 16:17:41 1:17.710 \n7 "
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "f761146a1eda1a38",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_race_reconnaissance_laps_sc2_-_sc1_.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:11:36.707681+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To All Teams, All Officials Document 109 Date 24 May 2026 Time 20:46 Title Race reconnaissance laps SC2 - SC1 Description Race reconnaissance laps SC2 - SC1 Enclosed CAN DOC 109 - Race SC2-SC1 Times.pdf Garry Connelly Tanja Gei",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 109\nDate 24 May 2026\nTime 20:46\nTitle Race reconnaissance laps SC2 - SC1\nDescription Race reconnaissance laps SC2 - SC1\nEnclosed CAN DOC 109 - Race SC2-SC1 Times.pdf\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n\n \n \n2026 CANADIAN GRAND PRIX \n22 – 24 May 2026 \n \n    \nFrom The Stewards      Document 109 \n  \nTo All Officials, All Teams      Date  24 May 2026 \n \n        Time  20:46 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Reconnaissance laps - Race \n  \nFact The F1 cars below exceeded the 1:22.0 time limit between the Safety Car lines. \n \nNo. Car Driver Competitor Time of Day \n1 5 Gabriel Bortoleto Audi Revolut F1 Team 15:22:17 \n2 77 Valtteri Bottas Cadillac Formula 1 Team 15:27:22 \n3 10 Pierre Gasly BWT Alpine F1 Team 15:28:31 \n \n \nInfringement Alleged breach of Article B1.8.5 of the FIA F1 Regulations and Article 12.2.1.i of the FIA International \nSporting Code (non-compliance with the Race Director’s Competition Notes, item 1, document 6). \n  \nDecision No furt"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "374dd8b752f0beac",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_5_-_driving_unnecessarily_slowly_during_vsc.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:11:51.012977+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Audi Revolut F1 Team Document 98 Date 24 May 2026 Time 19:53 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 5 - ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 98\nDate 24 May 2026\nTime 19:53\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 5 - Gabriel Bortoleto\nCompetitor Audi Revolut F1 Team\nTime 17:18\nSession Race\nFact Car 5 exceeded the VSC delta in several mini sectors during a VSC deployment.\nInfringement Breach of Article B1.8.5 of the FIA F1 Regulations.\nDecision 5 second time penalty.\nReason The Stewards reviewed positioning/marshalling system data and timing evidence.\nThis evidence clearly indicated a breach of the regulations had occurred.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}

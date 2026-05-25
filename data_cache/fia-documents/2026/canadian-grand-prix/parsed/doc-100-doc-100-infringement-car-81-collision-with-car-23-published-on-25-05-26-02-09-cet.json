@@ -1,0 +1,26 @@
+{
+  "document_id": "1e2e88d18b60ff38",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_81_-_collision_with_car_23.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:11:47.707940+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 100 Date 24 May 2026 Time 20:07 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driv",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 100\nDate 24 May 2026\nTime 20:07\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 81 - Oscar Piastri\nCompetitor McLaren Mastercard F1 Team\nTime 16:25\nSession Race\nFact Car 81 collided with Car 23 in Turn 10\nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 10 second time penalty.\nReason The Stewards reviewed positioning/marshalling system data, video, and in-car video\nevidence.\nCar 81 attempted to overtake Car 23 and did not, according to the Driving Standards\nGuidelines, have the right to the corner.  Car 81 collided with Car 23 and hence was\ndetermined to be wholly to blame for the incident.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA a"
+}

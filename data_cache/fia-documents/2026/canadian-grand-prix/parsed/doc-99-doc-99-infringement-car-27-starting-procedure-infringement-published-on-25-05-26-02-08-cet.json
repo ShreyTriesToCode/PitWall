@@ -1,0 +1,26 @@
+{
+  "document_id": "9c80f0d440dadc61",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_27_-_starting_procedure_infringement.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:11:49.358189+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 From The Stewards To The Team Manager, Audi Revolut F1 Team Document 99 Date 24 May 2026 Time 19:54 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 27 - Nico Hulkenb",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 99\nDate 24 May 2026\nTime 19:54\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 27 - Nico Hulkenberg\nCompetitor Audi Revolut F1 Team\nTime 16:08\nSession Race\nFact Cars 27 and 30 were out of position at Safety Car Line 1 during the formation lap.\nCar 27 did not enter the Pit Lane as required by the Regulations.\nInfringement Breach of Article B5.6.4 of the FIA F1 Regulations.\nDecision A mandatory Stop-and-Go penalty imposed after the Race. This penalty is suspended\nfor the period ending at the final race of the 2026 Championship on condition that no\nfurther similar breach, by this driver, occurs.\nIn addition the driver is Reprimanded for failure to start the formation lap in the\ncorrect order. This is the driver’s first Reprimand for the Season.\nReason The Stewards heard from the driver of Car 27 (Nico Hulkenberg), the driver of Car\n30 (Liam Lawson), team representatives and reviewed positioning/marshalling\nsystem data, video, timing, and in-car video evidence.\nThis was an unusual inci"
+}

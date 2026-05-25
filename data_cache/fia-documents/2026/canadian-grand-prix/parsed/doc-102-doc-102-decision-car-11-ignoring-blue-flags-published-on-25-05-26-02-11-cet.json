@@ -1,0 +1,26 @@
+{
+  "document_id": "f724729ca08e31fa",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_11_-_ignoring_blue_flags.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:11:45.797544+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 102 Date 24 May 2026 Time 20:07 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 102\nDate 24 May 2026\nTime 20:07\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 17:02\nSession Race\nFact Car 11 had 6 sets of blue flags displayed prior to the lapped car behind passing.\nInfringement Alleged breach of Appendix H, Article 2.5.5 e) of the International Sporting Code.\nDecision No further action.\nReason The Stewards reviewed positioning/marshalling system data, video, timing, telemetry,\nand in-car video evidence.\nAlthough Car 11 received six blue flag signals, and at times provided room for the\nlapping car to overtake and reduced speed, the car behind did not overtake until after\nTurn 9.\nThe Stewards determined that the driver of Car 11 took all reasonable actions and\nhence decide to take no further action.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judi"
+}

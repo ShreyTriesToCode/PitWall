@@ -1,0 +1,26 @@
+{
+  "document_id": "f06e49f68adb17b4",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_summons_-_car_63_-_alleged_unsafe_act.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-05-25T09:12:02.820823+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 CANADIAN GRAND PRIX 22 - 24 May 2026 The driver and team representative are required to report to the Stewards at 18:15, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 92 Date 24 May 2026 Time 17:55 No / Driver 63 - ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 CANADIAN GRAND PRIX\n22 - 24 May 2026\nThe driver and team representative are required to report to the Stewards at 18:15, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 92\nDate 24 May 2026\nTime 17:55\nNo / Driver 63 - George Russell\nReason Alleged breach of Article 12.2.1.h of the International Sporting Code and/or Article\nB1.5.4b of the FIA F1 Regulations.\nGarry Connelly Tanja Geilhausen\nPedro Lamy Marcel Demers\n"
+}
