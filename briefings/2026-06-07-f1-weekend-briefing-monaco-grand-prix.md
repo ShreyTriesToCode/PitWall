@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Monaco GP - Race
 
-Generated: Monday, 25 May 2026, 11:46 AM IST
+Generated: Monday, 25 May 2026, 04:24 PM IST
 
 ## Event
 
@@ -12,14 +12,14 @@ Generated: Monday, 25 May 2026, 11:46 AM IST
 ## Prediction
 
 1. Lewis Hamilton, score 60.8, confidence 53%, car performance; team-track fit; track trait fit; same-circuit history; reliability
-2. George Russell, score 59.9, confidence 53%, car performance; track trait fit; team-track fit; driver form; same-circuit history
-3. Charles Leclerc, score 59.6, confidence 53%, car performance; team-track fit; track trait fit; same-circuit history; reliability
-4. Andrea Kimi Antonelli, score 58.7, confidence 53%, car performance; driver form; track trait fit; team-track fit; constructor form
+2. George Russell, score 59.6, confidence 53%, car performance; track trait fit; team-track fit; driver form; same-circuit history
+3. Charles Leclerc, score 59.1, confidence 53%, car performance; team-track fit; track trait fit; same-circuit history; reliability
+4. Andrea Kimi Antonelli, score 58.8, confidence 53%, car performance; driver form; track trait fit; team-track fit; constructor form
 5. Max Verstappen, score 56.1, confidence 53%, car performance; same-circuit history; team-track fit; track trait fit; reliability
-6. Oscar Piastri, score 54.6, confidence 53%, car performance; team-track fit; same-circuit history; track trait fit; reliability
-7. Lando Norris, score 54.0, confidence 53%, car performance; team-track fit; same-circuit history; track trait fit; reliability
-8. Isack Hadjar, score 49.4, confidence 53%, car performance; team-track fit; same-circuit history; track trait fit; regulation-era fit
-9. Liam Lawson, score 40.8, confidence 47%, car performance; same-circuit history; team-track fit; track trait fit; pit-stop execution
+6. Oscar Piastri, score 54.1, confidence 53%, car performance; team-track fit; same-circuit history; track trait fit; reliability
+7. Lando Norris, score 53.8, confidence 53%, car performance; team-track fit; same-circuit history; track trait fit; reliability
+8. Isack Hadjar, score 49.5, confidence 53%, car performance; team-track fit; same-circuit history; track trait fit; regulation-era fit
+9. Liam Lawson, score 40.7, confidence 47%, car performance; same-circuit history; team-track fit; track trait fit; pit-stop execution
 10. Carlos Sainz, score 38.8, confidence 47%, same-circuit history; reliability; weather adaptation; track trait fit
 
 ## Track and weather
@@ -29,8 +29,8 @@ Generated: Monday, 25 May 2026, 11:46 AM IST
 - Overtaking: medium
 - Tyre stress: medium
 - Safety car/DNF risk proxy: high
-- Weather: 24.1°C, rain 20%, wind 6.0 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
+- Weather: 25.7°C, rain 20%, wind 21.9 km/h
+- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
 
 ## Strategy
 
@@ -69,11 +69,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.22; RMSE: 4.11
-- Neural lap-time MAE: 4.67s; RMSE: 6.08s
-- Backtest winner hit: 29.4%; top-3 recall: 62.7%; top-5 recall: 74.4%
+- Finish-position MAE: 3.21; RMSE: 4.11
+- Neural lap-time MAE: 4.66s; RMSE: 6.16s
+- Backtest winner hit: 33.8%; top-3 recall: 61.8%; top-5 recall: 74.4%
 - Win model AUC/Brier: 0.964 / 0.032
-- Podium model AUC/Brier: 0.934 / 0.072
+- Podium model AUC/Brier: 0.935 / 0.071
 
 ## Source status
 

@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-6-monaco-grand-prix",
-    "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-add881f28328",
+    "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-880f8f30c77d",
     "season": 2026,
     "round": 6,
     "circuit": "Circuit de Monaco",
@@ -13,17 +13,17 @@
     "safety_car": "high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "24.1°C",
+      "temperature": "25.7°C",
       "rain": "20%",
-      "humidity": "69%",
-      "wind": "6.0 km/h",
-      "wind_gust": "31.0 km/h",
-      "cloud_cover": "94%",
+      "humidity": "44%",
+      "wind": "21.9 km/h",
+      "wind_gust": "64.8 km/h",
+      "cloud_cover": "0%",
       "track_temperature": "Unavailable",
       "rain_score": 20.0,
       "heat_score": 0,
-      "wind_score": 80.60000000000001,
-      "impact": "dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth"
+      "wind_score": 100,
+      "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
     },
     "strategy": {
       "risk_meter": 51.0,
@@ -85,35 +85,35 @@
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 64.61,
+          "scenario_score": 64.64,
           "rank": 1
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 63.83,
+          "scenario_score": 63.85,
           "rank": 2
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 62.06,
+          "scenario_score": 61.82,
           "rank": 3
         },
         {
           "driver_id": "norris",
           "name": "Lando Norris",
           "team": "McLaren",
-          "scenario_score": 61.68,
+          "scenario_score": 61.55,
           "rank": 4
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 61.35,
+          "scenario_score": 61.06,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 61.33,
+          "scenario_score": 61.35,
           "rank": 1
         },
         {
           "driver_id": "colapinto",
           "name": "Franco Colapinto",
           "team": "Alpine",
-          "scenario_score": 60.09,
+          "scenario_score": 60.04,
           "rank": 2
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 59.99,
+          "scenario_score": 60.0,
           "rank": 3
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 57.92,
+          "scenario_score": 57.72,
           "rank": 4
         },
         {
-          "driver_id": "russell",
-          "name": "George Russell",
-          "team": "Mercedes",
-          "scenario_score": 57.55,
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "scenario_score": 57.39,
           "rank": 5
         }
       ],
