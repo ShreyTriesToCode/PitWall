@@ -17,6 +17,52 @@ Generated on 2026-05-24.
 
 ## Commands Run
 
+Follow-up reliability/UI release pass on 2026-05-25:
+
+```bash
+.venv/bin/python -m py_compile f1_briefing.py
+```
+
+Result: passed.
+
+```bash
+.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
+```
+
+Result: passed, 46 tests.
+
+```bash
+.venv/bin/python -c "import f1_briefing as f; f.save_model_status_json(); f.generate_frontend_contract_files()"
+```
+
+Result: passed. The run regenerated frontend contract/model-status artifacts and handled an optional Jolpica sprint-qualifying 404 as unavailable source data.
+
+```bash
+cd frontend && npm install
+```
+
+Result: passed, 0 vulnerabilities.
+
+```bash
+cd frontend && npm run build
+```
+
+Result: passed on Next.js 16.2.6.
+
+```bash
+curl -sS -o /tmp/pitwall-predictions.json -w "%{http_code}" http://localhost:3000/api/predictions
+curl -sS -o /tmp/pitwall-model-status.json -w "%{http_code}" http://localhost:3000/api/model-status
+curl -sS -o /tmp/pitwall-source-health.json -w "%{http_code}" http://localhost:3000/api/source-health
+curl -sS -o /tmp/pitwall-f1timing.json -w "%{http_code}" "http://localhost:3000/api/f1timing?fast=1"
+curl -sS -o /tmp/pitwall-page-predictions.html -w "%{http_code}" http://localhost:3000/predictions
+curl -sS -o /tmp/pitwall-page-live.html -w "%{http_code}" http://localhost:3000/live
+curl -sS -o /tmp/pitwall-page-home.html -w "%{http_code}" http://localhost:3000/
+```
+
+Result: all returned HTTP 200. `/api/predictions` included `top10`, `top_10`, `full_grid`, `all_predictions`, `race_factors`, and `warnings`; the generated top-10 length was 10 and full-grid length was 22. `/api/f1timing?fast=1` returned stable auto-selection metadata and 22 archive/fallback timing rows.
+
+Browser automation note: Playwright was not installed in the local Node runtime, so mobile drawer verification used static unit assertions, Next production build, and route/API smoke checks rather than a Playwright screenshot run.
+
 ```bash
 .venv/bin/python -m py_compile f1_briefing.py
 ```

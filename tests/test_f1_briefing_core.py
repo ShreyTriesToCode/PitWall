@@ -285,6 +285,146 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("scenarios", latest)
         self.assertIn("archive", contract)
 
+    def test_normalized_prediction_contract_exposes_race_intelligence_shape(self):
+        entry = {
+            "title": "Example Grand Prix",
+            "race_name": "Example Grand Prix",
+            "season": 2026,
+            "round": 1,
+            "stage": "pre_race",
+            "target_type": "race",
+            "generated_iso": "2026-05-25T00:00:00+00:00",
+            "weather": {"rain_score": 35, "rain_probability": 0.35},
+            "tyre_stress": "high",
+            "overtaking": "low",
+            "safety_car": "high",
+            "top10": [
+                {
+                    "driver_id": "driver_a",
+                    "name": "Driver A",
+                    "team": "Mercedes-AMG Petronas F1 Team",
+                    "rank": 1,
+                    "score": 82,
+                    "confidence": 71,
+                    "component_scores": {
+                        "ml_win_probability": 38,
+                        "ml_podium_probability": 75,
+                        "ml_top10_probability": 98,
+                        "reliability": 78,
+                        "qualifying": 82,
+                        "race_pace": 84,
+                        "team_strategy": 63,
+                        "pit_execution": 70,
+                    },
+                }
+            ],
+            "full_grid": [
+                {
+                    "driver_id": "driver_a",
+                    "name": "Driver A",
+                    "team": "Mercedes-AMG Petronas F1 Team",
+                    "rank": 1,
+                    "score": 82,
+                    "confidence": 71,
+                    "component_scores": {
+                        "ml_win_probability": 38,
+                        "ml_podium_probability": 75,
+                        "ml_top10_probability": 98,
+                        "reliability": 78,
+                        "qualifying": 82,
+                        "race_pace": 84,
+                        "team_strategy": 63,
+                        "pit_execution": 70,
+                    },
+                },
+                {
+                    "driver_id": "driver_b",
+                    "name": "Driver B",
+                    "team": "Ferrari",
+                    "rank": 2,
+                    "score": 74,
+                    "confidence": 64,
+                    "component_scores": {
+                        "ml_win_probability": 24,
+                        "ml_podium_probability": 58,
+                        "ml_top10_probability": 93,
+                        "reliability": 69,
+                        "qualifying": 74,
+                        "race_pace": 75,
+                        "team_strategy": 55,
+                        "pit_execution": 61,
+                    },
+                },
+            ],
+        }
+
+        normalized = f1.normalize_entry_contract(entry)
+        row = normalized["full_grid"][0]
+
+        self.assertIn("top_10", normalized)
+        self.assertEqual(normalized["top_10"], normalized["top10"])
+        self.assertIn("race_factors", normalized)
+        self.assertIn("warnings", normalized)
+        for key in [
+            "points_probability",
+            "fastest_lap_probability",
+            "dnf_probability",
+            "position_range",
+            "expected_strategy",
+            "explanation",
+            "data_freshness",
+            "source_notes",
+        ]:
+            self.assertIn(key, row)
+        self.assertIn("pace", row["explanation"])
+        self.assertIn("strategy", row["explanation"])
+        self.assertEqual(row["position_range"], [row["best_case_finish"], row["worst_case_finish"]])
+
+    def test_strategy_context_annotations_detect_weather_tyre_mismatch(self):
+        annotations = f1.detect_strategy_context_annotations(
+            {
+                "starting_compound": "INTERMEDIATE",
+                "first_pit_lap": 4,
+                "post_switch_pace_delta": -0.42,
+                "pit_context": "normal",
+            },
+            {
+                "rainfall_actual": 0,
+                "rain_probability": 0.68,
+                "track_status_events": [],
+            },
+        )
+
+        labels = {item["label"] for item in annotations}
+        self.assertIn("wrong_starting_tyre_for_actual_weather", labels)
+        self.assertIn("early_tyre_correction", labels)
+        self.assertIn("competitive_after_compound_switch", labels)
+
+    def test_predictions_page_renders_top10_and_full_grid_sections(self):
+        page = Path("frontend/app/predictions/page.jsx").read_text(encoding="utf-8")
+        self.assertIn("top10Rows", page)
+        self.assertIn("fullGridRows", page)
+        self.assertIn("Top 10 Prediction", page)
+        self.assertIn("Full Grid Prediction", page)
+        self.assertIn("Race Overview", page)
+
+    def test_driver_detail_drawer_is_scrollable_and_rich(self):
+        css = Path("frontend/app/globals.css").read_text(encoding="utf-8")
+        component = Path("frontend/app/components/PitWallComponents.jsx").read_text(encoding="utf-8")
+        self.assertIn("overflow-y: auto", css)
+        self.assertIn("-webkit-overflow-scrolling: touch", css)
+        self.assertIn("driver-detail-content", component)
+        self.assertIn("Fastest lap", component)
+        self.assertIn("Expected strategy", component)
+        self.assertIn("Source notes", component)
+
+    def test_f1timing_route_exposes_auto_selection_metadata(self):
+        route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
+        self.assertIn("auto_selected_session", route)
+        self.assertIn("session_resolution", route)
+        self.assertIn("warnings", route)
+        self.assertIn("safeNormalizedTimingPayload", route)
+
     def test_f1db_adapter_reports_disabled_without_downloading(self):
         with patch.dict(os.environ, {"F1DB_ENABLED": "false", "F1DB_SQLITE_PATH": "", "F1DB_CSV_DIR": ""}, clear=False):
             status = f1db.f1db_status()

@@ -48,32 +48,47 @@ export default function PredictionsPage() {
         ...latest,
         title: latest.title || latest.race_name,
         top10: data?.top10 || latest.top10 || [],
+        full_grid: data?.full_grid || latest.full_grid || latest.all_predictions || latest.top10 || [],
         target_type: latest.target_type,
         stage: latest.stage,
       });
     }
     return map;
-  }, [data?.top10, generatedTargets, latest]);
+  }, [data?.full_grid, data?.top10, generatedTargets, latest]);
   const selectedTarget = targetMap.get(requestedTarget) || (!generatedTargets.length && latest ? {
     ...latest,
     title: latest.title || latest.race_name,
     top10: data?.top10 || [],
+    full_grid: data?.full_grid || data?.all_predictions || data?.top10 || [],
     target_type: latest.target_type,
     stage: latest.stage,
   } : null);
   const targetPending = Boolean(requestedTarget && !targetMap.has(requestedTarget) && generatedTargets.length);
   const selectedPayload = targetPending ? {} : selectedTarget || latest || {};
   const selectedTop10 = targetPending ? [] : selectedTarget?.top10?.length ? selectedTarget.top10 : data?.top10 || [];
-  const predictions = useFilteredDrivers(selectedTop10, query);
+  const selectedFullGrid = targetPending
+    ? []
+    : selectedTarget?.full_grid?.length
+      ? selectedTarget.full_grid
+      : selectedTarget?.all_predictions?.length
+        ? selectedTarget.all_predictions
+        : data?.full_grid?.length
+          ? data.full_grid
+          : data?.all_predictions?.length
+            ? data.all_predictions
+            : selectedTop10;
+  const top10Rows = useFilteredDrivers(selectedTop10, query);
+  const fullGridRows = useFilteredDrivers(selectedFullGrid, query);
+  const predictions = fullGridRows.length ? fullGridRows : top10Rows;
   const generatedTargetTypes = useMemo(() => {
     const values = new Set(generatedTargets.map((target) => target.target_type).filter(Boolean));
     if (latest?.target_type) values.add(latest.target_type);
     return values;
   }, [generatedTargets, latest?.target_type]);
   const summary = useMemo(() => {
-    const top = predictions.slice(0, 3).map((p) => `P${p.rank} ${p.name} (${p.team})`).join(", ");
+    const top = top10Rows.slice(0, 3).map((p) => `P${p.rank} ${p.name} (${p.team})`).join(", ");
     return `${selectedPayload?.title || selectedPayload?.race_name || "PitWall"}: ${top || "No prediction rows available"}. Stage: ${selectedPayload?.stage || "pending"}.`;
-  }, [predictions, selectedPayload]);
+  }, [top10Rows, selectedPayload]);
 
   useEffect(() => {
     if (!predictions.length) {
@@ -99,7 +114,7 @@ export default function PredictionsPage() {
   return (
     <AppShell active="/predictions">
       <AnimatedTicker latest={latest} />
-      <PageHeader eyebrow="Prediction Intelligence" title="Predictions" description="Grid-aware, practice-aware, scenario-adjusted top 10 model board." actions={<CopySummaryButton text={summary} />} />
+      <PageHeader eyebrow="Prediction Intelligence" title="Predictions" description="Race overview, top-10 probabilities, full-grid ranking, and source-aware driver explanations." actions={<CopySummaryButton text={summary} />} />
       {loading && <LoadingSkeleton />}
       {error && <InlineNotice title="Prediction sync failed" body={error} tone="error" action={<button className="control-btn" onClick={refetch}>Retry</button>} />}
       {warning && <InlineNotice title="Fallback prediction data" body={warning} tone="warning" />}
@@ -113,18 +128,38 @@ export default function PredictionsPage() {
             <button className="control-btn" onClick={refetch} disabled={refreshing}>{refreshing ? "Refreshing" : "Refresh data"}</button>
             <StatusBadge label={targetPending ? `${requestedTarget} pending` : selectedTarget?.stage || latest.stage} tone="red" />
           </section>
-          <section className="metric-grid">
-            <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
-            <Metric label="Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
-            <Metric label="Model Agreement Leader" value={`${predictions[0]?.model_agreement_score ?? "Pending"}%`} />
-            <Metric label="Dark Horse" value={predictions.find((p) => p.dark_horse_flag)?.name || "Not flagged"} />
-            <Metric label="Stage" value={selectedPayload.prediction_stage || selectedPayload.stage || latest.prediction_stage || "pending"} />
-            <Metric label="Avg Uncertainty" value={`${selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty ?? "Pending"}%`} />
-            <Metric label="FIA Documents" value={selectedPayload.fia_document_count ?? latest.fia_document_count ?? 0} />
-            <Metric label="Timing Mode" value={selectedPayload.timing_mode || latest.timing_mode || "unavailable"} />
+          <section className="panel reveal prediction-overview">
+            <SectionTitle title="Race Overview" />
+            <div className="metric-grid">
+              <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
+              <Metric label="Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
+              <Metric label="Model Agreement Leader" value={`${predictions[0]?.model_agreement_score ?? "Pending"}%`} />
+              <Metric label="Dark Horse" value={predictions.find((p) => p.dark_horse_flag)?.name || "Not flagged"} />
+              <Metric label="Stage" value={selectedPayload.prediction_stage || selectedPayload.stage || latest.prediction_stage || "pending"} />
+              <Metric label="Avg Uncertainty" value={`${selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty ?? "Pending"}%`} />
+              <Metric label="Safety Car Risk" value={`${selectedPayload.race_factors?.safety_car_probability ?? latest.race_factors?.safety_car_probability ?? "Pending"}%`} />
+              <Metric label="Rain Impact" value={selectedPayload.race_factors?.rain_impact || latest.race_factors?.rain_impact || "Pending"} />
+              <Metric label="FIA Documents" value={selectedPayload.fia_document_count ?? latest.fia_document_count ?? 0} />
+              <Metric label="Timing Mode" value={selectedPayload.timing_mode || latest.timing_mode || "unavailable"} />
+            </div>
           </section>
           {!predictions.length && <EmptyState title={targetPending ? `${requestedTarget} prediction pending` : "No prediction rows match"} body={targetPending ? "That target has not been generated yet. The next backend run will expose it when the data exists." : "Clear the search or try another driver/team."} />}
-          {predictions.length > 0 && (view === "table" ? <PredictionTable predictions={predictions} onOpen={setSelected} /> : <div className="card-grid">{predictions.map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} />)}</div>)}
+          {top10Rows.length > 0 && (
+            <section className="panel reveal prediction-section">
+              <SectionTitle title="Top 10 Prediction" action={<StatusBadge label={`${top10Rows.length} drivers`} tone="green" />} />
+              <div className="card-grid top10-grid">
+                {top10Rows.slice(0, 10).map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact />)}
+              </div>
+            </section>
+          )}
+          {fullGridRows.length > 0 && (
+            <section className="panel reveal prediction-section">
+              <SectionTitle title="Full Grid Prediction" action={<StatusBadge label={`${fullGridRows.length} drivers`} tone="red" />} />
+              {view === "table"
+                ? <PredictionTable predictions={fullGridRows} onOpen={setSelected} />
+                : <div className="card-grid">{fullGridRows.map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} />)}</div>}
+            </section>
+          )}
           {predictions.length > 1 && <DriverComparePanel predictions={predictions} aId={compareA} bId={compareB} onA={setCompareA} onB={setCompareB} />}
           {predictions.length > 0 && <section className="dashboard-grid">
             <div className="panel reveal">

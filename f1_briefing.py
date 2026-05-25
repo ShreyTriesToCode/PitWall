@@ -1639,6 +1639,182 @@ def simulate_race_outcomes(rows, runs=None, seed=42):
     }
 
 
+def confidence_label(value):
+    value = safe_float(value)
+    if value is None:
+        return "low"
+    if value >= 72:
+        return "high"
+    if value >= 48:
+        return "medium"
+    return "low"
+
+
+def probability_from_score(score, low=1.0, high=18.0):
+    score = clamp(score, 0, 100, 50)
+    return round(low + (high - low) * (score / 100.0), 3)
+
+
+def strategy_profile_for_row(row, profile=None, weather=None):
+    profile = profile or {}
+    weather = weather or {}
+    tyre_score = text_level(profile.get("tyre_stress"))
+    rain_score = safe_float(weather.get("rain_score")) or safe_float(weather.get("rain_probability")) or text_level(weather.get("rain"))
+    overtaking_score = text_level(profile.get("overtaking"))
+
+    if rain_score and rain_score >= 55:
+        sequence = ["intermediate", "slick"]
+        stops = 2 if tyre_score >= 65 else 1
+        first_pit_lap = None
+        basis = "Rain risk is high enough that crossover timing dominates the dry pit window."
+    elif tyre_score >= 70:
+        sequence = ["medium", "hard", "medium"]
+        stops = 2
+        first_pit_lap = 16
+        basis = "High tyre-stress profile makes a two-stop strategy plausible."
+    elif overtaking_score <= 38:
+        sequence = ["medium", "hard"]
+        stops = 1
+        first_pit_lap = 24
+        basis = "Low-overtaking profile increases track-position value."
+    else:
+        sequence = ["medium", "hard"]
+        stops = 1
+        first_pit_lap = 20
+        basis = "Default dry strategy from historical pit-window and tyre-stress profile."
+
+    return {
+        "stops": stops,
+        "first_pit_lap": first_pit_lap,
+        "compound_sequence": sequence,
+        "confidence": confidence_label(row.get("confidence")),
+        "basis": basis,
+    }
+
+
+def detect_strategy_context_annotations(strategy_context=None, weather_context=None):
+    """Flag post-race strategy context without rewriting the race result as car pace."""
+    if os.getenv("STRATEGY_CONTEXT_ENABLED", "true").lower() == "false":
+        return []
+    strategy_context = strategy_context or {}
+    weather_context = weather_context or {}
+    annotations = []
+
+    starting_compound = str(strategy_context.get("starting_compound") or strategy_context.get("compound") or "").lower()
+    first_pit_lap = safe_int(strategy_context.get("first_pit_lap") or strategy_context.get("first_stop_lap"))
+    rainfall_actual = safe_float(weather_context.get("rainfall_actual") or weather_context.get("rainfall") or 0) or 0
+    rain_probability = safe_float(weather_context.get("rain_probability") or weather_context.get("forecast_rain_probability") or 0) or 0
+    track_status_events = [str(item).lower() for item in weather_context.get("track_status_events") or strategy_context.get("track_status_events") or []]
+    pit_context = str(strategy_context.get("pit_context") or "").lower()
+    post_switch_delta = safe_float(strategy_context.get("post_switch_pace_delta"))
+    degradation_slope = safe_float(strategy_context.get("degradation_slope"))
+    double_stack_loss = safe_float(strategy_context.get("double_stack_loss"))
+
+    wet_start = any(token in starting_compound for token in ["inter", "wet"])
+    if wet_start and rainfall_actual <= 0.01:
+        annotations.append({
+            "label": "wrong_starting_tyre_for_actual_weather",
+            "message": "Started on a wet-weather tyre but actual early-session rain evidence was dry or negligible.",
+            "confidence": "medium" if rain_probability >= 0.35 else "high",
+            "source": "tyre/weather strategy annotation",
+        })
+    if first_pit_lap is not None and first_pit_lap <= 6:
+        annotations.append({
+            "label": "early_tyre_correction",
+            "message": f"First stop on lap {first_pit_lap} suggests an early tyre or setup correction rather than pure car pace.",
+            "confidence": "high",
+            "source": "pit-stop timing",
+        })
+    if post_switch_delta is not None and post_switch_delta < -0.15:
+        annotations.append({
+            "label": "competitive_after_compound_switch",
+            "message": "Pace improved after the tyre change, so final result should not be treated as only weak baseline pace.",
+            "confidence": "medium",
+            "source": "post-switch pace delta",
+        })
+    if "safety" in pit_context or any("safety" in item for item in track_status_events):
+        annotations.append({
+            "label": "safety_car_aided_stop",
+            "message": "Pit timing overlapped with safety-car context, which can distort normal strategy evaluation.",
+            "confidence": "medium",
+            "source": "race-control context",
+        })
+    if "vsc" in pit_context or any("vsc" in item or "virtual safety" in item for item in track_status_events):
+        annotations.append({
+            "label": "vsc_aided_stop",
+            "message": "Pit timing overlapped with VSC context, reducing pit-loss comparability.",
+            "confidence": "medium",
+            "source": "race-control context",
+        })
+    if "red" in pit_context or any("red flag" in item for item in track_status_events):
+        annotations.append({
+            "label": "red_flag_free_tyre_change",
+            "message": "Red-flag context may have allowed tyre reset outside normal green-flag strategy.",
+            "confidence": "medium",
+            "source": "race-control context",
+        })
+    if double_stack_loss is not None and double_stack_loss >= 1.5:
+        annotations.append({
+            "label": "double_stack_time_loss",
+            "message": "Detected double-stack time loss that should be separated from driver/car pace.",
+            "confidence": "medium",
+            "source": "pit-stop timing",
+        })
+    if degradation_slope is not None and degradation_slope >= 0.16:
+        annotations.append({
+            "label": "degradation_cliff",
+            "message": "Stint degradation slope points to tyre drop-off as a race-outcome driver.",
+            "confidence": "medium",
+            "source": "stint pace trend",
+        })
+
+    return annotations
+
+
+def explanation_for_prediction_row(row, profile=None, weather=None):
+    components = row.get("component_scores") or {}
+    strategy = row.get("expected_strategy") or strategy_profile_for_row(row, profile, weather)
+    missing = (row.get("evidence_status") or {}).get("missing") or []
+    pace_score = weighted_average([
+        (components.get("race_pace"), 0.35),
+        (components.get("timing_lap_pace"), 0.25),
+        (components.get("ml_finish_position_score"), 0.20),
+        (row.get("score"), 0.20),
+    ])
+    qualifying_score = components.get("qualifying") or components.get("timing_starting_grid")
+    reliability = row.get("reliability") or components.get("reliability")
+    rain = safe_float((weather or {}).get("rain_score")) or safe_float((weather or {}).get("rain_probability"))
+    return {
+        "pace": f"Pace signal {round(pace_score, 1) if pace_score is not None else 'pending'} from race-pace, timing, and finish-position components.",
+        "strategy": strategy.get("basis") or "Strategy estimate uses pit-window, tyre-stress, and team-strategy components where available.",
+        "tyres": f"Expected sequence: {', '.join(strategy.get('compound_sequence') or []) or 'not enough tyre data'}; tyre risk {profile.get('tyre_stress', 'unknown') if profile else 'unknown'}.",
+        "weather": f"Rain impact score {round(rain, 1) if rain is not None else 'pending'}; weather confidence depends on source freshness.",
+        "risk": f"Reliability/DNF risk is reflected by {round(reliability, 1) if reliability is not None else 'pending'} reliability and {row.get('dnf_probability', 'pending')}% DNF probability.",
+        "qualifying": f"Qualifying/grid component {round(safe_float(qualifying_score), 1) if safe_float(qualifying_score) is not None else 'pending'} affects track-position confidence.",
+        "key_reasons": row.get("reason_tags") or [],
+        "missing_data": missing,
+    }
+
+
+def race_factors_from_context(profile=None, weather=None, source_health=None):
+    profile = profile or {}
+    weather = weather or {}
+    safety_score = text_level(profile.get("safety_car"))
+    rain_score = safe_float(weather.get("rain_score")) or safe_float(weather.get("rain_probability")) or text_level(weather.get("rain"))
+    tyre_score = text_level(profile.get("tyre_stress"))
+    overtaking_score = text_level(profile.get("overtaking"))
+    source_score = safe_float((source_health or {}).get("overall_score")) or 50
+    return {
+        "safety_car_probability": round(clamp(safety_score, 0, 100, 50), 2),
+        "vsc_probability": round(clamp(safety_score * 0.72, 0, 100, 36), 2),
+        "red_flag_probability": round(clamp(safety_score * 0.28 + max(0, rain_score - 50) * 0.20, 0, 100, 12), 2),
+        "rain_impact": "high" if rain_score >= 60 else "medium" if rain_score >= 30 else "low",
+        "track_overtaking_difficulty": profile.get("overtaking", "unknown"),
+        "tyre_degradation_risk": profile.get("tyre_stress", "unknown"),
+        "source_confidence": confidence_label(source_score),
+    }
+
+
 def uncertainty_for_prediction(row, source_health=None, stage=None):
     evidence = row.get("evidence_status") or {}
     missing_count = len(evidence.get("missing") or [])
@@ -6235,6 +6411,23 @@ def enrich_prediction_item(item, rank, field_size, current_round_data, profile, 
         "bust_risk_flag": bool(rank <= 5 and (confidence < 55 or reliability < 58 or disagreement_flags)),
         "short_explanation": item.get("reason") or "Model estimate based on currently available race data.",
     })
+    item.setdefault("predicted_finish", item.get("predicted_finish_position") or item.get("likely_finish"))
+    item.setdefault("points_probability", item.get("top10_probability"))
+    item.setdefault("fastest_lap_probability", probability_from_score(weighted_average([
+        (component_scores.get("race_pace"), 0.35),
+        (component_scores.get("timing_lap_pace"), 0.25),
+        (component_scores.get("qualifying"), 0.20),
+        (item.get("score"), 0.20),
+    ]) or item.get("score"), low=0.8, high=16.0))
+    item.setdefault("dnf_probability", round(clamp(100 - (safe_float(item.get("reliability")) or 70), 2, 45, 12), 2))
+    item.setdefault("classified_finish_probability", round(100 - item["dnf_probability"], 2))
+    item.setdefault("position_range", [item.get("best_case_finish"), item.get("worst_case_finish")])
+    item.setdefault("expected_strategy", strategy_profile_for_row(item, profile, weather_summary))
+    item.setdefault("strategy_annotations", detect_strategy_context_annotations(item.get("strategy_context"), weather_summary))
+    item.setdefault("explanation", explanation_for_prediction_row(item, profile, weather_summary))
+    item.setdefault("confidence_label", confidence_label(item.get("confidence")))
+    item.setdefault("data_freshness", {"stage": stage, "source_health_status": "pending_source_snapshot"})
+    item.setdefault("source_notes", {"source_health": "pending_source_snapshot", "warnings": evidence.get("missing", [])})
     return item
 
 
@@ -7740,6 +7933,31 @@ def normalize_entry_contract(entry):
             enriched.setdefault("top10_safety_score", weighted_average([(enriched.get("top10_probability"), 0.6), (enriched.get("reliability"), 0.4)]) or 50)
             enriched.setdefault("dark_horse_flag", False)
             enriched.setdefault("bust_risk_flag", False)
+            enriched.setdefault("predicted_finish", enriched.get("predicted_finish_position"))
+            enriched.setdefault("points_probability", enriched.get("top10_probability"))
+            fastest_lap_score = weighted_average([
+                (components.get("race_pace"), 0.35),
+                (components.get("timing_lap_pace"), 0.25),
+                (components.get("qualifying"), 0.20),
+                (enriched.get("score"), 0.20),
+            ])
+            enriched.setdefault("fastest_lap_probability", probability_from_score(fastest_lap_score or enriched.get("score"), low=0.8, high=16.0))
+            enriched.setdefault("position_range", [enriched.get("best_case_finish"), enriched.get("worst_case_finish")])
+            enriched.setdefault("expected_strategy", strategy_profile_for_row(enriched, entry, entry.get("weather") or {}))
+            enriched.setdefault("strategy_annotations", detect_strategy_context_annotations(enriched.get("strategy_context"), entry.get("weather") or {}))
+            enriched.setdefault("explanation", explanation_for_prediction_row(enriched, entry, entry.get("weather") or {}))
+            enriched.setdefault("confidence_label", confidence_label(enriched.get("confidence")))
+            enriched.setdefault("data_freshness", {
+                "generated_at": entry.get("generated_iso"),
+                "stage": stage,
+                "timing_mode": entry.get("timing_mode"),
+                "source_health_status": source_health.get("status"),
+            })
+            enriched.setdefault("source_notes", {
+                "source_health": source_health.get("status"),
+                "source_score": source_health.get("overall_score"),
+                "warnings": (entry.get("source_registry") or {}).get("warnings", []),
+            })
             normalized.append(enriched)
             if limit and len(normalized) >= limit:
                 break
@@ -7816,6 +8034,7 @@ def normalize_entry_contract(entry):
         },
         "dnf_survival": {row.get("driver_id"): {"dnf_probability": row.get("dnf_probability"), "classified_finish_probability": row.get("classified_finish_probability")} for row in full_grid},
         "simulation": simulation,
+        "race_factors": entry.get("race_factors") or race_factors_from_context(entry, entry.get("weather") or {}, source_health),
         "scenario_predictions": entry.get("scenario_predictions") or prediction_model.get("scenarios") or {},
         "uncertainty_outputs": {row.get("driver_id"): row.get("uncertainty") for row in full_grid},
         "upgrade_impact_contribution": entry.get("upgrade_context") or {},
@@ -7825,7 +8044,9 @@ def normalize_entry_contract(entry):
         "model_metrics": entry.get("model_metrics") or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}),
         "correction_summary": entry.get("correction_summary") or correction_summary_for_entry(race_id),
         "actual_result": entry.get("actual_result"),
+        "warnings": entry.get("warnings") or (entry.get("source_registry") or {}).get("warnings", []) or source_health.get("warnings", []),
         "top10": top10,
+        "top_10": top10,
         "full_grid": full_grid,
         "all_predictions": full_grid,
     }

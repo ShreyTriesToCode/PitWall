@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-05-25
+
+### Added
+
+- Canonical `top_10` alias, `race_factors`, and warning fields in normalized prediction contracts.
+- Rich per-driver prediction fields: points probability, fastest-lap probability, DNF risk, position range, expected strategy, structured explanation, data freshness, and source notes.
+- Strategy-context annotations for wrong tyre/weather mismatch, early tyre correction, safety-car/VSC/red-flag pit context, double-stack loss, and degradation cliff.
+- `AUDIT.md`, `MODEL_REPORT.md`, `DATA_SOURCES.md`, and `SETUP.md`.
+
+### Changed
+
+- `/predictions` now separates Race Overview, Top 10 Prediction, and Full Grid Prediction instead of rendering only the selected top-10 board.
+- Driver detail drawer now shows all key probabilities, strategy, tyre/weather/risk notes, model reasons, and source notes in a scrollable viewport-fixed panel.
+- `/api/f1timing` now returns explicit auto-selection metadata, warning arrays, and safe normalized timing payloads for live, stale, archive, and fallback states.
+- Default local race simulation count documented as 10,000 while CI remains configurable lower.
+
 ## 2026-05-24
 
 ### Added

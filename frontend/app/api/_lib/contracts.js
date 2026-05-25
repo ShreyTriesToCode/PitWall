@@ -68,6 +68,17 @@ function normalizePredictionRows(rows, options = {}) {
       weakness_tags: asArray(row.weakness_tags),
       evidence_status: asObject(row.evidence_status),
       missing_data_penalties: asObject(row.missing_data_penalties),
+      position_range: Array.isArray(row.position_range)
+        ? row.position_range
+        : [row.best_case_finish ?? row.finish_interval_low ?? row.rank, row.worst_case_finish ?? row.finish_interval_high ?? row.rank],
+      points_probability: numeric(row.points_probability, numeric(row.top10_probability, null)),
+      fastest_lap_probability: numeric(row.fastest_lap_probability, null),
+      dnf_probability: numeric(row.dnf_probability, null),
+      expected_strategy: asObject(row.expected_strategy),
+      explanation: asObject(row.explanation),
+      data_freshness: asObject(row.data_freshness),
+      source_notes: asObject(row.source_notes),
+      strategy_annotations: asArray(row.strategy_annotations),
     };
   }).filter((row) => {
     if (!row.driver_id || seen.has(row.driver_id)) return false;
@@ -87,8 +98,11 @@ function normalizeLatest(payload) {
   return {
     ...payload,
     top10,
+    top_10: top10,
     full_grid: fullGrid.length ? fullGrid : top10,
     all_predictions: fullGrid.length ? fullGrid : top10,
+    race_factors: asObject(payload.race_factors),
+    warnings: asArray(payload.warnings),
     scenarios: asObject(payload.scenarios),
     strategy: asObject(payload.strategy),
     prediction_model: asObject(payload.prediction_model),
@@ -134,8 +148,11 @@ function normalizeDebugTarget(payload) {
     event: payload.event,
     race: payload.race,
     top10: normalizePredictionRows(payload.top10?.length ? payload.top10 : fullGrid, { limit: 10 }),
+    top_10: normalizePredictionRows(payload.top_10?.length ? payload.top_10 : payload.top10?.length ? payload.top10 : fullGrid, { limit: 10 }),
     full_grid: fullGrid,
     all_predictions: fullGrid,
+    race_factors: asObject(payload.race_factors),
+    warnings: asArray(payload.warnings),
     scenarios: payload.prediction_model?.scenarios || {},
     strategy: payload.strategy || null,
     prediction_model: payload.prediction_model || {},

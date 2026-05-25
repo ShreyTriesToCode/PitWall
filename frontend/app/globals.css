@@ -844,7 +844,11 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   bottom: 0;
   z-index: 70;
   width: min(520px, 100%);
-  overflow: auto;
+  max-height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: 28px;
   border-left: 1px solid var(--line2);
   background: linear-gradient(180deg, rgba(255,180,168,.06), transparent 180px), #200e0c;
@@ -853,6 +857,50 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
 }
 .detail-drawer h2 { margin: 6px 0; font-family: var(--display); font-size: 38px; text-transform: uppercase; font-style: italic; letter-spacing: 0; }
 .icon-btn.close { position: absolute; top: 16px; right: 16px; }
+.driver-detail-content {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+.detail-section {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.025);
+}
+.detail-section h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text);
+}
+.detail-metric-grid,
+.detail-strategy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.drawer-list {
+  display: grid;
+  gap: 8px;
+}
+.drawer-list p {
+  display: grid;
+  grid-template-columns: minmax(110px, .34fr) minmax(0, 1fr);
+  gap: 10px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.drawer-list strong {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
 .sparkline {
   height: 42px;
   border: 1px solid var(--line);
@@ -1807,11 +1855,18 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
     left: 0;
     width: 100%;
     max-height: min(88dvh, 720px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 22px 18px calc(24px + env(safe-area-inset-bottom));
     border-left: 0;
     border-top: 1px solid var(--line2);
     overscroll-behavior: contain;
     animation: sheetUp .22s ease both;
+  }
+  .detail-metric-grid,
+  .detail-strategy,
+  .drawer-list p {
+    grid-template-columns: 1fr;
   }
   .prediction-grid { grid-template-columns: 1fr 1fr; }
   .dash-row, .dash-table.compact .dash-row { grid-template-columns: 1fr 1fr; }

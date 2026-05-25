@@ -10,6 +10,7 @@ const OPENF1_ACCESS_TOKEN = (process.env.OPENF1_ACCESS_TOKEN || process.env.OPEN
 const OPENF1_USERNAME = (process.env.OPENF1_USERNAME || "").trim();
 const OPENF1_PASSWORD = (process.env.OPENF1_PASSWORD || "").trim();
 const RATE_LIMIT_MS = Math.max(1000, Number(process.env.F1_TIMING_RATE_LIMIT_MS || 5000));
+const TIMING_AUTO_SELECT_ENABLED = String(process.env.PITWALL_TIMING_AUTO_SELECT || "true").toLowerCase() !== "false";
 const OFFICIAL_VISUAL_CACHE = new Map();
 const RATE_LIMIT_BUCKET = globalThis.__pitwallF1TimingRateLimit || new Map();
 globalThis.__pitwallF1TimingRateLimit = RATE_LIMIT_BUCKET;
@@ -386,6 +387,90 @@ function timingFreshness(lifecycle, hasUsefulF1Data, source) {
   };
 }
 
+function safeNormalizedTimingPayload(value) {
+  const normalized = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  const fallbackLeaderboard = Array.isArray(normalized.results)
+    ? normalized.results.map((result, index) => {
+      const driver = result?.Driver || {};
+      const constructor = result?.Constructor || {};
+      const fullName = [driver.givenName, driver.familyName].filter(Boolean).join(" ") || driver.code || driver.driverId || `#${result?.number || index + 1}`;
+      return {
+        driver_number: Number(result?.number || index + 1),
+        position: Number(result?.position || result?.positionOrder || index + 1),
+        name: fullName,
+        team: constructor.name || "",
+        driver: {
+          driver_number: Number(result?.number || index + 1),
+          full_name: fullName,
+          name_acronym: driver.code || "",
+          team_name: constructor.name || "",
+          team_colour: "e10600",
+        },
+        interval: result?.Time?.time || result?.status || "",
+        gap_to_leader: result?.Time?.time || result?.status || "",
+        lap_duration: "",
+        compound: "",
+        tyre_age: "",
+        sectors: [],
+      };
+    })
+    : [];
+  return {
+    session: normalized.session && typeof normalized.session === "object"
+      ? normalized.session
+      : normalized.race
+        ? {
+          meeting_name: normalized.race.raceName || "Latest completed Grand Prix",
+          session_name: "Latest completed race",
+          session_type: "Race result",
+          date_start: [normalized.race.date, normalized.race.time].filter(Boolean).join(" "),
+        }
+        : {},
+    drivers: Array.isArray(normalized.drivers) ? normalized.drivers : [],
+    leaderboard: Array.isArray(normalized.leaderboard) ? normalized.leaderboard : fallbackLeaderboard,
+    intervals: Array.isArray(normalized.intervals) ? normalized.intervals : fallbackLeaderboard,
+    laps: Array.isArray(normalized.laps) ? normalized.laps : fallbackLeaderboard,
+    stints: Array.isArray(normalized.stints) ? normalized.stints : [],
+    pits: Array.isArray(normalized.pits) ? normalized.pits : [],
+    raceControl: Array.isArray(normalized.raceControl) ? normalized.raceControl : [],
+    weather: normalized.weather || null,
+    carData: Array.isArray(normalized.carData) ? normalized.carData : [],
+    radio: Array.isArray(normalized.radio) ? normalized.radio : [],
+    trackStatus: normalized.trackStatus || null,
+    lapCount: normalized.lapCount && typeof normalized.lapCount === "object" ? normalized.lapCount : {},
+    source: normalized.source || "",
+  };
+}
+
+function selectionResolution(selected, requestedSession, requestedMeeting, hasUsefulF1Data = false, fallback = "") {
+  if (!selected) {
+    return {
+      strategy: "fallback",
+      requested_meeting: requestedMeeting,
+      requested_session: requestedSession,
+      selected_meeting: null,
+      selected_session: null,
+      reason: fallback || "No matching Formula 1 timing session was listed for this selection.",
+    };
+  }
+  const selectedSessionName = normalizeSessionName(selected.session?.Name || selected.session?.name || selected.session?.SessionName || selected.session?.session_name);
+  const selectedMeetingName = meetingName(selected.meeting);
+  const autoSelected = requestedMeeting === "latest" || requestedSession === "latest";
+  return {
+    strategy: autoSelected ? "auto_best_available" : "manual_safe_selection",
+    requested_meeting: requestedMeeting,
+    requested_session: requestedSession,
+    selected_meeting: selectedMeetingName,
+    selected_session: selectedSessionName,
+    selected_session_key: String(selected.session?.Key || selected.session?.key || selected.session?.session_key || selected.session?.Path || selected.session?.path || ""),
+    selected_meeting_key: meetingKey(selected.meeting),
+    has_useful_timing_data: Boolean(hasUsefulF1Data),
+    reason: autoSelected
+      ? "Selected the best available live, completed, upcoming, or cached timing session."
+      : "Manual session selection was normalized and guarded before fetch.",
+  };
+}
+
 function normalizeSessionName(name) {
   return String(name || "").replace(/_/g, " ").trim();
 }
@@ -469,14 +554,16 @@ function chooseSession(meetings, requestedSession, requestedMeeting = "latest") 
   const preWindow = 90 * 60 * 1000;
   const postWindow = 3 * 60 * 60 * 1000;
 
-  // Prefer a session that is currently active or about to start.
-  const active = sessions.find((item) => {
-    if (!item.start) return false;
-    const start = item.start.getTime();
-    const end = item.end?.getTime() || start + 3 * 60 * 60 * 1000;
-    return now >= start - preWindow && now <= end + postWindow;
-  });
-  if (active) return active;
+  if (TIMING_AUTO_SELECT_ENABLED) {
+    // Prefer a session that is currently active or about to start.
+    const active = sessions.find((item) => {
+      if (!item.start) return false;
+      const start = item.start.getTime();
+      const end = item.end?.getTime() || start + 3 * 60 * 60 * 1000;
+      return now >= start - preWindow && now <= end + postWindow;
+    });
+    if (active) return active;
+  }
 
   // If nothing is live, show the latest completed/started session.
   const completedOrStarted = sessions.filter((item) => item.start && item.start.getTime() <= now);
@@ -1246,6 +1333,10 @@ export async function GET(request) {
       ? `OpenF1 requires authentication right now: ${openf1Fallback.detail || "live-session restriction"}`
       : "";
     const timing = timingFreshness({ state: "unavailable", ended: true }, false, openf1Fallback?.ok ? "OpenF1Fallback" : "Formula1LiveTiming");
+    const fallbackWarnings = [
+      "No live/current F1 timing session matched the request.",
+      openf1AuthReason,
+    ].filter(Boolean);
     return jsonNoStore({
       ok: Boolean(openf1Fallback?.ok),
       source: openf1Fallback?.ok ? "OpenF1Fallback" : "Formula1LiveTiming",
@@ -1253,6 +1344,9 @@ export async function GET(request) {
       server_time: new Date().toISOString(),
       is_live: false,
       ...timing,
+      auto_selected_session: null,
+      session_resolution: selectionResolution(null, requestedSession, requestedMeeting, false, openf1AuthReason),
+      warnings: fallbackWarnings,
       session_state: openf1Fallback?.ok ? "openf1-fallback" : "unavailable",
       refresh_after_ms: 60000,
       root_status: rootIndex.status,
@@ -1260,7 +1354,7 @@ export async function GET(request) {
       meeting_options: meetingOptions(meetings),
       session_options: [],
       official_visual: null,
-      normalized: normalizeOpenF1Fallback(openf1Fallback),
+      normalized: safeNormalizedTimingPayload(normalizeOpenF1Fallback(openf1Fallback)),
       openf1_fallback: openf1Fallback,
       jolpica_fallback: await fetchJolpicaFallback()
     });
@@ -1324,7 +1418,7 @@ export async function GET(request) {
   const openf1Fallback = hasUsefulF1Data || fast ? null : await fetchOpenF1Fallback();
   const normalizedOpenF1 = normalizeOpenF1Fallback(openf1Fallback);
   const normalizedJolpica = normalizeJolpicaFallback(jolpicaFallback);
-  const outputNormalized = hasUsefulF1Data ? normalized : normalizedOpenF1 || normalizedJolpica || normalized;
+  const outputNormalized = safeNormalizedTimingPayload(hasUsefulF1Data ? normalized : normalizedOpenF1 || normalizedJolpica || normalized);
   const outputOk = hasUsefulF1Data || Boolean(normalizedOpenF1?.leaderboard?.length) || Boolean(jolpicaFallback?.latestResults?.ok);
   const officialVisual = await officialRaceVisual(year, selected.meeting);
   const source = hasUsefulF1Data ? "Formula1LiveTiming" : normalizedOpenF1 ? "OpenF1Fallback" : "JolpicaFallback";
@@ -1332,6 +1426,12 @@ export async function GET(request) {
   const openf1AuthReason = openf1Fallback?.auth_restricted
     ? `OpenF1 requires authentication right now: ${openf1Fallback.detail || "live-session restriction"}`
     : "";
+  const warnings = [
+    !basePath ? "Selected session is missing a Formula 1 timing base path." : "",
+    !hasUsefulF1Data ? "Formula 1 timing did not return usable live rows for this session." : "",
+    openf1AuthReason,
+    !outputOk ? "No live timing, OpenF1 fallback, or Jolpica fallback data was usable." : "",
+  ].filter(Boolean);
 
   return jsonNoStore({
     ok: outputOk,
@@ -1347,6 +1447,9 @@ export async function GET(request) {
     server_time: new Date().toISOString(),
     is_live: timing.is_genuinely_live,
     ...timing,
+    auto_selected_session: selectionResolution(selected, requestedSession, requestedMeeting, hasUsefulF1Data),
+    session_resolution: selectionResolution(selected, requestedSession, requestedMeeting, hasUsefulF1Data),
+    warnings,
     session_state: hasUsefulF1Data ? lifecycle.state : normalizedOpenF1 ? "openf1-fallback" : "fallback",
     refresh_after_ms: hasUsefulF1Data ? lifecycle.refresh_after_ms : 60000,
     fast_sync: fast,

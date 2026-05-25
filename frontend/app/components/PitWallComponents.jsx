@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Activity,
   Archive,
@@ -605,6 +605,8 @@ export function PredictionTable({ predictions, onOpen }) {
 }
 
 export function DriverExplainabilityDrawer({ driver, onClose }) {
+  const closeRef = useRef(null);
+
   useEffect(() => {
     if (!driver) return undefined;
     const onKey = (event) => {
@@ -613,6 +615,7 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
+    window.setTimeout(() => closeRef.current?.focus?.(), 0);
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKey);
@@ -620,24 +623,94 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
   }, [driver, onClose]);
 
   if (!driver) return null;
+  const strategy = driver.expected_strategy || {};
+  const explanation = driver.explanation || {};
+  const freshness = driver.data_freshness || {};
+  const sourceNotes = driver.source_notes || {};
+  const sourceWarnings = Array.isArray(sourceNotes.warnings) ? sourceNotes.warnings : [];
+  const details = [
+    ["Predicted finish", `P${driver.predicted_finish_position ?? driver.predicted_finish ?? driver.rank ?? "-"}`],
+    ["Top 10 probability", pct(driver.top10_probability ?? driver.points_probability)],
+    ["Win probability", pct(driver.win_probability)],
+    ["Podium probability", pct(driver.podium_probability)],
+    ["Points probability", pct(driver.points_probability ?? driver.top10_probability)],
+    ["DNF risk", pct(driver.dnf_probability)],
+    ["Fastest lap", pct(driver.fastest_lap_probability)],
+    ["Recent form", pct(driver.component_scores?.driver_form ?? driver.component_scores?.current_season_recent_form)],
+    ["Qualifying strength", pct(driver.component_scores?.qualifying ?? driver.component_scores?.timing_starting_grid)],
+    ["Race pace strength", pct(driver.component_scores?.race_pace ?? driver.component_scores?.timing_lap_pace)],
+    ["Teammate comparison", driver.teammate_reference ? `${driver.teammate_reference} · ${fmt(driver.teammate_prediction_gap)}` : "Not enough data"],
+    ["Weather sensitivity", pct(driver.component_scores?.weather_adaptation)],
+  ];
+  const explanationRows = [
+    ["Pace", explanation.pace],
+    ["Strategy", explanation.strategy],
+    ["Tyres", explanation.tyres],
+    ["Weather", explanation.weather],
+    ["Risk", explanation.risk],
+    ["Qualifying", explanation.qualifying],
+  ].filter(([, value]) => value);
+
   return (
     <>
       <button className="drawer-backdrop" aria-label="Close driver details" onClick={onClose} />
       <aside className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="driver-detail-title">
-        <button className="icon-btn close" onClick={onClose} aria-label="Close"><X size={18} /></button>
-        <span className="eyebrow">Prediction Detail</span>
-        <h2 id="driver-detail-title">{driver.name}</h2>
-        <p>{driver.team} · P{driver.rank} · {driver.best_case_finish}-{driver.worst_case_finish} finish range</p>
-        <div className="prediction-grid">
-          <Metric label="Agreement" value={pct(driver.model_agreement_score)} />
-          <Metric label="Attack" value={pct(driver.attack_potential_score)} />
-          <Metric label="Defend Risk" value={pct(driver.defend_risk_score)} />
-          <Metric label="Active Aero" value={pct(driver.active_aero_suitability_score)} />
+        <button ref={closeRef} className="icon-btn close" onClick={onClose} aria-label="Close"><X size={18} /></button>
+        <div className="driver-detail-content">
+          <span className="eyebrow">Driver Detail</span>
+          <h2 id="driver-detail-title">{driver.name}</h2>
+          <p>{driver.team} · P{driver.rank} · {(driver.position_range || [driver.best_case_finish, driver.worst_case_finish]).join("-")} finish range</p>
+
+          <div className="prediction-grid">
+            <Metric label="Agreement" value={pct(driver.model_agreement_score)} />
+            <Metric label="Attack" value={pct(driver.attack_potential_score)} />
+            <Metric label="Defend Risk" value={pct(driver.defend_risk_score)} />
+            <Metric label="Confidence" value={driver.confidence_label || pct(driver.confidence)} />
+          </div>
+
+          <section className="detail-section">
+            <h3>Prediction probabilities</h3>
+            <div className="detail-metric-grid">
+              {details.map(([label, value]) => <Metric label={label} value={value} key={label} />)}
+            </div>
+          </section>
+
+          <section className="detail-section">
+            <h3>Expected strategy</h3>
+            <div className="detail-strategy">
+              <Metric label="Stops" value={strategy.stops ?? "Pending"} />
+              <Metric label="First pit lap" value={strategy.first_pit_lap ?? "Pending"} />
+              <Metric label="Compound sequence" value={(strategy.compound_sequence || []).join(" > ") || "Pending"} />
+            </div>
+            {strategy.basis && <p className="drawer-note">{strategy.basis}</p>}
+          </section>
+
+          <section className="detail-section">
+            <h3>Why the model ranked this driver here</h3>
+            <ComponentScoreBars scores={driver.component_scores} />
+            <TagRow tags={driver.reason_tags || []} />
+            <TagRow tags={driver.weakness_tags || []} tone="warning" />
+            <div className="drawer-list">
+              {explanationRows.map(([label, value]) => <p key={label}><strong>{label}</strong><span>{value}</span></p>)}
+            </div>
+          </section>
+
+          <section className="detail-section">
+            <h3>Risk notes</h3>
+            <p className="drawer-note">{driver.short_explanation || driver.reason || "Model estimate based on currently available race data."}</p>
+            <TagRow tags={(driver.strategy_annotations || []).map((item) => item.label)} tone="warning" />
+          </section>
+
+          <section className="detail-section">
+            <h3>Source notes</h3>
+            <div className="drawer-list">
+              <p><strong>Generated</strong><span>{freshness.generated_at || driver.generated_at || "Pending"}</span></p>
+              <p><strong>Stage</strong><span>{freshness.stage || driver.stage || "Pending"}</span></p>
+              <p><strong>Source health</strong><span>{sourceNotes.source_health || freshness.source_health_status || "Pending"}</span></p>
+            </div>
+            <TagRow tags={sourceWarnings} tone="warning" />
+          </section>
         </div>
-        <ComponentScoreBars scores={driver.component_scores} />
-        <TagRow tags={driver.reason_tags || []} />
-        <TagRow tags={driver.weakness_tags || []} tone="warning" />
-        <p className="drawer-note">{driver.short_explanation || driver.reason}</p>
       </aside>
     </>
   );

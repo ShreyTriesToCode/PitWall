@@ -11,6 +11,7 @@ The backend keeps a cache-first pipeline around Jolpica, official Formula 1 timi
 - Briefing markdown in `briefings/`
 - Dashboard data in `briefings/index.json` and `data_cache/latest-model-debug.json`
 - Frontend contract data in `data_cache/frontend-contract.json`
+- Top 10 and full-grid prediction rows in both backend JSON and `/api/predictions`
 - Model center JSON in `data_cache/model-status.json`
 - Backtest history in `data_cache/backtest-history.json`
 - Post-race correction log in `data_cache/model_corrections.json`
@@ -19,6 +20,7 @@ The backend keeps a cache-first pipeline around Jolpica, official Formula 1 timi
 - Incremental FIA document cache in `data_cache/fia-documents/`
 - Latest run status in `data_cache/latest-run-status.json`
 - Latest model/accuracy report in `MODEL_STATUS.md`
+- Audit, setup, data-source, and methodology docs in `AUDIT.md`, `SETUP.md`, `DATA_SOURCES.md`, `MODEL_REPORT.md`, and `METHODOLOGY.md`
 - Optional GitHub issue and Gmail output when notification gates open
 
 ## Prediction System
@@ -41,8 +43,11 @@ The current model is a hybrid ensemble:
 - 2026 Boost / Overtake Mode Intelligence using Boost, Manual Override, energy deployment, ERS-K, and Active Aero proxy fields
 - separate ranking score and confidence model, with confidence reduced by source health and missing-data penalties
 - uncertainty, DNF/survival, scenario, and Monte Carlo simulation outputs
+- structured race-intelligence rows with `expected_strategy`, `position_range`, `points_probability`, `fastest_lap_probability`, `explanation`, `data_freshness`, and `source_notes`
 
 Model design notes live in `MODEL_DESIGN.md`.
+
+The dashboard intentionally keeps both views: a compact **Top 10 Prediction** for normal F1 viewers and a complete **Full Grid Prediction** from P1 through the available field for model review.
 
 ## Local Setup
 
