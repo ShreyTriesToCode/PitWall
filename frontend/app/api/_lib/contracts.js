@@ -63,10 +63,19 @@ function normalizePredictionRows(rows, options = {}) {
       rank_delta: numeric(row.rank_delta, 0),
       score: numeric(row.score, 0),
       confidence: Math.max(0, Math.min(100, numeric(row.confidence, 0))),
+      prediction_trust_score: Math.max(0, Math.min(100, numeric(row.prediction_trust_score, row.confidence ?? 0))),
+      prediction_trust_label: row.prediction_trust_label || row.trust_label || "Trust pending",
+      model_disagreement_level: row.model_disagreement_level || "low",
+      model_disagreement_reasons: asArray(row.model_disagreement_reasons || row.disagreement_flags),
       component_scores: asObject(row.component_scores),
       reason_tags: asArray(row.reason_tags),
       weakness_tags: asArray(row.weakness_tags),
       evidence_status: asObject(row.evidence_status),
+      available_feature_groups: asArray(row.available_feature_groups || row.evidence_status?.available),
+      missing_feature_groups: asArray(row.missing_feature_groups || row.evidence_status?.missing),
+      missing_data_penalty_total: numeric(row.missing_data_penalty_total || row.evidence_status?.penalty_total, 0),
+      stage_limitations: asArray(row.stage_limitations),
+      source_warnings: asArray(row.source_warnings || row.source_notes?.warnings),
       missing_data_penalties: asObject(row.missing_data_penalties),
       position_range: Array.isArray(row.position_range)
         ? row.position_range
@@ -136,6 +145,32 @@ function normalizeFrontendContract(contract) {
   };
 }
 
+function recoverContractFromDebug(debug, base = {}) {
+  const targets = asArray(debug?.payloads).map(normalizeDebugTarget).filter((target) => target?.top10?.length);
+  const latest = normalizeLatest(targets.find((target) => target.target_type === "race") || targets[0]);
+  if (!latest?.top10?.length) return null;
+  const warning = "Recovered prediction contract from data_cache/latest-model-debug.json because frontend-contract.json was missing, blank, or invalid.";
+  const warnings = [...asArray(latest.warnings), warning];
+  return normalizeFrontendContract({
+    ...asObject(base),
+    schema_version: base?.schema_version || "recovered-from-debug",
+    prediction_data_version: base?.prediction_data_version || latest.prediction_data_version || "debug-recovery",
+    generated_at: base?.generated_at || debug?.generated_at || latest.generated || latest.generated_at || null,
+    target_event: base?.target_event || latest.race_name || latest.title || latest.event?.title || null,
+    prediction_stage: base?.prediction_stage || latest.prediction_stage || latest.stage || "pending",
+    contract_recovered_from_debug: true,
+    contract_recovery_warning: warning,
+    latest: {
+      ...latest,
+      warnings,
+      contract_recovered_from_debug: true,
+      contract_recovery_warning: warning,
+    },
+    briefings: asArray(base?.briefings),
+    archive: normalizeArchive(base?.archive),
+  });
+}
+
 function normalizeDebugTarget(payload) {
   if (!payload || !payload.target_type) return null;
   const fullGrid = normalizePredictionRows(
@@ -164,7 +199,27 @@ function normalizeDebugTarget(payload) {
 
 export async function loadFrontendContract() {
   const fallback = { briefings: [], latest: null, archive: [], schema_version: "unavailable" };
-  return normalizeFrontendContract(await loadJson("data_cache/frontend-contract.json", fallback));
+  const raw = await loadJson("data_cache/frontend-contract.json", fallback);
+  let normalized = normalizeFrontendContract(raw);
+  if (!normalized.latest?.top10?.length) {
+    const debug = await loadJson("data_cache/latest-model-debug.json", { payloads: [] });
+    const recovered = recoverContractFromDebug(debug, raw);
+    if (recovered) normalized = recovered;
+  }
+  if (!normalized.latest?.top10?.length) {
+    const previous = await loadJson("data_cache/frontend-contract.previous.json", fallback);
+    const recoveredPrevious = normalizeFrontendContract({
+      ...previous,
+      contract_recovered_from_previous: true,
+      latest: previous?.latest ? {
+        ...previous.latest,
+        contract_recovered_from_previous: true,
+        warnings: [...asArray(previous.latest.warnings), "Recovered from frontend-contract.previous.json because the latest contract was unusable."],
+      } : null,
+    });
+    if (recoveredPrevious.latest?.top10?.length) normalized = recoveredPrevious;
+  }
+  return normalized;
 }
 
 export async function loadGeneratedTargets() {

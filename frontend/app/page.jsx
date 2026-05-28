@@ -70,6 +70,15 @@ export default function HomePage() {
               <OfficialCalendarStrip latest={latest} generatedTargets={data.generated_targets || []} />
             </div>
             <div className="panel reveal">
+              <SectionTitle icon={Icons.LineChart} title="What Changed Since Last Run" />
+              <RaceControlTimeline items={[
+                `${latest.change_summary?.rank_changes?.length ?? 0} notable rank changes`,
+                `${latest.change_summary?.probability_changes?.length ?? 0} win-probability changes`,
+                `${latest.change_summary?.trust_changes?.length ?? 0} trust-score changes`,
+                latest.change_summary?.source_changed ? "Source health changed" : "Source health unchanged",
+              ]} />
+            </div>
+            <div className="panel reveal">
               <SectionTitle icon={Icons.Zap} title="Quick Links" />
               <div className="quick-links">
                 {[

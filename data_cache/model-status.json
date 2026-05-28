@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-05-28T15:33:54.407076+05:30",
+  "generated_at": "2026-05-28T20:29:03.714707+05:30",
   "trained_at": "2026-05-25T15:41:19.297285+05:30",
   "latest_completed_race_included": "2026-5",
   "latest_available_api_result": "2026-5",
@@ -51,7 +51,7 @@
     "driver_recent3_points",
     "team_pit_duration"
   ],
-  "model_bundle_size_mb": 6.81,
+  "model_bundle_size_mb": null,
   "metrics": {
     "win_auc": 0.9640725383879346,
     "win_brier": 0.03210122567318354,
@@ -759,7 +759,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-28T10:03:54.406938+00:00",
+      "checked_at": "2026-05-28T14:59:03.714362+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -779,7 +779,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-28T10:03:54.407046+00:00",
+      "checked_at": "2026-05-28T14:59:03.714653+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -976,6 +976,15 @@
       }
     }
   },
+  "contract_validation": {
+    "status": "enforced_by_scripts_validate_contracts_py",
+    "required_files": [
+      "data_cache/frontend-contract.json",
+      "briefings/index.json",
+      "data_cache/latest-model-debug.json",
+      "data_cache/model-status.json"
+    ]
+  },
   "correction_log_summary": {
     "count": 0,
     "status": "Pending"
@@ -1008,7 +1017,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-05-28T15:33:51.662074+05:30",
+    "checked_at": "2026-05-28T20:29:03.709846+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-5",
@@ -1035,7 +1044,7 @@
     },
     "status": "latest_results_available"
   },
-  "mode": "today",
+  "mode": null,
   "selected_targets": [],
   "errors": [],
   "limitations": [

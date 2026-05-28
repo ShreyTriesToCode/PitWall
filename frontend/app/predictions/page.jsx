@@ -26,6 +26,7 @@ export default function PredictionsPage() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("table");
+  const [detailMode, setDetailMode] = useState("expert");
   const [requestedTarget, setRequestedTarget] = useState("race");
   const [compareA, setCompareA] = useState("");
   const [compareB, setCompareB] = useState("");
@@ -118,6 +119,8 @@ export default function PredictionsPage() {
       {loading && <LoadingSkeleton />}
       {error && <InlineNotice title="Prediction sync failed" body={error} tone="error" action={<button className="control-btn" onClick={refetch}>Retry</button>} />}
       {warning && <InlineNotice title="Fallback prediction data" body={warning} tone="warning" />}
+      {data?.contract_recovered_from_debug && <InlineNotice title="Recovered prediction contract" body={data.contract_recovery_warning || "PitWall rebuilt this response from latest-model-debug.json because the primary contract was unusable."} tone="warning" />}
+      {data?.contract_recovered_from_previous && <InlineNotice title="Using previous valid contract" body="The latest prediction contract was unusable, so PitWall served the last valid rollback contract." tone="warning" />}
       {latest && (
         <>
           <section className="toolbar panel reveal">
@@ -125,6 +128,7 @@ export default function PredictionsPage() {
             <TargetTabs active={requestedTarget} available={generatedTargetTypes} onSelect={selectTarget} />
             <button className={view === "table" ? "control-btn active" : "control-btn"} onClick={() => setView("table")} disabled={!predictions.length}>Table</button>
             <button className={view === "cards" ? "control-btn active" : "control-btn"} onClick={() => setView("cards")} disabled={!predictions.length}>Cards</button>
+            {["simple", "expert", "debug"].map((mode) => <button className={detailMode === mode ? "control-btn active" : "control-btn"} onClick={() => setDetailMode(mode)} type="button" key={mode}>{mode[0].toUpperCase() + mode.slice(1)}</button>)}
             <button className="control-btn" onClick={refetch} disabled={refreshing}>{refreshing ? "Refreshing" : "Refresh data"}</button>
             <StatusBadge label={targetPending ? `${requestedTarget} pending` : selectedTarget?.stage || latest.stage} tone="red" />
           </section>
@@ -134,6 +138,8 @@ export default function PredictionsPage() {
               <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
               <Metric label="Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
               <Metric label="Model Agreement Leader" value={`${predictions[0]?.model_agreement_score ?? "Pending"}%`} />
+              <Metric label="Event Trust" value={`${selectedPayload.prediction_trust_score ?? latest.prediction_trust_score ?? "Pending"}${selectedPayload.prediction_trust_score || latest.prediction_trust_score ? "%" : ""}`} />
+              <Metric label="High Disagreements" value={selectedPayload.confidence_breakdown?.high_disagreement_count ?? latest.confidence_breakdown?.high_disagreement_count ?? "Pending"} />
               <Metric label="Dark Horse" value={predictions.find((p) => p.dark_horse_flag)?.name || "Not flagged"} />
               <Metric label="Stage" value={selectedPayload.prediction_stage || selectedPayload.stage || latest.prediction_stage || "pending"} />
               <Metric label="Avg Uncertainty" value={`${selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty ?? "Pending"}%`} />
@@ -148,7 +154,7 @@ export default function PredictionsPage() {
             <section className="panel reveal prediction-section">
               <SectionTitle title="Top 10 Prediction" action={<StatusBadge label={`${top10Rows.length} drivers`} tone="green" />} />
               <div className="card-grid top10-grid">
-                {top10Rows.slice(0, 10).map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact />)}
+                {top10Rows.slice(0, 10).map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact={detailMode === "simple"} />)}
               </div>
             </section>
           )}
@@ -157,7 +163,21 @@ export default function PredictionsPage() {
               <SectionTitle title="Full Grid Prediction" action={<StatusBadge label={`${fullGridRows.length} drivers`} tone="red" />} />
               {view === "table"
                 ? <PredictionTable predictions={fullGridRows} onOpen={setSelected} />
-                : <div className="card-grid">{fullGridRows.map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} />)}</div>}
+                : <div className="card-grid">{fullGridRows.map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact={detailMode === "simple"} />)}</div>}
+            </section>
+          )}
+          {detailMode === "debug" && predictions.length > 0 && (
+            <section className="panel reveal">
+              <SectionTitle title="Debug Contract Signals" />
+              <div className="metric-grid">
+                <Metric label="Contract schema" value={data.schema_version} />
+                <Metric label="Prediction data" value={data.prediction_data_version} />
+                <Metric label="Recovered from debug" value={data.contract_recovered_from_debug ? "Yes" : "No"} />
+                <Metric label="Source conflicts" value={data.source_conflicts?.length ?? 0} />
+              </div>
+              <div className="podium-list">
+                {predictions.slice(0, 5).map((p) => <article key={`debug-${p.driver_id}`}><span>P{p.rank}</span><strong>{p.name}</strong><small>{(p.missing_feature_groups || []).length} missing · {(p.source_warnings || []).length} source warnings · {p.model_disagreement_level || "low"} disagreement</small></article>)}
+              </div>
             </section>
           )}
           {predictions.length > 1 && <DriverComparePanel predictions={predictions} aId={compareA} bId={compareB} onA={setCompareA} onB={setCompareB} />}

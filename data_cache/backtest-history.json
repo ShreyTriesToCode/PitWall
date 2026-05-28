@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-05-28T15:33:55.191138+05:30",
+  "generated_at": "2026-05-28T20:29:04.309470+05:30",
   "history": [
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -11,7 +11,7 @@
       "stage": "pre_weekend",
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Lewis Hamilton",
-      "top_pick_confidence": 52.7,
+      "top_pick_confidence": 0,
       "finish_position_mae": 3.2141639804318896,
       "finish_position_rmse": 4.106764068659931,
       "winner_hit_rate": 0.3382,
@@ -27,7 +27,7 @@
       "stage": "post_qualifying",
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
-      "top_pick_confidence": 54.9,
+      "top_pick_confidence": 8.7,
       "finish_position_mae": 3.2141639804318896,
       "finish_position_rmse": 4.106764068659931,
       "winner_hit_rate": 0.3382,
@@ -43,7 +43,7 @@
       "stage": "post_qualifying",
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
-      "top_pick_confidence": 54.9,
+      "top_pick_confidence": 8.7,
       "finish_position_mae": 3.2141639804318896,
       "finish_position_rmse": 4.106764068659931,
       "winner_hit_rate": 0.3382,

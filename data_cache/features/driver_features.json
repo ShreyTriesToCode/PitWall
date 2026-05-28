@@ -7,7 +7,7 @@
     "team": "Ferrari",
     "rank": 1,
     "score": 60.8,
-    "confidence": 52.7,
+    "confidence": 0,
     "component_scores": {
       "ml_win_probability": 2.07,
       "ml_podium_probability": 17.22,
@@ -95,7 +95,7 @@
     "team": "Mercedes",
     "rank": 2,
     "score": 59.56,
-    "confidence": 52.7,
+    "confidence": 0,
     "component_scores": {
       "ml_win_probability": 0.41,
       "ml_podium_probability": 10.73,
@@ -183,7 +183,7 @@
     "team": "Ferrari",
     "rank": 3,
     "score": 59.14,
-    "confidence": 52.7,
+    "confidence": 0,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 9.65,
@@ -271,7 +271,7 @@
     "team": "Mercedes",
     "rank": 4,
     "score": 58.83,
-    "confidence": 52.7,
+    "confidence": 32.9,
     "component_scores": {
       "ml_win_probability": 6.32,
       "ml_podium_probability": 13.86,
@@ -359,7 +359,7 @@
     "team": "Red Bull",
     "rank": 5,
     "score": 56.14,
-    "confidence": 52.7,
+    "confidence": 32.9,
     "component_scores": {
       "ml_win_probability": 3.24,
       "ml_podium_probability": 16.46,
@@ -447,7 +447,7 @@
     "team": "McLaren",
     "rank": 6,
     "score": 54.14,
-    "confidence": 52.7,
+    "confidence": 25.2,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 7.45,
@@ -535,7 +535,7 @@
     "team": "McLaren",
     "rank": 7,
     "score": 53.8,
-    "confidence": 52.7,
+    "confidence": 25.2,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 6.74,
@@ -623,7 +623,7 @@
     "team": "Red Bull",
     "rank": 8,
     "score": 49.45,
-    "confidence": 52.7,
+    "confidence": 42.8,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 4.76,
@@ -711,7 +711,7 @@
     "team": "RB F1 Team",
     "rank": 9,
     "score": 40.72,
-    "confidence": 46.7,
+    "confidence": 21.4,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -798,7 +798,7 @@
     "team": "Williams",
     "rank": 10,
     "score": 38.79,
-    "confidence": 46.7,
+    "confidence": 21.4,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -1660,7 +1660,7 @@
     "team": "Aston Martin",
     "rank": 20,
     "score": 30.33,
-    "confidence": 46.7,
+    "confidence": 36.8,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -1747,7 +1747,7 @@
     "team": "Cadillac",
     "rank": 21,
     "score": 29.98,
-    "confidence": 41.1,
+    "confidence": 31.2,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -1832,7 +1832,7 @@
     "team": "Cadillac",
     "rank": 22,
     "score": 28.7,
-    "confidence": 41.1,
+    "confidence": 31.2,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -1917,7 +1917,7 @@
     "team": "Mercedes",
     "rank": 1,
     "score": 74.29,
-    "confidence": 54.9,
+    "confidence": 8.7,
     "component_scores": {
       "ml_win_probability": 34.13,
       "ml_podium_probability": 72.07,
@@ -2005,7 +2005,7 @@
     "team": "Mercedes",
     "rank": 2,
     "score": 74.09,
-    "confidence": 54.9,
+    "confidence": 8.7,
     "component_scores": {
       "ml_win_probability": 20.19,
       "ml_podium_probability": 43.56,
@@ -2093,7 +2093,7 @@
     "team": "Ferrari",
     "rank": 3,
     "score": 58.15,
-    "confidence": 54.9,
+    "confidence": 0,
     "component_scores": {
       "ml_win_probability": 4.95,
       "ml_podium_probability": 16.5,
@@ -2181,7 +2181,7 @@
     "team": "McLaren",
     "rank": 4,
     "score": 58.05,
-    "confidence": 54.9,
+    "confidence": 35.1,
     "component_scores": {
       "ml_win_probability": 28.25,
       "ml_podium_probability": 42.36,
@@ -2269,7 +2269,7 @@
     "team": "McLaren",
     "rank": 5,
     "score": 57.99,
-    "confidence": 54.9,
+    "confidence": 27.4,
     "component_scores": {
       "ml_win_probability": 14.13,
       "ml_podium_probability": 16.6,
@@ -2357,7 +2357,7 @@
     "team": "Red Bull",
     "rank": 6,
     "score": 55.53,
-    "confidence": 54.9,
+    "confidence": 45.0,
     "component_scores": {
       "ml_win_probability": 8.28,
       "ml_podium_probability": 27.88,
@@ -2445,7 +2445,7 @@
     "team": "Ferrari",
     "rank": 7,
     "score": 54.45,
-    "confidence": 54.9,
+    "confidence": 45.0,
     "component_scores": {
       "ml_win_probability": 5.0,
       "ml_podium_probability": 15.82,
@@ -2621,7 +2621,7 @@
     "team": "Audi",
     "rank": 9,
     "score": 37.77,
-    "confidence": 54.9,
+    "confidence": 37.3,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -2709,7 +2709,7 @@
     "team": "Alpine",
     "rank": 10,
     "score": 37.63,
-    "confidence": 43.7,
+    "confidence": 26.1,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -3571,7 +3571,7 @@
     "team": "RB F1 Team",
     "rank": 20,
     "score": 30.17,
-    "confidence": 41.7,
+    "confidence": 31.8,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -3656,7 +3656,7 @@
     "team": "Williams",
     "rank": 21,
     "score": 29.9,
-    "confidence": 54.9,
+    "confidence": 45.0,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -3744,7 +3744,7 @@
     "team": "Cadillac",
     "rank": 22,
     "score": 25.87,
-    "confidence": 43.7,
+    "confidence": 23.9,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -3829,7 +3829,7 @@
     "team": "Mercedes",
     "rank": 1,
     "score": 74.29,
-    "confidence": 54.9,
+    "confidence": 8.7,
     "component_scores": {
       "ml_win_probability": 34.13,
       "ml_podium_probability": 72.07,
@@ -3917,7 +3917,7 @@
     "team": "Mercedes",
     "rank": 2,
     "score": 74.09,
-    "confidence": 54.9,
+    "confidence": 8.7,
     "component_scores": {
       "ml_win_probability": 20.19,
       "ml_podium_probability": 43.56,
@@ -4005,7 +4005,7 @@
     "team": "Ferrari",
     "rank": 3,
     "score": 58.15,
-    "confidence": 54.9,
+    "confidence": 0,
     "component_scores": {
       "ml_win_probability": 4.95,
       "ml_podium_probability": 16.5,
@@ -4093,7 +4093,7 @@
     "team": "McLaren",
     "rank": 4,
     "score": 58.05,
-    "confidence": 54.9,
+    "confidence": 35.1,
     "component_scores": {
       "ml_win_probability": 28.25,
       "ml_podium_probability": 42.36,
@@ -4181,7 +4181,7 @@
     "team": "McLaren",
     "rank": 5,
     "score": 57.99,
-    "confidence": 54.9,
+    "confidence": 27.4,
     "component_scores": {
       "ml_win_probability": 14.13,
       "ml_podium_probability": 16.6,
@@ -4269,7 +4269,7 @@
     "team": "Red Bull",
     "rank": 6,
     "score": 55.53,
-    "confidence": 54.9,
+    "confidence": 45.0,
     "component_scores": {
       "ml_win_probability": 8.28,
       "ml_podium_probability": 27.88,
@@ -4357,7 +4357,7 @@
     "team": "Ferrari",
     "rank": 7,
     "score": 54.45,
-    "confidence": 54.9,
+    "confidence": 45.0,
     "component_scores": {
       "ml_win_probability": 5.0,
       "ml_podium_probability": 15.82,
@@ -4533,7 +4533,7 @@
     "team": "Audi",
     "rank": 9,
     "score": 37.77,
-    "confidence": 54.9,
+    "confidence": 37.3,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -4621,7 +4621,7 @@
     "team": "Alpine",
     "rank": 10,
     "score": 37.63,
-    "confidence": 43.7,
+    "confidence": 26.1,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -5483,7 +5483,7 @@
     "team": "RB F1 Team",
     "rank": 20,
     "score": 30.17,
-    "confidence": 41.7,
+    "confidence": 31.8,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -5568,7 +5568,7 @@
     "team": "Williams",
     "rank": 21,
     "score": 29.9,
-    "confidence": 54.9,
+    "confidence": 45.0,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -5656,7 +5656,7 @@
     "team": "Cadillac",
     "rank": 22,
     "score": 25.87,
-    "confidence": 43.7,
+    "confidence": 23.9,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.0,
@@ -6517,7 +6517,7 @@
     "team": "Williams",
     "rank": 9,
     "score": 42.8,
-    "confidence": 79.7,
+    "confidence": 54.4,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 8.82,
@@ -6614,7 +6614,7 @@
     "team": "Alpine F1 Team",
     "rank": 10,
     "score": 41.12,
-    "confidence": 75.5,
+    "confidence": 60.1,
     "component_scores": {
       "ml_win_probability": 0.08,
       "ml_podium_probability": 0.38,
@@ -7479,7 +7479,7 @@
     "team": "Williams",
     "rank": 19,
     "score": 33.25,
-    "confidence": 78.5,
+    "confidence": 68.6,
     "component_scores": {
       "ml_win_probability": 0.35,
       "ml_podium_probability": 1.55,
@@ -7575,7 +7575,7 @@
     "team": "Aston Martin",
     "rank": 20,
     "score": 32.74,
-    "confidence": 79.7,
+    "confidence": 69.8,
     "component_scores": {
       "ml_win_probability": 0.29,
       "ml_podium_probability": 3.31,
@@ -7672,7 +7672,7 @@
     "team": "RB F1 Team",
     "rank": 21,
     "score": 31.33,
-    "confidence": 74.3,
+    "confidence": 54.5,
     "component_scores": {
       "ml_win_probability": 0.21,
       "ml_podium_probability": 0.48,
@@ -7767,7 +7767,7 @@
     "team": "Cadillac F1 Team",
     "rank": 22,
     "score": 29.49,
-    "confidence": 75.5,
+    "confidence": 55.7,
     "component_scores": {
       "ml_win_probability": 1.77,
       "ml_podium_probability": 2.55,
@@ -8638,7 +8638,7 @@
     "team": "Alpine F1 Team",
     "rank": 9,
     "score": 46.51,
-    "confidence": 77.6,
+    "confidence": 62.2,
     "component_scores": {
       "ml_win_probability": 0.08,
       "ml_podium_probability": 0.38,
@@ -9601,7 +9601,7 @@
     "team": "RB F1 Team",
     "rank": 19,
     "score": 37.1,
-    "confidence": 76.4,
+    "confidence": 66.5,
     "component_scores": {
       "ml_win_probability": 0.21,
       "ml_podium_probability": 0.48,
@@ -9696,7 +9696,7 @@
     "team": "Aston Martin",
     "rank": 20,
     "score": 36.46,
-    "confidence": 77.6,
+    "confidence": 67.7,
     "component_scores": {
       "ml_win_probability": 0.29,
       "ml_podium_probability": 3.31,
@@ -9792,7 +9792,7 @@
     "team": "Cadillac F1 Team",
     "rank": 21,
     "score": 33.14,
-    "confidence": 77.6,
+    "confidence": 67.7,
     "component_scores": {
       "ml_win_probability": 1.77,
       "ml_podium_probability": 2.55,
@@ -9888,7 +9888,7 @@
     "team": "RB F1 Team",
     "rank": 22,
     "score": 31.7,
-    "confidence": 70.3,
+    "confidence": 50.5,
     "component_scores": {
       "ml_win_probability": 0.0,
       "ml_podium_probability": 0.62,

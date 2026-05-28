@@ -1,6 +1,6 @@
 # PitWall Audit
 
-Generated: 2026-05-25
+Generated: 2026-05-28
 
 ## DONE
 
@@ -14,6 +14,10 @@ Generated: 2026-05-25
 - Unit tests cover core API/cache/model contract behavior.
 - FIA PDF `403/404` handling avoids retry storms, reuses stale official cached text where available, and reports forbidden documents clearly.
 - F1DB/RelBench bootstrap planning exists without bundling large external artifacts.
+- Contract validation now fails blank/invalid `frontend-contract.json`, `briefings/index.json`, `latest-model-debug.json`, and `model-status.json`.
+- Frontend recovery now uses `latest-model-debug.json` first and previous valid contracts second, with visible warnings.
+- Prediction rows now include model disagreement and prediction trust fields.
+- `/sources`, Playwright smoke tests, ruff lint config, artifact-size checks, and rollback contracts are present.
 
 ## PARTIAL
 
@@ -21,6 +25,7 @@ Generated: 2026-05-25
 - F1DB and RelBench adapters are optional/offline. They report status and can read local data, but no dataset artifact is bundled by default.
 - Post-race learning exists through cached race/result ingestion, but strategy context now needs continued expansion as more tyre/stint/race-control data becomes available.
 - The frontend has a PitWall identity and several dashboards; continued polish should focus on browser-level interaction testing and richer charts rather than raw data density.
+- Large runtime caches are still committed for reproducibility; the new artifact policy documents when to move them to external storage.
 
 ## BROKEN FIXED IN THIS PASS
 
@@ -37,6 +42,12 @@ Generated: 2026-05-25
 - Canonical `top_10` alias in the normalized prediction contract.
 - Strategy context annotations for tyre/weather mismatch, early tyre correction, safety-car/VSC/red-flag pit context, double-stack loss, and degradation cliff.
 - Explicit `race_factors` and top-level `warnings` in normalized prediction output.
+- `scripts/validate_contracts.py`
+- `scripts/check_artifact_sizes.py`
+- `ARTIFACT_POLICY.md`
+- `RUNBOOK.md`
+- `ROADMAP.md`
+- `MODEL_EXPERIMENTS.md`
 
 ## NOT APPLICABLE
 

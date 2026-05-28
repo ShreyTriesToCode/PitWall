@@ -1,0 +1,48 @@
+# PitWall Artifact Policy
+
+PitWall keeps small frontend-facing JSON artifacts in Git so Vercel can serve useful data without private runtime credentials.
+
+## Kept In Git
+
+- `data_cache/frontend-contract.json`
+- `data_cache/frontend-contract.previous.json`
+- `data_cache/model-status.json`
+- `data_cache/model-status.previous.json`
+- `data_cache/latest-model-debug.json`
+- `briefings/index.json`
+- `briefings/index.previous.json`
+- small model evaluation summaries under `model_artifacts/`
+
+## Watched Closely
+
+- `fastf1_cache/`
+- `data_cache/full_races/`
+- `data_cache/fia-documents/`
+- `models/saved_models/`
+
+Run:
+
+```bash
+python scripts/check_artifact_sizes.py
+```
+
+The checker warns at 25 MB and fails at 95 MB by default. Large generated caches should move to GitHub Actions artifacts, GitHub Releases, Git LFS, Supabase Storage, Cloudflare R2, or another explicit artifact store before they make routine commits noisy.
+
+## Never Commit
+
+- `.env`
+- secrets or service-role keys
+- `.venv`
+- `frontend/node_modules`
+- `frontend/.next`
+- local screenshots, traces, and temporary browser artifacts
+
+## Recovery
+
+Before overwriting the primary frontend/model contracts, PitWall preserves:
+
+- `data_cache/frontend-contract.previous.json`
+- `data_cache/model-status.previous.json`
+- `briefings/index.previous.json`
+
+The frontend can recover from `latest-model-debug.json` first, then from the previous frontend contract, and shows a warning when recovery is used.

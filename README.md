@@ -514,3 +514,25 @@ Local-only files are ignored:
 - `frontend/node_modules/`
 - `__pycache__/`
 - local `.env` files
+
+## Contract Hardening
+
+Run this before committing generated outputs:
+
+```bash
+python scripts/validate_contracts.py
+python scripts/check_artifact_sizes.py
+```
+
+`validate_contracts.py` fails on blank, missing, or invalid contracts and requires `latest.top10`, `latest.full_grid`, `latest.all_predictions`, debug payloads, and model metrics. The frontend first reads `data_cache/frontend-contract.json`; if it is unusable it recovers from `data_cache/latest-model-debug.json`, then from `data_cache/frontend-contract.previous.json`, and shows a warning banner.
+
+## Quality Commands
+
+```bash
+python -m py_compile f1_briefing.py
+ruff check pitwall scripts tests
+python -m unittest discover -s ./tests -p "test_*.py" -t .
+cd frontend && npm ci && npm run build && npm test
+```
+
+See `RUNBOOK.md`, `ARTIFACT_POLICY.md`, `ROADMAP.md`, and `MODEL_EXPERIMENTS.md` for operator details and remaining work.

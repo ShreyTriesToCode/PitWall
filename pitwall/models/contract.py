@@ -50,7 +50,6 @@ def race_factors_from_context(profile: dict[str, Any] | None = None, weather: di
     weather = weather or {}
     safety_score = text_level(profile.get("safety_car"))
     rain_score = safe_float(weather.get("rain_score")) or safe_float(weather.get("rain_probability")) or text_level(weather.get("rain"))
-    overtaking_score = text_level(profile.get("overtaking"))
     source_score = safe_float((source_health or {}).get("overall_score")) or 50
     return {
         "safety_car_probability": round(clamp(safety_score, 0, 100, 50), 2),

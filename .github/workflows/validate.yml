@@ -33,11 +33,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install -r requirements-dev.txt
 
       - name: Run backend checks
         run: |
           python -m py_compile f1_briefing.py
+          ruff check pitwall scripts tests
           python -m unittest discover -s ./tests -p "test_*.py" -t .
+          python scripts/validate_contracts.py
+          python scripts/check_artifact_sizes.py
 
   frontend:
     runs-on: ubuntu-latest
@@ -61,3 +65,11 @@ jobs:
       - name: Build frontend
         working-directory: frontend
         run: npm run build
+
+      - name: Install Playwright browsers
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright smoke tests
+        working-directory: frontend
+        run: npm test

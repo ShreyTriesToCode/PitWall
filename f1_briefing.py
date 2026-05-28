@@ -58,19 +58,27 @@ try:
     from pitwall.data.fia_documents import fetch_fia_document_text as pitwall_fetch_fia_document_text
     from pitwall.data.relbench_f1 import relbench_metadata, relbench_status
     from pitwall.features import strategy as pitwall_strategy
+    from pitwall.models.agreement import enrich_model_disagreement as pitwall_enrich_model_disagreement
     from pitwall.models import contract as pitwall_contract
     from pitwall.models import simulation as pitwall_simulation
+    from pitwall.models.trust import enrich_prediction_trust as pitwall_enrich_prediction_trust
     from pitwall import storage as pitwall_storage
+    from pitwall.contracts.frontend_contract import write_json_artifact as pitwall_write_json_artifact
+    from pitwall.validation.contracts import validate_contract_files as pitwall_validate_contract_files
 except Exception:
     f1db_metadata = None
     f1db_status = None
     pitwall_fetch_fia_document_text = None
+    pitwall_enrich_model_disagreement = None
+    pitwall_enrich_prediction_trust = None
     relbench_metadata = None
     relbench_status = None
     pitwall_strategy = None
     pitwall_contract = None
     pitwall_simulation = None
     pitwall_storage = None
+    pitwall_write_json_artifact = None
+    pitwall_validate_contract_files = None
 
 
 F1_ICS_URL = os.getenv("F1_ICS_URL", "").strip()
@@ -6083,6 +6091,32 @@ def model_agreement_from_components(component_scores):
     return round(agreement, 2), flags, {k: round(v, 2) if v is not None else None for k, v in groups.items()}
 
 
+def enrich_model_disagreement(row):
+    if pitwall_enrich_model_disagreement:
+        return pitwall_enrich_model_disagreement(row)
+    return row
+
+
+def enrich_prediction_trust(row, source_health=None, stage=None, validation_strength=None):
+    if pitwall_enrich_prediction_trust:
+        return pitwall_enrich_prediction_trust(
+            row,
+            source_health=source_health,
+            stage=stage,
+            validation_strength=validation_strength,
+        )
+    return row
+
+
+def prediction_trust_label(score):
+    score = safe_float(score) or 0
+    if score >= 72:
+        return "High trust"
+    if score >= 48:
+        return "Medium trust"
+    return "Low trust"
+
+
 def reason_tags_from_components(component_scores, limit=5):
     reasons = sorted(
         [(k, v) for k, v in component_scores.items() if v is not None],
@@ -6221,6 +6255,8 @@ def enrich_prediction_item(item, rank, field_size, current_round_data, profile, 
     item.setdefault("confidence_label", confidence_label(item.get("confidence")))
     item.setdefault("data_freshness", {"stage": stage, "source_health_status": "pending_source_snapshot"})
     item.setdefault("source_notes", {"source_health": "pending_source_snapshot", "warnings": evidence.get("missing", [])})
+    item.update(enrich_model_disagreement(item))
+    item.update(enrich_prediction_trust(item, source_health=None, stage=stage, validation_strength=item.get("confidence")))
     return item
 
 
@@ -7103,7 +7139,7 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
     briefings = [x for x in briefings if x.get("path") != entry["path"]]
     briefings.insert(0, entry)
     briefings = briefings[:60]
-    index_path.write_text(json.dumps({"briefings": briefings}, indent=2, ensure_ascii=False), encoding="utf-8")
+    write_json_artifact(index_path, {"briefings": briefings}, previous_path=BRIEFINGS_DIR / "index.previous.json")
     save_model_input_snapshot(prediction_id, input_payload, input_data_hash)
     generate_frontend_contract_files({"briefings": briefings})
     return index_path
@@ -7113,6 +7149,15 @@ def save_debug(payload):
     path = DATA_CACHE_DIR / "latest-model-debug.json"
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     return path
+
+
+def write_json_artifact(path, payload, previous_path=None):
+    path = Path(path)
+    if pitwall_write_json_artifact:
+        pitwall_write_json_artifact(path, payload, previous_path=Path(previous_path) if previous_path else None)
+    else:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
 
 
 def md_value(value, fallback="-"):
@@ -7370,6 +7415,15 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
         "dataset_sources": dataset_sources,
         "fia_ingestion": fia_document_summary(registry),
         "source_health": latest_source_health_from_index(),
+        "contract_validation": {
+            "status": "enforced_by_scripts_validate_contracts_py",
+            "required_files": [
+                "data_cache/frontend-contract.json",
+                "briefings/index.json",
+                "data_cache/latest-model-debug.json",
+                "data_cache/model-status.json",
+            ],
+        },
         "correction_log_summary": correction_log_summary(),
         "champion_challenger": champion_challenger_status(decision, metrics),
         "promotion_decision": model_promotion_decision(decision, metrics),
@@ -7393,7 +7447,7 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
         ],
     }
     payload = sanitize_public_paths(payload)
-    MODEL_STATUS_JSON_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    write_json_artifact(MODEL_STATUS_JSON_PATH, payload, previous_path=DATA_CACHE_DIR / "model-status.previous.json")
     write_model_artifacts({
         **meta,
         "metrics": metrics,
@@ -7661,6 +7715,8 @@ def enrich_predictions_with_quality_outputs(rows, source_health=None, stage=None
         row.setdefault("classified_finish_probability", round(100 - row["dnf_probability"], 2))
         sim = sim_by_driver.get(row.get("driver_id")) or {}
         row.setdefault("simulation", sim)
+        row.update(enrich_model_disagreement(row))
+        row.update(enrich_prediction_trust(row, source_health=source_health, stage=stage, validation_strength=row.get("confidence")))
     return normalized, simulation
 
 
@@ -7751,6 +7807,14 @@ def normalize_entry_contract(entry):
                 "source_score": source_health.get("overall_score"),
                 "warnings": (entry.get("source_registry") or {}).get("warnings", []),
             })
+            enriched.update(enrich_model_disagreement(enriched))
+            enriched.update(enrich_prediction_trust(
+                enriched,
+                source_health=source_health,
+                stage=stage,
+                validation_strength=(entry.get("model_metrics") or {}).get("spearman")
+                or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}).get("spearman"),
+            ))
             normalized.append(enriched)
             if limit and len(normalized) >= limit:
                 break
@@ -7842,7 +7906,11 @@ def normalize_entry_contract(entry):
             "average_confidence": round(average([row.get("confidence") for row in full_grid]) or 0, 2),
             "average_uncertainty": round(average([row.get("uncertainty_score") for row in full_grid]) or 0, 2),
             "source_health_score": source_health.get("overall_score"),
+            "event_prediction_trust_score": round(average([row.get("prediction_trust_score") for row in full_grid]) or 0, 2),
+            "high_disagreement_count": sum(1 for row in full_grid if row.get("model_disagreement_level") == "high"),
         },
+        "prediction_trust_score": round(average([row.get("prediction_trust_score") for row in full_grid]) or 0, 2),
+        "prediction_trust_label": prediction_trust_label(average([row.get("prediction_trust_score") for row in full_grid]) or 0),
         "dnf_survival": {row.get("driver_id"): {"dnf_probability": row.get("dnf_probability"), "classified_finish_probability": row.get("classified_finish_probability")} for row in full_grid},
         "simulation": simulation,
         "race_factors": entry.get("race_factors") or race_factors_from_context(entry, entry.get("weather") or {}, source_health),
@@ -8059,6 +8127,46 @@ def generate_backtest_history(briefings):
     return payload
 
 
+def contract_change_summary(previous_contract, next_contract):
+    previous_latest = (previous_contract or {}).get("latest") or {}
+    next_latest = (next_contract or {}).get("latest") or {}
+    prev_rows = {row.get("driver_id"): row for row in previous_latest.get("full_grid", []) if isinstance(row, dict)}
+    next_rows = {row.get("driver_id"): row for row in next_latest.get("full_grid", []) if isinstance(row, dict)}
+    rank_changes = []
+    probability_changes = []
+    confidence_changes = []
+    trust_changes = []
+    for driver_id, row in next_rows.items():
+        prev = prev_rows.get(driver_id)
+        if not prev:
+            continue
+        rank_delta = (safe_float(prev.get("rank")) or 0) - (safe_float(row.get("rank")) or 0)
+        if rank_delta:
+            rank_changes.append({"driver_id": driver_id, "name": row.get("name"), "rank_delta": round(rank_delta, 2), "new_rank": row.get("rank")})
+        win_delta = (safe_float(row.get("win_probability")) or 0) - (safe_float(prev.get("win_probability")) or 0)
+        if abs(win_delta) >= 1:
+            probability_changes.append({"driver_id": driver_id, "name": row.get("name"), "win_probability_delta": round(win_delta, 2)})
+        conf_delta = (safe_float(row.get("confidence")) or 0) - (safe_float(prev.get("confidence")) or 0)
+        if abs(conf_delta) >= 2:
+            confidence_changes.append({"driver_id": driver_id, "name": row.get("name"), "confidence_delta": round(conf_delta, 2)})
+        trust_delta = (safe_float(row.get("prediction_trust_score")) or 0) - (safe_float(prev.get("prediction_trust_score")) or 0)
+        if abs(trust_delta) >= 2:
+            trust_changes.append({"driver_id": driver_id, "name": row.get("name"), "trust_delta": round(trust_delta, 2)})
+    source_changed = (previous_latest.get("source_health") or {}).get("status") != (next_latest.get("source_health") or {}).get("status")
+    return {
+        "available": bool(previous_latest and next_latest),
+        "rank_changes": sorted(rank_changes, key=lambda x: abs(x["rank_delta"]), reverse=True)[:8],
+        "probability_changes": sorted(probability_changes, key=lambda x: abs(x["win_probability_delta"]), reverse=True)[:8],
+        "confidence_changes": sorted(confidence_changes, key=lambda x: abs(x["confidence_delta"]), reverse=True)[:8],
+        "trust_changes": sorted(trust_changes, key=lambda x: abs(x["trust_delta"]), reverse=True)[:8],
+        "source_changed": source_changed,
+        "previous_model_version": previous_latest.get("model_version"),
+        "current_model_version": next_latest.get("model_version"),
+        "previous_generated_at": previous_latest.get("generated_iso") or previous_latest.get("generated_at"),
+        "current_generated_at": next_latest.get("generated_iso") or next_latest.get("generated_at"),
+    }
+
+
 def generate_frontend_contract_files(index_data=None):
     ensure_dirs()
     data = index_data or latest_index_data()
@@ -8078,6 +8186,13 @@ def generate_frontend_contract_files(index_data=None):
         "is_genuinely_live": (latest or {}).get("is_genuinely_live", False),
         "live_fallback_reason": (latest or {}).get("live_fallback_reason", "No generated live timing status yet."),
     }
+    previous_contract = None
+    previous_contract_path = DATA_CACHE_DIR / "frontend-contract.json"
+    if previous_contract_path.exists():
+        try:
+            previous_contract = json.loads(previous_contract_path.read_text(encoding="utf-8"))
+        except Exception:
+            previous_contract = None
     contract = {
         "schema_version": MODEL_SCHEMA_VERSION,
         "prediction_data_version": PREDICTION_DATA_VERSION,
@@ -8106,8 +8221,12 @@ def generate_frontend_contract_files(index_data=None):
         "model_status": json.loads(MODEL_STATUS_JSON_PATH.read_text(encoding="utf-8")) if MODEL_STATUS_JSON_PATH.exists() else None,
         "storage": {"sqlite_path": str(PITWALL_DB_PATH.relative_to(BASE_DIR)) if PITWALL_DB_PATH.is_relative_to(BASE_DIR) else str(PITWALL_DB_PATH), "supabase": supabase_sync_status()},
     }
+    if latest:
+        latest["change_summary"] = contract_change_summary(previous_contract, contract)
+        contract["latest"] = latest
+        contract["what_changed_since_last_run"] = latest["change_summary"]
     contract = sanitize_public_paths(sanitize_timing_source_labels(contract))
-    (DATA_CACHE_DIR / "frontend-contract.json").write_text(json.dumps(contract, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    write_json_artifact(DATA_CACHE_DIR / "frontend-contract.json", contract, previous_path=DATA_CACHE_DIR / "frontend-contract.previous.json")
     generate_feature_store(briefings)
     corrections = generate_correction_log(briefings)
     backtest = generate_backtest_history(briefings)
@@ -8119,9 +8238,11 @@ def generate_frontend_contract_files(index_data=None):
                 "status": corrections.get("status"),
             }
             model_status["backtest_history_count"] = len(backtest.get("history", []))
-            MODEL_STATUS_JSON_PATH.write_text(json.dumps(model_status, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+            write_json_artifact(MODEL_STATUS_JSON_PATH, model_status, previous_path=DATA_CACHE_DIR / "model-status.previous.json")
         except Exception:
             pass
+    if pitwall_validate_contract_files:
+        pitwall_validate_contract_files(BASE_DIR)
     return contract
 
 

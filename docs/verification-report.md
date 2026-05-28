@@ -292,3 +292,45 @@ Results:
 Skipped:
 
 - Final live `npm run dev` HTTP smoke was skipped because the required elevated local server start was rejected by the app approval layer. Production build, unit tests, contract checks, and static route-code checks passed.
+
+## Contract Trust Hardening Pass
+
+Date: 2026-05-28.
+
+Additional implementation completed:
+
+- Added `scripts/validate_contracts.py` to reject blank/invalid frontend, briefing, debug, and model-status artifacts.
+- Added `data_cache/frontend-contract.previous.json`, `data_cache/model-status.previous.json`, and `briefings/index.previous.json` rollback writes.
+- Added frontend recovery from `data_cache/latest-model-debug.json` and previous valid contract artifacts, with visible warning flags.
+- Added per-driver `model_disagreement_level`, `model_disagreement_reasons`, `prediction_trust_score`, `prediction_trust_label`, missing feature groups, source warnings, and stage limitations.
+- Added `/sources` route, Playwright smoke tests, pinned frontend dependencies, pinned Python runtime dependencies, ruff config, and artifact-size checking.
+- Added `/api/f1timing` short TTL response caching with `timing_cache_status`, `server_fetched_at`, and `source_packet_at`.
+
+Commands run:
+
+```bash
+.venv/bin/python -m py_compile f1_briefing.py pitwall/models/agreement.py pitwall/models/trust.py pitwall/contracts/frontend_contract.py pitwall/validation/contracts.py pitwall/validation/leakage.py scripts/validate_contracts.py scripts/check_artifact_sizes.py
+.venv/bin/ruff check pitwall scripts tests
+.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
+.venv/bin/python scripts/validate_contracts.py
+.venv/bin/python scripts/check_artifact_sizes.py
+cd frontend && npm ci
+cd frontend && npm run build
+cd frontend && npm audit --audit-level=high
+```
+
+Results:
+
+- Python compile passed.
+- Ruff passed.
+- Unit tests passed: 59 tests.
+- Contract validator passed with 10 Top 10 rows and 22 full-grid/all-prediction rows.
+- Artifact-size checker passed. It reported two FastF1 cache warnings above 25 MB and no failures above 95 MB.
+- Frontend install passed.
+- Next.js production build passed and included the new `/sources` route.
+- npm audit passed with 0 high-or-higher vulnerabilities.
+- Static contract smoke confirmed trust/disagreement fields, change summary, rollback contract, debug recovery hooks, and timing cache metadata.
+
+Skipped:
+
+- Local Playwright execution was attempted but blocked by sandbox permissions: Next could not bind `127.0.0.1:3000`, and the elevated `npm test` retry was rejected by the app approval layer. The Playwright smoke tests and CI steps are committed so GitHub Actions can run them in an environment that allows local server binding.

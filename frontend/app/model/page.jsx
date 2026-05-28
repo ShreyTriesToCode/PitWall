@@ -44,6 +44,7 @@ export default function ModelCenterPage() {
             <ModelMetricCard label="Bundle Size" value={status.data.model_bundle_size_mb ? `${status.data.model_bundle_size_mb} MB` : "Pending"} icon={Database} />
             <ModelMetricCard label="Promotion" value={status.data.promotion_decision?.decision} icon={GitBranch} />
             <ModelMetricCard label="Validation" value={status.data.validation?.grouped_split_method || "Pending"} icon={ShieldCheck} />
+            <ModelMetricCard label="Contract Validation" value={status.data.contract_validation?.status || "Pending"} icon={ShieldCheck} />
             <ModelMetricCard label="FIA Ingestion" value={status.data.fia_ingestion?.fia_source_discovery_status || "Pending"} icon={Database} />
           </section>
           <section className="metric-grid">{cards.map(([label, value, Icon]) => <ModelMetricCard label={label} value={value ?? "Pending"} icon={Icon} key={label} />)}</section>

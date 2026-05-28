@@ -5,13 +5,22 @@ function isAllowedAudioUrl(url) {
   try {
     const parsed = new URL(url);
     const host = parsed.hostname.toLowerCase();
-    const allowedHosts = [
-      "livetiming.formula1.com",
-      "formula1.com",
-      "amazonaws.com",
-      "cloudfront.net",
-    ];
-    return parsed.protocol === "https:" && allowedHosts.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
+    const path = parsed.pathname.toLowerCase();
+    const trustedHost =
+      host === "livetiming.formula1.com" ||
+      host.endsWith(".formula1.com") ||
+      host.endsWith(".formula1.com.s3.amazonaws.com") ||
+      (host.endsWith(".cloudfront.net") && path.includes("teamradio"));
+    const trustedPath =
+      path.includes("/static/") ||
+      path.includes("teamradio") ||
+      path.includes("team-radio") ||
+      path.endsWith(".mp3") ||
+      path.endsWith(".aac") ||
+      path.endsWith(".m4a") ||
+      path.endsWith(".wav") ||
+      path.endsWith(".ogg");
+    return parsed.protocol === "https:" && trustedHost && trustedPath;
   } catch {
     return false;
   }

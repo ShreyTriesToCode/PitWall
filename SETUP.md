@@ -55,7 +55,10 @@ FIA PDF access can occasionally return deterministic `403` responses. Leave `FIA
 
 ```bash
 .venv/bin/python -m py_compile f1_briefing.py
+.venv/bin/ruff check pitwall scripts tests
 .venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
+.venv/bin/python scripts/validate_contracts.py
+.venv/bin/python scripts/check_artifact_sizes.py
 ```
 
 ## 4. Generate Prediction Contracts
@@ -85,3 +88,16 @@ Open `http://localhost:3000`.
 - Clicking a driver should open a scrollable detail drawer with probabilities, strategy, explanation, risk, and source notes.
 - `/live` should auto-select the best available timing session or show a safe fallback state.
 - `/api/predictions` should include `top10`, `top_10`, `full_grid`, `all_predictions`, `race_factors`, and `warnings`.
+- `/sources` should show source-health status and any auth/fallback warnings.
+
+## 7. Browser Smoke Tests
+
+After a successful frontend build:
+
+```bash
+cd frontend
+npx playwright install chromium
+npm test
+```
+
+CI installs Playwright browsers and runs the same smoke suite.

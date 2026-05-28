@@ -38,6 +38,7 @@ export const navItems = [
   { href: "/teams", label: "Team Analysis", icon: Factory },
   { href: "/strategy", label: "Strategy Wall", icon: SlidersHorizontal },
   { href: "/live", label: "Timing Replay", icon: Radio },
+  { href: "/sources", label: "Source Health", icon: Activity },
   { href: "/model", label: "System Config", icon: Bot },
   { href: "/archive", label: "Archive", icon: Archive },
 ];
@@ -541,6 +542,21 @@ export function ComponentScoreBars({ scores = {}, limit = 8 }) {
   return <div className="component-bars">{rows.map(([key, value]) => <ConfidenceBar key={key} value={value} label={key.replaceAll("_", " ")} />)}</div>;
 }
 
+function trustTone(item) {
+  const label = String(item?.prediction_trust_label || "").toLowerCase();
+  const score = Number(item?.prediction_trust_score);
+  if (label.includes("high") || score >= 72) return "green";
+  if (label.includes("low") || score < 48) return "red";
+  return "amber";
+}
+
+function disagreementTone(item) {
+  const level = String(item?.model_disagreement_level || "low").toLowerCase();
+  if (level === "high") return "red";
+  if (level === "medium") return "amber";
+  return "green";
+}
+
 export function PredictionCard({ item, onOpen, compact = false }) {
   return (
     <article className={cx("prediction-card reveal", compact && "compact")}>
@@ -550,16 +566,22 @@ export function PredictionCard({ item, onOpen, compact = false }) {
         <h3>{item.name}</h3>
         <p>{item.team}</p>
       </div>
+      <div className="prediction-badges">
+        <StatusBadge label={item.prediction_trust_label || "Trust pending"} tone={trustTone(item)} />
+        <StatusBadge label={`${stageLabel(item.model_disagreement_level || "low")} disagreement`} tone={disagreementTone(item)} />
+      </div>
       <FavoriteButton id={item.driver_id} />
       <ConfidenceBar value={item.confidence} label="Confidence" />
       <div className="prediction-grid">
         <Metric label="Score" value={fmt(item.score)} />
+        <Metric label="Trust" value={pct(item.prediction_trust_score)} />
         <Metric label="Win" value={pct(item.win_probability)} />
         <Metric label="Podium" value={pct(item.podium_probability)} />
         <Metric label="Top 10" value={pct(item.top10_probability)} />
+        <Metric label="Expected" value={`P${item.predicted_finish_position ?? item.predicted_finish ?? item.likely_finish ?? item.rank}`} />
       </div>
       <p className="card-reason">{item.reason_tags?.[0] || item.reason || "Model estimate"}</p>
-      {!compact && <TagRow tags={[...(item.reason_tags || []), ...(item.weakness_tags || []).slice(0, 2)]} />}
+      {!compact && <TagRow tags={[...(item.reason_tags || []), ...(item.weakness_tags || []).slice(0, 2), ...(item.model_disagreement_reasons || []).slice(0, 2)]} />}
     </article>
   );
 }
@@ -571,7 +593,7 @@ export function PredictionTable({ predictions, onOpen }) {
         <table className="timing-table">
           <thead>
             <tr>
-              <th>Rank</th><th>Driver</th><th>Team</th><th>Score</th><th>Confidence</th><th>Win</th><th>Podium</th><th>Top 10</th><th>Range</th><th>2026 Boost</th>
+              <th>Rank</th><th>Driver</th><th>Team</th><th>Score</th><th>Confidence</th><th>Trust</th><th>Disagreement</th><th>Win</th><th>Podium</th><th>Top 10</th><th>Range</th>
             </tr>
           </thead>
           <tbody>
@@ -587,11 +609,12 @@ export function PredictionTable({ predictions, onOpen }) {
                 <td>{item.team}</td>
                 <td>{fmt(item.score)}</td>
                 <td>{pct(item.confidence)}</td>
+                <td>{pct(item.prediction_trust_score)}<small>{item.prediction_trust_label}</small></td>
+                <td><StatusBadge label={item.model_disagreement_level || "low"} tone={disagreementTone(item)} /></td>
                 <td>{pct(item.win_probability)}</td>
                 <td>{pct(item.podium_probability)}</td>
                 <td>{pct(item.top10_probability)}</td>
                 <td>{item.best_case_finish}-{item.worst_case_finish}</td>
-                <td>{pct(item.energy_boost_advantage_score)}</td>
               </tr>
             ))}
           </tbody>
@@ -628,6 +651,8 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
   const freshness = driver.data_freshness || {};
   const sourceNotes = driver.source_notes || {};
   const sourceWarnings = Array.isArray(sourceNotes.warnings) ? sourceNotes.warnings : [];
+  const missingSignals = driver.missing_feature_groups?.length ? driver.missing_feature_groups : driver.evidence_status?.missing || [];
+  const availableSignals = driver.available_feature_groups?.length ? driver.available_feature_groups : driver.evidence_status?.available || [];
   const details = [
     ["Predicted finish", `P${driver.predicted_finish_position ?? driver.predicted_finish ?? driver.rank ?? "-"}`],
     ["Top 10 probability", pct(driver.top10_probability ?? driver.points_probability)],
@@ -663,6 +688,8 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
 
           <div className="prediction-grid">
             <Metric label="Agreement" value={pct(driver.model_agreement_score)} />
+            <Metric label="Trust" value={`${pct(driver.prediction_trust_score)} · ${driver.prediction_trust_label || "Trust pending"}`} />
+            <Metric label="Disagreement" value={stageLabel(driver.model_disagreement_level || "low")} />
             <Metric label="Attack" value={pct(driver.attack_potential_score)} />
             <Metric label="Defend Risk" value={pct(driver.defend_risk_score)} />
             <Metric label="Confidence" value={driver.confidence_label || pct(driver.confidence)} />
@@ -690,9 +717,22 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
             <ComponentScoreBars scores={driver.component_scores} />
             <TagRow tags={driver.reason_tags || []} />
             <TagRow tags={driver.weakness_tags || []} tone="warning" />
+            <TagRow tags={driver.model_disagreement_reasons || []} tone="warning" />
             <div className="drawer-list">
               {explanationRows.map(([label, value]) => <p key={label}><strong>{label}</strong><span>{value}</span></p>)}
             </div>
+          </section>
+
+          <section className="detail-section">
+            <h3>Missing and available signals</h3>
+            <div className="prediction-grid">
+              <Metric label="Available groups" value={availableSignals.length} />
+              <Metric label="Missing groups" value={missingSignals.length} />
+              <Metric label="Missing penalty" value={fmt(driver.missing_data_penalty_total)} />
+              <Metric label="Stage limits" value={driver.stage_limitations?.length || 0} />
+            </div>
+            <TagRow tags={missingSignals} tone="warning" />
+            <TagRow tags={driver.stage_limitations || []} tone="warning" />
           </section>
 
           <section className="detail-section">

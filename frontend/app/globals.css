@@ -762,6 +762,18 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
 }
 .prediction-card h3 { margin: 0; padding-right: 54px; font-family: var(--display); font-size: 21px; }
 .prediction-card p { margin: 0; color: var(--muted); }
+.prediction-badges {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-right: 38px;
+}
+.prediction-badges .status-badge {
+  min-height: 26px;
+  padding: 5px 8px;
+  font-size: 11px;
+}
 .prediction-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .card-reason { color: #e7e7ea !important; }
 .tag-row { display: flex; gap: 7px; flex-wrap: wrap; }

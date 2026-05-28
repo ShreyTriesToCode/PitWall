@@ -14,6 +14,8 @@ const TIMING_AUTO_SELECT_ENABLED = String(process.env.PITWALL_TIMING_AUTO_SELECT
 const OFFICIAL_VISUAL_CACHE = new Map();
 const RATE_LIMIT_BUCKET = globalThis.__pitwallF1TimingRateLimit || new Map();
 globalThis.__pitwallF1TimingRateLimit = RATE_LIMIT_BUCKET;
+const TIMING_RESPONSE_CACHE = globalThis.__pitwallF1TimingResponseCache || new Map();
+globalThis.__pitwallF1TimingResponseCache = TIMING_RESPONSE_CACHE;
 
 const FEEDS = [
   "SessionInfo.json",
@@ -70,6 +72,51 @@ function jsonNoStore(payload, init = {}) {
       ...(init.headers || {})
     }
   });
+}
+
+function timingCacheKey(request) {
+  const url = new URL(request.url);
+  const keys = ["year", "meeting", "session", "fast"];
+  return keys.map((key) => `${key}=${normalizedSelector(url.searchParams.get(key), key === "year" ? String(new Date().getUTCFullYear()) : key === "fast" ? "0" : "latest")}`).join("&");
+}
+
+function timingCacheTtl(payload) {
+  const mode = String(payload?.timing_mode || payload?.session_state || "").toLowerCase();
+  if (payload?.is_genuinely_live || mode === "live") return 3000;
+  if (mode.includes("delayed") || mode.includes("recent")) return 30000;
+  if (mode.includes("archive") || mode.includes("fallback") || payload?.source === "JolpicaFallback" || payload?.source === "OpenF1Fallback") return 21600000;
+  return 15000;
+}
+
+function cachedTimingResponse(cacheKey) {
+  const cached = TIMING_RESPONSE_CACHE.get(cacheKey);
+  if (!cached || cached.expiresAt <= Date.now()) {
+    if (cached) TIMING_RESPONSE_CACHE.delete(cacheKey);
+    return null;
+  }
+  return {
+    ...cached.payload,
+    timing_cache_status: "hit",
+    server_fetched_at: cached.serverFetchedAt,
+    cache_expires_at: new Date(cached.expiresAt).toISOString()
+  };
+}
+
+function cacheTimingPayload(cacheKey, payload) {
+  const serverFetchedAt = new Date().toISOString();
+  const enriched = {
+    ...payload,
+    timing_cache_status: "miss",
+    server_fetched_at: serverFetchedAt,
+    source_packet_at: payload?.timing_last_updated_at || payload?.normalized?.weather?.date || payload?.normalized?.session?.date_start || null
+  };
+  const ttl = timingCacheTtl(enriched);
+  TIMING_RESPONSE_CACHE.set(cacheKey, {
+    payload: enriched,
+    serverFetchedAt,
+    expiresAt: Date.now() + ttl
+  });
+  return jsonNoStore(enriched, { headers: { "X-PitWall-Timing-Cache": "miss" } });
 }
 
 function normalizedYear(value) {
@@ -1301,6 +1348,12 @@ async function fetchFeeds(basePath, { fast = false } = {}) {
 }
 
 export async function GET(request) {
+  const cacheKey = timingCacheKey(request);
+  const bypassCache = new URL(request.url).searchParams.get("bypass_cache") === "1";
+  if (!bypassCache) {
+    const cached = cachedTimingResponse(cacheKey);
+    if (cached) return jsonNoStore(cached, { headers: { "X-PitWall-Timing-Cache": "hit" } });
+  }
   const rateLimit = checkRateLimit(request);
   if (rateLimit.limited) {
     return jsonNoStore({
@@ -1346,7 +1399,7 @@ export async function GET(request) {
       "No live/current F1 timing session matched the request.",
       openf1AuthReason,
     ].filter(Boolean);
-    return jsonNoStore({
+    return cacheTimingPayload(cacheKey, {
       ok: Boolean(openf1Fallback?.ok),
       source: openf1Fallback?.ok ? "OpenF1Fallback" : "Formula1LiveTiming",
       reason: openf1Fallback?.ok ? "No F1 live timing session found, using latest OpenF1 free historical session." : (openf1AuthReason || "No F1 live timing session found for selected year."),
@@ -1442,7 +1495,7 @@ export async function GET(request) {
     !outputOk ? "No live timing, OpenF1 fallback, or Jolpica fallback data was usable." : "",
   ].filter(Boolean);
 
-  return jsonNoStore({
+  return cacheTimingPayload(cacheKey, {
     ok: outputOk,
     source,
     source_note: hasUsefulF1Data

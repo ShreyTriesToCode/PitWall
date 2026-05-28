@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-05-28
+
+### Added
+
+- Contract validation script for frontend, briefing, debug, and model-status artifacts.
+- Rollback contract artifacts and frontend recovery from `latest-model-debug.json` or the previous valid contract.
+- Per-driver prediction trust score, trust label, model disagreement level, and disagreement reasons.
+- `/sources` page, Playwright smoke tests, artifact-size checker, ruff config, and pinned dependencies.
+- Short TTL `/api/f1timing` response caching with `server_fetched_at`, `source_packet_at`, and cache status metadata.
+- `ARTIFACT_POLICY.md`, `RUNBOOK.md`, `ROADMAP.md`, and `MODEL_EXPERIMENTS.md`.
+
+### Changed
+
+- Prediction cards, tables, and driver details now distinguish ranking score, confidence, trust, disagreement, expected finish, and missing/source warnings.
+- CI now validates contracts and artifact sizes in addition to backend tests and frontend build.
+
 ## 2026-05-25
 
 ### Added
