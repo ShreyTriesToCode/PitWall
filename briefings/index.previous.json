@@ -3,8 +3,8 @@
     {
       "title": "F1 Race Briefing: F1 Monaco GP - Race",
       "path": "briefings/2026-06-07-f1-weekend-briefing-monaco-grand-prix.md",
-      "generated": "2026-05-28 20:43 IST",
-      "generated_iso": "2026-05-28T20:43:07.676957+05:30",
+      "generated": "2026-05-29 13:53 IST",
+      "generated_iso": "2026-05-29T13:53:45.193060+05:30",
       "start_iso": "2026-06-07T18:30:00+05:30",
       "start": "Sunday, 07 June 2026, 06:30 PM IST",
       "event_title": "F1 Weekend Briefing: Monaco Grand Prix",
@@ -45,7 +45,7 @@
         }
       },
       "race_id": "2026-6-monaco-grand-prix",
-      "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+      "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
       "race_name": "Monaco Grand Prix",
       "season": 2026,
       "round": 6,
@@ -55,9 +55,9 @@
       "model_version": "2026.05-high-accuracy-v5",
       "schema_version": "2026.05-high-accuracy-v5",
       "prediction_data_version": "2026.05-race-control-contract-v2",
-      "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+      "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
       "source_health_snapshot": {
-        "generated_at": "2026-05-28T20:43:07.674792+05:30",
+        "generated_at": "2026-05-29T13:53:45.190936+05:30",
         "overall_score": 70.27,
         "status": "Fallback",
         "sources": [
@@ -135,7 +135,7 @@
             "source_url": "https://github.com/f1db/f1db",
             "schema_url": null,
             "artifact_path": null,
-            "checked_at": "2026-05-28T15:13:07.674536+00:00",
+            "checked_at": "2026-05-29T08:23:45.190689+00:00",
             "errors": [],
             "warnings": [
               "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -155,7 +155,7 @@
             "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
             "schema_url": null,
             "artifact_path": null,
-            "checked_at": "2026-05-28T15:13:07.674715+00:00",
+            "checked_at": "2026-05-29T08:23:45.190859+00:00",
             "errors": [],
             "warnings": [
               "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -189,12 +189,12 @@
       ],
       "weather": {
         "source": "Open-Meteo forecast",
-        "temperature": "24.8°C",
+        "temperature": "24.7°C",
         "rain": "12%",
-        "humidity": "65%",
-        "wind": "11.7 km/h",
-        "wind_gust": "48.6 km/h",
-        "cloud_cover": "35%",
+        "humidity": "66%",
+        "wind": "16.5 km/h",
+        "wind_gust": "67.0 km/h",
+        "cloud_cover": "64%",
         "track_temperature": "Unavailable",
         "rain_score": 12.0,
         "heat_score": 0,
@@ -477,7 +477,7 @@
           },
           "teammate_prediction_gap": 1.05,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -485,8 +485,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -764,7 +764,7 @@
           },
           "teammate_prediction_gap": 1.4,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -772,8 +772,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1051,7 +1051,7 @@
           },
           "teammate_prediction_gap": 1.05,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1059,8 +1059,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1332,7 +1332,7 @@
           },
           "teammate_prediction_gap": 1.4,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1340,8 +1340,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1613,7 +1613,7 @@
           },
           "teammate_prediction_gap": 6.67,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1621,8 +1621,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1894,7 +1894,7 @@
           },
           "teammate_prediction_gap": 0.5,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1902,8 +1902,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2175,7 +2175,7 @@
           },
           "teammate_prediction_gap": 0.5,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -2183,8 +2183,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2456,7 +2456,7 @@
           },
           "teammate_prediction_gap": 6.67,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -2464,8 +2464,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2737,7 +2737,7 @@
           },
           "teammate_prediction_gap": 7.41,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -2745,8 +2745,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3018,7 +3018,7 @@
           },
           "teammate_prediction_gap": 6.55,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3026,8 +3026,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -3307,7 +3307,7 @@
           },
           "teammate_prediction_gap": 1.05,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3315,8 +3315,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3594,7 +3594,7 @@
           },
           "teammate_prediction_gap": 1.4,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3602,8 +3602,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3881,7 +3881,7 @@
           },
           "teammate_prediction_gap": 1.05,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3889,8 +3889,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4162,7 +4162,7 @@
           },
           "teammate_prediction_gap": 1.4,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -4170,8 +4170,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4443,7 +4443,7 @@
           },
           "teammate_prediction_gap": 6.67,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -4451,8 +4451,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4724,7 +4724,7 @@
           },
           "teammate_prediction_gap": 0.5,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -4732,8 +4732,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5005,7 +5005,7 @@
           },
           "teammate_prediction_gap": 0.5,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5013,8 +5013,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5286,7 +5286,7 @@
           },
           "teammate_prediction_gap": 6.67,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5294,8 +5294,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5567,7 +5567,7 @@
           },
           "teammate_prediction_gap": 7.41,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5575,8 +5575,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5848,7 +5848,7 @@
           },
           "teammate_prediction_gap": 6.55,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5856,8 +5856,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6118,7 +6118,7 @@
           },
           "teammate_prediction_gap": 0.31,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6126,8 +6126,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6338,8 +6338,8 @@
           "model_disagreement_penalty": 0.0,
           "rank_finish_gap": 2.36,
           "prediction_trust_score": 48.28,
-          "prediction_trust_label": "Medium trust",
-          "trust_label": "Medium trust",
+          "prediction_trust_label": "Low trust",
+          "trust_label": "Low trust",
           "available_feature_groups": [
             "calendar_confidence",
             "car_performance",
@@ -6390,7 +6390,7 @@
           },
           "teammate_prediction_gap": 0.31,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6398,8 +6398,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6660,7 +6660,7 @@
           },
           "teammate_prediction_gap": 7.41,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6668,8 +6668,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6936,7 +6936,7 @@
           },
           "teammate_prediction_gap": 1.29,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6944,8 +6944,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7154,8 +7154,8 @@
           "model_disagreement_penalty": 0.0,
           "rank_finish_gap": 0.68,
           "prediction_trust_score": 49.84,
-          "prediction_trust_label": "Medium trust",
-          "trust_label": "Medium trust",
+          "prediction_trust_label": "Low trust",
+          "trust_label": "Low trust",
           "available_feature_groups": [
             "calendar_confidence",
             "car_performance",
@@ -7208,7 +7208,7 @@
           },
           "teammate_prediction_gap": 6.55,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7216,8 +7216,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7481,7 +7481,7 @@
           },
           "teammate_prediction_gap": 1.29,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7489,8 +7489,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7755,7 +7755,7 @@
           },
           "teammate_prediction_gap": 0.9,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7763,8 +7763,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8026,7 +8026,7 @@
           },
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8034,8 +8034,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8296,7 +8296,7 @@
           },
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8304,8 +8304,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8573,7 +8573,7 @@
           },
           "teammate_prediction_gap": 0.9,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8581,8 +8581,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8846,7 +8846,7 @@
           },
           "teammate_prediction_gap": 1.28,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8854,8 +8854,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9119,7 +9119,7 @@
           },
           "teammate_prediction_gap": 1.28,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9127,8 +9127,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -9408,7 +9408,7 @@
           },
           "teammate_prediction_gap": 1.05,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9416,8 +9416,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9695,7 +9695,7 @@
           },
           "teammate_prediction_gap": 1.4,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9703,8 +9703,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9982,7 +9982,7 @@
           },
           "teammate_prediction_gap": 1.05,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9990,8 +9990,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10263,7 +10263,7 @@
           },
           "teammate_prediction_gap": 1.4,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -10271,8 +10271,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10544,7 +10544,7 @@
           },
           "teammate_prediction_gap": 6.67,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -10552,8 +10552,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10825,7 +10825,7 @@
           },
           "teammate_prediction_gap": 0.5,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -10833,8 +10833,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11106,7 +11106,7 @@
           },
           "teammate_prediction_gap": 0.5,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11114,8 +11114,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11387,7 +11387,7 @@
           },
           "teammate_prediction_gap": 6.67,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11395,8 +11395,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11668,7 +11668,7 @@
           },
           "teammate_prediction_gap": 7.41,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11676,8 +11676,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11949,7 +11949,7 @@
           },
           "teammate_prediction_gap": 6.55,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11957,8 +11957,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12219,7 +12219,7 @@
           },
           "teammate_prediction_gap": 0.31,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -12227,8 +12227,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12439,8 +12439,8 @@
           "model_disagreement_penalty": 0.0,
           "rank_finish_gap": 2.36,
           "prediction_trust_score": 48.28,
-          "prediction_trust_label": "Medium trust",
-          "trust_label": "Medium trust",
+          "prediction_trust_label": "Low trust",
+          "trust_label": "Low trust",
           "available_feature_groups": [
             "calendar_confidence",
             "car_performance",
@@ -12491,7 +12491,7 @@
           },
           "teammate_prediction_gap": 0.31,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -12499,8 +12499,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12761,7 +12761,7 @@
           },
           "teammate_prediction_gap": 7.41,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -12769,8 +12769,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13037,7 +13037,7 @@
           },
           "teammate_prediction_gap": 1.29,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13045,8 +13045,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13255,8 +13255,8 @@
           "model_disagreement_penalty": 0.0,
           "rank_finish_gap": 0.68,
           "prediction_trust_score": 49.84,
-          "prediction_trust_label": "Medium trust",
-          "trust_label": "Medium trust",
+          "prediction_trust_label": "Low trust",
+          "trust_label": "Low trust",
           "available_feature_groups": [
             "calendar_confidence",
             "car_performance",
@@ -13309,7 +13309,7 @@
           },
           "teammate_prediction_gap": 6.55,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13317,8 +13317,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13582,7 +13582,7 @@
           },
           "teammate_prediction_gap": 1.29,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13590,8 +13590,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13856,7 +13856,7 @@
           },
           "teammate_prediction_gap": 0.9,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13864,8 +13864,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14127,7 +14127,7 @@
           },
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14135,8 +14135,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14397,7 +14397,7 @@
           },
           "teammate_prediction_gap": 0.02,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14405,8 +14405,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14674,7 +14674,7 @@
           },
           "teammate_prediction_gap": 0.9,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14682,8 +14682,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14947,7 +14947,7 @@
           },
           "teammate_prediction_gap": 1.28,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14955,8 +14955,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15220,7 +15220,7 @@
           },
           "teammate_prediction_gap": 1.28,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+          "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -15228,8 +15228,8 @@
           "stage": "pre_weekend",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-05-28T20:43:07.676957+05:30",
-          "input_data_hash": "c6b69773a8b225174849425e5562a41d6dfa83e621ef4cc7fb784e0195741791",
+          "generated_at": "2026-05-29T13:53:45.193060+05:30",
+          "input_data_hash": "6e49b511224dd273b5a3f054acb1c3b04bdaf642365b883633c2adbb42fc45dc",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -15281,7 +15281,7 @@
           "fastf1_tyre_stint": 0.0084
         },
         "source_health_snapshot": {
-          "generated_at": "2026-05-28T20:43:07.674792+05:30",
+          "generated_at": "2026-05-29T13:53:45.190936+05:30",
           "overall_score": 70.27,
           "status": "Fallback",
           "sources": [
@@ -15359,7 +15359,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-05-28T15:13:07.674536+00:00",
+              "checked_at": "2026-05-29T08:23:45.190689+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -15379,7 +15379,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-05-28T15:13:07.674715+00:00",
+              "checked_at": "2026-05-29T08:23:45.190859+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -16449,7 +16449,7 @@
         ]
       },
       "source_health": {
-        "generated_at": "2026-05-28T20:43:07.674792+05:30",
+        "generated_at": "2026-05-29T13:53:45.190936+05:30",
         "overall_score": 70.27,
         "status": "Fallback",
         "sources": [
@@ -16527,7 +16527,7 @@
             "source_url": "https://github.com/f1db/f1db",
             "schema_url": null,
             "artifact_path": null,
-            "checked_at": "2026-05-28T15:13:07.674536+00:00",
+            "checked_at": "2026-05-29T08:23:45.190689+00:00",
             "errors": [],
             "warnings": [
               "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -16547,7 +16547,7 @@
             "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
             "schema_url": null,
             "artifact_path": null,
-            "checked_at": "2026-05-28T15:13:07.674715+00:00",
+            "checked_at": "2026-05-29T08:23:45.190859+00:00",
             "errors": [],
             "warnings": [
               "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -16558,7 +16558,7 @@
         }
       },
       "source_status": {
-        "generated_at": "2026-05-28T20:43:07.674792+05:30",
+        "generated_at": "2026-05-29T13:53:45.190936+05:30",
         "overall_score": 70.27,
         "status": "Fallback",
         "sources": [
@@ -16636,7 +16636,7 @@
             "source_url": "https://github.com/f1db/f1db",
             "schema_url": null,
             "artifact_path": null,
-            "checked_at": "2026-05-28T15:13:07.674536+00:00",
+            "checked_at": "2026-05-29T08:23:45.190689+00:00",
             "errors": [],
             "warnings": [
               "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -16656,7 +16656,7 @@
             "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
             "schema_url": null,
             "artifact_path": null,
-            "checked_at": "2026-05-28T15:13:07.674715+00:00",
+            "checked_at": "2026-05-29T08:23:45.190859+00:00",
             "errors": [],
             "warnings": [
               "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
