@@ -1,6 +1,6 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-05-29T09:03:41.457677+05:30",
+  "generated_at": "2026-05-29T12:41:09.334335+05:30",
   "status": "Skipped",
   "details": "No Sprint/Race output target selected.\\n\\nOutput mode: today\\nReason: Manual runs use weekend mode; scheduled runs use today mode. Practice, Qualifying, and Sprint Qualifying are ignored as direct outputs.",
   "source_discovery": {
