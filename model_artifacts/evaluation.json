@@ -1,7 +1,7 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-05-28T20:29:03.728909+05:30",
-  "trained_at": "2026-05-25T15:41:19.297285+05:30",
+  "generated_at": "2026-05-29T13:34:10.929669+05:30",
+  "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "validation_split": {
     "method": "season_grouped_train_2018_2021_validate_2022_2024_test_2025_plus",
     "train_races": 81,
@@ -136,21 +136,21 @@
     "status": "empirical_probability_calibration_split"
   },
   "metrics": {
-    "winner_accuracy": 0.3382,
+    "winner_accuracy": 0.3088,
     "top3_recall": 0.6176,
     "top3_precision": 0.6176,
-    "top10_recall": 0.8206,
-    "top10_precision": 0.8206,
-    "spearman_rank_correlation": 0.7233,
-    "ndcg_at_3": 0.893,
-    "ndcg_at_10": 0.9057,
-    "finish_mae": 3.2141639804318896,
-    "finish_rmse": 4.106764068659931,
-    "lap_delta_mae": 4.6595144665599575,
-    "lap_delta_rmse": 6.164998825263575,
-    "win_brier": 0.03210122567318354,
-    "podium_brier": 0.07120655051545209,
-    "top10_brier": 0.15408045334367929
+    "top10_recall": 0.8162,
+    "top10_precision": 0.8162,
+    "spearman_rank_correlation": 0.7235,
+    "ndcg_at_3": 0.8867,
+    "ndcg_at_10": 0.9028,
+    "finish_mae": 3.2200901704520337,
+    "finish_rmse": 4.113245603365494,
+    "lap_delta_mae": 4.664005401471188,
+    "lap_delta_rmse": 6.083445318369758,
+    "win_brier": 0.032299830598387376,
+    "podium_brier": 0.07268102251272669,
+    "top10_brier": 0.15068186168827705
   },
   "out_of_time_test": {
     "rows": 589,
@@ -159,20 +159,20 @@
       2025,
       2026
     ],
-    "finish_mae": 3.3985523289799096,
+    "finish_mae": 3.3941046376081654,
     "ranking": {
-      "winner_hit": 0.4138,
-      "top3_recall": 0.6552,
-      "top3_precision": 0.6552,
-      "top5_recall": 0.7931,
-      "top5_precision": 0.7931,
+      "winner_hit": 0.3793,
+      "top3_recall": 0.6437,
+      "top3_precision": 0.6437,
+      "top5_recall": 0.7793,
+      "top5_precision": 0.7793,
       "top10_recall": 0.7724,
       "top10_precision": 0.7724,
-      "ndcg_at_3": 0.9245,
-      "ndcg_at_10": 0.9107,
-      "spearman": 0.7224,
-      "exact_position_accuracy": 0.0835,
-      "mean_position_error": 3.3834
+      "ndcg_at_3": 0.917,
+      "ndcg_at_10": 0.91,
+      "spearman": 0.7255,
+      "exact_position_accuracy": 0.0837,
+      "mean_position_error": 3.3802
     },
     "baselines": {
       "grid_order": {
@@ -368,7 +368,7 @@
   "drift_monitor": {
     "metric": "out_of_time_spearman_proxy",
     "threshold": 0.55,
-    "latest_value": 0.7224,
+    "latest_value": 0.7255,
     "status": "stable",
     "note": "Race-level rolling drift is exported when enough post-race correction history exists; this proxy prevents silent degradation meanwhile."
   },
@@ -385,7 +385,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-28T14:59:03.728771+00:00",
+      "checked_at": "2026-05-29T08:04:10.929554+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -405,7 +405,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-28T14:59:03.728895+00:00",
+      "checked_at": "2026-05-29T08:04:10.929656+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."

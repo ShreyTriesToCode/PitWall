@@ -536,3 +536,11 @@ cd frontend && npm ci && npm run build && npm test
 ```
 
 See `RUNBOOK.md`, `ARTIFACT_POLICY.md`, `ROADMAP.md`, and `MODEL_EXPERIMENTS.md` for operator details and remaining work.
+
+## Free AI-Style Intelligence
+
+PitWall includes deterministic AI-style summaries with no paid API requirement. These fields explain trust, source warnings, missing data, model disagreement, race-week uncertainty, and post-race audit themes from existing structured data only.
+
+The default provider is `deterministic`; local Ollama and local RAG are optional development helpers. AI text is never allowed to modify rankings, Top 10, Full Grid, probabilities, race results, weather values, FIA notes, or live timing state.
+
+See `FREE_DEPLOYMENT.md` and `LOCAL_AI.md`.

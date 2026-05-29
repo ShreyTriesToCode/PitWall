@@ -580,7 +580,7 @@ export function PredictionCard({ item, onOpen, compact = false }) {
         <Metric label="Top 10" value={pct(item.top10_probability)} />
         <Metric label="Expected" value={`P${item.predicted_finish_position ?? item.predicted_finish ?? item.likely_finish ?? item.rank}`} />
       </div>
-      <p className="card-reason">{item.reason_tags?.[0] || item.reason || "Model estimate"}</p>
+      <p className="card-reason">{item.ai_explanation?.simple_explanation || item.reason_tags?.[0] || item.reason || "Model estimate"}</p>
       {!compact && <TagRow tags={[...(item.reason_tags || []), ...(item.weakness_tags || []).slice(0, 2), ...(item.model_disagreement_reasons || []).slice(0, 2)]} />}
     </article>
   );
@@ -648,6 +648,7 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
   if (!driver) return null;
   const strategy = driver.expected_strategy || {};
   const explanation = driver.explanation || {};
+  const aiExplanation = driver.ai_explanation || {};
   const freshness = driver.data_freshness || {};
   const sourceNotes = driver.source_notes || {};
   const sourceWarnings = Array.isArray(sourceNotes.warnings) ? sourceNotes.warnings : [];
@@ -696,6 +697,17 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
           </div>
 
           <section className="detail-section">
+            <h3>AI-style explanation</h3>
+            <div className="drawer-list">
+              <p><strong>Simple</strong><span>{aiExplanation.simple_explanation || driver.simple_explanation || "Deterministic explanation unavailable."}</span></p>
+              <p><strong>Expert</strong><span>{aiExplanation.expert_explanation || driver.expert_explanation || "Not enough structured evidence for expert explanation."}</span></p>
+              <p><strong>Risk</strong><span>{aiExplanation.risk_summary || "No deterministic risk summary available."}</span></p>
+              <p><strong>Upside</strong><span>{aiExplanation.upside_case || "Upside case unavailable."}</span></p>
+              <p><strong>Downside</strong><span>{aiExplanation.downside_case || "Downside case unavailable."}</span></p>
+            </div>
+          </section>
+
+          <section className="detail-section">
             <h3>Prediction probabilities</h3>
             <div className="detail-metric-grid">
               {details.map(([label, value]) => <Metric label={label} value={value} key={label} />)}
@@ -720,6 +732,8 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
             <TagRow tags={driver.model_disagreement_reasons || []} tone="warning" />
             <div className="drawer-list">
               {explanationRows.map(([label, value]) => <p key={label}><strong>{label}</strong><span>{value}</span></p>)}
+              <p><strong>Model agreement</strong><span>{aiExplanation.model_agreement_note || driver.trust_explanation || "Agreement note unavailable."}</span></p>
+              <p><strong>Scenario impact</strong><span>{aiExplanation.scenario_note || "Scenario note unavailable."}</span></p>
             </div>
           </section>
 
@@ -733,6 +747,7 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
             </div>
             <TagRow tags={missingSignals} tone="warning" />
             <TagRow tags={driver.stage_limitations || []} tone="warning" />
+            <p className="drawer-note">{aiExplanation.missing_data_note || "Missing-data note unavailable."}</p>
           </section>
 
           <section className="detail-section">
@@ -749,6 +764,7 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
               <p><strong>Source health</strong><span>{sourceNotes.source_health || freshness.source_health_status || "Pending"}</span></p>
             </div>
             <TagRow tags={sourceWarnings} tone="warning" />
+            <p className="drawer-note">{aiExplanation.source_health_note || "Source health note unavailable."}</p>
           </section>
         </div>
       </aside>
@@ -924,4 +940,4 @@ export function useFilteredDrivers(predictions, query) {
   }, [predictions, query]);
 }
 
-export const Icons = { CalendarDays, ChevronRight, Clock, Flag, Gauge, LineChart, Timer, Trophy, Zap };
+export const Icons = { CalendarDays, ChevronRight, Clock, Flag, Gauge, LineChart, ShieldAlert, Sparkles, Timer, Trophy, Zap };

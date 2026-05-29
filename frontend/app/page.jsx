@@ -43,6 +43,34 @@ export default function HomePage() {
           <RaceHero latest={latest} />
           <section className="dashboard-grid">
             <div className="panel reveal">
+              <SectionTitle icon={Icons.Sparkles} title="Race Intelligence Summary" action={<StatusBadge label={(data.ai_features || latest.ai_features)?.provider || "deterministic"} tone="green" />} />
+              <p className="panel-note">{(data.race_intelligence_summary || latest.race_intelligence_summary)?.headline || "Race intelligence summary pending."}</p>
+              <RaceControlTimeline items={[
+                (data.race_intelligence_summary || latest.race_intelligence_summary)?.race_week_summary || "Deterministic summary uses local contract data only.",
+                ...((data.race_intelligence_summary || latest.race_intelligence_summary)?.key_uncertainties || []).slice(0, 3),
+              ]} />
+            </div>
+            <div className="panel reveal">
+              <SectionTitle icon={Icons.ShieldAlert} title="Prediction Trust" action={<StatusBadge label={data.event_trust_label || latest.event_trust_label || latest.prediction_trust_label || "Trust pending"} tone={(Number(data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score) || 0) >= 75 ? "green" : (Number(data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score) || 0) >= 50 ? "amber" : "red"} />} />
+              <div className="metric-grid compact">
+                <Metric label="Event trust" value={data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score ? `${data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score}%` : "Pending"} />
+                <Metric label="High disagreements" value={latest.confidence_breakdown?.high_disagreement_count ?? 0} />
+                <Metric label="Source conflicts" value={(data.source_conflicts || latest.source_conflicts || []).length} />
+                <Metric label="AI mode" value={(data.ai_features || latest.ai_features)?.free_mode === false ? "Configured" : "Free deterministic"} />
+              </div>
+            </div>
+            <div className="panel reveal">
+              <SectionTitle icon={Icons.LineChart} title="What Changed Since Last Run" />
+              <p className="panel-note">{(data.changed_since_last_run || latest.changed_since_last_run || latest.change_summary)?.summary || "No previous valid contract available."}</p>
+              <RaceControlTimeline items={[
+                `${(data.changed_since_last_run || latest.changed_since_last_run || latest.change_summary)?.rank_changes?.length ?? 0} rank changes`,
+                `${(data.changed_since_last_run || latest.changed_since_last_run || latest.change_summary)?.probability_changes?.length ?? 0} probability changes`,
+                `${(data.changed_since_last_run || latest.changed_since_last_run || latest.change_summary)?.trust_changes?.length ?? 0} trust changes`,
+              ]} />
+            </div>
+          </section>
+          <section className="dashboard-grid">
+            <div className="panel reveal">
               <SectionTitle icon={Icons.Trophy} title="Top 3 Prediction Preview" action={<StatusBadge label={latest.prediction_stage || latest.stage} tone="red" />} />
               <div className="podium-list">
                 {latest.top10?.slice(0, 3).map((item) => (

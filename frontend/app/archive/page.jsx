@@ -6,6 +6,7 @@ import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Me
 export default function ArchivePage() {
   const predictions = usePitWallData("/api/predictions");
   const archive = usePitWallData("/api/archive");
+  const status = usePitWallData("/api/model-status");
   const [query, setQuery] = useState("");
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(1);
@@ -30,6 +31,21 @@ export default function ArchivePage() {
           <section className="toolbar panel reveal">
             <SearchBox value={query} onChange={setQuery} placeholder="Search by race, driver, team, model, or stage" />
             <button className="control-btn" onClick={archive.refetch} disabled={archive.refreshing}>{archive.refreshing ? "Refreshing" : "Refresh archive"}</button>
+          </section>
+          <section className="dashboard-grid">
+            <div className="panel reveal">
+              <SectionTitle title="Model vs Reality Summary" />
+              <div className="metric-grid compact">
+                <Metric label="Archived briefings" value={rows.length} />
+                <Metric label="Corrections" value={status.data?.correction_log_summary?.count ?? "Pending"} />
+                <Metric label="Audit status" value={status.data?.correction_log_summary?.status || "Pending"} />
+              </div>
+            </div>
+            <div className="panel reveal">
+              <SectionTitle title="Post-Race Review" />
+              <p className="panel-note">{status.data?.correction_log_summary?.post_race_ai_review?.best_call || "No actual result audit is available yet."}</p>
+              <p className="panel-note">{status.data?.correction_log_summary?.post_race_ai_review?.worst_miss || "No worst miss available yet."}</p>
+            </div>
           </section>
           <div className="archive-grid">
             {rows.map((row, index) => (

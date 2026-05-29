@@ -1,6 +1,20 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-05-29T12:41:10.402304+05:30",
+  "generated_at": "2026-05-29T13:34:11.401052+05:30",
   "status": "Pending",
-  "corrections": []
+  "corrections": [],
+  "post_race_ai_review": {
+    "best_call": "No actual result audit is available yet.",
+    "worst_miss": "No actual result audit is available yet.",
+    "biggest_rank_errors": [],
+    "likely_failure_causes": [],
+    "source_gaps": [],
+    "model_gaps": [
+      "Actual race classification is required before a post-race miss analysis can be generated."
+    ],
+    "feature_improvement_suggestions": [],
+    "chaos_factors": [],
+    "was_miss_predictable": "Not enough data in local PitWall sources.",
+    "generated_by": "deterministic"
+  }
 }

@@ -42,6 +42,7 @@ jobs:
           python -m unittest discover -s ./tests -p "test_*.py" -t .
           python scripts/validate_contracts.py
           python scripts/check_artifact_sizes.py
+          python scripts/generate_run_report.py
 
   frontend:
     runs-on: ubuntu-latest

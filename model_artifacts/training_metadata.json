@@ -1,13 +1,13 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-05-28T20:29:03.728968+05:30",
-  "trained_at": "2026-05-25T15:41:19.297285+05:30",
+  "generated_at": "2026-05-29T13:34:10.929723+05:30",
+  "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "model_schema_version": "2026.05-high-accuracy-v5",
   "ml_start_year": 2018,
   "rows_raw": 3568,
   "rows_features": 3568,
   "latest_completed_race_id": "2026-5",
-  "feature_columns_hash": "22dfa7eb8ae1eb1e",
+  "feature_columns_hash": "61bef324e360f08a",
   "optional_ml_backends": {
     "lightgbm": false,
     "xgboost": false,
@@ -15,27 +15,27 @@
   },
   "training_action": "retrained_model",
   "training_reasons": [
-    "new_completed_race_results_available"
+    "manual_force_retrain_requested"
   ],
   "imputation": {
     "method": "median_with_missingness_indicators",
     "values": {
       "missing_lap_pace": 1.0,
-      "team_recent_points": 2.9,
-      "missing_grid": 0.0,
-      "grid_position": 11.0,
-      "team_avg_finish": 11.429563492063492,
-      "regulation_era_factor": 0.6,
-      "season_progress": 0.4166666666666667,
-      "track_position_sensitivity": 25.0,
-      "missing_pit_data": 0.0,
-      "missing_qualifying": 0.0,
-      "driver_recent3_finish": 11.0,
       "driver_avg_finish": 10.927700348432056,
+      "regulation_era_factor": 0.6,
+      "missing_pit_data": 0.0,
       "track_dnf_rate": 0.15000000000000002,
+      "missing_qualifying": 0.0,
+      "missing_grid": 0.0,
       "sprint_position": 20.0,
-      "qualifying_position": 10.5,
       "missing_sprint_position": 1.0,
+      "qualifying_position": 10.5,
+      "driver_recent3_finish": 11.0,
+      "season_progress": 0.4166666666666667,
+      "team_avg_finish": 11.429563492063492,
+      "team_recent_points": 2.9,
+      "grid_position": 11.0,
+      "track_position_sensitivity": 25.0,
       "team_avg_points": 2.5612500000000002,
       "team_qualifying_strength_recent": 10.8,
       "team_podium_rate": 0.013888888888888888,
@@ -77,7 +77,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-28T14:59:03.728771+00:00",
+      "checked_at": "2026-05-29T08:04:10.929554+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -97,7 +97,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-28T14:59:03.728895+00:00",
+      "checked_at": "2026-05-29T08:04:10.929656+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."

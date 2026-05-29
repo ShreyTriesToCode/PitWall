@@ -2,6 +2,22 @@
 
 Generated on 2026-05-24.
 
+## 2026-05-29 Free AI Intelligence Pass
+
+- `python -m py_compile f1_briefing.py ...`: passed.
+- `ruff check pitwall scripts tests`: passed.
+- `python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed, 68 tests.
+- `python scripts/validate_contracts.py`: passed with top10=10, full_grid=22, all_predictions=22.
+- `python scripts/check_artifact_sizes.py`: passed with warnings for two existing FastF1 cache files over 25 MB.
+- `python scripts/generate_run_report.py`: passed and wrote `RUN_REPORT.md`.
+- `python scripts/query_local_rag.py "model trust"`: returned the expected no-index fallback, "Not enough data in local PitWall sources."
+- `npm ci`: passed.
+- `npm audit --audit-level=high`: passed with 0 vulnerabilities.
+- `npm run build`: passed, including `/assistant`.
+- `npm run test --if-present`: passed after installing Playwright Chromium, 5/5 smoke tests.
+
+Known warnings: artifact-size checker still warns on two pre-existing FastF1 cache files (`car_data.ff1pkl`, `position_data.ff1pkl`) above 25 MB but below the configured failure threshold.
+
 ## API Documentation Checked
 
 - OpenF1 authentication docs: https://openf1.org/auth.html

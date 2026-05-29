@@ -286,6 +286,13 @@ jobs:
           GITHUB_ACTIONS_RACE_SIMULATION_RUNS: "1000"
           LATEST_RUN_STATUS_PATH: "data_cache/latest-run-status.json"
           USE_LAST_VALID_CONTRACT_ON_ERROR: "true"
+          FREE_MODE: "true"
+          AI_FEATURES_ENABLED: "false"
+          DETERMINISTIC_EXPLANATIONS_ENABLED: "true"
+          LOCAL_LLM_ENABLED: "false"
+          LOCAL_RAG_ENABLED: "false"
+          HUGGINGFACE_SPACE_AI_ENABLED: "false"
+          GITHUB_RAW_DATA_FALLBACK: "true"
           SKIP_NETWORK_TESTS: "true"
 
           MODEL_DIR: "models/saved_models"
@@ -302,6 +309,7 @@ jobs:
         run: |
           python scripts/validate_contracts.py
           python scripts/check_artifact_sizes.py
+          python scripts/generate_run_report.py
           python -m json.tool briefings/index.json >/dev/null
           python -m json.tool data_cache/latest-model-debug.json >/dev/null
           python -m json.tool data_cache/frontend-contract.json >/dev/null
@@ -316,20 +324,21 @@ jobs:
         run: |
           set -e
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Shreyansh Singhal"
+          git config user.email "111811929+ShreyTriesToCode@users.noreply.github.com"
 
           echo "Git state after generation:"
           git status --short
 
           # Stage outputs first. The previous workflow failed because it tried to rebase
           # while fastf1_cache/data_cache had unstaged changes.
-          git add briefings MODEL_STATUS.md data_cache/latest-model-debug.json 2>/dev/null || true
+          git add briefings MODEL_STATUS.md RUN_REPORT.md data_cache/latest-model-debug.json 2>/dev/null || true
           git add data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/latest-run-status.json data_cache/features data_cache/model-input-snapshots data_cache/source_registry data_cache/fia-documents data_cache/mappings 2>/dev/null || true
           git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
 
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update PitWall generated outputs"
+            git commit -m "chore: update PitWall generated outputs" \
+              --author="Shreyansh Singhal <111811929+ShreyTriesToCode@users.noreply.github.com>"
           else
             echo "No generated file changes to commit before sync."
           fi
@@ -381,6 +390,7 @@ jobs:
           path: |
             briefings/**
             MODEL_STATUS.md
+            RUN_REPORT.md
             data_cache/latest-model-debug.json
             data_cache/frontend-contract.json
             data_cache/model-status.json

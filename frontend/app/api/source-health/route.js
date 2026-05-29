@@ -10,6 +10,7 @@ export async function GET() {
     ok: Boolean(health.sources?.length || health.status),
     generated_at: contract.generated_at || health.generated_at,
     fallback_reason: contract.latest?.live_fallback_reason || health.fallback_reason || "",
+    source_conflicts: contract.source_conflicts || contract.latest?.source_conflicts || [],
     ...health
   });
 }

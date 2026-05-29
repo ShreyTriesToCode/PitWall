@@ -7,6 +7,8 @@ const BRIEFINGS_DIR = path.resolve(PROJECT_PARENT, "briefings");
 const DATA_BASE =
   process.env.NEXT_PUBLIC_F1_DATA_BASE_URL ||
   "https://raw.githubusercontent.com/ShreyTriesToCode/PitWall/main";
+const GITHUB_RAW_DATA_FALLBACK = String(process.env.GITHUB_RAW_DATA_FALLBACK || process.env.NEXT_PUBLIC_GITHUB_RAW_DATA_FALLBACK || "true").toLowerCase() !== "false";
+const USE_LAST_VALID_CONTRACT_ON_ERROR = String(process.env.USE_LAST_VALID_CONTRACT_ON_ERROR || "true").toLowerCase() !== "false";
 
 async function readJson(filePath) {
   const text = await readFile(/*turbopackIgnore: true*/ filePath, "utf8");
@@ -26,6 +28,7 @@ async function loadJson(relativePath, fallback) {
   try {
     return await readJson(localPath);
   } catch {
+    if (!GITHUB_RAW_DATA_FALLBACK) return fallback;
     try {
       return await fetchRemoteJson(relativePath);
     } catch {
@@ -76,7 +79,13 @@ function normalizePredictionRows(rows, options = {}) {
       missing_data_penalty_total: numeric(row.missing_data_penalty_total || row.evidence_status?.penalty_total, 0),
       stage_limitations: asArray(row.stage_limitations),
       source_warnings: asArray(row.source_warnings || row.source_notes?.warnings),
+      stale_source_warnings: asArray(row.stale_source_warnings),
       missing_data_penalties: asObject(row.missing_data_penalties),
+      data_completeness_score: numeric(row.data_completeness_score, numeric(row.trust_components?.data_completeness, null)),
+      trust_components: asObject(row.trust_components),
+      trust_explanation: row.trust_explanation || "",
+      model_agreement_score: numeric(row.model_agreement_score, null),
+      ai_explanation: asObject(row.ai_explanation),
       position_range: Array.isArray(row.position_range)
         ? row.position_range
         : [row.best_case_finish ?? row.finish_interval_low ?? row.rank, row.worst_case_finish ?? row.finish_interval_high ?? row.rank],
@@ -117,6 +126,13 @@ function normalizeLatest(payload) {
     prediction_model: asObject(payload.prediction_model),
     source_health: asObject(payload.source_health || payload.source_status),
     source_status: asObject(payload.source_status || payload.source_health),
+    race_intelligence_summary: asObject(payload.race_intelligence_summary),
+    changed_since_last_run: asObject(payload.changed_since_last_run || payload.change_summary),
+    change_summary: asObject(payload.change_summary || payload.changed_since_last_run),
+    ai_features: asObject(payload.ai_features),
+    source_conflicts: asArray(payload.source_conflicts),
+    event_trust_score: numeric(payload.event_trust_score || payload.prediction_trust_score, null),
+    event_trust_label: payload.event_trust_label || payload.prediction_trust_label || "",
     model_metrics: asObject(payload.model_metrics),
     correction_summary: asObject(payload.correction_summary),
   };
@@ -142,6 +158,12 @@ function normalizeFrontendContract(contract) {
     archive: normalizeArchive(raw.archive),
     schema_version: raw.schema_version || "unavailable",
     prediction_data_version: raw.prediction_data_version || latest?.prediction_data_version || null,
+    race_intelligence_summary: asObject(raw.race_intelligence_summary || latest?.race_intelligence_summary),
+    changed_since_last_run: asObject(raw.changed_since_last_run || raw.what_changed_since_last_run || latest?.changed_since_last_run || latest?.change_summary),
+    event_trust_score: numeric(raw.event_trust_score || latest?.event_trust_score || latest?.prediction_trust_score, null),
+    event_trust_label: raw.event_trust_label || latest?.event_trust_label || latest?.prediction_trust_label || "",
+    ai_features: asObject(raw.ai_features || latest?.ai_features),
+    source_conflicts: asArray(raw.source_conflicts || latest?.source_conflicts),
   };
 }
 
@@ -201,7 +223,7 @@ export async function loadFrontendContract() {
   const fallback = { briefings: [], latest: null, archive: [], schema_version: "unavailable" };
   const raw = await loadJson("data_cache/frontend-contract.json", fallback);
   let normalized = normalizeFrontendContract(raw);
-  if (!normalized.latest?.top10?.length) {
+  if (USE_LAST_VALID_CONTRACT_ON_ERROR && !normalized.latest?.top10?.length) {
     const debug = await loadJson("data_cache/latest-model-debug.json", { payloads: [] });
     const recovered = recoverContractFromDebug(debug, raw);
     if (recovered) normalized = recovered;

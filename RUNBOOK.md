@@ -49,3 +49,16 @@ FIA PDFs can return deterministic `403`. PitWall fetches decision documents with
 - archive/fallback: 6 hours
 
 Serverless instances do not share in-memory cache. Redis/Vercel KV can be added later if shared cache becomes necessary.
+
+## Free AI And Contribution Notes
+
+Deterministic AI summaries are generated from existing contract fields only. To rebuild optional local search:
+
+```bash
+python scripts/build_local_rag_index.py
+python scripts/query_local_rag.py "source warnings"
+```
+
+Local Ollama is disabled unless `LOCAL_LLM_ENABLED=true` and `OLLAMA_MODEL` is set. It is never used in GitHub Actions or Vercel by default.
+
+Workflow-generated commits use `Shreyansh Singhal <111811929+ShreyTriesToCode@users.noreply.github.com>` as the author so real generated-output commits on `main` can count toward the linked GitHub contribution graph. GitHub can take up to 24 hours to show contributions; bot-only author emails may not appear.

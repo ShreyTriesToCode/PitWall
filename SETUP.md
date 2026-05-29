@@ -82,6 +82,17 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Optional Free AI Helpers
+
+Default PitWall intelligence is deterministic and free. No paid API key is required, and AI text cannot modify numeric predictions.
+
+```bash
+.venv/bin/python scripts/build_local_rag_index.py
+.venv/bin/python scripts/query_local_rag.py "model trust"
+```
+
+Local Ollama is optional for development only. Set `LOCAL_LLM_ENABLED=true` and `OLLAMA_MODEL` only on your own machine; GitHub Actions and Vercel do not need it.
+
 ## 6. Check Required Outputs
 
 - `/predictions` should show Race Overview, Top 10 Prediction, and Full Grid Prediction.

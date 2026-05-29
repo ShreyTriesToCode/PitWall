@@ -79,6 +79,23 @@ export default function ModelCenterPage() {
                 `Feature ablation: ${status.data.feature_ablation?.status || "manual only"}`,
               ]} />
             </section>
+            <section className="panel reveal">
+              <SectionTitle title="AI-Style Model Review" />
+              <p className="panel-note">{status.data.ai_model_review?.summary || "Deterministic model review pending."}</p>
+              <RaceControlTimeline items={[
+                status.data.ai_model_review?.numeric_guardrail || "AI text cannot change numeric predictions.",
+                `Local RAG: ${status.data.ai_features?.local_rag_available ? "available" : "not indexed"}`,
+                `Local LLM: ${status.data.ai_features?.local_llm_enabled ? "enabled locally" : "disabled"}`,
+              ]} />
+            </section>
+            <section className="panel reveal">
+              <SectionTitle title="Post-Race Failure Themes" />
+              <RaceControlTimeline items={[
+                status.data.correction_log_summary?.post_race_ai_review?.best_call || "No actual result audit is available yet.",
+                status.data.correction_log_summary?.post_race_ai_review?.worst_miss || "No worst miss available yet.",
+                ...((status.data.correction_log_summary?.post_race_ai_review?.feature_improvement_suggestions || []).slice(0, 3)),
+              ]} />
+            </section>
           </section>
         </>
       )}

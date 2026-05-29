@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-05-29T12:41:09.338011+05:30",
+  "generated_at": "2026-05-29T13:34:10.903136+05:30",
   "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "latest_completed_race_included": "2026-5",
   "latest_available_api_result": "2026-5",
@@ -51,7 +51,7 @@
     "driver_recent3_points",
     "team_pit_duration"
   ],
-  "model_bundle_size_mb": 6.82,
+  "model_bundle_size_mb": null,
   "metrics": {
     "win_auc": 0.9625005695539253,
     "win_brier": 0.032299830598387376,
@@ -759,7 +759,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-29T07:11:09.337857+00:00",
+      "checked_at": "2026-05-29T08:04:10.902912+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -779,7 +779,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-29T07:11:09.337979+00:00",
+      "checked_at": "2026-05-29T08:04:10.903114+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -976,6 +976,69 @@
       }
     }
   },
+  "ai_features": {
+    "enabled": false,
+    "free_mode": true,
+    "provider": "deterministic",
+    "deterministic_explanations_enabled": true,
+    "local_rag_available": false,
+    "local_rag_enabled": false,
+    "local_llm_available": false,
+    "local_llm_enabled": false,
+    "local_llm_provider": "ollama",
+    "huggingface_space_ai_enabled": false,
+    "github_raw_data_fallback": true,
+    "numeric_prediction_guardrail": "AI text summarizes existing fields only and never changes rankings, probabilities, results, weather, FIA notes, or timing state."
+  },
+  "ai_model_review": {
+    "generated_by": "deterministic",
+    "summary": "PitWall AI-style text is deterministic and summarizes existing structured artifacts only.",
+    "numeric_guardrail": "AI features do not modify rankings, probabilities, race results, weather, FIA notes, or timing state.",
+    "local_rag_available": false,
+    "local_llm_enabled": false
+  },
+  "source_conflicts": [
+    {
+      "conflict_type": "stale_cache",
+      "affected_fields": [
+        "source freshness"
+      ],
+      "sources": [
+        "F1DB historical dataset"
+      ],
+      "preferred_source": "fresh official/current source when available",
+      "reason": "F1DB historical dataset data is stale.",
+      "confidence": "medium",
+      "action_needed": "Refresh cache or wait for next generated run."
+    },
+    {
+      "conflict_type": "stale_cache",
+      "affected_fields": [
+        "source freshness"
+      ],
+      "sources": [
+        "RelBench rel-f1 benchmark"
+      ],
+      "preferred_source": "fresh official/current source when available",
+      "reason": "RelBench rel-f1 benchmark data is stale.",
+      "confidence": "medium",
+      "action_needed": "Refresh cache or wait for next generated run."
+    },
+    {
+      "conflict_type": "weather_stale_or_missing",
+      "affected_fields": [
+        "weather"
+      ],
+      "sources": [
+        "OpenF1",
+        "Open-Meteo"
+      ],
+      "preferred_source": "Open-Meteo forecast or OpenF1 track weather",
+      "reason": "No weather object is present in the latest contract.",
+      "confidence": "low",
+      "action_needed": "Keep weather uncertainty visible."
+    }
+  ],
   "contract_validation": {
     "status": "enforced_by_scripts_validate_contracts_py",
     "required_files": [
@@ -1017,7 +1080,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-05-29T12:41:06.548277+05:30",
+    "checked_at": "2026-05-29T13:34:08.962073+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-5",
@@ -1044,7 +1107,7 @@
     },
     "status": "latest_results_available"
   },
-  "mode": "today",
+  "mode": null,
   "selected_targets": [],
   "errors": [],
   "limitations": [

@@ -34,9 +34,9 @@ def _data_completeness(row: dict[str, Any]) -> tuple[float, list[str], list[str]
 
 def trust_label(score: Any) -> str:
     value = safe_float(score)
-    if value is None or value < 48:
+    if value is None or value < 50:
         return "Low trust"
-    if value < 72:
+    if value < 75:
         return "Medium trust"
     return "High trust"
 

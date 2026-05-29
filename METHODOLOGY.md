@@ -53,6 +53,10 @@ The model keeps a maintainable tabular ensemble:
 
 The ensemble is intentionally explainable. SHAP is optional when installed; otherwise PitWall falls back to feature importance, component scores, and source-backed reason tags.
 
+## Free AI Methodology
+
+PitWall uses deterministic templates for AI-style text. The templates can only read fields already present in the prediction row, model status, archive, source health, or correction artifacts. They summarize, classify, and explain; they never infer new race facts or override model predictions. When local evidence is missing, the required response is "Not enough data in local PitWall sources" or a visible missing-data warning.
+
 Model artifacts are mirrored to `model_artifacts/evaluation.json`, `model_artifacts/feature_importance.json`, and `model_artifacts/training_metadata.json` so validation, drift status, feature selection, optional dataset status, and training metadata can be reviewed without opening the pickle bundle.
 
 ## Validation

@@ -8,6 +8,7 @@ export default function SourcesPage() {
   const latest = predictions.data?.latest;
   const health = sourceHealth.data || latest?.source_health || latest?.source_status;
   const sources = health?.sources || [];
+  const conflicts = sourceHealth.data?.source_conflicts || predictions.data?.source_conflicts || latest?.source_conflicts || [];
   return (
     <AppShell active="/sources">
       <AnimatedTicker latest={latest} />
@@ -17,6 +18,24 @@ export default function SourcesPage() {
       {health && (
         <>
           <SourceHealthCard health={health} />
+          <section className="panel reveal">
+            <SectionTitle title="Source Conflicts" action={<StatusBadge label={`${conflicts.length} conflicts`} tone={conflicts.length ? "amber" : "green"} />} />
+            {conflicts.length ? (
+              <div className="archive-grid">
+                {conflicts.map((conflict, index) => (
+                  <article className="panel archive-card" key={`${conflict.conflict_type}-${index}`}>
+                    <SectionTitle title={conflict.conflict_type?.replaceAll?.("_", " ") || "Source conflict"} action={<StatusBadge label={conflict.confidence || "medium"} tone={conflict.confidence === "high" ? "red" : "amber"} />} />
+                    <p className="panel-note">{conflict.reason}</p>
+                    <div className="metric-grid compact">
+                      <Metric label="Preferred source" value={conflict.preferred_source || "Pending"} />
+                      <Metric label="Affected fields" value={(conflict.affected_fields || []).join(", ") || "Pending"} />
+                    </div>
+                    <p className="panel-note">{conflict.action_needed}</p>
+                  </article>
+                ))}
+              </div>
+            ) : <EmptyState title="No source conflicts reported" body="PitWall did not detect stale, missing, or conflicting source states in the latest contract." />}
+          </section>
           <section className="panel reveal">
             <SectionTitle title="Source Details" />
             {sources.length ? (

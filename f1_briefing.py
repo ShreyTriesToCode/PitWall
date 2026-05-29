@@ -63,6 +63,13 @@ try:
     from pitwall.models import simulation as pitwall_simulation
     from pitwall.models.trust import enrich_prediction_trust as pitwall_enrich_prediction_trust
     from pitwall import storage as pitwall_storage
+    from pitwall.ai.deterministic import enrich_driver_ai_explanation as pitwall_enrich_driver_ai_explanation
+    from pitwall.ai.post_race import build_post_race_ai_review as pitwall_build_post_race_ai_review
+    from pitwall.ai.source_conflicts import detect_source_conflicts as pitwall_detect_source_conflicts
+    from pitwall.ai.summaries import (
+        build_changed_since_last_run as pitwall_build_changed_since_last_run,
+        build_race_intelligence_summary as pitwall_build_race_intelligence_summary,
+    )
     from pitwall.contracts.frontend_contract import write_json_artifact as pitwall_write_json_artifact
     from pitwall.validation.contracts import validate_contract_files as pitwall_validate_contract_files
 except Exception:
@@ -77,6 +84,11 @@ except Exception:
     pitwall_contract = None
     pitwall_simulation = None
     pitwall_storage = None
+    pitwall_enrich_driver_ai_explanation = None
+    pitwall_build_post_race_ai_review = None
+    pitwall_detect_source_conflicts = None
+    pitwall_build_changed_since_last_run = None
+    pitwall_build_race_intelligence_summary = None
     pitwall_write_json_artifact = None
     pitwall_validate_contract_files = None
 
@@ -99,6 +111,17 @@ NOTIFICATION_WINDOW_HOURS = int(os.getenv("NOTIFICATION_WINDOW_HOURS", "8"))
 FORCE_NOTIFY = os.getenv("FORCE_NOTIFY", "false").lower() == "true"
 OUTPUT_MODE = os.getenv("OUTPUT_MODE", "auto").lower().strip()
 GITHUB_EVENT_NAME = os.getenv("GITHUB_EVENT_NAME", "").lower().strip()
+
+FREE_MODE = os.getenv("FREE_MODE", "true").lower() == "true"
+AI_FEATURES_ENABLED = os.getenv("AI_FEATURES_ENABLED", "false").lower() == "true"
+DETERMINISTIC_EXPLANATIONS_ENABLED = os.getenv("DETERMINISTIC_EXPLANATIONS_ENABLED", "true").lower() == "true"
+LOCAL_LLM_ENABLED = os.getenv("LOCAL_LLM_ENABLED", "false").lower() == "true"
+LOCAL_LLM_PROVIDER = os.getenv("LOCAL_LLM_PROVIDER", "ollama").strip() or "ollama"
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").strip()
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "").strip()
+LOCAL_RAG_ENABLED = os.getenv("LOCAL_RAG_ENABLED", "false").lower() == "true"
+HUGGINGFACE_SPACE_AI_ENABLED = os.getenv("HUGGINGFACE_SPACE_AI_ENABLED", "false").lower() == "true"
+GITHUB_RAW_DATA_FALLBACK = os.getenv("GITHUB_RAW_DATA_FALLBACK", "true").lower() == "true"
 
 ML_START_YEAR = int(os.getenv("ML_START_YEAR", "2018"))
 USE_FULL_HISTORICAL_DATA = os.getenv("USE_FULL_HISTORICAL_DATA", "true").lower() == "true"
@@ -6108,11 +6131,62 @@ def enrich_prediction_trust(row, source_health=None, stage=None, validation_stre
     return row
 
 
+def enrich_driver_ai_explanation(row, context=None):
+    if DETERMINISTIC_EXPLANATIONS_ENABLED and pitwall_enrich_driver_ai_explanation:
+        return pitwall_enrich_driver_ai_explanation(row, context or {})
+    return row
+
+
+def detect_source_conflicts(payload):
+    if pitwall_detect_source_conflicts:
+        return pitwall_detect_source_conflicts(payload or {})
+    return []
+
+
+def race_intelligence_summary(latest):
+    if pitwall_build_race_intelligence_summary:
+        return pitwall_build_race_intelligence_summary(latest or {})
+    return {
+        "headline": "Race intelligence unavailable.",
+        "race_week_summary": "Deterministic explanation module is unavailable.",
+        "key_uncertainties": ["Not enough data in local PitWall sources."],
+        "source_warnings": [],
+        "model_disagreement_summary": "Pending",
+        "recommended_user_takeaway": "Use predictions as uncertainty-aware estimates, not guarantees.",
+        "confidence_limitations": [],
+        "generated_by": "deterministic",
+    }
+
+
+def changed_since_last_run(previous_contract, next_contract):
+    if pitwall_build_changed_since_last_run:
+        return pitwall_build_changed_since_last_run(previous_contract, next_contract)
+    return contract_change_summary(previous_contract, next_contract)
+
+
+def ai_feature_status():
+    rag_index = DATA_CACHE_DIR / "rag_index" / "index.json"
+    return {
+        "enabled": bool(AI_FEATURES_ENABLED),
+        "free_mode": bool(FREE_MODE),
+        "provider": "deterministic",
+        "deterministic_explanations_enabled": bool(DETERMINISTIC_EXPLANATIONS_ENABLED),
+        "local_rag_available": rag_index.exists(),
+        "local_rag_enabled": bool(LOCAL_RAG_ENABLED),
+        "local_llm_available": bool(LOCAL_LLM_ENABLED and OLLAMA_MODEL),
+        "local_llm_enabled": bool(LOCAL_LLM_ENABLED),
+        "local_llm_provider": LOCAL_LLM_PROVIDER,
+        "huggingface_space_ai_enabled": bool(HUGGINGFACE_SPACE_AI_ENABLED),
+        "github_raw_data_fallback": bool(GITHUB_RAW_DATA_FALLBACK),
+        "numeric_prediction_guardrail": "AI text summarizes existing fields only and never changes rankings, probabilities, results, weather, FIA notes, or timing state.",
+    }
+
+
 def prediction_trust_label(score):
     score = safe_float(score) or 0
-    if score >= 72:
+    if score >= 75:
         return "High trust"
-    if score >= 48:
+    if score >= 50:
         return "Medium trust"
     return "Low trust"
 
@@ -7415,6 +7489,15 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
         "dataset_sources": dataset_sources,
         "fia_ingestion": fia_document_summary(registry),
         "source_health": latest_source_health_from_index(),
+        "ai_features": ai_feature_status(),
+        "ai_model_review": {
+            "generated_by": "deterministic",
+            "summary": "PitWall AI-style text is deterministic and summarizes existing structured artifacts only.",
+            "numeric_guardrail": "AI features do not modify rankings, probabilities, race results, weather, FIA notes, or timing state.",
+            "local_rag_available": (DATA_CACHE_DIR / "rag_index" / "index.json").exists(),
+            "local_llm_enabled": LOCAL_LLM_ENABLED,
+        },
+        "source_conflicts": detect_source_conflicts({"latest": {"source_health": latest_source_health_from_index(), "warnings": errors or []}}),
         "contract_validation": {
             "status": "enforced_by_scripts_validate_contracts_py",
             "required_files": [
@@ -7489,6 +7572,7 @@ def correction_log_summary():
                 "count": len(corrections),
                 "latest": corrections[0] if corrections else None,
                 "status": data.get("status", "Available" if corrections else "Pending"),
+                "post_race_ai_review": data.get("post_race_ai_review"),
             }
         except Exception:
             pass
@@ -7717,6 +7801,7 @@ def enrich_predictions_with_quality_outputs(rows, source_health=None, stage=None
         row.setdefault("simulation", sim)
         row.update(enrich_model_disagreement(row))
         row.update(enrich_prediction_trust(row, source_health=source_health, stage=stage, validation_strength=row.get("confidence")))
+        row.update(enrich_driver_ai_explanation(row, {"stage": stage, "source_health": source_health}))
     return normalized, simulation
 
 
@@ -7815,6 +7900,11 @@ def normalize_entry_contract(entry):
                 validation_strength=(entry.get("model_metrics") or {}).get("spearman")
                 or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}).get("spearman"),
             ))
+            enriched.update(enrich_driver_ai_explanation(enriched, {
+                **entry,
+                "stage": stage,
+                "source_health": source_health,
+            }))
             normalized.append(enriched)
             if limit and len(normalized) >= limit:
                 break
@@ -7863,6 +7953,26 @@ def normalize_entry_contract(entry):
         source="Generated contract",
     )
     effective_weights = entry.get("effective_model_weights") or prediction_model.get("stage_weights") or stage_prediction_weights(stage, entry, entry.get("weather") or {})
+    source_conflicts = entry.get("source_conflicts") or detect_source_conflicts({
+        "latest": {
+            **entry,
+            "source_health": source_health,
+            "source_status": source_health,
+            "warnings": contract_warnings,
+        }
+    })
+    event_trust_score = round(average([row.get("prediction_trust_score") for row in full_grid]) or 0, 2)
+    event_trust_label = prediction_trust_label(event_trust_score)
+    intelligence = race_intelligence_summary({
+        **entry,
+        "top10": top10,
+        "full_grid": full_grid,
+        "source_health": source_health,
+        "source_conflicts": source_conflicts,
+        "prediction_trust_score": event_trust_score,
+        "prediction_trust_label": event_trust_label,
+        "stage": stage,
+    })
     return {
         **entry,
         "race_id": race_id,
@@ -7882,7 +7992,11 @@ def normalize_entry_contract(entry):
         "effective_model_weights": {k: round(v, 4) for k, v in effective_weights.items()},
         "source_health": source_health,
         "source_status": entry.get("source_status") or source_health,
-        "source_conflicts": entry.get("source_conflicts") or [],
+        "source_conflicts": source_conflicts,
+        "ai_features": ai_feature_status(),
+        "race_intelligence_summary": intelligence,
+        "event_trust_score": event_trust_score,
+        "event_trust_label": event_trust_label,
         "model_limitations": [
             "Predictions are uncertainty-aware estimates, not guaranteed outcomes.",
             "Missing FIA documents, delayed APIs, weather shifts, race control, and mechanical failures reduce confidence.",
@@ -7906,11 +8020,11 @@ def normalize_entry_contract(entry):
             "average_confidence": round(average([row.get("confidence") for row in full_grid]) or 0, 2),
             "average_uncertainty": round(average([row.get("uncertainty_score") for row in full_grid]) or 0, 2),
             "source_health_score": source_health.get("overall_score"),
-            "event_prediction_trust_score": round(average([row.get("prediction_trust_score") for row in full_grid]) or 0, 2),
+            "event_prediction_trust_score": event_trust_score,
             "high_disagreement_count": sum(1 for row in full_grid if row.get("model_disagreement_level") == "high"),
         },
-        "prediction_trust_score": round(average([row.get("prediction_trust_score") for row in full_grid]) or 0, 2),
-        "prediction_trust_label": prediction_trust_label(average([row.get("prediction_trust_score") for row in full_grid]) or 0),
+        "prediction_trust_score": event_trust_score,
+        "prediction_trust_label": event_trust_label,
         "dnf_survival": {row.get("driver_id"): {"dnf_probability": row.get("dnf_probability"), "classified_finish_probability": row.get("classified_finish_probability")} for row in full_grid},
         "simulation": simulation,
         "race_factors": entry.get("race_factors") or race_factors_from_context(entry, entry.get("weather") or {}, source_health),
@@ -8090,6 +8204,22 @@ def generate_correction_log(briefings):
         "status": "Available" if corrections else "Pending",
         "corrections": corrections,
     }
+    payload["post_race_ai_review"] = (
+        pitwall_build_post_race_ai_review(payload)
+        if pitwall_build_post_race_ai_review
+        else {
+            "best_call": "No actual result audit is available yet.",
+            "worst_miss": "No actual result audit is available yet.",
+            "biggest_rank_errors": [],
+            "likely_failure_causes": [],
+            "source_gaps": [],
+            "model_gaps": [],
+            "feature_improvement_suggestions": [],
+            "chaos_factors": [],
+            "was_miss_predictable": "Not enough data in local PitWall sources.",
+            "generated_by": "deterministic",
+        }
+    )
     payload = sanitize_public_paths(payload)
     MODEL_CORRECTIONS_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     return payload
@@ -8211,7 +8341,11 @@ def generate_frontend_contract_files(index_data=None):
         "source_registry": registry,
         "dataset_sources": optional_dataset_source_statuses(),
         "source_health": (latest or {}).get("source_health") or latest_source_health_from_index(),
-        "source_conflicts": (latest or {}).get("source_conflicts", []),
+        "source_conflicts": (latest or {}).get("source_conflicts") or detect_source_conflicts({"latest": latest or {}}),
+        "ai_features": ai_feature_status(),
+        "race_intelligence_summary": race_intelligence_summary(latest or {}),
+        "event_trust_score": (latest or {}).get("event_trust_score") or (latest or {}).get("prediction_trust_score") or 0,
+        "event_trust_label": (latest or {}).get("event_trust_label") or (latest or {}).get("prediction_trust_label") or "Low trust",
         "model_limitations": (latest or {}).get("model_limitations", []),
         **fia_summary,
         **timing,
@@ -8222,9 +8356,19 @@ def generate_frontend_contract_files(index_data=None):
         "storage": {"sqlite_path": str(PITWALL_DB_PATH.relative_to(BASE_DIR)) if PITWALL_DB_PATH.is_relative_to(BASE_DIR) else str(PITWALL_DB_PATH), "supabase": supabase_sync_status()},
     }
     if latest:
-        latest["change_summary"] = contract_change_summary(previous_contract, contract)
+        latest["source_conflicts"] = latest.get("source_conflicts") or contract["source_conflicts"]
+        latest["ai_features"] = ai_feature_status()
+        latest["race_intelligence_summary"] = latest.get("race_intelligence_summary") or race_intelligence_summary(latest)
+        latest["event_trust_score"] = latest.get("event_trust_score") or latest.get("prediction_trust_score") or 0
+        latest["event_trust_label"] = latest.get("event_trust_label") or latest.get("prediction_trust_label") or "Low trust"
+        latest["change_summary"] = changed_since_last_run(previous_contract, contract)
+        latest["changed_since_last_run"] = latest["change_summary"]
         contract["latest"] = latest
         contract["what_changed_since_last_run"] = latest["change_summary"]
+        contract["changed_since_last_run"] = latest["change_summary"]
+        contract["race_intelligence_summary"] = latest["race_intelligence_summary"]
+        contract["event_trust_score"] = latest["event_trust_score"]
+        contract["event_trust_label"] = latest["event_trust_label"]
     contract = sanitize_public_paths(sanitize_timing_source_labels(contract))
     write_json_artifact(DATA_CACHE_DIR / "frontend-contract.json", contract, previous_path=DATA_CACHE_DIR / "frontend-contract.previous.json")
     generate_feature_store(briefings)

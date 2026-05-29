@@ -55,6 +55,18 @@ def validate_prediction_row(row: dict[str, Any], *, path: str = "row") -> list[s
             continue
         if key != "rank" and not 0 <= number <= 1000:
             errors.append(f"{path}.{key} outside expected range")
+    if "prediction_trust_score" in row:
+        try:
+            trust = float(row.get("prediction_trust_score"))
+        except (TypeError, ValueError):
+            errors.append(f"{path}.prediction_trust_score is not numeric")
+        else:
+            if not 0 <= trust <= 100:
+                errors.append(f"{path}.prediction_trust_score outside 0-100 range")
+    if "ai_explanation" in row and not isinstance(row.get("ai_explanation"), dict):
+        errors.append(f"{path}.ai_explanation is not an object")
+    if "model_disagreement_level" in row and row.get("model_disagreement_level") not in {"low", "medium", "high"}:
+        errors.append(f"{path}.model_disagreement_level is invalid")
     return errors
 
 
@@ -88,6 +100,10 @@ def validate_frontend_contract(contract: dict[str, Any]) -> dict[str, Any]:
         errors.append("latest.full_grid contains duplicate driver_id values")
     if errors:
         raise ContractValidationError("; ".join(errors))
+    if "race_intelligence_summary" in latest and not isinstance(latest.get("race_intelligence_summary"), dict):
+        raise ContractValidationError("latest.race_intelligence_summary is not an object")
+    if "changed_since_last_run" in latest and not isinstance(latest.get("changed_since_last_run"), dict):
+        raise ContractValidationError("latest.changed_since_last_run is not an object")
     return {
         "latest_top10_count": len(top10),
         "latest_full_grid_count": len(full_grid),

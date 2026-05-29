@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-05-29
+
+### Added
+
+- Deterministic, no-paid-API AI-style explanations for driver rows, race summaries, change summaries, source conflicts, and post-race reviews.
+- Optional local RAG/Ollama scaffolding that is disabled by default and never changes numeric predictions.
+- `/assistant` local-data page, richer home/predictions/model/archive/sources/live panels, and Playwright smoke coverage for the new UI.
+- `FREE_DEPLOYMENT.md`, `LOCAL_AI.md`, `RUN_REPORT.md`, and local RAG/query/run-report scripts.
+
+### Changed
+
+- GitHub Actions generated-output commits now use `Shreyansh Singhal <111811929+ShreyTriesToCode@users.noreply.github.com>` as author for real generated commits on `main`.
+- Frontend contracts now include deterministic AI fields while preserving `top10`, `top_10`, `full_grid`, and `all_predictions`.
+
 ## 2026-05-28
 
 ### Added

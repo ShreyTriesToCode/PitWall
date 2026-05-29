@@ -1,5 +1,12 @@
 # PitWall Roadmap
 
+## Free Intelligence Follow-Ups
+
+- Expand local RAG snippets with fixture-tested citations from FIA text and model reports.
+- Add a richer local-only assistant UI after the deterministic contract fields stabilize.
+- Add optional SentenceTransformers embeddings for local development without committing model files.
+- Add workflow status checks that open the latest generated commit and verify author identity automatically.
+
 ## Completed In The Current Hardening Pass
 
 - Contract validator for `frontend-contract.json`, `briefings/index.json`, `latest-model-debug.json`, and `model-status.json`.

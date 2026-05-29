@@ -127,6 +127,12 @@ Feature availability is stage-gated. Pre-weekend predictions cannot use same-wee
 
 Explanation tags must map to available feature groups. PitWall must not claim practice pace, strong qualifying, upgrade validation, PU reliability, weather advantage, penalties, or live pace unless that source exists for the current stage. Missing data appears as a confidence reducer, not positive evidence.
 
+## Deterministic Intelligence Layer
+
+The AI-style layer is not a model input and does not change numeric outputs. It reads the generated contract after rankings/probabilities are produced, then creates per-driver `ai_explanation`, `race_intelligence_summary`, `changed_since_last_run`, deterministic source conflict classifications, and post-race audit summaries when actual result rows exist.
+
+This keeps the prediction system honest: model output remains model output, while the intelligence layer translates uncertainty and evidence into readable text.
+
 ## Future Seasons
 
 `TARGET_SEASON=auto` uses the current season; future seasons can be configured through `FIA_DOCUMENTS_SEASON_URL_{YEAR}` and Formula1.com/Jolpica discovery. If a future FIA page is unavailable, the registry marks it pending and continues from fallbacks. The 2026 regulation context can be inherited for 2027+ only as an explicit proxy until newer official sources are configured or discovered.

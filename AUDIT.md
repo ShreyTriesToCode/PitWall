@@ -2,6 +2,16 @@
 
 Generated: 2026-05-28
 
+## 2026-05-29 Free AI Intelligence Audit
+
+- DONE: Existing trust/disagreement modules were preserved and extended with deterministic AI summaries.
+- DONE: `frontend-contract.json` now carries `race_intelligence_summary`, `changed_since_last_run`, `ai_features`, `source_conflicts`, event trust aliases, and per-driver `ai_explanation`.
+- DONE: Local RAG and Ollama support are optional and disabled by default; deterministic provider remains the default.
+- DONE: `/`, `/predictions`, `/model`, `/archive`, `/sources`, `/live`, and `/assistant` expose clearer AI-style, trust, source, and freshness states.
+- DONE: GitHub Actions generated commits now use `Shreyansh Singhal <111811929+ShreyTriesToCode@users.noreply.github.com>` as author.
+- PARTIAL: Optional local RAG currently uses keyword/BM25-style search only; embeddings remain a future local-only enhancement.
+- NOT APPLICABLE: Paid hosted LLM or vector database integration was intentionally not added.
+
 ## DONE
 
 - Backend entrypoint exists in `f1_briefing.py` and still supports the public briefing, retrain, model-status, and frontend-contract commands.

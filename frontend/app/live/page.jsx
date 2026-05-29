@@ -754,6 +754,8 @@ export default function LivePage() {
           <span>Updated: <strong>{lastUpdated ? lastUpdated.toLocaleTimeString() : "-"}</strong></span>
           <span>Mode: <strong>{payload?.timing_mode || (auto ? `auto ${streamState}` : "manual")}</strong></span>
           <span>Source: <strong>{payload?.timing_source || payload?.source || "-"}</strong></span>
+          <span>Server fetched: <strong>{payload?.server_fetched_at ? time(payload.server_fetched_at) : "-"}</strong></span>
+          <span>Packet: <strong>{payload?.source_packet_at ? time(payload.source_packet_at) : "-"}</strong></span>
           <span>Delay: <strong>{settings.delay}s</strong></span>
           <span>Lap: <strong>{fmt(lapCount.current_lap)}/{fmt(lapCount.total_laps)}</strong></span>
           <span>Track: <strong>{fmt(trackStatus?.Status || trackStatus?.Message || trackStatus?.status)}</strong></span>
@@ -807,6 +809,18 @@ export default function LivePage() {
           <div>
             <span>Radio clips</span>
             <strong>{radio.length}</strong>
+          </div>
+          <div>
+            <span>Selected session</span>
+            <strong>{payload?.auto_selected_session?.session_name || payload?.session_resolution?.selected_session || fmt(session.session_name)}</strong>
+          </div>
+          <div>
+            <span>Fallback reason</span>
+            <strong>{payload?.fallback_reason || payload?.live_fallback_reason || payload?.session_resolution?.reason || "None"}</strong>
+          </div>
+          <div>
+            <span>Cache</span>
+            <strong>{payload?.timing_cache_status || "miss"}</strong>
           </div>
         </section>
 

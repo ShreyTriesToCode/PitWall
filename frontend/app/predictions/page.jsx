@@ -149,6 +149,30 @@ export default function PredictionsPage() {
               <Metric label="Timing Mode" value={selectedPayload.timing_mode || latest.timing_mode || "unavailable"} />
             </div>
           </section>
+          <section className="dashboard-grid">
+            <div className="panel reveal">
+              <SectionTitle title="AI-Style Race Summary" />
+              <p className="panel-note">{(selectedPayload.race_intelligence_summary || latest.race_intelligence_summary || data.race_intelligence_summary)?.headline || "Deterministic race summary pending."}</p>
+              <div className="podium-list">
+                {((selectedPayload.race_intelligence_summary || latest.race_intelligence_summary || data.race_intelligence_summary)?.key_uncertainties || ["No major deterministic uncertainty flag was reported."]).slice(0, 4).map((item, index) => (
+                  <article key={`${item}-${index}`}><span>{index + 1}</span><strong>{item}</strong><small>Generated from contract fields only</small></article>
+                ))}
+              </div>
+            </div>
+            <div className="panel reveal">
+              <SectionTitle title="Trust And Source Warnings" />
+              <div className="metric-grid compact">
+                <Metric label="Event trust" value={`${data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score ?? "Pending"}${data.event_trust_score || latest.event_trust_score || latest.prediction_trust_score ? "%" : ""}`} />
+                <Metric label="Source conflicts" value={(data.source_conflicts || latest.source_conflicts || []).length} />
+                <Metric label="AI provider" value={(data.ai_features || latest.ai_features)?.provider || "deterministic"} />
+                <Metric label="Free mode" value={(data.ai_features || latest.ai_features)?.free_mode === false ? "Off" : "On"} />
+              </div>
+            </div>
+            <div className="panel reveal">
+              <SectionTitle title="What Changed" />
+              <p className="panel-note">{(data.changed_since_last_run || selectedPayload.changed_since_last_run || latest.changed_since_last_run || latest.change_summary)?.summary || "No previous valid contract available."}</p>
+            </div>
+          </section>
           {!predictions.length && <EmptyState title={targetPending ? `${requestedTarget} prediction pending` : "No prediction rows match"} body={targetPending ? "That target has not been generated yet. The next backend run will expose it when the data exists." : "Clear the search or try another driver/team."} />}
           {top10Rows.length > 0 && (
             <section className="panel reveal prediction-section">
