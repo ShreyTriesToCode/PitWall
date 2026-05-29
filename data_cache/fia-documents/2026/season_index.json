@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-  "status": "available",
-  "checked_at": "2026-05-29T14:04:19.523121+05:30",
+  "status": "unavailable_using_cached_index",
+  "checked_at": "2026-05-29T15:26:31.104881+05:30",
   "documents": [
     {
       "season": 2026,
@@ -25,12 +25,12 @@
       "hash": "ed9d66f8f66f5f48e88e931ea5251baee7a4cd8f41adda7b399eb0b248b7935e",
       "first_seen_at": "2026-05-29T13:49:30.835063+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835111+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -53,12 +53,12 @@
       "hash": "944e6099a55c5d997315daf25e90255fe37c0a6ff7123babb4b9dd500b3370b3",
       "first_seen_at": "2026-05-29T13:49:30.835222+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835238+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -81,12 +81,12 @@
       "hash": "9e759330017748ef5629e56f349c0c38205ba4e8d359652f6c47c7241871a959",
       "first_seen_at": "2026-05-29T13:49:30.835338+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835352+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -109,12 +109,12 @@
       "hash": "29b82231322e9cb21c03e153c46ed761c6b0265d2b6907b304ebfb194890578c",
       "first_seen_at": "2026-05-29T13:49:30.835451+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835468+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -137,12 +137,12 @@
       "hash": "9d02dd03ef5d54ea926b5b6315063f955447ab15696b71b1d9dd30ea1c89d8cd",
       "first_seen_at": "2026-05-29T13:49:30.835563+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835576+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -165,12 +165,12 @@
       "hash": "5762778903566001aa6dccb893313c34f4964d9f74b4f452e031f66083e94759",
       "first_seen_at": "2026-05-29T13:49:30.835676+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835690+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -193,12 +193,12 @@
       "hash": "cd71e2f2cfe58ec8447e8944d09c9ed8fd65aa10ac1a9d24c4c4d6449ecabc10",
       "first_seen_at": "2026-05-29T13:49:30.835770+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835782+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -221,12 +221,12 @@
       "hash": "a58a96d476525da06463afb8d7009076dfacb318c7f2f1cd0a802e91f2e690f3",
       "first_seen_at": "2026-05-29T13:49:30.835870+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835882+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -249,12 +249,12 @@
       "hash": "c7bdc323c6114b96e833d6cecc3759cdef1d3e0c3814a5831e2c73a82b1d915d",
       "first_seen_at": "2026-05-29T13:49:30.835963+05:30",
       "last_checked_at": "2026-05-29T13:49:30.835975+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -277,12 +277,12 @@
       "hash": "357c15434acf1425510ab304b1d797f20c145c501940b50ffb4e4abc01f4e7a9",
       "first_seen_at": "2026-05-29T13:49:30.836049+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836061+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -305,12 +305,12 @@
       "hash": "c72a5159d75edd2af050edcc05c1f4adda185c2c02025cbae6fd6f6f487dc90e",
       "first_seen_at": "2026-05-29T13:49:30.836134+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836146+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -333,12 +333,12 @@
       "hash": "372f56c77592120c2f0f53aa6f14e1f9fed92d4d81330e83c3406a50f1718d31",
       "first_seen_at": "2026-05-29T13:49:30.836228+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836240+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -361,12 +361,12 @@
       "hash": "83d431f5e1bebbc81beb78ebc4de2fed52e5426403dd51b6956690ccad14a01d",
       "first_seen_at": "2026-05-29T13:49:30.836316+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836328+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -389,12 +389,12 @@
       "hash": "aa1964a534b01ebe084d8cd6452e3317d5aafbd3239177e38b1129d0a15c2be3",
       "first_seen_at": "2026-05-29T13:49:30.836399+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836410+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -417,12 +417,12 @@
       "hash": "956390d4f519a18be8a14899f49f7b8c1ac5817076c069552a3462def096762b",
       "first_seen_at": "2026-05-29T13:49:30.836483+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836494+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -445,12 +445,12 @@
       "hash": "79b71b1f8b5a413eaaac698b656f200b7a80fc3c3140770c9b0eb6c18bba4cc6",
       "first_seen_at": "2026-05-29T13:49:30.836569+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836581+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -473,12 +473,12 @@
       "hash": "b94464d9f49dab7e56be973ecc576c6c2f46c240cabdfbaf0a85e93840c69d31",
       "first_seen_at": "2026-05-29T13:49:30.836675+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836688+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -501,12 +501,12 @@
       "hash": "dc32373fb43c50e00b038dbcbb2cd28d3df170c36740d49cc25a7281a40668c8",
       "first_seen_at": "2026-05-29T13:49:30.836764+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836775+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -529,12 +529,12 @@
       "hash": "368189865710d0305f64191fdb72709e870442dea0d3b9cd683e14ec980b44a9",
       "first_seen_at": "2026-05-29T13:49:30.836845+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836856+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -557,12 +557,12 @@
       "hash": "d864d0be867cdf981dbf3cca743d9a04581dfd7464feb82d0880a682e9f06670",
       "first_seen_at": "2026-05-29T13:49:30.836948+05:30",
       "last_checked_at": "2026-05-29T13:49:30.836960+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -585,12 +585,12 @@
       "hash": "2148092913775130356be7d61fe5a574cccd3bad64ffef14b6260a462a1cea5d",
       "first_seen_at": "2026-05-29T13:49:30.837041+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837053+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -613,12 +613,12 @@
       "hash": "9153ecf92d8a43ba80b81c327555bf58a01eab2ee9c0d09ad0583654caae77da",
       "first_seen_at": "2026-05-29T13:49:30.837129+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837141+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -641,12 +641,12 @@
       "hash": "6ff47ee52d0228971d60392943ac19e6a9f5b7fc8b18876292ebe6c1b4f4fd5b",
       "first_seen_at": "2026-05-29T13:49:30.837212+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837224+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -669,12 +669,12 @@
       "hash": "6a903c045418638058aa964102cc94765461ceb56853cbac922f632f77596a5b",
       "first_seen_at": "2026-05-29T13:49:30.837295+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837306+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -697,12 +697,12 @@
       "hash": "b2be5fc8d330d20fd7edad5b74c15dadcf16491de66bec09b95eaaf0f89a61c4",
       "first_seen_at": "2026-05-29T13:49:30.837383+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837394+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -725,12 +725,12 @@
       "hash": "93c25eca888fa15c45443ee06685613b836377ce4c47febd5231f04dbdf722d3",
       "first_seen_at": "2026-05-29T13:49:30.837466+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837477+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -753,12 +753,12 @@
       "hash": "76b9043e3da6b4fb3045e0a1bee2e723cb8b24438c646dfe27a3eec8586667a5",
       "first_seen_at": "2026-05-29T13:49:30.837554+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837565+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -781,12 +781,12 @@
       "hash": "76fba73b9ba1edc6b70494dd5731611e79fd4be20134d8ad793dfb19a5a088d3",
       "first_seen_at": "2026-05-29T13:49:30.837650+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837662+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -809,12 +809,12 @@
       "hash": "055b59d3a60a9a5951e01de8f35e824cee0044c269517fbc62248135549e289d",
       "first_seen_at": "2026-05-29T13:49:30.837742+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837753+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -837,12 +837,12 @@
       "hash": "cf87d029abd773b89975d70213aa8d0e48896f85769ab0072c904a70ff516485",
       "first_seen_at": "2026-05-29T13:49:30.837826+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837837+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -865,12 +865,12 @@
       "hash": "c07953c8376697bb17dabdf668dbbf59e286f9ca880c755117cd006e5eeded70",
       "first_seen_at": "2026-05-29T13:49:30.837906+05:30",
       "last_checked_at": "2026-05-29T13:49:30.837917+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -893,12 +893,12 @@
       "hash": "467ecb2211dab76e5a7bad96a29eace03bb80bb391da66574a8405899f9925e6",
       "first_seen_at": "2026-05-29T13:49:30.837992+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838004+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -921,12 +921,12 @@
       "hash": "eed32f82482934b56b66f5c035b2c29929aabab2d347ef6a30d9ee089093dac6",
       "first_seen_at": "2026-05-29T13:49:30.838079+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838090+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -949,12 +949,12 @@
       "hash": "4af8fb40527856e682498f9f5ffce35786aedd83d928fab746f2b9cd7283b0d8",
       "first_seen_at": "2026-05-29T13:49:30.838164+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838175+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -977,12 +977,12 @@
       "hash": "7832c9a2dc5f2742f9b0d632bc09be38601e5efac5b7b1d515c6f5fcb14decf7",
       "first_seen_at": "2026-05-29T13:49:30.838244+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838255+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1005,12 +1005,12 @@
       "hash": "19f857355f93bdbedd04c8089a4c4d5cf2a3a5b0c712f9dedfcc3e967cce3366",
       "first_seen_at": "2026-05-29T13:49:30.838331+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838342+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1033,12 +1033,12 @@
       "hash": "e63b81d94046629c8abc6f3ba961ff1c80f0d64f2d387e82733fd973831c3098",
       "first_seen_at": "2026-05-29T13:49:30.838415+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838427+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1061,12 +1061,12 @@
       "hash": "e569e149c049e7919be93af56a00c2f8e2c87b53c8ef302fa319b77a6f0ca52b",
       "first_seen_at": "2026-05-29T13:49:30.838502+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838514+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1089,12 +1089,12 @@
       "hash": "27aeafd3ecbf207d3c9e63025b99dfbc53f9b5b9a3b2ba31530b50e38b0600c9",
       "first_seen_at": "2026-05-29T13:49:30.838587+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838599+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1117,12 +1117,12 @@
       "hash": "f5d18ee093cfc13b21b2c245c7b41ef8c4e90cd664d0689129f36a1e4468a1e9",
       "first_seen_at": "2026-05-29T13:49:30.838684+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838696+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1145,12 +1145,12 @@
       "hash": "0208cbb976c60c4e463fb636775e93d305f5564fe0e60ddeaf8fcbdf47ccc68a",
       "first_seen_at": "2026-05-29T13:49:30.838778+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838789+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1173,12 +1173,12 @@
       "hash": "d9e6960b46936a2f491ba5e9fece2425954f1743e7a5f88f2296dec96fc424ac",
       "first_seen_at": "2026-05-29T13:49:30.838864+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838875+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1201,12 +1201,12 @@
       "hash": "564918dbfe49add03aff2aa7fa23ca42988aa6355bc26a330ddb7a0e805daac1",
       "first_seen_at": "2026-05-29T13:49:30.838945+05:30",
       "last_checked_at": "2026-05-29T13:49:30.838956+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1229,12 +1229,12 @@
       "hash": "59833244d21d136e621e8bbe5d7fd43e1032fd0c448cb9e618a07e598e2c74e8",
       "first_seen_at": "2026-05-29T13:49:30.839040+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839051+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1257,12 +1257,12 @@
       "hash": "04a9640aba585f6bdce52ec443c3b37eb053992a29ef17b821cbf055ccebc268",
       "first_seen_at": "2026-05-29T13:49:30.839130+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839141+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1285,12 +1285,12 @@
       "hash": "347c2fb635676849d6330b0a25ac0fceb52517b439937d9840932550084eb3be",
       "first_seen_at": "2026-05-29T13:49:30.839210+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839222+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1313,12 +1313,12 @@
       "hash": "db2a2dcf2332c02a4b2d19445780015fcacd5b3ebdae9132eff0ae4bc4dc8843",
       "first_seen_at": "2026-05-29T13:49:30.839291+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839303+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1341,12 +1341,12 @@
       "hash": "00426f26685a9463141a8b016d7478b9a595fb8a8a1bc67cc7f60a241e76e8de",
       "first_seen_at": "2026-05-29T13:49:30.839379+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839391+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1369,12 +1369,12 @@
       "hash": "73fef1b563a8aeef2c4815eef6ac3621f3d7d4aad92ca73065aa22198867f978",
       "first_seen_at": "2026-05-29T13:49:30.839466+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839477+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1397,12 +1397,12 @@
       "hash": "32386793c212a041746bc7e51bafc959fc475d3c7894b5c0c65dceb8d1ba6e60",
       "first_seen_at": "2026-05-29T13:49:30.839547+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839559+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1425,12 +1425,12 @@
       "hash": "a757a838f31715544cea2cfc870af7df571144ec21872d82c8349a03d0ca577d",
       "first_seen_at": "2026-05-29T13:49:30.839652+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839665+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1453,12 +1453,12 @@
       "hash": "6572c509a9640b624bcf4c4ed482c77be388c355eea35ad037bc5f0c48e992f3",
       "first_seen_at": "2026-05-29T13:49:30.839737+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839749+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1481,12 +1481,12 @@
       "hash": "f2dbcadfb9358272c5a959d8f2f9985ef08ae0b18bb1daf2e00b78aefb5f9a81",
       "first_seen_at": "2026-05-29T13:49:30.839823+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839834+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1509,12 +1509,12 @@
       "hash": "26b6ec0fec26ad1fb5e2e1aa6b75c5e97969ce80f7d3860e7fe80e791bedc035",
       "first_seen_at": "2026-05-29T13:49:30.839915+05:30",
       "last_checked_at": "2026-05-29T13:49:30.839927+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1537,12 +1537,12 @@
       "hash": "ff060be22c390a7255f9897a8d43cb44312b645bf5102a361b6bca62d98156c2",
       "first_seen_at": "2026-05-29T13:49:30.840004+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840015+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1565,12 +1565,12 @@
       "hash": "34d9378359ae0e6526b7d1aae7749dbb9b648d9197f414b1f7af5937e897442e",
       "first_seen_at": "2026-05-29T13:49:30.840084+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840096+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1593,12 +1593,12 @@
       "hash": "f609fc0546f1388a4a6c9f0bdefb1bfff017bd97bc464e11d50ccbc453099d56",
       "first_seen_at": "2026-05-29T13:49:30.840164+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840175+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1621,12 +1621,12 @@
       "hash": "5cdf360e8f95c8196c79b10243fea6363632e6df5ab0b4be134fb398a8e104a3",
       "first_seen_at": "2026-05-29T13:49:30.840251+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840263+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1649,12 +1649,12 @@
       "hash": "f37628340327db328daf9bd4eb3558576d83f9ada086f042b647ba9fb5404e9f",
       "first_seen_at": "2026-05-29T13:49:30.840333+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840345+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1677,12 +1677,12 @@
       "hash": "484908156baae628a32644deeaec5592c537a11907cee4cbdf33307a7da05807",
       "first_seen_at": "2026-05-29T13:49:30.840414+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840426+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1705,12 +1705,12 @@
       "hash": "b140b15b07d74d7d30c54e08500ed0d2543af2f5e9f0b5af9627bd6aa37358a3",
       "first_seen_at": "2026-05-29T13:49:30.840497+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840509+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1733,12 +1733,12 @@
       "hash": "56eb0e91c544dc403ac6d79e0d86a809468728d2443c5c99cdc8f587c90a1763",
       "first_seen_at": "2026-05-29T13:49:30.840600+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840624+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1761,12 +1761,12 @@
       "hash": "59c2b47b1cdbf52e3b575dc3c7554e0d6fca2a838d6d5c1493dd885a5544596a",
       "first_seen_at": "2026-05-29T13:49:30.840713+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840725+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1789,12 +1789,12 @@
       "hash": "c7b922bf34e939824d0f93c3abbf7f13d7685666a0143c9ce553518af7e1f2c3",
       "first_seen_at": "2026-05-29T13:49:30.840798+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840812+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1817,12 +1817,12 @@
       "hash": "8241ea0072400765dd40dfa0b9f07eb71ad1ce5933ff7fb6801480da2dead44c",
       "first_seen_at": "2026-05-29T13:49:30.840886+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840898+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1845,12 +1845,12 @@
       "hash": "97e9b958b27895487ff710df7402533b812345830563676f84f4603dcd88a097",
       "first_seen_at": "2026-05-29T13:49:30.840975+05:30",
       "last_checked_at": "2026-05-29T13:49:30.840987+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1873,12 +1873,12 @@
       "hash": "9a626ab46657bf9baa46586fec23133488ba47bb55e8243c8c2449234f6c5f83",
       "first_seen_at": "2026-05-29T13:49:30.841065+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841076+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1901,12 +1901,12 @@
       "hash": "67640fdec8b0ce06fdfe3faeb9a323b40fd713fb9ffdff278b8c82eed787d8dd",
       "first_seen_at": "2026-05-29T13:49:30.841155+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841166+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1929,12 +1929,12 @@
       "hash": "be18ced95e6d0fb0076d40c13c6a9254d8f5d3313037085a51301cad1277b8cd",
       "first_seen_at": "2026-05-29T13:49:30.841237+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841248+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1957,12 +1957,12 @@
       "hash": "5c081d2573e03027b81ac59db71ae12b553972a51805b71712eb67519d4cdbaf",
       "first_seen_at": "2026-05-29T13:49:30.841316+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841327+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -1985,12 +1985,12 @@
       "hash": "d9d2cb70284f76b7aa572fa76c05cd2f9e7262b285586a7bb08fe08dfb18d468",
       "first_seen_at": "2026-05-29T13:49:30.841401+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841412+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2013,12 +2013,12 @@
       "hash": "10aa78bf2d689e16b51b5861ed4c54a762f72fe2e67a5ff903165e3254cd90b6",
       "first_seen_at": "2026-05-29T13:49:30.841482+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841493+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2041,12 +2041,12 @@
       "hash": "93baf419aa600446a5a6826f20616b5f87e14fb8d6ff25ffe1fd1c5893f3cfb5",
       "first_seen_at": "2026-05-29T13:49:30.841566+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841577+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2069,12 +2069,12 @@
       "hash": "1eed5e5f10ea6c8632dba950cbd772b9e9b90d498a0817cc8fb22b051d143cf6",
       "first_seen_at": "2026-05-29T13:49:30.841689+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841705+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2097,12 +2097,12 @@
       "hash": "5f18f16a9bbab047edb2f7b62d3fb5dd94208abf04eb9f27805de02dca038cae",
       "first_seen_at": "2026-05-29T13:49:30.841787+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841799+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2125,12 +2125,12 @@
       "hash": "5c9ec52a3a7656a77e84caa82f4e5598a6cd159890fcbc5dac8ef10447592c89",
       "first_seen_at": "2026-05-29T13:49:30.841873+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841884+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2153,12 +2153,12 @@
       "hash": "ebf2dad72a8df73f37c23e9c236be445f589398c59cb87290979e8146121737a",
       "first_seen_at": "2026-05-29T13:49:30.841948+05:30",
       "last_checked_at": "2026-05-29T13:49:30.841959+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2181,12 +2181,12 @@
       "hash": "89107a1ef5ab6a73330f3e7edc052b002a62d53fde78245727f1197e7efca4ef",
       "first_seen_at": "2026-05-29T13:49:30.842036+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842047+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2209,12 +2209,12 @@
       "hash": "0a580254c2d9a25efacb289a9296ef1f20a7af7ea0ba487821041cfe3ec431e4",
       "first_seen_at": "2026-05-29T13:49:30.842124+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842135+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2237,12 +2237,12 @@
       "hash": "a055c668999673cc269ddf45340ecf2165d3ae121721bb69d7ee4e11234a7918",
       "first_seen_at": "2026-05-29T13:49:30.842212+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842222+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2265,12 +2265,12 @@
       "hash": "1180b0cc46be8ab6badfedbdb094e3bc3717fd214940de89242728511306ae6c",
       "first_seen_at": "2026-05-29T13:49:30.842291+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842302+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2293,12 +2293,12 @@
       "hash": "03fbe395c7a61448d8ac817d222bed07561241de70e19c5c419ae3f04b1f398d",
       "first_seen_at": "2026-05-29T13:49:30.842381+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842392+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2321,12 +2321,12 @@
       "hash": "7be8978ee65eb66bb6668bc44532d53a758159437759c2381420d83697d961ae",
       "first_seen_at": "2026-05-29T13:49:30.842461+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842473+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2349,12 +2349,12 @@
       "hash": "31cd0c06ab34c98d02655aca779c213bcd7f05f02786e2b6e3972f0d25288422",
       "first_seen_at": "2026-05-29T13:49:30.842544+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842555+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2377,12 +2377,12 @@
       "hash": "3ccf3b469171f07752de0471c6aa06d0446d3710c814c342ad02bb1a82848dfc",
       "first_seen_at": "2026-05-29T13:49:30.842647+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842659+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2405,12 +2405,12 @@
       "hash": "0173cfbb02601a39eb3f4545e0690af3d0d6567576b42e54a79f0047dec5dfc4",
       "first_seen_at": "2026-05-29T13:49:30.842728+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842739+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2433,12 +2433,12 @@
       "hash": "0893c6335487417fd895736ff900165136cdf983d5121c69763459d7da7b588e",
       "first_seen_at": "2026-05-29T13:49:30.842816+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842827+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2461,12 +2461,12 @@
       "hash": "3776eb5049b1b9cb2807a9e9f99d29fbb78982cac727a4be95ed300543bce6c6",
       "first_seen_at": "2026-05-29T13:49:30.842901+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842913+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2489,12 +2489,12 @@
       "hash": "714874258836908643677d96e79266a46bed84a284007b7ad9cc02e8ee33236a",
       "first_seen_at": "2026-05-29T13:49:30.842983+05:30",
       "last_checked_at": "2026-05-29T13:49:30.842994+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2517,12 +2517,12 @@
       "hash": "e2f44516b9fe58a2e19c7154238ba04f36e9cb1a5a331948c017abca9976ece9",
       "first_seen_at": "2026-05-29T13:49:30.843060+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843071+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2545,12 +2545,12 @@
       "hash": "231d5a22b0250758967ffb387df6d32d11550048d71e2dfbf6a30483a5d51a38",
       "first_seen_at": "2026-05-29T13:49:30.843139+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843150+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2573,12 +2573,12 @@
       "hash": "0d8f74d7f7c1e64e6ae02f01ab738c8d6f935d21300702194b93228997fbcc8d",
       "first_seen_at": "2026-05-29T13:49:30.843223+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843234+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2601,12 +2601,12 @@
       "hash": "48c6119021b07f4d4e75631b02a70f6eb6bc1497cb181dc2950b4f876f074dfd",
       "first_seen_at": "2026-05-29T13:49:30.843300+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843311+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2629,12 +2629,12 @@
       "hash": "8b98f7cb5588b27aeafc81a464e6bb5f7755e5051e32ac0aa6b93501210dc692",
       "first_seen_at": "2026-05-29T13:49:30.843383+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843394+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2657,12 +2657,12 @@
       "hash": "d2d6ba205139492457f51138a238318adc887216b185ccbb7f0c10faf4f66afc",
       "first_seen_at": "2026-05-29T13:49:30.843459+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843470+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2685,12 +2685,12 @@
       "hash": "e4fa7ccde8a886a54d9f2de6671d35add97f0c9b7816f20781a7a16b1b33ed42",
       "first_seen_at": "2026-05-29T13:49:30.843545+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843556+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2713,12 +2713,12 @@
       "hash": "5ffe6924bbc3f3d304c27b947fda5b7fb9050222d797de2d45baad383dae0b39",
       "first_seen_at": "2026-05-29T13:49:30.843637+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843648+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2741,12 +2741,12 @@
       "hash": "8d49710181702027bb2f16c1c35417fd535107089a3fd44aa4ddc6b22f700a0b",
       "first_seen_at": "2026-05-29T13:49:30.843719+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843730+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2769,12 +2769,12 @@
       "hash": "fa075410e74a6cae73147381da96cadfa1b56060c93e7351513cc3a2256d8b9f",
       "first_seen_at": "2026-05-29T13:49:30.843803+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843815+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2797,12 +2797,12 @@
       "hash": "937efa465a406b5c29f1e91c231adf114764ece7e3d4056c73c26f7214561b21",
       "first_seen_at": "2026-05-29T13:49:30.843883+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843895+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2825,12 +2825,12 @@
       "hash": "699e27c48f1858b327fde66312aa47486cc68079baaeeaf794afac19298c3cda",
       "first_seen_at": "2026-05-29T13:49:30.843965+05:30",
       "last_checked_at": "2026-05-29T13:49:30.843976+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2853,12 +2853,12 @@
       "hash": "1ce0a914a6c917cf69b365acdc6a86214211928b5c703bab60af6b3db57818d9",
       "first_seen_at": "2026-05-29T13:49:30.844050+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844061+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2881,12 +2881,12 @@
       "hash": "665f98134eb5b04662e0a7aaccc35156270a79a01d1dd067a8d6f26d90ed1b12",
       "first_seen_at": "2026-05-29T13:49:30.844128+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844141+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2909,12 +2909,12 @@
       "hash": "28bfaae2147b0d9ba42ed1ca53da19ef3089977f663a56f648d11525a7e87094",
       "first_seen_at": "2026-05-29T13:49:30.844430+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844448+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2937,12 +2937,12 @@
       "hash": "c05797529207c790bccde8cf7ff9c135640825117866d8b6dbc37735ee27a1f9",
       "first_seen_at": "2026-05-29T13:49:30.844511+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844523+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2965,12 +2965,12 @@
       "hash": "a114205b3981208787948a3b49168042a6d8eedd04f6c18e8ef5eef6bb592972",
       "first_seen_at": "2026-05-29T13:49:30.844580+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844591+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -2993,12 +2993,12 @@
       "hash": "bbf130e0120163b25a35a934615285f02013dbeb9a080245369bb49e09e0db4d",
       "first_seen_at": "2026-05-29T13:49:30.844665+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844677+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -3021,12 +3021,12 @@
       "hash": "a6c9e094902b129db33630a100c84b771a20ef2b27b25ba0a9b4afd13d05e6c1",
       "first_seen_at": "2026-05-29T13:49:30.844760+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844771+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "season": 2026,
@@ -3049,12 +3049,12 @@
       "hash": "988ae1dd7eb3d5d8fd097faa6a51eecf497e1c19a26c97deab15afcee67b0c3e",
       "first_seen_at": "2026-05-29T13:49:30.844838+05:30",
       "last_checked_at": "2026-05-29T13:49:30.844850+05:30",
-      "parse_status": "parsed",
-      "parse_error": null,
+      "parse_status": "stale_cache_forbidden",
+      "parse_error": "fia_document_forbidden:403",
       "source_confidence": 1.0,
-      "cache_status": "miss",
+      "cache_status": "stale",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "http_status": 200
+      "http_status": 403
     }
   ],
   "cache_status": "hit",
@@ -3170,8 +3170,59 @@
     "d21f8172165de20f"
   ],
   "documents_reused": [],
-  "errors": [],
-  "documents_downloaded": 109,
+  "errors": [
+    "fia_index_fetch_failed",
+    "Doc 111 - Championship Points Published on 25.05.26 03:16 CET: fia_document_forbidden:403",
+    "Doc 110 - Final Race Classification Published on 25.05.26 03:10 CET: fia_document_forbidden:403",
+    "Doc 109 - Decision - Race reconnaissance laps SC2 - SC1 Published on 25.05.26 02:46 CET: fia_document_forbidden:403",
+    "Doc 108 - Infringement - Race Deleted Lap Times Published on 25.05.26 02:32 CET: fia_document_forbidden:403",
+    "Doc 106 - Infringement - Car 6 - Failing to slow for yellow flags Published on 25.05.26 02:25 CET: fia_document_forbidden:403",
+    "Doc 105 - Race Scrutineering Published on 25.05.26 02:24 CET: fia_document_forbidden:403",
+    "Doc 104 - Infringement - Car 63 - Unsafe act Published on 25.05.26 02:22 CET: fia_document_forbidden:403",
+    "Doc 103 - Infringement - Car 30 - Starting procedure infringement Published on 25.05.26 02:12 CET: fia_document_forbidden:403",
+    "Doc 102 - Decision - Car 11 - Ignoring blue flags Published on 25.05.26 02:11 CET: fia_document_forbidden:403",
+    "Doc 100 - Infringement - Car 81 - Collision with Car 23 Published on 25.05.26 02:09 CET: fia_document_forbidden:403",
+    "Doc 99 - Infringement - Car 27 - Starting procedure infringement Published on 25.05.26 02:08 CET: fia_document_forbidden:403",
+    "Doc 98 - Infringement - Car 5 - Driving unnecessarily slowly during VSC. Published on 25.05.26 01:59 CET: fia_document_forbidden:403",
+    "Doc 97 - Infringement - Car 77 - Pit Lane Speeding Published on 25.05.26 01:57 CET: fia_document_forbidden:403",
+    "Doc 96 - Infringement - Car 27 - Pit Lane Speeding Published on 25.05.26 00:52 CET: fia_document_forbidden:403",
+    "Doc 95 - Summons - Car 30 - Starting procedure infringement Published on 25.05.26 00:14 CET: fia_document_forbidden:403",
+    "Doc 94 - Summons - Car 27 - Starting procedure infringement Published on 25.05.26 00:14 CET: fia_document_forbidden:403",
+    "Doc 93 - Provisional Race Classification Published on 25.05.26 00:13 CET: fia_document_forbidden:403",
+    "Doc 92 - Summons - Car 63 - Alleged unsafe act Published on 25.05.26 00:13 CET: fia_document_forbidden:403",
+    "Doc 91 - Final Starting Grid Published on 24.05.26 21:00 CET: fia_document_forbidden:403",
+    "Doc 90 - Parts and Parameters been replaced and or changed during Race Parc Fermé Published on 24.05.26 20:52 CET: fia_document_forbidden:403",
+    "Doc 89 - Infringement - Car 18 - PU Elements changed under Parc Ferme Published on 24.05.26 19:08 CET: fia_document_forbidden:403",
+    "Doc 88 - Parc Fermé Issues Published on 24.05.26 17:46 CET: fia_document_forbidden:403",
+    "Doc 87 - Post-Race Procedure Published on 24.05.26 15:52 CET: fia_document_forbidden:403",
+    "Doc 86 - Pre-Race Procedure Published on 24.05.26 15:50 CET: fia_document_forbidden:403",
+    "Doc 85 - Provisional Starting Grid Published on 24.05.26 01:53 CET: fia_document_forbidden:403",
+    "Doc 83 - Final Qualifying Classification Published on 24.05.26 01:38 CET: fia_document_forbidden:403",
+    "Doc 82 - Decision - Car 18 - Allegedly impeded Car 27 Published on 24.05.26 01:23 CET: fia_document_forbidden:403",
+    "Doc 81 - Decision - Car 44 - Alleged impeding of Car 10 Published on 24.05.26 01:23 CET: fia_document_forbidden:403",
+    "Doc 80 - Infringement - Car 11 - Failing to follow Race Directors Event Notes Published on 24.05.26 01:22 CET: fia_document_forbidden:403",
+    "Doc 79 - Qualifying SC2-SC1 Times Published on 24.05.26 01:20 CET: fia_document_forbidden:403",
+    "Doc 78 - Qualifying Deleted Lap Times Published on 24.05.26 01:20 CET: fia_document_forbidden:403",
+    "Doc 77 - Infringement - Car 18 - Released in an unsafe condition Published on 24.05.26 01:10 CET: fia_document_forbidden:403",
+    "Doc 76 - Infringement - Car 14 - Unsafe release from garage Published on 24.05.26 01:05 CET: fia_document_forbidden:403",
+    "Doc 75 - Qualifying Scrutineering Published on 24.05.26 00:45 CET: fia_document_forbidden:403",
+    "Doc 74 - Provisional Qualifying Classification Published on 23.05.26 23:17 CET: fia_document_forbidden:403",
+    "Doc 73 - Summons - Car 10 - Incident With Car 44 Published on 23.05.26 23:21 CET: fia_document_forbidden:403",
+    "Doc 72 - Summons - Car 27 - Incident with Car 18 Published on 23.05.26 23:23 CET: fia_document_forbidden:403",
+    "Doc 71 - Summons - Car 18 - Alleged impeding of Car 27 Published on 23.05.26 23:07 CET: fia_document_forbidden:403",
+    "Doc 69 - Summons - Car 44 - Alleged impeding of Car 10 Published on 23.05.26 23:07 CET: fia_document_forbidden:403",
+    "Doc 68 - Summons - Car 11 - Alleged incident with car 14 Published on 23.05.26 23:04 CET: fia_document_forbidden:403",
+    "Doc 67 - Summons - Car 18 - Alleged released in an unsafe condition Published on 23.05.26 23:04 CET: fia_document_forbidden:403",
+    "Doc 66 - Summons - Car 14 - Alleged unsafe release Published on 23.05.26 23:04 CET: fia_document_forbidden:403",
+    "Doc 65 - New PU Elements for this Competition Published on 23.05.26 22:33 CET: fia_document_forbidden:403",
+    "Doc 64 - Decision - Car 31 - Alleged Procedural Infringement Published on 23.05.26 21:53 CET: fia_document_forbidden:403",
+    "Doc 63 - Championship Points after Sprint Published on 23.05.26 21:31 CET: fia_document_forbidden:403",
+    "Doc 62 - Final Sprint Classification Published on 23.05.26 21:21 CET: fia_document_forbidden:403",
+    "Doc 61 - Sprint Scrutineering Published on 23.05.26 20:45 CET: fia_document_forbidden:403",
+    "Doc 60 - Tyre Pressure Check on Grid of Sprint, Car 31 Published on 23.05.26 20:41 CET: fia_document_forbidden:403",
+    "Doc 59 - Summons - Car 31 - Alleged Procedural infringement Published on 23.05.26 20:30 CET: fia_document_forbidden:403"
+  ],
+  "documents_downloaded": 0,
   "documents_parsed": 109,
   "documents_skipped": 0
 }
