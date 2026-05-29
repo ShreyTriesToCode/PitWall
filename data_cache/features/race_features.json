@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-6-monaco-grand-prix",
-    "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-044159ea458f",
+    "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-dc2f2da0240c",
     "season": 2026,
     "round": 6,
     "circuit": "Circuit de Monaco",
@@ -13,12 +13,12 @@
     "safety_car": "high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "24.8°C",
+      "temperature": "24.7°C",
       "rain": "12%",
-      "humidity": "65%",
-      "wind": "11.7 km/h",
-      "wind_gust": "48.6 km/h",
-      "cloud_cover": "35%",
+      "humidity": "66%",
+      "wind": "16.5 km/h",
+      "wind_gust": "67.0 km/h",
+      "cloud_cover": "64%",
       "track_temperature": "Unavailable",
       "rain_score": 12.0,
       "heat_score": 0,
