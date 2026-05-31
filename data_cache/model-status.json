@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-05-31T19:17:31.233635+05:30",
+  "generated_at": "2026-06-01T00:49:43.318672+05:30",
   "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "latest_completed_race_included": "2026-5",
   "latest_available_api_result": "2026-5",
@@ -759,7 +759,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-31T13:47:31.233476+00:00",
+      "checked_at": "2026-05-31T19:19:43.318556+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -779,7 +779,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-05-31T13:47:31.233608+00:00",
+      "checked_at": "2026-05-31T19:19:43.318649+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -812,8 +812,8 @@
       "recalled": false,
       "superseded_by": null,
       "hash": "9c1c12b3e61f57d6b0b2e28804095e9223bd3210b9ff08fca9466e4e4e962d9b",
-      "first_seen_at": "2026-05-31T19:13:36.102244+05:30",
-      "last_checked_at": "2026-05-31T19:13:36.102283+05:30",
+      "first_seen_at": "2026-06-01T00:46:12.802368+05:30",
+      "last_checked_at": "2026-06-01T00:46:12.802406+05:30",
       "parse_status": "parsed",
       "parse_error": null,
       "source_confidence": 1.0,
@@ -1080,7 +1080,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-05-31T19:17:28.457313+05:30",
+    "checked_at": "2026-06-01T00:49:40.857904+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-5",
