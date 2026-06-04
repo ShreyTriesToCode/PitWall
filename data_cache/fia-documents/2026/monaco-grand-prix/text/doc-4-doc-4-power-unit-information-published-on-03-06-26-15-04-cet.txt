@@ -1,0 +1,102 @@
+2026 MONACO GRAND PRIX
+07 - 09 June 2026
+The FIA Formula 1 Race Director
+From The FIA Formula 1 Race Director
+To All Teams, All Officials
+Document 4
+Date 03 June 2026
+Time 15:03
+Title Power Unit Information
+Description Power Unit Information
+Enclosed R06_Monaco_Power_Unit_Information.pdf
+Rui Marques
+
+ROUND No. R06
+VENUE Monte Carlo
+CENTRELINE 3.337 km
+FORMAT Standard
+DATE 05-07 June
+Overtake not active Overtake active
+8.5 MJ 9.0 MJ 9.0 MJ 9.0 MJ 9.0 MJ 1388 m 100 kW/s
+Overtake not active Overtake active
+Rev 1 - Standard Rev 1 - Overtake No such sectors 
+defined Rev 1 - Overtake
+Identification of 
+Sectors
+Lap distance window 
+[m]
+Identification of 
+Sectors
+Lap distance window 
+[m]
+Maximum PU power 
+reduction permitted
+Identification of 
+Sectors
+Lap distance window 
+[m]
+- - [Exit T19] [2980-3200] [350kW] [Exit T19] [3070-3400]
+Identification of 
+Sectors
+Lap distance window 
+[m] Speed threshold Detection Gap 
+Detection Line
+[sLap & Loop]
+(Art. B7.2.1b.viii)
+Activation Line
+[sLap & Loop]
+(Art. B7.2.1b.ix)
+2805 m 2950 m
+L19 L20/SC1
+Any Practice Session 
+incl. Qualifying 
+Sessions
+- - - 1.0 s
+OVERTAKEArticle C5.12.7
+Sectors with a higher speed threshold Article B7.2
+IDENTIFICATION OF SECTORS WHERE EXCEPTIONS APPLY
+Article C5.12.4
+Sectors where the PU power reduction at the start of a Power
+Limited Pending period can be greater than 150kW
+(sectors indicated by [ ] are for SQ and Q only)
+Article C5.12.5
+Sectors where a reset of MGUK power 
+reduction is permitted
+(sectors indicated by [ ] are for SQ and Q only)
+Article C5.2.8iii
+Sectors where the alternative power curve 
+defined above applies in Sprint & Race
+Article C5.2.10
+Maximum Recharge per lap
+Article C5.12.8
+Maximum PU Power Reduction Rate
+Race Qualifying Free Practice
+sessions
+Out laps other than in 
+Race
+Power Limited 
+Distance Rate Limit
+Main Overtaking Zones
+Article C5.2.8
+Maximum DC power of
+ERS-K function of car speed
+Other parts of the Lap
+Sprint & Race
+POWER AND ENERGY LIMITS
+F1 POWER UNIT INFORMATION TO THE TEAMS AND PUMs
+2026 MONACO GRAND PRIX
+COMPETITION INFORMATION
+0
+50
+100
+150
+200
+250
+300
+350
+400
+180 200 220 240 260 280 300 320
+MGUK DC Power (kW)
+vCar (km/h)
+Rev 1 - Standard
+Rev 1 - Overtake

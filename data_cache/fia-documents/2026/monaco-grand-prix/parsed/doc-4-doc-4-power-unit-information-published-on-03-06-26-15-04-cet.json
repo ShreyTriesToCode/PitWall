@@ -1,0 +1,13 @@
+{
+  "document_id": "6b5a02642de06d7f",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-04T09:24:12.087089+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 4\nDate 03 June 2026\nTime 15:03\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R06_Monaco_Power_Unit_Information.pdf\nRui Marques\n\nROUND No. R06\nVENUE Monte Carlo\nCENTRELINE 3.337 km\nFORMAT Standard\nDATE 05-07 June\nOvertake not active Overtake active\n8.5 MJ 9.0 MJ 9.0 MJ 9.0 MJ 9.0 MJ 1388 m 100 kW/s\nOvertake not active Overtake active\nRev 1 - Standard Rev 1 - Overtake No such sectors \ndefined Rev 1 - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\n- - [Exit T19] [2980-3200] [350kW] [Exit T19] [3070-3400]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n2805 m 2950 m\nL19 L20/SC1\nAny Practice Session \nincl. Qualifying \nSessions\n- - - 1.0 s\nOVERTAKEArticle C5.12.7\nSectors with a higher speed threshold Article B7.2\nIDENTIFICATION OF SEC"
+}
