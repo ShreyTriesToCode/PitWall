@@ -1,0 +1,26 @@
+{
+  "document_id": "a1590801ce40e0d8",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_30_-_alleged_leaving_the_pitlane_after_the_end_of_the_session.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:12.979936+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 32 Date 05 June 2026 Time 16:41 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 30 ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 32\nDate 05 June 2026\nTime 16:41\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 30 - Liam Lawson\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 14:30\nSession Free Practice 1\nFact Car 30 left the pit lane when the light at the end of the pit lane was red.\nInfringement Breach of Article B1.6.3e of the FIA F1 Regulations.\nDecision No penalty is applied.\nReason The Stewards heard from the driver of Car 30, team representatives and  reviewed\npositioning/marshalling system data, video, timing, team radio and in-car video\nevidence.\nThe driver was warned he had 7 seconds left when he left the garage.  He then\ntravelled down the pit lane, and the green light changed to red when he was\napproximately 0.8 seconds from crossing the pit lane exit. He then reported over the\nteam radio that he had been focusing on the countdown clock which is located above\nthe pit exit, which still showed two seconds remaining before the light turned red.\nThe Stewards note that this countdown cloc"
+}

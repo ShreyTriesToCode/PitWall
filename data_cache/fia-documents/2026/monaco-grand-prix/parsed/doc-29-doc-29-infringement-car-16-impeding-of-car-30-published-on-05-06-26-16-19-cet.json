@@ -1,0 +1,26 @@
+{
+  "document_id": "ad0b38b022d384bb",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_16_-_impeding_of_car_30.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:16.730364+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Scuderia Ferrari HP Document 29 Date 05 June 2026 Time 16:17 The Stewards, having received a report from the Race Director, summoned (documents 25 & 26) and heard from the drivers and team representatives, h",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 29\nDate 05 June 2026\nTime 16:17\nThe Stewards, having received a report from the Race Director, summoned (documents 25 & 26)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 16 - Charles Leclerc\nCompetitor Scuderia Ferrari HP\nTime 14:18\nSession Free Practice 1\nFact Car 16 unnecessarily impeded Car 30 into turn 18\nInfringement Breach of Article B4.1.1 of the FIA F1 Regulations.\nDecision Competitor: Formal warning.\nReason The Stewards heard from the driver of Car 16 (Charles Leclerc), the driver of Car 30\n(Liam Lawson), team representatives and reviewed positioning/marshalling system\ndata, video, team radio and in-car video evidence.\nAs Car 30 was approaching Car 16 the team advised the driver of Car 16 “3 seconds\nto Bearman, 5 seconds to Lawson”.  This was an accurate statement.  However the\ndriver of Car 16 reasonably assumed that this meant there was a 5 second gap\nbetween Bearman and Lawson when in fact there was only a 2 second gap. This\nmisunderstanding was ultimately responsibl"
+}

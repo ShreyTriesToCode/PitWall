@@ -1,0 +1,26 @@
+{
+  "document_id": "84b4b9be1cc27d6f",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_30_-_alleged_incident_with_car_16.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:22.700471+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The driver and team representative are required to report to the Stewards at 15:15, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 25 Date 05 June 2026 Time 14:57 No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe driver and team representative are required to report to the Stewards at 15:15, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 25\nDate 05 June 2026\nTime 14:57\nNo / Driver 30 - Liam Lawson\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations – Car 16 allegedly\nimpeding Car 30 in turn18 at 14:18.\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n"
+}

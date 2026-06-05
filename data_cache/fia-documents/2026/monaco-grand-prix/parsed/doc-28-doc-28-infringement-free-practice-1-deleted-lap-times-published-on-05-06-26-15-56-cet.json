@@ -1,0 +1,26 @@
+{
+  "document_id": "42466e995d15501f",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:17.875359+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To All Teams, All Officials Document 28 Date 05 June 2026 Time 15:55 Title Infringement - Free Practice 1 Deleted Lap Times Description Infringement - Free Practice 1 Deleted Lap Times Enclosed MON DOC 28 - Free Practice 1 Delet",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 28\nDate 05 June 2026\nTime 15:55\nTitle Infringement - Free Practice 1 Deleted Lap Times\nDescription Infringement - Free Practice 1 Deleted Lap Times\nEnclosed MON DOC 28 - Free Practice 1 Deleted Lap Times.pdf\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n\n \n \n2026 MONACO GRAND PRIX \n05 – 07 June 2026 \n \n    \nFrom The Stewards      Document 28 \n  \nTo All Officials, All Teams      Date  05 June 2026 \n \n        Time  15:55 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 1 \n  \nFact The F1 cars below did not use the track at turns 1, 5, 10, 11 and 16. \n \nNo. Turn Car Driver Competitor Time of Day  Lap Time \n1 5 16  Charles Leclerc Scuderia Ferrari HP 13:31:16 OUT LAP \n2 10 43  Franco Colapinto BWT Alpine F1 Team 13:32:58 1:26.305 \n3 10 16 Charles Leclerc Scuderia Ferrari HP 13:36:30 PIT \n4 10 14 Fernando Alonso Aston Martin Aramco F1 Team 13:37:10 PIT \n5 10 55 Carlos Sainz Atlassian Williams F1 Team 13:37:26 1:20.942 \n6 10 10 Pierre Gasly BWT Alpine"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "aa61d5be16c5aede",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_41_-_impeding_of_car_81.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:15.102459+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 30 Date 05 June 2026 Time 16:25 The Stewards, having received a report from the Race Director, summoned (documents 22 & 23) and heard from the drivers and team rep",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 30\nDate 05 June 2026\nTime 16:25\nThe Stewards, having received a report from the Race Director, summoned (documents 22 & 23)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 41 - Arvid Lindblad\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 14:23\nSession Free Practice 1\nFact Car 41 unnecessarily impeded Car 81 into turn 12\nInfringement Breach of Article B4.1.1 of the FIA F1 Regulations.\nDecision Competitor: Formal warning.\nReason The Stewards heard from the driver of Car 41 (Arvid Lindblad), the driver of Car 81\n(Oscar Piastri), team representatives and reviewed positioning/marshalling system\ndata, video, team radio and in-car video evidence.\nThe team warned the driver of Car 41 when Car 81 was 4.5 seconds behind but also\npreviously advised that driver of Car 81 had aborted his lap.  This was not the case\nand was a wrong interpretation by the team engineer.  The driver of Car 41 stated\nthat he knew Car 81 was within 4.5 seconds, as he had been told earlier by his "
+}

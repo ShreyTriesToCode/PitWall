@@ -1,0 +1,26 @@
+{
+  "document_id": "86ed417425542e70",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_1_-_media_commitment.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:29.455564+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 17 Date 05 June 2026 Time 12:29 The Stewards, having received a report from the FIA Media Delegate, summoned (document 11) and heard from the driver and team representativ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 17\nDate 05 June 2026\nTime 12:29\nThe Stewards, having received a report from the FIA Media Delegate, summoned (document 11)\nand heard from the driver and team representative, have considered the following matter and\ndetermine the following:\nNo / Driver 1 - Lando Norris\nCompetitor McLaren Mastercard F1 Team\nTime 14:30\nSession Thursday Press Conference\nFact The driver was late attending the Thursday Press Conference\nInfringement Breach of Article B10.1.1.a of the FIA F1 Regulations and Articles 12.2.1.i and\n12.2.1.p of the FIA International Sporting Code.\nDecision The competitor (McLaren Mastercard F1 Team) is fined €5,000.  This fine is\nsuspended for a period of 12 months subject to no further breach of a similar nature.\nReason The Stewards heard from the driver of Car 1 (Lando Norris) and the team\nrepresentative. The driver explained he was delayed at a previous commitment.\nNoting that in accordance with Article 9.15.1 of the FIA International Sporting Code,\nthe Competitor is responsible for the actions of its driver, the penalty is imposed on\nthe Competit"
+}

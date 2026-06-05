@@ -1,0 +1,26 @@
+{
+  "document_id": "7fae59b353092b7e",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_81_-_alleged_incident_with_car_41.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-05T20:19:25.239973+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The driver and team representative are required to report to the Stewards at 15:45, in relation to the incident below: The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 23 Date 05 June 2026 Time 14:40 No / Driver 81 - Osc",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe driver and team representative are required to report to the Stewards at 15:45, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 23\nDate 05 June 2026\nTime 14:40\nNo / Driver 81 - Oscar Piastri\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations – Car 41 allegedly\nimpeding Car 81 in turn 12 at 14:23.\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n"
+}
