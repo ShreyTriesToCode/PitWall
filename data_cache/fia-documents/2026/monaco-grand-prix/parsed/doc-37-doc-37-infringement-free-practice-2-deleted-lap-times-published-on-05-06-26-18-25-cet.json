@@ -1,0 +1,26 @@
+{
+  "document_id": "480aaee78ec212be",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-06T01:23:48.928341+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To All Teams, All Officials Document 37 Date 05 June 2026 Time 18:25 Title Free Practice 2 Deleted Lap Times Description Free Practice 2 Deleted Lap Times Enclosed MON DOC 37- Free Practice 2 Deleted Lap Times.pdf Garry Connelly",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 37\nDate 05 June 2026\nTime 18:25\nTitle Free Practice 2 Deleted Lap Times\nDescription Free Practice 2 Deleted Lap Times\nEnclosed MON DOC 37- Free Practice 2 Deleted Lap Times.pdf\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n\n \n \n2026 MONACO GRAND PRIX \n05 – 07 June 2026 \n \n    \nFrom The Stewards      Document 37 \n  \nTo All Officials, All Teams      Date  05 June 2026 \n \n        Time  18:25 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 2 \n  \nFact The F1 cars below did not use the track at turns 1, 10 and 16. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 10 41  Arvid Lindblad Visa Cash App Racing Bulls F1 Team 17:02:54 1:29.778 \n2 10 81  Oscar Piastri McLaren Mastercard F1 Team 17:02:56 OUT LAP \n3 10 5 Gabriel Bortoleto Audi Revolut F1 Team 17:04:14 1:17.865 \n4 10 23 Alexander Albon Atlassian Williams F1 Team 17:05:25 1:25.104 \n5 10 77 Valtteri Bottas Cadillac Formula 1 Team 17:05:21 1:17.674 \n6 16 5 Gabriel Bortoleto Audi Revolut F"
+}

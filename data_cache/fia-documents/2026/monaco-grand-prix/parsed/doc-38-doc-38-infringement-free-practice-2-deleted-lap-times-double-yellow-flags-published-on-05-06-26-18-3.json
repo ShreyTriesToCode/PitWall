@@ -1,0 +1,26 @@
+{
+  "document_id": "565b4022def56df1",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times_-_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-06T01:23:47.133611+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To All Teams, All Officials Document 38 Date 05 June 2026 Time 18:30 Title Free Practice 2 Deleted Lap Times - Double Yellow Flags Description Free Practice 2 Deleted Lap Times - Double Yellow Flags Enclosed MON DOC 38 - Free Pr",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 38\nDate 05 June 2026\nTime 18:30\nTitle Free Practice 2 Deleted Lap Times - Double Yellow Flags\nDescription Free Practice 2 Deleted Lap Times - Double Yellow Flags\nEnclosed MON DOC 38 - Free Practice 2 Deleted Lap Times - Double Yellow.pdf\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n\n \n \n \n \n2026 MONACO GRAND PRIX \n05 – 07 June 2026 \n \n    \nFrom The Stewards      Document 38 \n  \nTo All Officials, All Teams      Date  05 June 2026 \n \n        Time  18:30 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag zone will be deleted as detailed in the \nRace Director’s Competition Notes (item 9, document 6): \n \nSession Free Practice 2 \n  \nFact The F1 cars passed through a double waved yellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 12 1 Lando Norris McLaren Mastercard F1 Team 18:09:06 PIT \n2 4 11 Sergio Perez Cadillac Formula 1 Team 18:10:23 PIT \n \n \nDecision Deletion of the lap times shown.   \nNote Competitors are reminded that they have the right to appeal certain decisions of the Stewar"
+}

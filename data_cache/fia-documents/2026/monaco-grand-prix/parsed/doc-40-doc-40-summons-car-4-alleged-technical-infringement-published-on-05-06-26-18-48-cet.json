@@ -1,0 +1,26 @@
+{
+  "document_id": "4947d39365f2538b",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_4_-_alleged_technical_infringement.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-06T01:23:43.639718+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The driver and team representative are required to report to the Stewards at 19:00, in relation to the incident below: The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 40 Date 05 June 2026 Time 18:45 No / Driver 1 - Land",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe driver and team representative are required to report to the Stewards at 19:00, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 40\nDate 05 June 2026\nTime 18:45\nNo / Driver 1 - Lando Norris\nReason Alleged breach of Article C9.3 of the FIA F1 Regulations\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n"
+}

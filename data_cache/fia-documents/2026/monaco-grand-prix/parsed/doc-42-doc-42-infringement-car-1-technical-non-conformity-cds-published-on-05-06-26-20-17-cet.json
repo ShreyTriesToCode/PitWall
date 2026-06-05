@@ -1,0 +1,26 @@
+{
+  "document_id": "6a4ffabd1a1d4168",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_1_-_technical_non-conformity_cds.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-06T01:23:40.244541+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 5,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 42 Date 05 June 2026 Time 20:15 The Stewards, having received a report from the Technical Delegate (document 41), summoned the driver and team representative (document 40) and have con",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 42\nDate 05 June 2026\nTime 20:15\nThe Stewards, having received a report from the Technical Delegate (document 41), summoned the\ndriver and team representative (document 40) and have considered the following matter and\ndetermine the following:\nNo / Driver 1 - Lando Norris\nCompetitor McLaren Mastercard F1 Team\nTime 18:48\nSession Free Practice 2\nFact The CDS did not function when the car stopped on the track.\nInfringement Breach of Article C9.3 of the FIA F1 Regulations.\nDecision The competitor (McLaren Mastercard F1 Team) is fined €30,000, €10,000 of which\nis suspended for a period of 12 months subject to no further breaches of this\nregulation.\nReason The Stewards heard from the team Sporting Director and Technical Director Applied\nEngineering, the FIA Single Seater Sporting Director, FIA Technical Delegate, FIA\nElectronic Engineer and FIA electric and Hybrid Powertrain Engineer.\nThe team admitted that for aerodynamic purposes it had placed transparent tape over\nthe button that is required to be pressed to activate the CDS.  This, in the opinion of\nthe FIA representative"
+}
