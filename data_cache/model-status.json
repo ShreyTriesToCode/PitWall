@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-05T01:35:16.609957+05:30",
+  "generated_at": "2026-06-05T09:09:30.792107+05:30",
   "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "latest_completed_race_included": "2026-5",
   "latest_available_api_result": "2026-5",
@@ -759,7 +759,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-04T20:05:16.609801+00:00",
+      "checked_at": "2026-06-05T03:39:30.791969+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -779,7 +779,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-04T20:05:16.609927+00:00",
+      "checked_at": "2026-06-05T03:39:30.792076+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -812,8 +812,8 @@
       "recalled": false,
       "superseded_by": null,
       "hash": "b54a705d0a4fece14c0e26b6be96996c69fd6f1812329d0d3335ef676a913dc8",
-      "first_seen_at": "2026-06-05T01:34:43.264522+05:30",
-      "last_checked_at": "2026-06-05T01:34:43.264573+05:30",
+      "first_seen_at": "2026-06-05T09:08:43.573171+05:30",
+      "last_checked_at": "2026-06-05T09:08:43.573221+05:30",
       "parse_status": "parsed",
       "parse_error": null,
       "source_confidence": 1.0,
@@ -846,18 +846,7 @@
       "status": "available"
     },
     "latest_fia_ingested_at": null,
-    "fia_parse_errors": [
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403",
-      "fia_document_forbidden:403"
-    ],
+    "fia_parse_errors": [],
     "fia_cache_hits": 1,
     "fia_cache_misses": 0
   },
@@ -1074,7 +1063,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-06-05T01:35:13.982596+05:30",
+    "checked_at": "2026-06-05T09:09:28.003623+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-5",
