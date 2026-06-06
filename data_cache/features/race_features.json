@@ -1,6 +1,178 @@
 [
   {
     "race_id": "2026-6-monaco-grand-prix",
+    "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+    "season": 2026,
+    "round": 6,
+    "circuit": "Circuit de Monaco",
+    "city": "Monte Carlo",
+    "country": "Monaco",
+    "track_type": "street or temporary circuit",
+    "overtaking": "medium",
+    "tyre_stress": "medium",
+    "safety_car": "high",
+    "weather": {
+      "source": "Open-Meteo forecast",
+      "temperature": "22.9°C",
+      "rain": "0%",
+      "humidity": "69%",
+      "wind": "10.5 km/h",
+      "wind_gust": "11.9 km/h",
+      "cloud_cover": "14%",
+      "track_temperature": "Unavailable",
+      "rain_score": 0,
+      "heat_score": 0,
+      "wind_score": 30.94,
+      "impact": "dry baseline more likely"
+    },
+    "strategy": {
+      "risk_meter": 60.0,
+      "strategy_chaos_score": 60.0,
+      "circuit_difficulty_score": 56.8,
+      "track_evolution_indicator": "Medium",
+      "clean_air_dirty_air_impact": "Medium",
+      "qualifying_importance_score": 66.0,
+      "pit_window": "Lap 18-32 for normal dry strategy.",
+      "tyre_degradation_model": {
+        "score": 54.0,
+        "label": "medium",
+        "basis": "Historical stint, tyre stress, track temperature, and pit-stop profile where available."
+      },
+      "pit_execution_model": [
+        {
+          "driver": "Liam Lawson",
+          "team": "RB F1 Team",
+          "score": 99.37
+        },
+        {
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "score": 97.99
+        },
+        {
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "score": 97.11
+        },
+        {
+          "driver": "Isack Hadjar",
+          "team": "Red Bull",
+          "score": 93.7
+        },
+        {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "score": 92.26
+        },
+        {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "score": 84.97
+        },
+        {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "score": 84.09
+        },
+        {
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "score": 80.25
+        }
+      ],
+      "rain_beneficiaries": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 69.84,
+          "rank": 1
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "scenario_score": 67.97,
+          "rank": 2
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 64.29,
+          "rank": 3
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "scenario_score": 63.24,
+          "rank": 4
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 62.95,
+          "rank": 5
+        }
+      ],
+      "safety_car_beneficiaries": [
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "scenario_score": 67.14,
+          "rank": 1
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 66.4,
+          "rank": 2
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 62.11,
+          "rank": 3
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 61.23,
+          "rank": 4
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine",
+          "scenario_score": 60.74,
+          "rank": 5
+        }
+      ],
+      "active_aero": {
+        "straight_mode": "low-drag straight configuration",
+        "corner_mode": "high-downforce corner configuration",
+        "average_suitability": 65.11
+      },
+      "energy_deployment": {
+        "title": "2026 Boost / Overtake Mode Intelligence",
+        "average_boost_advantage": 63.36,
+        "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
+      },
+      "decision_log": [
+        "Model checks source health and missing critical data before ranking.",
+        "Scenario layer reweights real component scores for rain, safety car, tyre degradation, and low-overtaking cases.",
+        "2026 layer uses Boost, Overtake Mode, energy deployment, and Active Aero terminology with fallback proxies when exact data is unavailable."
+      ]
+    }
+  },
+  {
+    "race_id": "2026-6-monaco-grand-prix",
     "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-9f6dc0e7fe5e",
     "season": 2026,
     "round": 6,

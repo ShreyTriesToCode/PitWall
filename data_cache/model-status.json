@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-07T00:21:25.207963+05:30",
+  "generated_at": "2026-06-07T00:56:16.780195+05:30",
   "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "latest_completed_race_included": "2026-5",
   "latest_available_api_result": "2026-5",
@@ -759,7 +759,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-06T18:51:25.207680+00:00",
+      "checked_at": "2026-06-06T19:26:16.780041+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -779,7 +779,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-06T18:51:25.207929+00:00",
+      "checked_at": "2026-06-06T19:26:16.780163+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -812,8 +812,8 @@
       "recalled": false,
       "superseded_by": null,
       "hash": "ca81b6d121626fdac631d15d7c9bacec167832fdb39f928c143a5467e1ea6736",
-      "first_seen_at": "2026-06-07T00:18:21.507358+05:30",
-      "last_checked_at": "2026-06-07T00:18:21.507402+05:30",
+      "first_seen_at": "2026-06-07T00:51:38.496158+05:30",
+      "last_checked_at": "2026-06-07T00:51:38.496194+05:30",
       "parse_status": "parsed",
       "parse_error": null,
       "source_confidence": 1.0,
@@ -858,13 +858,34 @@
       "status": "available"
     },
     "latest_fia_ingested_at": null,
-    "fia_parse_errors": [],
+    "fia_parse_errors": [
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403"
+    ],
     "fia_cache_hits": 1,
     "fia_cache_misses": 0
   },
   "source_health": {
-    "generated_at": "2026-06-07T00:21:23.811299+05:30",
-    "overall_score": 72.09,
+    "generated_at": "2026-06-07T00:56:15.174337+05:30",
+    "overall_score": 67.45,
     "status": "Fallback",
     "sources": [
       {
@@ -879,8 +900,8 @@
       },
       {
         "source": "OpenF1",
-        "score": 70.0,
-        "status": "Fallback"
+        "score": 48.0,
+        "status": "Stale"
       },
       {
         "source": "FastF1",
@@ -894,8 +915,8 @@
       },
       {
         "source": "FIA/F1 upgrade/regulation sources",
-        "score": 74.0,
-        "status": "Fallback"
+        "score": 45.0,
+        "status": "Stale"
       },
       {
         "source": "Local cache",
@@ -941,7 +962,7 @@
         "source_url": "https://github.com/f1db/f1db",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-06T18:51:23.811057+00:00",
+        "checked_at": "2026-06-06T19:26:15.174119+00:00",
         "errors": [],
         "warnings": [
           "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -961,7 +982,7 @@
         "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-06T18:51:23.811198+00:00",
+        "checked_at": "2026-06-06T19:26:15.174259+00:00",
         "errors": [],
         "warnings": [
           "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -993,6 +1014,32 @@
     "local_llm_enabled": false
   },
   "source_conflicts": [
+    {
+      "conflict_type": "stale_cache",
+      "affected_fields": [
+        "source freshness"
+      ],
+      "sources": [
+        "OpenF1"
+      ],
+      "preferred_source": "fresh official/current source when available",
+      "reason": "OpenF1 data is stale.",
+      "confidence": "medium",
+      "action_needed": "Refresh cache or wait for next generated run."
+    },
+    {
+      "conflict_type": "stale_cache",
+      "affected_fields": [
+        "source freshness"
+      ],
+      "sources": [
+        "FIA/F1 upgrade/regulation sources"
+      ],
+      "preferred_source": "fresh official/current source when available",
+      "reason": "FIA/F1 upgrade/regulation sources data is stale.",
+      "confidence": "medium",
+      "action_needed": "Refresh cache or wait for next generated run."
+    },
     {
       "conflict_type": "stale_cache",
       "affected_fields": [
@@ -1075,7 +1122,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-06-07T00:20:28.676373+05:30",
+    "checked_at": "2026-06-07T00:53:38.151363+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-5",
@@ -1102,7 +1149,7 @@
     },
     "status": "latest_results_available"
   },
-  "mode": "weekend",
+  "mode": "today",
   "selected_targets": [
     {
       "target_type": "race",
@@ -1118,5 +1165,5 @@
     "Post-race corrections remain pending until official result rows are available after the configured delay.",
     "F1 predictions cannot be guaranteed because crashes, red flags, failures, penalties, strategy, weather, and source delays are inherently uncertain."
   ],
-  "backtest_history_count": 5
+  "backtest_history_count": 6
 }
