@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Monaco GP - Race
 
-Generated: Friday, 29 May 2026, 02:04 PM IST
+Generated: Sunday, 07 June 2026, 12:21 AM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Friday, 29 May 2026, 02:04 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 60.8, confidence 12%, car performance; team-track fit; track trait fit; same-circuit history; reliability
-2. George Russell, score 60.2, confidence 12%, car performance; track trait fit; team-track fit; driver form; same-circuit history
-3. Charles Leclerc, score 59.7, confidence 12%, car performance; team-track fit; track trait fit; same-circuit history; reliability
-4. Andrea Kimi Antonelli, score 58.8, confidence 43%, car performance; driver form; track trait fit; team-track fit; constructor form
-5. Max Verstappen, score 56.0, confidence 43%, car performance; same-circuit history; team-track fit; track trait fit; reliability
-6. Oscar Piastri, score 55.9, confidence 29%, car performance; team-track fit; track trait fit; same-circuit history; reliability
-7. Lando Norris, score 55.4, confidence 29%, car performance; team-track fit; same-circuit history; track trait fit; reliability
-8. Isack Hadjar, score 49.4, confidence 48%, car performance; team-track fit; same-circuit history; track trait fit; regulation-era fit
-9. Liam Lawson, score 40.7, confidence 34%, car performance; same-circuit history; team-track fit; track trait fit; pit-stop execution
-10. Carlos Sainz, score 39.0, confidence 34%, same-circuit history; reliability; weather adaptation; track trait fit
+1. Andrea Kimi Antonelli, score 67.5, confidence 35%, qualifying and grid position; car performance; ML podium probability; track trait fit; team-track fit
+2. Lewis Hamilton, score 64.5, confidence 27%, qualifying and grid position; car performance; team-track fit; track trait fit; ML podium probability
+3. Max Verstappen, score 62.1, confidence 35%, qualifying and grid position; car performance; team-track fit; ML podium probability; track trait fit
+4. Charles Leclerc, score 61.0, confidence 40%, qualifying and grid position; car performance; team-track fit; track trait fit; regulation-era fit
+5. George Russell, score 61.0, confidence 48%, qualifying and grid position; car performance; track trait fit; team-track fit; neural lap-time forecast
+6. Oscar Piastri, score 54.7, confidence 40%, qualifying and grid position; car performance; team-track fit; track trait fit; same-circuit history
+7. Lando Norris, score 53.6, confidence 40%, qualifying and grid position; car performance; team-track fit; track trait fit; same-circuit history
+8. Isack Hadjar, score 53.2, confidence 53%, qualifying and grid position; car performance; team-track fit; track trait fit; neural lap-time forecast
+9. Liam Lawson, score 41.3, confidence 39%, qualifying and grid position; team-track fit; track trait fit; car performance; pit-stop execution
+10. Pierre Gasly, score 39.2, confidence 44%, qualifying and grid position; team-track fit; ML finish-position model; track trait fit
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Friday, 29 May 2026, 02:04 PM IST
 - Overtaking: medium
 - Tyre stress: medium
 - Safety car/DNF risk proxy: high
-- Weather: 24.7°C, rain 12%, wind 16.5 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
+- Weather: 22.9°C, rain 0%, wind 10.5 km/h
+- Weather impact: dry baseline more likely
 
 ## Strategy
 
@@ -40,17 +40,17 @@ Generated: Friday, 29 May 2026, 02:04 PM IST
 
 ## Team fit
 
-1. Ferrari
-2. Mercedes
-3. McLaren
-4. Red Bull
+1. Mercedes
+2. Ferrari
+3. Red Bull
+4. McLaren
 5. RB F1 Team
 
 ## Upgrade impact
 
+- Alpine: 40.0/100, power efficiency
 - Audi: 40.0/100, straight line, power efficiency
-- Ferrari: 40.0/100, tyre management, power efficiency
-- Mercedes: 40.0/100, tyre management, power efficiency
+- Cadillac: 40.0/100, power efficiency
 
 ## Regulation context
 
@@ -61,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- car performance: 7.6%
-- ml podium probability: 5.1%
-- driver form: 4.2%
+- qualifying: 6.7%
+- ml podium probability: 6.3%
+- car performance: 6.3%
+- ml finish position score: 4.6%
 - team track fit: 4.2%
-- track trait fit: 4.2%
 
 ## Model accuracy audit
 
@@ -77,7 +77,7 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Source status
 
-- Stage: Race prediction, Pre-weekend prediction
+- Stage: Race prediction, Post-qualifying prediction
 - ML model: loaded
 - F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token
 - FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']

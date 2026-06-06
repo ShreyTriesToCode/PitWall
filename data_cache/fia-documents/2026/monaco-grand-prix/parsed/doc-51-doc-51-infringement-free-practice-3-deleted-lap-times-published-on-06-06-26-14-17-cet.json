@@ -1,0 +1,26 @@
+{
+  "document_id": "8107eaabb5eeb08f",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:46.602393+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To All Teams, All Officials Document 51 Date 06 June 2026 Time 14:10 Title Infringement - Free Practice 3 Deleted Lap Times Description Infringement - Free Practice 3 Deleted Lap Times Enclosed MON DOC 51 - Free Practice 3 Delet",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 51\nDate 06 June 2026\nTime 14:10\nTitle Infringement - Free Practice 3 Deleted Lap Times\nDescription Infringement - Free Practice 3 Deleted Lap Times\nEnclosed MON DOC 51 - Free Practice 3 Deleted Lap Times.pdf\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n\n \n \n2026 MONACO GRAND PRIX \n05 – 07 June 2026 \n \n    \nFrom The Stewards      Document 51 \n  \nTo All Officials, All Teams      Date  06 June 2026 \n \n        Time  14:10 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 3 \n  \nFact The F1 cars below did not use the track at turns 1, 10 and 16. \n \nNo. Tur\nn Car Driver Competitor Time of Day  Lap Time \n1 10 44  Lewis Hamilton Scuderia Ferrari HP 12:35:54 1:51.026 \n2 10 77  Valtteri Bottas Cadillac Formula 1 Team 12:35:55 PIT \n3 16 77 Valtteri Bottas Cadillac Formula 1 Team 12:36:15 PIT \n4 10 16 Charles Leclerc Scuderia Ferrari HP 12:37:00 1:16.505 \n5 10 43 Franco Colapinto BWT Alpine F1 Team 12:37:28 1:29.111 \n6 10 11 Sergio Perez Cadillac Formula 1 "
+}

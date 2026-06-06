@@ -1,17 +1,17 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-06-06T19:12:24.041599+05:30",
+  "generated_at": "2026-06-07T00:21:26.359412+05:30",
   "history": [
     {
       "race_id": "2026-6-monaco-grand-prix",
-      "prediction_id": "2026-6-monaco-grand-prix-race-pre_weekend-a76f90eba092",
+      "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-9f6dc0e7fe5e",
       "race_name": "Monaco Grand Prix",
       "season": 2026,
       "round": 6,
-      "stage": "pre_weekend",
+      "stage": "post_qualifying",
       "model_version": "2026.05-high-accuracy-v5",
-      "top_pick": "Lewis Hamilton",
-      "top_pick_confidence": 17.0,
+      "top_pick": "Andrea Kimi Antonelli",
+      "top_pick_confidence": 0,
       "finish_position_mae": 3.2200901704520337,
       "finish_position_rmse": 4.113245603365494,
       "winner_hit_rate": 0.3088,

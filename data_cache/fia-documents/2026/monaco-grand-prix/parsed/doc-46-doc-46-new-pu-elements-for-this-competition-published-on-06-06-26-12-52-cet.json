@@ -1,0 +1,46 @@
+{
+  "document_id": "4ab00e8f9fa583e5",
+  "document_type": "new_pu_elements",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_new_pu_elements_for_this_competition_1.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:55.276293+05:30",
+  "confidence": 1.0,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {
+    "23": {
+      "new_ice": false,
+      "new_tc": false,
+      "new_mgu_h": false,
+      "new_mgu_k": false,
+      "new_es": false,
+      "new_ce": false,
+      "new_exhaust": false,
+      "new_pu_anc": false,
+      "component_count_used": null,
+      "component_limit_margin": null,
+      "reliability_boost": 0,
+      "grid_penalty_risk": 5,
+      "pu_change_reason_text": "23 Williams Mercedes Alexander Albon 1",
+      "source_confidence": 1.0
+    },
+    "01": {
+      "new_ice": false,
+      "new_tc": false,
+      "new_mgu_h": false,
+      "new_mgu_k": false,
+      "new_es": false,
+      "new_ce": false,
+      "new_exhaust": false,
+      "new_pu_anc": false,
+      "component_count_used": null,
+      "component_limit_margin": null,
+      "reliability_boost": 0,
+      "grid_penalty_risk": 5,
+      "pu_change_reason_text": "01 McLaren Mercedes Lando Norris 1",
+      "source_confidence": 1.0
+    }
+  },
+  "infringements": {},
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 46\nDate 06 June 2026\nTime 12:43\nTitle Technical Delegate's Report\nDescription New PU elements for this Competition\nEnclosed 06 MCO GP 26 TDR08.pdf\nManuel Leal\n\n1 \n \n \n2026 MONACO GRAND PRIX \n05 – 07 June 2026 \n \n  \n  \nFrom The FIA Formula 1 Technical Delegate   \n  \nTo The Stewards      Date  06 June 2026 \n  \n \n \nTECHNICAL DELEGATE’S REPORT \n \nThe following driver is using a new energy store (ES) for the remainder of the Competition: \n \nNumber Car Driver Previously used ES \n    \n23 Williams Mercedes Alexander Albon 1 \n \nThe energy store unit used by the above driver is one (1) of the three (3) new energy store units \nallowed for the 2026 Championship season and this is in conformity with Article B8.2.2  d) of the \n2026 Formula One Sporting Regulations. \n \n \nThe following driver is using a new control electronic s unit  (PU-CE) for the remainder of the \nCompetition: \n \nNumber Car Driver Previously used PU-CE \n    \n23 Williams Mercedes Alexander Albon 1 \n \nThe control electronics unit used by the above driver is one (1) of the three (3)  new "
+}

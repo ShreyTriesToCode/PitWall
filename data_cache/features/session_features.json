@@ -2,11 +2,11 @@
   {
     "race_id": "2026-6-monaco-grand-prix",
     "target_type": "race",
-    "stage": "pre_weekend",
+    "stage": "post_qualifying",
     "start_iso": "2026-06-07T18:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-05-29T14:04:53.223008+05:30",
-      "overall_score": 70.27,
+      "generated_at": "2026-06-07T00:21:23.811299+05:30",
+      "overall_score": 72.09,
       "status": "Fallback",
       "sources": [
         {
@@ -16,8 +16,8 @@
         },
         {
           "source": "Jolpica",
-          "score": 62.0,
-          "status": "Fallback"
+          "score": 82.0,
+          "status": "Available"
         },
         {
           "source": "OpenF1",
@@ -83,7 +83,7 @@
           "source_url": "https://github.com/f1db/f1db",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-05-29T08:34:53.222748+00:00",
+          "checked_at": "2026-06-06T18:51:23.811057+00:00",
           "errors": [],
           "warnings": [
             "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -103,7 +103,7 @@
           "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-05-29T08:34:53.222921+00:00",
+          "checked_at": "2026-06-06T18:51:23.811198+00:00",
           "errors": [],
           "warnings": [
             "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."

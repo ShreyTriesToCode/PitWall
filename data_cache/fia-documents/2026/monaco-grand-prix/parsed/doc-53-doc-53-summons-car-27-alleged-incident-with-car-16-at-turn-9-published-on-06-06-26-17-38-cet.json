@@ -1,0 +1,26 @@
+{
+  "document_id": "27a185e46855cfec",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_27_-_alleged_incident_with_car_16_at_turn_9.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:42.866426+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The driver and team representative are required to report to the Stewards at 17:45 in relation to the incident below. The Stewards From The Stewards To The Team Manager, Audi Revolut F1 Team Document 53 Date 06 June 2026 Time 17:06 No / Driver 27 - Nico Hulke",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe driver and team representative are required to report to the Stewards at 17:45 in relation to the\nincident below.\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 53\nDate 06 June 2026\nTime 17:06\nNo / Driver 27 - Nico Hulkenberg\nReason Alleged breach of Article 12.2.1.i of the International Sporting Code and non-\ncompliance with Race Director’s instructions – Driving unnecessarily slowly in the\ntunnel during Qualifying. \nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n"
+}

@@ -1,0 +1,13 @@
+{
+  "document_id": "b14f286c6b3726ec",
+  "document_type": "scrutineering",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_p3_and_q_scrutineering.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:27.189098+05:30",
+  "confidence": 0.55,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nTechnical Delegate’s Report\n \nDuring the third free practice session:\nThe tyre starting pressures of all cars during P3 were checked.\nThe fuel pressure of all cars during the second free practice session was checked.\nThe logged pressure within the engine cooling system during the second free practice session was\nchecked on all cars.\nThe engine high rev limit bands were checked on all cars.\nThe fuel flow meter calibration checksum was checked on all cars .\nThe instantaneous fuel energy flow of all cars was checked.\nThe partial load fuel energy flow of all cars was checked.\nThe fuel temperature of all cars was checked.\nThe plenum temperature of all cars was checked.\nThe engine intake air pressure of all cars was checked.\nThe maximum turbocharger speed of all cars was checked.\nThe PU and MGU-K power reduction rates were checked on all cars.\nThe DC sensor code and calibration checksums were checked on all cars.\nThe on-track ES state of charge limits were checked on all cars.\nThe ERS recharge limits were checked on all cars.\nThe maximum MGU-K power limits were checked on all cars.\nThe maximum MGU-K speed was checked on all cars.\nThe torque coordi"
+}

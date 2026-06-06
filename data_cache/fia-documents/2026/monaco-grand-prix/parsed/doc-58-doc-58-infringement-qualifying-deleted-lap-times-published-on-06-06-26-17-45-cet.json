@@ -1,0 +1,26 @@
+{
+  "document_id": "c0040d13c9497e7e",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:33.889718+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To All Teams, All Officials Document 58 Date 06 June 2026 Time 17:45 Title Infringement - Qualifying Deleted Lap Times Description Infringement - Qualifying Deleted Lap Times Enclosed MON DOC 58 - Qualifying Deleted Lap Times .p",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 58\nDate 06 June 2026\nTime 17:45\nTitle Infringement - Qualifying Deleted Lap Times\nDescription Infringement - Qualifying Deleted Lap Times\nEnclosed MON DOC 58 - Qualifying Deleted Lap Times .pdf\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n\n \n \n \n2026 MONACO GRAND PRIX \n05 – 07 June 2026 \n \n    \nFrom The Stewards      Document 58 \n  \nTo All Officials, All Teams      Date  06 June 2026 \n \n        Time  17:45 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 cars below did not use the track at turns 1, 10 and 16. \n \nNo. Turn Car Driver Competitor Time of Day  Lap Time \n1 10 63  George Russell Mercedes-AMG PETRONAS F1 Team 16:02:59 OUT LAP \n2 10 63  George Russell Mercedes-AMG PETRONAS F1 Team 16:04:26 1:33.532 \n3 10 11 Sergio Perez Cadillac Formula 1 Team 16:05:06 1:30.897 \n4 10 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:07:16 1:39.599 \n5 10 11 Sergio Perez Cadillac Formula 1 Team 16:07:51 PIT \n6 10 63 George Russell Mercedes-"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "d6ff9e562a517c6b",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_41_-_alleged_pit_lane_incident_with_car_23.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:35.573163+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The driver and team representative are required to report to the Stewards at 18:00, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 57 Date 06 June 2026 Time 17:28 No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe driver and team representative are required to report to the Stewards at 18:00, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 57\nDate 06 June 2026\nTime 17:28\nNo / Driver 41 - Arvid Lindblad\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations by Car 23– Pit lane\nincident at 16:41.\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n"
+}

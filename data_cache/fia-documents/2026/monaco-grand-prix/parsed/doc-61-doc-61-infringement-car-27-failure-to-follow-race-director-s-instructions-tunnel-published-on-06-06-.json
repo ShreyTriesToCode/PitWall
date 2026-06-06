@@ -1,0 +1,26 @@
+{
+  "document_id": "b88071482124f273",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_27_-_failure_to_follow_race_directors_instructions_-_tunnel.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:28.851427+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Audi Revolut F1 Team Document 61 Date 06 June 2026 Time 19:13 The Stewards, having received a report from the Race Director, summoned (documents 53 & 54) and heard from the drivers and team representatives, ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 61\nDate 06 June 2026\nTime 19:13\nThe Stewards, having received a report from the Race Director, summoned (documents 53 & 54)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 27 - Nico Hulkenberg\nCompetitor Audi Revolut F1 Team\nTime 16:37\nSession Qualifying\nFact Car 27 was travelling slowly ahead of Car 16 in the tunnel\nInfringement Breach of Article 12.2.1.i of the International Sporting Code.\nDecision Competitor: Warning.\nReason The Stewards heard from the driver and team representative of Car 27 (Nico\nHulkenberg), the team representative of Car 16 (Charles Leclerc) and reviewed\npositioning/marshalling system data, video, timing, telemetry, team radio and in-car\nvideo evidence.\nCar 16 was on a prep lap and Car 27 was on a cool down lap and therefore the two\ncars were on different speed strategies.  \nCar 27 was advised by the team that it was “all clear behind” and this was not correct\nand accordingly a warning is imposed on the team.\nCompetitors are reminded that they have the rig"
+}

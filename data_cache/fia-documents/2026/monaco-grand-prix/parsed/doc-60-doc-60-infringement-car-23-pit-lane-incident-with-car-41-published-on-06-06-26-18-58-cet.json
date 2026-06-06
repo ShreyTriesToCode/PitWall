@@ -1,0 +1,26 @@
+{
+  "document_id": "945a39067439f0ee",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_23_-_pit_lane_incident_with_car_41.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T00:18:30.565319+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 60 Date 06 June 2026 Time 18:56 The Stewards, having received a report from the Race Director, summoned (documents 56 & 57) and heard from the drivers and team representatives, have co",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 60\nDate 06 June 2026\nTime 18:56\nThe Stewards, having received a report from the Race Director, summoned (documents 56 & 57)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 16:41\nSession Qualifying\nFact Car 41 was delayed in entering his pit stop by Car 23 and had to swerve around Car\n23 and its mechanics.\nInfringement Breach of Article B4.1.1 of the FIA F1 Regulations and Article 12.2.1.h of the FIA\nInternational Sporting Code.\nDecision Competitor: Formal warning\nA fine of €5,000 is also imposed on the Competitor for a breach of Article 12.2.1.h of\nthe FIA International Sporting Code.\nReason The Stewards heard from the driver of Car 23 (Alexander Albon), the driver of Car 41\n(Arvid Lindblad), team representatives, the FIA Single Seater Department Sporting\nDirector and reviewed positioning/marshalling system data, video, team radio and in-\ncar video evidence.\nCar 55 was already stopped in front of the Williams Team garage ar"
+}
