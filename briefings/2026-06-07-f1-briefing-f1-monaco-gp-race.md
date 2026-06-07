@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Monaco GP - Race
 
-Generated: Sunday, 07 June 2026, 01:13 PM IST
+Generated: Sunday, 07 June 2026, 02:28 PM IST
 
 ## Event
 
@@ -29,7 +29,7 @@ Generated: Sunday, 07 June 2026, 01:13 PM IST
 - Overtaking: medium
 - Tyre stress: medium
 - Safety car/DNF risk proxy: high
-- Weather: 22.4°C, rain 0%, wind 11.9 km/h
+- Weather: 22.2°C, rain 0%, wind 10.9 km/h
 - Weather impact: dry baseline more likely
 
 ## Strategy

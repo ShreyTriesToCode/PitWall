@@ -1,6 +1,6 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-06-07T13:13:56.514775+05:30",
+  "generated_at": "2026-06-07T14:28:02.227053+05:30",
   "status": "Success",
   "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: race=F1 Monaco GP - Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {
