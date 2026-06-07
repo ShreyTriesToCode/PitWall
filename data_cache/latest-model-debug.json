@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T00:56:16.757024+05:30",
+  "generated_at": "2026-06-07T09:21:13.182694+05:30",
   "output_mode": "today",
   "selected_targets": [
     {
@@ -101,7 +101,7 @@
       "round_no": "6",
       "target_type": "race",
       "title": "F1 Race Briefing: F1 Monaco GP - Race",
-      "briefing": "# F1 Race Briefing: F1 Monaco GP - Race\n\nGenerated: Sunday, 07 June 2026, 12:56 AM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 07 June 2026, 06:30 PM IST\n- Circuit: Circuit de Monaco\n- Location: Monte Carlo, Monaco\n\n## Prediction\n\n1. Andrea Kimi Antonelli, score 72.0, confidence 50%, qualifying and grid position; car performance; ML podium probability; team-track fit; neural lap-time forecast\n2. Lewis Hamilton, score 70.3, confidence 43%, qualifying and grid position; car performance; team-track fit; track trait fit; ML podium probability\n3. Charles Leclerc, score 67.2, confidence 33%, qualifying and grid position; car performance; team-track fit; track trait fit; official timing car performance\n4. Max Verstappen, score 67.1, confidence 64%, qualifying and grid position; car performance; team-track fit; ML podium probability; same-circuit history\n5. George Russell, score 65.7, confidence 64%, car performance; qualifying and grid position; team-track fit; neural lap-time forecast; regulation-era fit\n6. Oscar Piastri, score 58.8, confidence 56%, qualifying and grid position; car performance; team-track fit; track trait fit; same-circuit history\n7. Isack Hadjar, score 56.0, confidence 69%, qualifying and grid position; car performance; team-track fit; neural lap-time forecast; track trait fit\n8. Lando Norris, score 55.4, confidence 61%, qualifying and grid position; car performance; team-track fit; track trait fit; same-circuit history\n9. Liam Lawson, score 43.5, confidence 61%, qualifying and grid position; car performance; team-track fit; pit-stop execution; track trait fit\n10. Pierre Gasly, score 42.7, confidence 59%, qualifying and grid position; team-track fit; ML finish-position model; regulation-era fit\n\n## Track and weather\n\n- Key car trait: high downforce, slow-corner traction, kerb compliance\n- Track profile: traction and braking dominant\n- Overtaking: medium\n- Tyre stress: medium\n- Safety car/DNF risk proxy: high\n- Weather: 22.9°C, rain 0%, wind 10.5 km/h\n- Weather impact: dry baseline more likely\n\n## Strategy\n\n- Baseline: one-stop or two-stop depending on safety car and tyre delta\n- Pit window: Lap 18-32 for normal dry strategy.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. Red Bull\n4. McLaren\n5. RB F1 Team\n\n## Upgrade impact\n\n- No trusted upgrade-package signal found for this event.\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.9%\n- ml podium probability: 6.5%\n- car performance: 6.5%\n- ml finish position score: 4.7%\n- team track fit: 4.3%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.22; RMSE: 4.11\n- Neural lap-time MAE: 4.66s; RMSE: 6.08s\n- Backtest winner hit: 30.9%; top-3 recall: 61.8%; top-5 recall: 74.4%\n- Win model AUC/Brier: 0.963 / 0.032\n- Podium model AUC/Brier: 0.934 / 0.073\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_live_timing_static_used\n- FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
+      "briefing": "# F1 Race Briefing: F1 Monaco GP - Race\n\nGenerated: Sunday, 07 June 2026, 09:21 AM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 07 June 2026, 06:30 PM IST\n- Circuit: Circuit de Monaco\n- Location: Monte Carlo, Monaco\n\n## Prediction\n\n1. Andrea Kimi Antonelli, score 72.0, confidence 50%, qualifying and grid position; car performance; ML podium probability; team-track fit; neural lap-time forecast\n2. Lewis Hamilton, score 70.3, confidence 43%, qualifying and grid position; car performance; team-track fit; track trait fit; ML podium probability\n3. Charles Leclerc, score 67.2, confidence 33%, qualifying and grid position; car performance; team-track fit; track trait fit; official timing car performance\n4. Max Verstappen, score 67.1, confidence 64%, qualifying and grid position; car performance; team-track fit; ML podium probability; same-circuit history\n5. George Russell, score 65.7, confidence 64%, car performance; qualifying and grid position; team-track fit; neural lap-time forecast; regulation-era fit\n6. Oscar Piastri, score 58.8, confidence 56%, qualifying and grid position; car performance; team-track fit; track trait fit; same-circuit history\n7. Isack Hadjar, score 56.0, confidence 69%, qualifying and grid position; car performance; team-track fit; neural lap-time forecast; track trait fit\n8. Lando Norris, score 55.4, confidence 61%, qualifying and grid position; car performance; team-track fit; track trait fit; same-circuit history\n9. Liam Lawson, score 43.5, confidence 61%, qualifying and grid position; car performance; team-track fit; pit-stop execution; track trait fit\n10. Pierre Gasly, score 42.7, confidence 59%, qualifying and grid position; team-track fit; ML finish-position model; regulation-era fit\n\n## Track and weather\n\n- Key car trait: high downforce, slow-corner traction, kerb compliance\n- Track profile: traction and braking dominant\n- Overtaking: medium\n- Tyre stress: medium\n- Safety car/DNF risk proxy: high\n- Weather: 22.5°C, rain 0%, wind 11.6 km/h\n- Weather impact: dry baseline more likely\n\n## Strategy\n\n- Baseline: one-stop or two-stop depending on safety car and tyre delta\n- Pit window: Lap 18-32 for normal dry strategy.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. Red Bull\n4. McLaren\n5. RB F1 Team\n\n## Upgrade impact\n\n- No trusted upgrade-package signal found for this event.\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.9%\n- ml podium probability: 6.5%\n- car performance: 6.5%\n- ml finish position score: 4.7%\n- team track fit: 4.3%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.22; RMSE: 4.11\n- Neural lap-time MAE: 4.66s; RMSE: 6.08s\n- Backtest winner hit: 30.9%; top-3 recall: 61.8%; top-5 recall: 74.4%\n- Win model AUC/Brier: 0.963 / 0.032\n- Podium model AUC/Brier: 0.934 / 0.073\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_live_timing_static_used\n- FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
       "profile": {
         "race_name": "Monaco Grand Prix",
         "circuit": "Circuit de Monaco",
@@ -181,16 +181,16 @@
       },
       "weather": {
         "source": "Open-Meteo forecast",
-        "temperature": "22.9°C",
+        "temperature": "22.5°C",
         "rain": "0%",
-        "humidity": "69%",
-        "wind": "10.5 km/h",
-        "wind_gust": "11.9 km/h",
-        "cloud_cover": "14%",
+        "humidity": "73%",
+        "wind": "11.6 km/h",
+        "wind_gust": "13.3 km/h",
+        "cloud_cover": "54%",
         "track_temperature": "Unavailable",
         "rain_score": 0,
         "heat_score": 0,
-        "wind_score": 30.94,
+        "wind_score": 34.580000000000005,
         "impact": "dry baseline more likely"
       },
       "historical_weather": {
@@ -512,7 +512,7 @@
           },
           "teammate_prediction_gap": 6.31,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -520,8 +520,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -802,7 +802,7 @@
           },
           "teammate_prediction_gap": 3.05,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -810,8 +810,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1096,7 +1096,7 @@
           },
           "teammate_prediction_gap": 3.05,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1104,8 +1104,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1384,7 +1384,7 @@
           },
           "teammate_prediction_gap": 11.15,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1392,8 +1392,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1671,7 +1671,7 @@
           },
           "teammate_prediction_gap": 6.31,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1679,8 +1679,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1960,7 +1960,7 @@
           },
           "teammate_prediction_gap": 3.33,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -1968,8 +1968,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2247,7 +2247,7 @@
           },
           "teammate_prediction_gap": 11.15,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -2255,8 +2255,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2536,7 +2536,7 @@
           },
           "teammate_prediction_gap": 3.33,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -2544,8 +2544,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2825,7 +2825,7 @@
           },
           "teammate_prediction_gap": 9.75,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -2833,8 +2833,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3108,7 +3108,7 @@
           },
           "teammate_prediction_gap": 4.75,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3116,8 +3116,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -3399,7 +3399,7 @@
           },
           "teammate_prediction_gap": 6.31,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3407,8 +3407,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3689,7 +3689,7 @@
           },
           "teammate_prediction_gap": 3.05,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3697,8 +3697,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3983,7 +3983,7 @@
           },
           "teammate_prediction_gap": 3.05,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -3991,8 +3991,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4271,7 +4271,7 @@
           },
           "teammate_prediction_gap": 11.15,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -4279,8 +4279,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4558,7 +4558,7 @@
           },
           "teammate_prediction_gap": 6.31,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -4566,8 +4566,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4847,7 +4847,7 @@
           },
           "teammate_prediction_gap": 3.33,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -4855,8 +4855,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5134,7 +5134,7 @@
           },
           "teammate_prediction_gap": 11.15,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5142,8 +5142,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5423,7 +5423,7 @@
           },
           "teammate_prediction_gap": 3.33,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5431,8 +5431,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5712,7 +5712,7 @@
           },
           "teammate_prediction_gap": 9.75,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -5720,8 +5720,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5995,7 +5995,7 @@
           },
           "teammate_prediction_gap": 4.75,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6003,8 +6003,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6282,7 +6282,7 @@
           },
           "teammate_prediction_gap": 4.02,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6290,8 +6290,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6562,7 +6562,7 @@
           },
           "teammate_prediction_gap": 4.75,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6570,8 +6570,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6846,7 +6846,7 @@
           },
           "teammate_prediction_gap": 2.26,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -6854,8 +6854,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7130,7 +7130,7 @@
           },
           "teammate_prediction_gap": 4.02,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7138,8 +7138,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7414,7 +7414,7 @@
           },
           "teammate_prediction_gap": 2.26,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7422,8 +7422,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7694,7 +7694,7 @@
           },
           "teammate_prediction_gap": 9.75,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7702,8 +7702,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7973,7 +7973,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -7981,8 +7981,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8251,7 +8251,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8259,8 +8259,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8529,7 +8529,7 @@
           },
           "teammate_prediction_gap": 4.16,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8537,8 +8537,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8811,7 +8811,7 @@
           },
           "teammate_prediction_gap": 4.16,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -8819,8 +8819,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9097,7 +9097,7 @@
           },
           "teammate_prediction_gap": 2.47,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9105,8 +9105,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9383,7 +9383,7 @@
           },
           "teammate_prediction_gap": 2.47,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9391,8 +9391,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -9674,7 +9674,7 @@
           },
           "teammate_prediction_gap": 6.31,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9682,8 +9682,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9964,7 +9964,7 @@
           },
           "teammate_prediction_gap": 3.05,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -9972,8 +9972,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10258,7 +10258,7 @@
           },
           "teammate_prediction_gap": 3.05,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -10266,8 +10266,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10546,7 +10546,7 @@
           },
           "teammate_prediction_gap": 11.15,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -10554,8 +10554,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10833,7 +10833,7 @@
           },
           "teammate_prediction_gap": 6.31,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -10841,8 +10841,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11122,7 +11122,7 @@
           },
           "teammate_prediction_gap": 3.33,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11130,8 +11130,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11409,7 +11409,7 @@
           },
           "teammate_prediction_gap": 11.15,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11417,8 +11417,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11698,7 +11698,7 @@
           },
           "teammate_prediction_gap": 3.33,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11706,8 +11706,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11987,7 +11987,7 @@
           },
           "teammate_prediction_gap": 9.75,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -11995,8 +11995,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12270,7 +12270,7 @@
           },
           "teammate_prediction_gap": 4.75,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -12278,8 +12278,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12557,7 +12557,7 @@
           },
           "teammate_prediction_gap": 4.02,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -12565,8 +12565,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12837,7 +12837,7 @@
           },
           "teammate_prediction_gap": 4.75,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -12845,8 +12845,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13121,7 +13121,7 @@
           },
           "teammate_prediction_gap": 2.26,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13129,8 +13129,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13405,7 +13405,7 @@
           },
           "teammate_prediction_gap": 4.02,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13413,8 +13413,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13689,7 +13689,7 @@
           },
           "teammate_prediction_gap": 2.26,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13697,8 +13697,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13969,7 +13969,7 @@
           },
           "teammate_prediction_gap": 9.75,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -13977,8 +13977,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14248,7 +14248,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14256,8 +14256,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14526,7 +14526,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14534,8 +14534,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14804,7 +14804,7 @@
           },
           "teammate_prediction_gap": 4.16,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -14812,8 +14812,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15086,7 +15086,7 @@
           },
           "teammate_prediction_gap": 4.16,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -15094,8 +15094,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15372,7 +15372,7 @@
           },
           "teammate_prediction_gap": 2.47,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -15380,8 +15380,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15658,7 +15658,7 @@
           },
           "teammate_prediction_gap": 2.47,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-51dfe60ba210",
+          "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
           "race_id": "2026-6-monaco-grand-prix",
           "season": 2026,
           "round": 6,
@@ -15666,8 +15666,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.05-high-accuracy-v5",
           "schema_version": "2026.05-high-accuracy-v5",
-          "generated_at": "2026-06-07T00:56:15.176267+05:30",
-          "input_data_hash": "50e17917709d2af12edf190f63f595c029e6b7bc75da14167b3a18a05fce23ad",
+          "generated_at": "2026-06-07T09:21:11.537278+05:30",
+          "input_data_hash": "138603330decca6304338037662a5b9330ec59acbf8f6966c1108fbc6496b30f",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -15726,7 +15726,7 @@
           "fastf1_tyre_stint": 0.0086
         },
         "source_health_snapshot": {
-          "generated_at": "2026-06-07T00:56:15.174337+05:30",
+          "generated_at": "2026-06-07T09:21:11.535190+05:30",
           "overall_score": 67.45,
           "status": "Fallback",
           "sources": [
@@ -15804,7 +15804,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-06-06T19:26:15.174119+00:00",
+              "checked_at": "2026-06-07T03:51:11.534950+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -15824,7 +15824,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-06-06T19:26:15.174259+00:00",
+              "checked_at": "2026-06-07T03:51:11.535107+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -19586,7 +19586,7 @@
             "model_latest_completed_race_id": "2026-5",
             "api_latest_completed_race_id": "2026-5",
             "readiness": {
-              "checked_at": "2026-06-07T00:53:38.151363+05:30",
+              "checked_at": "2026-06-07T09:19:14.616914+05:30",
               "current_year": 2026,
               "final_results_delay_hours": 8,
               "latest_completed_race_id": "2026-5",
@@ -20636,41 +20636,41 @@
           }
         ],
         "driver_scores": {
-          "piastri": 74.10887308128585,
-          "bearman": 43.581292557091984,
-          "sainz": 54.26002719171898,
-          "norris": 61.87463229833897,
           "gasly": 57.9405753778636,
-          "bortoleto": 52.50468181596457,
-          "albon": 52.095923446737686,
-          "antonelli": 87.33206112621305,
-          "max_verstappen": 86.11644229703444,
           "hulkenberg": 62.83908889427171,
           "russell": 83.24699590831067,
-          "alonso": 13.268448419079538,
-          "perez": 32.84710789000516,
-          "hamilton": 90.42355677853509,
-          "ocon": 38.490036003268834,
-          "lawson": 54.52732950817784,
-          "arvid_lindblad": 45.97614619737339,
-          "leclerc": 92.87968037031501,
-          "hadjar": 66.0291370828952,
-          "bottas": 15.690445069348833,
           "colapinto": 44.26490761926072,
-          "stroll": 4.005789457398019
+          "stroll": 4.005789457398019,
+          "leclerc": 92.87968037031501,
+          "albon": 52.095923446737686,
+          "bearman": 43.581292557091984,
+          "antonelli": 87.33206112621305,
+          "sainz": 54.26002719171898,
+          "norris": 61.87463229833897,
+          "ocon": 38.490036003268834,
+          "perez": 32.84710789000516,
+          "lawson": 54.52732950817784,
+          "hamilton": 90.42355677853509,
+          "bortoleto": 52.50468181596457,
+          "piastri": 74.10887308128585,
+          "hadjar": 66.0291370828952,
+          "alonso": 13.268448419079538,
+          "arvid_lindblad": 45.97614619737339,
+          "max_verstappen": 86.11644229703444,
+          "bottas": 15.690445069348833
         },
         "team_scores": {
-          "McLaren": 67.99175268981242,
-          "Haas": 41.03566428018041,
-          "Williams": 53.17797531922834,
           "Alpine": 51.10274149856216,
           "Audi": 57.671885355118135,
           "Mercedes": 85.28952851726186,
-          "Red Bull": 76.07278968996482,
           "Aston Martin": 8.637118938238778,
-          "Cadillac": 24.268776479676998,
           "Ferrari": 91.65161857442504,
-          "RB F1 Team": 50.25173785277562
+          "Williams": 53.17797531922834,
+          "Haas": 41.03566428018041,
+          "McLaren": 67.99175268981242,
+          "Cadillac": 24.268776479676998,
+          "RB F1 Team": 50.25173785277562,
+          "Red Bull": 76.07278968996482
         },
         "weather_traits": {},
         "timing_session_result": {
@@ -20820,28 +20820,28 @@
           "bearman": 54.4084249084249
         },
         "timing_car_performance": {
-          "piastri": 74.10887308128585,
-          "bearman": 43.581292557091984,
-          "sainz": 54.26002719171898,
-          "norris": 61.87463229833897,
           "gasly": 57.9405753778636,
-          "bortoleto": 52.50468181596457,
-          "albon": 52.095923446737686,
-          "antonelli": 87.33206112621305,
-          "max_verstappen": 86.11644229703444,
           "hulkenberg": 62.83908889427171,
           "russell": 83.24699590831067,
-          "alonso": 13.268448419079538,
-          "perez": 32.84710789000516,
-          "hamilton": 90.42355677853509,
-          "ocon": 38.490036003268834,
-          "lawson": 54.52732950817784,
-          "arvid_lindblad": 45.97614619737339,
-          "leclerc": 92.87968037031501,
-          "hadjar": 66.0291370828952,
-          "bottas": 15.690445069348833,
           "colapinto": 44.26490761926072,
-          "stroll": 4.005789457398019
+          "stroll": 4.005789457398019,
+          "leclerc": 92.87968037031501,
+          "albon": 52.095923446737686,
+          "bearman": 43.581292557091984,
+          "antonelli": 87.33206112621305,
+          "sainz": 54.26002719171898,
+          "norris": 61.87463229833897,
+          "ocon": 38.490036003268834,
+          "perez": 32.84710789000516,
+          "lawson": 54.52732950817784,
+          "hamilton": 90.42355677853509,
+          "bortoleto": 52.50468181596457,
+          "piastri": 74.10887308128585,
+          "hadjar": 66.0291370828952,
+          "alonso": 13.268448419079538,
+          "arvid_lindblad": 45.97614619737339,
+          "max_verstappen": 86.11644229703444,
+          "bottas": 15.690445069348833
         }
       },
       "fastf1_scores": {
@@ -20980,7 +20980,7 @@
   "notification_gate": {
     "allowed": false,
     "reason": "Nearest Sprint/Race target is more than 8 hours away.",
-    "hours_until_event": 17.56,
+    "hours_until_event": 9.15,
     "matched_event": "F1 Monaco GP - Race"
   },
   "backfill": {
