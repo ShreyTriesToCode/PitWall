@@ -2,7 +2,7 @@
   "schema_version": "2026.05-high-accuracy-v5",
   "model_version": "2026.05-high-accuracy-v5",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-07T14:28:02.253846+05:30",
+  "generated_at": "2026-06-07T19:23:09.298134+05:30",
   "trained_at": "2026-05-28T20:42:20.311041+05:30",
   "latest_completed_race_included": "2026-5",
   "latest_available_api_result": "2026-5",
@@ -759,7 +759,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-07T08:58:02.253694+00:00",
+      "checked_at": "2026-06-07T13:53:09.297998+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -779,7 +779,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-07T08:58:02.253818+00:00",
+      "checked_at": "2026-06-07T13:53:09.298102+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -797,23 +797,23 @@
       "season": 2026,
       "event_slug": "monaco-grand-prix",
       "event_name": "monaco grand prix",
-      "document_id": "c52cc5b02f287912",
-      "document_number": 66,
-      "title": "Doc 66 - Post-Race Procedure Published on 07.06.26 09:39 CET",
-      "normalized_title": "doc-66-post-race-procedure-published-on-07-06-26-09-39-cet",
-      "document_type": "procedure",
+      "document_id": "f99042cc158c71b1",
+      "document_number": 69,
+      "title": "Doc 69 - Infringement - Car 11 - False start - Out of position Published on 07.06.26 15:31 CET",
+      "normalized_title": "doc-69-infringement-car-11-false-start-out-of-position-published-on-07-06-26-15-31-cet",
+      "document_type": "infringement",
       "published_date": "2026-06-07",
-      "published_time": "08:11",
-      "published_at_utc": "2026-06-07T08:11:00+00:00",
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_post-race_procedure.pdf",
+      "published_time": "13:00",
+      "published_at_utc": "2026-06-07T13:00:00+00:00",
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_11_-_false_start_-_out_of_position.pdf",
       "local_pdf_path": null,
-      "local_text_path": "data_cache/fia-documents/2026/monaco-grand-prix/text/doc-66-doc-66-post-race-procedure-published-on-07-06-26-09-39-cet.txt",
-      "local_parsed_json_path": "data_cache/fia-documents/2026/monaco-grand-prix/parsed/doc-66-doc-66-post-race-procedure-published-on-07-06-26-09-39-cet.json",
+      "local_text_path": "data_cache/fia-documents/2026/monaco-grand-prix/text/doc-69-doc-69-infringement-car-11-false-start-out-of-position-published-on-07-06-26-15-31-cet.txt",
+      "local_parsed_json_path": "data_cache/fia-documents/2026/monaco-grand-prix/parsed/doc-69-doc-69-infringement-car-11-false-start-out-of-position-published-on-07-06-26-15-31-cet.json",
       "recalled": false,
       "superseded_by": null,
-      "hash": "e27f1ab82fa78f66916301492c22337ffb01150a3010eee466adad0c9a6e3da9",
-      "first_seen_at": "2026-06-07T14:25:11.109647+05:30",
-      "last_checked_at": "2026-06-07T14:25:11.109688+05:30",
+      "hash": "8669baaea145db51a016d5c67607a484f6cc38d3294e8af55c5db5720f7562b5",
+      "first_seen_at": "2026-06-07T19:20:48.031640+05:30",
+      "last_checked_at": "2026-06-07T19:20:48.031678+05:30",
       "parse_status": "parsed",
       "parse_error": null,
       "source_confidence": 1.0,
@@ -821,14 +821,14 @@
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
       "http_status": 200
     },
-    "fia_document_count": 70,
+    "fia_document_count": 73,
     "fia_documents_by_type": {
+      "infringement": 13,
+      "starting_grid": 2,
+      "unknown": 13,
       "procedure": 4,
-      "starting_grid": 1,
       "qualifying_classification": 2,
       "scrutineering": 2,
-      "infringement": 12,
-      "unknown": 12,
       "deleted_lap_times": 7,
       "summons": 11,
       "race_director_notes": 4,
@@ -1075,7 +1075,7 @@
     }
   },
   "readiness_state": {
-    "checked_at": "2026-06-07T14:27:17.065508+05:30",
+    "checked_at": "2026-06-07T19:23:06.487175+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-5",
@@ -1089,27 +1089,30 @@
       "final_results_cutoff": "2026-05-25T09:30:00+05:30",
       "status": "api_results_available"
     },
-    "waiting_for_delay": null,
-    "waiting_for_api_results": null,
-    "next_race": {
+    "waiting_for_delay": {
       "race_id": "2026-6",
       "season": 2026,
       "round": 6,
       "race_name": "Monaco Grand Prix",
       "circuit": "Circuit de Monaco",
       "scheduled_at": "2026-06-07T18:30:00+05:30",
-      "final_results_cutoff": "2026-06-08T02:30:00+05:30"
+      "final_results_cutoff": "2026-06-08T02:30:00+05:30",
+      "status": "waiting_final_results_delay"
     },
-    "status": "latest_results_available"
+    "waiting_for_api_results": null,
+    "next_race": {
+      "race_id": "2026-7",
+      "season": 2026,
+      "round": 7,
+      "race_name": "Barcelona Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "scheduled_at": "2026-06-14T18:30:00+05:30",
+      "final_results_cutoff": "2026-06-15T02:30:00+05:30"
+    },
+    "status": "recent_gp_waiting_final_results_delay"
   },
   "mode": "today",
-  "selected_targets": [
-    {
-      "target_type": "race",
-      "title": "F1 Monaco GP - Race",
-      "start": "2026-06-07 18:30:00+05:30"
-    }
-  ],
+  "selected_targets": [],
   "errors": [],
   "limitations": [
     "Live race adjustments only become official model output when timing data is genuinely fresh and generated contracts are refreshed.",

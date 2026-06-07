@@ -1,0 +1,26 @@
+{
+  "document_id": "f99042cc158c71b1",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_11_-_false_start_-_out_of_position.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-07T19:20:49.952783+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 69 Date 07 June 2026 Time 15:25 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 1",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 69\nDate 07 June 2026\nTime 15:25\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 15:03\nSession Race\nFact Car 11 was out of position at the start of the race, taking the vacant position left by\nCar 5 which started in the pit lane.\nInfringement Breach of Article B5.11.1 of the FIA F1 Regulations.\nDecision Drive through penalty.\nReason The Stewards reviewed positioning/marshalling system data, video and in-car video\nevidence.\nCar 11 started from position 16 instead of position 18.  In Monaco, two places on the\ngrid is a very significant advantage.\nTherefore the penalty needs to reflect this, when compared to other false start\nincidents including being in the wrong position at other tracks where the advantage\nmay not have been as significant.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter"
+}
