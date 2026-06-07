@@ -1,17 +1,17 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-06-07T09:21:14.594423+05:30",
+  "generated_at": "2026-06-07T13:13:57.788741+05:30",
   "history": [
     {
       "race_id": "2026-6-monaco-grand-prix",
-      "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
+      "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-10cc92610f8e",
       "race_name": "Monaco Grand Prix",
       "season": 2026,
       "round": 6,
       "stage": "post_qualifying",
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Andrea Kimi Antonelli",
-      "top_pick_confidence": 4.3,
+      "top_pick_confidence": 0,
       "finish_position_mae": 3.2200901704520337,
       "finish_position_rmse": 4.113245603365494,
       "winner_hit_rate": 0.3088,

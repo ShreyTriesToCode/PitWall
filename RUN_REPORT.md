@@ -1,15 +1,15 @@
 # PitWall Run Report
 
-- Generated at: 2026-06-07T03:51:15.475403+00:00
+- Generated at: 2026-06-07T07:44:01.338532+00:00
 - Model version: 2026.05-high-accuracy-v5
 - Target event/session: Monaco Grand Prix / race
 - Top 10 availability: 10 rows
 - Full grid availability: 22 rows
 - Contract validation: passed
-- Event trust: 52.86
-- Source health: Fallback / 67.45
-- Source conflicts: 5
-- Major model disagreements: 6
+- Event trust: 53.08
+- Source health: Fallback / 72.09
+- Source conflicts: 2
+- Major model disagreements: 7
 - Missing data groups: pit_stop_data, practice_or_lap_pace
 
 ## Validation Details

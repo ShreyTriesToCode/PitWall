@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-6-monaco-grand-prix",
-    "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-431db4c15249",
+    "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-10cc92610f8e",
     "season": 2026,
     "round": 6,
     "circuit": "Circuit de Monaco",
@@ -13,12 +13,12 @@
     "safety_car": "high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "22.5°C",
+      "temperature": "22.4°C",
       "rain": "0%",
-      "humidity": "73%",
-      "wind": "11.6 km/h",
+      "humidity": "75%",
+      "wind": "11.9 km/h",
       "wind_gust": "13.3 km/h",
-      "cloud_cover": "54%",
+      "cloud_cover": "55%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 0,
@@ -85,35 +85,35 @@
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 69.84,
+          "scenario_score": 68.08,
           "rank": 1
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 67.97,
+          "scenario_score": 66.22,
           "rank": 2
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 64.29,
+          "scenario_score": 62.88,
           "rank": 3
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "scenario_score": 61.69,
+          "rank": 4
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 63.24,
-          "rank": 4
-        },
-        {
-          "driver_id": "leclerc",
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
-          "scenario_score": 62.95,
+          "scenario_score": 61.56,
           "rank": 5
         }
       ],
@@ -122,46 +122,46 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 67.14,
+          "scenario_score": 63.04,
           "rank": 1
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 66.4,
+          "scenario_score": 62.71,
           "rank": 2
         },
         {
-          "driver_id": "leclerc",
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
-          "scenario_score": 62.11,
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine",
+          "scenario_score": 60.38,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 61.23,
+          "scenario_score": 58.02,
           "rank": 4
         },
         {
-          "driver_id": "colapinto",
-          "name": "Franco Colapinto",
-          "team": "Alpine",
-          "scenario_score": 60.74,
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "scenario_score": 57.99,
           "rank": 5
         }
       ],
       "active_aero": {
         "straight_mode": "low-drag straight configuration",
         "corner_mode": "high-downforce corner configuration",
-        "average_suitability": 65.11
+        "average_suitability": 63.12
       },
       "energy_deployment": {
         "title": "2026 Boost / Overtake Mode Intelligence",
-        "average_boost_advantage": 63.36,
+        "average_boost_advantage": 55.5,
         "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
       },
       "decision_log": [
