@@ -1,0 +1,26 @@
+{
+  "document_id": "7c93bd3ea3b3336e",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_81_-_pit_lane_speeding.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-08T00:51:47.623242+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 74 Date 07 June 2026 Time 16:14 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Drive",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 74\nDate 07 June 2026\nTime 16:14\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 81 - Oscar Piastri\nCompetitor McLaren Mastercard F1 Team\nTime 16:06\nSession Race\nFact Pit lane speeding – 60.1 km/h\nInfringement Breach of Article B1.6.3a of the FIA F1 Regulations. \nDecision 5 second time penalty.\nReason Car 81 exceeded the pit lane speed limit which is set at 60 km/h for this event by 0.1\nkm/h.\nIt is noted that this is the standard penalty according to the F1 Regulations and\npenalty guideline scale, for exceeding the pit lane speed limit by less than 6 km/h.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\nGarry Connell"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "41755c77cd86e49e",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_11_-_false_start_-_out_of_position_at_restart.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-08T00:51:34.746839+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 82 Date 07 June 2026 Time 19:29 The Stewards, having received a report from the Race Director, summoned (document 79) and heard from the driver and team representative, have ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 82\nDate 07 June 2026\nTime 19:29\nThe Stewards, having received a report from the Race Director, summoned (document 79) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 17:21\nSession Race\nFact Car 11 was out of position at the restart after the red flag\nInfringement Breach of Article B5.11 of the FIA F1 Regulations.\nDecision 10 second time penalty imposed after the Race.\nReason The Stewards heard from the driver of Car 11 (Sergio Perez), team representative\nand reviewed positioning/marshalling system data, video and in-car video evidence.\nVideo evidence showed clearly that the front right wheel of Car 11 was outside the\nstarting box.  The standard penalty is applied.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecis"
+}

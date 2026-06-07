@@ -1,0 +1,26 @@
+{
+  "document_id": "f92771287da09130",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_43_-_allegedly_causing_a_collision_with_car_55.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-08T00:51:24.057172+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 90 Date 07 June 2026 Time 20:26 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 43 - F",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 90\nDate 07 June 2026\nTime 20:26\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 43 - Franco Colapinto\nCompetitor BWT Alpine F1 Team\nTime 17:17\nSession Race\nFact Car 43 allegedly caused a collision with Car 55 at turn 8.\nInfringement Alleged breach of Appendix L, Chapter IV, Article 2 d) of the FIA International\nSporting Code.\nDecision No further action.\nReason The Stewards reviewed positioning/marshalling system data, video, team radio and\nin-car video evidence.\nThe Stewards concluded that the collision with Car 55 was caused by the unexpected\nchange of direction of Car 55.  Car 55 allowed other cars to pass following its prior\ncollision with Car 27, which caused damage to Car 55.  Car 55 then attempted to\nmove to the right off the racing line and was collided with by Car 43.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial a"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "780785d746c57c97",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_car_6_-_alleged_race_suspension_infringement.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-08T00:51:35.861921+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 Technical Delegate’s Report During the suspension of the Race, mechanics of the Oracle Red Bull Racing Team were working on car number 6, performing operations not permitted by Article B5.14.4.a. at 16:55. When queried about their works, they stopped working ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nTechnical Delegate’s Report\n \nDuring the suspension of the Race, mechanics of the Oracle Red Bull Racing Team were working on\ncar number 6, performing operations not permitted by Article B5.14.4.a. at 16:55.\n \nWhen queried about their works, they stopped working and reverted the car to its previous state\nwithout replacing any part.\n \nI am referring this matter to the Stewards for their consideration.\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 81\nDate 07 June 2026\nTime 18:11\nManuel Leal\n"
+}

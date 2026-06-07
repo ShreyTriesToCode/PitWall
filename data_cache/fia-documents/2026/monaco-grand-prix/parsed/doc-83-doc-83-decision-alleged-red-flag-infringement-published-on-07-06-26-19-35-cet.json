@@ -1,0 +1,26 @@
+{
+  "document_id": "eeb5523242f8596e",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_decision_-_alleged_red_flag_infringement.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-08T00:51:33.593914+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Oracle Red Bull Racing Document 83 Date 07 June 2026 Time 19:33 The Stewards, having received a report from the Race Director, summoned (document 78) and heard from the driver and team representative, have c",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 83\nDate 07 June 2026\nTime 19:33\nThe Stewards, having received a report from the Race Director, summoned (document 78) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 6 - Isack Hadjar\nCompetitor Oracle Red Bull Racing\nTime 16:55\nSession Race\nFact During the suspension of the Race, mechanics of the Oracle Red Bull Racing Team\nwere working on car number 6 during the race suspension other than as permitted\nunder the regulations.\nInfringement Alleged breach of Article B5.14.4.a of the FIA F1 Regulations.\nDecision No further action.\nReason The Stewards heard from the team representatives and the FIA Technical Delegate,\nand reviewed photo evidence.\nThe team were reported as attempting to change spark plugs/coils but did not\nproceed with the change and the car started in the same condition as it arrived in the\npits, therefore no further action is taken.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA "
+}

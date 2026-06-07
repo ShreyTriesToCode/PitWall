@@ -1,0 +1,26 @@
+{
+  "document_id": "e1bc93e19976f3bb",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_27_-_causing_a_collision_with_car_55.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-08T00:51:25.206901+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 MONACO GRAND PRIX 07 - 09 June 2026 The Stewards From The Stewards To The Team Manager, Audi Revolut F1 Team Document 89 Date 07 June 2026 Time 20:24 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 27 -",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 MONACO GRAND PRIX\n07 - 09 June 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 89\nDate 07 June 2026\nTime 20:24\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 27 - Nico Hulkenberg\nCompetitor Audi Revolut F1 Team\nTime 17:17\nSession Race\nFact Car 27 collided with Car 55 in Turn 8\nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 10 second time penalty imposed after the Race.\nReason The Stewards reviewed positioning/marshalling system data, video and in-car video\nevidence.\nCar 27 turned into Car 55 in Turn 8 causing a collision\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\nGarry Connelly Tanja Geilhausen\nDerek Warwick Jean-François Calmes\n"
+}
