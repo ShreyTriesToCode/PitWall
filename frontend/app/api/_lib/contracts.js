@@ -45,6 +45,43 @@ function asObject(value) {
   return value && typeof value === "object" && !Array.isArray(value) ? value : {};
 }
 
+function normalizeModelComparison(value = {}) {
+  const raw = asObject(value);
+  return {
+    champion: asObject(raw.champion),
+    challenger: asObject(raw.challenger),
+    promotion_decision: asObject(raw.promotion_decision),
+    metrics: asObject(raw.metrics),
+    generated_at: raw.generated_at || "",
+    warnings: asArray(raw.warnings),
+  };
+}
+
+function normalizeActualResultComparison(value = {}) {
+  const raw = asObject(value);
+  const status = ["available", "pending", "unavailable", "incomplete", "source_stale", "source_failed", "not_yet_raced"].includes(raw.status)
+    ? raw.status
+    : "pending";
+  return {
+    status,
+    race: asObject(raw.race),
+    predicted_winner: asObject(raw.predicted_winner),
+    actual_winner: asObject(raw.actual_winner),
+    winner_hit: Boolean(raw.winner_hit),
+    predicted_podium: asArray(raw.predicted_podium),
+    actual_podium: asArray(raw.actual_podium),
+    podium_recall: numeric(raw.podium_recall, null),
+    predicted_top10: asArray(raw.predicted_top10),
+    actual_top10: asArray(raw.actual_top10),
+    top10_recall: numeric(raw.top10_recall, null),
+    driver_position_errors: asArray(raw.driver_position_errors),
+    race_by_race: asArray(raw.race_by_race),
+    metrics: asObject(raw.metrics),
+    source_health: asArray(raw.source_health),
+    warnings: asArray(raw.warnings),
+  };
+}
+
 function numeric(value, fallback = null) {
   const number = Number(value);
   return Number.isFinite(number) ? number : fallback;
@@ -89,9 +126,15 @@ function normalizePredictionRows(rows, options = {}) {
       position_range: Array.isArray(row.position_range)
         ? row.position_range
         : [row.best_case_finish ?? row.finish_interval_low ?? row.rank, row.worst_case_finish ?? row.finish_interval_high ?? row.rank],
+      best_case_finish: numeric(row.best_case_finish, Array.isArray(row.position_range) ? row.position_range[0] : numeric(row.finish_interval_low, row.rank)),
+      worst_case_finish: numeric(row.worst_case_finish, Array.isArray(row.position_range) ? row.position_range[1] : numeric(row.finish_interval_high, row.rank)),
       points_probability: numeric(row.points_probability, numeric(row.top10_probability, null)),
       fastest_lap_probability: numeric(row.fastest_lap_probability, null),
       dnf_probability: numeric(row.dnf_probability, null),
+      predicted_position: numeric(row.predicted_position, numeric(row.predicted_finish, numeric(row.predicted_finish_position, numeric(row.rank, index + 1)))),
+      probability: numeric(row.probability, numeric(row.points_probability, numeric(row.top10_probability, 0))),
+      rank_score: numeric(row.rank_score, numeric(row.score, 0)),
+      prediction_trust: row.prediction_trust || row.prediction_trust_label || row.trust_label || "Trust pending",
       expected_strategy: asObject(row.expected_strategy),
       explanation: asObject(row.explanation),
       data_freshness: asObject(row.data_freshness),
@@ -134,6 +177,8 @@ function normalizeLatest(payload) {
     event_trust_score: numeric(payload.event_trust_score || payload.prediction_trust_score, null),
     event_trust_label: payload.event_trust_label || payload.prediction_trust_label || "",
     model_metrics: asObject(payload.model_metrics),
+    model_comparison: normalizeModelComparison(payload.model_comparison),
+    actual_result_comparison: normalizeActualResultComparison(payload.actual_result_comparison),
     correction_summary: asObject(payload.correction_summary),
   };
 }
@@ -164,6 +209,8 @@ function normalizeFrontendContract(contract) {
     event_trust_label: raw.event_trust_label || latest?.event_trust_label || latest?.prediction_trust_label || "",
     ai_features: asObject(raw.ai_features || latest?.ai_features),
     source_conflicts: asArray(raw.source_conflicts || latest?.source_conflicts),
+    model_comparison: normalizeModelComparison(raw.model_comparison || raw.model_status?.model_comparison || latest?.model_comparison),
+    actual_result_comparison: normalizeActualResultComparison(raw.actual_result_comparison || latest?.actual_result_comparison),
   };
 }
 
@@ -213,6 +260,8 @@ function normalizeDebugTarget(payload) {
     scenarios: payload.prediction_model?.scenarios || {},
     strategy: payload.strategy || null,
     prediction_model: payload.prediction_model || {},
+    model_comparison: normalizeModelComparison(payload.model_comparison),
+    actual_result_comparison: normalizeActualResultComparison(payload.actual_result_comparison),
     generated: payload.generated_at || null,
     stage: payload.prediction_model?.prediction_stage || payload.stage || "pending",
     available: Boolean(payload.top10?.length),
@@ -255,11 +304,18 @@ export async function loadGeneratedTargets() {
 }
 
 export async function loadModelStatus() {
-  return loadJson("data_cache/model-status.json", {
+  const raw = await loadJson("data_cache/model-status.json", {
     readiness_state: { status: "Unavailable" },
     metrics: {},
+    model_comparison: normalizeModelComparison(),
     source_health: { status: "Missing", sources: [] },
   });
+  return {
+    ...asObject(raw),
+    metrics: asObject(raw?.metrics),
+    model_comparison: normalizeModelComparison(raw?.model_comparison),
+    source_health: asObject(raw?.source_health),
+  };
 }
 
 export async function loadBacktest() {
@@ -268,7 +324,13 @@ export async function loadBacktest() {
 
 export async function loadArchive() {
   const contract = await loadFrontendContract();
-  return { archive: contract.archive || [], briefings: contract.briefings || [] };
+  return {
+    archive: contract.archive || [],
+    briefings: contract.briefings || [],
+    model_status: contract.model_status || null,
+    model_comparison: contract.model_comparison || {},
+    actual_result_comparison: contract.actual_result_comparison || {},
+  };
 }
 
 export function jsonResponse(payload) {

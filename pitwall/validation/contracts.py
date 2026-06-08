@@ -17,10 +17,20 @@ REQUIRED_ROW_KEYS = {
     "team",
     "rank",
     "score",
+    "rank_score",
     "confidence",
     "win_probability",
     "podium_probability",
     "top10_probability",
+    "predicted_position",
+    "probability",
+    "prediction_trust",
+    "points_probability",
+    "fastest_lap_probability",
+    "position_range",
+    "expected_strategy",
+    "explanation",
+    "source_notes",
 }
 
 
@@ -39,6 +49,10 @@ def _as_list(value: Any) -> list[Any]:
     return value if isinstance(value, list) else []
 
 
+def _as_dict(value: Any) -> dict[str, Any]:
+    return value if isinstance(value, dict) else {}
+
+
 def validate_prediction_row(row: dict[str, Any], *, path: str = "row") -> list[str]:
     errors: list[str] = []
     missing = sorted(REQUIRED_ROW_KEYS - set(row.keys()))
@@ -46,7 +60,7 @@ def validate_prediction_row(row: dict[str, Any], *, path: str = "row") -> list[s
         errors.append(f"{path} missing required keys: {', '.join(missing)}")
     if not str(row.get("driver_id") or "").strip():
         errors.append(f"{path} has blank driver_id")
-    for key in ["rank", "score", "confidence", "win_probability", "podium_probability", "top10_probability"]:
+    for key in ["rank", "score", "rank_score", "confidence", "win_probability", "podium_probability", "top10_probability", "predicted_position", "probability", "points_probability", "fastest_lap_probability"]:
         value = row.get(key)
         try:
             number = float(value)
@@ -65,8 +79,50 @@ def validate_prediction_row(row: dict[str, Any], *, path: str = "row") -> list[s
                 errors.append(f"{path}.prediction_trust_score outside 0-100 range")
     if "ai_explanation" in row and not isinstance(row.get("ai_explanation"), dict):
         errors.append(f"{path}.ai_explanation is not an object")
+    if "position_range" in row and not isinstance(row.get("position_range"), list):
+        errors.append(f"{path}.position_range is not a list")
+    for key in ["expected_strategy", "explanation", "source_notes"]:
+        if key in row and not isinstance(row.get(key), dict):
+            errors.append(f"{path}.{key} is not an object")
     if "model_disagreement_level" in row and row.get("model_disagreement_level") not in {"low", "medium", "high"}:
         errors.append(f"{path}.model_disagreement_level is invalid")
+    return errors
+
+
+def validate_model_comparison(value: Any, *, path: str = "model_comparison") -> list[str]:
+    errors: list[str] = []
+    item = _as_dict(value)
+    if not item:
+        return [f"{path} is missing or not an object"]
+    for key in ["champion", "challenger", "promotion_decision", "metrics"]:
+        if not isinstance(item.get(key), dict):
+            errors.append(f"{path}.{key} is missing or not an object")
+    if "warnings" in item and not isinstance(item.get("warnings"), list):
+        errors.append(f"{path}.warnings is not a list")
+    return errors
+
+
+def validate_actual_result_comparison(value: Any, *, path: str = "actual_result_comparison") -> list[str]:
+    errors: list[str] = []
+    item = _as_dict(value)
+    if not item:
+        return [f"{path} is missing or not an object"]
+    status = item.get("status")
+    if status not in {"available", "pending", "unavailable", "incomplete", "source_stale", "source_failed", "not_yet_raced"}:
+        errors.append(f"{path}.status is invalid")
+    for key in ["race", "predicted_winner", "actual_winner", "metrics"]:
+        if not isinstance(item.get(key), dict):
+            errors.append(f"{path}.{key} is missing or not an object")
+    for key in ["predicted_podium", "actual_podium", "predicted_top10", "actual_top10", "driver_position_errors", "source_health", "warnings"]:
+        if not isinstance(item.get(key), list):
+            errors.append(f"{path}.{key} is missing or not a list")
+    for key in ["podium_recall", "top10_recall"]:
+        value = item.get(key)
+        if value is not None:
+            try:
+                float(value)
+            except (TypeError, ValueError):
+                errors.append(f"{path}.{key} is not numeric or null")
     return errors
 
 
@@ -98,12 +154,25 @@ def validate_frontend_contract(contract: dict[str, Any]) -> dict[str, Any]:
     ids = [row.get("driver_id") for row in full_grid if isinstance(row, dict)]
     if len(ids) != len(set(ids)):
         errors.append("latest.full_grid contains duplicate driver_id values")
+    full_ids = {str(row.get("driver_id")) for row in full_grid if isinstance(row, dict)}
+    top_ids = {str(row.get("driver_id")) for row in top10 if isinstance(row, dict)}
+    if not top_ids.issubset(full_ids):
+        errors.append("latest.top10 is not a subset of latest.full_grid")
+    full_schema = {key for row in full_grid if isinstance(row, dict) for key in row.keys()}
+    for idx, row in enumerate(full_grid, start=1):
+        if isinstance(row, dict) and set(row.keys()) != full_schema:
+            errors.append(f"latest.full_grid[{idx}] schema differs from other driver rows")
+            break
     if errors:
         raise ContractValidationError("; ".join(errors))
     if "race_intelligence_summary" in latest and not isinstance(latest.get("race_intelligence_summary"), dict):
         raise ContractValidationError("latest.race_intelligence_summary is not an object")
     if "changed_since_last_run" in latest and not isinstance(latest.get("changed_since_last_run"), dict):
         raise ContractValidationError("latest.changed_since_last_run is not an object")
+    errors.extend(validate_model_comparison(contract.get("model_comparison") or latest.get("model_comparison")))
+    errors.extend(validate_actual_result_comparison(contract.get("actual_result_comparison") or latest.get("actual_result_comparison")))
+    if errors:
+        raise ContractValidationError("; ".join(errors))
     return {
         "latest_top10_count": len(top10),
         "latest_full_grid_count": len(full_grid),
@@ -127,6 +196,9 @@ def validate_contract_files(base_dir: Path | str = ".") -> dict[str, Any]:
         raise ContractValidationError("data_cache/model-status.json missing model version/schema")
     if not isinstance(model_status.get("metrics"), dict) or not model_status.get("metrics"):
         raise ContractValidationError("data_cache/model-status.json missing metrics")
+    model_comparison_errors = validate_model_comparison(model_status.get("model_comparison"), path="model-status.model_comparison")
+    if model_comparison_errors:
+        raise ContractValidationError("; ".join(model_comparison_errors))
     return {
         "ok": True,
         "schema_version": frontend.get("schema_version"),

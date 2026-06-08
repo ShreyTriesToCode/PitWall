@@ -52,3 +52,16 @@ The event-level contract exposes:
 - Continue splitting `f1_briefing.py` into `pitwall/data`, `pitwall/features`, and `pitwall/models`.
 - Add richer pit-window and compound-sequence validation when full stint data is consistently available.
 - Add browser automation coverage once Playwright is installed.
+
+## 2026-06 Update
+
+- Added `notebooks/pitwall_model_refinement.ipynb` for cache-first model inspection and challenger analysis.
+- Added reusable model modules for feature wrappers, training entrypoints, evaluation metrics, prediction row normalization, artifact IO, and validation gates.
+- Changed chronological validation from fixed season windows to rolling race groups so newer completed seasons are not permanently excluded from training windows.
+- Hardened generated prediction rows so Top 10 and Full Grid share one schema and expose safe defaults for optional frontend fields.
+- Added cache manifest tracking for full-race data reuse/refresh/skip decisions.
+- Added `model_comparison` contracts for champion/challenger status, promotion decision, ranking metrics, and Brier/calibration fields where available.
+- Added `actual_result_comparison` contracts that compare predicted winner, podium, Top 10, and driver positions only when trusted actual result rows are present.
+- Added visible training logs and a terminal/GitHub Actions summary table so cache reuse, feature shape, split sizes, metrics, promotion, artifacts, and contract paths are observable.
+
+Known limitation: the model remains probabilistic and can be wrong because racing outcomes include incidents, penalties, weather shifts, reliability, strategy calls, and delayed or missing source data.

@@ -140,3 +140,22 @@ This keeps the prediction system honest: model output remains model output, whil
 ## Timing Limitation
 
 The `/live` route is an honest timing surface. It exposes `live_timing_status`, `timing_mode`, `timing_source`, `timing_last_updated_at`, `timing_freshness_seconds`, `is_genuinely_live`, and `live_fallback_reason`. Archived OpenF1/Jolpica/static timing is never called live.
+
+## 2026-06 Refinement Workflow
+
+Reusable model seams now exist under:
+
+- `pitwall/features/build_features.py`
+- `pitwall/models/train.py`
+- `pitwall/models/evaluate.py`
+- `pitwall/models/predict.py`
+- `pitwall/models/artifacts.py`
+- `pitwall/models/validation.py`
+
+`f1_briefing.py` remains the orchestrator for CLI/workflow compatibility. The split is intentionally wrapper-first so the public behavior stays stable while tests pin extracted feature, evaluation, prediction, artifact, and validation helpers.
+
+Chronological promotion is race-group based and rolling over available races instead of hard-coded to old seasons. Recent race groups are reserved for validation and out-of-time checks; random row splits are not used for promotion. Ranking metrics matter more than classifier-only metrics because F1 prediction quality is primarily ordered-grid quality.
+
+The canonical row contract includes `top10`, `top_10`, `full_grid`, `all_predictions`, `predicted_position`, `probability`, `rank_score`, `prediction_trust`, `points_probability`, `fastest_lap_probability`, `position_range`, `expected_strategy`, `explanation`, and `source_notes`. Top 10 is derived from the same ordered Full Grid table.
+
+`model_comparison` is the canonical champion/challenger contract for the backend and `/model` UI. `actual_result_comparison` is the canonical predicted-vs-actual contract for `/model` and `/archive`; it is `available` only when trusted result rows exist, and otherwise carries explicit pending/unavailable/incomplete status.

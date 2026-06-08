@@ -53,44 +53,46 @@ try:
 except Exception:
     shap = None
 
+from pitwall.features import strategy as pitwall_strategy
+from pitwall.models.agreement import enrich_model_disagreement as pitwall_enrich_model_disagreement
+from pitwall.models import contract as pitwall_contract
+from pitwall.models import simulation as pitwall_simulation
+from pitwall.models.compare_actuals import (
+    compare_predictions_to_actuals as pitwall_compare_predictions_to_actuals,
+    default_actual_result_comparison as pitwall_default_actual_result_comparison,
+)
+from pitwall.models.predict import normalize_prediction_row as pitwall_normalize_prediction_row
+from pitwall.models.trust import enrich_prediction_trust as pitwall_enrich_prediction_trust
+from pitwall import storage as pitwall_storage
+from pitwall.ai.deterministic import enrich_driver_ai_explanation as pitwall_enrich_driver_ai_explanation
+from pitwall.ai.post_race import build_post_race_ai_review as pitwall_build_post_race_ai_review
+from pitwall.ai.source_conflicts import detect_source_conflicts as pitwall_detect_source_conflicts
+from pitwall.ai.summaries import (
+    build_changed_since_last_run as pitwall_build_changed_since_last_run,
+    build_race_intelligence_summary as pitwall_build_race_intelligence_summary,
+)
+from pitwall.contracts.frontend_contract import write_json_artifact as pitwall_write_json_artifact
+from pitwall.validation.contracts import validate_contract_files as pitwall_validate_contract_files
+
 try:
     from pitwall.data.f1db import f1db_metadata, f1db_status
-    from pitwall.data.fia_documents import fetch_fia_document_text as pitwall_fetch_fia_document_text
-    from pitwall.data.relbench_f1 import relbench_metadata, relbench_status
-    from pitwall.features import strategy as pitwall_strategy
-    from pitwall.models.agreement import enrich_model_disagreement as pitwall_enrich_model_disagreement
-    from pitwall.models import contract as pitwall_contract
-    from pitwall.models import simulation as pitwall_simulation
-    from pitwall.models.trust import enrich_prediction_trust as pitwall_enrich_prediction_trust
-    from pitwall import storage as pitwall_storage
-    from pitwall.ai.deterministic import enrich_driver_ai_explanation as pitwall_enrich_driver_ai_explanation
-    from pitwall.ai.post_race import build_post_race_ai_review as pitwall_build_post_race_ai_review
-    from pitwall.ai.source_conflicts import detect_source_conflicts as pitwall_detect_source_conflicts
-    from pitwall.ai.summaries import (
-        build_changed_since_last_run as pitwall_build_changed_since_last_run,
-        build_race_intelligence_summary as pitwall_build_race_intelligence_summary,
-    )
-    from pitwall.contracts.frontend_contract import write_json_artifact as pitwall_write_json_artifact
-    from pitwall.validation.contracts import validate_contract_files as pitwall_validate_contract_files
-except Exception:
+except Exception as error:
+    print(f"Optional F1DB adapter unavailable: {error}")
     f1db_metadata = None
     f1db_status = None
+
+try:
+    from pitwall.data.fia_documents import fetch_fia_document_text as pitwall_fetch_fia_document_text
+except Exception as error:
+    print(f"Optional FIA document adapter unavailable: {error}")
     pitwall_fetch_fia_document_text = None
-    pitwall_enrich_model_disagreement = None
-    pitwall_enrich_prediction_trust = None
+
+try:
+    from pitwall.data.relbench_f1 import relbench_metadata, relbench_status
+except Exception as error:
+    print(f"Optional RelBench adapter unavailable: {error}")
     relbench_metadata = None
     relbench_status = None
-    pitwall_strategy = None
-    pitwall_contract = None
-    pitwall_simulation = None
-    pitwall_storage = None
-    pitwall_enrich_driver_ai_explanation = None
-    pitwall_build_post_race_ai_review = None
-    pitwall_detect_source_conflicts = None
-    pitwall_build_changed_since_last_run = None
-    pitwall_build_race_intelligence_summary = None
-    pitwall_write_json_artifact = None
-    pitwall_validate_contract_files = None
 
 
 F1_ICS_URL = os.getenv("F1_ICS_URL", "").strip()
@@ -221,6 +223,12 @@ MODEL_LIGHT_MODE = os.getenv("MODEL_LIGHT_MODE", "false").lower() == "true"
 LATEST_RUN_STATUS_PATH = Path(os.getenv("LATEST_RUN_STATUS_PATH", DATA_CACHE_DIR / "latest-run-status.json"))
 USE_LAST_VALID_CONTRACT_ON_ERROR = os.getenv("USE_LAST_VALID_CONTRACT_ON_ERROR", "true").lower() == "true"
 SKIP_NETWORK_TESTS = os.getenv("SKIP_NETWORK_TESTS", "true").lower() == "true"
+CACHE_AWARE_DOWNLOADS = os.getenv("CACHE_AWARE_DOWNLOADS", "true").lower() == "true"
+FORCE_REFRESH_DATA = os.getenv("FORCE_REFRESH_DATA", "false").lower() == "true"
+PITWALL_CI = os.getenv("PITWALL_CI", "false").lower() == "true"
+SHOW_TRAINING_PROGRESS = os.getenv("SHOW_TRAINING_PROGRESS", "true").lower() == "true"
+COMPARE_ACTUAL_RESULTS = os.getenv("COMPARE_ACTUAL_RESULTS", "true").lower() == "true"
+CACHE_MANIFEST_PATH = DATA_CACHE_DIR / "cache_manifest.json"
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip()
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", os.getenv("SUPABASE_KEY", "")).strip()
 UPGRADE_NEWS_URLS = [u.strip() for u in os.getenv("UPGRADE_NEWS_URLS", "").split(",") if u.strip()]
@@ -456,6 +464,79 @@ def safe_int(value):
         return int(float(value))
     except (TypeError, ValueError):
         return None
+
+
+_TRAINING_RUNTIME = {"started": None, "timings": {}, "summary": {}}
+
+
+def training_log(message):
+    if SHOW_TRAINING_PROGRESS:
+        print(message, flush=True)
+
+
+def training_mark(label):
+    if _TRAINING_RUNTIME.get("started") is None:
+        _TRAINING_RUNTIME["started"] = time.perf_counter()
+    _TRAINING_RUNTIME["timings"][label] = time.perf_counter()
+
+
+def cache_manifest_counts():
+    if not CACHE_MANIFEST_PATH.exists():
+        return {"reused": 0, "refreshed": 0}
+    try:
+        manifest = json.loads(CACHE_MANIFEST_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {"reused": 0, "refreshed": 0}
+    entries = manifest.get("entries") if isinstance(manifest, dict) else {}
+    if isinstance(entries, dict):
+        values = entries.values()
+    elif isinstance(entries, list):
+        values = entries
+    else:
+        return {"reused": 0, "refreshed": 0}
+    values = list(values)
+    return {
+        "reused": sum(1 for item in values if item.get("latest_run_action") == "reused" or item.get("last_action") == "reused"),
+        "refreshed": sum(1 for item in values if item.get("latest_run_action") == "refreshed" or item.get("last_action") == "refreshed"),
+    }
+
+
+def training_summary_lines(summary=None):
+    summary = {**_TRAINING_RUNTIME.get("summary", {}), **(summary or {})}
+    timings = _TRAINING_RUNTIME.get("timings", {})
+    started = _TRAINING_RUNTIME.get("started")
+    total_runtime = summary.get("total_runtime")
+    if total_runtime is None and started is not None:
+        total_runtime = round(time.perf_counter() - started, 2)
+    lines = [
+        "PitWall training summary",
+        "------------------------",
+        f"Cache reused: {summary.get('cache_reused', 'unavailable')} files",
+        f"Cache refreshed: {summary.get('cache_refreshed', 'unavailable')} files",
+        f"Training races: {summary.get('training_races', 'unavailable')}",
+        f"Validation races: {summary.get('validation_races', 'unavailable')}",
+        f"Feature columns: {summary.get('feature_columns', 'unavailable')}",
+        f"Champion: {summary.get('champion', 'current_champion')}",
+        f"Challenger: {summary.get('challenger', 'candidate_retrain')}",
+        f"Winner hit rate: {summary.get('winner_hit_rate', 'unavailable')}",
+        f"Podium recall: {summary.get('podium_recall', 'unavailable')}",
+        f"Top 10 recall: {summary.get('top10_recall', 'unavailable')}",
+        f"Position MAE: {summary.get('position_mae', 'unavailable')}",
+        f"NDCG@10: {summary.get('ndcg_at_10', 'unavailable')}",
+        f"Promotion: {summary.get('promotion', 'skipped')}",
+        f"Artifact: {summary.get('artifact', public_path(MODEL_BUNDLE_PATH))}",
+        f"Contract: {summary.get('contract', public_path(DATA_CACHE_DIR / 'frontend-contract.json'))}",
+        f"Total runtime: {total_runtime if total_runtime is not None else 'unavailable'} seconds",
+    ]
+    for label in ["data_load", "feature_build", "training", "evaluation", "artifact_save", "contract_generation"]:
+        if label in timings and "start" in timings:
+            lines.append(f"{label.replace('_', ' ').title()} checkpoint: {round(timings[label] - timings['start'], 2)} seconds")
+    return lines
+
+
+def print_training_summary(summary=None):
+    for line in training_summary_lines(summary):
+        training_log(line)
 
 
 CONSTRUCTOR_ALIASES = {
@@ -1121,6 +1202,7 @@ def fetch_fia_season_index(season, registry=None, refresh=False):
         else:
             doc["cache_status"] = "miss"
             changed.append(doc.get("document_id"))
+    comparison = model_comparison_contract(decision, metrics, meta)
     payload = {
         "season": season,
         "season_url": url,
@@ -1959,9 +2041,43 @@ def read_full_race_cache(season, round_no):
 def write_full_race_cache(season, round_no, payload):
     path = full_race_cache_path(season, round_no)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(path, "wt", encoding="utf-8") as f:
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with gzip.open(tmp, "wt", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False)
+    with gzip.open(tmp, "rt", encoding="utf-8") as f:
+        json.load(f)
+    tmp.replace(path)
     return path
+
+
+def record_full_race_cache_manifest(season, round_no, path, *, action, reason, status, validation_status="valid", race=None):
+    if not CACHE_AWARE_DOWNLOADS:
+        return
+    try:
+        from pitwall.data.cache_manager import record_cache_event
+
+        coverage = None
+        if race:
+            coverage = {
+                "season": safe_int(season),
+                "round": safe_int(round_no),
+                "race_name": race.get("raceName"),
+                "scheduled_at": (parse_race_datetime(race) or "").isoformat() if parse_race_datetime(race) else None,
+            }
+        record_cache_event(
+            CACHE_MANIFEST_PATH,
+            cache_key=f"jolpica_full_race:{season}:{round_no}",
+            source="Jolpica Ergast-compatible full race bundle",
+            file_path=Path(path),
+            status=status,
+            action=action,
+            reason=reason,
+            coverage=coverage,
+            schema_version=MODEL_SCHEMA_VERSION,
+            validation_status=validation_status,
+        )
+    except Exception as error:
+        print(f"Cache manifest update failed for {season}-{round_no}: {error}")
 
 
 def fetch_round_data_direct(season, round_no, use_cache=True):
@@ -2010,22 +2126,28 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
     3. Future GPs may still be fetched for prediction/session context when force_fetch=True, but they are not used as final training rows.
     4. If a race was cached before it had results, it is refreshed after the GP cutoff.
     """
+    force_fetch = bool(force_fetch or FORCE_REFRESH_DATA)
     cached = read_full_race_cache(season, round_no)
+    cache_path = full_race_cache_path(season, round_no)
 
     if cached and not force_fetch and should_use_cached_round(cached, race=race, require_final_if_past=training_mode):
         data = cached.get("data", {})
         if training_mode and not race_has_results(data):
+            record_full_race_cache_manifest(season, round_no, cache_path, action="skipped", reason="cached_training_data_missing_results", status="invalid", validation_status="missing_results", race=race)
             return {}
+        record_full_race_cache_manifest(season, round_no, cache_path, action="reused", reason="cache_valid", status=cached.get("status") or "fresh", validation_status="valid", race=race)
         return data
 
     key = f"{season}-{round_no}"
 
     if race is not None and training_mode and is_race_future_or_not_final_yet(race):
         print(f"Skipping future/not-final GP for training cache: {key}")
+        record_full_race_cache_manifest(season, round_no, cache_path, action="skipped", reason="future_or_not_final_for_training", status="not_ready", validation_status="not_ready", race=race)
         return {}
 
     if allow_backfill and not force_fetch and not BACKFILL_BUDGET.can_fetch():
         print(f"Full-data backfill limit reached. Skipping uncached historical race {key}.")
+        record_full_race_cache_manifest(season, round_no, cache_path, action="skipped", reason="backfill_limit_reached", status="not_refreshed", validation_status="not_checked", race=race)
         return {}
 
     print(f"Fetching full round data for {key}")
@@ -2036,6 +2158,7 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
     # Avoid storing empty future training files as if they were complete history.
     if training_mode and status == "future_or_partial":
         print(f"Not caching future/partial training race: {key}")
+        record_full_race_cache_manifest(season, round_no, cache_path, action="skipped", reason="future_or_partial_training_payload", status=status, validation_status="future_or_partial", race=race)
         return {}
 
     payload = {
@@ -2046,7 +2169,9 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
         "final_results_delay_hours": FINAL_RESULTS_DELAY_HOURS,
         "data": data,
     }
-    write_full_race_cache(season, round_no, payload)
+    written_path = write_full_race_cache(season, round_no, payload)
+    refresh_reason = "force_refresh" if force_fetch else ("cache_missing" if not cached else "cache_invalid_or_stale")
+    record_full_race_cache_manifest(season, round_no, written_path, action="refreshed", reason=refresh_reason, status=status, validation_status="valid" if race_has_results(data) or not training_mode else "missing_results", race=race)
 
     if allow_backfill and not force_fetch:
         BACKFILL_BUDGET.mark(key)
@@ -3274,14 +3399,21 @@ def chronological_group_split(feature_df):
         .sort_values(["season", "round"])
         .reset_index(drop=True)
     )
-    train_ids = set(race_order[race_order["season"] <= 2021]["race_id"])
-    validation_ids = set(race_order[(race_order["season"] >= 2022) & (race_order["season"] <= 2024)]["race_id"])
-    test_ids = set(race_order[race_order["season"] >= 2025]["race_id"])
-    method = "season_grouped_train_2018_2021_validate_2022_2024_test_2025_plus"
-    if len(train_ids) < 20 or len(validation_ids) < 15:
-        validation_race_count = max(12, min(30, int(round(len(race_order) * 0.28))))
-        validation_ids = set(race_order.tail(validation_race_count)["race_id"])
-        train_ids = set(race_order[~race_order["race_id"].isin(validation_ids)]["race_id"])
+    total_races = len(race_order)
+    if total_races >= 60:
+        test_race_count = max(6, min(12, int(round(total_races * 0.08))))
+        validation_race_count = max(14, min(28, int(round(total_races * 0.18))))
+        train_cutoff = max(1, total_races - validation_race_count - test_race_count)
+        validation_cutoff = total_races - test_race_count
+        train_ids = set(race_order.iloc[:train_cutoff]["race_id"])
+        validation_ids = set(race_order.iloc[train_cutoff:validation_cutoff]["race_id"])
+        test_ids = set(race_order.iloc[validation_cutoff:]["race_id"])
+        method = "chronological_grouped_rolling_train_validate_test"
+    else:
+        validation_race_count = max(8, min(18, int(round(total_races * 0.28))))
+        train_cutoff = max(1, total_races - validation_race_count)
+        train_ids = set(race_order.iloc[:train_cutoff]["race_id"])
+        validation_ids = set(race_order.iloc[train_cutoff:]["race_id"])
         test_ids = set()
         method = "chronological_grouped_by_race_expanded_validation"
     train_df = feature_df[feature_df["race_id"].isin(train_ids)].copy()
@@ -3391,45 +3523,88 @@ def apply_probability_calibrator(probabilities, calibrator):
 
 
 def train_ml_model(force=False):
+    _TRAINING_RUNTIME["started"] = time.perf_counter()
+    _TRAINING_RUNTIME["timings"] = {"start": _TRAINING_RUNTIME["started"]}
+    _TRAINING_RUNTIME["summary"] = {}
+    training_log("[TRAIN] training started")
+    training_log("[CACHE] cache validation started")
+    counts = cache_manifest_counts()
+    training_log(f"[CACHE] reused datasets count: {counts['reused']}")
+    training_log(f"[CACHE] refreshed datasets count: {counts['refreshed']}")
     retrain_decision = model_retrain_status(force)
     if not retrain_decision.get("should_retrain"):
-        print("ML model is current. Checking saved bundle.")
+        training_log("[MODEL] champion model loaded: checking saved bundle")
         existing_bundle = load_ml_bundle()
         if existing_bundle:
             existing_bundle["training_action"] = "loaded_current_model"
             existing_bundle["training_decision"] = retrain_decision
-            print("Saved ML bundle loaded successfully. Skipping retrain.")
+            training_log("[MODEL] promotion decision: skipped_current_model")
+            print_training_summary({
+                "cache_reused": counts["reused"],
+                "cache_refreshed": counts["refreshed"],
+                "feature_columns": len(existing_bundle.get("feature_columns") or []),
+                "champion": "saved_champion",
+                "challenger": "not_trained",
+                "promotion": "skipped_current_model",
+                "artifact": public_path(MODEL_BUNDLE_PATH),
+            })
             return existing_bundle
         print("Saved ML bundle could not be loaded. Retraining with current dependency versions.")
         retrain_decision["reasons"] = retrain_decision.get("reasons", []) + ["saved_bundle_load_failed"]
         retrain_decision["should_retrain"] = True
         retrain_decision["action"] = "retrain_now"
 
-    print("Training full-data ML model from cached/backfilled historical data.")
-    print("Retrain reasons: " + ", ".join(retrain_decision.get("reasons") or ["routine_retrain"]))
+    training_log("[TRAIN] Training full-data ML model from cached/backfilled historical data.")
+    training_log("[TRAIN] Retrain reasons: " + ", ".join(retrain_decision.get("reasons") or ["routine_retrain"]))
     current_year = now_local().year
+    training_log("[MODEL] feature build started: collecting historical rows")
     raw_df = collect_race_rows(ML_START_YEAR, current_year)
+    training_mark("data_load")
 
     raw_path = DATA_CACHE_DIR / "ml_full_race_results_raw.csv"
     feature_path = DATA_CACHE_DIR / "ml_full_race_features.csv"
     raw_df.to_csv(raw_path, index=False)
 
     feature_df, feature_columns = create_ml_features(raw_df)
+    training_mark("feature_build")
+    training_log(f"[MODEL] feature matrix shape: rows={len(feature_df)} columns={len(feature_columns)}")
     feature_df.to_csv(feature_path, index=False)
 
     if len(feature_df) < 80:
-        print(f"Not enough full-data feature rows yet: {len(feature_df)}. More backfill runs needed.")
+        training_log("Training skipped: insufficient valid training data.")
+        training_log(f"Reason: Not enough full-data feature rows yet: {len(feature_df)}. More backfill runs needed.")
+        training_log("Fallback: using existing champion artifact.")
+        print_training_summary({
+            "cache_reused": counts["reused"],
+            "cache_refreshed": counts["refreshed"],
+            "feature_columns": len(feature_columns),
+            "promotion": "skipped_insufficient_data",
+        })
         return load_ml_bundle()
 
     train_df, valid_df, validation_split = chronological_group_split(feature_df)
     train_df, calibration_df, calibration_split = carve_calibration_split(train_df)
     validation_split.update(calibration_split)
+    training_log(f"[MODEL] training rows: {len(train_df)}")
+    training_log(f"[MODEL] validation rows: {len(valid_df)}")
+    training_log(f"[MODEL] races in training: {validation_split.get('train_races')}")
+    training_log(f"[MODEL] races in validation: {validation_split.get('validation_races')}")
     if len(train_df) < 60 or len(valid_df) < 20:
-        print("Grouped chronological validation split is too small. Keeping current model bundle.")
+        training_log("Training skipped: insufficient valid training data.")
+        training_log("Reason: Grouped chronological validation split is too small.")
+        training_log("Fallback: using existing champion artifact.")
         existing = load_ml_bundle()
         if existing:
             existing["training_action"] = "loaded_current_model_validation_split_too_small"
             existing["training_decision"] = retrain_decision
+            print_training_summary({
+                "cache_reused": counts["reused"],
+                "cache_refreshed": counts["refreshed"],
+                "training_races": validation_split.get("train_races"),
+                "validation_races": validation_split.get("validation_races"),
+                "feature_columns": len(existing.get("feature_columns") or feature_columns),
+                "promotion": "skipped_validation_split_too_small",
+            })
             return existing
         raise RuntimeError("Insufficient grouped race data for leakage-safe training and no existing model bundle is available.")
 
@@ -3454,6 +3629,7 @@ def train_ml_model(force=False):
     calibration_weights = season_sample_weights(calibration_df) if not calibration_df.empty else None
 
     for name, target_col in targets.items():
+        training_log(f"[MODEL] challenger model training target: {name}")
         y_train = train_df[target_col].astype(int)
         y_valid = valid_df[target_col].astype(int)
 
@@ -3574,6 +3750,7 @@ def train_ml_model(force=False):
         }
         validation_probabilities[name] = prob
 
+    training_log("[MODEL] challenger finish-position model training started")
     y_train_finish = train_df["finish_position"].astype(float)
     y_valid_finish = valid_df["finish_position"].astype(float)
     rf_finish = RandomForestRegressor(
@@ -3645,6 +3822,8 @@ def train_ml_model(force=False):
         "validation_rows": len(valid_df),
         "ranking": ranking_validation_metrics(valid_df, finish_pred),
     }
+    training_mark("training")
+    training_log("[VALIDATE] evaluation started")
     if X_test is not None and len(test_df) >= 20:
         test_parts = [
             (rf_finish.predict(X_test), 0.30),
@@ -3740,6 +3919,15 @@ def train_ml_model(force=False):
             name: bool(safe_float(row.get("finish_mae")) is not None and finish_mae <= safe_float(row.get("finish_mae")))
             for name, row in baseline_metrics.items()
         }
+    training_mark("evaluation")
+    ranking = metrics.get("finish_position", {}).get("ranking") or {}
+    training_log("[MODEL] model comparison table")
+    training_log(
+        f"[MODEL] winner_hit={ranking.get('winner_hit')} top3_recall={ranking.get('top3_recall')} "
+        f"top10_recall={ranking.get('top10_recall')} ndcg@10={ranking.get('ndcg_at_10')} mae={mae}"
+    )
+    training_log("[ACTUALS] actual-result comparison table")
+    training_log("[ACTUALS] available during frontend contract generation when trusted race Results rows exist.")
 
     latest_id = latest_completed_race_id()
     bundle = {
@@ -3765,6 +3953,7 @@ def train_ml_model(force=False):
 
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     joblib.dump(bundle, MODEL_BUNDLE_PATH, compress=("xz", 3))
+    training_mark("artifact_save")
 
     meta = {
         "trained_at": bundle["trained_at"],
@@ -3795,6 +3984,26 @@ def train_ml_model(force=False):
     write_model_artifacts(meta)
 
     print(f"ML model saved: {MODEL_BUNDLE_PATH}")
+    training_log(f"[MODEL] challenger model trained")
+    training_log(f"[MODEL] promotion decision: {model_promotion_decision(retrain_decision, metrics).get('decision')}")
+    training_log(f"[MODEL] artifact saved path: {MODEL_BUNDLE_PATH}")
+    print_training_summary({
+        "cache_reused": counts["reused"],
+        "cache_refreshed": counts["refreshed"],
+        "training_races": validation_split.get("train_races"),
+        "validation_races": validation_split.get("validation_races"),
+        "feature_columns": len(feature_columns),
+        "champion": "previous_champion",
+        "challenger": "new_candidate",
+        "winner_hit_rate": ranking.get("winner_hit"),
+        "podium_recall": ranking.get("top3_recall"),
+        "top10_recall": ranking.get("top10_recall"),
+        "position_mae": mae,
+        "ndcg_at_10": ranking.get("ndcg_at_10"),
+        "promotion": model_promotion_decision(retrain_decision, metrics).get("decision"),
+        "artifact": public_path(MODEL_BUNDLE_PATH),
+        "contract": public_path(DATA_CACHE_DIR / "frontend-contract.json"),
+    })
     return bundle
 
 
@@ -7078,6 +7287,71 @@ def actual_result_from_race(race):
     return {"winner": rows[0] if rows else None, "classification": rows}
 
 
+def actual_result_comparison_for_entry(entry, full_grid=None):
+    race_meta = {
+        "race_id": entry.get("race_id"),
+        "race_name": entry.get("race_name") or entry.get("title"),
+        "season": entry.get("season"),
+        "round": entry.get("round"),
+        "stage": entry.get("stage") or entry.get("prediction_stage"),
+    }
+    actual = entry.get("actual_result")
+    source_health = (entry.get("source_health") or {}).get("sources") if isinstance(entry.get("source_health"), dict) else []
+    if not COMPARE_ACTUAL_RESULTS:
+        return pitwall_default_actual_result_comparison(
+            status="unavailable",
+            race=race_meta,
+            source_health=source_health,
+            warnings=["Actual-result comparison is disabled by COMPARE_ACTUAL_RESULTS=false."],
+        )
+    return pitwall_compare_predictions_to_actuals(
+        full_grid or entry.get("full_grid") or entry.get("all_predictions") or entry.get("top10") or [],
+        actual,
+        race=race_meta,
+        source_health=source_health,
+    )
+
+
+def model_comparison_contract(decision=None, metrics=None, meta=None):
+    decision = decision or {}
+    metrics = metrics or {}
+    meta = meta or {}
+    ranking = (metrics.get("finish_position") or {}).get("ranking") or metrics.get("win_probability_ranking") or {}
+    champion_status = champion_challenger_status(decision, metrics)
+    promotion = model_promotion_decision(decision, metrics)
+    return {
+        "champion": {
+            "name": champion_status.get("champion_model") or "current_champion",
+            "schema_version": MODEL_SCHEMA_VERSION,
+            "trained_at": meta.get("trained_at"),
+            "latest_completed_race_included": meta.get("latest_completed_race_id"),
+        },
+        "challenger": {
+            "name": champion_status.get("challenger_model") or "candidate_retrain",
+            "status": champion_status.get("status") or "pending",
+        },
+        "promotion_decision": promotion,
+        "metrics": {
+            "winner_hit_rate": ranking.get("winner_hit"),
+            "podium_recall": ranking.get("top3_recall"),
+            "top10_recall": ranking.get("top10_recall"),
+            "position_mae": metric_get(metrics, "finish_position", "mae") if "metric_get" in globals() else (metrics.get("finish_position") or {}).get("mae"),
+            "spearman_rank_correlation": ranking.get("spearman"),
+            "ndcg_at_3": ranking.get("ndcg_at_3"),
+            "ndcg_at_10": ranking.get("ndcg_at_10"),
+            "brier": {
+                "win": metric_get(metrics, "win", "brier") if "metric_get" in globals() else (metrics.get("win") or {}).get("brier"),
+                "podium": metric_get(metrics, "podium", "brier") if "metric_get" in globals() else (metrics.get("podium") or {}).get("brier"),
+                "top10": metric_get(metrics, "top10", "brier") if "metric_get" in globals() else (metrics.get("top10") or {}).get("brier"),
+            },
+        },
+        "generated_at": now_local().isoformat(),
+        "warnings": [
+            "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy.",
+        ],
+    }
+
+
 def correction_summary_for_entry(race_id):
     if MODEL_CORRECTIONS_PATH.exists():
         try:
@@ -7140,6 +7414,7 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
         item.setdefault("generated_at", generated_iso)
         item.setdefault("input_data_hash", input_data_hash)
         item.setdefault("prediction_data_version", PREDICTION_DATA_VERSION)
+    actual_result = actual_result_from_race(race)
     entry = {
         "title": title,
         "path": str(markdown_path.relative_to(BASE_DIR)).replace("\\", "/"),
@@ -7190,7 +7465,7 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
         "scenarios": prediction_model.get("scenarios") or scenario_rankings(top10, profile, weather),
         "model_metrics": ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}),
         "correction_summary": correction_summary_for_entry(race_id),
-        "actual_result": actual_result_from_race(race),
+        "actual_result": actual_result,
         "upgrade_context": upgrade_context,
         "regulation_context": regulation_context,
         "official_calendar_context": calendar_context,
@@ -7199,6 +7474,7 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
         "dynamic_track_metrics": profile["dynamic_track_metrics"],
         "dynamic_reasons": profile["dynamic_reasons"],
     }
+    entry["actual_result_comparison"] = actual_result_comparison_for_entry(entry, full_grid)
     if index_path.exists():
         try:
             data = json.loads(index_path.read_text(encoding="utf-8"))
@@ -7418,6 +7694,7 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
     registry = load_or_build_source_registry(resolve_target_season())
     leakage = audit_feature_leakage("pre_weekend", feature_columns)
     dataset_sources = optional_dataset_source_statuses()
+    comparison = model_comparison_contract(decision, metrics, meta)
     payload = {
         "schema_version": MODEL_SCHEMA_VERSION,
         "model_version": MODEL_SCHEMA_VERSION,
@@ -7510,6 +7787,7 @@ def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, r
         "correction_log_summary": correction_log_summary(),
         "champion_challenger": champion_challenger_status(decision, metrics),
         "promotion_decision": model_promotion_decision(decision, metrics),
+        "model_comparison": comparison,
         "readiness_state": readiness,
         "mode": mode,
         "selected_targets": [
@@ -7868,6 +8146,7 @@ def normalize_entry_contract(entry):
             enriched.setdefault("dark_horse_flag", False)
             enriched.setdefault("bust_risk_flag", False)
             enriched.setdefault("predicted_finish", enriched.get("predicted_finish_position"))
+            enriched.setdefault("predicted_position", enriched.get("predicted_finish_position"))
             enriched.setdefault("points_probability", enriched.get("top10_probability"))
             fastest_lap_score = weighted_average([
                 (components.get("race_pace"), 0.35),
@@ -7877,6 +8156,9 @@ def normalize_entry_contract(entry):
             ])
             enriched.setdefault("fastest_lap_probability", probability_from_score(fastest_lap_score or enriched.get("score"), low=0.8, high=16.0))
             enriched.setdefault("position_range", [enriched.get("best_case_finish"), enriched.get("worst_case_finish")])
+            enriched.setdefault("probability", enriched.get("points_probability") or enriched.get("top10_probability") or 0)
+            enriched.setdefault("rank_score", enriched.get("score") or 0)
+            enriched.setdefault("prediction_trust", enriched.get("prediction_trust_label") or enriched.get("trust_label") or "Trust pending")
             enriched.setdefault("expected_strategy", strategy_profile_for_row(enriched, entry, entry.get("weather") or {}))
             enriched.setdefault("strategy_annotations", detect_strategy_context_annotations(enriched.get("strategy_context"), entry.get("weather") or {}))
             enriched.setdefault("explanation", explanation_for_prediction_row(enriched, entry, entry.get("weather") or {}))
@@ -7905,6 +8187,7 @@ def normalize_entry_contract(entry):
                 "stage": stage,
                 "source_health": source_health,
             }))
+            enriched = pitwall_normalize_prediction_row(enriched, rank=enriched.get("rank") or idx)
             normalized.append(enriched)
             if limit and len(normalized) >= limit:
                 break
@@ -7918,10 +8201,12 @@ def normalize_entry_contract(entry):
     )
     full_grid = normalize_prediction_items(entry.get("full_grid") or entry.get("all_predictions") or entry.get("top10") or [])
     full_grid, simulation = enrich_predictions_with_quality_outputs(full_grid, source_health=source_health, stage=stage)
-    top10 = normalize_prediction_items(entry.get("top10") or full_grid[:10], limit=10)
-    top10, _ = enrich_predictions_with_quality_outputs(top10, source_health=source_health, stage=stage)
     if not full_grid:
+        top10 = normalize_prediction_items(entry.get("top10") or [], limit=10)
+        top10, _ = enrich_predictions_with_quality_outputs(top10, source_health=source_health, stage=stage)
         full_grid = top10
+    else:
+        top10 = full_grid[:10]
     registry = entry.get("source_registry") or load_or_build_source_registry(season)
     fia_summary = fia_document_summary(registry, entry)
     contract_warnings = []
@@ -8037,6 +8322,10 @@ def normalize_entry_contract(entry):
         "model_metrics": entry.get("model_metrics") or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}),
         "correction_summary": entry.get("correction_summary") or correction_summary_for_entry(race_id),
         "actual_result": entry.get("actual_result"),
+        "actual_result_comparison": entry.get("actual_result_comparison") or actual_result_comparison_for_entry(
+            entry,
+            full_grid,
+        ),
         "warnings": contract_warnings,
         "top10": top10,
         "top_10": top10,
@@ -8072,6 +8361,7 @@ def build_archive_contract(briefings):
             "confidence": top.get("confidence"),
             "actual_winner": actual_winner.get("name") if actual_winner else None,
             "accuracy": accuracy,
+            "actual_result_comparison": entry.get("actual_result_comparison") or actual_result_comparison_for_entry(entry, entry.get("full_grid")),
             "correction_summary": entry.get("correction_summary"),
             "briefing": entry,
         })
@@ -8323,6 +8613,12 @@ def generate_frontend_contract_files(index_data=None):
             previous_contract = json.loads(previous_contract_path.read_text(encoding="utf-8"))
         except Exception:
             previous_contract = None
+    model_status_payload = json.loads(MODEL_STATUS_JSON_PATH.read_text(encoding="utf-8")) if MODEL_STATUS_JSON_PATH.exists() else {}
+    model_comparison = (
+        model_status_payload.get("model_comparison")
+        if isinstance(model_status_payload, dict)
+        else None
+    ) or model_comparison_contract(None, (model_status_payload or {}).get("raw_metrics") or {}, read_model_meta())
     contract = {
         "schema_version": MODEL_SCHEMA_VERSION,
         "prediction_data_version": PREDICTION_DATA_VERSION,
@@ -8349,13 +8645,17 @@ def generate_frontend_contract_files(index_data=None):
         "model_limitations": (latest or {}).get("model_limitations", []),
         **fia_summary,
         **timing,
+        "model_comparison": model_comparison,
+        "actual_result_comparison": (latest or {}).get("actual_result_comparison") or pitwall_default_actual_result_comparison(race={"season": season}),
         "briefings": briefings,
         "latest": latest,
         "archive": build_archive_contract(briefings),
-        "model_status": json.loads(MODEL_STATUS_JSON_PATH.read_text(encoding="utf-8")) if MODEL_STATUS_JSON_PATH.exists() else None,
+        "model_status": model_status_payload or None,
         "storage": {"sqlite_path": str(PITWALL_DB_PATH.relative_to(BASE_DIR)) if PITWALL_DB_PATH.is_relative_to(BASE_DIR) else str(PITWALL_DB_PATH), "supabase": supabase_sync_status()},
     }
     if latest:
+        latest["model_comparison"] = latest.get("model_comparison") or model_comparison
+        latest["actual_result_comparison"] = latest.get("actual_result_comparison") or contract["actual_result_comparison"]
         latest["source_conflicts"] = latest.get("source_conflicts") or contract["source_conflicts"]
         latest["ai_features"] = ai_feature_status()
         latest["race_intelligence_summary"] = latest.get("race_intelligence_summary") or race_intelligence_summary(latest)
@@ -8371,6 +8671,8 @@ def generate_frontend_contract_files(index_data=None):
         contract["event_trust_label"] = latest["event_trust_label"]
     contract = sanitize_public_paths(sanitize_timing_source_labels(contract))
     write_json_artifact(DATA_CACHE_DIR / "frontend-contract.json", contract, previous_path=DATA_CACHE_DIR / "frontend-contract.previous.json")
+    training_mark("contract_generation")
+    training_log(f"[ROUTE] frontend contract generated path: {DATA_CACHE_DIR / 'frontend-contract.json'}")
     generate_feature_store(briefings)
     corrections = generate_correction_log(briefings)
     backtest = generate_backtest_history(briefings)
@@ -8732,6 +9034,7 @@ Generated by PitWall. Predictions are model estimates, not guaranteed race resul
 
 
 def run(force_retrain=False):
+    run_started = time.perf_counter()
     ensure_dirs()
     require_env_vars()
     target_season = resolve_target_season()
@@ -8883,6 +9186,7 @@ def run(force_retrain=False):
 
     safe_step("Commit generated files", commit_and_push, paths)
     maybe_send_outputs(title, briefing, [payload["event"] for payload in payloads])
+    training_log(f"[DONE] total runtime: {round(time.perf_counter() - run_started, 2)} seconds")
 
 def parse_args():
     parser = argparse.ArgumentParser()

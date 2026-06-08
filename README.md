@@ -544,3 +544,36 @@ PitWall includes deterministic AI-style summaries with no paid API requirement. 
 The default provider is `deterministic`; local Ollama and local RAG are optional development helpers. AI text is never allowed to modify rankings, Top 10, Full Grid, probabilities, race results, weather values, FIA notes, or live timing state.
 
 See `FREE_DEPLOYMENT.md` and `LOCAL_AI.md`.
+
+## Model Notebook And Cache-Aware Training
+
+Model refinement now has a dedicated notebook:
+
+```bash
+jupyter notebook notebooks/pitwall_model_refinement.ipynb
+```
+
+The notebook loads local artifacts from `data_cache/`, `model_artifacts/`, `models/saved_models/`, and `briefings/`; checks feature availability, missing values, schema stability, leakage rules, chronological race grouping, champion metadata, ranking/regression metrics, and optional challenger training gates. It keeps outputs small and does not redownload upstream data.
+
+Workflow training is cache-aware. `CACHE_AWARE_DOWNLOADS=true` records reuse/refresh/skip decisions in `data_cache/cache_manifest.json`; `FORCE_REFRESH_DATA=true` refreshes stale or invalid data; `FORCE_RETRAIN=true` requests model retraining. Valid cached historical race files are reused, corrupted or schema-invalid files are refreshed, optional source failures are surfaced through source health, and required training data failures block promotion.
+
+Before trusting a run, verify both compact and complete prediction surfaces:
+
+```bash
+python3 scripts/validate_contracts.py
+python3 scripts/validate_cache_manifest.py
+```
+
+`latest.top10` is the compact Top 10 view, while `latest.full_grid` and `latest.all_predictions` preserve the complete grid. Predictions are probabilistic estimates, not guaranteed race results or fabricated confidence claims.
+
+## Model And Actual-Result Comparison
+
+Generated contracts now include `model_comparison` and `actual_result_comparison`. The model comparison records champion/challenger metadata, promotion decision, ranking metrics, and Brier/calibration fields where available. The actual-result comparison uses only trusted cached `Results` classifications; if those rows are missing, delayed, stale, or incomplete, the contract status is `pending`, `unavailable`, or `incomplete` with warnings.
+
+The website renders these states on `/model` and `/archive`. Link and route checks can be run locally:
+
+```bash
+python scripts/check_links.py
+```
+
+Use `--check-external` only when you intentionally want bounded HTTP checks against external links.

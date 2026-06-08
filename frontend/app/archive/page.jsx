@@ -20,6 +20,8 @@ export default function ArchivePage() {
   }, [query, rows.length]);
   const a = rows[left];
   const b = rows[right] || rows[0];
+  const archiveStatus = archive.data?.model_status || status.data || {};
+  const latestActualComparison = archive.data?.actual_result_comparison || {};
   return (
     <AppShell active="/archive">
       <AnimatedTicker latest={predictions.data?.latest} />
@@ -37,26 +39,35 @@ export default function ArchivePage() {
               <SectionTitle title="Model vs Reality Summary" />
               <div className="metric-grid compact">
                 <Metric label="Archived briefings" value={rows.length} />
-                <Metric label="Corrections" value={status.data?.correction_log_summary?.count ?? "Pending"} />
-                <Metric label="Audit status" value={status.data?.correction_log_summary?.status || "Pending"} />
+                <Metric label="Corrections" value={archiveStatus.correction_log_summary?.count ?? "Pending"} />
+                <Metric label="Audit status" value={archiveStatus.correction_log_summary?.status || "Pending"} />
+                <Metric label="Latest actuals" value={latestActualComparison.status || "Pending"} />
               </div>
             </div>
             <div className="panel reveal">
               <SectionTitle title="Post-Race Review" />
-              <p className="panel-note">{status.data?.correction_log_summary?.post_race_ai_review?.best_call || "No actual result audit is available yet."}</p>
-              <p className="panel-note">{status.data?.correction_log_summary?.post_race_ai_review?.worst_miss || "No worst miss available yet."}</p>
+              <p className="panel-note">{archiveStatus.correction_log_summary?.post_race_ai_review?.best_call || "No actual result audit is available yet."}</p>
+              <p className="panel-note">{archiveStatus.correction_log_summary?.post_race_ai_review?.worst_miss || "No worst miss available yet."}</p>
             </div>
           </section>
           <div className="archive-grid">
             {rows.map((row, index) => (
               <article className="panel archive-card reveal" key={archiveKey(row, index)}>
-                <SectionTitle title={row.race_name || row.title} action={<StatusBadge label={row.stage} tone="red" />} />
-                <div className="metric-grid">
-                  <Metric label="Top Pick" value={row.top_pick || "Pending"} />
-                  <Metric label="Confidence" value={row.confidence ? `${row.confidence}%` : "Pending"} />
-                  <Metric label="Actual Winner" value={row.actual_winner || "No actual result yet"} />
-                  <Metric label="Accuracy" value={formatAccuracy(row.accuracy)} />
-                </div>
+                {(() => {
+                  const actualComparison = comparisonForRow(row);
+                  return (
+                    <>
+                      <SectionTitle title={row.race_name || row.title} action={<StatusBadge label={actualComparison.status || row.stage} tone={actualComparison.status === "available" ? "green" : "red"} />} />
+                      <div className="metric-grid">
+                        <Metric label="Top Pick" value={row.top_pick || "Pending"} />
+                        <Metric label="Confidence" value={formatPercentValue(row.confidence ?? row.top_pick_confidence)} />
+                        <Metric label="Actual Winner" value={actualComparison.actual_winner?.name || row.actual_winner || "No actual result yet"} />
+                        <Metric label="Top 10 Recall" value={formatRecall(actualComparison.top10_recall)} />
+                      </div>
+                      <p className="panel-note">{comparisonNote(actualComparison)}</p>
+                    </>
+                  );
+                })()}
                 <div className="row-actions">
                   <button className={left === index ? "control-btn active" : "control-btn"} onClick={() => setLeft(index)}>Compare left</button>
                   <button className={right === index ? "control-btn active" : "control-btn"} onClick={() => setRight(index)}>Compare right</button>
@@ -75,8 +86,10 @@ export default function ArchivePage() {
                     <Metric label="Stage" value={row.stage} />
                     <Metric label="Model" value={row.model_version} />
                     <Metric label="Top Pick" value={row.top_pick || "Pending"} />
-                    <Metric label="Actual Winner" value={row.actual_winner || "No actual result yet"} />
-                    <p>{row.correction_summary?.learning_notes || "Model correction pending."}</p>
+                    <Metric label="Actual Winner" value={comparisonForRow(row).actual_winner?.name || row.actual_winner || "No actual result yet"} />
+                    <Metric label="Actual status" value={comparisonForRow(row).status || "pending"} />
+                    <Metric label="Top 10 Recall" value={formatRecall(comparisonForRow(row).top10_recall)} />
+                    <p>{comparisonNote(comparisonForRow(row)) || row.correction_summary?.learning_notes || "Model correction pending."}</p>
                   </article>
                 ))}
               </div>
@@ -103,4 +116,34 @@ function formatAccuracy(value) {
   if (value === null || value === undefined || value === "") return "Pending";
   const number = Number(value);
   return Number.isFinite(number) ? `${(number * 100).toFixed(1)}%` : "Pending";
+}
+
+function comparisonForRow(row) {
+  return row?.actual_result_comparison || row?.briefing?.actual_result_comparison || {
+    status: row?.actual_winner ? "available" : "pending",
+    actual_winner: row?.actual_winner ? { name: row.actual_winner } : {},
+    top10_recall: null,
+    warnings: ["Trusted actual-result comparison is not available for this archive row."],
+  };
+}
+
+function comparisonNote(comparison) {
+  if (comparison?.status === "available") {
+    const winner = comparison.winner_hit ? "Predicted winner matched the trusted result." : "Predicted winner did not match the trusted result.";
+    return `${winner} Position MAE: ${comparison.metrics?.mae ?? "pending"}.`;
+  }
+  return comparison?.warnings?.[0] || "Trusted actual classification is pending or unavailable.";
+}
+
+function formatRecall(value) {
+  if (value === null || value === undefined || value === "") return "Pending";
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "Pending";
+  return `${Math.abs(number) <= 1 ? (number * 100).toFixed(1) : number.toFixed(1)}%`;
+}
+
+function formatPercentValue(value) {
+  if (value === null || value === undefined || value === "") return "Pending";
+  const number = Number(value);
+  return Number.isFinite(number) ? `${number}%` : "Pending";
 }

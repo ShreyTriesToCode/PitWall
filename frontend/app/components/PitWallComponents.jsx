@@ -476,6 +476,20 @@ export function StatusBadge({ label, tone = "neutral" }) {
   return <span className={cx("status-badge", tone)}>{label}</span>;
 }
 
+export function statusTone(status, score) {
+  const text = String(status || "").toLowerCase();
+  if (["available", "healthy", "fresh", "ok", "success"].some((word) => text.includes(word))) return "green";
+  if (["fallback", "stale", "partial", "degraded", "delayed", "waiting", "limited"].some((word) => text.includes(word))) return "amber";
+  if (["missing", "unavailable", "error", "fail", "auth", "forbidden", "invalid"].some((word) => text.includes(word))) return "red";
+  const numericScore = Number(score);
+  if (Number.isFinite(numericScore)) {
+    if (numericScore >= 70) return "green";
+    if (numericScore >= 40) return "amber";
+    return "red";
+  }
+  return "neutral";
+}
+
 export function DataFreshnessBadge({ value }) {
   const date = new Date(value || "");
   const label = Number.isNaN(date.getTime()) ? "Freshness pending" : `Updated ${date.toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
@@ -495,7 +509,7 @@ export function SourceHealthCard({ health }) {
   ].filter(Boolean);
   return (
     <section className="panel reveal">
-      <SectionTitle icon={Activity} title="Source Health" action={<StatusBadge label={health?.status || "Pending"} tone={String(health?.status || "").toLowerCase().includes("fail") ? "red" : "green"} />} />
+      <SectionTitle icon={Activity} title="Source Health" action={<StatusBadge label={health?.status || "Pending"} tone={statusTone(health?.status, overallScore)} />} />
       <div className="metric-grid compact">
         <Metric label="Overall Score" value={Number.isFinite(overallScore) ? pct(overallScore) : "Pending"} />
         <Metric label="Generated" value={generatedAt ? new Date(generatedAt).toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }) : "Pending"} />
@@ -506,7 +520,7 @@ export function SourceHealthCard({ health }) {
           <div className="source-row" key={source.source}>
             <span>{source.source}</span>
             <ConfidenceBar value={source.score} />
-            <small>{source.status}</small>
+            <small><StatusBadge label={source.status || "Unknown"} tone={statusTone(source.status, source.score)} /></small>
           </div>
         )) : <EmptyState title="Source data unavailable" body="The UI is waiting for generated source-health JSON." />}
       </div>
@@ -597,7 +611,9 @@ export function PredictionTable({ predictions, onOpen }) {
             </tr>
           </thead>
           <tbody>
-            {predictions.map((item) => (
+            {predictions.map((item) => {
+              const range = Array.isArray(item.position_range) ? item.position_range : [item.best_case_finish, item.worst_case_finish];
+              return (
               <tr key={item.driver_id} onClick={() => onOpen?.(item)} tabIndex={0} onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
@@ -614,9 +630,10 @@ export function PredictionTable({ predictions, onOpen }) {
                 <td>{pct(item.win_probability)}</td>
                 <td>{pct(item.podium_probability)}</td>
                 <td>{pct(item.top10_probability)}</td>
-                <td>{item.best_case_finish}-{item.worst_case_finish}</td>
+                <td>{range.filter((value) => value !== undefined && value !== null).join("-") || "Pending"}</td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -629,11 +646,29 @@ export function PredictionTable({ predictions, onOpen }) {
 
 export function DriverExplainabilityDrawer({ driver, onClose }) {
   const closeRef = useRef(null);
+  const drawerRef = useRef(null);
 
   useEffect(() => {
     if (!driver) return undefined;
+    const previousFocus = document.activeElement;
     const onKey = (event) => {
-      if (event.key === "Escape") onClose?.();
+      if (event.key === "Escape") {
+        onClose?.();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = Array.from(drawerRef.current?.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])") || [])
+        .filter((element) => !element.hasAttribute("disabled"));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -642,6 +677,7 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKey);
+      previousFocus?.focus?.();
     };
   }, [driver, onClose]);
 
@@ -680,7 +716,7 @@ export function DriverExplainabilityDrawer({ driver, onClose }) {
   return (
     <>
       <button className="drawer-backdrop" aria-label="Close driver details" onClick={onClose} />
-      <aside className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="driver-detail-title">
+      <aside className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="driver-detail-title" ref={drawerRef}>
         <button ref={closeRef} className="icon-btn close" onClick={onClose} aria-label="Close"><X size={18} /></button>
         <div className="driver-detail-content">
           <span className="eyebrow">Driver Detail</span>

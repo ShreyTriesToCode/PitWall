@@ -473,6 +473,7 @@ export default function LivePage() {
   const requestIdRef = useRef(0);
   const controllerRef = useRef(null);
   const streamRef = useRef(null);
+  const controlsEffectReadyRef = useRef(false);
   const controlError = useMemo(() => validateLiveControls(controls), [controls]);
 
   function updateControls(update) {
@@ -481,8 +482,10 @@ export default function LivePage() {
   }
 
   async function loadLiveData(options = {}) {
-    if (controlError) {
-      setError(controlError);
+    const nextControls = sanitizedLiveControls(options.controls || controls);
+    const nextControlError = validateLiveControls(nextControls);
+    if (nextControlError) {
+      setError(nextControlError);
       setLoading(false);
       setSelectionPending(false);
       return;
@@ -495,7 +498,7 @@ export default function LivePage() {
     setLoading(true);
     setError("");
     try {
-      const data = await fetchF1Timing(controller.signal, { ...sanitizedLiveControls(controls), fast: Boolean(options.fast) });
+      const data = await fetchF1Timing(controller.signal, { ...nextControls, fast: Boolean(options.fast) });
       if (requestId !== requestIdRef.current) return;
       setPayload(data);
       setLastUpdated(new Date());
@@ -519,8 +522,12 @@ export default function LivePage() {
   }, []);
 
   useEffect(() => {
-    if (!payload) return;
-    const id = setTimeout(() => loadLiveData({ fast: controls.meeting === "latest" && controls.session === "latest" }), 250);
+    if (!controlsEffectReadyRef.current) {
+      controlsEffectReadyRef.current = true;
+      return undefined;
+    }
+    const nextControls = sanitizedLiveControls(controls);
+    const id = setTimeout(() => loadLiveData({ controls: nextControls, fast: nextControls.meeting === "latest" && nextControls.session === "latest" }), 250);
     return () => clearTimeout(id);
   }, [controls.year, controls.meeting, controls.session]);
 
@@ -773,7 +780,17 @@ export default function LivePage() {
           </section>
         )}
 
-        {!payload?.ok && (
+        {loading && !payload && (
+          <section className="dash-warning">
+            <RefreshCcw size={18} />
+            <div>
+              <strong>Syncing selected timing session.</strong>
+              <p>PitWall is checking the selected season, Grand Prix, and session before showing source status.</p>
+            </div>
+          </section>
+        )}
+
+        {payload && payload.ok === false && (
           <section className="dash-warning">
             <BadgeInfo size={18} />
             <div>

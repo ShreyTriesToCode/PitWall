@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Metric, PageHeader, SectionTitle, SourceHealthCard, StatusBadge, usePitWallData } from "../components/PitWallComponents";
+import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Metric, PageHeader, SectionTitle, SourceHealthCard, StatusBadge, statusTone, usePitWallData } from "../components/PitWallComponents";
 
 export default function SourcesPage() {
   const predictions = usePitWallData("/api/predictions");
@@ -12,7 +12,7 @@ export default function SourcesPage() {
   return (
     <AppShell active="/sources">
       <AnimatedTicker latest={latest} />
-      <PageHeader eyebrow="Sources" title="Data Source Health" description="Truthful status for timing, OpenF1, FIA, Jolpica, FastF1, weather, cache, and fallback data." actions={<StatusBadge label={health?.status || "Pending"} tone={health?.status === "Available" ? "green" : "amber"} />} />
+      <PageHeader eyebrow="Sources" title="Data Source Health" description="Truthful status for timing, OpenF1, FIA, Jolpica, FastF1, weather, cache, and fallback data." actions={<StatusBadge label={health?.status || "Pending"} tone={statusTone(health?.status, health?.overall_score ?? health?.score)} />} />
       {(predictions.loading || sourceHealth.loading) && <LoadingSkeleton />}
       {sourceHealth.error && <InlineNotice title="Source health unavailable" body={sourceHealth.error} tone="error" action={<button className="control-btn" onClick={sourceHealth.refetch}>Retry</button>} />}
       {health && (
@@ -42,7 +42,7 @@ export default function SourcesPage() {
               <div className="archive-grid">
                 {sources.map((source) => (
                   <article className="panel archive-card" key={source.source}>
-                    <SectionTitle title={source.source} action={<StatusBadge label={source.status || "Unknown"} tone={(source.score || 0) >= 70 ? "green" : (source.score || 0) >= 40 ? "amber" : "red"} />} />
+                    <SectionTitle title={source.source} action={<StatusBadge label={source.status || "Unknown"} tone={statusTone(source.status, source.score)} />} />
                     <div className="metric-grid">
                       <Metric label="Confidence" value={source.score !== undefined ? `${source.score}%` : "Pending"} />
                       <Metric label="Last checked" value={source.last_checked_at || source.generated_at || "Pending"} />

@@ -36,3 +36,19 @@ model_artifacts/runs/{timestamp}/
 ## Optional Heavy Tools
 
 MLflow, DVC, Optuna, SHAP, LightGBM, and XGBoost are useful only when they improve verified metrics or operator visibility. They should stay optional and documented instead of becoming a hard runtime dependency for Vercel.
+
+## Notebook Workflow
+
+Use `notebooks/pitwall_model_refinement.ipynb` for local refinement. It checks:
+
+- cached data and artifact availability
+- feature schema and missingness
+- categorical/numeric handling assumptions
+- stage leakage rules
+- chronological race-group splits
+- champion metadata and artifact load state
+- finish MAE/RMSE, Spearman, NDCG@3, NDCG@10, top-3/top-10 recall, winner hit rate, and Brier score where targets exist
+
+Challenger training is disabled by default in the notebook. Set `RUN_CHALLENGER = True` only when cached training data is valid and you intend to spend the runtime. A challenger should not be promoted unless ranking metrics, backend tests, contract validation, artifact save/load, frontend tests, and frontend build all pass.
+
+Experiment notes should also inspect `model_comparison` and `actual_result_comparison` in `data_cache/frontend-contract.json`. Actual-result metrics must only be recorded for races with trusted cached classifications; pending or unavailable actuals are a valid experiment outcome, not a failure to fill in numbers.

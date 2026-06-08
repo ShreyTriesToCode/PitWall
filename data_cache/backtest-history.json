@@ -1,7 +1,23 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-06-08T21:24:45.995506+05:30",
+  "generated_at": "2026-06-08T23:25:51.241952+05:30",
   "history": [
+    {
+      "race_id": "2026-7-barcelona-grand-prix",
+      "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-ffa4f8b77664",
+      "race_name": "Barcelona Grand Prix",
+      "season": 2026,
+      "round": 7,
+      "stage": "pre_weekend",
+      "model_version": "2026.05-high-accuracy-v5",
+      "top_pick": "Lewis Hamilton",
+      "top_pick_confidence": 19.2,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
+    },
     {
       "race_id": "2026-6-monaco-grand-prix",
       "prediction_id": "2026-6-monaco-grand-prix-race-post_qualifying-977835d65498",
@@ -12,11 +28,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.218042960835689,
-      "finish_position_rmse": 4.113662038765182,
-      "winner_hit_rate": 0.2647,
-      "top3_recall": 0.6127,
-      "top10_recall": 0.8191
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
     },
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -28,11 +44,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.218042960835689,
-      "finish_position_rmse": 4.113662038765182,
-      "winner_hit_rate": 0.2647,
-      "top3_recall": 0.6127,
-      "top10_recall": 0.8191
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -44,11 +60,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.218042960835689,
-      "finish_position_rmse": 4.113662038765182,
-      "winner_hit_rate": 0.2647,
-      "top3_recall": 0.6127,
-      "top10_recall": 0.8191
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -60,11 +76,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.218042960835689,
-      "finish_position_rmse": 4.113662038765182,
-      "winner_hit_rate": 0.2647,
-      "top3_recall": 0.6127,
-      "top10_recall": 0.8191
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -76,11 +92,11 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.218042960835689,
-      "finish_position_rmse": 4.113662038765182,
-      "winner_hit_rate": 0.2647,
-      "top3_recall": 0.6127,
-      "top10_recall": 0.8191
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -92,11 +108,11 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.218042960835689,
-      "finish_position_rmse": 4.113662038765182,
-      "winner_hit_rate": 0.2647,
-      "top3_recall": 0.6127,
-      "top10_recall": 0.8191
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
+      "top10_recall": 0.7964
     }
   ]
 }

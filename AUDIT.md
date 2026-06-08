@@ -65,3 +65,19 @@ Generated: 2026-05-28
 - Supabase is not required for local or CI verification.
 - The project must not claim predictions are always correct.
 - Historical betting odds and Pirelli allocation are not scraped from unreliable or terms-hostile sources.
+
+## 2026-06-08 Model Notebook And Workflow Hardening
+
+- ADDED: `notebooks/pitwall_model_refinement.ipynb` with cache-first model inspection, leakage checks, chronological split checks, champion artifact inspection, ranking/regression metrics, and optional challenger training.
+- ADDED: wrapper-based modules under `pitwall/features` and `pitwall/models` for feature, train, evaluate, predict, artifact, and validation concerns while preserving `f1_briefing.py` orchestration.
+- FIXED: chronological model split is rolling by race group instead of hard-coded to old seasons.
+- FIXED: full-race cache writes are atomic and record reuse/refresh/skip decisions in `data_cache/cache_manifest.json`.
+- FIXED: prediction rows expose a stable alias schema and Top 10 is derived from the ordered Full Grid table.
+- FIXED: frontend source-health tones distinguish fallback/stale/partial from healthy, archive confidence preserves `0%`, live controls refetch selected sessions, and Full Grid ranges can render from `position_range`.
+- UPDATED: GitHub Actions runs cache-aware validation, trains/refreshes through `f1_briefing.py`, validates contracts, runs backend tests, runs frontend tests, and builds the frontend.
+- ADDED: `model_comparison` and `actual_result_comparison` contract sections with frontend rendering on `/model` and `/archive`.
+- ADDED: `pitwall/models/compare_actuals.py` for trusted predicted-vs-actual winner, podium, Top 10, Full Grid, and driver error metrics with pending/unavailable states.
+- ADDED: visible `[TRAIN]`, `[CACHE]`, `[MODEL]`, `[VALIDATE]`, `[ACTUALS]`, `[ROUTE]`, and `[DONE]` logs plus a compact training summary table.
+- ADDED: `scripts/check_links.py` and unit tests for offline route/link validation.
+
+Remaining limitation: feature-building logic is still duplicated between historical and online prediction paths behind wrappers. Tests now cover schema and contract behavior, but a future deeper extraction should make the shared feature list a single source of truth.

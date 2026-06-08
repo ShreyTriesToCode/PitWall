@@ -4,11 +4,31 @@ import { useMemo } from "react";
 import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, ModelMetricCard, PageHeader, RaceControlTimeline, SectionTitle, SourceHealthCard, StatusBadge, usePitWallData } from "../components/PitWallComponents";
 import { Activity, BarChart3, Bot, Database, GitBranch, ShieldCheck } from "lucide-react";
 
+function formatValue(value, suffix = "") {
+  if (value === null || value === undefined || value === "") return "Pending";
+  if (typeof value === "boolean") return value ? "Yes" : "No";
+  if (typeof value === "number") return `${Number.isInteger(value) ? value : value.toFixed(3)}${suffix}`;
+  return String(value);
+}
+
+function formatPercent(value) {
+  if (value === null || value === undefined || value === "") return "Pending";
+  const number = Number(value);
+  if (!Number.isFinite(number)) return String(value);
+  return `${Math.abs(number) <= 1 ? (number * 100).toFixed(1) : number.toFixed(1)}%`;
+}
+
 export default function ModelCenterPage() {
   const predictions = usePitWallData("/api/predictions");
   const status = usePitWallData("/api/model-status");
   const backtest = usePitWallData("/api/backtest");
   const metrics = status.data?.metrics || {};
+  const modelComparison = status.data?.model_comparison || predictions.data?.model_comparison || predictions.data?.latest?.model_comparison || {};
+  const actualComparison = predictions.data?.actual_result_comparison || predictions.data?.latest?.actual_result_comparison || {};
+  const comparisonMetrics = modelComparison.metrics || {};
+  const actualMetrics = actualComparison.metrics || {};
+  const actualWarnings = actualComparison.warnings || [];
+  const positionErrors = actualComparison.driver_position_errors || [];
   const cards = useMemo(() => [
     ["Win AUC", metrics.win_auc, BarChart3],
     ["Win Brier", metrics.win_brier, BarChart3],
@@ -64,11 +84,80 @@ export default function ModelCenterPage() {
             <section className="panel reveal">
               <SectionTitle title="Champion vs Challenger Model Status" />
               <div className="metric-grid">
-                <ModelMetricCard label="Champion" value={status.data.champion_challenger?.champion_model} icon={Bot} />
-                <ModelMetricCard label="Challenger" value={status.data.champion_challenger?.challenger_model} icon={GitBranch} />
-                <ModelMetricCard label="Status" value={status.data.champion_challenger?.status} icon={ShieldCheck} />
+                <ModelMetricCard label="Champion" value={modelComparison.champion?.name || status.data.champion_challenger?.champion_model} icon={Bot} />
+                <ModelMetricCard label="Challenger" value={modelComparison.challenger?.name || status.data.champion_challenger?.challenger_model} icon={GitBranch} />
+                <ModelMetricCard label="Status" value={modelComparison.challenger?.status || status.data.champion_challenger?.status} icon={ShieldCheck} />
+                <ModelMetricCard label="Promotion Decision" value={modelComparison.promotion_decision?.decision || status.data.promotion_decision?.decision} icon={GitBranch} />
                 <ModelMetricCard label="Corrections" value={status.data.correction_log_summary?.status} icon={Activity} />
               </div>
+              <div className="compare-table" role="table" aria-label="Model comparison metrics">
+                {[
+                  ["Winner hit rate", formatPercent(comparisonMetrics.winner_hit_rate)],
+                  ["Podium recall", formatPercent(comparisonMetrics.podium_recall)],
+                  ["Top 10 recall", formatPercent(comparisonMetrics.top10_recall)],
+                  ["Position MAE", formatValue(comparisonMetrics.position_mae)],
+                  ["Spearman", formatValue(comparisonMetrics.spearman_rank_correlation)],
+                  ["NDCG@3", formatValue(comparisonMetrics.ndcg_at_3)],
+                  ["NDCG@10", formatValue(comparisonMetrics.ndcg_at_10)],
+                  ["Top 10 Brier", formatValue(comparisonMetrics.brier?.top10)],
+                ].map(([label, value]) => (
+                  <div className="compare-row" role="row" key={label}>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
+                  </div>
+                ))}
+              </div>
+              {(modelComparison.warnings || []).length > 0 && <InlineNotice title="Model comparison note" body={modelComparison.warnings[0]} tone="warning" />}
+            </section>
+            <section className="panel reveal">
+              <SectionTitle title="Actual Result Comparison" action={<StatusBadge label={actualComparison.status || "pending"} tone={actualComparison.status === "available" ? "green" : "amber"} />} />
+              <div className="metric-grid">
+                <ModelMetricCard label="Predicted Winner" value={actualComparison.predicted_winner?.name || "Pending"} icon={Bot} />
+                <ModelMetricCard label="Actual Winner" value={actualComparison.actual_winner?.name || "Unavailable"} icon={ShieldCheck} />
+                <ModelMetricCard label="Winner Hit" value={formatValue(actualComparison.winner_hit)} icon={ShieldCheck} />
+                <ModelMetricCard label="Top 10 Recall" value={formatPercent(actualComparison.top10_recall ?? actualMetrics.top10_recall)} icon={BarChart3} />
+              </div>
+              {actualComparison.status === "available" ? (
+                <>
+                  <div className="compare-table" role="table" aria-label="Actual result comparison metrics">
+                    {[
+                      ["Podium recall", formatPercent(actualComparison.podium_recall ?? actualMetrics.podium_recall)],
+                      ["Position MAE", formatValue(actualMetrics.mae)],
+                      ["Position RMSE", formatValue(actualMetrics.rmse)],
+                      ["Exact position accuracy", formatPercent(actualMetrics.exact_position_accuracy)],
+                      ["Spearman", formatValue(actualMetrics.spearman_rank_correlation)],
+                      ["NDCG@3", formatValue(actualMetrics.ndcg_at_3)],
+                      ["NDCG@10", formatValue(actualMetrics.ndcg_at_10)],
+                    ].map(([label, value]) => (
+                      <div className="compare-row" role="row" key={label}>
+                        <span>{label}</span>
+                        <strong>{value}</strong>
+                      </div>
+                    ))}
+                  </div>
+                  {positionErrors.length > 0 && (
+                    <div className="table-wrap">
+                      <table className="data-table">
+                        <thead>
+                          <tr><th>Driver</th><th>Predicted</th><th>Actual</th><th>Error</th></tr>
+                        </thead>
+                        <tbody>
+                          {positionErrors.slice(0, 10).map((row) => (
+                            <tr key={row.driver_id || row.name}>
+                              <td>{row.name || row.driver_id}</td>
+                              <td>P{row.predicted_position}</td>
+                              <td>P{row.actual_position}</td>
+                              <td>{row.position_error}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <EmptyState title="Pending actual result" body={(actualWarnings[0] || "Trusted actual race classification is not available yet. The comparison will update after verified result rows are cached.")} />
+              )}
             </section>
             <section className="panel reveal">
               <SectionTitle title="Baselines And Calibration" />

@@ -4,8 +4,9 @@ import unittest
 from pathlib import Path
 
 from pitwall.models.agreement import enrich_model_disagreement
+from pitwall.models.compare_actuals import compare_predictions_to_actuals, default_actual_result_comparison
 from pitwall.models.trust import enrich_prediction_trust
-from pitwall.validation.contracts import ContractValidationError, validate_contract_files
+from pitwall.validation.contracts import ContractValidationError, validate_contract_files, validate_frontend_contract
 from pitwall.validation.leakage import assert_no_future_leakage, forbidden_feature_columns
 
 
@@ -23,15 +24,52 @@ class ContractHardeningTests(unittest.TestCase):
             "team": "Team A",
             "rank": 1,
             "score": 82,
+            "rank_score": 82,
             "confidence": 64,
             "win_probability": 22,
             "podium_probability": 70,
             "top10_probability": 96,
+            "points_probability": 96,
+            "fastest_lap_probability": 8,
             "predicted_finish_position": 2,
+            "predicted_position": 2,
+            "probability": 96,
+            "prediction_trust": "Medium trust",
             "position_range": [1, 4],
+            "expected_strategy": {},
+            "explanation": {},
             "component_scores": {"race_pace": 80},
             "evidence_status": {"available": ["race_pace"], "missing": [], "penalties": {}, "penalty_total": 0},
             "source_notes": {"warnings": []},
+        }
+
+    def model_comparison(self):
+        return {
+            "champion": {"name": "current_champion"},
+            "challenger": {"name": "candidate_retrain", "status": "pending"},
+            "promotion_decision": {"decision": "skipped", "reason": "test fixture"},
+            "metrics": {"position_mae": 3.2},
+            "generated_at": "2026-06-08T00:00:00+00:00",
+            "warnings": [],
+        }
+
+    def actual_result_comparison(self, status="pending"):
+        return {
+            "status": status,
+            "race": {},
+            "predicted_winner": {},
+            "actual_winner": {},
+            "winner_hit": False,
+            "predicted_podium": [],
+            "actual_podium": [],
+            "podium_recall": None,
+            "predicted_top10": [],
+            "actual_top10": [],
+            "top10_recall": None,
+            "driver_position_errors": [],
+            "metrics": {},
+            "source_health": [],
+            "warnings": [],
         }
 
     def test_contract_validator_rejects_blank_required_files(self):
@@ -50,11 +88,15 @@ class ContractHardeningTests(unittest.TestCase):
             self.write_json(tmp, "data_cache/frontend-contract.json", {
                 "schema_version": "test",
                 "prediction_data_version": "test-data",
+                "model_comparison": self.model_comparison(),
+                "actual_result_comparison": self.actual_result_comparison(),
                 "latest": {
                     "top10": [row],
                     "top_10": [row],
-                    "full_grid": [row, {**row, "driver_id": "driver_b", "name": "Driver B", "rank": 2}],
-                    "all_predictions": [row, {**row, "driver_id": "driver_b", "name": "Driver B", "rank": 2}],
+                    "full_grid": [row, {**row, "driver_id": "driver_b", "name": "Driver B", "rank": 2, "predicted_position": 2}],
+                    "all_predictions": [row, {**row, "driver_id": "driver_b", "name": "Driver B", "rank": 2, "predicted_position": 2}],
+                    "model_comparison": self.model_comparison(),
+                    "actual_result_comparison": self.actual_result_comparison(),
                 },
             })
             self.write_json(tmp, "briefings/index.json", {"briefings": [{"latest": True}]})
@@ -63,6 +105,7 @@ class ContractHardeningTests(unittest.TestCase):
                 "model_version": "test-model",
                 "schema_version": "test",
                 "metrics": {"finish_position_mae": 3.2},
+                "model_comparison": self.model_comparison(),
             })
 
             result = validate_contract_files(Path(tmp))
@@ -70,6 +113,51 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertTrue(result["ok"])
         self.assertGreaterEqual(result["latest_top10_count"], 1)
         self.assertGreaterEqual(result["latest_full_grid_count"], result["latest_top10_count"])
+
+    def test_contract_validator_rejects_top10_outside_full_grid(self):
+        row = self.valid_prediction_row()
+        other = {**row, "driver_id": "driver_b", "name": "Driver B"}
+        with self.assertRaises(ContractValidationError):
+            validate_frontend_contract({
+                "model_comparison": self.model_comparison(),
+                "actual_result_comparison": self.actual_result_comparison(),
+                "latest": {
+                    "top10": [other],
+                    "full_grid": [row],
+                    "all_predictions": [row],
+                }
+            })
+
+    def test_contract_validator_rejects_missing_model_comparison(self):
+        row = self.valid_prediction_row()
+        with self.assertRaises(ContractValidationError):
+            validate_frontend_contract({
+                "actual_result_comparison": self.actual_result_comparison(),
+                "latest": {
+                    "top10": [row],
+                    "full_grid": [row],
+                    "all_predictions": [row],
+                },
+            })
+
+    def test_actual_result_comparison_pending_without_actuals(self):
+        row = {**self.valid_prediction_row(), "rank": 1, "predicted_position": 1}
+        comparison = compare_predictions_to_actuals([row], None, race={"race_id": "2026-1"})
+        self.assertEqual(comparison["status"], "pending")
+        self.assertIsNone(comparison["top10_recall"])
+        self.assertTrue(comparison["warnings"])
+
+    def test_actual_result_comparison_available_with_trusted_results(self):
+        row = {**self.valid_prediction_row(), "rank": 1, "predicted_position": 1}
+        comparison = compare_predictions_to_actuals(
+            [row],
+            {"classification": [{"driver_id": "driver_a", "name": "Driver A", "position": 1}]},
+            race={"race_id": "2026-1"},
+        )
+        self.assertEqual(comparison["status"], "available")
+        self.assertTrue(comparison["winner_hit"])
+        self.assertEqual(comparison["metrics"]["mae"], 0)
+        self.assertIn("warnings", default_actual_result_comparison())
 
     def test_model_disagreement_flags_contradictory_top_rank(self):
         row = enrich_model_disagreement({
@@ -110,6 +198,9 @@ class ContractHardeningTests(unittest.TestCase):
 
     def test_stage_leakage_rules_block_future_session_columns(self):
         self.assertIn("qualifying_gap", forbidden_feature_columns("post_fp1", ["fp1_pace", "qualifying_gap"]))
+        self.assertIn("grid_position", forbidden_feature_columns("post_fp3", ["fp3_pace", "grid_position"]))
+        self.assertIn("sprint_position", forbidden_feature_columns("post_sprint_qualifying", ["sprint_position"]))
+        self.assertIn("qualifying_position", forbidden_feature_columns("post_sprint", ["qualifying_position"]))
         assert_no_future_leakage("post_qualifying", ["qualifying_gap", "grid_position"])
         with self.assertRaises(AssertionError):
             assert_no_future_leakage("pre_weekend", ["driver_form_5", "race_result_position"])

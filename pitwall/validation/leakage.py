@@ -9,9 +9,12 @@ STAGE_FORBIDDEN_PATTERNS = {
     "pre_weekend": ("fp1", "fp2", "fp3", "qualifying", "grid", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
     "post_fp1": ("fp2", "fp3", "qualifying", "grid", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
     "post_fp2": ("fp3", "qualifying", "grid", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
-    "post_fp3": ("qualifying_result", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
+    "post_fp3": ("qualifying", "grid", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
+    "post_sprint_qualifying": ("sprint_result", "sprint_position", "qualifying", "grid", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
+    "post_sprint": ("qualifying", "grid", "race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
     "post_qualifying": ("race_result", "finish_position", "pitstop", "stint", "fastest_lap"),
     "pre_race": ("race_result", "finish_position", "actual_pit", "actual_safety_car", "fastest_lap"),
+    "live_adjusted": ("race_result", "finish_position", "actual_pit", "actual_safety_car"),
 }
 
 

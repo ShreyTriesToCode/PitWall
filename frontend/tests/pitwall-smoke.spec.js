@@ -35,8 +35,17 @@ test("model and archive pages render clear states", async ({ page }) => {
   await page.goto("/model");
   await expect(page.getByText(/Model Version|Fallback model status|Model status sync failed/)).toBeVisible();
   await expect(page.getByText(/AI-Style Model Review|Deterministic model review pending/)).toBeVisible();
+  await expect(page.getByText("Actual Result Comparison")).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Champion vs Challenger Model/ })).toBeVisible();
   await page.goto("/archive");
   await expect(page.getByText(/Race Archive|No archive matches/)).toBeVisible();
+  await expect(page.getByText(/Latest actuals|Pending actual result|Top 10 Recall/).first()).toBeVisible();
+});
+
+test("predictions target links render rows or pending states", async ({ page }) => {
+  await page.goto("/predictions?target=sprint");
+  await expect(page.getByText(/Sprint|Race/).first()).toBeVisible();
+  await expect(page.getByText(/Top 10 Prediction|Full Grid Prediction|sprint pending|prediction pending/i).first()).toBeVisible();
 });
 
 test("sources page renders source-health state", async ({ page }) => {

@@ -7,6 +7,18 @@ export async function GET() {
   const contract = await loadFrontendContract();
   const generated = await loadGeneratedTargets();
   const hasLatest = Boolean(contract.latest?.top10?.length);
+  const generatedTargets = generated.targets?.length
+    ? generated.targets
+    : [
+        contract.latest?.target_type ? {
+          ...contract.latest,
+          target_type: contract.latest.target_type,
+          top10: contract.latest.top10 || [],
+          full_grid: contract.latest.full_grid || contract.latest.all_predictions || contract.latest.top10 || [],
+          all_predictions: contract.latest.all_predictions || contract.latest.full_grid || contract.latest.top10 || [],
+        } : null,
+        ...(contract.briefings || []).filter((row) => row?.target_type),
+      ].filter(Boolean);
   return jsonResponse({
     ok: hasLatest,
     error: hasLatest ? "" : "No generated prediction contract is available yet.",
@@ -17,6 +29,8 @@ export async function GET() {
     all_predictions: contract.latest?.all_predictions || contract.latest?.full_grid || contract.latest?.top10 || [],
     race_factors: contract.latest?.race_factors || {},
     race_intelligence_summary: contract.race_intelligence_summary || contract.latest?.race_intelligence_summary || {},
+    model_comparison: contract.model_comparison || contract.latest?.model_comparison || {},
+    actual_result_comparison: contract.actual_result_comparison || contract.latest?.actual_result_comparison || {},
     changed_since_last_run: contract.changed_since_last_run || contract.latest?.changed_since_last_run || contract.latest?.change_summary || {},
     event_trust_score: contract.event_trust_score ?? contract.latest?.event_trust_score ?? contract.latest?.prediction_trust_score,
     event_trust_label: contract.event_trust_label || contract.latest?.event_trust_label || contract.latest?.prediction_trust_label || "",
@@ -24,7 +38,7 @@ export async function GET() {
     warnings: contract.latest?.warnings || [],
     scenarios: contract.latest?.scenarios || {},
     strategy: contract.latest?.strategy || {},
-    generated_targets: generated.targets,
+    generated_targets: generatedTargets,
     selected_targets: generated.selected_targets,
     output_mode: generated.output_mode,
     archive: contract.archive || [],

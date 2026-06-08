@@ -409,6 +409,28 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("Full Grid Prediction", page)
         self.assertIn("Race Overview", page)
 
+    def test_model_and_archive_pages_render_comparison_sections(self):
+        model_page = Path("frontend/app/model/page.jsx").read_text(encoding="utf-8")
+        archive_page = Path("frontend/app/archive/page.jsx").read_text(encoding="utf-8")
+        self.assertIn("Actual Result Comparison", model_page)
+        self.assertIn("Model comparison metrics", model_page)
+        self.assertIn("actual_result_comparison", archive_page)
+        self.assertIn("Top 10 Recall", archive_page)
+
+    def test_training_summary_has_visible_output_labels(self):
+        lines = f1.training_summary_lines({
+            "cache_reused": 2,
+            "cache_refreshed": 1,
+            "training_races": 10,
+            "validation_races": 2,
+            "feature_columns": 42,
+            "promotion": "accepted",
+        })
+        text = "\n".join(lines)
+        self.assertIn("PitWall training summary", text)
+        self.assertIn("Cache reused: 2 files", text)
+        self.assertIn("Promotion: accepted", text)
+
     def test_driver_detail_drawer_is_scrollable_and_rich(self):
         css = Path("frontend/app/globals.css").read_text(encoding="utf-8")
         component = Path("frontend/app/components/PitWallComponents.jsx").read_text(encoding="utf-8")

@@ -41,3 +41,24 @@ Generated: 2026-05-25
 - Prefer F1DB/RelBench for stable historical/offline benchmarking.
 - Do not use future data in chronological training.
 - Do not fake missing API data; expose unavailable/auth-restricted/stale states.
+
+## Cache Manifest
+
+`data_cache/cache_manifest.json` records cache-aware loading for historical full-race data:
+
+- source name
+- file path
+- last checked/fetched time
+- season/round coverage
+- schema version
+- checksum and file size
+- freshness status
+- latest run action (`reused`, `refreshed`, `skipped`, or fallback)
+- refresh or fallback reason
+- validation status
+
+Valid cached data is reused. Missing, corrupted, stale, schema-invalid, or force-refreshed data is fetched only for the affected season/round. Optional sources can fail without crashing the app when valid cached fallback data exists; required training data missing or invalid must fail validation.
+
+## Actual Results
+
+Prediction-vs-actual comparison uses only trusted result rows already available through project sources or valid cache, primarily Ergast-compatible/Jolpica race `Results` classifications. If actual results are not yet published, delayed past the configured result window, source-stale, malformed, or unavailable, PitWall emits an explicit `actual_result_comparison.status` and warning instead of fabricating winners, podiums, Top 10 rows, or full-grid classifications.

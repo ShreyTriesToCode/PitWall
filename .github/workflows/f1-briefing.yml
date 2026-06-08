@@ -146,7 +146,7 @@ jobs:
             data_cache/fia-documents
             data_cache/source_registry
             models/saved_models
-          key: pitwall-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py', 'requirements.txt') }}
+          key: pitwall-runtime-cache-${{ runner.os }}-${{ hashFiles('f1_briefing.py', 'pitwall/**/*.py', 'scripts/validate_contracts.py', 'scripts/validate_cache_manifest.py', 'scripts/check_links.py', 'requirements.txt') }}
           restore-keys: |
             pitwall-runtime-cache-${{ runner.os }}-
 
@@ -184,6 +184,8 @@ jobs:
           python -m py_compile f1_briefing.py
           ruff check pitwall scripts tests
           python -m unittest discover -s ./tests -p "test_*.py" -t .
+          python scripts/validate_cache_manifest.py --allow-missing
+          python scripts/check_links.py
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -198,6 +200,8 @@ jobs:
         run: |
           npm ci
           npm run build
+          npx playwright install --with-deps chromium
+          npm test
 
       - name: Run PitWall hybrid briefing
         env:
@@ -221,6 +225,11 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
 
           FORCE_RETRAIN: ${{ github.event.inputs.force_retrain || 'false' }}
+          FORCE_REFRESH_DATA: "false"
+          CACHE_AWARE_DOWNLOADS: "true"
+          PITWALL_CI: "true"
+          SHOW_TRAINING_PROGRESS: "true"
+          COMPARE_ACTUAL_RESULTS: "true"
           TRAINING_MODE: "auto"
           MODEL_TRAINING_MAX_SECONDS: "900"
           ENABLE_FEATURE_ABLATION: ${{ github.event.inputs.enable_feature_ablation || 'false' }}
@@ -308,6 +317,8 @@ jobs:
       - name: Validate generated frontend contracts
         run: |
           python scripts/validate_contracts.py
+          python scripts/validate_cache_manifest.py --allow-missing
+          python scripts/check_links.py
           python scripts/check_artifact_sizes.py
           python scripts/generate_run_report.py
           python -m json.tool briefings/index.json >/dev/null
