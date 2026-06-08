@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05-high-accuracy-v5",
-  "generated_at": "2026-06-08T09:29:57.989732+05:30",
+  "generated_at": "2026-06-08T14:01:54.115117+05:30",
   "history": [
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -12,11 +12,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.222218897698345,
-      "finish_position_rmse": 4.115009080202581,
-      "winner_hit_rate": 0.3088,
+      "finish_position_mae": 3.2197834010269313,
+      "finish_position_rmse": 4.1142629607472125,
+      "winner_hit_rate": 0.3382,
       "top3_recall": 0.6127,
-      "top10_recall": 0.8176
+      "top10_recall": 0.8206
     },
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -28,11 +28,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.222218897698345,
-      "finish_position_rmse": 4.115009080202581,
-      "winner_hit_rate": 0.3088,
+      "finish_position_mae": 3.2197834010269313,
+      "finish_position_rmse": 4.1142629607472125,
+      "winner_hit_rate": 0.3382,
       "top3_recall": 0.6127,
-      "top10_recall": 0.8176
+      "top10_recall": 0.8206
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -44,11 +44,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.222218897698345,
-      "finish_position_rmse": 4.115009080202581,
-      "winner_hit_rate": 0.3088,
+      "finish_position_mae": 3.2197834010269313,
+      "finish_position_rmse": 4.1142629607472125,
+      "winner_hit_rate": 0.3382,
       "top3_recall": 0.6127,
-      "top10_recall": 0.8176
+      "top10_recall": 0.8206
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -60,11 +60,11 @@
       "model_version": "2026.05-high-accuracy-v5",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.222218897698345,
-      "finish_position_rmse": 4.115009080202581,
-      "winner_hit_rate": 0.3088,
+      "finish_position_mae": 3.2197834010269313,
+      "finish_position_rmse": 4.1142629607472125,
+      "winner_hit_rate": 0.3382,
       "top3_recall": 0.6127,
-      "top10_recall": 0.8176
+      "top10_recall": 0.8206
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -76,11 +76,11 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.222218897698345,
-      "finish_position_rmse": 4.115009080202581,
-      "winner_hit_rate": 0.3088,
+      "finish_position_mae": 3.2197834010269313,
+      "finish_position_rmse": 4.1142629607472125,
+      "winner_hit_rate": 0.3382,
       "top3_recall": 0.6127,
-      "top10_recall": 0.8176
+      "top10_recall": 0.8206
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -92,11 +92,11 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.222218897698345,
-      "finish_position_rmse": 4.115009080202581,
-      "winner_hit_rate": 0.3088,
+      "finish_position_mae": 3.2197834010269313,
+      "finish_position_rmse": 4.1142629607472125,
+      "winner_hit_rate": 0.3382,
       "top3_recall": 0.6127,
-      "top10_recall": 0.8176
+      "top10_recall": 0.8206
     }
   ]
 }
