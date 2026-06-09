@@ -1,15 +1,15 @@
 # Codex Handoff State
 
 ## Current objective
-- [PUSH] Commit and push the Monaco/Canada actual-result fix, archive UI polish, and unbuffered workflow log fix.
+- [DONE] Monaco/Canada actual-result fix, archive UI polish, and unbuffered workflow log fix are pushed to main.
 
 ## Repository status
 - Repo path: /Users/shrey-mac/Downloads/Codes/PitWall-main 2
 - Is Git repo: yes
 - Remote origin: https://github.com/ShreyTriesToCode/PitWall.git
 - Branch: main
-- Latest known commit: bfc92442d23ebd6b0947bcd2ec248bee8c7ab6f9
-- Push status: not attempted for current actual-result fix
+- Latest known commit: run `git log -1 --oneline` for the final pushed handoff commit.
+- Push status: succeeded; local HEAD matched remote main after `git push origin main`.
 
 ## Completed
 - [x] [REPO] Confirmed local repository and origin.
@@ -20,10 +20,10 @@
 - [x] [UI] Tightened archive card layout and changed pending actual-result badges from error red to pending amber.
 
 ## In progress
-- [ ] [PUSH] Stage, commit, push to main, and verify local HEAD matches remote main.
+- None.
 
 ## Remaining
-- [ ] [PUSH] Commit and push the current fix to main.
+- None.
 
 ## Files changed
 - f1_briefing.py: Falls back to trusted cached full-race results when archive entries do not embed actual results.
