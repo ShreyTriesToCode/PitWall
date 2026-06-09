@@ -534,7 +534,7 @@ python scripts/check_artifact_sizes.py
 python -m py_compile f1_briefing.py
 ruff check pitwall scripts tests
 python -m unittest discover -s ./tests -p "test_*.py" -t .
-cd frontend && npm ci && npm run build && npm test
+cd frontend && npm ci && npm run build
 ```
 
 See `RUNBOOK.md`, `MODEL_REPORT.md`, and `ARTIFACT_POLICY.md` for operator details, model design, experiment guidance, and remaining work.

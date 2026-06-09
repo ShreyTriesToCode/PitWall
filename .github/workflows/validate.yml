@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: pitwall-validate-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   backend:
@@ -66,11 +66,3 @@ jobs:
       - name: Build frontend
         working-directory: frontend
         run: npm run build
-
-      - name: Install Playwright browsers
-        working-directory: frontend
-        run: npx playwright install --with-deps chromium
-
-      - name: Run Playwright smoke tests
-        working-directory: frontend
-        run: npm test

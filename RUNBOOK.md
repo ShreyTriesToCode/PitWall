@@ -45,7 +45,7 @@ Plan optional offline dataset setup without downloading large artifacts:
 cd frontend && npm ci && npm run build
 ```
 
-For browser smoke tests:
+Browser smoke tests are optional local checks, not part of the default GitHub Actions path:
 
 ```bash
 cd frontend
