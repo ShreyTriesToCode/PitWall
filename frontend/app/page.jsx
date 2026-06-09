@@ -12,6 +12,7 @@ import {
   Metric,
   OfficialCalendarStrip,
   PageHeader,
+  pct,
   RaceControlTimeline,
   RaceHero,
   ScenarioCards,
@@ -53,7 +54,7 @@ export default function HomePage() {
             <div className="panel reveal">
               <SectionTitle icon={Icons.ShieldAlert} title="Prediction Trust" action={<StatusBadge label={data.event_trust_label || latest.event_trust_label || latest.prediction_trust_label || "Trust pending"} tone={(Number(data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score) || 0) >= 75 ? "green" : (Number(data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score) || 0) >= 50 ? "amber" : "red"} />} />
               <div className="metric-grid compact">
-                <Metric label="Event trust" value={data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score ? `${data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score}%` : "Pending"} />
+                <Metric label="Event trust" value={pct(data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score)} />
                 <Metric label="High disagreements" value={latest.confidence_breakdown?.high_disagreement_count ?? 0} />
                 <Metric label="Source conflicts" value={(data.source_conflicts || latest.source_conflicts || []).length} />
                 <Metric label="AI mode" value={(data.ai_features || latest.ai_features)?.free_mode === false ? "Configured" : "Free deterministic"} />
@@ -77,7 +78,7 @@ export default function HomePage() {
                   <article key={item.driver_id}>
                     <span>P{item.rank}</span>
                     <strong>{item.name}</strong>
-                    <small>{item.team} · {item.confidence}% confidence</small>
+                    <small>{item.team} · {item.confidence === null || item.confidence === undefined ? "confidence pending" : `${item.confidence}% confidence`}</small>
                   </article>
                 ))}
               </div>

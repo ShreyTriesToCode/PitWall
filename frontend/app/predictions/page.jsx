@@ -13,6 +13,7 @@ import {
   PageHeader,
   PredictionCard,
   PredictionTable,
+  pct,
   ScenarioCards,
   SearchBox,
   SectionTitle,
@@ -137,13 +138,13 @@ export default function PredictionsPage() {
             <div className="metric-grid">
               <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
               <Metric label="Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
-              <Metric label="Model Agreement Leader" value={`${predictions[0]?.model_agreement_score ?? "Pending"}%`} />
-              <Metric label="Event Trust" value={`${selectedPayload.prediction_trust_score ?? latest.prediction_trust_score ?? "Pending"}${selectedPayload.prediction_trust_score || latest.prediction_trust_score ? "%" : ""}`} />
+              <Metric label="Model Agreement Leader" value={pct(predictions[0]?.model_agreement_score)} />
+              <Metric label="Event Trust" value={pct(selectedPayload.prediction_trust_score ?? latest.prediction_trust_score)} />
               <Metric label="High Disagreements" value={selectedPayload.confidence_breakdown?.high_disagreement_count ?? latest.confidence_breakdown?.high_disagreement_count ?? "Pending"} />
               <Metric label="Dark Horse" value={predictions.find((p) => p.dark_horse_flag)?.name || "Not flagged"} />
               <Metric label="Stage" value={selectedPayload.prediction_stage || selectedPayload.stage || latest.prediction_stage || "pending"} />
-              <Metric label="Avg Uncertainty" value={`${selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty ?? "Pending"}%`} />
-              <Metric label="Safety Car Risk" value={`${selectedPayload.race_factors?.safety_car_probability ?? latest.race_factors?.safety_car_probability ?? "Pending"}%`} />
+              <Metric label="Avg Uncertainty" value={pct(selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty)} />
+              <Metric label="Safety Car Risk" value={pct(selectedPayload.race_factors?.safety_car_probability ?? latest.race_factors?.safety_car_probability)} />
               <Metric label="Rain Impact" value={selectedPayload.race_factors?.rain_impact || latest.race_factors?.rain_impact || "Pending"} />
               <Metric label="FIA Documents" value={selectedPayload.fia_document_count ?? latest.fia_document_count ?? 0} />
               <Metric label="Timing Mode" value={selectedPayload.timing_mode || latest.timing_mode || "unavailable"} />
@@ -162,7 +163,7 @@ export default function PredictionsPage() {
             <div className="panel reveal">
               <SectionTitle title="Trust And Source Warnings" />
               <div className="metric-grid compact">
-                <Metric label="Event trust" value={`${data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score ?? "Pending"}${data.event_trust_score || latest.event_trust_score || latest.prediction_trust_score ? "%" : ""}`} />
+                <Metric label="Event trust" value={pct(data.event_trust_score ?? latest.event_trust_score ?? latest.prediction_trust_score)} />
                 <Metric label="Source conflicts" value={(data.source_conflicts || latest.source_conflicts || []).length} />
                 <Metric label="AI provider" value={(data.ai_features || latest.ai_features)?.provider || "deterministic"} />
                 <Metric label="Free mode" value={(data.ai_features || latest.ai_features)?.free_mode === false ? "Off" : "On"} />

@@ -4,7 +4,7 @@
   "entries": {
     "jolpica_full_race:2018:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-1.json.gz",
+      "file_path": "data_cache/full_races/2018-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.255168+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -23,7 +23,7 @@
     },
     "jolpica_full_race:2018:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-10.json.gz",
+      "file_path": "data_cache/full_races/2018-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.293339+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -42,7 +42,7 @@
     },
     "jolpica_full_race:2018:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-11.json.gz",
+      "file_path": "data_cache/full_races/2018-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.295868+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -61,7 +61,7 @@
     },
     "jolpica_full_race:2018:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-12.json.gz",
+      "file_path": "data_cache/full_races/2018-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.298600+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -80,7 +80,7 @@
     },
     "jolpica_full_race:2018:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-13.json.gz",
+      "file_path": "data_cache/full_races/2018-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.300994+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -99,7 +99,7 @@
     },
     "jolpica_full_race:2018:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-14.json.gz",
+      "file_path": "data_cache/full_races/2018-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.303395+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -118,7 +118,7 @@
     },
     "jolpica_full_race:2018:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-15.json.gz",
+      "file_path": "data_cache/full_races/2018-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.305665+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -137,7 +137,7 @@
     },
     "jolpica_full_race:2018:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-16.json.gz",
+      "file_path": "data_cache/full_races/2018-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.307962+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -156,7 +156,7 @@
     },
     "jolpica_full_race:2018:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-17.json.gz",
+      "file_path": "data_cache/full_races/2018-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.310097+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -175,7 +175,7 @@
     },
     "jolpica_full_race:2018:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-18.json.gz",
+      "file_path": "data_cache/full_races/2018-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.312092+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -194,7 +194,7 @@
     },
     "jolpica_full_race:2018:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-19.json.gz",
+      "file_path": "data_cache/full_races/2018-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.315149+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -213,7 +213,7 @@
     },
     "jolpica_full_race:2018:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-2.json.gz",
+      "file_path": "data_cache/full_races/2018-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.261663+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -232,7 +232,7 @@
     },
     "jolpica_full_race:2018:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-20.json.gz",
+      "file_path": "data_cache/full_races/2018-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.317270+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -251,7 +251,7 @@
     },
     "jolpica_full_race:2018:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-21.json.gz",
+      "file_path": "data_cache/full_races/2018-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.319218+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -270,7 +270,7 @@
     },
     "jolpica_full_race:2018:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-3.json.gz",
+      "file_path": "data_cache/full_races/2018-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.267879+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -289,7 +289,7 @@
     },
     "jolpica_full_race:2018:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-4.json.gz",
+      "file_path": "data_cache/full_races/2018-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.272922+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -308,7 +308,7 @@
     },
     "jolpica_full_race:2018:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-5.json.gz",
+      "file_path": "data_cache/full_races/2018-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.277027+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -327,7 +327,7 @@
     },
     "jolpica_full_race:2018:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-6.json.gz",
+      "file_path": "data_cache/full_races/2018-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.281015+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -346,7 +346,7 @@
     },
     "jolpica_full_race:2018:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-7.json.gz",
+      "file_path": "data_cache/full_races/2018-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.284547+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -365,7 +365,7 @@
     },
     "jolpica_full_race:2018:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-8.json.gz",
+      "file_path": "data_cache/full_races/2018-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.287465+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -384,7 +384,7 @@
     },
     "jolpica_full_race:2018:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2018-9.json.gz",
+      "file_path": "data_cache/full_races/2018-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.290518+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -403,7 +403,7 @@
     },
     "jolpica_full_race:2019:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-1.json.gz",
+      "file_path": "data_cache/full_races/2019-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.321218+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -422,7 +422,7 @@
     },
     "jolpica_full_race:2019:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-10.json.gz",
+      "file_path": "data_cache/full_races/2019-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.338231+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -441,7 +441,7 @@
     },
     "jolpica_full_race:2019:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-11.json.gz",
+      "file_path": "data_cache/full_races/2019-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.340257+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -460,7 +460,7 @@
     },
     "jolpica_full_race:2019:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-12.json.gz",
+      "file_path": "data_cache/full_races/2019-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.342300+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -479,7 +479,7 @@
     },
     "jolpica_full_race:2019:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-13.json.gz",
+      "file_path": "data_cache/full_races/2019-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.344009+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -498,7 +498,7 @@
     },
     "jolpica_full_race:2019:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-14.json.gz",
+      "file_path": "data_cache/full_races/2019-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.345689+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -517,7 +517,7 @@
     },
     "jolpica_full_race:2019:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-15.json.gz",
+      "file_path": "data_cache/full_races/2019-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.347573+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -536,7 +536,7 @@
     },
     "jolpica_full_race:2019:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-16.json.gz",
+      "file_path": "data_cache/full_races/2019-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.349545+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -555,7 +555,7 @@
     },
     "jolpica_full_race:2019:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-17.json.gz",
+      "file_path": "data_cache/full_races/2019-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.351261+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -574,7 +574,7 @@
     },
     "jolpica_full_race:2019:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-18.json.gz",
+      "file_path": "data_cache/full_races/2019-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.352926+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -593,7 +593,7 @@
     },
     "jolpica_full_race:2019:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-19.json.gz",
+      "file_path": "data_cache/full_races/2019-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.354661+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -612,7 +612,7 @@
     },
     "jolpica_full_race:2019:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-2.json.gz",
+      "file_path": "data_cache/full_races/2019-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.323203+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -631,7 +631,7 @@
     },
     "jolpica_full_race:2019:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-20.json.gz",
+      "file_path": "data_cache/full_races/2019-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.356480+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -650,7 +650,7 @@
     },
     "jolpica_full_race:2019:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-21.json.gz",
+      "file_path": "data_cache/full_races/2019-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.358258+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -669,7 +669,7 @@
     },
     "jolpica_full_race:2019:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-3.json.gz",
+      "file_path": "data_cache/full_races/2019-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.325190+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -688,7 +688,7 @@
     },
     "jolpica_full_race:2019:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-4.json.gz",
+      "file_path": "data_cache/full_races/2019-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.327052+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -707,7 +707,7 @@
     },
     "jolpica_full_race:2019:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-5.json.gz",
+      "file_path": "data_cache/full_races/2019-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.329008+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -726,7 +726,7 @@
     },
     "jolpica_full_race:2019:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-6.json.gz",
+      "file_path": "data_cache/full_races/2019-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.330963+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -745,7 +745,7 @@
     },
     "jolpica_full_race:2019:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-7.json.gz",
+      "file_path": "data_cache/full_races/2019-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.332997+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -764,7 +764,7 @@
     },
     "jolpica_full_race:2019:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-8.json.gz",
+      "file_path": "data_cache/full_races/2019-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.334771+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -783,7 +783,7 @@
     },
     "jolpica_full_race:2019:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2019-9.json.gz",
+      "file_path": "data_cache/full_races/2019-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.336486+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -802,7 +802,7 @@
     },
     "jolpica_full_race:2020:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-1.json.gz",
+      "file_path": "data_cache/full_races/2020-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.359968+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -821,7 +821,7 @@
     },
     "jolpica_full_race:2020:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-10.json.gz",
+      "file_path": "data_cache/full_races/2020-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.379050+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -840,7 +840,7 @@
     },
     "jolpica_full_race:2020:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-11.json.gz",
+      "file_path": "data_cache/full_races/2020-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.380921+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -859,7 +859,7 @@
     },
     "jolpica_full_race:2020:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-12.json.gz",
+      "file_path": "data_cache/full_races/2020-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.382683+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -878,7 +878,7 @@
     },
     "jolpica_full_race:2020:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-13.json.gz",
+      "file_path": "data_cache/full_races/2020-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.384386+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -897,7 +897,7 @@
     },
     "jolpica_full_race:2020:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-14.json.gz",
+      "file_path": "data_cache/full_races/2020-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.386080+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -916,7 +916,7 @@
     },
     "jolpica_full_race:2020:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-15.json.gz",
+      "file_path": "data_cache/full_races/2020-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.387821+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -935,7 +935,7 @@
     },
     "jolpica_full_race:2020:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-16.json.gz",
+      "file_path": "data_cache/full_races/2020-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.389654+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -954,7 +954,7 @@
     },
     "jolpica_full_race:2020:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-17.json.gz",
+      "file_path": "data_cache/full_races/2020-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.391688+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -973,7 +973,7 @@
     },
     "jolpica_full_race:2020:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-2.json.gz",
+      "file_path": "data_cache/full_races/2020-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.362002+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -992,7 +992,7 @@
     },
     "jolpica_full_race:2020:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-3.json.gz",
+      "file_path": "data_cache/full_races/2020-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.365913+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1011,7 +1011,7 @@
     },
     "jolpica_full_race:2020:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-4.json.gz",
+      "file_path": "data_cache/full_races/2020-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.367963+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1030,7 +1030,7 @@
     },
     "jolpica_full_race:2020:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-5.json.gz",
+      "file_path": "data_cache/full_races/2020-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.369765+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1049,7 +1049,7 @@
     },
     "jolpica_full_race:2020:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-6.json.gz",
+      "file_path": "data_cache/full_races/2020-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.371753+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1068,7 +1068,7 @@
     },
     "jolpica_full_race:2020:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-7.json.gz",
+      "file_path": "data_cache/full_races/2020-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.373788+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1087,7 +1087,7 @@
     },
     "jolpica_full_race:2020:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-8.json.gz",
+      "file_path": "data_cache/full_races/2020-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.375596+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1106,7 +1106,7 @@
     },
     "jolpica_full_race:2020:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2020-9.json.gz",
+      "file_path": "data_cache/full_races/2020-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.377309+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1125,7 +1125,7 @@
     },
     "jolpica_full_race:2021:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-1.json.gz",
+      "file_path": "data_cache/full_races/2021-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.393471+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1144,7 +1144,7 @@
     },
     "jolpica_full_race:2021:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-10.json.gz",
+      "file_path": "data_cache/full_races/2021-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.409992+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1163,7 +1163,7 @@
     },
     "jolpica_full_race:2021:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-11.json.gz",
+      "file_path": "data_cache/full_races/2021-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.411733+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1182,7 +1182,7 @@
     },
     "jolpica_full_race:2021:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-12.json.gz",
+      "file_path": "data_cache/full_races/2021-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.413701+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1201,7 +1201,7 @@
     },
     "jolpica_full_race:2021:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-13.json.gz",
+      "file_path": "data_cache/full_races/2021-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.415437+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1220,7 +1220,7 @@
     },
     "jolpica_full_race:2021:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-14.json.gz",
+      "file_path": "data_cache/full_races/2021-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.417423+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1239,7 +1239,7 @@
     },
     "jolpica_full_race:2021:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-15.json.gz",
+      "file_path": "data_cache/full_races/2021-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.419275+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1258,7 +1258,7 @@
     },
     "jolpica_full_race:2021:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-16.json.gz",
+      "file_path": "data_cache/full_races/2021-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.421218+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1277,7 +1277,7 @@
     },
     "jolpica_full_race:2021:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-17.json.gz",
+      "file_path": "data_cache/full_races/2021-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.423018+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1296,7 +1296,7 @@
     },
     "jolpica_full_race:2021:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-18.json.gz",
+      "file_path": "data_cache/full_races/2021-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.424792+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1315,7 +1315,7 @@
     },
     "jolpica_full_race:2021:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-19.json.gz",
+      "file_path": "data_cache/full_races/2021-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.426571+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1334,7 +1334,7 @@
     },
     "jolpica_full_race:2021:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-2.json.gz",
+      "file_path": "data_cache/full_races/2021-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.395209+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1353,7 +1353,7 @@
     },
     "jolpica_full_race:2021:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-20.json.gz",
+      "file_path": "data_cache/full_races/2021-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.428295+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1372,7 +1372,7 @@
     },
     "jolpica_full_race:2021:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-21.json.gz",
+      "file_path": "data_cache/full_races/2021-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.430041+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1391,7 +1391,7 @@
     },
     "jolpica_full_race:2021:22": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-22.json.gz",
+      "file_path": "data_cache/full_races/2021-22.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.431842+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1410,7 +1410,7 @@
     },
     "jolpica_full_race:2021:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-3.json.gz",
+      "file_path": "data_cache/full_races/2021-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.397076+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1429,7 +1429,7 @@
     },
     "jolpica_full_race:2021:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-4.json.gz",
+      "file_path": "data_cache/full_races/2021-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.398974+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1448,7 +1448,7 @@
     },
     "jolpica_full_race:2021:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-5.json.gz",
+      "file_path": "data_cache/full_races/2021-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.400800+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1467,7 +1467,7 @@
     },
     "jolpica_full_race:2021:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-6.json.gz",
+      "file_path": "data_cache/full_races/2021-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.402543+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1486,7 +1486,7 @@
     },
     "jolpica_full_race:2021:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-7.json.gz",
+      "file_path": "data_cache/full_races/2021-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.404371+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1505,7 +1505,7 @@
     },
     "jolpica_full_race:2021:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-8.json.gz",
+      "file_path": "data_cache/full_races/2021-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.406359+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1524,7 +1524,7 @@
     },
     "jolpica_full_race:2021:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2021-9.json.gz",
+      "file_path": "data_cache/full_races/2021-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.408118+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1543,7 +1543,7 @@
     },
     "jolpica_full_race:2022:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-1.json.gz",
+      "file_path": "data_cache/full_races/2022-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.433724+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1562,7 +1562,7 @@
     },
     "jolpica_full_race:2022:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-10.json.gz",
+      "file_path": "data_cache/full_races/2022-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.450551+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1581,7 +1581,7 @@
     },
     "jolpica_full_race:2022:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-11.json.gz",
+      "file_path": "data_cache/full_races/2022-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.452354+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1600,7 +1600,7 @@
     },
     "jolpica_full_race:2022:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-12.json.gz",
+      "file_path": "data_cache/full_races/2022-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.454118+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1619,7 +1619,7 @@
     },
     "jolpica_full_race:2022:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-13.json.gz",
+      "file_path": "data_cache/full_races/2022-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.455973+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1638,7 +1638,7 @@
     },
     "jolpica_full_race:2022:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-14.json.gz",
+      "file_path": "data_cache/full_races/2022-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.457780+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1657,7 +1657,7 @@
     },
     "jolpica_full_race:2022:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-15.json.gz",
+      "file_path": "data_cache/full_races/2022-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.459922+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1676,7 +1676,7 @@
     },
     "jolpica_full_race:2022:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-16.json.gz",
+      "file_path": "data_cache/full_races/2022-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.461809+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1695,7 +1695,7 @@
     },
     "jolpica_full_race:2022:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-17.json.gz",
+      "file_path": "data_cache/full_races/2022-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.463640+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1714,7 +1714,7 @@
     },
     "jolpica_full_race:2022:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-18.json.gz",
+      "file_path": "data_cache/full_races/2022-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.465590+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1733,7 +1733,7 @@
     },
     "jolpica_full_race:2022:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-19.json.gz",
+      "file_path": "data_cache/full_races/2022-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.467381+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1752,7 +1752,7 @@
     },
     "jolpica_full_race:2022:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-2.json.gz",
+      "file_path": "data_cache/full_races/2022-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.435844+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1771,7 +1771,7 @@
     },
     "jolpica_full_race:2022:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-20.json.gz",
+      "file_path": "data_cache/full_races/2022-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.469172+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1790,7 +1790,7 @@
     },
     "jolpica_full_race:2022:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-21.json.gz",
+      "file_path": "data_cache/full_races/2022-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.471157+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1809,7 +1809,7 @@
     },
     "jolpica_full_race:2022:22": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-22.json.gz",
+      "file_path": "data_cache/full_races/2022-22.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.473654+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1828,7 +1828,7 @@
     },
     "jolpica_full_race:2022:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-3.json.gz",
+      "file_path": "data_cache/full_races/2022-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.437886+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1847,7 +1847,7 @@
     },
     "jolpica_full_race:2022:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-4.json.gz",
+      "file_path": "data_cache/full_races/2022-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.439775+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1866,7 +1866,7 @@
     },
     "jolpica_full_race:2022:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-5.json.gz",
+      "file_path": "data_cache/full_races/2022-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.441668+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1885,7 +1885,7 @@
     },
     "jolpica_full_race:2022:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-6.json.gz",
+      "file_path": "data_cache/full_races/2022-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.443333+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1904,7 +1904,7 @@
     },
     "jolpica_full_race:2022:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-7.json.gz",
+      "file_path": "data_cache/full_races/2022-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.445041+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1923,7 +1923,7 @@
     },
     "jolpica_full_race:2022:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-8.json.gz",
+      "file_path": "data_cache/full_races/2022-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.446861+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1942,7 +1942,7 @@
     },
     "jolpica_full_race:2022:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2022-9.json.gz",
+      "file_path": "data_cache/full_races/2022-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.448733+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1961,7 +1961,7 @@
     },
     "jolpica_full_race:2023:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-1.json.gz",
+      "file_path": "data_cache/full_races/2023-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.475571+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1980,7 +1980,7 @@
     },
     "jolpica_full_race:2023:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-10.json.gz",
+      "file_path": "data_cache/full_races/2023-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.492146+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -1999,7 +1999,7 @@
     },
     "jolpica_full_race:2023:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-11.json.gz",
+      "file_path": "data_cache/full_races/2023-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.493937+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2018,7 +2018,7 @@
     },
     "jolpica_full_race:2023:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-12.json.gz",
+      "file_path": "data_cache/full_races/2023-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.495779+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2037,7 +2037,7 @@
     },
     "jolpica_full_race:2023:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-13.json.gz",
+      "file_path": "data_cache/full_races/2023-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.497667+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2056,7 +2056,7 @@
     },
     "jolpica_full_race:2023:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-14.json.gz",
+      "file_path": "data_cache/full_races/2023-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.499734+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2075,7 +2075,7 @@
     },
     "jolpica_full_race:2023:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-15.json.gz",
+      "file_path": "data_cache/full_races/2023-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.501393+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2094,7 +2094,7 @@
     },
     "jolpica_full_race:2023:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-16.json.gz",
+      "file_path": "data_cache/full_races/2023-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.503100+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2113,7 +2113,7 @@
     },
     "jolpica_full_race:2023:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-17.json.gz",
+      "file_path": "data_cache/full_races/2023-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.504897+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2132,7 +2132,7 @@
     },
     "jolpica_full_race:2023:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-18.json.gz",
+      "file_path": "data_cache/full_races/2023-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.507108+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2151,7 +2151,7 @@
     },
     "jolpica_full_race:2023:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-19.json.gz",
+      "file_path": "data_cache/full_races/2023-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.508859+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2170,7 +2170,7 @@
     },
     "jolpica_full_race:2023:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-2.json.gz",
+      "file_path": "data_cache/full_races/2023-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.477304+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2189,7 +2189,7 @@
     },
     "jolpica_full_race:2023:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-20.json.gz",
+      "file_path": "data_cache/full_races/2023-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.510833+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2208,7 +2208,7 @@
     },
     "jolpica_full_race:2023:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-21.json.gz",
+      "file_path": "data_cache/full_races/2023-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.512549+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2227,7 +2227,7 @@
     },
     "jolpica_full_race:2023:22": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-22.json.gz",
+      "file_path": "data_cache/full_races/2023-22.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.514361+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2246,7 +2246,7 @@
     },
     "jolpica_full_race:2023:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-3.json.gz",
+      "file_path": "data_cache/full_races/2023-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.479135+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2265,7 +2265,7 @@
     },
     "jolpica_full_race:2023:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-4.json.gz",
+      "file_path": "data_cache/full_races/2023-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.481124+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2284,7 +2284,7 @@
     },
     "jolpica_full_race:2023:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-5.json.gz",
+      "file_path": "data_cache/full_races/2023-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.482926+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2303,7 +2303,7 @@
     },
     "jolpica_full_race:2023:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-6.json.gz",
+      "file_path": "data_cache/full_races/2023-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.484759+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2322,7 +2322,7 @@
     },
     "jolpica_full_race:2023:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-7.json.gz",
+      "file_path": "data_cache/full_races/2023-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.486415+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2341,7 +2341,7 @@
     },
     "jolpica_full_race:2023:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-8.json.gz",
+      "file_path": "data_cache/full_races/2023-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.488117+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2360,7 +2360,7 @@
     },
     "jolpica_full_race:2023:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2023-9.json.gz",
+      "file_path": "data_cache/full_races/2023-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.490004+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2379,7 +2379,7 @@
     },
     "jolpica_full_race:2024:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-1.json.gz",
+      "file_path": "data_cache/full_races/2024-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.516303+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2398,7 +2398,7 @@
     },
     "jolpica_full_race:2024:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-10.json.gz",
+      "file_path": "data_cache/full_races/2024-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.534253+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2417,7 +2417,7 @@
     },
     "jolpica_full_race:2024:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-11.json.gz",
+      "file_path": "data_cache/full_races/2024-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.536188+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2436,7 +2436,7 @@
     },
     "jolpica_full_race:2024:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-12.json.gz",
+      "file_path": "data_cache/full_races/2024-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.537936+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2455,7 +2455,7 @@
     },
     "jolpica_full_race:2024:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-13.json.gz",
+      "file_path": "data_cache/full_races/2024-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.539914+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2474,7 +2474,7 @@
     },
     "jolpica_full_race:2024:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-14.json.gz",
+      "file_path": "data_cache/full_races/2024-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.541652+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2493,7 +2493,7 @@
     },
     "jolpica_full_race:2024:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-15.json.gz",
+      "file_path": "data_cache/full_races/2024-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.543392+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2512,7 +2512,7 @@
     },
     "jolpica_full_race:2024:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-16.json.gz",
+      "file_path": "data_cache/full_races/2024-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.545148+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2531,7 +2531,7 @@
     },
     "jolpica_full_race:2024:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-17.json.gz",
+      "file_path": "data_cache/full_races/2024-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.546901+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2550,7 +2550,7 @@
     },
     "jolpica_full_race:2024:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-18.json.gz",
+      "file_path": "data_cache/full_races/2024-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.548774+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2569,7 +2569,7 @@
     },
     "jolpica_full_race:2024:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-19.json.gz",
+      "file_path": "data_cache/full_races/2024-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.550600+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2588,7 +2588,7 @@
     },
     "jolpica_full_race:2024:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-2.json.gz",
+      "file_path": "data_cache/full_races/2024-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.518189+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2607,7 +2607,7 @@
     },
     "jolpica_full_race:2024:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-20.json.gz",
+      "file_path": "data_cache/full_races/2024-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.552564+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2626,7 +2626,7 @@
     },
     "jolpica_full_race:2024:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-21.json.gz",
+      "file_path": "data_cache/full_races/2024-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.554374+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2645,7 +2645,7 @@
     },
     "jolpica_full_race:2024:22": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-22.json.gz",
+      "file_path": "data_cache/full_races/2024-22.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.556468+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2664,7 +2664,7 @@
     },
     "jolpica_full_race:2024:23": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-23.json.gz",
+      "file_path": "data_cache/full_races/2024-23.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.558311+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2683,7 +2683,7 @@
     },
     "jolpica_full_race:2024:24": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-24.json.gz",
+      "file_path": "data_cache/full_races/2024-24.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.560057+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2702,7 +2702,7 @@
     },
     "jolpica_full_race:2024:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-3.json.gz",
+      "file_path": "data_cache/full_races/2024-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.521212+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2721,7 +2721,7 @@
     },
     "jolpica_full_race:2024:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-4.json.gz",
+      "file_path": "data_cache/full_races/2024-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.523267+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2740,7 +2740,7 @@
     },
     "jolpica_full_race:2024:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-5.json.gz",
+      "file_path": "data_cache/full_races/2024-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.525045+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2759,7 +2759,7 @@
     },
     "jolpica_full_race:2024:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-6.json.gz",
+      "file_path": "data_cache/full_races/2024-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.526799+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2778,7 +2778,7 @@
     },
     "jolpica_full_race:2024:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-7.json.gz",
+      "file_path": "data_cache/full_races/2024-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.528882+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2797,7 +2797,7 @@
     },
     "jolpica_full_race:2024:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-8.json.gz",
+      "file_path": "data_cache/full_races/2024-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.530589+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2816,7 +2816,7 @@
     },
     "jolpica_full_race:2024:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2024-9.json.gz",
+      "file_path": "data_cache/full_races/2024-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.532436+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2835,7 +2835,7 @@
     },
     "jolpica_full_race:2025:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-1.json.gz",
+      "file_path": "data_cache/full_races/2025-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.561814+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2854,7 +2854,7 @@
     },
     "jolpica_full_race:2025:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-10.json.gz",
+      "file_path": "data_cache/full_races/2025-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.578075+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2873,7 +2873,7 @@
     },
     "jolpica_full_race:2025:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-11.json.gz",
+      "file_path": "data_cache/full_races/2025-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.579823+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2892,7 +2892,7 @@
     },
     "jolpica_full_race:2025:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-12.json.gz",
+      "file_path": "data_cache/full_races/2025-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.581916+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2911,7 +2911,7 @@
     },
     "jolpica_full_race:2025:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-13.json.gz",
+      "file_path": "data_cache/full_races/2025-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.583658+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2930,7 +2930,7 @@
     },
     "jolpica_full_race:2025:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-14.json.gz",
+      "file_path": "data_cache/full_races/2025-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.585367+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2949,7 +2949,7 @@
     },
     "jolpica_full_race:2025:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-15.json.gz",
+      "file_path": "data_cache/full_races/2025-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.587067+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2968,7 +2968,7 @@
     },
     "jolpica_full_race:2025:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-16.json.gz",
+      "file_path": "data_cache/full_races/2025-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.588984+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -2987,7 +2987,7 @@
     },
     "jolpica_full_race:2025:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-17.json.gz",
+      "file_path": "data_cache/full_races/2025-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.590773+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3006,7 +3006,7 @@
     },
     "jolpica_full_race:2025:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-18.json.gz",
+      "file_path": "data_cache/full_races/2025-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.592505+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3025,7 +3025,7 @@
     },
     "jolpica_full_race:2025:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-19.json.gz",
+      "file_path": "data_cache/full_races/2025-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.594275+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3044,7 +3044,7 @@
     },
     "jolpica_full_race:2025:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-2.json.gz",
+      "file_path": "data_cache/full_races/2025-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.564027+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3063,7 +3063,7 @@
     },
     "jolpica_full_race:2025:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-20.json.gz",
+      "file_path": "data_cache/full_races/2025-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.596003+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3082,7 +3082,7 @@
     },
     "jolpica_full_race:2025:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-21.json.gz",
+      "file_path": "data_cache/full_races/2025-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.597846+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3101,7 +3101,7 @@
     },
     "jolpica_full_race:2025:22": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-22.json.gz",
+      "file_path": "data_cache/full_races/2025-22.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.600594+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3120,7 +3120,7 @@
     },
     "jolpica_full_race:2025:23": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-23.json.gz",
+      "file_path": "data_cache/full_races/2025-23.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.602365+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3139,7 +3139,7 @@
     },
     "jolpica_full_race:2025:24": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-24.json.gz",
+      "file_path": "data_cache/full_races/2025-24.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.604098+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3158,7 +3158,7 @@
     },
     "jolpica_full_race:2025:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-3.json.gz",
+      "file_path": "data_cache/full_races/2025-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.565751+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3177,7 +3177,7 @@
     },
     "jolpica_full_race:2025:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-4.json.gz",
+      "file_path": "data_cache/full_races/2025-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.567605+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3196,7 +3196,7 @@
     },
     "jolpica_full_race:2025:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-5.json.gz",
+      "file_path": "data_cache/full_races/2025-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.569265+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3215,7 +3215,7 @@
     },
     "jolpica_full_race:2025:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-6.json.gz",
+      "file_path": "data_cache/full_races/2025-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.571031+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3234,7 +3234,7 @@
     },
     "jolpica_full_race:2025:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-7.json.gz",
+      "file_path": "data_cache/full_races/2025-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.572832+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3253,7 +3253,7 @@
     },
     "jolpica_full_race:2025:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-8.json.gz",
+      "file_path": "data_cache/full_races/2025-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.574607+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3272,7 +3272,7 @@
     },
     "jolpica_full_race:2025:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2025-9.json.gz",
+      "file_path": "data_cache/full_races/2025-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.576286+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3291,7 +3291,7 @@
     },
     "jolpica_full_race:2026:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-1.json.gz",
+      "file_path": "data_cache/full_races/2026-1.json.gz",
       "last_checked_at": "2026-06-08T17:55:49.978494+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3310,7 +3310,7 @@
     },
     "jolpica_full_race:2026:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-2.json.gz",
+      "file_path": "data_cache/full_races/2026-2.json.gz",
       "last_checked_at": "2026-06-08T17:55:49.984807+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3329,7 +3329,7 @@
     },
     "jolpica_full_race:2026:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-3.json.gz",
+      "file_path": "data_cache/full_races/2026-3.json.gz",
       "last_checked_at": "2026-06-08T17:55:49.991129+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3348,7 +3348,7 @@
     },
     "jolpica_full_race:2026:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-4.json.gz",
+      "file_path": "data_cache/full_races/2026-4.json.gz",
       "last_checked_at": "2026-06-08T17:55:50.012700+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3367,7 +3367,7 @@
     },
     "jolpica_full_race:2026:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-5.json.gz",
+      "file_path": "data_cache/full_races/2026-5.json.gz",
       "last_checked_at": "2026-06-08T17:55:50.016289+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3386,7 +3386,7 @@
     },
     "jolpica_full_race:2026:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-6.json.gz",
+      "file_path": "data_cache/full_races/2026-6.json.gz",
       "last_checked_at": "2026-06-08T17:55:50.019273+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3405,7 +3405,7 @@
     },
     "jolpica_full_race:2026:7": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-7.json.gz",
+      "file_path": "data_cache/full_races/2026-7.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.619501+00:00",
       "last_fetched_time": "2026-06-08T17:52:33.277322+00:00",
       "data_coverage_range": {
@@ -3424,7 +3424,7 @@
     },
     "jolpica_full_race:2026:8": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-8.json.gz",
+      "file_path": "data_cache/full_races/2026-8.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.621018+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3443,7 +3443,7 @@
     },
     "jolpica_full_race:2026:9": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-9.json.gz",
+      "file_path": "data_cache/full_races/2026-9.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.622251+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3462,7 +3462,7 @@
     },
     "jolpica_full_race:2026:10": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-10.json.gz",
+      "file_path": "data_cache/full_races/2026-10.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.623516+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3481,7 +3481,7 @@
     },
     "jolpica_full_race:2026:11": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-11.json.gz",
+      "file_path": "data_cache/full_races/2026-11.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.624706+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3500,7 +3500,7 @@
     },
     "jolpica_full_race:2026:12": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-12.json.gz",
+      "file_path": "data_cache/full_races/2026-12.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.625893+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3519,7 +3519,7 @@
     },
     "jolpica_full_race:2026:13": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-13.json.gz",
+      "file_path": "data_cache/full_races/2026-13.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.627105+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3538,7 +3538,7 @@
     },
     "jolpica_full_race:2026:14": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-14.json.gz",
+      "file_path": "data_cache/full_races/2026-14.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.628303+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3557,7 +3557,7 @@
     },
     "jolpica_full_race:2026:15": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-15.json.gz",
+      "file_path": "data_cache/full_races/2026-15.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.629547+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3576,7 +3576,7 @@
     },
     "jolpica_full_race:2026:16": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-16.json.gz",
+      "file_path": "data_cache/full_races/2026-16.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.630760+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3595,7 +3595,7 @@
     },
     "jolpica_full_race:2026:17": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-17.json.gz",
+      "file_path": "data_cache/full_races/2026-17.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.632000+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3614,7 +3614,7 @@
     },
     "jolpica_full_race:2026:18": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-18.json.gz",
+      "file_path": "data_cache/full_races/2026-18.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.633213+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3633,7 +3633,7 @@
     },
     "jolpica_full_race:2026:19": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-19.json.gz",
+      "file_path": "data_cache/full_races/2026-19.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.634443+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3652,7 +3652,7 @@
     },
     "jolpica_full_race:2026:20": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-20.json.gz",
+      "file_path": "data_cache/full_races/2026-20.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.635634+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3671,7 +3671,7 @@
     },
     "jolpica_full_race:2026:21": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-21.json.gz",
+      "file_path": "data_cache/full_races/2026-21.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.636823+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
@@ -3690,7 +3690,7 @@
     },
     "jolpica_full_race:2026:22": {
       "source": "Jolpica Ergast-compatible full race bundle",
-      "file_path": "/Users/shrey-mac/Downloads/Codes/PitWall-main 2/data_cache/full_races/2026-22.json.gz",
+      "file_path": "data_cache/full_races/2026-22.json.gz",
       "last_checked_at": "2026-06-08T17:55:37.638098+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {

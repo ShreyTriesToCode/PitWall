@@ -655,7 +655,9 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   gap: 10px;
   margin: 10px 0;
 }
-.metric strong, .metric-card strong { display: block; margin-top: 7px; font-size: 18px; overflow-wrap: anywhere; }
+.metric, .metric-card { min-width: 0; }
+.metric span, .metric-card span { overflow-wrap: anywhere; }
+.metric strong, .metric-card strong { display: block; margin-top: 7px; font-size: 18px; overflow-wrap: anywhere; word-break: break-word; }
 .metric-card { display: grid; gap: 8px; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
 .metric-card:hover, .metric:hover { border-color: var(--line2); background: rgba(255,218,212,.06); }
 .source-list, .component-bars, .podium-list, .quick-links, .timeline, .radio-stack, .race-control-stack { display: grid; gap: 8px; }
@@ -1855,6 +1857,7 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   .mobile-prediction-list { display: grid; }
   .panel, .dash-card { max-height: none; }
   .toolbar { display: grid; grid-template-columns: 1fr; }
+  .toolbar > * { min-width: 0; }
   .control-btn, .dash-btn { width: 100%; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .scenario-grid, .card-grid, .team-grid, .archive-grid, .driver-grid { grid-template-columns: 1fr; }

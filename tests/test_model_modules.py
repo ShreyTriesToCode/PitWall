@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from pitwall.data.cache_manager import cache_aware_json_loader, load_manifest, validate_json_cache
+from pitwall.data.cache_manager import cache_aware_json_loader, load_manifest, manifest_file_path, validate_json_cache
 from pitwall.features.build_features import feature_schema, missing_value_report
 from pitwall.models.evaluate import evaluate_finish_predictions
 from pitwall.models.predict import normalize_prediction_row, top10_from_full_grid, validate_top10_subset
@@ -95,6 +95,7 @@ class ModelModuleTests(unittest.TestCase):
             self.assertEqual(calls["fetch"], 0)
             entry = load_manifest(manifest)["entries"]["unit"]
             self.assertEqual(entry["latest_run_action"], "reused")
+            self.assertEqual(entry["file_path"], "payload.json")
 
     def test_cache_aware_loader_refreshes_corrupt_cache_once(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -129,6 +130,15 @@ class ModelModuleTests(unittest.TestCase):
         decision = promotion_gate({}, {"finish_mae": 3.0})
         self.assertFalse(decision["approved"])
         self.assertFalse(decision["checks"]["has_ranking_metrics"])
+
+    def test_manifest_file_path_is_repo_relative_when_possible(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "data_cache" / "cache_manifest.json"
+            cache_file = root / "data_cache" / "payload.json"
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text('{"ok": true}', encoding="utf-8")
+            self.assertEqual(manifest_file_path(cache_file, manifest), "data_cache/payload.json")
 
 
 if __name__ == "__main__":

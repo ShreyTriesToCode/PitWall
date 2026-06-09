@@ -50,6 +50,16 @@ def file_checksum(path: Path) -> str | None:
     return digest.hexdigest()
 
 
+def manifest_file_path(file_path: Path, manifest_path: Path) -> str:
+    """Store portable manifest paths when the cache lives inside the repo."""
+    try:
+        manifest_parent = manifest_path.resolve().parent
+        repo_root = manifest_parent.parent if manifest_parent.name == "data_cache" else manifest_parent
+        return str(file_path.resolve().relative_to(repo_root))
+    except Exception:
+        return str(file_path)
+
+
 def parse_json_or_gzip(path: Path) -> Any:
     if path.suffix == ".gz":
         with gzip.open(path, "rt", encoding="utf-8") as handle:
@@ -91,7 +101,7 @@ def record_cache_event(
     stat_size = file_path.stat().st_size if file_path.exists() else 0
     entries[cache_key] = {
         "source": source,
-        "file_path": str(file_path),
+        "file_path": manifest_file_path(file_path, manifest_path),
         "last_checked_at": utc_now_iso(),
         "last_fetched_time": utc_now_iso() if action == "refreshed" else entries.get(cache_key, {}).get("last_fetched_time"),
         "data_coverage_range": coverage or entries.get(cache_key, {}).get("data_coverage_range"),
