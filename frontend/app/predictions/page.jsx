@@ -57,7 +57,10 @@ export default function PredictionsPage() {
     }
     return map;
   }, [data?.full_grid, data?.top10, generatedTargets, latest]);
-  const selectedTarget = targetMap.get(requestedTarget) || (!generatedTargets.length && latest ? {
+  const effectiveTargetType = targetMap.has(requestedTarget)
+    ? requestedTarget
+    : latest?.target_type || generatedTargets[0]?.target_type || "race";
+  const selectedTarget = targetMap.get(effectiveTargetType) || (!generatedTargets.length && latest ? {
     ...latest,
     title: latest.title || latest.race_name,
     top10: data?.top10 || [],
@@ -65,7 +68,7 @@ export default function PredictionsPage() {
     target_type: latest.target_type,
     stage: latest.stage,
   } : null);
-  const targetPending = Boolean(requestedTarget && !targetMap.has(requestedTarget) && generatedTargets.length);
+  const targetPending = Boolean(!selectedTarget && generatedTargets.length);
   const selectedPayload = targetPending ? {} : selectedTarget || latest || {};
   const selectedTop10 = targetPending ? [] : selectedTarget?.top10?.length ? selectedTarget.top10 : data?.top10 || [];
   const selectedFullGrid = targetPending
@@ -126,12 +129,12 @@ export default function PredictionsPage() {
         <>
           <section className="toolbar panel reveal">
             <SearchBox value={query} onChange={setQuery} placeholder="Search drivers or teams" />
-            <TargetTabs active={requestedTarget} available={generatedTargetTypes} onSelect={selectTarget} />
+            <TargetTabs active={effectiveTargetType} available={generatedTargetTypes} onSelect={selectTarget} />
             <button className={view === "table" ? "control-btn active" : "control-btn"} onClick={() => setView("table")} disabled={!predictions.length}>Table</button>
             <button className={view === "cards" ? "control-btn active" : "control-btn"} onClick={() => setView("cards")} disabled={!predictions.length}>Cards</button>
             {["simple", "expert", "debug"].map((mode) => <button className={detailMode === mode ? "control-btn active" : "control-btn"} onClick={() => setDetailMode(mode)} type="button" key={mode}>{mode[0].toUpperCase() + mode.slice(1)}</button>)}
             <button className="control-btn" onClick={refetch} disabled={refreshing}>{refreshing ? "Refreshing" : "Refresh data"}</button>
-            <StatusBadge label={targetPending ? `${requestedTarget} pending` : selectedTarget?.stage || latest.stage} tone="red" />
+            <StatusBadge label={targetPending ? `${effectiveTargetType} pending` : selectedTarget?.stage || latest.stage} tone="red" />
           </section>
           <section className="panel reveal prediction-overview">
             <SectionTitle title="Race Overview" />

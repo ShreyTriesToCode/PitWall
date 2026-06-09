@@ -13,7 +13,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2018-03-25T10:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c27dc1ff393312fc1a20a76262fcc7a04d65aa1bd798aa4451efbd5082983e0c",
       "file_size": 3775,
       "freshness_status": "final_results_available",
@@ -32,7 +32,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2018-07-08T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9974b8a9adc7e9d1ee7346f5ec10e0626547abde326bdf7b10fe1d35c072a7af",
       "file_size": 3803,
       "freshness_status": "final_results_available",
@@ -51,7 +51,7 @@
         "race_name": "German Grand Prix",
         "scheduled_at": "2018-07-22T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "476e0c58b4afb7d9a964b1c4272aca67653b1844942662bf8dbba5a79c16db38",
       "file_size": 3841,
       "freshness_status": "final_results_available",
@@ -70,7 +70,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2018-07-29T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d3b86272a1aa304315490fc572ff456b5fb9134ad35ad6ef80314fcdd796efc8",
       "file_size": 3693,
       "freshness_status": "final_results_available",
@@ -89,7 +89,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2018-08-26T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "acef8c46c2eb3ccd701d8bd17a9855ffe8e6f2cc979382d2984725e30ec02a0f",
       "file_size": 3733,
       "freshness_status": "final_results_available",
@@ -108,7 +108,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2018-09-02T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "8eebf1a2ac5813962d7f78b1b0789a0c75c2ef8f3e26887a29952cf054e2db01",
       "file_size": 3707,
       "freshness_status": "final_results_available",
@@ -127,7 +127,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2018-09-16T17:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "52a5d04ed998effc83deed7bcfa168b8ab9cfa2c49bb91a4bf82714356b73999",
       "file_size": 3742,
       "freshness_status": "final_results_available",
@@ -146,7 +146,7 @@
         "race_name": "Russian Grand Prix",
         "scheduled_at": "2018-09-30T16:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "a19895014fb07b9cdddf2f97a28a8daed97404e48b4a911473adcf43337bd009",
       "file_size": 3646,
       "freshness_status": "final_results_available",
@@ -165,7 +165,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2018-10-07T10:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3ca5c434852407aa72324a9de20c1701992d65ae7f3fb2fa1dcd8e058c9433ca",
       "file_size": 3752,
       "freshness_status": "final_results_available",
@@ -184,7 +184,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2018-10-21T23:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d5c49fbe652f768420ac9e297dc58f4cf9b8702bfe644f64e2d30fd37963acc1",
       "file_size": 3751,
       "freshness_status": "final_results_available",
@@ -203,7 +203,7 @@
         "race_name": "Mexican Grand Prix",
         "scheduled_at": "2018-10-29T00:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b3d0f5968526405ba0797f5949a58afebfb801d561e17e3783cd1a5047b088fe",
       "file_size": 3788,
       "freshness_status": "final_results_available",
@@ -222,7 +222,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2018-04-08T20:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b62b6f8161fd24ba1693403d3a11b20119f3da09cf8144ff05ff878e2f57cc34",
       "file_size": 3776,
       "freshness_status": "final_results_available",
@@ -241,7 +241,7 @@
         "race_name": "Brazilian Grand Prix",
         "scheduled_at": "2018-11-11T22:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "205c055473dfd39ea2ab0b1af94b1ed965d7290a75adb7ae2daf2f5b2254a55b",
       "file_size": 3819,
       "freshness_status": "final_results_available",
@@ -260,7 +260,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2018-11-25T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "a370fc1c5c1b09e15b2b4002d20be542a5ce2821caf33102ff7158ed3bc63dd1",
       "file_size": 3661,
       "freshness_status": "final_results_available",
@@ -279,7 +279,7 @@
         "race_name": "Chinese Grand Prix",
         "scheduled_at": "2018-04-15T11:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "a9c2f8b412f2f0d2de40a507887b570bddcf90c029172e0499bcb4bf56393db9",
       "file_size": 3912,
       "freshness_status": "final_results_available",
@@ -298,7 +298,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2018-04-29T17:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e1eff71cad6e502f3b808de9ccec5f4da4f583cc9e28722b3a91bdf61d3d4fec",
       "file_size": 3860,
       "freshness_status": "final_results_available",
@@ -317,7 +317,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2018-05-13T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b4342af162260163298a617a725b99c921c58918437dd67ce736852e72d8c57a",
       "file_size": 3656,
       "freshness_status": "final_results_available",
@@ -336,7 +336,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2018-05-27T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "170c21479e7dc45f8e9d38aef25bbe87d5f88ba9d508dc113bced336a4598a91",
       "file_size": 3835,
       "freshness_status": "final_results_available",
@@ -355,7 +355,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2018-06-10T23:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3700705be4c398290c0fc066895af44d1de08719c20eaaece2439bc4f722adbb",
       "file_size": 3632,
       "freshness_status": "final_results_available",
@@ -374,7 +374,7 @@
         "race_name": "French Grand Prix",
         "scheduled_at": "2018-06-24T19:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "78334b78109819e8359fd0f4df2bc426e0ceb9081c325b8f7e133e810be5600c",
       "file_size": 3709,
       "freshness_status": "final_results_available",
@@ -393,7 +393,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2018-07-01T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "1cdfd859a8101416a61424e8f60cb9a15ceb1c44014cca1fee3c060fc7143fca",
       "file_size": 3679,
       "freshness_status": "final_results_available",
@@ -412,7 +412,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2019-03-17T10:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "0fec9c571cf39d938de2d7d32559511350bc867a37f5ad450598debdacb43625",
       "file_size": 3699,
       "freshness_status": "final_results_available",
@@ -431,7 +431,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2019-07-14T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "dcef06dc39415d1e0b1c6fef97b30060e961aacf7c591e6344a95bb4ae6113cb",
       "file_size": 3794,
       "freshness_status": "final_results_available",
@@ -450,7 +450,7 @@
         "race_name": "German Grand Prix",
         "scheduled_at": "2019-07-28T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "0948425046c8e533d3e894146e4891e11f51c431dfc2d34f3fd43a7e42f927d8",
       "file_size": 3806,
       "freshness_status": "final_results_available",
@@ -469,7 +469,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2019-08-04T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e24a9e817a08ce3033717f2ca0d900fc70fcdc73396f0413bdca358b24cc951e",
       "file_size": 3675,
       "freshness_status": "final_results_available",
@@ -488,7 +488,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2019-09-01T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "cc053338389d6d884918f5125a4e3aebab8b21fe2ea3dc85884d45c5c37f08e1",
       "file_size": 3735,
       "freshness_status": "final_results_available",
@@ -507,7 +507,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2019-09-08T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "2e5af3a26f9a03fede984e7df3ac33709f6d53fd6402980a4526c9eba6829ac4",
       "file_size": 3781,
       "freshness_status": "final_results_available",
@@ -526,7 +526,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2019-09-22T17:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "aa3494d7d4119a1502f48f8df83ba38e297278883ec7c2437e0562a3d8b3872c",
       "file_size": 3871,
       "freshness_status": "final_results_available",
@@ -545,7 +545,7 @@
         "race_name": "Russian Grand Prix",
         "scheduled_at": "2019-09-29T16:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "2c97d78e5556ac6bf6a6c47d9d04b51797fb64f72cc896567985a21e19970f36",
       "file_size": 3791,
       "freshness_status": "final_results_available",
@@ -564,7 +564,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2019-10-13T10:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e068a91b295c9144993fd8f4088d37ad139bc081d1ab0895059fe12273964da3",
       "file_size": 3793,
       "freshness_status": "final_results_available",
@@ -583,7 +583,7 @@
         "race_name": "Mexican Grand Prix",
         "scheduled_at": "2019-10-28T00:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "aca0102e9f2fc3e3e2c875be5f6493748f1c00db46ad8680a2b01f358138761b",
       "file_size": 3805,
       "freshness_status": "final_results_available",
@@ -602,7 +602,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2019-11-04T00:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4f5b87d83b3b4c096ac6bb94f8227d86629f5e01716b66e0f5f18f2aa84e8200",
       "file_size": 3789,
       "freshness_status": "final_results_available",
@@ -621,7 +621,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2019-03-31T20:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9ab025b322a9a1dada402ca0e1f7dbb203ec6b85eb56226bcf64daad2e03684e",
       "file_size": 3838,
       "freshness_status": "final_results_available",
@@ -640,7 +640,7 @@
         "race_name": "Brazilian Grand Prix",
         "scheduled_at": "2019-11-17T22:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "0d50d4c0de216356b5b5889ce8cc93540e45c4ad39b9d2bf0a413d8b0398c6f7",
       "file_size": 3873,
       "freshness_status": "final_results_available",
@@ -659,7 +659,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2019-12-01T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "698bad81e599a66e16f6d0e97a569666c0562244cb573ce8c4090f3780451d9f",
       "file_size": 3712,
       "freshness_status": "final_results_available",
@@ -678,7 +678,7 @@
         "race_name": "Chinese Grand Prix",
         "scheduled_at": "2019-04-14T11:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b368a9f89530b6a69a0e2b50175740b019d7371efc8619ebb3b638b85f135622",
       "file_size": 3774,
       "freshness_status": "final_results_available",
@@ -697,7 +697,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2019-04-28T17:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4289fe0c88059875b1043405600828cb3a81f9efd11ea39b74e294f616252825",
       "file_size": 3736,
       "freshness_status": "final_results_available",
@@ -716,7 +716,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2019-05-12T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "47b2c805680fdad0b13dbd96a6c5ac6e62e15bcbfe61f9ccae5f7cfdcc939088",
       "file_size": 3851,
       "freshness_status": "final_results_available",
@@ -735,7 +735,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2019-05-26T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4b0f2ee85be0c69bbf59571d76c123fd3adc9395d6b2caac0795e287cdcafd77",
       "file_size": 3706,
       "freshness_status": "final_results_available",
@@ -754,7 +754,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2019-06-09T23:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "5b17889012c1fa83c4618182ed8b6453c1714bf71e2c03cbb502ebf4176eb7fb",
       "file_size": 3700,
       "freshness_status": "final_results_available",
@@ -773,7 +773,7 @@
         "race_name": "French Grand Prix",
         "scheduled_at": "2019-06-23T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b7e0b5aa92f38b788d507d5c2b587d0a1b964e3bb1d51ecd1a5a091ce8961c30",
       "file_size": 3672,
       "freshness_status": "final_results_available",
@@ -792,7 +792,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2019-06-30T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c231e9618a871055c1698eb446293aa5dd15acf1a2aa197fe84b505fca176cf1",
       "file_size": 3642,
       "freshness_status": "final_results_available",
@@ -811,7 +811,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2020-07-05T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6beccc07d887844c9d716cf3dd2ff1bdb3af8235776572dbbdf5cddb6b68ef97",
       "file_size": 3766,
       "freshness_status": "final_results_available",
@@ -830,7 +830,7 @@
         "race_name": "Russian Grand Prix",
         "scheduled_at": "2020-09-27T16:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "df8246804903a832112a2e468b2967e2c975f722322b6f63e4d9c1b176c811e7",
       "file_size": 3674,
       "freshness_status": "final_results_available",
@@ -849,7 +849,7 @@
         "race_name": "Eifel Grand Prix",
         "scheduled_at": "2020-10-11T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "838bd4978c54355382dfbc7dfe0d453e52d1497d28c3714382c9d907f16e6f44",
       "file_size": 3845,
       "freshness_status": "final_results_available",
@@ -868,7 +868,7 @@
         "race_name": "Portuguese Grand Prix",
         "scheduled_at": "2020-10-25T17:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "2f88b1a1dec730cafea7565501040d3f3efa3505a6c5ae585e4589929002f233",
       "file_size": 3695,
       "freshness_status": "final_results_available",
@@ -887,7 +887,7 @@
         "race_name": "Emilia Romagna Grand Prix",
         "scheduled_at": "2020-11-01T17:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "5c2f4281f62d0dbba6d687f4cf79a9f98fce6475a0a90b9656d875bddc47347a",
       "file_size": 3880,
       "freshness_status": "final_results_available",
@@ -906,7 +906,7 @@
         "race_name": "Turkish Grand Prix",
         "scheduled_at": "2020-11-15T15:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "70789a4c54ca2cb663c74109b4e90fbd3979309cb2fe579e3f56f6c41827c7c3",
       "file_size": 3821,
       "freshness_status": "final_results_available",
@@ -925,7 +925,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2020-11-29T19:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b105483956f5f75cd5b0fdc074edeed11a8f2ebed523347de09bdece973ce413",
       "file_size": 3736,
       "freshness_status": "final_results_available",
@@ -944,7 +944,7 @@
         "race_name": "Sakhir Grand Prix",
         "scheduled_at": "2020-12-06T22:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6e14d916b9103deff455e867e9d3ceffeaf4cb19a6361a0785eb274aa65d4629",
       "file_size": 3800,
       "freshness_status": "final_results_available",
@@ -963,7 +963,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2020-12-13T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "482e9923059f8316639d238e9198c6ecd1e53a9e01bb8e451b3ced256bcf823b",
       "file_size": 3707,
       "freshness_status": "final_results_available",
@@ -982,7 +982,7 @@
         "race_name": "Styrian Grand Prix",
         "scheduled_at": "2020-07-12T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "33f1dfa18736664658cd0aefe03dfacf2eac2b6012d35384c059641c927d93a6",
       "file_size": 3663,
       "freshness_status": "final_results_available",
@@ -1001,7 +1001,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2020-07-19T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "43467f154b96ac8db7e96f57466813102025c2f2bf303ec68eb6b05f485ab5db",
       "file_size": 3683,
       "freshness_status": "final_results_available",
@@ -1020,7 +1020,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2020-08-02T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "51a9d25fd4c1c76b2904ec82627be4cd9e749f221534b934d9237549a02b9d3d",
       "file_size": 3682,
       "freshness_status": "final_results_available",
@@ -1039,7 +1039,7 @@
         "race_name": "70th Anniversary Grand Prix",
         "scheduled_at": "2020-08-09T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9d66340ab79778c5904f093256b3bb3505c732678eff9803e0c81f748e93273f",
       "file_size": 3790,
       "freshness_status": "final_results_available",
@@ -1058,7 +1058,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2020-08-16T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "cb0df0e7da677686bdf6846ec54fa79bc57afd13be357466aad8d405c1c8a1bb",
       "file_size": 3681,
       "freshness_status": "final_results_available",
@@ -1077,7 +1077,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2020-08-30T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "59f1c2eef62fd4e51f146ffbdac9b03f714b5930b9cf73110e3b7c4dc6222ef4",
       "file_size": 3682,
       "freshness_status": "final_results_available",
@@ -1096,7 +1096,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2020-09-06T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c978fcef383e9ca1d7cf6fc93ae09b3dc51033cd9ca4c513f5cb1cfbbc782d23",
       "file_size": 3811,
       "freshness_status": "final_results_available",
@@ -1115,7 +1115,7 @@
         "race_name": "Tuscan Grand Prix",
         "scheduled_at": "2020-09-13T18:40:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "f5e05db3c03b07b077455e71179e9ec48d5171654b3710f62ee89726e38e42f9",
       "file_size": 3713,
       "freshness_status": "final_results_available",
@@ -1134,7 +1134,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2021-03-28T20:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "64296d53dd629407720ae2e4bbb9be2ff50cf0021a055cb4bf3c517a14cbc787",
       "file_size": 3802,
       "freshness_status": "final_results_available",
@@ -1153,7 +1153,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2021-07-18T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "8ba5a6a98af72f73b14e28c8557e41de8be613761e6382c032bb433bb16a1bab",
       "file_size": 4385,
       "freshness_status": "final_results_available",
@@ -1172,7 +1172,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2021-08-01T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "f99346b66036fe75c1ccfd66cf2c18b5fa6eca6de5067c58e1389d51a5f227a0",
       "file_size": 3604,
       "freshness_status": "final_results_available",
@@ -1191,7 +1191,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2021-08-29T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "5a65906ab66949c8809a476a5b69647f1a28eef85a038e7bbd96260b65d1492e",
       "file_size": 3059,
       "freshness_status": "final_results_available",
@@ -1210,7 +1210,7 @@
         "race_name": "Dutch Grand Prix",
         "scheduled_at": "2021-09-05T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6393e85012703d6c56d1cafe5e3a051ccb038ccf48266821309dc89ca843205f",
       "file_size": 3738,
       "freshness_status": "final_results_available",
@@ -1229,7 +1229,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2021-09-12T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9d0e7edc53428df06cf2f04014ddbad05aa123a8630aad3be74eaf5e6cda783b",
       "file_size": 4340,
       "freshness_status": "final_results_available",
@@ -1248,7 +1248,7 @@
         "race_name": "Russian Grand Prix",
         "scheduled_at": "2021-09-26T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d0abb51388b433cd1f756124b63ee194f31e038541ba7b713ea4d4b4a3fa0e4b",
       "file_size": 3825,
       "freshness_status": "final_results_available",
@@ -1267,7 +1267,7 @@
         "race_name": "Turkish Grand Prix",
         "scheduled_at": "2021-10-10T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "ee2d19bfcbb2c303f93ee017aadfec03109d922e0c0a79f0d144ea15d9437dbb",
       "file_size": 3627,
       "freshness_status": "final_results_available",
@@ -1286,7 +1286,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2021-10-25T00:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "734d9c963d59b4263f11b490e1775e705a2b7c5c744a7a5e1f79761f2d8c6a51",
       "file_size": 3794,
       "freshness_status": "final_results_available",
@@ -1305,7 +1305,7 @@
         "race_name": "Mexico City Grand Prix",
         "scheduled_at": "2021-11-08T00:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "1c564fb9eb32864c333560857867ee51d9119fdf29870c56ac191a8cc0851706",
       "file_size": 3708,
       "freshness_status": "final_results_available",
@@ -1324,7 +1324,7 @@
         "race_name": "S\u00e3o Paulo Grand Prix",
         "scheduled_at": "2021-11-14T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d0c151313264ceaa6da0310ef8d8d39de87bc41fc404cf3dacd0e806bdcf2172",
       "file_size": 4399,
       "freshness_status": "final_results_available",
@@ -1343,7 +1343,7 @@
         "race_name": "Emilia Romagna Grand Prix",
         "scheduled_at": "2021-04-18T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9df5fcfcafc80a377253e180413f37b88d193dcd822b95c2826a35e9ba21fe9b",
       "file_size": 3834,
       "freshness_status": "final_results_available",
@@ -1362,7 +1362,7 @@
         "race_name": "Qatar Grand Prix",
         "scheduled_at": "2021-11-21T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b772b52f39dde149423d75ced9d96813fe474b6ab82e4d5403e15a4566bc3a49",
       "file_size": 3769,
       "freshness_status": "final_results_available",
@@ -1381,7 +1381,7 @@
         "race_name": "Saudi Arabian Grand Prix",
         "scheduled_at": "2021-12-05T23:00:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "7f830f494c5c0d1d80e2b4b0813789a894d7a53d5d192d064645262625096a5e",
       "file_size": 3795,
       "freshness_status": "final_results_available",
@@ -1400,7 +1400,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2021-12-12T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d36b366fd61aa1bbe12db090015c870443595991d2e0e21877ac1d78f1dcc227",
       "file_size": 3808,
       "freshness_status": "final_results_available",
@@ -1419,7 +1419,7 @@
         "race_name": "Portuguese Grand Prix",
         "scheduled_at": "2021-05-02T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e527fa77ef87ba63219f22510c329486732c6769190f7d46b2b155bb99abfe5c",
       "file_size": 3705,
       "freshness_status": "final_results_available",
@@ -1438,7 +1438,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2021-05-09T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e25f6122a45e92d09b3bc48c8b0453583447b24aede4fdde38521ad5dc29f52f",
       "file_size": 3754,
       "freshness_status": "final_results_available",
@@ -1457,7 +1457,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2021-05-23T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "cdadc5d065c99858729b94f2928a2c0483eb8759ee5fb53c829e95f525e6f381",
       "file_size": 3602,
       "freshness_status": "final_results_available",
@@ -1476,7 +1476,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2021-06-06T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c76a5259fe6cef45a9c20107fb15f9fa70793984e2311a69ccee871dd9b25787",
       "file_size": 3820,
       "freshness_status": "final_results_available",
@@ -1495,7 +1495,7 @@
         "race_name": "French Grand Prix",
         "scheduled_at": "2021-06-20T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "867e414f7ccba0f00a0d9da4b89edc6fb64583d44af6fb31ce16e06c66429de9",
       "file_size": 3679,
       "freshness_status": "final_results_available",
@@ -1514,7 +1514,7 @@
         "race_name": "Styrian Grand Prix",
         "scheduled_at": "2021-06-27T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "533e7530f45a947472d0b0e8e681a9f650e2efe6f4389efac711dff184310869",
       "file_size": 3624,
       "freshness_status": "final_results_available",
@@ -1533,7 +1533,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2021-07-04T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "63bbf2f3baf56d64e817171db09c5f54b5abd404b065af8edaaedd39e0fba539",
       "file_size": 3701,
       "freshness_status": "final_results_available",
@@ -1552,7 +1552,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2022-03-20T20:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e01628030398e55687597e97df97515353661195e673e7459c3696517c294502",
       "file_size": 3820,
       "freshness_status": "final_results_available",
@@ -1571,7 +1571,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2022-07-03T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c17a059f644aa387e69fbc76aeac47135f63b6a9dc5e6144b336222229c817b1",
       "file_size": 3805,
       "freshness_status": "final_results_available",
@@ -1590,7 +1590,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2022-07-10T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "f73e79f43d5f066b860f584eb3c4fa0760a42c1cace45f00d028b76df2e51127",
       "file_size": 4335,
       "freshness_status": "final_results_available",
@@ -1609,7 +1609,7 @@
         "race_name": "French Grand Prix",
         "scheduled_at": "2022-07-24T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "cf58894dbd01fbfe0dde7109cdf9b77a75b6f7fb6c85daf68ace210839850afe",
       "file_size": 3749,
       "freshness_status": "final_results_available",
@@ -1628,7 +1628,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2022-07-31T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "219357826fff06387b37241e3665e962c283ca3c9e2feb92e332ef57c9318a3b",
       "file_size": 3749,
       "freshness_status": "final_results_available",
@@ -1647,7 +1647,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2022-08-28T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "47b25b1ecce0a5be691914de1111300649ea95bc1cbd831b3c256e250d93e80b",
       "file_size": 3814,
       "freshness_status": "final_results_available",
@@ -1666,7 +1666,7 @@
         "race_name": "Dutch Grand Prix",
         "scheduled_at": "2022-09-04T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "f1b89beb9944f3514f24018cad19c260a0acf0c11683c80f20c812b211740676",
       "file_size": 3818,
       "freshness_status": "final_results_available",
@@ -1685,7 +1685,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2022-09-11T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9d71136d02cfc739e6b9685101026da8fef95590043f03b44864494c4068688a",
       "file_size": 3751,
       "freshness_status": "final_results_available",
@@ -1704,7 +1704,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2022-10-02T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d869a20bf871fee2010dde00d7eb79d40314d8f472f76eab9871e496b2a49447",
       "file_size": 3723,
       "freshness_status": "final_results_available",
@@ -1723,7 +1723,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2022-10-09T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c10b93f7e413eeaaa734592da7dd4ffcc1ebcf2b0a50d65b11af1d11f850d335",
       "file_size": 3754,
       "freshness_status": "final_results_available",
@@ -1742,7 +1742,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2022-10-24T00:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "0a1e9ac716f5d5fa2bc3a92e726733f43b0efe98818999d300705c08f6e048da",
       "file_size": 3854,
       "freshness_status": "final_results_available",
@@ -1761,7 +1761,7 @@
         "race_name": "Saudi Arabian Grand Prix",
         "scheduled_at": "2022-03-27T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4b17c8ecbc2a5d8a614b9f924ed85618ff0c37ff2bafc2b2a7cb3882d6632036",
       "file_size": 3697,
       "freshness_status": "final_results_available",
@@ -1780,7 +1780,7 @@
         "race_name": "Mexico City Grand Prix",
         "scheduled_at": "2022-10-31T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "feab15ed244365d6aa26d55945a133e8c07af3fe2c602a635b9dc12d3b289ba7",
       "file_size": 3694,
       "freshness_status": "final_results_available",
@@ -1799,7 +1799,7 @@
         "race_name": "S\u00e3o Paulo Grand Prix",
         "scheduled_at": "2022-11-13T23:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "f4267f99afdb81a6084e31102755a8d17b9da9b6530581b4f989cf6faeea0515",
       "file_size": 4468,
       "freshness_status": "final_results_available",
@@ -1818,7 +1818,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2022-11-20T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c1278ce254ad4ffc10d8d34806a6b5d1edfe5844dcc3c819af4f175ac35af4c7",
       "file_size": 3788,
       "freshness_status": "final_results_available",
@@ -1837,7 +1837,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2022-04-10T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "cc78c86a8ac6e39104f79c4c95ed815a0ec066e4ae1ffddb7e1187b80fb43997",
       "file_size": 3704,
       "freshness_status": "final_results_available",
@@ -1856,7 +1856,7 @@
         "race_name": "Emilia Romagna Grand Prix",
         "scheduled_at": "2022-04-24T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "381645d58eefa7646aff6e7f8456c5da8ecdfec33b3454532743b09e4bcb0d4e",
       "file_size": 4348,
       "freshness_status": "final_results_available",
@@ -1875,7 +1875,7 @@
         "race_name": "Miami Grand Prix",
         "scheduled_at": "2022-05-09T01:00:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "39d9732216e0a302cced582e7dc4bef229c351c95fc71e27fc3f748304b9c839",
       "file_size": 3762,
       "freshness_status": "final_results_available",
@@ -1894,7 +1894,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2022-05-22T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "0a0b24028b271d33618ebb248840d3ce72c63e4c9378cca12b6fc98e90cf29db",
       "file_size": 3766,
       "freshness_status": "final_results_available",
@@ -1913,7 +1913,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2022-05-29T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "2c78d566d938210523203a3779cf492bbecfeb963ac7d5b53066a2df5b00b07f",
       "file_size": 3843,
       "freshness_status": "final_results_available",
@@ -1932,7 +1932,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2022-06-12T16:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3a3b483e6473205a554b3cb9d1458207c14bc7a6e37caff50a981797bf68b778",
       "file_size": 3740,
       "freshness_status": "final_results_available",
@@ -1951,7 +1951,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2022-06-19T23:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "2ccbebb684b6cdc54b6284829f0768cf350c2297513231bfa47b1505b0410d60",
       "file_size": 3870,
       "freshness_status": "final_results_available",
@@ -1970,7 +1970,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2023-03-05T20:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "5bfe92193fabb06193a47aae1f9863eed1d0bba106fdd1337c017d52da59d05b",
       "file_size": 3810,
       "freshness_status": "final_results_available",
@@ -1989,7 +1989,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2023-07-09T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4e5112708bc645a4dc8acfe855406dd82ecd4a10dfb3e37103f8fde052fff940",
       "file_size": 3716,
       "freshness_status": "final_results_available",
@@ -2008,7 +2008,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2023-07-23T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3db454bf5918e634cb7e594b6e37dc7be4e2ed64838e4541baff6629ab47b5c3",
       "file_size": 3810,
       "freshness_status": "final_results_available",
@@ -2027,7 +2027,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2023-07-30T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "45ae720f3d731f3df0692fa2fe0210fdbf5c72b31f348b55a38af64435eb9116",
       "file_size": 4475,
       "freshness_status": "final_results_available",
@@ -2046,7 +2046,7 @@
         "race_name": "Dutch Grand Prix",
         "scheduled_at": "2023-08-27T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "34eb1c7646ba6ce2a246bc16d95d1a91456548dcbfd20d11aa34e7ba40d82c71",
       "file_size": 3840,
       "freshness_status": "final_results_available",
@@ -2065,7 +2065,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2023-09-03T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "656f08cfb88b642532a2e505f09bb42960bfa94500db1f5399c7625d554fa21c",
       "file_size": 3787,
       "freshness_status": "final_results_available",
@@ -2084,7 +2084,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2023-09-17T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "55d7f300492f5d4d85b161928fc39437e00c614e08bbae518bcfc3e312695498",
       "file_size": 3715,
       "freshness_status": "final_results_available",
@@ -2103,7 +2103,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2023-09-24T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "31c49d0be743c571671ce68cac9af112b7a69711ad94fdb2f265d42c966d8795",
       "file_size": 3879,
       "freshness_status": "final_results_available",
@@ -2122,7 +2122,7 @@
         "race_name": "Qatar Grand Prix",
         "scheduled_at": "2023-10-08T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3aebc4bc90ab7f49235473a97ad44b9034695cbd9728c67375d665c927c4c963",
       "file_size": 4414,
       "freshness_status": "final_results_available",
@@ -2141,7 +2141,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2023-10-23T00:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6b8e01dfb0e16bbd848cb8268c0325cdd6c1a60acfc54e7f921e4f37e00305f0",
       "file_size": 4516,
       "freshness_status": "final_results_available",
@@ -2160,7 +2160,7 @@
         "race_name": "Mexico City Grand Prix",
         "scheduled_at": "2023-10-30T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6eb464fc077f75d437572c9fecf236fa1df552430eaf696adf3c8449ac100338",
       "file_size": 3870,
       "freshness_status": "final_results_available",
@@ -2179,7 +2179,7 @@
         "race_name": "Saudi Arabian Grand Prix",
         "scheduled_at": "2023-03-19T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "085b47ecd4d6f9c5c1054d5c44a89149c4183a45f226870a9393a10dbc0b362a",
       "file_size": 3764,
       "freshness_status": "final_results_available",
@@ -2198,7 +2198,7 @@
         "race_name": "S\u00e3o Paulo Grand Prix",
         "scheduled_at": "2023-11-05T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "b63b48cc400af731e954afff5a85759a8cc3bb90ec6175e0ed83da76d76f3883",
       "file_size": 4374,
       "freshness_status": "final_results_available",
@@ -2217,7 +2217,7 @@
         "race_name": "Las Vegas Grand Prix",
         "scheduled_at": "2023-11-19T11:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3741ca734e3e2765426630b8a431089bfd5f271a5f5fe2721a38cc08020ff2e2",
       "file_size": 3856,
       "freshness_status": "final_results_available",
@@ -2236,7 +2236,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2023-11-26T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c2ca05ce3cbf773b45364c177b284d90d537818f51c0ccb10323835698e4f522",
       "file_size": 3817,
       "freshness_status": "final_results_available",
@@ -2255,7 +2255,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2023-04-02T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "bcc88ee6a6809c5a86d4777843550f61f3f9e01dcff1edfc385f3ddfdcfe6449",
       "file_size": 3752,
       "freshness_status": "final_results_available",
@@ -2274,7 +2274,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2023-04-30T16:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4c00aeeea7424b0bade537b25cdbca2b9a0ae027814951a4b9adf1b945a0cc7d",
       "file_size": 4390,
       "freshness_status": "final_results_available",
@@ -2293,7 +2293,7 @@
         "race_name": "Miami Grand Prix",
         "scheduled_at": "2023-05-08T01:00:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3cbcdb06048dc1da9a8dfd1e31ba67ba96bcd60b52b83bdf813fc95c7ca63b6d",
       "file_size": 3747,
       "freshness_status": "final_results_available",
@@ -2312,7 +2312,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2023-05-28T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "37e93c43f688ddb4fb1ad70a6eda673134f2ecc69c20436a57bfebe4b92e869b",
       "file_size": 3890,
       "freshness_status": "final_results_available",
@@ -2331,7 +2331,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2023-06-04T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "bb3418dce811b168a510d21473094d17e1ad30388a91d9ac9a46d111610525f2",
       "file_size": 3875,
       "freshness_status": "final_results_available",
@@ -2350,7 +2350,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2023-06-18T23:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d1bfedcfabbd6e522c0766c151650b18d77c0b97572de74dcc602be6fb59d437",
       "file_size": 3897,
       "freshness_status": "final_results_available",
@@ -2369,7 +2369,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2023-07-02T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "640bf6cb5c0896b0b0cef2ac7fe9509400df0eee7b0aa7ebb3d4c68d74c06454",
       "file_size": 4481,
       "freshness_status": "final_results_available",
@@ -2388,7 +2388,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2024-03-02T20:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6981353e146544985ae6d2e730413cb661965d2c4c54b69ce9fc0065cd683a66",
       "file_size": 3824,
       "freshness_status": "final_results_available",
@@ -2407,7 +2407,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2024-06-23T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "36fffc1d0ea0772c7cb07f5d2e36e6ee05c206268c5c0e34bc2355a9f75fa5ee",
       "file_size": 3862,
       "freshness_status": "final_results_available",
@@ -2426,7 +2426,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2024-06-30T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "04ffede1494c167c707788d6a85e3fb98af71f268f36618d54af5a034a84f1fd",
       "file_size": 4504,
       "freshness_status": "final_results_available",
@@ -2445,7 +2445,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2024-07-07T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "dba8fd3b9333d8f59c4abe4ee9c5d28caf536c4ffb8038a8aefc95af8d84a6da",
       "file_size": 3821,
       "freshness_status": "final_results_available",
@@ -2464,7 +2464,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2024-07-21T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "37792183a7f43dd872135938de77030dd898a20f725e4769bde116044a40505d",
       "file_size": 3855,
       "freshness_status": "final_results_available",
@@ -2483,7 +2483,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2024-07-28T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4d7023bb690ee8934ca9191ca53fb25191d235525228bdbb59a4cd9c58fe6b0e",
       "file_size": 3825,
       "freshness_status": "final_results_available",
@@ -2502,7 +2502,7 @@
         "race_name": "Dutch Grand Prix",
         "scheduled_at": "2024-08-25T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c172a4419cab2e0a62ca70e4a5ebb90781b55fd69e2803e2468d54ce6bc50a40",
       "file_size": 3804,
       "freshness_status": "final_results_available",
@@ -2521,7 +2521,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2024-09-01T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "ca7e86af0f3bcbd32974aa3919d1152edfbea7197ad7694357194d04f6313836",
       "file_size": 3885,
       "freshness_status": "final_results_available",
@@ -2540,7 +2540,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2024-09-15T16:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "7d6f95e8a5aa7e2dc4a974b98fdb4fa90b921a17fef84e0e5e149f11e3dceaa6",
       "file_size": 3768,
       "freshness_status": "final_results_available",
@@ -2559,7 +2559,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2024-09-22T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "69719b10c58b8bfc9d6a07928a8c9a1e7152ab0d8302ba351f0e56b5e1c0ddc6",
       "file_size": 3810,
       "freshness_status": "final_results_available",
@@ -2578,7 +2578,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2024-10-21T00:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "10b2ff75f03a1fd076b3430e2137be8002cc50706899890e397e4c6e8fba5934",
       "file_size": 4479,
       "freshness_status": "final_results_available",
@@ -2597,7 +2597,7 @@
         "race_name": "Saudi Arabian Grand Prix",
         "scheduled_at": "2024-03-09T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "8f456406386532d44644e0572a83f5a794d3e1894784858622a22e2d0f58e25a",
       "file_size": 3651,
       "freshness_status": "final_results_available",
@@ -2616,7 +2616,7 @@
         "race_name": "Mexico City Grand Prix",
         "scheduled_at": "2024-10-28T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "a4935753b4e3f5f9d74e8c25b1b5928d2a2bd99d3c08e249e725a6ca273c4b0b",
       "file_size": 3783,
       "freshness_status": "final_results_available",
@@ -2635,7 +2635,7 @@
         "race_name": "S\u00e3o Paulo Grand Prix",
         "scheduled_at": "2024-11-03T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6ff8043a14197fdf7b94482470dd1b57f8aee5c9db9fcd633787cb489cdea134",
       "file_size": 4507,
       "freshness_status": "final_results_available",
@@ -2654,7 +2654,7 @@
         "race_name": "Las Vegas Grand Prix",
         "scheduled_at": "2024-11-23T11:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "fa74a38d1482189b5cfafeb8c2b08bd8e61c0e8edc25f6ba2ec95f11aa7b290e",
       "file_size": 3835,
       "freshness_status": "final_results_available",
@@ -2673,7 +2673,7 @@
         "race_name": "Qatar Grand Prix",
         "scheduled_at": "2024-12-01T21:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "15d6ab33c4103d5296dddcac05121f2cb2489b5e9a9d623c5e822acc4be45729",
       "file_size": 4499,
       "freshness_status": "final_results_available",
@@ -2692,7 +2692,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2024-12-08T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c5bfbe64fa21250ad022edc6683345a23f372d519458756dd6071ec318bd88af",
       "file_size": 3841,
       "freshness_status": "final_results_available",
@@ -2711,7 +2711,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2024-03-24T09:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6982e0ad8dc67c1ab5ec7b85d4989e6670de1d6402b16f3e5275e28e1b6fc1fd",
       "file_size": 3734,
       "freshness_status": "final_results_available",
@@ -2730,7 +2730,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2024-04-07T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "05252ec6c7c65ce192158845804b404c7fadf8186abf34d5bd9ae534199159db",
       "file_size": 3770,
       "freshness_status": "final_results_available",
@@ -2749,7 +2749,7 @@
         "race_name": "Chinese Grand Prix",
         "scheduled_at": "2024-04-21T12:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "28837c5fd11bb4922749f9ff21dae034fe0d20803b495ce8f506e7a22e644220",
       "file_size": 4470,
       "freshness_status": "final_results_available",
@@ -2768,7 +2768,7 @@
         "race_name": "Miami Grand Prix",
         "scheduled_at": "2024-05-06T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "ac32da326afe0116af30ad612bb9daf479e2f61e6df9c7b7183d5abbc09449e9",
       "file_size": 4464,
       "freshness_status": "final_results_available",
@@ -2787,7 +2787,7 @@
         "race_name": "Emilia Romagna Grand Prix",
         "scheduled_at": "2024-05-19T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e20c7778b00b1ab369b036f93cbc02bfe527b6bb4e10fed18f23f2cee73b2120",
       "file_size": 3863,
       "freshness_status": "final_results_available",
@@ -2806,7 +2806,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2024-05-26T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "6de2b778eb468ce591de6f3d4097b6589cf791ddd51c0f5e9bfa84758c89b21a",
       "file_size": 3538,
       "freshness_status": "final_results_available",
@@ -2825,7 +2825,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2024-06-09T23:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3f864f8ada5e63362dfbe21736412d8dd71b8683a9f3d925436e613690b2694d",
       "file_size": 3792,
       "freshness_status": "final_results_available",
@@ -2844,7 +2844,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2025-03-16T09:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "690a26c017b72b9b4322e3bd43f54425a7ef79a85e853cbed4c717512f70f5a4",
       "file_size": 3507,
       "freshness_status": "final_results_available",
@@ -2863,7 +2863,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2025-06-15T23:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c51e49fcfd01b583cb9b19eb92b09d38c2c6d9d79f8df66b232e8ca0a837c96b",
       "file_size": 3732,
       "freshness_status": "final_results_available",
@@ -2882,7 +2882,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2025-06-29T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "16d018a38f8224a469437cae5fe15b26616753a692496492859d447389c99445",
       "file_size": 3659,
       "freshness_status": "final_results_available",
@@ -2901,7 +2901,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2025-07-06T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9cafdcfca118e1a931e0e03c3fd074e5c94f789f1760b4488f5cc72131397aed",
       "file_size": 3630,
       "freshness_status": "final_results_available",
@@ -2920,7 +2920,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2025-07-27T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9b2ee45efd5803d2e9a43705a66673af2d0d34cddae8f4899af32907ee1b83ce",
       "file_size": 4323,
       "freshness_status": "final_results_available",
@@ -2939,7 +2939,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2025-08-03T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "a7a553be88562391d51623bf5737ba64166f2b37b79d309f8fe92bbcde7b5cfc",
       "file_size": 3729,
       "freshness_status": "final_results_available",
@@ -2958,7 +2958,7 @@
         "race_name": "Dutch Grand Prix",
         "scheduled_at": "2025-08-31T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "32e138bbd728cbe089ee4023838381ba7252bdae7026e95d7f934308c35eadca",
       "file_size": 3653,
       "freshness_status": "final_results_available",
@@ -2977,7 +2977,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2025-09-07T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e6dcef69ba78ce8593c9eaef750f44253e19bf6c9ebcbd95fa90788a9abf693f",
       "file_size": 3595,
       "freshness_status": "final_results_available",
@@ -2996,7 +2996,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2025-09-21T16:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "8f8552126ffd7c10bbcdd47a686880e22d6f4c7bd480c975d70df5080d7f94f2",
       "file_size": 3589,
       "freshness_status": "final_results_available",
@@ -3015,7 +3015,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2025-10-05T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "cde267959204f37b8f53da002567d149c8b4c3ff561e010ca0e605ceecb7ae46",
       "file_size": 3658,
       "freshness_status": "final_results_available",
@@ -3034,7 +3034,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2025-10-20T00:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "fba1e19769250e7cfe7f2c7fdb0d0a309033089c73374546963f2370e867abd4",
       "file_size": 4241,
       "freshness_status": "final_results_available",
@@ -3053,7 +3053,7 @@
         "race_name": "Chinese Grand Prix",
         "scheduled_at": "2025-03-23T12:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "87eb608c0f27b51c036fdd6982d730c5ba42f52dac86fbb8ed175237c9b4b80d",
       "file_size": 4278,
       "freshness_status": "final_results_available",
@@ -3072,7 +3072,7 @@
         "race_name": "Mexico City Grand Prix",
         "scheduled_at": "2025-10-27T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "d532e6ba474fde15336916a42d38abf12efb1e06257fe6987fcc7e4ad418c601",
       "file_size": 3723,
       "freshness_status": "final_results_available",
@@ -3091,7 +3091,7 @@
         "race_name": "S\u00e3o Paulo Grand Prix",
         "scheduled_at": "2025-11-09T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e5054b87eb075812d4d1ad777fcd7ebcf0fbfc7e39c462cdfecfc8b178062a03",
       "file_size": 4402,
       "freshness_status": "final_results_available",
@@ -3110,7 +3110,7 @@
         "race_name": "Las Vegas Grand Prix",
         "scheduled_at": "2025-11-23T09:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "144ab7611574dd8df06102aeea4ac7f0518629faa183460d5c5c545732be928e",
       "file_size": 3627,
       "freshness_status": "final_results_available",
@@ -3129,7 +3129,7 @@
         "race_name": "Qatar Grand Prix",
         "scheduled_at": "2025-11-30T21:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "9b49703d91f611d4bcffcfaf6ab7552041381a47625ef05dc043bf398cd00cd5",
       "file_size": 4335,
       "freshness_status": "final_results_available",
@@ -3148,7 +3148,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2025-12-07T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "1ffee4d2a7b615f6ba9eaf456cfeda7a3b1303013f941ceea6e2c93bea50addf",
       "file_size": 3681,
       "freshness_status": "final_results_available",
@@ -3167,7 +3167,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2025-04-06T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "04f36f0325802a022fff80d3aab8cda72e277c9e2dc58e655e527f64f81e1892",
       "file_size": 3580,
       "freshness_status": "final_results_available",
@@ -3186,7 +3186,7 @@
         "race_name": "Bahrain Grand Prix",
         "scheduled_at": "2025-04-13T20:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "712b647c79987f8e26b014bb46fd8a8cf08262ab94142fe6cc8d66b8a4c9bfff",
       "file_size": 3663,
       "freshness_status": "final_results_available",
@@ -3205,7 +3205,7 @@
         "race_name": "Saudi Arabian Grand Prix",
         "scheduled_at": "2025-04-20T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "a68e43c65734c0781374aab58d33205f490e132b5f7028e2661f341932b49041",
       "file_size": 3540,
       "freshness_status": "final_results_available",
@@ -3224,7 +3224,7 @@
         "race_name": "Miami Grand Prix",
         "scheduled_at": "2025-05-05T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "4a1f29355dcefed655f567f1e90754745695e2ec3329adafc0f47110ac045dbd",
       "file_size": 4163,
       "freshness_status": "final_results_available",
@@ -3243,7 +3243,7 @@
         "race_name": "Emilia Romagna Grand Prix",
         "scheduled_at": "2025-05-18T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "3d92845ef8ba840359f2aa89086b092071db21b7d3db3d0554cb63c4768060fc",
       "file_size": 3695,
       "freshness_status": "final_results_available",
@@ -3262,7 +3262,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2025-05-25T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c2880c7439fcf6ee58ffbbf2676ce9db8afc1afc54e4542e93880cdda4186713",
       "file_size": 3725,
       "freshness_status": "final_results_available",
@@ -3281,7 +3281,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2025-06-01T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "1e0597aef28acd0edd2c06634a3950cf38d4460ece88a58f90b43aabbd138932",
       "file_size": 3658,
       "freshness_status": "final_results_available",
@@ -3300,7 +3300,7 @@
         "race_name": "Australian Grand Prix",
         "scheduled_at": "2026-03-08T09:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "e7f02317f7e2e48825cfffdab5b9e51cf457c8bcd295e94d4d750e0fdae38183",
       "file_size": 3881,
       "freshness_status": "final_results_available",
@@ -3319,7 +3319,7 @@
         "race_name": "Chinese Grand Prix",
         "scheduled_at": "2026-03-15T12:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "5697e9ff8e993a2c63063589fe6c6faf09e06e4adcc7907ed1c1cae9c4986a8e",
       "file_size": 4417,
       "freshness_status": "final_results_available",
@@ -3338,7 +3338,7 @@
         "race_name": "Japanese Grand Prix",
         "scheduled_at": "2026-03-29T10:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "53ed24e3ae68bef3ffbaff776fdaa08bece910ec4ae223d998d7130e7390675e",
       "file_size": 3910,
       "freshness_status": "final_results_available",
@@ -3357,7 +3357,7 @@
         "race_name": "Miami Grand Prix",
         "scheduled_at": "2026-05-04T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "09d7afbdd6236780b2c1958852360cc542b286753ba77b88fdd8164272e00302",
       "file_size": 4540,
       "freshness_status": "final_results_available",
@@ -3376,7 +3376,7 @@
         "race_name": "Canadian Grand Prix",
         "scheduled_at": "2026-05-25T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "45edd9af65d11e1719f6d75da0b36904774fb64dc91b2bf452c983b75ac91d21",
       "file_size": 11323,
       "freshness_status": "final_results_available",
@@ -3395,7 +3395,7 @@
         "race_name": "Monaco Grand Prix",
         "scheduled_at": "2026-06-07T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "c2606735acbb65f694a89cf6ac2ca164e7c07a052df0665a7a54946cd66ad466",
       "file_size": 11707,
       "freshness_status": "final_results_available",
@@ -3414,7 +3414,7 @@
         "race_name": "Barcelona Grand Prix",
         "scheduled_at": "2026-06-14T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": "848f42d074791a6697bef7bd4409b8a7de1d0c94f8852ae863eeaae65c40f4ff",
       "file_size": 204,
       "freshness_status": "invalid",
@@ -3433,7 +3433,7 @@
         "race_name": "Austrian Grand Prix",
         "scheduled_at": "2026-06-28T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3452,7 +3452,7 @@
         "race_name": "British Grand Prix",
         "scheduled_at": "2026-07-05T19:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3471,7 +3471,7 @@
         "race_name": "Belgian Grand Prix",
         "scheduled_at": "2026-07-19T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3490,7 +3490,7 @@
         "race_name": "Hungarian Grand Prix",
         "scheduled_at": "2026-07-26T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3509,7 +3509,7 @@
         "race_name": "Dutch Grand Prix",
         "scheduled_at": "2026-08-23T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3528,7 +3528,7 @@
         "race_name": "Italian Grand Prix",
         "scheduled_at": "2026-09-06T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3547,7 +3547,7 @@
         "race_name": "Spanish Grand Prix",
         "scheduled_at": "2026-09-13T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3566,7 +3566,7 @@
         "race_name": "Azerbaijan Grand Prix",
         "scheduled_at": "2026-09-26T16:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3585,7 +3585,7 @@
         "race_name": "Singapore Grand Prix",
         "scheduled_at": "2026-10-11T17:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3604,7 +3604,7 @@
         "race_name": "United States Grand Prix",
         "scheduled_at": "2026-10-26T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3623,7 +3623,7 @@
         "race_name": "Mexico City Grand Prix",
         "scheduled_at": "2026-11-02T01:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3642,7 +3642,7 @@
         "race_name": "Brazilian Grand Prix",
         "scheduled_at": "2026-11-08T22:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3661,7 +3661,7 @@
         "race_name": "Las Vegas Grand Prix",
         "scheduled_at": "2026-11-22T09:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3680,7 +3680,7 @@
         "race_name": "Qatar Grand Prix",
         "scheduled_at": "2026-11-29T21:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",
@@ -3699,7 +3699,7 @@
         "race_name": "Abu Dhabi Grand Prix",
         "scheduled_at": "2026-12-06T18:30:00+05:30"
       },
-      "schema_version": "2026.05-high-accuracy-v5",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "checksum": null,
       "file_size": 0,
       "freshness_status": "not_ready",

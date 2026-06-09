@@ -3,22 +3,30 @@ export const runtime = "nodejs";
 
 import { jsonResponse, loadFrontendContract, loadGeneratedTargets } from "../_lib/contracts";
 
+function currentTargetOnly(target, latest) {
+  if (!target || !latest) return false;
+  const latestRaceId = latest.race_id || latest.prediction_id?.split("-race-")?.[0] || "";
+  const targetRaceId = target.race_id || target.prediction_id?.split("-race-")?.[0] || "";
+  if (latestRaceId && targetRaceId && latestRaceId !== targetRaceId) return false;
+  if (latest.season && target.season && Number(latest.season) !== Number(target.season)) return false;
+  if (latest.round && target.round && Number(latest.round) !== Number(target.round)) return false;
+  return true;
+}
+
 export async function GET() {
   const contract = await loadFrontendContract();
   const generated = await loadGeneratedTargets();
   const hasLatest = Boolean(contract.latest?.top10?.length);
-  const generatedTargets = generated.targets?.length
-    ? generated.targets
-    : [
-        contract.latest?.target_type ? {
-          ...contract.latest,
-          target_type: contract.latest.target_type,
-          top10: contract.latest.top10 || [],
-          full_grid: contract.latest.full_grid || contract.latest.all_predictions || contract.latest.top10 || [],
-          all_predictions: contract.latest.all_predictions || contract.latest.full_grid || contract.latest.top10 || [],
-        } : null,
-        ...(contract.briefings || []).filter((row) => row?.target_type),
-      ].filter(Boolean);
+  const generatedTargets = [
+    contract.latest?.target_type ? {
+      ...contract.latest,
+      target_type: contract.latest.target_type,
+      top10: contract.latest.top10 || [],
+      full_grid: contract.latest.full_grid || contract.latest.all_predictions || contract.latest.top10 || [],
+      all_predictions: contract.latest.all_predictions || contract.latest.full_grid || contract.latest.top10 || [],
+    } : null,
+    ...(generated.targets || []).filter((target) => currentTargetOnly(target, contract.latest)),
+  ].filter(Boolean);
   return jsonResponse({
     ok: hasLatest,
     error: hasLatest ? "" : "No generated prediction contract is available yet.",

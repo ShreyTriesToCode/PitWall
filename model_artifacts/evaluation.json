@@ -1,5 +1,5 @@
 {
-  "schema_version": "2026.05-high-accuracy-v5",
+  "schema_version": "2026.06-barcelona-preweekend-v6",
   "generated_at": "2026-06-08T23:25:50.716547+05:30",
   "trained_at": "2026-06-08T23:22:15.670935+05:30",
   "validation_split": {

@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const node = JSON.stringify(process.execPath);
+const next = "node_modules/next/dist/bin/next";
+
 export default defineConfig({
   testDir: "./tests",
   timeout: 30_000,
@@ -10,7 +13,7 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "npm run build && npm run start -- -H 127.0.0.1",
+    command: `${node} ${next} build && ${node} ${next} start -H 127.0.0.1`,
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

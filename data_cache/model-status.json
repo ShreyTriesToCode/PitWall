@@ -1,6 +1,6 @@
 {
-  "schema_version": "2026.05-high-accuracy-v5",
-  "model_version": "2026.05-high-accuracy-v5",
+  "schema_version": "2026.06-barcelona-preweekend-v6",
+  "model_version": "2026.06-barcelona-preweekend-v6",
   "prediction_data_version": "2026.05-race-control-contract-v2",
   "generated_at": "2026-06-08T23:25:50.687935+05:30",
   "trained_at": "2026-06-08T23:22:15.670935+05:30",
@@ -1030,8 +1030,8 @@
     "status": "Pending"
   },
   "champion_challenger": {
-    "champion_model": "2026.05-high-accuracy-v5",
-    "challenger_model": "2026.05-high-accuracy-v5-challenger",
+    "champion_model": "2026.06-barcelona-preweekend-v6",
+    "challenger_model": "2026.06-barcelona-preweekend-v6-challenger",
     "status": "champion_retained",
     "acceptance_rules": [
       "finish-position MAE must not regress beyond threshold",
@@ -1056,13 +1056,13 @@
   },
   "model_comparison": {
     "champion": {
-      "name": "2026.05-high-accuracy-v5",
-      "schema_version": "2026.05-high-accuracy-v5",
+      "name": "2026.06-barcelona-preweekend-v6",
+      "schema_version": "2026.06-barcelona-preweekend-v6",
       "trained_at": "2026-06-08T23:22:15.670935+05:30",
       "latest_completed_race_included": "2026-6"
     },
     "challenger": {
-      "name": "2026.05-high-accuracy-v5-challenger",
+      "name": "2026.06-barcelona-preweekend-v6-challenger",
       "status": "champion_retained"
     },
     "promotion_decision": {

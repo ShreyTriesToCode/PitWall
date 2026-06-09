@@ -213,7 +213,7 @@ Result: all returned HTTP 200.
 
 ## Retrain Summary
 
-- Model schema: `2026.05-high-accuracy-v5`
+- Model schema: `2026.06-barcelona-preweekend-v6`
 - Trained at: `2026-05-24T12:12:55.906446+05:30`
 - Historical completed races used: 177
 - Future or not-final 2026 races skipped: 18

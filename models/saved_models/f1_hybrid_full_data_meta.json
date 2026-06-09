@@ -1,6 +1,6 @@
 {
   "trained_at": "2026-06-08T23:22:15.670935+05:30",
-  "model_schema_version": "2026.05-high-accuracy-v5",
+  "model_schema_version": "2026.06-barcelona-preweekend-v6",
   "ml_start_year": 2018,
   "rows_raw": 3590,
   "rows_features": 3590,

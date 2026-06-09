@@ -1,9 +1,7 @@
 # PitWall Run Report
 
-[Documentation index](docs/README.md)
-
-- Generated at: 2026-06-09T03:41:20.330928+00:00
-- Model version: 2026.05-high-accuracy-v5
+- Generated at: 2026-06-09T03:52:43.240555+00:00
+- Model version: 2026.06-barcelona-preweekend-v6
 - Target event/session: Barcelona Grand Prix / race
 - Top 10 availability: 10 rows
 - Full grid availability: 22 rows
@@ -19,11 +17,11 @@
 ```json
 {
   "ok": true,
-  "schema_version": "2026.05-high-accuracy-v5",
+  "schema_version": "2026.06-barcelona-preweekend-v6",
   "prediction_data_version": "2026.05-race-control-contract-v2",
   "briefing_count": 7,
   "debug_payload_count": 1,
-  "model_version": "2026.05-high-accuracy-v5",
+  "model_version": "2026.06-barcelona-preweekend-v6",
   "latest_top10_count": 10,
   "latest_full_grid_count": 22,
   "latest_all_predictions_count": 22

@@ -48,6 +48,13 @@ test("predictions target links render rows or pending states", async ({ page }) 
   await expect(page.getByText(/Top 10 Prediction|Full Grid Prediction|sprint pending|prediction pending/i).first()).toBeVisible();
 });
 
+test("stale prediction target query falls back to current race", async ({ page }) => {
+  await page.goto("/predictions?target=post_practice");
+  await expect(page.getByText("Prediction ID").first()).toBeVisible();
+  await expect(page.getByText(/barcelona-grand-prix/i).first()).toBeVisible();
+  await expect(page.getByText(/canadian-grand-prix-race-post-practice/i)).toHaveCount(0);
+});
+
 test("sources page renders source-health state", async ({ page }) => {
   await page.goto("/sources");
   await expect(page.getByRole("heading", { name: "Data Source Health" })).toBeVisible();

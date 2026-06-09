@@ -196,6 +196,28 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertIn("recoverContractFromDebug", source)
         self.assertIn("latest-model-debug.json", source)
 
+    def test_predictions_api_does_not_use_archive_briefings_as_live_targets(self):
+        source = Path("frontend/app/api/predictions/route.js").read_text(encoding="utf-8")
+        self.assertIn("currentTargetOnly", source)
+        self.assertNotIn("contract.briefings || []).filter((row) => row?.target_type", source)
+
+    def test_current_contract_points_to_barcelona_with_current_model_version(self):
+        contract = json.loads(Path("data_cache/frontend-contract.json").read_text(encoding="utf-8"))
+        status = json.loads(Path("data_cache/model-status.json").read_text(encoding="utf-8"))
+        latest = contract["latest"]
+
+        self.assertEqual(latest["race_name"], "Barcelona Grand Prix")
+        self.assertEqual(latest["round"], 7)
+        self.assertIn("barcelona-grand-prix", latest["prediction_id"])
+        self.assertEqual(latest["model_version"], "2026.06-barcelona-preweekend-v6")
+        self.assertEqual(contract["schema_version"], "2026.06-barcelona-preweekend-v6")
+        self.assertEqual(status["model_version"], "2026.06-barcelona-preweekend-v6")
+
+    def test_frontend_calendar_matches_current_contract_round(self):
+        source = Path("frontend/app/data/f1Calendar2026.js").read_text(encoding="utf-8")
+        self.assertIn('round: 7, name: "Barcelona Grand Prix"', source)
+        self.assertNotIn('round: 7, name: "Canadian Grand Prix"', source)
+
     def test_stage_leakage_rules_block_future_session_columns(self):
         self.assertIn("qualifying_gap", forbidden_feature_columns("post_fp1", ["fp1_pace", "qualifying_gap"]))
         self.assertIn("grid_position", forbidden_feature_columns("post_fp3", ["fp3_pace", "grid_position"]))
