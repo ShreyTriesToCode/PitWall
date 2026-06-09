@@ -1,6 +1,6 @@
 # PitWall Artifact Policy
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [Audit](AUDIT.md) -> [README](README.md)
 
 PitWall keeps small frontend-facing JSON artifacts in Git so Vercel can serve useful data without private runtime credentials.
 
@@ -38,6 +38,7 @@ The checker warns at 25 MB and fails at 95 MB by default. Large generated caches
 - `.venv`
 - `frontend/node_modules`
 - `frontend/.next`
+- `data_cache/model-input-snapshots`
 - local screenshots, traces, and temporary browser artifacts
 
 ## Recovery

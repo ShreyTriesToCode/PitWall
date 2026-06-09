@@ -1,6 +1,6 @@
 # Frontend
 
-[Documentation index](../docs/README.md)
+[Documentation index](../docs/README.md) -> [Runbook](../RUNBOOK.md) -> [Artifact Policy](../ARTIFACT_POLICY.md)
 
 Next.js dashboard for PitWall.
 

@@ -1,6 +1,36 @@
 # PitWall Runbook
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [README](README.md) -> [Model Report](MODEL_REPORT.md) -> [Data Sources](DATA_SOURCES.md) -> [Artifact Policy](ARTIFACT_POLICY.md)
+
+## Setup
+
+```bash
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cd frontend
+npm install
+```
+
+The app works locally without private credentials. Useful defaults:
+
+```bash
+TARGET_SEASON=auto
+OPENF1_OPTIONAL_ONLY=true
+FULL_DATA_BACKFILL_LIMIT=0
+FORCE_RETRAIN=false
+ENABLE_RACE_SIMULATION=true
+RACE_SIMULATION_RUNS=10000
+F1_TIMING_RATE_LIMIT_MS=5000
+```
+
+Optional OpenF1, F1DB, RelBench, local LLM, and local RAG settings should stay in your shell or deployment environment, never in Git. Use `.env.example` as the safe reference.
+
+Plan optional offline dataset setup without downloading large artifacts:
+
+```bash
+.venv/bin/python scripts/bootstrap_datasets.py f1db
+.venv/bin/python scripts/bootstrap_datasets.py relbench
+```
 
 ## Local Verification
 
@@ -55,16 +85,36 @@ FIA PDFs can return deterministic `403`. PitWall fetches decision documents with
 
 Serverless instances do not share in-memory cache. Redis/Vercel KV can be added later if shared cache becomes necessary.
 
-## Free AI And Contribution Notes
+## Free Deployment, AI, And Contribution Notes
+
+PitWall is designed to run without paid AI, paid databases, paid Redis, or paid model hosting:
+
+- GitHub Actions performs heavy Python/model generation.
+- Generated JSON artifacts are committed to `main` only after validation passes.
+- Vercel Hobby can serve the Next.js frontend and lightweight API routes.
+- Deterministic AI-style features summarize existing structured fields only.
+
+Default no-paid-service flags:
+
+```env
+FREE_MODE=true
+AI_FEATURES_ENABLED=false
+DETERMINISTIC_EXPLANATIONS_ENABLED=true
+LOCAL_LLM_ENABLED=false
+LOCAL_RAG_ENABLED=false
+HUGGINGFACE_SPACE_AI_ENABLED=false
+GITHUB_RAW_DATA_FALLBACK=true
+USE_LAST_VALID_CONTRACT_ON_ERROR=true
+```
 
 Deterministic AI summaries are generated from existing contract fields only. To rebuild optional local search:
 
 ```bash
-python scripts/build_local_rag_index.py
-python scripts/query_local_rag.py "source warnings"
+.venv/bin/python scripts/build_local_rag_index.py
+.venv/bin/python scripts/query_local_rag.py "source warnings"
 ```
 
-Local Ollama is disabled unless `LOCAL_LLM_ENABLED=true` and `OLLAMA_MODEL` is set. It is never used in GitHub Actions or Vercel by default.
+Local Ollama is disabled unless `LOCAL_LLM_ENABLED=true` and `OLLAMA_MODEL` is set. It is never used in GitHub Actions or Vercel by default, and local AI text cannot change rankings, probabilities, race results, weather, FIA notes, penalties, or live timing labels.
 
 Workflow-generated commits use `Shreyansh Singhal <111811929+ShreyTriesToCode@users.noreply.github.com>` as the author so real generated-output commits on `main` can count toward the linked GitHub contribution graph. GitHub can take up to 24 hours to show contributions; bot-only author emails may not appear.
 
@@ -115,3 +165,13 @@ Optional bounded external checks:
 ```bash
 .venv/bin/python scripts/check_links.py --check-external
 ```
+
+## Required Output Checks
+
+- `/predictions` shows Race Overview, Top 10 Prediction, and Full Grid Prediction.
+- Driver details open in a scrollable drawer with probabilities, strategy, explanation, risk, and source notes.
+- `/live` auto-selects the best available timing session or shows a safe fallback state.
+- `/api/predictions` includes `top10`, `top_10`, `full_grid`, `all_predictions`, `race_factors`, and `warnings`.
+- `/sources` shows source-health status and any auth/fallback warnings.
+
+Continue with [Model Report](MODEL_REPORT.md) for modelling details and [Artifact Policy](ARTIFACT_POLICY.md) for what is allowed in Git.

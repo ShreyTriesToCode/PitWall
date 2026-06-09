@@ -13,11 +13,14 @@ from typing import Any
 DEFAULT_INDEX_PATH = Path("data_cache/rag_index/index.json")
 DEFAULT_SOURCE_GLOBS = [
     "briefings/*.md",
+    "README.md",
+    "RUNBOOK.md",
     "MODEL_STATUS.md",
     "MODEL_REPORT.md",
-    "MODEL_DESIGN.md",
-    "METHODOLOGY.md",
     "DATA_SOURCES.md",
+    "ARTIFACT_POLICY.md",
+    "AUDIT.md",
+    "docs/README.md",
     "data_cache/model-status.json",
     "data_cache/latest-model-debug.json",
     "data_cache/model_corrections.json",

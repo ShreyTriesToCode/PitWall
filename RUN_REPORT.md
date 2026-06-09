@@ -1,5 +1,7 @@
 # PitWall Run Report
 
+[Documentation index](docs/README.md) -> [Model Status](MODEL_STATUS.md) -> [Runbook](RUNBOOK.md)
+
 - Generated at: 2026-06-09T03:52:43.240555+00:00
 - Model version: 2026.06-barcelona-preweekend-v6
 - Target event/session: Barcelona Grand Prix / race

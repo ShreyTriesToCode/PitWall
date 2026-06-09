@@ -1,6 +1,6 @@
 # PitWall Model Status
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [Run Report](RUN_REPORT.md) -> [Model Report](MODEL_REPORT.md)
 
 Generated: Monday, 08 June 2026, 11:25 PM IST
 

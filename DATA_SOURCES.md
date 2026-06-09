@@ -1,6 +1,6 @@
 # PitWall Data Sources
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [Artifact Policy](ARTIFACT_POLICY.md) -> [Audit](AUDIT.md)
 
 Generated: 2026-05-25
 

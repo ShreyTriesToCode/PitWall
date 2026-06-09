@@ -1,6 +1,6 @@
 # PitWall
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [Runbook](RUNBOOK.md) -> [Model Report](MODEL_REPORT.md) -> [Data Sources](DATA_SOURCES.md) -> [Artifact Policy](ARTIFACT_POLICY.md)
 
 PitWall generates Formula 1 sprint and race predictions, publishes readable briefings, sends optional email/GitHub notifications, and serves a Next.js dashboard with an honest timing/replay view.
 
@@ -22,7 +22,7 @@ The backend keeps a cache-first pipeline around Jolpica, official Formula 1 timi
 - Incremental FIA document cache in `data_cache/fia-documents/`
 - Latest run status in `data_cache/latest-run-status.json`
 - Latest model/accuracy report in `MODEL_STATUS.md`
-- Audit, setup, data-source, and methodology docs in `AUDIT.md`, `SETUP.md`, `DATA_SOURCES.md`, `MODEL_REPORT.md`, and `METHODOLOGY.md`
+- Canonical docs in `RUNBOOK.md`, `MODEL_REPORT.md`, `DATA_SOURCES.md`, `ARTIFACT_POLICY.md`, `AUDIT.md`, and `docs/README.md`
 - Optional GitHub issue and Gmail output when notification gates open
 
 ## Prediction System
@@ -47,7 +47,7 @@ The current model is a hybrid ensemble:
 - uncertainty, DNF/survival, scenario, and Monte Carlo simulation outputs
 - structured race-intelligence rows with `expected_strategy`, `position_range`, `points_probability`, `fastest_lap_probability`, `explanation`, `data_freshness`, and `source_notes`
 
-Model design notes live in `MODEL_DESIGN.md`.
+Model design and experiment notes live in `MODEL_REPORT.md`.
 
 The dashboard intentionally keeps both views: a compact **Top 10 Prediction** for normal F1 viewers and a complete **Full Grid Prediction** from P1 through the available field for model review.
 
@@ -537,7 +537,7 @@ python -m unittest discover -s ./tests -p "test_*.py" -t .
 cd frontend && npm ci && npm run build && npm test
 ```
 
-See `RUNBOOK.md`, `ARTIFACT_POLICY.md`, `ROADMAP.md`, and `MODEL_EXPERIMENTS.md` for operator details and remaining work.
+See `RUNBOOK.md`, `MODEL_REPORT.md`, and `ARTIFACT_POLICY.md` for operator details, model design, experiment guidance, and remaining work.
 
 ## Free AI-Style Intelligence
 
@@ -545,7 +545,7 @@ PitWall includes deterministic AI-style summaries with no paid API requirement. 
 
 The default provider is `deterministic`; local Ollama and local RAG are optional development helpers. AI text is never allowed to modify rankings, Top 10, Full Grid, probabilities, race results, weather values, FIA notes, or live timing state.
 
-See `FREE_DEPLOYMENT.md` and `LOCAL_AI.md`.
+See `RUNBOOK.md` for free deployment and optional local AI details.
 
 ## Model Notebook And Cache-Aware Training
 

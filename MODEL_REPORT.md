@@ -1,6 +1,6 @@
 # PitWall Model Report
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [Data Sources](DATA_SOURCES.md) -> [Runbook](RUNBOOK.md) -> [Artifact Policy](ARTIFACT_POLICY.md)
 
 Generated: 2026-05-25
 
@@ -16,6 +16,10 @@ PitWall predicts a Formula 1 race as a chain of uncertain outcomes: qualifying/g
 - Tyre/strategy: tyre-stress profile, pit-window profile, pit execution, team strategy gain, stint evidence where available, post-race strategy context builder, and strategy annotations.
 - Reliability/DNF: historical finish rate, status-derived DNF signals, source completeness, and simulation DNF variation.
 - Final ranking: transparent component weighting plus ML probability/finish-position outputs and Monte Carlo race simulation.
+- ML heads: RandomForest, ExtraTrees, HistGradientBoosting, and optional LightGBM/XGBoost classifiers for win/podium/top 10; tree regressors for finishing position; circuit-median lap-delta pace forecasting.
+- Scenario layer: baseline, rain, safety car, high degradation, low overtaking, and high wind when weather data supports it.
+- Session lifecycle: `pre_weekend`, `post_fp1`, `post_fp2`, `post_fp3`, `post_sprint_qualifying`, `post_sprint`, `post_qualifying`, `pre_race`, `live_adjusted`, and `post_race_audited`.
+- Source-health layer: official FIA documents, Formula 1 timing/static feeds, Jolpica, optional OpenF1, optional FastF1, Open-Meteo, F1DB, RelBench, and local caches all report available/fresh/stale/failed/delayed/blocked states.
 
 ## Modularization
 
@@ -41,6 +45,24 @@ The event-level contract exposes:
 - Stage gating blocks future-session and post-race fields from earlier prediction stages.
 - Target-like fields are excluded from feature columns.
 - Race rows are skipped from training until the configured final-result delay has elapsed and actual results exist.
+- Challenger promotion requires valid data checks, no-leakage checks, ranking metrics, artifact save/load checks, backend tests, frontend contract validation, and frontend build.
+- Ranking quality matters more than classifier-only metrics because F1 prediction quality is primarily ordered-grid quality.
+
+## Experiment Records
+
+PitWall keeps lightweight experiment records as JSON rather than requiring MLflow or DVC at runtime:
+
+- `model_artifacts/evaluation.json`
+- `model_artifacts/feature_importance.json`
+- `model_artifacts/training_metadata.json`
+- `data_cache/model-status.json`
+- `data_cache/backtest-history.json`
+
+Use `notebooks/pitwall_model_refinement.ipynb` for local refinement. It checks cached data/artifact availability, missingness, schema stability, stage leakage, chronological race-group splits, champion artifact load state, finish MAE/RMSE, Spearman, NDCG@3/NDCG@10, top-3/top-10 recall, winner hit rate, and Brier score where probability targets exist.
+
+Challenger training is disabled by default in the notebook. Set `RUN_CHALLENGER = True` only when cached training data is valid and you intend to spend the runtime. Actual-result metrics must only be recorded for races with trusted cached classifications; pending or unavailable actuals are valid outcomes, not blanks to fill in.
+
+Optional heavy tools such as MLflow, DVC, Optuna, SHAP, LightGBM, and XGBoost should stay optional unless they improve verified metrics or operator visibility.
 
 ## Current Limitations
 
@@ -53,7 +75,10 @@ The event-level contract exposes:
 
 - Continue splitting `f1_briefing.py` into `pitwall/data`, `pitwall/features`, and `pitwall/models`.
 - Add richer pit-window and compound-sequence validation when full stint data is consistently available.
-- Add browser automation coverage once Playwright is installed.
+- Move large runtime caches to release assets, object storage, or Git LFS when routine commits become noisy.
+- Add shared timing cache with Upstash Redis or Vercel KV if deployed serverless timing cache needs cross-instance sharing.
+- Expand model-vs-reality archive once more audited actual-result rows are available.
+- Keep heavier feature ablation and hyperparameter search behind explicit flags.
 
 ## 2026-06 Update
 

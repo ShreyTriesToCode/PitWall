@@ -1,6 +1,6 @@
 # PitWall Verification Report
 
-[Documentation index](README.md)
+[Documentation index](README.md) -> [Runbook](../RUNBOOK.md)
 
 Generated on 2026-05-24.
 

@@ -1,6 +1,6 @@
 # PitWall Audit
 
-[Documentation index](docs/README.md)
+[Documentation index](docs/README.md) -> [README](README.md) -> [Runbook](RUNBOOK.md)
 
 Generated: 2026-05-28
 
@@ -48,18 +48,12 @@ Generated: 2026-05-28
 
 ## MISSING ADDED IN THIS PASS
 
-- `MODEL_REPORT.md`
-- `DATA_SOURCES.md`
-- `SETUP.md`
 - Canonical `top_10` alias in the normalized prediction contract.
 - Strategy context annotations for tyre/weather mismatch, early tyre correction, safety-car/VSC/red-flag pit context, double-stack loss, and degradation cliff.
 - Explicit `race_factors` and top-level `warnings` in normalized prediction output.
 - `scripts/validate_contracts.py`
 - `scripts/check_artifact_sizes.py`
-- `ARTIFACT_POLICY.md`
-- `RUNBOOK.md`
-- `ROADMAP.md`
-- `MODEL_EXPERIMENTS.md`
+- Canonical docs now live in `README.md`, `RUNBOOK.md`, `MODEL_REPORT.md`, `DATA_SOURCES.md`, `ARTIFACT_POLICY.md`, and `docs/README.md`.
 
 ## NOT APPLICABLE
 
