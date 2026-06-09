@@ -5,8 +5,8 @@
     "stage": "pre_weekend",
     "start_iso": "2026-06-14T18:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-06-08T23:25:50.027101+05:30",
-      "overall_score": 67.64,
+      "generated_at": "2026-06-09T16:58:21.498244+05:30",
+      "overall_score": 70.27,
       "status": "Fallback",
       "sources": [
         {
@@ -36,8 +36,8 @@
         },
         {
           "source": "FIA/F1 upgrade/regulation sources",
-          "score": 45.0,
-          "status": "Stale"
+          "score": 74.0,
+          "status": "Fallback"
         },
         {
           "source": "Local cache",
@@ -83,7 +83,7 @@
           "source_url": "https://github.com/f1db/f1db",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-06-08T17:55:50.026984+00:00",
+          "checked_at": "2026-06-09T11:28:21.497983+00:00",
           "errors": [],
           "warnings": [
             "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -103,7 +103,7 @@
           "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-06-08T17:55:50.027069+00:00",
+          "checked_at": "2026-06-09T11:28:21.498158+00:00",
           "errors": [],
           "warnings": [
             "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."

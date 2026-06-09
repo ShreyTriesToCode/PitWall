@@ -1,6 +1,6 @@
-# F1 Race Briefing: Barcelona Grand Prix Race
+# F1 Race Briefing: F1 Barcelona Catalunya GP - Race
 
-Generated: Monday, 08 June 2026, 11:25 PM IST
+Generated: Tuesday, 09 June 2026, 04:58 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Monday, 08 June 2026, 11:25 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 63.9, confidence 12%, car performance; same-circuit history; pit-stop execution; driver form; regulation-era fit
-2. George Russell, score 62.2, confidence 2%, car performance; same-circuit history; pit-stop execution; driver form; constructor form
-3. Andrea Kimi Antonelli, score 60.1, confidence 12%, car performance; driver form; pit-stop execution; constructor form; current-season car performance
-4. Charles Leclerc, score 59.7, confidence 25%, car performance; pit-stop execution; same-circuit history; driver form; regulation-era fit
-5. Max Verstappen, score 58.4, confidence 38%, same-circuit history; pit-stop execution; car performance; ML finish-position model; regulation-era fit
-6. Isack Hadjar, score 53.7, confidence 43%, pit-stop execution; car performance; same-circuit history; ML finish-position model; regulation-era fit
-7. Oscar Piastri, score 51.2, confidence 30%, car performance; same-circuit history; pit-stop execution; regulation-era fit; team-track fit
-8. Lando Norris, score 50.6, confidence 35%, car performance; same-circuit history; pit-stop execution; regulation-era fit; driver form
-9. Liam Lawson, score 42.7, confidence 30%, pit-stop execution; car performance; same-circuit history; regulation-era fit; team strategy gain
-10. Pierre Gasly, score 40.2, confidence 30%, pit-stop execution; same-circuit history; regulation-era fit; reliability; team strategy gain
+1. Lewis Hamilton, score 63.2, confidence 18%, car performance; same-circuit history; pit-stop execution; reliability; driver form
+2. George Russell, score 61.6, confidence 8%, car performance; same-circuit history; pit-stop execution; reliability; constructor form
+3. Andrea Kimi Antonelli, score 58.1, confidence 18%, car performance; driver form; pit-stop execution; constructor form; track trait fit
+4. Charles Leclerc, score 56.3, confidence 31%, car performance; pit-stop execution; same-circuit history; reliability; regulation-era fit
+5. Max Verstappen, score 55.3, confidence 43%, same-circuit history; pit-stop execution; car performance; reliability; weather adaptation
+6. Isack Hadjar, score 55.2, confidence 48%, pit-stop execution; car performance; same-circuit history; reliability; weather adaptation
+7. Oscar Piastri, score 54.1, confidence 30%, car performance; same-circuit history; pit-stop execution; reliability; weather adaptation
+8. Lando Norris, score 51.1, confidence 35%, car performance; same-circuit history; pit-stop execution; reliability; regulation-era fit
+9. Liam Lawson, score 45.6, confidence 30%, pit-stop execution; reliability; weather adaptation; car performance; same-circuit history
+10. Pierre Gasly, score 42.6, confidence 30%, pit-stop execution; reliability; same-circuit history; weather adaptation; regulation-era fit
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Monday, 08 June 2026, 11:25 PM IST
 - Overtaking: medium
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: medium-high
-- Weather: Unavailable, rain Unavailable, wind Unavailable
-- Weather impact: Open-Meteo request failed or timed out.
+- Weather: 27.1°C, rain 0%, wind 14.2 km/h
+- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
 
 ## Strategy
 
@@ -48,7 +48,9 @@ Generated: Monday, 08 June 2026, 11:25 PM IST
 
 ## Upgrade impact
 
-- No trusted upgrade-package signal found for this event.
+- Audi: 40.0/100, straight line, power efficiency
+- Ferrari: 40.0/100, power efficiency
+- Mercedes: 40.0/100, power efficiency
 
 ## Regulation context
 
@@ -59,19 +61,19 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- car performance: 6.3%
-- ml podium probability: 5.4%
-- race pace: 4.9%
-- driver form: 4.5%
-- circuit history: 4.0%
+- car performance: 5.9%
+- ml podium probability: 5.1%
+- race pace: 4.7%
+- driver form: 4.2%
+- upgrade package impact: 4.2%
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.20; RMSE: 4.05
-- Neural lap-time MAE: 4.16s; RMSE: 5.60s
-- Backtest winner hit: 39.3%; top-3 recall: 64.3%; top-5 recall: 75.7%
-- Win model AUC/Brier: 0.954 / 0.038
-- Podium model AUC/Brier: 0.935 / 0.068
+- Finish-position MAE: 3.21; RMSE: 4.04
+- Neural lap-time MAE: 4.16s; RMSE: 5.61s
+- Backtest winner hit: 46.4%; top-3 recall: 65.5%; top-5 recall: 76.4%
+- Win model AUC/Brier: 0.953 / 0.038
+- Podium model AUC/Brier: 0.936 / 0.067
 
 ## Source status
 
@@ -79,7 +81,7 @@ Era: 2026+ active-aero and new power-unit era
 - ML model: loaded
 - F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token
 - FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']
-- Calendar check: official_f1_calendar_unavailable_using_ics_jolpica
+- Calendar check: official_f1_calendar_page_reachable
 
 ---
 
