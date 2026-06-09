@@ -5,7 +5,7 @@
     "stage": "pre_weekend",
     "start_iso": "2026-06-14T18:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-06-09T16:58:21.498244+05:30",
+      "generated_at": "2026-06-09T17:51:47.489188+05:30",
       "overall_score": 70.27,
       "status": "Fallback",
       "sources": [
@@ -83,7 +83,7 @@
           "source_url": "https://github.com/f1db/f1db",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-06-09T11:28:21.497983+00:00",
+          "checked_at": "2026-06-09T12:21:47.488951+00:00",
           "errors": [],
           "warnings": [
             "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -103,7 +103,7 @@
           "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-06-09T11:28:21.498158+00:00",
+          "checked_at": "2026-06-09T12:21:47.489111+00:00",
           "errors": [],
           "warnings": [
             "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."

@@ -2,28 +2,28 @@
   "schema_version": "2026.06-barcelona-preweekend-v6",
   "model_version": "2026.06-barcelona-preweekend-v6",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-09T17:04:56.880882+05:30",
-  "trained_at": "2026-06-08T23:22:15.670935+05:30",
+  "generated_at": "2026-06-09T17:51:49.818294+05:30",
+  "trained_at": "2026-06-09T17:51:04.911704+05:30",
   "latest_completed_race_included": "2026-6",
   "latest_available_api_result": "2026-6",
   "feature_count": 42,
   "feature_columns": [
-    "regulation_era_factor",
-    "sprint_position",
-    "grid_position",
-    "missing_sprint_position",
-    "missing_lap_pace",
-    "driver_recent3_finish",
-    "missing_grid",
-    "missing_qualifying",
-    "team_recent_points",
     "qualifying_position",
-    "team_avg_finish",
-    "season_progress",
-    "track_position_sensitivity",
-    "missing_pit_data",
+    "team_recent_points",
+    "missing_sprint_position",
+    "driver_recent3_finish",
     "driver_avg_finish",
     "track_dnf_rate",
+    "missing_qualifying",
+    "season_progress",
+    "missing_lap_pace",
+    "grid_position",
+    "team_avg_finish",
+    "sprint_position",
+    "missing_grid",
+    "track_position_sensitivity",
+    "missing_pit_data",
+    "regulation_era_factor",
     "team_podium_rate",
     "team_avg_points",
     "driver_recent10_points",
@@ -41,8 +41,8 @@
     "driver_avg_points",
     "driver_podium_rate",
     "team_finish_consistency",
-    "driver_circuit_avg_finish",
     "driver_teammate_points_delta",
+    "driver_circuit_avg_finish",
     "team_circuit_podium_rate",
     "team_circuit_avg_finish",
     "driver_points_momentum",
@@ -51,67 +51,67 @@
     "team_finish_rate",
     "driver_finish_consistency"
   ],
-  "model_bundle_size_mb": 21.18,
+  "model_bundle_size_mb": 15.18,
   "metrics": {
-    "win_auc": 0.9540287866559053,
-    "win_brier": 0.03769549640672425,
-    "podium_auc": 0.9350375939849624,
-    "podium_brier": 0.06780732788226183,
-    "top10_auc": 0.8539170506912442,
-    "top10_brier": 0.1548504668763939,
-    "finish_position_mae": 3.203969666545212,
-    "finish_position_rmse": 4.045248746917019,
-    "winner_hit_rate": 0.3929,
+    "win_auc": 0.9529190207156308,
+    "win_brier": 0.03772726537562846,
+    "podium_auc": 0.9348621553884713,
+    "podium_brier": 0.0680703908570867,
+    "top10_auc": 0.8626088069636456,
+    "top10_brier": 0.15287526267250356,
+    "finish_position_mae": 3.200690842509687,
+    "finish_position_rmse": 4.037340077942646,
+    "winner_hit_rate": 0.4643,
     "top3_recall": 0.6429,
-    "top5_recall": 0.7571,
+    "top5_recall": 0.7643,
     "top10_recall": 0.7964,
-    "spearman_rank_correlation": 0.702,
-    "ndcg_at_3": 0.9286,
-    "ndcg_at_10": 0.9117,
-    "exact_position_accuracy": 0.0877,
-    "mean_position_error": 3.1887,
-    "lap_time_mae": 4.159378275197232,
-    "lap_time_rmse": 5.604206991471557
+    "spearman_rank_correlation": 0.7054,
+    "ndcg_at_3": 0.9304,
+    "ndcg_at_10": 0.913,
+    "exact_position_accuracy": 0.0841,
+    "mean_position_error": 3.1942,
+    "lap_time_mae": 4.05388125725787,
+    "lap_time_rmse": 5.443416816544039
   },
   "raw_metrics": {
     "win": {
-      "auc": 0.9540287866559053,
-      "brier": 0.03769549640672425,
-      "raw_brier": 0.035422138769392375,
+      "auc": 0.9529190207156308,
+      "brier": 0.03772726537562846,
+      "raw_brier": 0.03558541350665478,
       "calibration_method": "empirical_quantile_bins",
       "validation_rows": 559
     },
     "podium": {
-      "auc": 0.9350375939849624,
-      "brier": 0.06780732788226183,
-      "raw_brier": 0.07544036467588115,
+      "auc": 0.9348621553884713,
+      "brier": 0.0680703908570867,
+      "raw_brier": 0.07586018433286447,
       "calibration_method": "empirical_quantile_bins",
       "validation_rows": 559
     },
     "top10": {
-      "auc": 0.8539170506912442,
-      "brier": 0.1548504668763939,
-      "raw_brier": 0.1504635769640265,
+      "auc": 0.8626088069636456,
+      "brier": 0.15287526267250356,
+      "raw_brier": 0.1506458605643422,
       "calibration_method": "empirical_quantile_bins",
       "validation_rows": 559
     },
     "finish_position": {
-      "mae": 3.203969666545212,
-      "rmse": 4.045248746917019,
+      "mae": 3.200690842509687,
+      "rmse": 4.037340077942646,
       "validation_rows": 559,
       "ranking": {
-        "winner_hit": 0.3929,
+        "winner_hit": 0.4643,
         "top3_recall": 0.6429,
         "top3_precision": 0.6429,
-        "top5_recall": 0.7571,
-        "top5_precision": 0.7571,
+        "top5_recall": 0.7643,
+        "top5_precision": 0.7643,
         "top10_recall": 0.7964,
         "top10_precision": 0.7964,
-        "ndcg_at_3": 0.9286,
-        "ndcg_at_10": 0.9117,
-        "spearman": 0.702,
-        "exact_position_accuracy": 0.0877,
-        "mean_position_error": 3.1887
+        "ndcg_at_3": 0.9304,
+        "ndcg_at_10": 0.913,
+        "spearman": 0.7054,
+        "exact_position_accuracy": 0.0841,
+        "mean_position_error": 3.1942
       },
       "beats_baselines": {
         "grid_order": true,
@@ -128,20 +128,20 @@
         2025,
         2026
       ],
-      "finish_mae": 3.667002303235408,
+      "finish_mae": 3.6645075163107985,
       "ranking": {
-        "winner_hit": 0.75,
+        "winner_hit": 0.6667,
         "top3_recall": 0.6111,
         "top3_precision": 0.6111,
         "top5_recall": 0.7833,
         "top5_precision": 0.7833,
         "top10_recall": 0.7417,
         "top10_precision": 0.7417,
-        "ndcg_at_3": 0.8865,
-        "ndcg_at_10": 0.8951,
-        "spearman": 0.6731,
-        "exact_position_accuracy": 0.072,
-        "mean_position_error": 3.639
+        "ndcg_at_3": 0.8922,
+        "ndcg_at_10": 0.8947,
+        "spearman": 0.6753,
+        "exact_position_accuracy": 0.0761,
+        "mean_position_error": 3.6155
       },
       "baselines": {
         "grid_order": {
@@ -182,8 +182,8 @@
           "finish_mae": 4.596560846560847,
           "ranking": {
             "winner_hit": 0.5833,
-            "top3_recall": 0.5,
-            "top3_precision": 0.5,
+            "top3_recall": 0.4722,
+            "top3_precision": 0.4722,
             "top5_recall": 0.5833,
             "top5_precision": 0.5833,
             "top10_recall": 0.6333,
@@ -199,10 +199,10 @@
           "finish_mae": 4.524877271505057,
           "ranking": {
             "winner_hit": 0.5,
-            "top3_recall": 0.5,
-            "top3_precision": 0.5,
-            "top5_recall": 0.5833,
-            "top5_precision": 0.5833,
+            "top3_recall": 0.4444,
+            "top3_precision": 0.4444,
+            "top5_recall": 0.5,
+            "top5_precision": 0.5,
             "top10_recall": 0.6333,
             "top10_precision": 0.6333,
             "ndcg_at_3": 0.7902,
@@ -232,31 +232,31 @@
       }
     },
     "win_probability_ranking": {
-      "winner_hit": 0.6071,
-      "top3_recall": 0.6548,
-      "top3_precision": 0.6548,
-      "top5_recall": 0.7571,
-      "top5_precision": 0.7571,
-      "top10_recall": 0.6107,
-      "top10_precision": 0.6107,
-      "ndcg_at_3": 0.9194,
-      "ndcg_at_10": 0.8565,
-      "spearman": 0.6295,
-      "exact_position_accuracy": 0.0446,
-      "mean_position_error": 8.6842
+      "winner_hit": 0.6429,
+      "top3_recall": 0.6667,
+      "top3_precision": 0.6667,
+      "top5_recall": 0.7714,
+      "top5_precision": 0.7714,
+      "top10_recall": 0.9393,
+      "top10_precision": 0.9393,
+      "ndcg_at_3": 0.9218,
+      "ndcg_at_10": 0.8584,
+      "spearman": 0.6315,
+      "exact_position_accuracy": 0.0482,
+      "mean_position_error": 8.6807
     },
     "lap_time_delta_forecast": {
       "model": "hist_gradient_boosting_lap_delta",
       "target": "target_lap_pace_minus_circuit_baseline",
-      "mae_seconds": 4.159378275197232,
-      "rmse_seconds": 5.604206991471557,
+      "mae_seconds": 4.05388125725787,
+      "rmse_seconds": 5.443416816544039,
       "validation_rows": 533
     },
     "neural_lap_time_forecast": {
       "model": "hist_gradient_boosting_lap_delta",
       "target": "target_lap_pace_minus_circuit_baseline",
-      "mae_seconds": 4.159378275197232,
-      "rmse_seconds": 5.604206991471557,
+      "mae_seconds": 4.05388125725787,
+      "rmse_seconds": 5.443416816544039,
       "validation_rows": 533,
       "deprecated_name": true,
       "replacement": "lap_time_delta_forecast"
@@ -287,8 +287,8 @@
           "top3_precision": 0.6905,
           "top5_recall": 0.7786,
           "top5_precision": 0.7786,
-          "top10_recall": 0.8,
-          "top10_precision": 0.8,
+          "top10_recall": 0.8036,
+          "top10_precision": 0.8036,
           "ndcg_at_3": 0.9295,
           "ndcg_at_10": 0.9106,
           "spearman": 0.6808,
@@ -300,8 +300,8 @@
         "finish_mae": 3.789206917113894,
         "ranking": {
           "winner_hit": 0.1429,
-          "top3_recall": 0.5238,
-          "top3_precision": 0.5238,
+          "top3_recall": 0.5119,
+          "top3_precision": 0.5119,
           "top5_recall": 0.7,
           "top5_precision": 0.7,
           "top10_recall": 0.7071,
@@ -317,10 +317,10 @@
         "finish_mae": 4.250090748090622,
         "ranking": {
           "winner_hit": 0.1071,
-          "top3_recall": 0.2738,
-          "top3_precision": 0.2738,
-          "top5_recall": 0.5071,
-          "top5_precision": 0.5071,
+          "top3_recall": 0.25,
+          "top3_precision": 0.25,
+          "top5_recall": 0.4429,
+          "top5_precision": 0.4429,
           "top10_recall": 0.7179,
           "top10_precision": 0.7179,
           "ndcg_at_3": 0.7068,
@@ -334,12 +334,12 @@
         "finish_mae": null,
         "ranking": {
           "winner_hit": 0.1429,
-          "top3_recall": 0.3571,
-          "top3_precision": 0.3571,
+          "top3_recall": 0.3452,
+          "top3_precision": 0.3452,
           "top5_recall": 0.5643,
           "top5_precision": 0.5643,
-          "top10_recall": 0.7143,
-          "top10_precision": 0.7143,
+          "top10_recall": 0.7214,
+          "top10_precision": 0.7214,
           "ndcg_at_3": 0.8003,
           "ndcg_at_10": 0.8275,
           "spearman": 0.4882,
@@ -492,10 +492,10 @@
       "finish_mae": 4.250090748090622,
       "ranking": {
         "winner_hit": 0.1071,
-        "top3_recall": 0.2738,
-        "top3_precision": 0.2738,
-        "top5_recall": 0.5071,
-        "top5_precision": 0.5071,
+        "top3_recall": 0.25,
+        "top3_precision": 0.25,
+        "top5_recall": 0.4429,
+        "top5_precision": 0.4429,
         "top10_recall": 0.7179,
         "top10_precision": 0.7179,
         "ndcg_at_3": 0.7068,
@@ -510,12 +510,12 @@
       "finish_mae": null,
       "ranking": {
         "winner_hit": 0.1429,
-        "top3_recall": 0.3571,
-        "top3_precision": 0.3571,
+        "top3_recall": 0.3452,
+        "top3_precision": 0.3452,
         "top5_recall": 0.5643,
         "top5_precision": 0.5643,
-        "top10_recall": 0.7143,
-        "top10_precision": 0.7143,
+        "top10_recall": 0.7214,
+        "top10_precision": 0.7214,
         "ndcg_at_3": 0.8003,
         "ndcg_at_10": 0.8275,
         "spearman": 0.4882,
@@ -528,8 +528,8 @@
       "finish_mae": 3.789206917113894,
       "ranking": {
         "winner_hit": 0.1429,
-        "top3_recall": 0.5238,
-        "top3_precision": 0.5238,
+        "top3_recall": 0.5119,
+        "top3_precision": 0.5119,
         "top5_recall": 0.7,
         "top5_precision": 0.7,
         "top10_recall": 0.7071,
@@ -550,8 +550,8 @@
         "top3_precision": 0.6905,
         "top5_recall": 0.7786,
         "top5_precision": 0.7786,
-        "top10_recall": 0.8,
-        "top10_precision": 0.8,
+        "top10_recall": 0.8036,
+        "top10_precision": 0.8036,
         "ndcg_at_3": 0.9295,
         "ndcg_at_10": 0.9106,
         "spearman": 0.6808,
@@ -588,8 +588,8 @@
           12,
           13
         ],
-        "brier_before": 0.051236002606697105,
-        "brier_after": 0.03944813342035835
+        "brier_before": 0.0511600875516092,
+        "brier_after": 0.03953880102396676
       },
       "podium": {
         "method": "empirical_quantile_bins",
@@ -604,8 +604,8 @@
           12,
           13
         ],
-        "brier_before": 0.08043250649645235,
-        "brier_after": 0.06851927962112779
+        "brier_before": 0.08045030618657238,
+        "brier_after": 0.06868755738687156
       },
       "top10": {
         "method": "empirical_quantile_bins",
@@ -620,8 +620,8 @@
           12,
           13
         ],
-        "brier_before": 0.1337099926930328,
-        "brier_after": 0.12807049464518594
+        "brier_before": 0.13255304484794309,
+        "brier_after": 0.12854330978828551
       }
     }
   },
@@ -706,7 +706,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-09T11:34:56.880746+00:00",
+      "checked_at": "2026-06-09T12:21:49.818058+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -726,7 +726,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-09T11:34:56.880827+00:00",
+      "checked_at": "2026-06-09T12:21:49.818196+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -742,55 +742,59 @@
     "fia_documents_available": true,
     "fia_latest_document": {
       "season": 2026,
-      "event_slug": "monaco-grand-prix",
-      "event_name": "monaco grand prix",
-      "document_id": "f3dc6dac63d4cbff",
-      "document_number": 92,
-      "title": "Doc 92 - Championship Points Published on 07.06.26 20:55 CET",
-      "normalized_title": "doc-92-championship-points-published-on-07-06-26-20-55-cet",
+      "event_slug": "canadian-grand-prix",
+      "event_name": "canadian grand prix",
+      "document_id": "ccb0822185d6cd1b",
+      "document_number": 111,
+      "title": "Doc 111 - Championship Points Published on 25.05.26 03:16 CET",
+      "normalized_title": "doc-111-championship-points-published-on-25-05-26-03-16-cet",
       "document_type": "unknown",
-      "published_date": "2026-06-07",
-      "published_time": "19:50",
-      "published_at_utc": "2026-06-07T19:50:00+00:00",
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_championship_points.pdf",
+      "published_date": "2026-05-25",
+      "published_time": "02:10",
+      "published_at_utc": "2026-05-25T02:10:00+00:00",
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_championship_points.pdf",
       "local_pdf_path": null,
-      "local_text_path": "data_cache/fia-documents/2026/monaco-grand-prix/text/doc-92-doc-92-championship-points-published-on-07-06-26-20-55-cet.txt",
-      "local_parsed_json_path": "data_cache/fia-documents/2026/monaco-grand-prix/parsed/doc-92-doc-92-championship-points-published-on-07-06-26-20-55-cet.json",
+      "local_text_path": "data_cache/fia-documents/2026/canadian-grand-prix/text/doc-111-doc-111-championship-points-published-on-25-05-26-03-16-cet.txt",
+      "local_parsed_json_path": "data_cache/fia-documents/2026/canadian-grand-prix/parsed/doc-111-doc-111-championship-points-published-on-25-05-26-03-16-cet.json",
       "recalled": false,
       "superseded_by": null,
-      "hash": "df2abf8c9886d5c3c856a695035d119344cc153765f1b527d1c1b990ee982582",
-      "first_seen_at": "2026-06-08T09:25:07.700820+05:30",
-      "last_checked_at": "2026-06-08T09:25:07.700886+05:30",
-      "parse_status": "error",
-      "parse_error": "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_championship_points.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "hash": "9c1c12b3e61f57d6b0b2e28804095e9223bd3210b9ff08fca9466e4e4e962d9b",
+      "first_seen_at": "2026-05-29T13:49:30.835063+05:30",
+      "last_checked_at": "2026-05-29T13:49:30.835111+05:30",
+      "parse_status": "parsed",
+      "parse_error": null,
       "source_confidence": 1.0,
       "cache_status": "miss",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
       "http_status": 200
     },
-    "fia_document_count": 96,
+    "fia_document_count": 109,
     "fia_documents_by_type": {
-      "unknown": 14,
+      "unknown": 18,
       "race_classification": 2,
-      "decision": 5,
+      "decision": 9,
+      "deleted_lap_times": 7,
       "infringement": 23,
-      "scrutineering": 3,
-      "deleted_lap_times": 8,
-      "race_director_notes": 5,
-      "summons": 14,
+      "scrutineering": 4,
+      "summons": 12,
       "starting_grid": 2,
-      "procedure": 4,
+      "procedure": 7,
       "qualifying_classification": 2,
-      "free_practice_classification": 3,
+      "race_director_notes": 3,
       "new_pu_elements": 3,
+      "sprint_classification": 2,
+      "sprint_starting_grid": 2,
+      "sprint_qualifying_classification": 2,
+      "free_practice_classification": 1,
       "entry_list": 1,
-      "car_presentation_submissions": 1,
-      "pu_elements_used": 1,
       "self_scrutineering": 1,
-      "timetable": 1,
-      "circuit_map": 1,
+      "pu_elements_used": 1,
+      "car_presentation_submissions": 1,
+      "circuit_map": 2,
       "power_unit_information": 1,
-      "pirelli_preview": 1
+      "timetable": 1,
+      "pirelli_preview": 1,
+      "post_race_checks": 1
     },
     "fia_session_timetable": [],
     "fia_upgrade_summary": {
@@ -806,34 +810,13 @@
       "status": "available"
     },
     "latest_fia_ingested_at": null,
-    "fia_parse_errors": [
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_championship_points.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_final_race_classification.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_43_-_allegedly_causing_a_collision_with_car_55.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_27_-_causing_a_collision_with_car_55.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_race_scrutineering.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_race_deleted_lap_times.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_11_-_failing_to_follow_race_directors_event_notes_-_practice_starts.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_44_-_alleged_safety_car_infringement.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_6_-_alleged_safety_car_infringement.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_decision_-_alleged_red_flag_infringement.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_11_-_false_start_-_out_of_position_at_restart.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_car_6_-_alleged_race_suspension_infringement.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_provisional_race_classification.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_11_-_alleged_starting_procedure.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_6_-_alleged_red_flag_infringement.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_18_-_exceeded_track_limits.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_summons_-_car_11_-_practice_start_infringement.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding_0.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_81_-_pit_lane_speeding.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
-      "HTTPSConnectionPool(host='www.fia.com', port=443): Max retries exceeded with url: /system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.fia.com', port=443): Failed to resolve 'www.fia.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
-    ],
+    "fia_parse_errors": [],
     "fia_cache_hits": 1,
     "fia_cache_misses": 0
   },
   "source_health": {
-    "generated_at": "2026-06-08T23:25:50.027101+05:30",
-    "overall_score": 67.64,
+    "generated_at": "2026-06-09T17:51:47.489188+05:30",
+    "overall_score": 70.27,
     "status": "Fallback",
     "sources": [
       {
@@ -863,8 +846,8 @@
       },
       {
         "source": "FIA/F1 upgrade/regulation sources",
-        "score": 45.0,
-        "status": "Stale"
+        "score": 74.0,
+        "status": "Fallback"
       },
       {
         "source": "Local cache",
@@ -910,7 +893,7 @@
         "source_url": "https://github.com/f1db/f1db",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-08T17:55:50.026984+00:00",
+        "checked_at": "2026-06-09T12:21:47.488951+00:00",
         "errors": [],
         "warnings": [
           "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -930,7 +913,7 @@
         "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-08T17:55:50.027069+00:00",
+        "checked_at": "2026-06-09T12:21:47.489111+00:00",
         "errors": [],
         "warnings": [
           "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -962,19 +945,6 @@
     "local_llm_enabled": false
   },
   "source_conflicts": [
-    {
-      "conflict_type": "stale_cache",
-      "affected_fields": [
-        "source freshness"
-      ],
-      "sources": [
-        "FIA/F1 upgrade/regulation sources"
-      ],
-      "preferred_source": "fresh official/current source when available",
-      "reason": "FIA/F1 upgrade/regulation sources data is stale.",
-      "confidence": "medium",
-      "action_needed": "Refresh cache or wait for next generated run."
-    },
     {
       "conflict_type": "stale_cache",
       "affected_fields": [
@@ -1044,7 +1014,9 @@
     "decision": "hold_champion",
     "blockers": [
       "out_of_time_did_not_beat_grid_order_top3_recall",
-      "out_of_time_did_not_beat_qualifying_only_top3_recall"
+      "out_of_time_did_not_beat_grid_order_winner_hit",
+      "out_of_time_did_not_beat_qualifying_only_top3_recall",
+      "out_of_time_did_not_beat_qualifying_only_winner_hit"
     ],
     "baseline_gate": {
       "grid_order": true,
@@ -1058,7 +1030,7 @@
     "champion": {
       "name": "2026.06-barcelona-preweekend-v6",
       "schema_version": "2026.06-barcelona-preweekend-v6",
-      "trained_at": "2026-06-08T23:22:15.670935+05:30",
+      "trained_at": "2026-06-09T17:51:04.911704+05:30",
       "latest_completed_race_included": "2026-6"
     },
     "challenger": {
@@ -1069,7 +1041,9 @@
       "decision": "hold_champion",
       "blockers": [
         "out_of_time_did_not_beat_grid_order_top3_recall",
-        "out_of_time_did_not_beat_qualifying_only_top3_recall"
+        "out_of_time_did_not_beat_grid_order_winner_hit",
+        "out_of_time_did_not_beat_qualifying_only_top3_recall",
+        "out_of_time_did_not_beat_qualifying_only_winner_hit"
       ],
       "baseline_gate": {
         "grid_order": true,
@@ -1080,26 +1054,26 @@
       }
     },
     "metrics": {
-      "winner_hit_rate": 0.3929,
+      "winner_hit_rate": 0.4643,
       "podium_recall": 0.6429,
       "top10_recall": 0.7964,
-      "position_mae": 3.203969666545212,
-      "spearman_rank_correlation": 0.702,
-      "ndcg_at_3": 0.9286,
-      "ndcg_at_10": 0.9117,
+      "position_mae": 3.200690842509687,
+      "spearman_rank_correlation": 0.7054,
+      "ndcg_at_3": 0.9304,
+      "ndcg_at_10": 0.913,
       "brier": {
-        "win": 0.03769549640672425,
-        "podium": 0.06780732788226183,
-        "top10": 0.1548504668763939
+        "win": 0.03772726537562846,
+        "podium": 0.0680703908570867,
+        "top10": 0.15287526267250356
       }
     },
-    "generated_at": "2026-06-09T17:04:56.880876+05:30",
+    "generated_at": "2026-06-09T17:51:49.818274+05:30",
     "warnings": [
       "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy."
     ]
   },
   "readiness_state": {
-    "checked_at": "2026-06-09T17:04:55.078662+05:30",
+    "checked_at": "2026-06-09T17:50:30.051255+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-6",
@@ -1130,7 +1104,7 @@
   "selected_targets": [
     {
       "target_type": "race",
-      "title": "Barcelona Grand Prix Race",
+      "title": "F1 Barcelona Catalunya GP - Race",
       "start": "2026-06-14 18:30:00+05:30"
     }
   ],

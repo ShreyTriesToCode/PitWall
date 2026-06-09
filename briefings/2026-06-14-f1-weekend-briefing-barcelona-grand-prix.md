@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Barcelona Catalunya GP - Race
 
-Generated: Tuesday, 09 June 2026, 04:58 PM IST
+Generated: Tuesday, 09 June 2026, 05:51 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Tuesday, 09 June 2026, 04:58 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 63.2, confidence 18%, car performance; same-circuit history; pit-stop execution; reliability; driver form
-2. George Russell, score 61.6, confidence 8%, car performance; same-circuit history; pit-stop execution; reliability; constructor form
-3. Andrea Kimi Antonelli, score 58.1, confidence 18%, car performance; driver form; pit-stop execution; constructor form; track trait fit
-4. Charles Leclerc, score 56.3, confidence 31%, car performance; pit-stop execution; same-circuit history; reliability; regulation-era fit
-5. Max Verstappen, score 55.3, confidence 43%, same-circuit history; pit-stop execution; car performance; reliability; weather adaptation
-6. Isack Hadjar, score 55.2, confidence 48%, pit-stop execution; car performance; same-circuit history; reliability; weather adaptation
+1. Lewis Hamilton, score 63.4, confidence 18%, car performance; same-circuit history; pit-stop execution; reliability; driver form
+2. George Russell, score 61.8, confidence 8%, car performance; same-circuit history; pit-stop execution; reliability; constructor form
+3. Andrea Kimi Antonelli, score 58.4, confidence 18%, car performance; driver form; pit-stop execution; constructor form; track trait fit
+4. Charles Leclerc, score 56.4, confidence 31%, car performance; pit-stop execution; same-circuit history; reliability; regulation-era fit
+5. Isack Hadjar, score 55.2, confidence 43%, pit-stop execution; car performance; same-circuit history; reliability; weather adaptation
+6. Max Verstappen, score 55.0, confidence 43%, same-circuit history; pit-stop execution; car performance; reliability; weather adaptation
 7. Oscar Piastri, score 54.1, confidence 30%, car performance; same-circuit history; pit-stop execution; reliability; weather adaptation
-8. Lando Norris, score 51.1, confidence 35%, car performance; same-circuit history; pit-stop execution; reliability; regulation-era fit
-9. Liam Lawson, score 45.6, confidence 30%, pit-stop execution; reliability; weather adaptation; car performance; same-circuit history
-10. Pierre Gasly, score 42.6, confidence 30%, pit-stop execution; reliability; same-circuit history; weather adaptation; regulation-era fit
+8. Lando Norris, score 51.4, confidence 35%, car performance; same-circuit history; pit-stop execution; reliability; regulation-era fit
+9. Liam Lawson, score 45.8, confidence 30%, pit-stop execution; reliability; weather adaptation; car performance; same-circuit history
+10. Pierre Gasly, score 42.8, confidence 30%, pit-stop execution; reliability; same-circuit history; weather adaptation; regulation-era fit
 
 ## Track and weather
 
@@ -69,11 +69,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.21; RMSE: 4.04
-- Neural lap-time MAE: 4.16s; RMSE: 5.61s
-- Backtest winner hit: 46.4%; top-3 recall: 65.5%; top-5 recall: 76.4%
+- Finish-position MAE: 3.20; RMSE: 4.04
+- Neural lap-time MAE: 4.05s; RMSE: 5.44s
+- Backtest winner hit: 46.4%; top-3 recall: 64.3%; top-5 recall: 76.4%
 - Win model AUC/Brier: 0.953 / 0.038
-- Podium model AUC/Brier: 0.936 / 0.067
+- Podium model AUC/Brier: 0.935 / 0.068
 
 ## Source status
 

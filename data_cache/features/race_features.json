@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-7-barcelona-grand-prix",
-    "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-194c9ce95196",
+    "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-d6d49ee0f4ea",
     "season": 2026,
     "round": 7,
     "circuit": "Circuit de Barcelona-Catalunya",
@@ -85,35 +85,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 70.73,
+          "scenario_score": 70.88,
           "rank": 1
-        },
-        {
-          "driver_id": "max_verstappen",
-          "name": "Max Verstappen",
-          "team": "Red Bull",
-          "scenario_score": 70.46,
-          "rank": 2
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 70.42,
+          "scenario_score": 70.37,
+          "rank": 2
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 70.26,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 70.05,
+          "scenario_score": 70.19,
           "rank": 4
         },
         {
           "driver_id": "perez",
           "name": "Sergio Pérez",
           "team": "Cadillac",
-          "scenario_score": 65.03,
+          "scenario_score": 65.09,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 72.83,
+          "scenario_score": 72.81,
           "rank": 1
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 70.2,
+          "scenario_score": 70.07,
           "rank": 2
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 69.56,
+          "scenario_score": 69.66,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 67.71,
+          "scenario_score": 67.81,
           "rank": 4
         },
         {
           "driver_id": "lawson",
           "name": "Liam Lawson",
           "team": "RB F1 Team",
-          "scenario_score": 67.39,
+          "scenario_score": 67.49,
           "rank": 5
         }
       ],
