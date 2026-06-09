@@ -3556,6 +3556,7 @@ def train_ml_model(force=False):
 
     training_log("[TRAIN] Training full-data ML model from cached/backfilled historical data.")
     training_log("[TRAIN] Retrain reasons: " + ", ".join(retrain_decision.get("reasons") or ["routine_retrain"]))
+    training_log(f"[MODEL] latest completed race eligible for training: {retrain_decision.get('api_latest_completed_race_id') or 'unavailable'}")
     current_year = now_local().year
     training_log("[MODEL] feature build started: collecting historical rows")
     raw_df = collect_race_rows(ML_START_YEAR, current_year)

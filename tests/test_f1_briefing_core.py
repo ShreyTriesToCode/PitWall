@@ -645,6 +645,36 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertTrue(comparison["winner_hit"])
         self.assertEqual(comparison["actual_winner"]["driver_id"], "antonelli")
 
+    def test_training_rows_include_completed_monaco_and_skip_pending_barcelona(self):
+        monaco = {
+            "season": "2026",
+            "round": "6",
+            "raceName": "Monaco Grand Prix",
+            "date": "2026-06-07",
+            "time": "13:00:00Z",
+            "Circuit": {"circuitId": "monaco", "circuitName": "Circuit de Monaco"},
+        }
+        barcelona = {
+            "season": "2026",
+            "round": "7",
+            "raceName": "Barcelona Grand Prix",
+            "date": "2026-06-14",
+            "time": "13:00:00Z",
+            "Circuit": {"circuitId": "catalunya", "circuitName": "Circuit de Barcelona-Catalunya"},
+        }
+        fixed_now = f1.datetime(2026, 6, 9, 12, 0, tzinfo=f1.USER_TIMEZONE)
+
+        with patch.object(f1, "fetch_schedule", return_value=[monaco, barcelona]), \
+             patch.object(f1, "now_local", return_value=fixed_now), \
+             patch.object(f1, "record_full_race_cache_manifest"):
+            rows = f1.collect_race_rows(2026, 2026)
+
+        self.assertIn("2026-6", set(rows["race_id"]))
+        self.assertNotIn("2026-7", set(rows["race_id"]))
+        monaco_rows = rows[rows["race_id"] == "2026-6"]
+        self.assertGreaterEqual(len(monaco_rows), 20)
+        self.assertEqual(monaco_rows.sort_values("finish_position").iloc[0]["driver_id"], "antonelli")
+
     def test_generated_feature_store_exists(self):
         for name in ["race_features.json", "driver_features.json", "team_features.json", "session_features.json"]:
             path = Path("data_cache/features") / name
