@@ -1,5 +1,7 @@
 # PitWall Audit
 
+[Documentation index](docs/README.md)
+
 Generated: 2026-05-28
 
 ## 2026-05-29 Free AI Intelligence Audit

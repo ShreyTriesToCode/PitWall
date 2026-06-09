@@ -1,5 +1,7 @@
 # PitWall Artifact Policy
 
+[Documentation index](docs/README.md)
+
 PitWall keeps small frontend-facing JSON artifacts in Git so Vercel can serve useful data without private runtime credentials.
 
 ## Kept In Git

@@ -1,5 +1,7 @@
 # PitWall Data Sources
 
+[Documentation index](docs/README.md)
+
 Generated: 2026-05-25
 
 ## Primary Sources

@@ -1,5 +1,7 @@
 # PitWall Setup
 
+[Documentation index](docs/README.md)
+
 ## 1. Install
 
 ```bash

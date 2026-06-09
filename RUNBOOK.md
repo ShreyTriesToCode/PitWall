@@ -1,5 +1,7 @@
 # PitWall Runbook
 
+[Documentation index](docs/README.md)
+
 ## Local Verification
 
 ```bash

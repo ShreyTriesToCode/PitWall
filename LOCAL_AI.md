@@ -1,5 +1,7 @@
 # Local AI
 
+[Documentation index](docs/README.md)
+
 PitWall includes free AI-style intelligence without paid inference. The default provider is deterministic and template-based.
 
 ## Deterministic Mode

@@ -15,6 +15,7 @@ PORTABLE_PATH_ROOTS = {
     "models",
     "notebooks",
 }
+MISSING_REFERENCE_SAMPLE_LIMIT = 20
 
 
 def resolve_manifest_path(raw_path: str, *, repo_root: Path = ROOT) -> Path:
@@ -36,6 +37,17 @@ def resolve_manifest_path(raw_path: str, *, repo_root: Path = ROOT) -> Path:
     return path
 
 
+def portable_display_path(raw_path: str) -> str:
+    path = Path(raw_path)
+    if not path.is_absolute():
+        return raw_path
+    parts = path.parts
+    for marker in PORTABLE_PATH_ROOTS:
+        if marker in parts:
+            return str(Path(*parts[parts.index(marker):]))
+    return path.name
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--path", default="data_cache/cache_manifest.json")
@@ -53,6 +65,7 @@ def main() -> int:
         print(json.dumps({"ok": False, "error": "manifest must contain an entries object"}))
         return 1
     bad = []
+    missing_references = []
     remapped_paths = 0
     for key, entry in data["entries"].items():
         if not isinstance(entry, dict):
@@ -67,11 +80,26 @@ def main() -> int:
         if file_path.is_absolute() and file_path != resolved_path and resolved_path.exists():
             remapped_paths += 1
         if entry.get("latest_run_action") in {"reused", "refreshed", "fallback_reused"} and not resolved_path.exists():
-            bad.append(f"{key}: referenced file is missing: {raw_file_path} (resolved: {resolved_path})")
+            message = f"{key}: referenced file is missing: {raw_file_path} (resolved: {resolved_path})"
+            if args.allow_missing:
+                missing_references.append({
+                    "key": key,
+                    "file_path": portable_display_path(raw_file_path),
+                    "resolved": portable_display_path(str(resolved_path)),
+                })
+            else:
+                bad.append(message)
     if bad:
         print(json.dumps({"ok": False, "errors": bad}, indent=2))
         return 1
-    print(json.dumps({"ok": True, "entry_count": len(data["entries"]), "remapped_paths": remapped_paths}, indent=2))
+    print(json.dumps({
+        "ok": True,
+        "entry_count": len(data["entries"]),
+        "remapped_paths": remapped_paths,
+        "warning_count": len(missing_references),
+        "missing_reference_count": len(missing_references),
+        "missing_references_sample": missing_references[:MISSING_REFERENCE_SAMPLE_LIMIT],
+    }, indent=2))
     return 0
 
 

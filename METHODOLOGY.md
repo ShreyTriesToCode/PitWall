@@ -1,5 +1,7 @@
 # PitWall Methodology
 
+[Documentation index](docs/README.md)
+
 ## Problem Statement
 
 PitWall predicts Formula 1 sprint and race outcomes from public, cacheable, source-attributed data. The goal is highest practical accuracy with calibrated uncertainty, not guaranteed certainty. Crashes, safety cars, red flags, mechanical failures, team orders, weather swings, penalties, and delayed official documents are treated as uncertainty drivers rather than hidden knowledge the model pretends to know.

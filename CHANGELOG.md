@@ -1,5 +1,7 @@
 # Changelog
 
+[Documentation index](docs/README.md)
+
 ## 2026-05-29
 
 ### Added

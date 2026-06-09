@@ -1,5 +1,7 @@
 # PitWall Run Report
 
+[Documentation index](docs/README.md)
+
 - Generated at: 2026-06-09T03:41:20.330928+00:00
 - Model version: 2026.05-high-accuracy-v5
 - Target event/session: Barcelona Grand Prix / race

@@ -1,5 +1,7 @@
 # Model Design
 
+[Documentation index](docs/README.md)
+
 The model is a hybrid system.
 
 It combines:

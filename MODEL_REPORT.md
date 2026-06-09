@@ -1,5 +1,7 @@
 # PitWall Model Report
 
+[Documentation index](docs/README.md)
+
 Generated: 2026-05-25
 
 ## Objective

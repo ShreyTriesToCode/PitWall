@@ -1,5 +1,7 @@
 # PitWall Model Experiments
 
+[Documentation index](docs/README.md)
+
 PitWall currently keeps lightweight experiment records as JSON rather than requiring MLflow or DVC at runtime.
 
 ## Current Artifacts

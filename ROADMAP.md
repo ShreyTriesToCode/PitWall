@@ -1,5 +1,7 @@
 # PitWall Roadmap
 
+[Documentation index](docs/README.md)
+
 ## Free Intelligence Follow-Ups
 
 - Expand local RAG snippets with fixture-tested citations from FIA text and model reports.

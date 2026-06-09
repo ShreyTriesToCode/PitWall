@@ -1,5 +1,7 @@
 # PitWall
 
+[Documentation index](docs/README.md)
+
 PitWall generates Formula 1 sprint and race predictions, publishes readable briefings, sends optional email/GitHub notifications, and serves a Next.js dashboard with an honest timing/replay view.
 
 The backend keeps a cache-first pipeline around Jolpica, official Formula 1 timing/static feeds, optional OpenF1 free historical timing, FastF1, Open-Meteo, FIA decision documents, Formula1.com calendar context, and local historical race caches.

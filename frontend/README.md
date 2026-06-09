@@ -1,5 +1,7 @@
 # Frontend
 
+[Documentation index](../docs/README.md)
+
 Next.js dashboard for PitWall.
 
 ## Pages

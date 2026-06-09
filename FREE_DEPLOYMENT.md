@@ -1,5 +1,7 @@
 # Free Deployment
 
+[Documentation index](docs/README.md)
+
 PitWall is designed to run without paid AI, paid databases, paid Redis, or paid model hosting.
 
 ## Architecture

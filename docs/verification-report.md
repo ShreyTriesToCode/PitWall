@@ -1,5 +1,7 @@
 # PitWall Verification Report
 
+[Documentation index](README.md)
+
 Generated on 2026-05-24.
 
 ## 2026-05-29 Free AI Intelligence Pass
