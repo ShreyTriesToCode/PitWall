@@ -7287,6 +7287,19 @@ def actual_result_from_race(race):
     return {"winner": rows[0] if rows else None, "classification": rows}
 
 
+def actual_result_from_cached_round(season, round_no, target_type="race"):
+    cached = read_full_race_cache(season, round_no)
+    data = (cached or {}).get("data") or {}
+    if str(target_type or "race").lower() == "sprint":
+        races = data.get("sprint") or []
+        if races:
+            race = {**races[0], "Results": races[0].get("SprintResults") or races[0].get("Results") or []}
+            return actual_result_from_race(race)
+        return None
+    races = data.get("results") or []
+    return actual_result_from_race(races[0]) if races else None
+
+
 def actual_result_comparison_for_entry(entry, full_grid=None):
     race_meta = {
         "race_id": entry.get("race_id"),
@@ -7295,7 +7308,11 @@ def actual_result_comparison_for_entry(entry, full_grid=None):
         "round": entry.get("round"),
         "stage": entry.get("stage") or entry.get("prediction_stage"),
     }
-    actual = entry.get("actual_result")
+    actual = entry.get("actual_result") or actual_result_from_cached_round(
+        entry.get("season"),
+        entry.get("round"),
+        entry.get("target_type") or "race",
+    )
     source_health = (entry.get("source_health") or {}).get("sources") if isinstance(entry.get("source_health"), dict) else []
     if not COMPARE_ACTUAL_RESULTS:
         return pitwall_default_actual_result_comparison(
@@ -8338,7 +8355,11 @@ def build_archive_contract(briefings):
     archive = []
     for entry in briefings:
         top = (entry.get("top10") or [{}])[0]
-        actual = entry.get("actual_result")
+        actual = entry.get("actual_result") or actual_result_from_cached_round(
+            entry.get("season"),
+            entry.get("round"),
+            entry.get("target_type") or "race",
+        )
         actual_winner = (actual or {}).get("winner") if isinstance(actual, dict) else None
         accuracy = None
         if actual_winner and top.get("driver_id"):

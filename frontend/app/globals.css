@@ -636,6 +636,7 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
 .status-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 30px;
   padding: 7px 10px;
   border: 1px solid var(--line);
@@ -644,6 +645,8 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   max-width: 100%;
   white-space: normal;
   overflow-wrap: anywhere;
+  text-align: center;
+  line-height: 1;
 }
 .status-badge.red { color: #fff; border-color: rgba(225,6,0,.55); background: rgba(225,6,0,.16); }
 .status-badge.green { color: #d8ffe8; border-color: rgba(71,239,218,.55); background: rgba(71,239,218,.10); }
@@ -720,6 +723,52 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   margin: 10px 0;
   align-items: start;
   grid-auto-flow: dense;
+}
+.archive-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+  gap: 14px;
+}
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+.archive-card .section-title {
+  align-items: flex-start;
+}
+.archive-card .section-title h2 {
+  line-height: 1.18;
+  max-width: 14ch;
+}
+.archive-card .status-badge {
+  flex: 0 0 auto;
+  min-width: 96px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.archive-card .metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.archive-card .metric {
+  padding: 12px;
+  min-height: 96px;
+}
+.archive-card .metric strong {
+  font-size: clamp(16px, 1.4vw, 20px);
+}
+.archive-card .panel-note {
+  margin: 0;
+}
+.archive-card .row-actions {
+  margin-top: auto;
+  gap: 8px;
+}
+.archive-card .row-actions .control-btn {
+  flex: 1 1 130px;
+  justify-content: center;
+  min-height: 42px;
+  padding-inline: 10px;
 }
 .scenario-card ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .scenario-card li { display: grid; grid-template-columns: 38px 1fr auto; gap: 8px; padding: 9px; border-bottom: 1px solid var(--line); }

@@ -629,6 +629,22 @@ class F1BriefingCoreTests(unittest.TestCase):
         corrections = json.loads(Path("data_cache/model_corrections.json").read_text(encoding="utf-8"))
         self.assertIn("corrections", corrections)
 
+    def test_actual_result_comparison_uses_cached_completed_race_results(self):
+        monaco_actual = f1.actual_result_from_cached_round(2026, 6, "race")
+        canada_actual = f1.actual_result_from_cached_round(2026, 5, "race")
+        self.assertEqual(monaco_actual["winner"]["driver_id"], "antonelli")
+        self.assertEqual(canada_actual["winner"]["driver_id"], "antonelli")
+        self.assertGreaterEqual(len(monaco_actual["classification"]), 20)
+        self.assertGreaterEqual(len(canada_actual["classification"]), 20)
+
+        comparison = f1.actual_result_comparison_for_entry(
+            {"season": 2026, "round": 6, "target_type": "race", "race_name": "Monaco Grand Prix"},
+            [{"driver_id": "antonelli", "name": "Andrea Kimi Antonelli", "rank": 1, "predicted_position": 1}],
+        )
+        self.assertEqual(comparison["status"], "available")
+        self.assertTrue(comparison["winner_hit"])
+        self.assertEqual(comparison["actual_winner"]["driver_id"], "antonelli")
+
     def test_generated_feature_store_exists(self):
         for name in ["race_features.json", "driver_features.json", "team_features.json", "session_features.json"]:
             path = Path("data_cache/features") / name

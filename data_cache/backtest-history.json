@@ -1,10 +1,10 @@
 {
   "schema_version": "2026.06-barcelona-preweekend-v6",
-  "generated_at": "2026-06-09T16:58:24.885121+05:30",
+  "generated_at": "2026-06-09T17:04:57.537030+05:30",
   "history": [
     {
       "race_id": "2026-7-barcelona-grand-prix",
-      "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-194c9ce95196",
+      "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-ffa4f8b77664",
       "race_name": "Barcelona Grand Prix",
       "season": 2026,
       "round": 7,
@@ -12,10 +12,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 19.2,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -28,10 +28,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -44,10 +44,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -60,10 +60,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -76,10 +76,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -92,10 +92,10 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -108,10 +108,10 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.2052993235145895,
-      "finish_position_rmse": 4.043832279635092,
-      "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "finish_position_mae": 3.203969666545212,
+      "finish_position_rmse": 4.045248746917019,
+      "winner_hit_rate": 0.3929,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     }
   ]

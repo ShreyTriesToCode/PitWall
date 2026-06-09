@@ -57,7 +57,7 @@ export default function ArchivePage() {
                   const actualComparison = comparisonForRow(row);
                   return (
                     <>
-                      <SectionTitle title={row.race_name || row.title} action={<StatusBadge label={actualComparison.status || row.stage} tone={actualComparison.status === "available" ? "green" : "red"} />} />
+                      <SectionTitle title={row.race_name || row.title} action={<StatusBadge label={actualStatusLabel(actualComparison.status || row.stage)} tone={actualStatusTone(actualComparison.status)} />} />
                       <div className="metric-grid">
                         <Metric label="Top Pick" value={row.top_pick || "Pending"} />
                         <Metric label="Confidence" value={formatPercentValue(row.confidence ?? row.top_pick_confidence)} />
@@ -133,6 +133,17 @@ function comparisonNote(comparison) {
     return `${winner} Position MAE: ${comparison.metrics?.mae ?? "pending"}.`;
   }
   return comparison?.warnings?.[0] || "Trusted actual classification is pending or unavailable.";
+}
+
+function actualStatusLabel(status) {
+  const text = String(status || "pending").replaceAll("_", " ");
+  return text.length > 14 ? text : text.toUpperCase();
+}
+
+function actualStatusTone(status) {
+  if (status === "available") return "green";
+  if (status === "failed" || status === "source_failed") return "red";
+  return "amber";
 }
 
 function formatRecall(value) {

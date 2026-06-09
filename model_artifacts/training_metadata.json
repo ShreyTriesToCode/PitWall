@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-barcelona-preweekend-v6",
-  "generated_at": "2026-06-08T23:25:50.716576+05:30",
+  "generated_at": "2026-06-09T17:04:56.915401+05:30",
   "trained_at": "2026-06-08T23:22:15.670935+05:30",
   "model_schema_version": "2026.06-barcelona-preweekend-v6",
   "ml_start_year": 2018,
@@ -77,7 +77,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-08T17:55:50.716487+00:00",
+      "checked_at": "2026-06-09T11:34:56.915268+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -97,7 +97,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-08T17:55:50.716541+00:00",
+      "checked_at": "2026-06-09T11:34:56.915349+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."

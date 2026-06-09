@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-08T17:55:50.019318+00:00",
+  "updated_at": "2026-06-09T11:34:56.878533+00:00",
   "entries": {
     "jolpica_full_race:2018:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
@@ -3292,7 +3292,7 @@
     "jolpica_full_race:2026:1": {
       "source": "Jolpica Ergast-compatible full race bundle",
       "file_path": "data_cache/full_races/2026-1.json.gz",
-      "last_checked_at": "2026-06-08T17:55:49.978494+00:00",
+      "last_checked_at": "2026-06-09T11:34:56.861465+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
         "season": 2026,
@@ -3311,7 +3311,7 @@
     "jolpica_full_race:2026:2": {
       "source": "Jolpica Ergast-compatible full race bundle",
       "file_path": "data_cache/full_races/2026-2.json.gz",
-      "last_checked_at": "2026-06-08T17:55:49.984807+00:00",
+      "last_checked_at": "2026-06-09T11:34:56.866204+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
         "season": 2026,
@@ -3330,7 +3330,7 @@
     "jolpica_full_race:2026:3": {
       "source": "Jolpica Ergast-compatible full race bundle",
       "file_path": "data_cache/full_races/2026-3.json.gz",
-      "last_checked_at": "2026-06-08T17:55:49.991129+00:00",
+      "last_checked_at": "2026-06-09T11:34:56.870105+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
         "season": 2026,
@@ -3349,7 +3349,7 @@
     "jolpica_full_race:2026:4": {
       "source": "Jolpica Ergast-compatible full race bundle",
       "file_path": "data_cache/full_races/2026-4.json.gz",
-      "last_checked_at": "2026-06-08T17:55:50.012700+00:00",
+      "last_checked_at": "2026-06-09T11:34:56.873660+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
         "season": 2026,
@@ -3368,7 +3368,7 @@
     "jolpica_full_race:2026:5": {
       "source": "Jolpica Ergast-compatible full race bundle",
       "file_path": "data_cache/full_races/2026-5.json.gz",
-      "last_checked_at": "2026-06-08T17:55:50.016289+00:00",
+      "last_checked_at": "2026-06-09T11:34:56.876113+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
         "season": 2026,
@@ -3387,7 +3387,7 @@
     "jolpica_full_race:2026:6": {
       "source": "Jolpica Ergast-compatible full race bundle",
       "file_path": "data_cache/full_races/2026-6.json.gz",
-      "last_checked_at": "2026-06-08T17:55:50.019273+00:00",
+      "last_checked_at": "2026-06-09T11:34:56.878493+00:00",
       "last_fetched_time": null,
       "data_coverage_range": {
         "season": 2026,
@@ -3396,8 +3396,8 @@
         "scheduled_at": "2026-06-07T18:30:00+05:30"
       },
       "schema_version": "2026.06-barcelona-preweekend-v6",
-      "checksum": "c2606735acbb65f694a89cf6ac2ca164e7c07a052df0665a7a54946cd66ad466",
-      "file_size": 11707,
+      "checksum": "c32dafa376a0ee0eea88b31df25a24d656343a14b9d5828b28df965740588f48",
+      "file_size": 11761,
       "freshness_status": "final_results_available",
       "latest_run_action": "reused",
       "reason": "cache_valid",

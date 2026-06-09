@@ -109,6 +109,7 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  PYTHONUNBUFFERED: "1"
 
 jobs:
   generate:
@@ -310,7 +311,7 @@ jobs:
           # If f1_briefing.py supports this flag, it prevents the script from pushing by itself.
           # The workflow commit step below is the source of truth.
           AUTO_COMMIT_ENABLED: "false"
-        run: python f1_briefing.py
+        run: python -u f1_briefing.py
 
       - name: Validate generated frontend contracts
         run: |
