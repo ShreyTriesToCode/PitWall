@@ -1,9 +1,9 @@
 # PitWall Run Status
 
-Generated: Wednesday, 10 June 2026, 01:21 PM IST
+Generated: Wednesday, 10 June 2026, 02:38 PM IST
 
-Status: Skipped
+Status: Success
 
 ## Details
 
-No Sprint/Race output target selected.\n\nOutput mode: today\nReason: Manual runs use weekend mode; scheduled runs use today mode. Practice, Qualifying, and Sprint Qualifying are ignored as direct outputs.
+Generated Sprint/Race-only F1 briefing.\n\nOutput mode: weekend\nTargets: race=F1 Barcelona Catalunya GP - Race\nBackfill used this run: 0\nErrors: None

@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-7-barcelona-grand-prix",
-    "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-d6d49ee0f4ea",
+    "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-ccaad7095f2d",
     "season": 2026,
     "round": 7,
     "circuit": "Circuit de Barcelona-Catalunya",
@@ -13,16 +13,16 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "27.1°C",
+      "temperature": "28.1°C",
       "rain": "0%",
-      "humidity": "53%",
-      "wind": "14.2 km/h",
-      "wind_gust": "30.6 km/h",
-      "cloud_cover": "0%",
+      "humidity": "43%",
+      "wind": "13.7 km/h",
+      "wind_gust": "31.3 km/h",
+      "cloud_cover": "67%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 0,
-      "wind_score": 79.56,
+      "wind_score": 81.38000000000001,
       "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
     },
     "strategy": {
@@ -85,35 +85,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 70.88,
+          "scenario_score": 73.23,
           "rank": 1
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 70.37,
+          "scenario_score": 72.31,
           "rank": 2
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 70.26,
+          "scenario_score": 72.28,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 70.19,
+          "scenario_score": 72.12,
           "rank": 4
         },
         {
-          "driver_id": "perez",
-          "name": "Sergio Pérez",
-          "team": "Cadillac",
-          "scenario_score": 65.09,
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 66.6,
           "rank": 5
         }
       ],
@@ -122,46 +122,46 @@
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 72.81,
+          "scenario_score": 75.31,
           "rank": 1
-        },
-        {
-          "driver_id": "max_verstappen",
-          "name": "Max Verstappen",
-          "team": "Red Bull",
-          "scenario_score": 70.07,
-          "rank": 2
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 69.66,
+          "scenario_score": 73.66,
+          "rank": 2
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 73.07,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 67.81,
+          "scenario_score": 70.7,
           "rank": 4
         },
         {
-          "driver_id": "lawson",
-          "name": "Liam Lawson",
-          "team": "RB F1 Team",
-          "scenario_score": 67.49,
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 70.35,
           "rank": 5
         }
       ],
       "active_aero": {
         "straight_mode": "low-drag straight configuration",
         "corner_mode": "high-downforce corner configuration",
-        "average_suitability": 61.49
+        "average_suitability": 63.59
       },
       "energy_deployment": {
         "title": "2026 Boost / Overtake Mode Intelligence",
-        "average_boost_advantage": 58.44,
+        "average_boost_advantage": 65.56,
         "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
       },
       "decision_log": [
