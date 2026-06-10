@@ -42,7 +42,7 @@ export default function HomePage() {
       {latest && (
         <>
           <RaceHero latest={latest} />
-          <section className="dashboard-grid">
+          <section className="dashboard-grid compact-dashboard">
             <div className="panel reveal">
               <SectionTitle icon={Icons.Sparkles} title="Race Intelligence Summary" action={<StatusBadge label={(data.ai_features || latest.ai_features)?.provider || "deterministic"} tone="green" />} />
               <p className="panel-note">{(data.race_intelligence_summary || latest.race_intelligence_summary)?.headline || "Race intelligence summary pending."}</p>
@@ -70,7 +70,7 @@ export default function HomePage() {
               ]} />
             </div>
           </section>
-          <section className="dashboard-grid">
+          <section className="dashboard-grid compact-dashboard">
             <div className="panel reveal">
               <SectionTitle icon={Icons.Trophy} title="Top 3 Prediction Preview" action={<StatusBadge label={latest.prediction_stage || latest.stage} tone="red" />} />
               <div className="podium-list">
@@ -114,14 +114,10 @@ export default function HomePage() {
 
           <ScenarioCards scenarios={Object.fromEntries(Object.entries(latest.scenarios || {}).slice(0, 3))} />
 
-          <footer className="home-footer reveal">
-            <span className="eyebrow">How PitWall Works</span>
-            <h2>From race data to readable predictions</h2>
-            <p>
-              PitWall checks race data, timing data, weather, model history, source health, and post-race results.
-              It creates predictions, shows confidence, explains each ranking, and updates after new race data arrives.
-            </p>
-            <div className="metric-grid">
+          <details className="home-footer reveal compact-details">
+            <summary>How PitWall Works</summary>
+            <p>PitWall checks structured race, timing, weather, model-history, source-health, and post-race result data. Predictions are probabilistic and update when trusted source data changes.</p>
+            <div className="metric-grid compact">
               <Metric label="Model Version" value={latest.model_version} />
               <Metric label="Circuit" value={latest.circuit} />
               <Metric label="Source State" value={(latest.source_health || latest.source_status)?.status || "Pending"} />
@@ -129,7 +125,7 @@ export default function HomePage() {
               <Metric label="Timing Mode" value={latest.timing_mode || "unavailable"} />
               <Metric label="FIA Docs" value={latest.fia_source_discovery_status || "pending"} />
             </div>
-          </footer>
+          </details>
         </>
       )}
     </AppShell>

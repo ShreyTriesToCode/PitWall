@@ -5,6 +5,7 @@ import {
   AnimatedTicker,
   AppShell,
   CopySummaryButton,
+  DeveloperOnlyPanel,
   DriverExplainabilityDrawer,
   EmptyState,
   InlineNotice,
@@ -19,6 +20,7 @@ import {
   SectionTitle,
   StatusBadge,
   useFilteredDrivers,
+  useDeveloperMode,
   usePitWallData,
 } from "../components/PitWallComponents";
 
@@ -31,6 +33,7 @@ export default function PredictionsPage() {
   const [requestedTarget, setRequestedTarget] = useState("race");
   const [compareA, setCompareA] = useState("");
   const [compareB, setCompareB] = useState("");
+  const [developerMode, toggleDeveloperMode] = useDeveloperMode();
   const latest = data?.latest;
   const generatedTargets = data?.generated_targets || [];
   useEffect(() => {
@@ -94,6 +97,8 @@ export default function PredictionsPage() {
     const top = top10Rows.slice(0, 3).map((p) => `P${p.rank} ${p.name} (${p.team})`).join(", ");
     return `${selectedPayload?.title || selectedPayload?.race_name || "PitWall"}: ${top || "No prediction rows available"}. Stage: ${selectedPayload?.stage || "pending"}.`;
   }, [top10Rows, selectedPayload]);
+  const trustScore = Number(data?.event_trust_score ?? latest?.event_trust_score ?? latest?.prediction_trust_score);
+  const lowTrust = Number.isFinite(trustScore) && trustScore < 50;
 
   useEffect(() => {
     if (!predictions.length) {
@@ -132,28 +137,26 @@ export default function PredictionsPage() {
             <TargetTabs active={effectiveTargetType} available={generatedTargetTypes} onSelect={selectTarget} />
             <button className={view === "table" ? "control-btn active" : "control-btn"} onClick={() => setView("table")} disabled={!predictions.length}>Table</button>
             <button className={view === "cards" ? "control-btn active" : "control-btn"} onClick={() => setView("cards")} disabled={!predictions.length}>Cards</button>
-            {["simple", "expert", "debug"].map((mode) => <button className={detailMode === mode ? "control-btn active" : "control-btn"} onClick={() => setDetailMode(mode)} type="button" key={mode}>{mode[0].toUpperCase() + mode.slice(1)}</button>)}
+            {["simple", "expert"].map((mode) => <button className={detailMode === mode ? "control-btn active" : "control-btn"} onClick={() => setDetailMode(mode)} type="button" key={mode}>{mode[0].toUpperCase() + mode.slice(1)}</button>)}
+            <button className={developerMode ? "control-btn active" : "control-btn ghost"} onClick={toggleDeveloperMode} type="button">Developer Mode</button>
             <button className="control-btn" onClick={refetch} disabled={refreshing}>{refreshing ? "Refreshing" : "Refresh data"}</button>
             <StatusBadge label={targetPending ? `${effectiveTargetType} pending` : selectedTarget?.stage || latest.stage} tone="red" />
           </section>
-          <section className="panel reveal prediction-overview">
+          {lowTrust && <InlineNotice title="Low trust prediction" body="The top prediction is shown because it is the current model output, but source coverage or model agreement is below the normal confidence threshold." tone="warning" />}
+          <section className="panel reveal prediction-overview compact-overview">
             <SectionTitle title="Race Overview" />
-            <div className="metric-grid">
-              <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
-              <Metric label="Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
+            <div className="metric-grid compact">
+              <Metric label="Prediction Target" value={targetPending ? requestedTarget : selectedPayload.target_type || latest.target_type} />
+              <Metric label="Selected Race" value={selectedPayload.race_name || latest.race_name || "Pending"} />
               <Metric label="Model Agreement Leader" value={pct(predictions[0]?.model_agreement_score)} />
               <Metric label="Event Trust" value={pct(selectedPayload.prediction_trust_score ?? latest.prediction_trust_score)} />
-              <Metric label="High Disagreements" value={selectedPayload.confidence_breakdown?.high_disagreement_count ?? latest.confidence_breakdown?.high_disagreement_count ?? "Pending"} />
-              <Metric label="Dark Horse" value={predictions.find((p) => p.dark_horse_flag)?.name || "Not flagged"} />
+              <Metric label="High Disagreements" value={`${selectedPayload.confidence_breakdown?.high_disagreement_count ?? latest.confidence_breakdown?.high_disagreement_count ?? 0} drivers`} />
               <Metric label="Stage" value={selectedPayload.prediction_stage || selectedPayload.stage || latest.prediction_stage || "pending"} />
-              <Metric label="Avg Uncertainty" value={pct(selectedPayload.confidence_breakdown?.average_uncertainty ?? latest.confidence_breakdown?.average_uncertainty)} />
-              <Metric label="Safety Car Risk" value={pct(selectedPayload.race_factors?.safety_car_probability ?? latest.race_factors?.safety_car_probability)} />
-              <Metric label="Rain Impact" value={selectedPayload.race_factors?.rain_impact || latest.race_factors?.rain_impact || "Pending"} />
-              <Metric label="FIA Documents" value={selectedPayload.fia_document_count ?? latest.fia_document_count ?? 0} />
               <Metric label="Timing Mode" value={selectedPayload.timing_mode || latest.timing_mode || "unavailable"} />
             </div>
+            <p className="metric-help">Score ranks the model output, confidence estimates row certainty, trust reflects source/model agreement, and disagreement flags when model components pull in different directions.</p>
           </section>
-          <section className="dashboard-grid">
+          <section className="dashboard-grid compact-dashboard">
             <div className="panel reveal">
               <SectionTitle title="AI-Style Race Summary" />
               <p className="panel-note">{(selectedPayload.race_intelligence_summary || latest.race_intelligence_summary || data.race_intelligence_summary)?.headline || "Deterministic race summary pending."}</p>
@@ -172,32 +175,32 @@ export default function PredictionsPage() {
                 <Metric label="Free mode" value={(data.ai_features || latest.ai_features)?.free_mode === false ? "Off" : "On"} />
               </div>
             </div>
-            <div className="panel reveal">
-              <SectionTitle title="What Changed" />
-              <p className="panel-note">{(data.changed_since_last_run || selectedPayload.changed_since_last_run || latest.changed_since_last_run || latest.change_summary)?.summary || "No previous valid contract available."}</p>
-            </div>
           </section>
           {!predictions.length && <EmptyState title={targetPending ? `${requestedTarget} prediction pending` : "No prediction rows match"} body={targetPending ? "That target has not been generated yet. The next backend run will expose it when the data exists." : "Clear the search or try another driver/team."} />}
-          {top10Rows.length > 0 && (
-            <section className="panel reveal prediction-section">
-              <SectionTitle title="Top 10 Prediction" action={<StatusBadge label={`${top10Rows.length} drivers`} tone="green" />} />
-              <div className="card-grid top10-grid">
-                {top10Rows.slice(0, 10).map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact={detailMode === "simple"} />)}
-              </div>
-            </section>
-          )}
           {fullGridRows.length > 0 && (
             <section className="panel reveal prediction-section">
-              <SectionTitle title="Full Grid Prediction" action={<StatusBadge label={`${fullGridRows.length} drivers`} tone="red" />} />
+              <SectionTitle title="Full Grid Prediction" action={<StatusBadge label={`${fullGridRows.length} drivers`} tone="green" />} />
               {view === "table"
                 ? <PredictionTable predictions={fullGridRows} onOpen={setSelected} />
                 : <div className="card-grid">{fullGridRows.map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact={detailMode === "simple"} />)}</div>}
             </section>
           )}
-          {detailMode === "debug" && predictions.length > 0 && (
-            <section className="panel reveal">
-              <SectionTitle title="Debug Contract Signals" />
-              <div className="metric-grid">
+          {top10Rows.length > 0 && (
+            <section className="panel reveal prediction-section">
+              <SectionTitle title="Top 10 Prediction" action={<StatusBadge label={`${top10Rows.length} drivers`} tone="green" />} />
+              <div className="card-grid top10-grid compact-top">
+                {top10Rows.slice(0, 3).map((item) => <PredictionCard item={item} key={item.driver_id} onOpen={setSelected} compact />)}
+              </div>
+              <div className="podium-list compact top10-list">
+                {top10Rows.slice(3, 10).map((item) => <article key={`top10-${item.driver_id}`}><span>P{item.rank}</span><strong>{item.name}</strong><small>{item.team} · {pct(item.top10_probability)} top-10 probability</small></article>)}
+              </div>
+            </section>
+          )}
+          <DeveloperOnlyPanel enabled={developerMode} toggle={toggleDeveloperMode} title="Developer Contract Signals">
+            {predictions.length > 0 && (
+              <>
+                <div className="metric-grid compact">
+                  <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
                 <Metric label="Contract schema" value={data.schema_version} />
                 <Metric label="Prediction data" value={data.prediction_data_version} />
                 <Metric label="Recovered from debug" value={data.contract_recovered_from_debug ? "Yes" : "No"} />
@@ -206,8 +209,9 @@ export default function PredictionsPage() {
               <div className="podium-list">
                 {predictions.slice(0, 5).map((p) => <article key={`debug-${p.driver_id}`}><span>P{p.rank}</span><strong>{p.name}</strong><small>{(p.missing_feature_groups || []).length} missing · {(p.source_warnings || []).length} source warnings · {p.model_disagreement_level || "low"} disagreement</small></article>)}
               </div>
-            </section>
-          )}
+              </>
+            )}
+          </DeveloperOnlyPanel>
           {predictions.length > 1 && <DriverComparePanel predictions={predictions} aId={compareA} bId={compareB} onA={setCompareA} onB={setCompareB} />}
           {predictions.length > 0 && <section className="dashboard-grid">
             <div className="panel reveal">

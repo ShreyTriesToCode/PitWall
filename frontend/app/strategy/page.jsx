@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Metric, PageHeader, RaceControlTimeline, ScenarioCards, SectionTitle, StrategyPanel, usePitWallData } from "../components/PitWallComponents";
+import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Metric, PageHeader, RaceControlTimeline, ScenarioCards, SectionTitle, StatusBadge, StrategyPanel, usePitWallData } from "../components/PitWallComponents";
 
 export default function StrategyLabPage() {
   const { loading, data, error, warning, refetch, refreshing } = usePitWallData("/api/predictions");
@@ -10,6 +10,15 @@ export default function StrategyLabPage() {
   const [deg, setDeg] = useState(55);
   const [temp, setTemp] = useState(32);
   const strategy = data?.latest?.strategy || {};
+  const rainRisk = data?.latest?.weather?.rain || data?.latest?.race_factors?.rain_impact;
+  const rainUnavailable = !rainRisk || String(rainRisk).toLowerCase().includes("unavailable");
+  const scenarios = { ...(data?.latest?.scenarios || {}) };
+  if (rainUnavailable && scenarios.rain) {
+    scenarios.rain = {
+      ...scenarios.rain,
+      notes: `${scenarios.rain.notes || "Rain scenario uses weather adaptation and reliability component scores."} Live rain-risk source is unavailable, so this is a simulated sensitivity view, not official weather output.`,
+    };
+  }
   const visualOutput = Math.round((Number(rain) * 0.25) + (Number(safety) * 0.25) + (Number(deg) * 0.30) + (Number(temp) * 0.20));
   return (
     <AppShell active="/strategy">
@@ -20,11 +29,12 @@ export default function StrategyLabPage() {
       {warning && <InlineNotice title="Fallback strategy data" body={warning} tone="warning" />}
       {data?.latest && (
         <>
-          <section className="toolbar panel reveal">
+          <section className="toolbar panel compact-toolbar reveal">
             <button className="control-btn" onClick={refetch} disabled={refreshing}>{refreshing ? "Refreshing" : "Refresh strategy data"}</button>
             <button className="control-btn" onClick={() => { setRain(40); setSafety(45); setDeg(55); setTemp(32); }}>Reset simulator</button>
+            <StatusBadge label="scenario output simulated" tone="amber" />
           </section>
-          <section className="dashboard-grid">
+          <section className="dashboard-grid compact-dashboard">
             <StrategyPanel strategy={strategy} />
             <section className="panel reveal">
               <SectionTitle title="PitWall Decision Log" />
@@ -53,7 +63,8 @@ export default function StrategyLabPage() {
               <p>This simulator output is a visual scenario aid, not an official final model output.</p>
             </section>
           </section>
-          <ScenarioCards scenarios={data.latest.scenarios} />
+          {rainUnavailable && <InlineNotice title="Rain scenario is simulated" body="Rain risk is unavailable from trusted live weather data, so rain rankings are generated from model component sensitivities and labelled as simulated." tone="warning" />}
+          {Object.keys(scenarios).length ? <ScenarioCards scenarios={scenarios} /> : <EmptyState title="No scenario rankings" body="Scenario output appears when the generated prediction contract includes ranked scenario rows." />}
         </>
       )}
     </AppShell>

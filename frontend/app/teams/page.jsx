@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Metric, normalizeQuery, PageHeader, SearchBox, SectionTitle, TagRow, usePitWallData } from "../components/PitWallComponents";
+import { AnimatedTicker, AppShell, CompactTable, EmptyState, InlineNotice, LoadingSkeleton, Metric, normalizeQuery, PageHeader, SearchBox, SectionCard, StatusBadge, TagRow, usePitWallData } from "../components/PitWallComponents";
 
 const fallbackConstructors = [
   "Mercedes",
@@ -75,6 +75,7 @@ function formatMetric(value, suffix = "") {
 export default function TeamAnalysisPage() {
   const { loading, data, error, warning, refetch, refreshing } = usePitWallData("/api/predictions");
   const [query, setQuery] = useState("");
+  const [selectedTeam, setSelectedTeam] = useState("");
   const teams = useMemo(() => {
     const latest = data?.latest || {};
     const predictionRows = data?.full_grid || data?.all_predictions || latest.full_grid || latest.all_predictions || data?.top10 || [];
@@ -120,6 +121,16 @@ export default function TeamAnalysisPage() {
       return scoreB - scoreA || b.scenarioMentions - a.scenarioMentions || a.team.localeCompare(b.team);
     });
   }, [data, query]);
+  const activeTeam = teams.find((team) => team.team === selectedTeam) || teams[0];
+  const columns = [
+    { header: "Team", render: (team) => <><strong>{team.team}</strong><small>{team.drivers.map((driver) => driver.name).join(" / ") || "Driver rows pending"}</small></> },
+    { header: "Expected Points", render: (team) => formatMetric(team.expected) },
+    { header: "Team Score", render: (team) => formatMetric(team.score) },
+    { header: "Pit Execution", render: (team) => formatMetric(team.pit, "%") },
+    { header: "Active Aero", render: (team) => formatMetric(team.aero, "%") },
+    { header: "Energy Deployment", render: (team) => formatMetric(team.boost, "%") },
+    { header: "Top-10 Safety", render: (team) => formatMetric(team.top10Safety, "%") },
+  ];
   return (
     <AppShell active="/teams">
       <AnimatedTicker latest={data?.latest} />
@@ -129,49 +140,46 @@ export default function TeamAnalysisPage() {
       {warning && <InlineNotice title="Fallback team data" body={warning} tone="warning" />}
       {data?.latest && (
         <>
-          <section className="toolbar panel reveal">
+          <section className="toolbar panel compact-toolbar reveal">
             <SearchBox value={query} onChange={setQuery} placeholder="Search constructors" />
             <button className="control-btn" onClick={refetch} disabled={refreshing}>{refreshing ? "Refreshing" : "Refresh data"}</button>
           </section>
-          <div className="team-grid">
-            {teams.map((team) => (
-              <section className="panel team-card reveal" key={team.team}>
-                <SectionTitle title={team.team} />
-                <div className="metric-grid">
-                  <Metric label="Expected Points" value={formatMetric(team.expected)} />
-                  <Metric label="Team Score" value={formatMetric(team.score)} />
-                  <Metric label="Pit Execution" value={formatMetric(team.pit, "%")} />
-                  <Metric label="Active Aero" value={formatMetric(team.aero, "%")} />
-                  <Metric label="Energy Deployment" value={formatMetric(team.boost, "%")} />
-                  <Metric label="Top-10 Safety" value={formatMetric(team.top10Safety, "%")} />
-                  <Metric label="Tyre Management" value={data.latest.strategy?.tyre_degradation_model?.label || "Pending"} />
-                </div>
-                <div className="constructor-battle">
-                  {team.drivers.length ? team.drivers.map((driver) => (
-                    <article key={driver.driver_id}>
-                      <strong>{driver.name}</strong>
-                      <span>P{driver.rank}</span>
-                      <small>{driver.teammate_prediction_gap ?? "No teammate gap"} score gap</small>
-                    </article>
-                  )) : (
-                    <article>
-                      <strong>Full constructor listed</strong>
-                      <span>Pending driver row</span>
-                      <small>No top-10 prediction row for this team in the current generated contract.</small>
-                    </article>
-                  )}
-                </div>
-                <TagRow tags={[
-                  team.hasPredictionRows ? "prediction evidence available" : "not enough driver evidence yet",
-                  team.scenarioMentions ? `${team.scenarioMentions} scenario mentions` : "scenario watchlist pending",
-                  "strategy risk ranking",
-                  "reliability threat board",
-                  "track fit",
-                  "weather fit",
-                ]} />
-              </section>
-            ))}
-          </div>
+          <SectionCard title="Constructor Comparison" action={<StatusBadge label={`${teams.length} constructors`} tone="green" />}>
+            <CompactTable columns={columns} rows={teams} getKey={(team) => team.team} onRow={(team) => setSelectedTeam(team.team)} emptyTitle="No constructor matches" emptyBody="Clear the search or try a team or driver name from the current prediction board." />
+          </SectionCard>
+          {activeTeam && (
+            <SectionCard title={`${activeTeam.team} Details`} action={<StatusBadge label={activeTeam.hasPredictionRows ? "prediction evidence" : "limited evidence"} tone={activeTeam.hasPredictionRows ? "green" : "amber"} />}>
+              <div className="metric-grid compact">
+                <Metric label="Expected Points" value={formatMetric(activeTeam.expected)} />
+                <Metric label="Team Score" value={formatMetric(activeTeam.score)} />
+                <Metric label="Pit Execution" value={formatMetric(activeTeam.pit, "%")} />
+                <Metric label="Active Aero" value={formatMetric(activeTeam.aero, "%")} />
+                <Metric label="Energy Deployment" value={formatMetric(activeTeam.boost, "%")} />
+                <Metric label="Top-10 Safety" value={formatMetric(activeTeam.top10Safety, "%")} />
+                <Metric label="Tyre Management" value={data.latest.strategy?.tyre_degradation_model?.label || "Pending"} />
+              </div>
+              <div className="constructor-battle compact">
+                {activeTeam.drivers.length ? activeTeam.drivers.map((driver) => (
+                  <article key={driver.driver_id}>
+                    <strong>{driver.name}</strong>
+                    <span>P{driver.rank}</span>
+                    <small>{driver.teammate_prediction_gap ?? "No teammate gap"} score gap</small>
+                  </article>
+                )) : (
+                  <article>
+                    <strong>Full constructor listed</strong>
+                    <span>Pending driver row</span>
+                    <small>No prediction row for this team in the current generated contract.</small>
+                  </article>
+                )}
+              </div>
+              <TagRow tags={[
+                activeTeam.hasPredictionRows ? "prediction evidence available" : "not enough driver evidence yet",
+                activeTeam.scenarioMentions ? `${activeTeam.scenarioMentions} scenario mentions` : "scenario watchlist pending",
+                "constructor aliases normalized",
+              ]} />
+            </SectionCard>
+          )}
           {!teams.length && <EmptyState title="No constructor matches" body="Clear the search or try a team or driver name from the current prediction board." />}
         </>
       )}

@@ -39,7 +39,7 @@ export const navItems = [
   { href: "/strategy", label: "Strategy Wall", icon: SlidersHorizontal },
   { href: "/live", label: "Timing Replay", icon: Radio },
   { href: "/sources", label: "Source Health", icon: Activity },
-  { href: "/model", label: "System Config", icon: Bot },
+  { href: "/model", label: "Model Center", icon: Bot },
   { href: "/archive", label: "Archive", icon: Archive },
 ];
 
@@ -139,6 +139,62 @@ export function pct(value) {
 
 export function stageLabel(value) {
   return String(value || "pending").replaceAll("_", " ").replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+export function hasUsefulValue(value) {
+  if (value === null || value === undefined) return false;
+  if (typeof value === "number") return Number.isFinite(value);
+  if (typeof value === "boolean") return true;
+  if (Array.isArray(value)) return value.some(hasUsefulValue);
+  if (typeof value === "object") return Object.values(value).some(hasUsefulValue);
+  const text = String(value).trim().toLowerCase();
+  return Boolean(text) && !["-", "n/a", "na", "null", "undefined", "pending", "unavailable", "not enough data"].includes(text);
+}
+
+export function missingRatio(rows = [], keys = []) {
+  const rowList = Array.isArray(rows) ? rows : [];
+  const keyList = Array.isArray(keys) ? keys : [];
+  const total = rowList.length * keyList.length;
+  if (!total) return 1;
+  const missing = rowList.reduce((sum, row) => sum + keyList.filter((key) => !hasUsefulValue(row?.[key])).length, 0);
+  return missing / total;
+}
+
+export function actualResultAvailable(comparison = {}) {
+  return comparison?.status === "available" && hasUsefulValue(comparison?.actual_winner?.name || comparison?.actual_winner);
+}
+
+export function validAudioDuration(item = {}) {
+  const raw = item.duration ?? item.duration_seconds ?? item.Duration ?? item.clip_duration ?? item.length;
+  if (raw === null || raw === undefined || raw === "") return false;
+  if (typeof raw === "number") return raw > 0;
+  const text = String(raw).trim().toLowerCase();
+  if (!text || text === "0" || text === "0:00" || text === "00:00" || text === "0:00/0:00") return false;
+  const numeric = Number(text);
+  if (Number.isFinite(numeric)) return numeric > 0;
+  return /\d/.test(text);
+}
+
+export function useDeveloperMode() {
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const envEnabled = process.env.NEXT_PUBLIC_PITWALL_DEVELOPER_MODE === "true";
+    try {
+      setEnabled(envEnabled || localStorage.getItem("pitwall-dev-mode") === "true");
+    } catch {
+      setEnabled(envEnabled);
+    }
+  }, []);
+  const toggle = () => {
+    setEnabled((current) => {
+      const next = !current;
+      try {
+        localStorage.setItem("pitwall-dev-mode", next ? "true" : "false");
+      } catch {}
+      return next;
+    });
+  };
+  return [enabled, toggle];
 }
 
 function friendlyFetchError(error, timedOut = false) {
@@ -289,7 +345,7 @@ export function MobileBottomNav({ active }) {
         return (
           <Link className={cx(active === item.href && "active")} href={item.href} key={item.href}>
             <Icon size={19} />
-            <span>{item.label.replace("Command Center", "Command").replace("Prediction Board", "Predict").replace("Timing Replay", "Timing").replace("System Config", "Model").replace("Strategy Wall", "Strategy")}</span>
+            <span>{item.label.replace("Command Center", "Command").replace("Prediction Board", "Predict").replace("Timing Replay", "Timing").replace("Model Center", "Model").replace("Strategy Wall", "Strategy")}</span>
           </Link>
         );
       })}
@@ -314,19 +370,17 @@ export function AnimatedTicker({ latest }) {
   const top = latest?.top10?.[0];
   const source = latest?.source_health || latest?.source_status;
   const items = [
-    `Current race: ${latest?.race_name || latest?.event_title || "Waiting for briefing"}`,
-    `Next session: ${latest?.target_type || "race"}`,
-    `Top prediction: ${top?.name || "Pending"}`,
-    `Rain risk: ${latest?.weather?.rain || "Not enough data"}`,
-    `Safety-car risk: ${latest?.safety_car || "Pending"}`,
-    `Model: ${latest?.model_version || "Unavailable"}`,
-    `Sources: ${source?.status || "Checking"}`,
-    `Updated: ${latest?.generated || latest?.generated_iso || "Pending"}`,
+    ["Current Race", latest?.race_name || latest?.event_title || "Waiting for briefing"],
+    ["Prediction Target", stageLabel(latest?.target_type || "race")],
+    ["Top Prediction", top?.name || "Pending"],
+    ["Model Version", latest?.model_version || "Unavailable"],
+    ["Source State", source?.status || "Checking"],
+    ["Updated", latest?.generated || latest?.generated_iso || "Pending"],
   ];
   return (
     <section className="ticker" aria-label="Race control ticker">
-      <div className="ticker-track">
-        {[...items, ...items].map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
+      <div className="ticker-track compact">
+        {items.map(([label, value]) => <span key={label}><b>{label}:</b> {value}</span>)}
       </div>
     </section>
   );
@@ -476,6 +530,10 @@ export function StatusBadge({ label, tone = "neutral" }) {
   return <span className={cx("status-badge", tone)}>{label}</span>;
 }
 
+export function DataStateBadge({ status, label, score }) {
+  return <StatusBadge label={label || status || "Pending"} tone={statusTone(status, score)} />;
+}
+
 export function statusTone(status, score) {
   const text = String(status || "").toLowerCase();
   if (["available", "healthy", "fresh", "ok", "success"].some((word) => text.includes(word))) return "green";
@@ -524,6 +582,16 @@ export function SourceHealthCard({ health }) {
           </div>
         )) : <EmptyState title="Source data unavailable" body="The UI is waiting for generated source-health JSON." />}
       </div>
+    </section>
+  );
+}
+
+export function SectionCard({ title, icon, action, children, className = "", show = true, emptyTitle, emptyBody }) {
+  if (!show) return emptyTitle ? <EmptyState title={emptyTitle} body={emptyBody} /> : null;
+  return (
+    <section className={cx("panel section-card reveal", className)}>
+      {title && <SectionTitle icon={icon} title={title} action={action} />}
+      {children}
     </section>
   );
 }
@@ -828,15 +896,16 @@ export function StrategyPanel({ strategy }) {
 }
 
 export function ScenarioCards({ scenarios = {} }) {
+  const entries = Object.entries(scenarios || {}).filter(([, scenario]) => Array.isArray(scenario?.top10) && scenario.top10.length);
   return (
     <section className="scenario-grid">
-      {Object.entries(scenarios).map(([key, scenario]) => (
+      {entries.map(([key, scenario]) => (
         <article className="panel scenario-card reveal" key={key}>
-          <SectionTitle icon={Sparkles} title={scenario.label || stageLabel(key)} />
+          <SectionTitle icon={Sparkles} title={scenario.label || stageLabel(key)} action={<StatusBadge label="simulated" tone="amber" />} />
           <ol>
             {(scenario.top10 || []).slice(0, 5).map((row) => <li key={`${key}-${row.driver_id}`}><span>P{row.rank}</span><strong>{row.name}</strong><small>{fmt(row.scenario_score)}</small></li>)}
           </ol>
-          <p>{scenario.notes}</p>
+          <p>{scenario.notes || "Scenario ranking is simulated from model component scores and is not the official final prediction order."}</p>
         </article>
       ))}
     </section>
@@ -845,6 +914,62 @@ export function ScenarioCards({ scenarios = {} }) {
 
 export function ModelMetricCard({ label, value, icon: Icon = BarChart3 }) {
   return <article className="metric-card reveal"><Icon size={18} /><span>{label}</span><strong>{value ?? "Pending"}</strong></article>;
+}
+
+export function MetricCard({ label, value, helper, tone = "" }) {
+  return (
+    <article className={cx("metric-card compact-card", tone)}>
+      <span>{label}</span>
+      <strong>{value ?? "Pending"}</strong>
+      {helper && <small>{helper}</small>}
+    </article>
+  );
+}
+
+export function CompactTable({ columns = [], rows = [], getKey, onRow, emptyTitle = "No rows", emptyBody = "Nothing matches the current filters." }) {
+  if (!rows.length) return <EmptyState title={emptyTitle} body={emptyBody} />;
+  return (
+    <div className="table-wrap compact-table-wrap">
+      <table className="data-table compact-table">
+        <thead>
+          <tr>{columns.map((column) => <th key={column.key || column.header}>{column.header}</th>)}</tr>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr
+              key={getKey?.(row, index) || row.id || row.driver_id || row.team || index}
+              onClick={onRow ? () => onRow(row) : undefined}
+              className={onRow ? "clickable-row" : ""}
+            >
+              {columns.map((column) => <td key={column.key || column.header}>{column.render ? column.render(row, index) : row[column.key]}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function DeveloperOnlyPanel({ enabled, title = "Developer details", children, toggle }) {
+  if (!enabled) {
+    return toggle ? (
+      <div className="developer-toggle-row">
+        <button className="control-btn ghost" type="button" onClick={toggle}>Developer Mode</button>
+      </div>
+    ) : null;
+  }
+  return (
+    <section className="panel developer-panel reveal">
+      <SectionTitle title={title} action={toggle && <button className="control-btn active" type="button" onClick={toggle}>Developer Mode on</button>} />
+      {children}
+    </section>
+  );
+}
+
+export function DataAvailabilityWrapper({ available, title, body, children, hideWhenEmpty = false }) {
+  if (available) return children;
+  if (hideWhenEmpty) return null;
+  return <EmptyState title={title || "Data unavailable"} body={body || "This section is hidden until useful source data exists."} />;
 }
 
 export function RaceControlTimeline({ items = [] }) {

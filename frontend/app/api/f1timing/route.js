@@ -1472,7 +1472,7 @@ export async function GET(request) {
     normalized.radio = normalizeOpenF1TeamRadio(openf1Radio.rows, drivers);
   }
 
-  const hasUsefulF1Data = leaderboard.length > 0 || normalized.weather || normalized.raceControl.length > 0;
+  const hasUsefulF1Data = leaderboard.length > 0;
   const lifecycle = sessionLifecycle(selected, hasUsefulF1Data);
   if (!hasUsefulF1Data && !jolpicaFallback) {
     jolpicaFallback = await fetchJolpicaFallback();

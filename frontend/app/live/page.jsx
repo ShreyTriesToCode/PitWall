@@ -26,7 +26,7 @@ import {
   Trophy,
   Waves
 } from "lucide-react";
-import { AppShell } from "../components/PitWallComponents";
+import { AppShell, validAudioDuration } from "../components/PitWallComponents";
 
 const DEFAULT_SETTINGS = {
   leaderboard: true,
@@ -338,7 +338,8 @@ function StatusPill({ payload, normalized }) {
   const live = Boolean(payload?.is_genuinely_live);
   const sourceOk = payload?.source === "Formula1LiveTiming" && payload?.ok;
   const state = String(payload?.session_state || "").replace("-", " ");
-  const mode = String(payload?.timing_mode || (live ? "live" : sourceOk ? state : "archive")).replace("-", " ");
+  const archived = !live && ["archive", "archived", "completed"].some((word) => String(payload?.timing_mode || payload?.session_state || "").toLowerCase().includes(word));
+  const mode = archived ? "Archived timing replay" : String(payload?.timing_mode || (live ? "live" : sourceOk ? state : "archive")).replace("-", " ");
   return (
     <div className={cx("dash-status-pill", live ? "live" : sourceOk ? "synced" : "fallback")}>
       <span>{live ? "Live timing" : mode || "Timing data"}</span>
@@ -361,7 +362,7 @@ function Card({ id, title, icon, show = true, children, empty }) {
 
 function MiniSectors({ row }) {
   const values = Array.isArray(row?.mini_sectors) ? row.mini_sectors.slice(0, 36) : [];
-  if (!values.length) return <span className="mini-sector-missing">No mini-sector feed</span>;
+  if (!values.length) return null;
 
   return (
     <div className="mini-sectors">
@@ -443,6 +444,14 @@ function TeamRadioPlayer({ item }) {
   const [proxy, setProxy] = useState(true);
   const url = item?.recording_url || item?.RecordingUrl || item?.url;
   if (!url) return <span className="radio-missing">No recording available</span>;
+  if (!validAudioDuration(item)) {
+    return (
+      <div className="radio-player unavailable">
+        <span className="radio-missing">Recording duration unavailable</span>
+        <a href={url} target="_blank" rel="noreferrer">Open source</a>
+      </div>
+    );
+  }
 
   const src = proxy ? `/api/audio?url=${encodeURIComponent(url)}` : url;
 
@@ -453,6 +462,17 @@ function TeamRadioPlayer({ item }) {
       <a href={url} target="_blank" rel="noreferrer">Open</a>
     </div>
   );
+}
+
+function rowHasUsefulCarMetrics(row) {
+  const values = [row?.speed, row?.n_gear, row?.rpm, row?.aero_mode, row?.throttle];
+  return values.some((value) => {
+    const primitiveValue = primitive(value);
+    if (primitiveValue === null || primitiveValue === undefined || primitiveValue === "") return false;
+    if (typeof primitiveValue === "number") return Number.isFinite(primitiveValue) && primitiveValue > 0;
+    const text = String(primitiveValue).trim();
+    return Boolean(text) && text !== "-" && text !== "0";
+  });
 }
 
 export default function LivePage() {
@@ -578,6 +598,7 @@ export default function LivePage() {
   const weather = normalized.weather || null;
   const raceControl = normalized.raceControl || [];
   const radio = normalized.radio || [];
+  const playableRadio = radio.filter(validAudioDuration);
   const trackStatus = normalized.trackStatus || null;
   const lapCount = normalized.lapCount || {};
   const meetingOptions = payload?.meeting_options || [];
@@ -616,6 +637,9 @@ export default function LivePage() {
     ];
   }, [sessionOptions]);
   const hasMiniSectors = leaderboard.some((row) => Array.isArray(row.mini_sectors) && row.mini_sectors.length);
+  const carMetricRows = leaderboard.filter(rowHasUsefulCarMetrics);
+  const carMetricsMostlyMissing = !carMetricRows.length || carMetricRows.length < Math.ceil(Math.max(leaderboard.length, 1) / 2);
+  const timingModeLabel = payload?.is_genuinely_live ? "Live timing" : "Archived timing replay";
   const oledClass = settings.oled ? "oled" : "";
   const refreshSeconds = Math.round(refreshMs / 1000);
   const sessionProgress = (() => {
@@ -630,9 +654,9 @@ export default function LivePage() {
       <section className={cx("f1dash-shell", "f1dash-main", oledClass)}>
         <header className="f1dash-topbar">
           <div>
-            <p>{payload?.is_genuinely_live ? "Live timing" : "Timing replay"}</p>
+            <p>{timingModeLabel}</p>
             <h1>{fmt(session.meeting_name, "F1 timing dashboard")}</h1>
-            <span>{fmt(session.session_name || session.session_type, "Auto-selected event")} · {dateTime(session.date_start)}</span>
+            <span>{fmt(session.session_name || session.session_type, "Auto-selected event")} · {dateTime(session.date_start)} · Source {fmt(payload?.source, "Checking")}</span>
           </div>
 
           <div className="topbar-actions">
@@ -825,7 +849,7 @@ export default function LivePage() {
           </div>
           <div>
             <span>Radio clips</span>
-            <strong>{radio.length}</strong>
+            <strong>{playableRadio.length ? `${playableRadio.length}/${radio.length}` : "Unavailable"}</strong>
           </div>
           <div>
             <span>Selected session</span>
@@ -875,9 +899,9 @@ export default function LivePage() {
             </div>
           </Card>
 
-          <Card id="sectors" title="Mini sectors" icon={<MapPinned size={18} />} show={settings.sectors} empty={!leaderboard.length ? "Mini-sector style data is unavailable for this feed." : !hasMiniSectors && "This selected session does not expose mini-sector segment data in the available feed."}>
+          <Card id="sectors" title="Mini sectors" icon={<MapPinned size={18} />} show={settings.sectors && hasMiniSectors} empty={!leaderboard.length ? "Mini-sector style data is unavailable for this feed." : !hasMiniSectors && "This selected session does not expose mini-sector segment data in the available feed."}>
             <div className="sector-list">
-              {leaderboard.slice(0, 20).map((row) => (
+              {leaderboard.filter((row) => Array.isArray(row.mini_sectors) && row.mini_sectors.length).slice(0, 20).map((row) => (
                 <div key={`${row.driver_number}-sector`}>
                   <strong>{driverName(row)}</strong>
                   <MiniSectors row={row} />
@@ -907,12 +931,12 @@ export default function LivePage() {
             </div>
           </Card>
 
-          <Card id="car-metrics" title="Car metrics" icon={<Gauge size={18} />} show={settings.carMetrics} empty={!leaderboard.some((row) => row.speed || row.rpm || row.n_gear) && "Car metrics may be restricted or unavailable for this session."}>
+          <Card id="car-metrics" title="Car metrics" icon={<Gauge size={18} />} show={settings.carMetrics} empty={carMetricsMostlyMissing && "Telemetry unavailable for this session."}>
             <div className="dash-table compact">
               <div className="dash-row head">
                 <span>Driver</span><span>Speed</span><span>Gear</span><span>RPM</span><span>Aero / Boost</span><span>Brake</span>
               </div>
-              {leaderboard.slice(0, 20).map((row) => (
+              {carMetricRows.slice(0, 20).map((row) => (
                 <div className="dash-row" key={`${row.driver_number}-car`}>
                   <span>{driverName(row)}</span>
                   <span>{speed(row.speed, settings.metric)}</span>
