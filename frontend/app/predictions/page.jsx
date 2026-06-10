@@ -201,11 +201,12 @@ export default function PredictionsPage() {
               <>
                 <div className="metric-grid compact">
                   <Metric label="Prediction ID" value={targetPending ? "Pending generation" : selectedPayload.prediction_id || latest.prediction_id} />
-                <Metric label="Contract schema" value={data.schema_version} />
-                <Metric label="Prediction data" value={data.prediction_data_version} />
-                <Metric label="Recovered from debug" value={data.contract_recovered_from_debug ? "Yes" : "No"} />
-                <Metric label="Source conflicts" value={data.source_conflicts?.length ?? 0} />
-              </div>
+                  <Metric label="FIA Documents" value={selectedPayload.fia_document_count ?? latest.fia_document_count ?? 0} />
+                  <Metric label="Contract schema" value={data.schema_version} />
+                  <Metric label="Prediction data" value={data.prediction_data_version} />
+                  <Metric label="Recovered from debug" value={data.contract_recovered_from_debug ? "Yes" : "No"} />
+                  <Metric label="Source conflicts" value={data.source_conflicts?.length ?? 0} />
+                </div>
               <div className="podium-list">
                 {predictions.slice(0, 5).map((p) => <article key={`debug-${p.driver_id}`}><span>P{p.rank}</span><strong>{p.name}</strong><small>{(p.missing_feature_groups || []).length} missing · {(p.source_warnings || []).length} source warnings · {p.model_disagreement_level || "low"} disagreement</small></article>)}
               </div>
