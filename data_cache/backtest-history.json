@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-barcelona-preweekend-v6",
-  "generated_at": "2026-06-10T14:38:50.050474+05:30",
+  "generated_at": "2026-06-11T09:22:42.679881+05:30",
   "history": [
     {
       "race_id": "2026-7-barcelona-grand-prix",
@@ -12,10 +12,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -28,10 +28,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -44,10 +44,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -60,10 +60,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -76,10 +76,10 @@
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -92,10 +92,10 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     },
     {
@@ -108,10 +108,10 @@
       "model_version": "2026.05-high-accuracy-v4",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.205542250168649,
-      "finish_position_rmse": 4.039155956598534,
+      "finish_position_mae": 3.200690842509687,
+      "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,
-      "top3_recall": 0.6548,
+      "top3_recall": 0.6429,
       "top10_recall": 0.7964
     }
   ]
