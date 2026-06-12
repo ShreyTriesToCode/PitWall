@@ -2,7 +2,7 @@
   "schema_version": "2026.06-barcelona-preweekend-v6",
   "model_version": "2026.06-barcelona-preweekend-v6",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-12T15:41:12.788553+05:30",
+  "generated_at": "2026-06-12T20:27:17.608732+05:30",
   "trained_at": "2026-06-09T17:51:04.911704+05:30",
   "latest_completed_race_included": "2026-6",
   "latest_available_api_result": "2026-6",
@@ -706,7 +706,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-12T10:11:12.788265+00:00",
+      "checked_at": "2026-06-12T14:57:17.608521+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -726,7 +726,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-12T10:11:12.788436+00:00",
+      "checked_at": "2026-06-12T14:57:17.608630+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -1093,13 +1093,13 @@
         "top10": 0.15287526267250356
       }
     },
-    "generated_at": "2026-06-12T15:41:12.788527+05:30",
+    "generated_at": "2026-06-12T20:27:17.608709+05:30",
     "warnings": [
       "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy."
     ]
   },
   "readiness_state": {
-    "checked_at": "2026-06-12T15:41:09.547499+05:30",
+    "checked_at": "2026-06-12T20:27:14.136052+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-6",
