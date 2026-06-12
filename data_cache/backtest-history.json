@@ -1,17 +1,17 @@
 {
   "schema_version": "2026.06-barcelona-preweekend-v6",
-  "generated_at": "2026-06-13T01:40:15.214730+05:30",
+  "generated_at": "2026-06-13T02:35:03.756983+05:30",
   "history": [
     {
       "race_id": "2026-7-barcelona-grand-prix",
-      "prediction_id": "2026-7-barcelona-grand-prix-race-pre_weekend-ccaad7095f2d",
+      "prediction_id": "2026-7-barcelona-grand-prix-race-post_fp1-b7a13f0d159a",
       "race_name": "Barcelona Grand Prix",
       "season": 2026,
       "round": 7,
-      "stage": "pre_weekend",
+      "stage": "post_fp1",
       "model_version": "2026.06-barcelona-preweekend-v6",
       "top_pick": "Lewis Hamilton",
-      "top_pick_confidence": 0,
+      "top_pick_confidence": 19.2,
       "finish_position_mae": 3.200690842509687,
       "finish_position_rmse": 4.037340077942646,
       "winner_hit_rate": 0.4643,

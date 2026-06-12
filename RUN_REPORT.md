@@ -1,15 +1,15 @@
 # PitWall Run Report
 
-- Generated at: 2026-06-12T20:10:16.413850+00:00
+- Generated at: 2026-06-12T21:05:05.035108+00:00
 - Model version: 2026.06-barcelona-preweekend-v6
 - Target event/session: Barcelona Grand Prix / race
 - Top 10 availability: 10 rows
 - Full grid availability: 22 rows
 - Contract validation: passed
-- Event trust: 40.15
-- Source health: Fallback / 65.64
-- Source conflicts: 4
-- Major model disagreements: 10
+- Event trust: 40.13
+- Source health: Fallback / 70.27
+- Source conflicts: 2
+- Major model disagreements: 8
 - Missing data groups: pit_stop_data, practice_or_lap_pace, qualifying
 
 ## Validation Details
