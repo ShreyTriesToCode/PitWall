@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-06-13T08:57:27.713689+00:00
+- Generated at: 2026-06-13T13:57:58.606753+00:00
 - Model version: 2026.06-barcelona-preweekend-v6
 - Target event/session: Barcelona Grand Prix / race
 - Top 10 availability: 10 rows
