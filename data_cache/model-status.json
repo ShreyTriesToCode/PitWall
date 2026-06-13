@@ -2,7 +2,7 @@
   "schema_version": "2026.06-barcelona-preweekend-v6",
   "model_version": "2026.06-barcelona-preweekend-v6",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-13T19:27:55.485217+05:30",
+  "generated_at": "2026-06-14T00:56:01.298444+05:30",
   "trained_at": "2026-06-09T17:51:04.911704+05:30",
   "latest_completed_race_included": "2026-6",
   "latest_available_api_result": "2026-6",
@@ -706,7 +706,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-13T13:57:55.484912+00:00",
+      "checked_at": "2026-06-13T19:26:01.298182+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -726,7 +726,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-13T13:57:55.485085+00:00",
+      "checked_at": "2026-06-13T19:26:01.298344+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -815,8 +815,8 @@
     "fia_cache_misses": 0
   },
   "source_health": {
-    "generated_at": "2026-06-13T02:34:59.498777+05:30",
-    "overall_score": 70.27,
+    "generated_at": "2026-06-14T00:55:58.802173+05:30",
+    "overall_score": 70.09,
     "status": "Fallback",
     "sources": [
       {
@@ -826,13 +826,13 @@
       },
       {
         "source": "Jolpica",
-        "score": 62.0,
-        "status": "Fallback"
+        "score": 82.0,
+        "status": "Available"
       },
       {
         "source": "OpenF1",
-        "score": 70.0,
-        "status": "Fallback"
+        "score": 48.0,
+        "status": "Stale"
       },
       {
         "source": "FastF1",
@@ -893,7 +893,7 @@
         "source_url": "https://github.com/f1db/f1db",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-12T21:04:59.498495+00:00",
+        "checked_at": "2026-06-13T19:25:58.801931+00:00",
         "errors": [],
         "warnings": [
           "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -913,7 +913,7 @@
         "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-12T21:04:59.498697+00:00",
+        "checked_at": "2026-06-13T19:25:58.802097+00:00",
         "errors": [],
         "warnings": [
           "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -945,6 +945,19 @@
     "local_llm_enabled": false
   },
   "source_conflicts": [
+    {
+      "conflict_type": "stale_cache",
+      "affected_fields": [
+        "source freshness"
+      ],
+      "sources": [
+        "OpenF1"
+      ],
+      "preferred_source": "fresh official/current source when available",
+      "reason": "OpenF1 data is stale.",
+      "confidence": "medium",
+      "action_needed": "Refresh cache or wait for next generated run."
+    },
     {
       "conflict_type": "stale_cache",
       "affected_fields": [
@@ -1067,13 +1080,13 @@
         "top10": 0.15287526267250356
       }
     },
-    "generated_at": "2026-06-13T19:27:55.485190+05:30",
+    "generated_at": "2026-06-14T00:56:01.298422+05:30",
     "warnings": [
       "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy."
     ]
   },
   "readiness_state": {
-    "checked_at": "2026-06-13T19:27:52.088024+05:30",
+    "checked_at": "2026-06-14T00:54:46.109550+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-6",
@@ -1101,7 +1114,13 @@
     "status": "latest_results_available"
   },
   "mode": "today",
-  "selected_targets": [],
+  "selected_targets": [
+    {
+      "target_type": "race",
+      "title": "F1 Barcelona Catalunya GP - Race",
+      "start": "2026-06-14 18:30:00+05:30"
+    }
+  ],
   "errors": [],
   "limitations": [
     "Live race adjustments only become official model output when timing data is genuinely fresh and generated contracts are refreshed.",
@@ -1110,5 +1129,5 @@
     "Post-race corrections remain pending until official result rows are available after the configured delay.",
     "F1 predictions cannot be guaranteed because crashes, red flags, failures, penalties, strategy, weather, and source delays are inherently uncertain."
   ],
-  "backtest_history_count": 7
+  "backtest_history_count": 8
 }
