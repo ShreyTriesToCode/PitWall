@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Barcelona Catalunya GP - Race
 
-Generated: Sunday, 14 June 2026, 12:55 AM IST
+Generated: Sunday, 14 June 2026, 09:28 AM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Sunday, 14 June 2026, 12:55 AM IST
 
 ## Prediction
 
-1. George Russell, score 71.9, confidence 50%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; pit-stop execution
-2. Lewis Hamilton, score 71.7, confidence 68%, qualifying and grid position; ML finish-position model; pit-stop execution; car performance; ML podium probability
-3. Andrea Kimi Antonelli, score 64.8, confidence 55%, qualifying and grid position; car performance; driver form; pit-stop execution; ML finish-position model
-4. Lando Norris, score 62.5, confidence 66%, qualifying and grid position; ML finish-position model; car performance; pit-stop execution; official timing car performance
-5. Oscar Piastri, score 61.2, confidence 62%, qualifying and grid position; pit-stop execution; car performance; ML finish-position model; official timing car performance
-6. Max Verstappen, score 60.8, confidence 73%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; same-circuit history
-7. Isack Hadjar, score 59.5, confidence 73%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; car performance
-8. Charles Leclerc, score 57.9, confidence 61%, qualifying and grid position; pit-stop execution; car performance; neural lap-time forecast; reliability
-9. Liam Lawson, score 50.8, confidence 66%, qualifying and grid position; pit-stop execution; reliability; ML finish-position model; weather adaptation
-10. Nico Hülkenberg, score 47.4, confidence 66%, qualifying and grid position; pit-stop execution; reliability; neural lap-time forecast; weather adaptation
+1. Lewis Hamilton, score 70.7, confidence 49%, qualifying and grid position; ML finish-position model; pit-stop execution; ML podium probability; car performance
+2. George Russell, score 70.5, confidence 31%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; pit-stop execution
+3. Andrea Kimi Antonelli, score 63.6, confidence 36%, qualifying and grid position; car performance; driver form; pit-stop execution; ML finish-position model
+4. Max Verstappen, score 58.3, confidence 49%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; same-circuit history
+5. Lando Norris, score 58.2, confidence 48%, qualifying and grid position; ML finish-position model; pit-stop execution; car performance; reliability
+6. Isack Hadjar, score 57.6, confidence 54%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; weather adaptation
+7. Oscar Piastri, score 56.6, confidence 48%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; reliability
+8. Charles Leclerc, score 55.6, confidence 42%, qualifying and grid position; pit-stop execution; car performance; neural lap-time forecast; reliability
+9. Liam Lawson, score 48.7, confidence 48%, qualifying and grid position; pit-stop execution; reliability; ML finish-position model; weather adaptation
+10. Nico Hülkenberg, score 43.8, confidence 47%, qualifying and grid position; pit-stop execution; reliability; neural lap-time forecast; weather adaptation
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Sunday, 14 June 2026, 12:55 AM IST
 - Overtaking: medium
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: medium-high
-- Weather: 29.0°C, rain 0%, wind 17.2 km/h
-- Weather impact: dry baseline more likely; heat may increase degradation and cooling demand; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
+- Weather: 28.6°C, rain 0%, wind 16.5 km/h
+- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
 
 ## Strategy
 
@@ -42,8 +42,8 @@ Generated: Sunday, 14 June 2026, 12:55 AM IST
 
 1. Mercedes
 2. Ferrari
-3. McLaren
-4. Red Bull
+3. Red Bull
+4. McLaren
 5. RB F1 Team
 
 ## Upgrade impact
@@ -79,7 +79,7 @@ Era: 2026+ active-aero and new power-unit era
 
 - Stage: Race prediction, Post-qualifying prediction
 - ML model: loaded
-- F1 timing: official_f1_live_timing_static_used
+- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token
 - FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']
 - Calendar check: official_f1_calendar_page_reachable
 
