@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Barcelona Catalunya GP - Race
 
-Generated: Sunday, 14 June 2026, 09:28 AM IST
+Generated: Sunday, 14 June 2026, 01:31 PM IST
 
 ## Event
 
@@ -29,7 +29,7 @@ Generated: Sunday, 14 June 2026, 09:28 AM IST
 - Overtaking: medium
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: medium-high
-- Weather: 28.6°C, rain 0%, wind 16.5 km/h
+- Weather: 28.8°C, rain 0%, wind 16.7 km/h
 - Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
 
 ## Strategy

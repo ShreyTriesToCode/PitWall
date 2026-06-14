@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-7-barcelona-grand-prix",
-    "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-cdc94945526d",
+    "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
     "season": 2026,
     "round": 7,
     "circuit": "Circuit de Barcelona-Catalunya",
@@ -13,12 +13,12 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "28.6°C",
+      "temperature": "28.8°C",
       "rain": "0%",
       "humidity": "42%",
-      "wind": "16.5 km/h",
+      "wind": "16.7 km/h",
       "wind_gust": "36.0 km/h",
-      "cloud_cover": "100%",
+      "cloud_cover": "78%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 0,
