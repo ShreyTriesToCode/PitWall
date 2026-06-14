@@ -1,6 +1,6 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-06-14T13:31:44.130377+05:30",
+  "generated_at": "2026-06-14T15:03:45.374510+05:30",
   "status": "Success",
   "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: race=F1 Barcelona Catalunya GP - Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {

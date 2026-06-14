@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T13:31:44.132330+05:30",
+  "generated_at": "2026-06-14T15:03:45.376705+05:30",
   "output_mode": "today",
   "selected_targets": [
     {
@@ -101,7 +101,7 @@
       "round_no": "7",
       "target_type": "race",
       "title": "F1 Race Briefing: F1 Barcelona Catalunya GP - Race",
-      "briefing": "# F1 Race Briefing: F1 Barcelona Catalunya GP - Race\n\nGenerated: Sunday, 14 June 2026, 01:31 PM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 14 June 2026, 06:30 PM IST\n- Circuit: Circuit de Barcelona-Catalunya\n- Location: Barcelona, Spain\n\n## Prediction\n\n1. Lewis Hamilton, score 70.7, confidence 49%, qualifying and grid position; ML finish-position model; pit-stop execution; ML podium probability; car performance\n2. George Russell, score 70.5, confidence 31%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; pit-stop execution\n3. Andrea Kimi Antonelli, score 63.6, confidence 36%, qualifying and grid position; car performance; driver form; pit-stop execution; ML finish-position model\n4. Max Verstappen, score 58.3, confidence 49%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; same-circuit history\n5. Lando Norris, score 58.2, confidence 48%, qualifying and grid position; ML finish-position model; pit-stop execution; car performance; reliability\n6. Isack Hadjar, score 57.6, confidence 54%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; weather adaptation\n7. Oscar Piastri, score 56.6, confidence 48%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; reliability\n8. Charles Leclerc, score 55.6, confidence 42%, qualifying and grid position; pit-stop execution; car performance; neural lap-time forecast; reliability\n9. Liam Lawson, score 48.7, confidence 48%, qualifying and grid position; pit-stop execution; reliability; ML finish-position model; weather adaptation\n10. Nico Hülkenberg, score 43.8, confidence 47%, qualifying and grid position; pit-stop execution; reliability; neural lap-time forecast; weather adaptation\n\n## Track and weather\n\n- Key car trait: balanced aero, traction, braking, and tyre management\n- Track profile: balanced speed profile\n- Overtaking: medium\n- Tyre stress: medium-high\n- Safety car/DNF risk proxy: medium-high\n- Weather: 28.8°C, rain 0%, wind 16.7 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: two-stop risk if degradation appears in long runs\n- Pit window: Lap 16-28, with safety car flexibility.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. Red Bull\n4. McLaren\n5. RB F1 Team\n\n## Upgrade impact\n\n- Audi: 40.0/100, straight line, power efficiency\n- Cadillac: 40.0/100, tyre management, power efficiency\n- Ferrari: 40.0/100, power efficiency\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.6%\n- ml podium probability: 6.2%\n- ml finish position score: 4.5%\n- car performance: 4.5%\n- race pace: 4.5%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.20; RMSE: 4.04\n- Neural lap-time MAE: 4.05s; RMSE: 5.44s\n- Backtest winner hit: 46.4%; top-3 recall: 64.3%; top-5 recall: 76.4%\n- Win model AUC/Brier: 0.953 / 0.038\n- Podium model AUC/Brier: 0.935 / 0.068\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
+      "briefing": "# F1 Race Briefing: F1 Barcelona Catalunya GP - Race\n\nGenerated: Sunday, 14 June 2026, 03:03 PM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 14 June 2026, 06:30 PM IST\n- Circuit: Circuit de Barcelona-Catalunya\n- Location: Barcelona, Spain\n\n## Prediction\n\n1. Lewis Hamilton, score 70.7, confidence 49%, qualifying and grid position; ML finish-position model; pit-stop execution; ML podium probability; car performance\n2. George Russell, score 70.5, confidence 31%, qualifying and grid position; ML podium probability; car performance; ML finish-position model; pit-stop execution\n3. Andrea Kimi Antonelli, score 63.6, confidence 36%, qualifying and grid position; car performance; driver form; pit-stop execution; ML finish-position model\n4. Max Verstappen, score 58.3, confidence 49%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; same-circuit history\n5. Lando Norris, score 58.2, confidence 48%, qualifying and grid position; ML finish-position model; pit-stop execution; car performance; reliability\n6. Isack Hadjar, score 57.6, confidence 54%, qualifying and grid position; pit-stop execution; ML finish-position model; reliability; weather adaptation\n7. Oscar Piastri, score 56.6, confidence 48%, qualifying and grid position; pit-stop execution; ML finish-position model; car performance; reliability\n8. Charles Leclerc, score 55.6, confidence 42%, qualifying and grid position; pit-stop execution; car performance; neural lap-time forecast; reliability\n9. Liam Lawson, score 48.7, confidence 48%, qualifying and grid position; pit-stop execution; reliability; ML finish-position model; weather adaptation\n10. Nico Hülkenberg, score 43.8, confidence 47%, qualifying and grid position; pit-stop execution; reliability; neural lap-time forecast; weather adaptation\n\n## Track and weather\n\n- Key car trait: balanced aero, traction, braking, and tyre management\n- Track profile: balanced speed profile\n- Overtaking: medium\n- Tyre stress: medium-high\n- Safety car/DNF risk proxy: medium-high\n- Weather: 28.8°C, rain 0%, wind 16.7 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: two-stop risk if degradation appears in long runs\n- Pit window: Lap 16-28, with safety car flexibility.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. Red Bull\n4. McLaren\n5. RB F1 Team\n\n## Upgrade impact\n\n- Audi: 40.0/100, straight line, power efficiency\n- Cadillac: 40.0/100, tyre management, power efficiency\n- Ferrari: 40.0/100, power efficiency\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.6%\n- ml podium probability: 6.2%\n- ml finish position score: 4.5%\n- car performance: 4.5%\n- race pace: 4.5%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.20; RMSE: 4.04\n- Neural lap-time MAE: 4.05s; RMSE: 5.44s\n- Backtest winner hit: 46.4%; top-3 recall: 64.3%; top-5 recall: 76.4%\n- Win model AUC/Brier: 0.953 / 0.038\n- Podium model AUC/Brier: 0.935 / 0.068\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
       "profile": {
         "race_name": "Barcelona Grand Prix",
         "circuit": "Circuit de Barcelona-Catalunya",
@@ -496,7 +496,7 @@
           },
           "teammate_prediction_gap": 15.07,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -504,8 +504,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -771,7 +771,7 @@
           },
           "teammate_prediction_gap": 6.82,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -779,8 +779,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1048,7 +1048,7 @@
           },
           "teammate_prediction_gap": 6.82,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -1056,8 +1056,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1323,7 +1323,7 @@
           },
           "teammate_prediction_gap": 0.75,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -1331,8 +1331,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1593,7 +1593,7 @@
           },
           "teammate_prediction_gap": 1.59,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -1601,8 +1601,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1865,7 +1865,7 @@
           },
           "teammate_prediction_gap": 0.75,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -1873,8 +1873,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2135,7 +2135,7 @@
           },
           "teammate_prediction_gap": 1.59,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -2143,8 +2143,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2412,7 +2412,7 @@
           },
           "teammate_prediction_gap": 15.07,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -2420,8 +2420,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2682,7 +2682,7 @@
           },
           "teammate_prediction_gap": 7.78,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -2690,8 +2690,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2957,7 +2957,7 @@
           },
           "teammate_prediction_gap": 2.58,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -2965,8 +2965,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -3232,7 +3232,7 @@
           },
           "teammate_prediction_gap": 15.07,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -3240,8 +3240,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3507,7 +3507,7 @@
           },
           "teammate_prediction_gap": 6.82,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -3515,8 +3515,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3784,7 +3784,7 @@
           },
           "teammate_prediction_gap": 6.82,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -3792,8 +3792,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4059,7 +4059,7 @@
           },
           "teammate_prediction_gap": 0.75,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -4067,8 +4067,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4329,7 +4329,7 @@
           },
           "teammate_prediction_gap": 1.59,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -4337,8 +4337,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4601,7 +4601,7 @@
           },
           "teammate_prediction_gap": 0.75,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -4609,8 +4609,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4871,7 +4871,7 @@
           },
           "teammate_prediction_gap": 1.59,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -4879,8 +4879,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5148,7 +5148,7 @@
           },
           "teammate_prediction_gap": 15.07,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -5156,8 +5156,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5418,7 +5418,7 @@
           },
           "teammate_prediction_gap": 7.78,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -5426,8 +5426,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5693,7 +5693,7 @@
           },
           "teammate_prediction_gap": 2.58,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -5701,8 +5701,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5959,7 +5959,7 @@
           },
           "teammate_prediction_gap": 2.99,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -5967,8 +5967,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6231,7 +6231,7 @@
           },
           "teammate_prediction_gap": 2.58,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -6239,8 +6239,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6497,7 +6497,7 @@
           },
           "teammate_prediction_gap": 7.78,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -6505,8 +6505,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6763,7 +6763,7 @@
           },
           "teammate_prediction_gap": 2.99,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -6771,8 +6771,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7031,7 +7031,7 @@
           },
           "teammate_prediction_gap": 7.08,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -7039,8 +7039,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7297,7 +7297,7 @@
           },
           "teammate_prediction_gap": 2.59,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -7305,8 +7305,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7567,7 +7567,7 @@
           },
           "teammate_prediction_gap": 5.86,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -7575,8 +7575,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7837,7 +7837,7 @@
           },
           "teammate_prediction_gap": 2.1,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -7845,8 +7845,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8101,7 +8101,7 @@
           },
           "teammate_prediction_gap": 2.59,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -8109,8 +8109,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8374,7 +8374,7 @@
           },
           "teammate_prediction_gap": 2.1,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -8382,8 +8382,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8645,7 +8645,7 @@
           },
           "teammate_prediction_gap": 7.08,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -8653,8 +8653,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8915,7 +8915,7 @@
           },
           "teammate_prediction_gap": 5.86,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -8923,8 +8923,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -9190,7 +9190,7 @@
           },
           "teammate_prediction_gap": 15.07,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -9198,8 +9198,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9465,7 +9465,7 @@
           },
           "teammate_prediction_gap": 6.82,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -9473,8 +9473,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9742,7 +9742,7 @@
           },
           "teammate_prediction_gap": 6.82,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -9750,8 +9750,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10017,7 +10017,7 @@
           },
           "teammate_prediction_gap": 0.75,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -10025,8 +10025,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10287,7 +10287,7 @@
           },
           "teammate_prediction_gap": 1.59,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -10295,8 +10295,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10559,7 +10559,7 @@
           },
           "teammate_prediction_gap": 0.75,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -10567,8 +10567,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10829,7 +10829,7 @@
           },
           "teammate_prediction_gap": 1.59,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -10837,8 +10837,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11106,7 +11106,7 @@
           },
           "teammate_prediction_gap": 15.07,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -11114,8 +11114,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11376,7 +11376,7 @@
           },
           "teammate_prediction_gap": 7.78,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -11384,8 +11384,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11651,7 +11651,7 @@
           },
           "teammate_prediction_gap": 2.58,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -11659,8 +11659,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11917,7 +11917,7 @@
           },
           "teammate_prediction_gap": 2.99,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -11925,8 +11925,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12189,7 +12189,7 @@
           },
           "teammate_prediction_gap": 2.58,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -12197,8 +12197,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12455,7 +12455,7 @@
           },
           "teammate_prediction_gap": 7.78,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -12463,8 +12463,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12721,7 +12721,7 @@
           },
           "teammate_prediction_gap": 2.99,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -12729,8 +12729,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12989,7 +12989,7 @@
           },
           "teammate_prediction_gap": 7.08,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -12997,8 +12997,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13255,7 +13255,7 @@
           },
           "teammate_prediction_gap": 2.59,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -13263,8 +13263,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13525,7 +13525,7 @@
           },
           "teammate_prediction_gap": 5.86,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -13533,8 +13533,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13795,7 +13795,7 @@
           },
           "teammate_prediction_gap": 2.1,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -13803,8 +13803,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14059,7 +14059,7 @@
           },
           "teammate_prediction_gap": 2.59,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -14067,8 +14067,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14332,7 +14332,7 @@
           },
           "teammate_prediction_gap": 2.1,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -14340,8 +14340,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14603,7 +14603,7 @@
           },
           "teammate_prediction_gap": 7.08,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -14611,8 +14611,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14873,7 +14873,7 @@
           },
           "teammate_prediction_gap": 5.86,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-2570e87b3752",
+          "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
           "race_id": "2026-7-barcelona-grand-prix",
           "season": 2026,
           "round": 7,
@@ -14881,8 +14881,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-barcelona-preweekend-v6",
           "schema_version": "2026.06-barcelona-preweekend-v6",
-          "generated_at": "2026-06-14T13:31:41.827282+05:30",
-          "input_data_hash": "af3c28d671e91edddfeead3407e4440357295dab06a65631fffc4a43c26bffae",
+          "generated_at": "2026-06-14T15:03:42.865606+05:30",
+          "input_data_hash": "c76f3bebc4b3482eeca163e6153ce1362463203ea700bd35706394e6355671ce",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -14941,7 +14941,7 @@
           "fastf1_tyre_stint": 0.0205
         },
         "source_health_snapshot": {
-          "generated_at": "2026-06-14T13:31:41.825225+05:30",
+          "generated_at": "2026-06-14T15:03:42.863142+05:30",
           "overall_score": 72.09,
           "status": "Fallback",
           "sources": [
@@ -15019,7 +15019,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-06-14T08:01:41.824999+00:00",
+              "checked_at": "2026-06-14T09:33:42.862873+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -15039,7 +15039,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-06-14T08:01:41.825146+00:00",
+              "checked_at": "2026-06-14T09:33:42.863060+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -18691,7 +18691,7 @@
             "model_latest_completed_race_id": "2026-6",
             "api_latest_completed_race_id": "2026-6",
             "readiness": {
-              "checked_at": "2026-06-14T13:30:54.350981+05:30",
+              "checked_at": "2026-06-14T15:02:56.662209+05:30",
               "current_year": 2026,
               "final_results_delay_hours": 8,
               "latest_completed_race_id": "2026-6",
@@ -19960,7 +19960,7 @@
   "notification_gate": {
     "allowed": true,
     "reason": "Event starts within 8 hours.",
-    "hours_until_event": 4.97,
+    "hours_until_event": 3.44,
     "matched_event": "F1 Barcelona Catalunya GP - Race"
   },
   "backfill": {
