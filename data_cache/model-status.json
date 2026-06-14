@@ -2,7 +2,7 @@
   "schema_version": "2026.06-barcelona-preweekend-v6",
   "model_version": "2026.06-barcelona-preweekend-v6",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-14T15:03:45.402460+05:30",
+  "generated_at": "2026-06-14T19:31:15.346961+05:30",
   "trained_at": "2026-06-09T17:51:04.911704+05:30",
   "latest_completed_race_included": "2026-6",
   "latest_available_api_result": "2026-6",
@@ -706,7 +706,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-14T09:33:45.402220+00:00",
+      "checked_at": "2026-06-14T14:01:15.346749+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -726,7 +726,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-14T09:33:45.402357+00:00",
+      "checked_at": "2026-06-14T14:01:15.346860+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -1067,13 +1067,13 @@
         "top10": 0.15287526267250356
       }
     },
-    "generated_at": "2026-06-14T15:03:45.402438+05:30",
+    "generated_at": "2026-06-14T19:31:15.346939+05:30",
     "warnings": [
       "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy."
     ]
   },
   "readiness_state": {
-    "checked_at": "2026-06-14T15:02:56.662209+05:30",
+    "checked_at": "2026-06-14T19:31:12.084527+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-6",
@@ -1087,27 +1087,30 @@
       "final_results_cutoff": "2026-06-08T02:30:00+05:30",
       "status": "api_results_available"
     },
-    "waiting_for_delay": null,
-    "waiting_for_api_results": null,
-    "next_race": {
+    "waiting_for_delay": {
       "race_id": "2026-7",
       "season": 2026,
       "round": 7,
       "race_name": "Barcelona Grand Prix",
       "circuit": "Circuit de Barcelona-Catalunya",
       "scheduled_at": "2026-06-14T18:30:00+05:30",
-      "final_results_cutoff": "2026-06-15T02:30:00+05:30"
+      "final_results_cutoff": "2026-06-15T02:30:00+05:30",
+      "status": "waiting_final_results_delay"
     },
-    "status": "latest_results_available"
+    "waiting_for_api_results": null,
+    "next_race": {
+      "race_id": "2026-8",
+      "season": 2026,
+      "round": 8,
+      "race_name": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "scheduled_at": "2026-06-28T18:30:00+05:30",
+      "final_results_cutoff": "2026-06-29T02:30:00+05:30"
+    },
+    "status": "recent_gp_waiting_final_results_delay"
   },
   "mode": "today",
-  "selected_targets": [
-    {
-      "target_type": "race",
-      "title": "F1 Barcelona Catalunya GP - Race",
-      "start": "2026-06-14 18:30:00+05:30"
-    }
-  ],
+  "selected_targets": [],
   "errors": [],
   "limitations": [
     "Live race adjustments only become official model output when timing data is genuinely fresh and generated contracts are refreshed.",
