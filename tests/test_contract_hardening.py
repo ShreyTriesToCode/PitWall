@@ -202,14 +202,18 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertIn("currentTargetOnly", source)
         self.assertNotIn("contract.briefings || []).filter((row) => row?.target_type", source)
 
-    def test_current_contract_points_to_barcelona_with_current_model_version(self):
+    def test_current_contract_points_to_selected_calendar_race_with_current_model_version(self):
         contract = json.loads(Path("data_cache/frontend-contract.json").read_text(encoding="utf-8"))
         status = json.loads(Path("data_cache/model-status.json").read_text(encoding="utf-8"))
         latest = contract["latest"]
+        calendar_source = Path("frontend/app/data/f1Calendar2026.js").read_text(encoding="utf-8")
 
-        self.assertEqual(latest["race_name"], "Barcelona Grand Prix")
-        self.assertEqual(latest["round"], 7)
-        self.assertIn("barcelona-grand-prix", latest["prediction_id"])
+        self.assertIsInstance(latest.get("race_name"), str)
+        self.assertTrue(latest["race_name"].endswith("Grand Prix"))
+        self.assertIsInstance(latest.get("round"), int)
+        self.assertGreater(latest["round"], 0)
+        self.assertIn(f'round: {latest["round"]}, name: "{latest["race_name"]}"', calendar_source)
+        self.assertIn(f1.make_slug(latest["race_name"]), latest["prediction_id"])
         self.assertEqual(latest["model_version"], f1.MODEL_SCHEMA_VERSION)
         self.assertEqual(contract["schema_version"], f1.MODEL_SCHEMA_VERSION)
         self.assertEqual(status["model_version"], f1.MODEL_SCHEMA_VERSION)
