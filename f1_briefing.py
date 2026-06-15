@@ -2164,6 +2164,8 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
         "season": season,
         "round": str(round_no),
         "fetched_at": now_local().isoformat(),
+        "source": "jolpica_api",
+        "source_endpoint_base": JOLPICA_BASE,
         "status": status,
         "final_results_delay_hours": FINAL_RESULTS_DELAY_HOURS,
         "data": data,
@@ -7287,17 +7289,38 @@ def actual_result_from_race(race):
     return {"winner": rows[0] if rows else None, "classification": rows}
 
 
-def actual_result_from_cached_round(season, round_no, target_type="race"):
+def actual_result_from_cached_round(season, round_no, target_type="race", *, race=None, allow_fetch=False):
     cached = read_full_race_cache(season, round_no)
     data = (cached or {}).get("data") or {}
-    if str(target_type or "race").lower() == "sprint":
-        races = data.get("sprint") or []
-        if races:
-            race = {**races[0], "Results": races[0].get("SprintResults") or races[0].get("Results") or []}
-            return actual_result_from_race(race)
-        return None
-    races = data.get("results") or []
-    return actual_result_from_race(races[0]) if races else None
+    trusted_cached_source = (cached or {}).get("source") == "jolpica_api"
+
+    def actual_from_round_data(round_data):
+        if str(target_type or "race").lower() == "sprint":
+            races = round_data.get("sprint") or []
+            if races:
+                sprint_race = {**races[0], "Results": races[0].get("SprintResults") or races[0].get("Results") or []}
+                return actual_result_from_race(sprint_race)
+            return None
+        races = round_data.get("results") or []
+        return actual_result_from_race(races[0]) if races else None
+
+    actual = actual_from_round_data(data)
+    if actual and (trusted_cached_source or not allow_fetch):
+        return actual
+    if not allow_fetch or not season or not round_no:
+        return actual
+    if race is None or not is_race_past_calendar_cutoff(race):
+        return actual if trusted_cached_source else None
+
+    refreshed = fetch_round_data_cached(
+        season,
+        round_no,
+        allow_backfill=True,
+        force_fetch=bool(cached and not trusted_cached_source),
+        race=race,
+        training_mode=False,
+    )
+    return actual_from_round_data(refreshed or {})
 
 
 def actual_result_comparison_for_entry(entry, full_grid=None):
@@ -7312,6 +7335,8 @@ def actual_result_comparison_for_entry(entry, full_grid=None):
         entry.get("season"),
         entry.get("round"),
         entry.get("target_type") or "race",
+        race=entry.get("jolpica_race") if isinstance(entry.get("jolpica_race"), dict) else None,
+        allow_fetch=COMPARE_ACTUAL_RESULTS,
     )
     source_health = (entry.get("source_health") or {}).get("sources") if isinstance(entry.get("source_health"), dict) else []
     if not COMPARE_ACTUAL_RESULTS:

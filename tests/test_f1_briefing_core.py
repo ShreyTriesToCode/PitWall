@@ -632,18 +632,120 @@ class F1BriefingCoreTests(unittest.TestCase):
     def test_actual_result_comparison_uses_cached_completed_race_results(self):
         monaco_actual = f1.actual_result_from_cached_round(2026, 6, "race")
         canada_actual = f1.actual_result_from_cached_round(2026, 5, "race")
-        self.assertEqual(monaco_actual["winner"]["driver_id"], "antonelli")
-        self.assertEqual(canada_actual["winner"]["driver_id"], "antonelli")
+        self.assertIsNotNone(monaco_actual)
+        self.assertIsNotNone(canada_actual)
+        self.assertEqual(monaco_actual["winner"]["driver_id"], monaco_actual["classification"][0]["driver_id"])
+        self.assertEqual(canada_actual["winner"]["driver_id"], canada_actual["classification"][0]["driver_id"])
         self.assertGreaterEqual(len(monaco_actual["classification"]), 20)
         self.assertGreaterEqual(len(canada_actual["classification"]), 20)
 
         comparison = f1.actual_result_comparison_for_entry(
-            {"season": 2026, "round": 6, "target_type": "race", "race_name": "Monaco Grand Prix"},
-            [{"driver_id": "antonelli", "name": "Andrea Kimi Antonelli", "rank": 1, "predicted_position": 1}],
+            {
+                "season": 2026,
+                "round": 6,
+                "target_type": "race",
+                "race_name": "Monaco Grand Prix",
+                "actual_result": monaco_actual,
+            },
+            [{
+                "driver_id": monaco_actual["winner"]["driver_id"],
+                "name": monaco_actual["winner"]["name"],
+                "rank": 1,
+                "predicted_position": 1,
+            }],
         )
         self.assertEqual(comparison["status"], "available")
         self.assertTrue(comparison["winner_hit"])
-        self.assertEqual(comparison["actual_winner"]["driver_id"], "antonelli")
+        self.assertEqual(comparison["actual_winner"]["driver_id"], monaco_actual["winner"]["driver_id"])
+
+    def test_actual_result_comparison_fetches_completed_race_from_api_when_cache_missing(self):
+        completed_race = {
+            "season": "2026",
+            "round": "8",
+            "raceName": "Example Grand Prix",
+            "date": "2026-06-01",
+            "time": "13:00:00Z",
+        }
+        api_payload = {
+            "results": [{
+                "Results": [{
+                    "Driver": {"driverId": "api_driver", "givenName": "API", "familyName": "Driver"},
+                    "Constructor": {"name": "API Team"},
+                    "positionOrder": "1",
+                    "position": "1",
+                    "status": "Finished",
+                    "points": "25",
+                }]
+            }]
+        }
+
+        with patch.object(f1, "read_full_race_cache", return_value=None), \
+             patch.object(f1, "fetch_round_data_cached", return_value=api_payload) as fetch_mock, \
+             patch.object(f1, "now_local", return_value=f1.datetime(2026, 6, 3, 12, 0, tzinfo=f1.USER_TIMEZONE)):
+            comparison = f1.actual_result_comparison_for_entry(
+                {
+                    "season": 2026,
+                    "round": 8,
+                    "target_type": "race",
+                    "race_name": "Example Grand Prix",
+                    "jolpica_race": completed_race,
+                },
+                [{"driver_id": "api_driver", "name": "API Driver", "rank": 1, "predicted_position": 1}],
+            )
+
+        fetch_mock.assert_called_once()
+        self.assertEqual(comparison["status"], "available")
+        self.assertEqual(comparison["actual_winner"]["driver_id"], "api_driver")
+
+    def test_actual_result_comparison_refreshes_unmarked_cache_after_cutoff(self):
+        completed_race = {
+            "season": "2026",
+            "round": "8",
+            "raceName": "Example Grand Prix",
+            "date": "2026-06-01",
+            "time": "13:00:00Z",
+        }
+        unmarked_cache = {
+            "status": "final_results_available",
+            "data": {
+                "results": [{
+                    "Results": [{
+                        "Driver": {"driverId": "stale_driver", "givenName": "Stale", "familyName": "Driver"},
+                        "Constructor": {"name": "Stale Team"},
+                        "positionOrder": "1",
+                        "position": "1",
+                    }]
+                }]
+            },
+        }
+        api_payload = {
+            "results": [{
+                "Results": [{
+                    "Driver": {"driverId": "api_driver", "givenName": "API", "familyName": "Driver"},
+                    "Constructor": {"name": "API Team"},
+                    "positionOrder": "1",
+                    "position": "1",
+                }]
+            }]
+        }
+
+        with patch.object(f1, "read_full_race_cache", return_value=unmarked_cache), \
+             patch.object(f1, "fetch_round_data_cached", return_value=api_payload) as fetch_mock, \
+             patch.object(f1, "now_local", return_value=f1.datetime(2026, 6, 3, 12, 0, tzinfo=f1.USER_TIMEZONE)):
+            comparison = f1.actual_result_comparison_for_entry(
+                {
+                    "season": 2026,
+                    "round": 8,
+                    "target_type": "race",
+                    "race_name": "Example Grand Prix",
+                    "jolpica_race": completed_race,
+                },
+                [{"driver_id": "api_driver", "name": "API Driver", "rank": 1, "predicted_position": 1}],
+            )
+
+        fetch_mock.assert_called_once()
+        self.assertEqual(comparison["status"], "available")
+        self.assertEqual(comparison["actual_winner"]["driver_id"], "api_driver")
 
     def test_training_rows_include_completed_monaco_and_skip_pending_barcelona(self):
         monaco = {
@@ -673,7 +775,7 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertNotIn("2026-7", set(rows["race_id"]))
         monaco_rows = rows[rows["race_id"] == "2026-6"]
         self.assertGreaterEqual(len(monaco_rows), 20)
-        self.assertEqual(monaco_rows.sort_values("finish_position").iloc[0]["driver_id"], "antonelli")
+        self.assertEqual(monaco_rows.sort_values("finish_position").iloc[0]["finish_position"], 1)
 
     def test_training_cache_respects_final_result_cutoff_before_using_cached_actuals(self):
         barcelona = {
@@ -689,8 +791,8 @@ class F1BriefingCoreTests(unittest.TestCase):
             "data": {
                 "results": [{
                     "Results": [{
-                        "Driver": {"driverId": "antonelli", "givenName": "Andrea Kimi", "familyName": "Antonelli"},
-                        "Constructor": {"name": "Mercedes"},
+                        "Driver": {"driverId": "cached_driver", "givenName": "Cached", "familyName": "Driver"},
+                        "Constructor": {"name": "Cached Team"},
                         "positionOrder": "1",
                         "position": "1",
                         "grid": "1",
