@@ -7,6 +7,8 @@ import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
+import pandas as pd
+
 import f1_briefing as f1
 from pitwall.data import f1db, relbench_f1
 
@@ -52,6 +54,121 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertAlmostEqual(rows[0]["best_clean_lap"], 91.869)
         self.assertAlmostEqual(rows[0]["avg_best_35pct_lap"], 91.869)
+
+    def test_completed_race_rows_flatten_full_grid_strategy_weather_features(self):
+        race = {
+            "raceName": "Example Grand Prix",
+            "Circuit": {"circuitId": "example", "circuitName": "Example Circuit"},
+            "date": "2025-05-04",
+            "time": "12:00:00Z",
+        }
+        results = []
+        timings = []
+        pitstops = []
+        stints = []
+        for idx in range(1, 23):
+            driver_id = f"driver_{idx:02d}"
+            results.append({
+                "positionOrder": str(idx),
+                "grid": str(idx),
+                "points": str(max(0, 26 - idx)),
+                "status": "Finished",
+                "Driver": {"driverId": driver_id, "givenName": "Driver", "familyName": str(idx)},
+                "Constructor": {"name": f"Team {((idx - 1) // 2) + 1}"},
+                "FastestLap": {"Time": {"time": "1:31.000"}},
+            })
+            pitstops.append({"driverId": driver_id, "lap": "18", "duration": "2.7"})
+            stints.append({"driver_id": driver_id, "compound": "MEDIUM", "stint_number": 1})
+            timings.append({"driverId": driver_id, "time": "1:31.000"})
+        data = {
+            "results": [{"Results": results}],
+            "qualifying": [{"QualifyingResults": [
+                {"position": str(idx), "Driver": {"driverId": f"driver_{idx:02d}"}} for idx in range(1, 23)
+            ]}],
+            "sprint": [],
+            "laps": [{"Laps": [{"number": str(lap_no), "Timings": timings} for lap_no in range(1, 5)]}],
+            "pitstops": [{"PitStops": pitstops}],
+            "stints": stints,
+            "race_control": [{"lap": "18", "message": "Safety car deployed"}],
+            "weather": {"rainfall_actual": 0.2, "rain_probability": 0.7},
+        }
+
+        rows = f1.result_rows_from_race_data(2025, 1, race, data)
+
+        self.assertEqual(len(rows), 22)
+        first = rows[0]
+        self.assertEqual(first["actual_first_pit_lap"], 18)
+        self.assertEqual(first["actual_pit_stop_count"], 1)
+        self.assertGreater(first["actual_starting_compound_code"], 0)
+        self.assertEqual(first["actual_race_control_event_count"], 1)
+        self.assertAlmostEqual(first["actual_weather_rainfall"], 0.2)
+        self.assertIn("actual_strategy_annotation_count", first)
+
+        feature_df, feature_columns = f1.create_ml_features(pd.DataFrame(rows))
+        for feature in [
+            "driver_strategy_first_pit_lap",
+            "team_strategy_pit_stop_count",
+            "track_strategy_safety_car_rate",
+            "track_weather_rainfall_rate",
+        ]:
+            self.assertIn(feature, feature_columns)
+            self.assertIn(feature, feature_df.columns)
+
+    def test_prediction_features_use_historical_strategy_weather_actuals(self):
+        historical_df = pd.DataFrame([{
+            "season": 2025,
+            "round": 1,
+            "driver_id": "driver_a",
+            "constructor": "Team A",
+            "circuit_id": "example",
+            "finish_position": 4,
+            "points": 12,
+            "is_win": 0,
+            "is_podium": 0,
+            "is_top10": 1,
+            "is_finished": 1,
+            "grid": 5,
+            "qualifying": 5,
+            "sprint_position": 20,
+            "avg_best_35pct_lap": 91.2,
+            "lap_consistency": 0.4,
+            "valid_laps": 55,
+            "pit_stop_count": 1,
+            "avg_pit_duration": 2.8,
+            "min_pit_duration": 2.7,
+            "actual_first_pit_lap": 18,
+            "actual_pit_stop_count": 1,
+            "actual_starting_compound_code": 2,
+            "actual_strategy_annotation_count": 1,
+            "actual_safety_car_strategy_flag": 1,
+            "actual_race_control_event_count": 1,
+            "actual_weather_rainfall": 0.2,
+            "actual_weather_rain_probability": 0.7,
+        }])
+        race = {
+            "season": "2025",
+            "round": "2",
+            "Circuit": {"circuitId": "example"},
+        }
+        feature_columns = [
+            "driver_strategy_first_pit_lap",
+            "team_strategy_pit_stop_count",
+            "track_strategy_safety_car_rate",
+            "track_weather_rainfall_rate",
+        ]
+
+        rows = f1.build_prediction_feature_rows(
+            [{"driver_id": "driver_a", "name": "Driver A", "team": "Team A", "position": 1}],
+            race,
+            {},
+            historical_df,
+            feature_columns,
+        )
+
+        self.assertEqual(rows.loc[0, "driver_strategy_first_pit_lap"], 18)
+        self.assertEqual(rows.loc[0, "team_strategy_pit_stop_count"], 1)
+        self.assertEqual(rows.loc[0, "track_strategy_safety_car_rate"], 1)
+        self.assertAlmostEqual(rows.loc[0, "track_weather_rainfall_rate"], 0.2)
 
     def test_jolpica_cache_hit_does_not_sleep_or_fetch_network(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -657,6 +774,50 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(comparison["status"], "available")
         self.assertTrue(comparison["winner_hit"])
         self.assertEqual(comparison["actual_winner"]["driver_id"], monaco_actual["winner"]["driver_id"])
+
+    def test_empty_completed_refresh_preserves_existing_final_cache(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cached_data = {
+                "results": [{
+                    "Results": [{
+                        "positionOrder": "1",
+                        "position": "1",
+                        "points": "25",
+                        "status": "Finished",
+                        "Driver": {"driverId": "cached_driver", "givenName": "Cached", "familyName": "Driver"},
+                        "Constructor": {"name": "Cached Team"},
+                    }]
+                }],
+                "qualifying": [],
+                "pitstops": [],
+                "laps": [],
+                "sprint": [],
+                "sprint_qualifying": [],
+            }
+            race = {
+                "season": "2026",
+                "round": "99",
+                "raceName": "Synthetic Past Grand Prix",
+                "date": "2026-01-01",
+                "time": "12:00:00Z",
+            }
+            payload = {
+                "season": 2026,
+                "round": "99",
+                "status": "final_results_available",
+                "data": cached_data,
+            }
+            with patch.object(f1, "FULL_RACE_CACHE_DIR", Path(tmp)), patch.object(f1, "CACHE_AWARE_DOWNLOADS", False):
+                f1.write_full_race_cache(2026, 99, payload)
+                with patch.object(f1, "fetch_round_data_direct", return_value={"results": []}):
+                    data = f1.fetch_round_data_cached(
+                        2026,
+                        99,
+                        race=race,
+                        training_mode=True,
+                        force_fetch=True,
+                    )
+        self.assertEqual(data["results"][0]["Results"][0]["Driver"]["driverId"], "cached_driver")
 
     def test_actual_result_comparison_fetches_completed_race_from_api_when_cache_missing(self):
         completed_race = {

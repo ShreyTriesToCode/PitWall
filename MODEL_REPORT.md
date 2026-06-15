@@ -85,6 +85,9 @@ Optional heavy tools such as MLflow, DVC, Optuna, SHAP, LightGBM, and XGBoost sh
 - Added `notebooks/pitwall_model_refinement.ipynb` for cache-first model inspection and challenger analysis.
 - Added reusable model modules for feature wrappers, training entrypoints, evaluation metrics, prediction row normalization, artifact IO, and validation gates.
 - Changed chronological validation from fixed season windows to rolling race groups so newer completed seasons are not permanently excluded from training windows.
+- Added model schema `2026.06-strategy-actuals-v7`, which forces retraining/evaluation when completed-race actual strategy signals are added to the feature set.
+- Completed race rows now preserve every classified driver returned by the Jolpica-compatible results API, including 22-driver grids when the source provides them.
+- Post-race strategy, stint, race-control, weather, pit-stop, and tyre-compound signals are flattened into training rows after the final-result delay, then converted into historical driver/team/track aggregates for future prediction rows. These fields are never used from the same race before that race is final.
 - Hardened generated prediction rows so Top 10 and Full Grid share one schema and expose safe defaults for optional frontend fields.
 - Added cache manifest tracking for full-race data reuse/refresh/skip decisions.
 - Added `model_comparison` contracts for champion/challenger status, promotion decision, ranking metrics, and Brier/calibration fields where available.

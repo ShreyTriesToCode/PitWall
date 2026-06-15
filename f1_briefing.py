@@ -145,7 +145,7 @@ _FIA_REFRESHED_SEASONS = set()
 MODEL_BUNDLE_PATH = MODEL_DIR / "f1_hybrid_full_data_bundle.pkl"
 MODEL_META_PATH = MODEL_DIR / "f1_hybrid_full_data_meta.json"
 MODEL_STATUS_PATH = BASE_DIR / "MODEL_STATUS.md"
-MODEL_SCHEMA_VERSION = "2026.06-barcelona-preweekend-v6"
+MODEL_SCHEMA_VERSION = "2026.06-strategy-actuals-v7"
 PREDICTION_DATA_VERSION = "2026.05-race-control-contract-v2"
 MODEL_STATUS_JSON_PATH = DATA_CACHE_DIR / "model-status.json"
 BACKTEST_HISTORY_PATH = DATA_CACHE_DIR / "backtest-history.json"
@@ -800,6 +800,8 @@ def select_feature_columns_by_importance(train_df, feature_columns, max_features
         "missing_grid", "missing_qualifying", "missing_sprint_position", "missing_lap_pace", "missing_pit_data",
         "driver_recent3_finish", "driver_avg_finish", "team_avg_finish", "team_recent_points",
         "track_dnf_rate", "track_position_sensitivity", "regulation_era_factor", "season_progress",
+        "driver_strategy_first_pit_lap", "team_strategy_pit_stop_count",
+        "track_strategy_safety_car_rate", "track_weather_rainfall_rate",
     }
     if len(feature_columns) <= max_features:
         return feature_columns, {"method": "not_needed", "selected_count": len(feature_columns), "dropped": []}
@@ -2154,6 +2156,26 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
     data = fetch_round_data_direct(season, round_no, use_cache=not bypass_http_cache)
     status = cache_status_for_race(race, data) if race is not None else ("final_results_available" if race_has_results(data) else "unknown")
 
+    if (
+        cached
+        and race is not None
+        and is_race_past_calendar_cutoff(race)
+        and race_has_results(cached.get("data", {}))
+        and not race_has_results(data)
+    ):
+        print(f"Preserving cached final race data for {key}; refreshed payload had no Results rows.")
+        record_full_race_cache_manifest(
+            season,
+            round_no,
+            cache_path,
+            action="reused",
+            reason="preserved_final_cache_after_empty_refresh",
+            status=cached.get("status") or "final_results_available",
+            validation_status="valid",
+            race=race,
+        )
+        return cached.get("data", {})
+
     # Avoid storing empty future training files as if they were complete history.
     if training_mode and status == "future_or_partial":
         print(f"Not caching future/partial training race: {key}")
@@ -2605,6 +2627,9 @@ def result_rows_from_race_data(season, round_no, race, data):
             weather=weather_context,
             lap_metrics=dm,
         )
+        strategy_annotations = strategy_context.get("annotations", [])
+        race_control_near_stop = strategy_context.get("track_status_events") or []
+        pit_context = str(strategy_context.get("pit_context") or "").lower()
 
         rows.append({
             "race_id": race_id,
@@ -2634,8 +2659,20 @@ def result_rows_from_race_data(season, round_no, race, data):
             "pit_stop_count": pm.get("pit_stop_count", 0),
             "avg_pit_duration": pm.get("avg_pit_duration"),
             "min_pit_duration": pm.get("min_pit_duration"),
+            "actual_first_pit_lap": strategy_context.get("first_pit_lap"),
+            "actual_pit_stop_count": strategy_context.get("pit_stop_count", pm.get("pit_stop_count", 0)),
+            "actual_starting_compound_code": tyre_compound_code(strategy_context.get("starting_compound")),
+            "actual_strategy_annotation_count": len(strategy_annotations),
+            "actual_safety_car_strategy_flag": 1 if "safety" in pit_context else 0,
+            "actual_race_control_event_count": len(race_control_near_stop),
+            "actual_weather_rainfall": safe_float(weather_context.get("rainfall_actual") or weather_context.get("rainfall") or 0) or 0,
+            "actual_weather_rain_probability": safe_float(weather_context.get("rain_probability") or weather_context.get("forecast_rain_probability") or 0) or 0,
+            "actual_post_switch_pace_delta": strategy_context.get("post_switch_pace_delta"),
+            "actual_degradation_slope": strategy_context.get("degradation_slope"),
+            "actual_double_stack_loss": strategy_context.get("double_stack_loss"),
+            "actual_traffic_loss": strategy_context.get("traffic_loss"),
             "strategy_context": strategy_context,
-            "strategy_annotations": strategy_context.get("annotations", []),
+            "strategy_annotations": strategy_annotations,
         })
     return rows
 
@@ -2691,6 +2728,21 @@ def pit_metrics_from_data(data):
             "min_pit_duration": min(durations) if durations else None,
         }
     return out
+
+
+def tyre_compound_code(compound):
+    value = str(compound or "").strip().lower()
+    mapping = {
+        "soft": 1,
+        "medium": 2,
+        "hard": 3,
+        "intermediate": 4,
+        "wet": 5,
+    }
+    for key, code in mapping.items():
+        if key in value:
+            return code
+    return 0
 
 
 def track_traits_from_race_data(data):
@@ -2777,12 +2829,21 @@ def create_ml_features(df):
     numeric_cols = [
         "grid", "qualifying", "sprint_position", "finish_position", "points",
         "best_clean_lap", "avg_best_35pct_lap", "lap_consistency",
-        "valid_laps", "pit_stop_count", "avg_pit_duration", "min_pit_duration"
+        "valid_laps", "pit_stop_count", "avg_pit_duration", "min_pit_duration",
+        "actual_first_pit_lap", "actual_pit_stop_count", "actual_starting_compound_code",
+        "actual_strategy_annotation_count", "actual_safety_car_strategy_flag",
+        "actual_race_control_event_count", "actual_weather_rainfall", "actual_weather_rain_probability",
+        "actual_post_switch_pace_delta", "actual_degradation_slope", "actual_double_stack_loss",
+        "actual_traffic_loss",
     ]
     for col in numeric_cols:
         df[col] = pd.to_numeric(df.get(col), errors="coerce")
 
-    missing_source_cols = ["grid", "qualifying", "sprint_position", "avg_best_35pct_lap", "lap_consistency", "avg_pit_duration", "min_pit_duration"]
+    missing_source_cols = [
+        "grid", "qualifying", "sprint_position", "avg_best_35pct_lap", "lap_consistency",
+        "avg_pit_duration", "min_pit_duration", "actual_first_pit_lap",
+        "actual_starting_compound_code", "actual_degradation_slope",
+    ]
     for col in missing_source_cols:
         df[f"missing_{col}"] = pd.to_numeric(df.get(col), errors="coerce").isna().astype(int)
 
@@ -2792,6 +2853,13 @@ def create_ml_features(df):
     df["points"] = df["points"].fillna(0)
     df["pit_stop_count"] = df["pit_stop_count"].fillna(0)
     df["valid_laps"] = df["valid_laps"].fillna(0)
+    df["actual_pit_stop_count"] = df["actual_pit_stop_count"].fillna(df["pit_stop_count"])
+    df["actual_strategy_annotation_count"] = df["actual_strategy_annotation_count"].fillna(0)
+    df["actual_safety_car_strategy_flag"] = df["actual_safety_car_strategy_flag"].fillna(0)
+    df["actual_race_control_event_count"] = df["actual_race_control_event_count"].fillna(0)
+    df["actual_weather_rainfall"] = df["actual_weather_rainfall"].fillna(0)
+    df["actual_weather_rain_probability"] = df["actual_weather_rain_probability"].fillna(0)
+    df["actual_starting_compound_code"] = df["actual_starting_compound_code"].fillna(0)
 
     feature_rows = []
     grouped_driver = {k: g.sort_values(["season", "round"]) for k, g in df.groupby("driver_id")}
@@ -2857,6 +2925,24 @@ def create_ml_features(df):
         teammate_points_delta = mean_or(recent5, "points", 0) - mean_or(teammate_recent10, "points", mean_or(team_recent10, "points", 0))
         driver_recent_dnf_rate = 1 - mean_or(recent5, "is_finished", mean_or(d_hist, "is_finished", 0.85))
         team_recent_dnf_rate = 1 - mean_or(team_recent10, "is_finished", mean_or(t_hist, "is_finished", 0.85))
+        driver_strategy_first_pit_lap = mean_or(recent5, "actual_first_pit_lap", mean_or(d_hist, "actual_first_pit_lap", 24))
+        team_strategy_first_pit_lap = mean_or(team_recent10, "actual_first_pit_lap", mean_or(t_hist, "actual_first_pit_lap", 24))
+        track_strategy_first_pit_lap = mean_or(c_hist, "actual_first_pit_lap", team_strategy_first_pit_lap)
+        driver_strategy_pit_stop_count = mean_or(recent5, "actual_pit_stop_count", mean_or(d_hist, "actual_pit_stop_count", 1))
+        team_strategy_pit_stop_count = mean_or(team_recent10, "actual_pit_stop_count", mean_or(t_hist, "actual_pit_stop_count", 1))
+        track_strategy_pit_stop_count = mean_or(c_hist, "actual_pit_stop_count", team_strategy_pit_stop_count)
+        driver_starting_compound_code = mean_or(recent5, "actual_starting_compound_code", mean_or(d_hist, "actual_starting_compound_code", 0))
+        team_starting_compound_code = mean_or(team_recent10, "actual_starting_compound_code", mean_or(t_hist, "actual_starting_compound_code", 0))
+        driver_strategy_annotation_rate = mean_or(recent5, "actual_strategy_annotation_count", mean_or(d_hist, "actual_strategy_annotation_count", 0))
+        team_strategy_annotation_rate = mean_or(team_recent10, "actual_strategy_annotation_count", mean_or(t_hist, "actual_strategy_annotation_count", 0))
+        track_strategy_annotation_rate = mean_or(c_hist, "actual_strategy_annotation_count", 0)
+        driver_strategy_safety_car_rate = mean_or(recent10, "actual_safety_car_strategy_flag", mean_or(d_hist, "actual_safety_car_strategy_flag", 0))
+        team_strategy_safety_car_rate = mean_or(team_recent10, "actual_safety_car_strategy_flag", mean_or(t_hist, "actual_safety_car_strategy_flag", 0))
+        track_strategy_safety_car_rate = mean_or(c_hist, "actual_safety_car_strategy_flag", 0)
+        track_weather_rainfall_rate = mean_or(c_hist, "actual_weather_rainfall", 0)
+        track_weather_rain_probability = mean_or(c_hist, "actual_weather_rain_probability", 0)
+        driver_weather_rain_experience = mean_or(recent10, "actual_weather_rainfall", mean_or(d_hist, "actual_weather_rainfall", 0))
+        team_weather_rain_experience = mean_or(team_recent10, "actual_weather_rainfall", mean_or(t_hist, "actual_weather_rainfall", 0))
 
         features = {
             "race_id": race["race_id"],
@@ -2911,6 +2997,12 @@ def create_ml_features(df):
             "driver_teammate_pace_delta": teammate_pace_delta,
             "driver_teammate_points_delta": teammate_points_delta,
             "teammate_sample_size": len(teammate_recent10),
+            "driver_strategy_first_pit_lap": driver_strategy_first_pit_lap,
+            "driver_strategy_pit_stop_count": driver_strategy_pit_stop_count,
+            "driver_starting_compound_code": driver_starting_compound_code,
+            "driver_strategy_annotation_rate": driver_strategy_annotation_rate,
+            "driver_strategy_safety_car_rate": driver_strategy_safety_car_rate,
+            "driver_weather_rain_experience": driver_weather_rain_experience,
 
             "team_avg_finish": t_hist["finish_position"].mean(),
             "team_avg_points": t_hist["points"].mean(),
@@ -2928,6 +3020,12 @@ def create_ml_features(df):
             "team_qualifying_strength_recent": mean_or(team_recent10, "qualifying", 12),
             "team_reliability_recent": mean_or(team_recent10, "is_finished", 0.85),
             "team_recent_dnf_rate": team_recent_dnf_rate,
+            "team_strategy_first_pit_lap": team_strategy_first_pit_lap,
+            "team_strategy_pit_stop_count": team_strategy_pit_stop_count,
+            "team_starting_compound_code": team_starting_compound_code,
+            "team_strategy_annotation_rate": team_strategy_annotation_rate,
+            "team_strategy_safety_car_rate": team_strategy_safety_car_rate,
+            "team_weather_rain_experience": team_weather_rain_experience,
 
             "driver_circuit_avg_finish": mean_or(cd_hist, "finish_position", d_hist["finish_position"].mean()),
             "driver_circuit_podium_rate": mean_or(cd_hist, "is_podium", d_hist["is_podium"].mean()),
@@ -2965,6 +3063,12 @@ def create_ml_features(df):
             "track_avg_lap_consistency": mean_or(c_hist, "lap_consistency", 3),
             "track_lap_pace_baseline": mean_or(c_hist, "avg_best_35pct_lap", field_recent_pace),
             "track_pit_duration_baseline": mean_or(c_hist, "avg_pit_duration", field_recent_pit),
+            "track_strategy_first_pit_lap": track_strategy_first_pit_lap,
+            "track_strategy_pit_stop_count": track_strategy_pit_stop_count,
+            "track_strategy_annotation_rate": track_strategy_annotation_rate,
+            "track_strategy_safety_car_rate": track_strategy_safety_car_rate,
+            "track_weather_rainfall_rate": track_weather_rainfall_rate,
+            "track_weather_rain_probability": track_weather_rain_probability,
             "track_dnf_rate": 1 - mean_or(c_hist, "is_finished", 0.85),
             "track_overtake_proxy": circuit_movement,
             "track_abs_overtake_proxy": circuit_abs_movement or 3,
@@ -2988,10 +3092,14 @@ def create_ml_features(df):
         "driver_points_momentum", "driver_qualifying_strength_recent", "driver_qualifying_delta",
         "driver_recent_dnf_rate", "driver_teammate_finish_delta", "driver_teammate_qualifying_delta",
         "driver_teammate_pace_delta", "driver_teammate_points_delta", "teammate_sample_size",
+        "driver_strategy_first_pit_lap", "driver_strategy_pit_stop_count", "driver_starting_compound_code",
+        "driver_strategy_annotation_rate", "driver_strategy_safety_car_rate", "driver_weather_rain_experience",
         "team_avg_finish", "team_avg_points", "team_win_rate", "team_podium_rate",
         "team_top10_rate", "team_finish_rate", "team_recent_points", "team_recent5_points", "team_recent10_finish",
         "team_recent_grid_gain", "team_finish_consistency", "team_finish_momentum",
         "team_points_momentum", "team_qualifying_strength_recent", "team_reliability_recent", "team_recent_dnf_rate",
+        "team_strategy_first_pit_lap", "team_strategy_pit_stop_count", "team_starting_compound_code",
+        "team_strategy_annotation_rate", "team_strategy_safety_car_rate", "team_weather_rain_experience",
         "driver_circuit_avg_finish", "driver_circuit_podium_rate", "driver_circuit_grid_gain",
         "team_circuit_avg_finish", "team_circuit_podium_rate", "team_circuit_grid_gain", "driver_circuit_vs_constructor",
         "career_starts", "team_starts", "circuit_experience", "driver_experience_log", "team_experience_log",
@@ -3001,6 +3109,8 @@ def create_ml_features(df):
         "team_lap_pace", "team_lap_consistency", "team_pace_momentum", "team_pace_vs_field_recent",
         "team_pit_duration", "team_min_pit_duration", "team_pit_std5", "team_pit_vs_field_recent", "team_pit_stop_count",
         "track_avg_pit_stops", "track_avg_lap_consistency", "track_lap_pace_baseline", "track_pit_duration_baseline",
+        "track_strategy_first_pit_lap", "track_strategy_pit_stop_count", "track_strategy_annotation_rate",
+        "track_strategy_safety_car_rate", "track_weather_rainfall_rate", "track_weather_rain_probability",
         "track_dnf_rate", "track_overtake_proxy", "track_abs_overtake_proxy",
         "track_position_sensitivity", "regulation_era_factor", "season_progress",
     ]
@@ -4098,6 +4208,24 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
         teammate_points_delta = mean_or(recent5, "points", 0) - mean_or(teammate_recent10, "points", mean_or(team_recent10, "points", 0))
         driver_recent_dnf_rate = 1 - mean_or(recent5, "is_finished", mean_or(d_hist, "is_finished", 0.85))
         team_recent_dnf_rate = 1 - mean_or(team_recent10, "is_finished", mean_or(t_hist, "is_finished", 0.85))
+        driver_strategy_first_pit_lap = mean_or(recent5, "actual_first_pit_lap", mean_or(d_hist, "actual_first_pit_lap", 24))
+        team_strategy_first_pit_lap = mean_or(team_recent10, "actual_first_pit_lap", mean_or(t_hist, "actual_first_pit_lap", 24))
+        track_strategy_first_pit_lap = mean_or(c_hist, "actual_first_pit_lap", team_strategy_first_pit_lap)
+        driver_strategy_pit_stop_count = mean_or(recent5, "actual_pit_stop_count", mean_or(d_hist, "actual_pit_stop_count", 1))
+        team_strategy_pit_stop_count = mean_or(team_recent10, "actual_pit_stop_count", mean_or(t_hist, "actual_pit_stop_count", 1))
+        track_strategy_pit_stop_count = mean_or(c_hist, "actual_pit_stop_count", team_strategy_pit_stop_count)
+        driver_starting_compound_code = mean_or(recent5, "actual_starting_compound_code", mean_or(d_hist, "actual_starting_compound_code", 0))
+        team_starting_compound_code = mean_or(team_recent10, "actual_starting_compound_code", mean_or(t_hist, "actual_starting_compound_code", 0))
+        driver_strategy_annotation_rate = mean_or(recent5, "actual_strategy_annotation_count", mean_or(d_hist, "actual_strategy_annotation_count", 0))
+        team_strategy_annotation_rate = mean_or(team_recent10, "actual_strategy_annotation_count", mean_or(t_hist, "actual_strategy_annotation_count", 0))
+        track_strategy_annotation_rate = mean_or(c_hist, "actual_strategy_annotation_count", 0)
+        driver_strategy_safety_car_rate = mean_or(recent10, "actual_safety_car_strategy_flag", mean_or(d_hist, "actual_safety_car_strategy_flag", 0))
+        team_strategy_safety_car_rate = mean_or(team_recent10, "actual_safety_car_strategy_flag", mean_or(t_hist, "actual_safety_car_strategy_flag", 0))
+        track_strategy_safety_car_rate = mean_or(c_hist, "actual_safety_car_strategy_flag", 0)
+        track_weather_rainfall_rate = mean_or(c_hist, "actual_weather_rainfall", 0)
+        track_weather_rain_probability = mean_or(c_hist, "actual_weather_rain_probability", 0)
+        driver_weather_rain_experience = mean_or(recent10, "actual_weather_rainfall", mean_or(d_hist, "actual_weather_rainfall", 0))
+        team_weather_rain_experience = mean_or(team_recent10, "actual_weather_rainfall", mean_or(t_hist, "actual_weather_rainfall", 0))
 
         standing_proxy = min(20, max(1, safe_int(driver.get("position")) or 12))
         lap_now = current_laps.get(driver_id, {})
@@ -4148,6 +4276,12 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "driver_teammate_pace_delta": teammate_pace_delta,
             "driver_teammate_points_delta": teammate_points_delta,
             "teammate_sample_size": len(teammate_recent10),
+            "driver_strategy_first_pit_lap": driver_strategy_first_pit_lap,
+            "driver_strategy_pit_stop_count": driver_strategy_pit_stop_count,
+            "driver_starting_compound_code": driver_starting_compound_code,
+            "driver_strategy_annotation_rate": driver_strategy_annotation_rate,
+            "driver_strategy_safety_car_rate": driver_strategy_safety_car_rate,
+            "driver_weather_rain_experience": driver_weather_rain_experience,
 
             "team_avg_finish": mean_or(t_hist, "finish_position", 12),
             "team_avg_points": mean_or(t_hist, "points", 0),
@@ -4165,6 +4299,12 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "team_qualifying_strength_recent": mean_or(team_recent10, "qualifying", 12),
             "team_reliability_recent": mean_or(team_recent10, "is_finished", 0.85),
             "team_recent_dnf_rate": team_recent_dnf_rate,
+            "team_strategy_first_pit_lap": team_strategy_first_pit_lap,
+            "team_strategy_pit_stop_count": team_strategy_pit_stop_count,
+            "team_starting_compound_code": team_starting_compound_code,
+            "team_strategy_annotation_rate": team_strategy_annotation_rate,
+            "team_strategy_safety_car_rate": team_strategy_safety_car_rate,
+            "team_weather_rain_experience": team_weather_rain_experience,
 
             "driver_circuit_avg_finish": mean_or(cd_hist, "finish_position", mean_or(d_hist, "finish_position", 12)),
             "driver_circuit_podium_rate": mean_or(cd_hist, "is_podium", mean_or(d_hist, "is_podium", 0)),
@@ -4201,6 +4341,12 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "track_avg_lap_consistency": mean_or(c_hist, "lap_consistency", 3),
             "track_lap_pace_baseline": mean_or(c_hist, "avg_best_35pct_lap", field_recent_pace),
             "track_pit_duration_baseline": mean_or(c_hist, "avg_pit_duration", field_recent_pit),
+            "track_strategy_first_pit_lap": track_strategy_first_pit_lap,
+            "track_strategy_pit_stop_count": track_strategy_pit_stop_count,
+            "track_strategy_annotation_rate": track_strategy_annotation_rate,
+            "track_strategy_safety_car_rate": track_strategy_safety_car_rate,
+            "track_weather_rainfall_rate": track_weather_rainfall_rate,
+            "track_weather_rain_probability": track_weather_rain_probability,
             "track_dnf_rate": 1 - mean_or(c_hist, "is_finished", 0.85),
             "track_overtake_proxy": mean_or(c_hist, "grid", 10) - mean_or(c_hist, "finish_position", 10),
             "track_abs_overtake_proxy": circuit_abs_movement or 3,
@@ -8153,8 +8299,8 @@ def normalize_entry_contract(entry):
             enriched.setdefault("round", round_no)
             enriched.setdefault("target_type", target_type)
             enriched.setdefault("stage", stage)
-            enriched.setdefault("model_version", entry.get("model_version") or MODEL_SCHEMA_VERSION)
-            enriched.setdefault("schema_version", entry.get("schema_version") or MODEL_SCHEMA_VERSION)
+            enriched["model_version"] = MODEL_SCHEMA_VERSION
+            enriched["schema_version"] = MODEL_SCHEMA_VERSION
             enriched.setdefault("generated_at", entry.get("generated_iso"))
             enriched.setdefault("input_data_hash", entry.get("input_data_hash") or stable_hash(item))
             enriched.setdefault("prediction_data_version", PREDICTION_DATA_VERSION)
@@ -8310,8 +8456,8 @@ def normalize_entry_contract(entry):
         "target_type": target_type,
         "stage": stage,
         "prediction_stage": stage,
-        "model_version": entry.get("model_version") or MODEL_SCHEMA_VERSION,
-        "schema_version": entry.get("schema_version") or MODEL_SCHEMA_VERSION,
+        "model_version": MODEL_SCHEMA_VERSION,
+        "schema_version": MODEL_SCHEMA_VERSION,
         "prediction_data_version": PREDICTION_DATA_VERSION,
         "source_registry": registry,
         "session_timeline": session_timeline,

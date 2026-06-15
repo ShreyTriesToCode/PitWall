@@ -1,7 +1,7 @@
 # Codex Handoff State
 
 ## Current objective
-- [DONE] Monaco/Canada actual-result fix, archive UI polish, and unbuffered workflow log fix are pushed to main.
+- [DONE] Dynamic completed-race strategy/result feature training update validated locally; ready to commit and push.
 
 ## Repository status
 - Repo path: /Users/shrey-mac/Downloads/Codes/PitWall-main 2
@@ -23,9 +23,12 @@
 - None.
 
 ## Remaining
-- None.
+- [ ] [PUSH] Commit and push the completed training feature update to main.
 
 ## Files changed
+- f1_briefing.py: Adds completed-race strategy/weather/race-control/tyre features, prediction-row historical aggregates, and schema `2026.06-strategy-actuals-v7`.
+- tests/test_f1_briefing_core.py: Covers 22-driver completed result rows and future prediction rows using historical strategy/weather actuals.
+- MODEL_REPORT.md: Documents post-race actual strategy feature ingestion and no-leakage guardrails.
 - f1_briefing.py: Falls back to trusted cached full-race results when archive entries do not embed actual results.
 - .github/workflows/f1-briefing.yml: Runs briefing script unbuffered so workflow logs do not appear blank.
 - frontend/app/archive/page.jsx: Displays actual-result status with safe labels and tones.
@@ -42,6 +45,10 @@
 - model_artifacts/training_metadata.json: Regenerated training metadata.
 
 ## Important decisions
+- Completed race actuals are sourced dynamically from cached/API-backed race results; no driver positions, winners, or strategies are hardcoded.
+- Post-race result, strategy, weather, and race-control fields are used only after the final-result gate, and future prediction rows receive historical aggregates rather than same-race actuals.
+- The model schema was bumped to `2026.06-strategy-actuals-v7` so CI/local training does not silently reuse the older artifact.
+- Empty post-race refreshes no longer overwrite valid cached final-result files; this protects Monaco/Canada-style actual-result comparisons during DNS/API outages while still allowing API-backed refresh when real results are returned.
 - Actual results are read only from existing trusted cached race result files; no winners or classifications are fabricated.
 - Barcelona remains pending because the cached round file does not contain trusted race Results rows.
 - Playwright is intentionally not part of the default validation path because it caused workflow timeout through browser downloads.
@@ -49,9 +56,15 @@
 - Current saved model metadata already includes completed results through `2026-6`; no fabricated retraining claim is made.
 
 ## Validation status
+- `.venv/bin/python -m unittest tests.test_f1_briefing_core.F1BriefingCoreTests.test_completed_race_rows_flatten_full_grid_strategy_weather_features tests.test_f1_briefing_core.F1BriefingCoreTests.test_prediction_features_use_historical_strategy_weather_actuals`: passed.
 - `.venv/bin/python -m py_compile f1_briefing.py`: passed.
 - `.venv/bin/ruff check pitwall scripts tests`: passed.
-- `.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed.
+- `FORCE_RETRAIN=true FORCE_REFRESH_DATA=false CACHE_AWARE_DOWNLOADS=true PITWALL_CI=true SHOW_TRAINING_PROGRESS=true COMPARE_ACTUAL_RESULTS=true .venv/bin/python -c 'import f1_briefing as f; ... train_ml_model(True) ...'`: passed; trained schema `2026.06-strategy-actuals-v7`, 179 cached races reused, 0 refreshed, latest completed race `2026-6`, feature count 42.
+- `.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed, 102 tests.
+- `.venv/bin/python scripts/validate_contracts.py`: passed with 22 Full Grid rows, 10 Top 10 rows, schema/model `2026.06-strategy-actuals-v7`.
+- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed with 0 missing references.
+- `.venv/bin/python scripts/check_artifact_sizes.py`: passed; two FastF1 Canadian GP cache files are warning-sized but below the failure threshold.
+- `frontend build via bundled Node`: passed.
 - `.venv/bin/python scripts/validate_contracts.py`: passed.
 - `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed with 0 missing references.
 - `.venv/bin/python scripts/check_links.py`: passed.

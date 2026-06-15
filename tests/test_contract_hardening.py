@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import f1_briefing as f1
 from pitwall.models.agreement import enrich_model_disagreement
 from pitwall.models.compare_actuals import compare_predictions_to_actuals, default_actual_result_comparison
 from pitwall.models.trust import enrich_prediction_trust
@@ -209,9 +210,9 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertEqual(latest["race_name"], "Barcelona Grand Prix")
         self.assertEqual(latest["round"], 7)
         self.assertIn("barcelona-grand-prix", latest["prediction_id"])
-        self.assertEqual(latest["model_version"], "2026.06-barcelona-preweekend-v6")
-        self.assertEqual(contract["schema_version"], "2026.06-barcelona-preweekend-v6")
-        self.assertEqual(status["model_version"], "2026.06-barcelona-preweekend-v6")
+        self.assertEqual(latest["model_version"], f1.MODEL_SCHEMA_VERSION)
+        self.assertEqual(contract["schema_version"], f1.MODEL_SCHEMA_VERSION)
+        self.assertEqual(status["model_version"], f1.MODEL_SCHEMA_VERSION)
 
     def test_frontend_calendar_matches_current_contract_round(self):
         source = Path("frontend/app/data/f1Calendar2026.js").read_text(encoding="utf-8")

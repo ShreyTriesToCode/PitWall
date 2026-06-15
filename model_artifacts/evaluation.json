@@ -1,7 +1,7 @@
 {
-  "schema_version": "2026.06-barcelona-preweekend-v6",
-  "generated_at": "2026-06-09T17:04:56.915358+05:30",
-  "trained_at": "2026-06-08T23:22:15.670935+05:30",
+  "schema_version": "2026.06-strategy-actuals-v7",
+  "generated_at": "2026-06-15T16:22:52.318793+05:30",
+  "trained_at": "2026-06-15T16:22:46.979083+05:30",
   "validation_split": {
     "method": "chronological_grouped_rolling_train_validate_test",
     "train_races": 139,
@@ -81,21 +81,21 @@
     "status": "empirical_probability_calibration_split"
   },
   "metrics": {
-    "winner_accuracy": 0.3929,
-    "top3_recall": 0.6429,
-    "top3_precision": 0.6429,
-    "top10_recall": 0.7964,
-    "top10_precision": 0.7964,
-    "spearman_rank_correlation": 0.702,
-    "ndcg_at_3": 0.9286,
-    "ndcg_at_10": 0.9117,
-    "finish_mae": 3.203969666545212,
-    "finish_rmse": 4.045248746917019,
-    "lap_delta_mae": 4.159378275197232,
-    "lap_delta_rmse": 5.604206991471557,
-    "win_brier": 0.03769549640672425,
-    "podium_brier": 0.06780732788226183,
-    "top10_brier": 0.1548504668763939
+    "winner_accuracy": 0.4643,
+    "top3_recall": 0.6905,
+    "top3_precision": 0.6905,
+    "top10_recall": 0.7929,
+    "top10_precision": 0.7929,
+    "spearman_rank_correlation": 0.6956,
+    "ndcg_at_3": 0.9329,
+    "ndcg_at_10": 0.9104,
+    "finish_mae": 3.2184338982879654,
+    "finish_rmse": 4.062967652283093,
+    "lap_delta_mae": 3.8331730461731053,
+    "lap_delta_rmse": 5.256712347782699,
+    "win_brier": 0.03811450963841067,
+    "podium_brier": 0.06652598652135688,
+    "top10_brier": 0.15671891357326598
   },
   "out_of_time_test": {
     "rows": 252,
@@ -104,20 +104,20 @@
       2025,
       2026
     ],
-    "finish_mae": 3.667002303235408,
+    "finish_mae": 3.6959184554563325,
     "ranking": {
-      "winner_hit": 0.75,
-      "top3_recall": 0.6111,
-      "top3_precision": 0.6111,
-      "top5_recall": 0.7833,
-      "top5_precision": 0.7833,
+      "winner_hit": 0.5833,
+      "top3_recall": 0.5833,
+      "top3_precision": 0.5833,
+      "top5_recall": 0.7667,
+      "top5_precision": 0.7667,
       "top10_recall": 0.7417,
       "top10_precision": 0.7417,
-      "ndcg_at_3": 0.8865,
-      "ndcg_at_10": 0.8951,
-      "spearman": 0.6731,
-      "exact_position_accuracy": 0.072,
-      "mean_position_error": 3.639
+      "ndcg_at_3": 0.9002,
+      "ndcg_at_10": 0.8867,
+      "spearman": 0.65,
+      "exact_position_accuracy": 0.0708,
+      "mean_position_error": 3.6807
     },
     "baselines": {
       "grid_order": {
@@ -297,12 +297,15 @@
   "promotion_decision": {
     "decision": "hold_champion",
     "blockers": [
+      "did_not_beat_qualifying_only_baseline",
       "out_of_time_did_not_beat_grid_order_top3_recall",
-      "out_of_time_did_not_beat_qualifying_only_top3_recall"
+      "out_of_time_did_not_beat_grid_order_winner_hit",
+      "out_of_time_did_not_beat_qualifying_only_top3_recall",
+      "out_of_time_did_not_beat_qualifying_only_winner_hit"
     ],
     "baseline_gate": {
       "grid_order": true,
-      "qualifying_only": true,
+      "qualifying_only": false,
       "driver_recent_form": true,
       "constructor_form": true,
       "driver_championship_form": false
@@ -311,7 +314,7 @@
   "drift_monitor": {
     "metric": "out_of_time_spearman_proxy",
     "threshold": 0.55,
-    "latest_value": 0.6731,
+    "latest_value": 0.65,
     "status": "stable",
     "note": "Race-level rolling drift is exported when enough post-race correction history exists; this proxy prevents silent degradation meanwhile."
   },
@@ -328,7 +331,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-09T11:34:56.915268+00:00",
+      "checked_at": "2026-06-15T10:52:52.318700+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -348,7 +351,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-09T11:34:56.915349+00:00",
+      "checked_at": "2026-06-15T10:52:52.318784+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
