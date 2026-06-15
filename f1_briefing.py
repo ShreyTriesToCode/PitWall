@@ -2127,8 +2127,14 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
     4. If a race was cached before it had results, it is refreshed after the GP cutoff.
     """
     force_fetch = bool(force_fetch or FORCE_REFRESH_DATA)
+    key = f"{season}-{round_no}"
     cached = read_full_race_cache(season, round_no)
     cache_path = full_race_cache_path(season, round_no)
+
+    if race is not None and training_mode and is_race_future_or_not_final_yet(race):
+        print(f"Skipping future/not-final GP for training cache: {key}")
+        record_full_race_cache_manifest(season, round_no, cache_path, action="skipped", reason="future_or_not_final_for_training", status="not_ready", validation_status="not_ready", race=race)
+        return {}
 
     if cached and not force_fetch and should_use_cached_round(cached, race=race, require_final_if_past=training_mode):
         data = cached.get("data", {})
@@ -2137,13 +2143,6 @@ def fetch_round_data_cached(season, round_no, allow_backfill=True, force_fetch=F
             return {}
         record_full_race_cache_manifest(season, round_no, cache_path, action="reused", reason="cache_valid", status=cached.get("status") or "fresh", validation_status="valid", race=race)
         return data
-
-    key = f"{season}-{round_no}"
-
-    if race is not None and training_mode and is_race_future_or_not_final_yet(race):
-        print(f"Skipping future/not-final GP for training cache: {key}")
-        record_full_race_cache_manifest(season, round_no, cache_path, action="skipped", reason="future_or_not_final_for_training", status="not_ready", validation_status="not_ready", race=race)
-        return {}
 
     if allow_backfill and not force_fetch and not BACKFILL_BUDGET.can_fetch():
         print(f"Full-data backfill limit reached. Skipping uncached historical race {key}.")

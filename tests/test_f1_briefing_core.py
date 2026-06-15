@@ -675,6 +675,47 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertGreaterEqual(len(monaco_rows), 20)
         self.assertEqual(monaco_rows.sort_values("finish_position").iloc[0]["driver_id"], "antonelli")
 
+    def test_training_cache_respects_final_result_cutoff_before_using_cached_actuals(self):
+        barcelona = {
+            "season": "2026",
+            "round": "7",
+            "raceName": "Barcelona Grand Prix",
+            "date": "2026-06-14",
+            "time": "13:00:00Z",
+            "Circuit": {"circuitId": "catalunya", "circuitName": "Circuit de Barcelona-Catalunya"},
+        }
+        cached_actual = {
+            "status": "final_results_available",
+            "data": {
+                "results": [{
+                    "Results": [{
+                        "Driver": {"driverId": "antonelli", "givenName": "Andrea Kimi", "familyName": "Antonelli"},
+                        "Constructor": {"name": "Mercedes"},
+                        "positionOrder": "1",
+                        "position": "1",
+                        "grid": "1",
+                        "status": "Finished",
+                        "points": "25",
+                    }]
+                }]
+            },
+        }
+
+        before_cutoff = f1.datetime(2026, 6, 9, 12, 0, tzinfo=f1.USER_TIMEZONE)
+        after_cutoff = f1.datetime(2026, 6, 15, 12, 0, tzinfo=f1.USER_TIMEZONE)
+
+        with patch.object(f1, "read_full_race_cache", return_value=cached_actual), \
+             patch.object(f1, "record_full_race_cache_manifest"), \
+             patch.object(f1, "now_local", return_value=before_cutoff):
+            self.assertEqual(f1.fetch_round_data_cached(2026, "7", race=barcelona, training_mode=True), {})
+
+        with patch.object(f1, "read_full_race_cache", return_value=cached_actual), \
+             patch.object(f1, "record_full_race_cache_manifest"), \
+             patch.object(f1, "now_local", return_value=after_cutoff):
+            data = f1.fetch_round_data_cached(2026, "7", race=barcelona, training_mode=True)
+
+        self.assertTrue(f1.race_has_results(data))
+
     def test_generated_feature_store_exists(self):
         for name in ["race_features.json", "driver_features.json", "team_features.json", "session_features.json"]:
             path = Path("data_cache/features") / name
