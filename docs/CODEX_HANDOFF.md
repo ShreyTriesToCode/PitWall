@@ -1,15 +1,15 @@
 # Codex Handoff State
 
 ## Current objective
-- [DONE] Dynamic completed-race strategy/result feature training update validated locally; ready to commit and push.
+- [DONE] Dynamic completed-race strategy/result feature training update validated locally, committed, and pushed to main.
 
 ## Repository status
 - Repo path: /Users/shrey-mac/Downloads/Codes/PitWall-main 2
 - Is Git repo: yes
 - Remote origin: https://github.com/ShreyTriesToCode/PitWall.git
 - Branch: main
-- Latest known commit: run `git log -1 --oneline` for the final pushed handoff commit.
-- Push status: succeeded; local HEAD matched remote main after `git push origin main`.
+- Latest known commit: `825c6e4 fix: train with post-race strategy actuals`
+- Push status: succeeded for `825c6e4`; local `origin/main` matched local HEAD. `git ls-remote origin main` could not be re-run afterward because local DNS could not resolve `github.com`.
 
 ## Completed
 - [x] [REPO] Confirmed local repository and origin.
@@ -23,7 +23,7 @@
 - None.
 
 ## Remaining
-- [ ] [PUSH] Commit and push the completed training feature update to main.
+- None.
 
 ## Files changed
 - f1_briefing.py: Adds completed-race strategy/weather/race-control/tyre features, prediction-row historical aggregates, and schema `2026.06-strategy-actuals-v7`.
