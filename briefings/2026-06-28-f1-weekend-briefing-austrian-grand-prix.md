@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Austrian GP - Race
 
-Generated: Monday, 15 June 2026, 06:12 PM IST
+Generated: Monday, 15 June 2026, 08:22 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Monday, 15 June 2026, 06:12 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 69.5, confidence 35%, car performance; same-circuit history; driver form; reliability; pit-stop execution
-2. George Russell, score 64.2, confidence 25%, car performance; same-circuit history; driver form; reliability; constructor form
-3. Charles Leclerc, score 61.3, confidence 25%, car performance; same-circuit history; reliability; pit-stop execution; regulation-era fit
-4. Oscar Piastri, score 59.6, confidence 48%, car performance; same-circuit history; pit-stop execution; official timing car performance; reliability
-5. Andrea Kimi Antonelli, score 59.5, confidence 53%, car performance; driver form; official timing car performance; constructor form; regulation-era fit
-6. Max Verstappen, score 58.1, confidence 53%, car performance; pit-stop execution; same-circuit history; reliability; official timing car performance
-7. Lando Norris, score 57.5, confidence 51%, car performance; same-circuit history; reliability; pit-stop execution; official timing car performance
-8. Isack Hadjar, score 53.9, confidence 66%, car performance; pit-stop execution; official timing car performance; neural lap-time forecast; ML finish-position model
-9. Liam Lawson, score 49.7, confidence 53%, same-circuit history; reliability; car performance; pit-stop execution; weather adaptation
-10. Pierre Gasly, score 45.1, confidence 51%, car performance; reliability; neural lap-time forecast; pit-stop execution; official timing car performance
+1. Lewis Hamilton, score 67.7, confidence 39%, car performance; same-circuit history; driver form; reliability; pit-stop execution
+2. George Russell, score 62.5, confidence 29%, car performance; same-circuit history; driver form; reliability; official timing car performance
+3. Charles Leclerc, score 60.0, confidence 29%, car performance; same-circuit history; reliability; pit-stop execution; official timing car performance
+4. Oscar Piastri, score 58.5, confidence 52%, car performance; same-circuit history; pit-stop execution; official timing car performance; reliability
+5. Andrea Kimi Antonelli, score 58.1, confidence 57%, car performance; driver form; official timing car performance; constructor form; regulation-era fit
+6. Max Verstappen, score 57.0, confidence 57%, car performance; pit-stop execution; same-circuit history; reliability; official timing car performance
+7. Lando Norris, score 56.5, confidence 55%, car performance; same-circuit history; reliability; pit-stop execution; official timing car performance
+8. Isack Hadjar, score 53.1, confidence 70%, car performance; pit-stop execution; official timing car performance; neural lap-time forecast; ML finish-position model
+9. Liam Lawson, score 49.7, confidence 50%, same-circuit history; reliability; car performance; pit-stop execution; weather adaptation
+10. Pierre Gasly, score 45.1, confidence 55%, car performance; reliability; neural lap-time forecast; pit-stop execution; official timing car performance
 
 ## Track and weather
 
@@ -48,7 +48,9 @@ Generated: Monday, 15 June 2026, 06:12 PM IST
 
 ## Upgrade impact
 
-- No trusted upgrade-package signal found for this event.
+- Alpine: 40.0/100, downforce, braking, cooling
+- Aston Martin: 40.0/100, downforce, braking, cooling
+- Audi: 40.0/100, straight line, power efficiency
 
 ## Regulation context
 
@@ -59,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- race pace: 6.4%
-- car performance: 5.9%
-- ml podium probability: 5.1%
-- driver form: 4.2%
-- circuit history: 3.8%
+- race pace: 6.2%
+- car performance: 5.8%
+- ml podium probability: 4.9%
+- driver form: 4.1%
+- upgrade package impact: 4.1%
 
 ## Model accuracy audit
 
