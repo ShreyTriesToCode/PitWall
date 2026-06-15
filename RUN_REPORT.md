@@ -1,16 +1,16 @@
 # PitWall Run Report
 
-- Generated at: 2026-06-15T12:13:59.962464+00:00
+- Generated at: 2026-06-15T12:42:31.153361+00:00
 - Model version: 2026.06-strategy-actuals-v7
-- Target event/session: Barcelona Grand Prix / race
+- Target event/session: Austrian Grand Prix / race
 - Top 10 availability: 10 rows
 - Full grid availability: 22 rows
 - Contract validation: passed
-- Event trust: 51.7
-- Source health: Fallback / 72.09
-- Source conflicts: 2
-- Major model disagreements: 4
-- Missing data groups: pit_stop_data, practice_or_lap_pace
+- Event trust: 44.33
+- Source health: Fallback / 65.64
+- Source conflicts: 4
+- Major model disagreements: 6
+- Missing data groups: pit_stop_data, practice_or_lap_pace, qualifying
 
 ## Validation Details
 
@@ -19,7 +19,7 @@
   "ok": true,
   "schema_version": "2026.06-strategy-actuals-v7",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "briefing_count": 8,
+  "briefing_count": 9,
   "debug_payload_count": 1,
   "model_version": "2026.06-strategy-actuals-v7",
   "latest_top10_count": 10,

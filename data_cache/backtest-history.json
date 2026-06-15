@@ -1,7 +1,23 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-06-15T17:43:58.587141+05:30",
+  "generated_at": "2026-06-15T18:12:30.113706+05:30",
   "history": [
+    {
+      "race_id": "2026-8-austrian-grand-prix",
+      "prediction_id": "2026-8-austrian-grand-prix-race-pre_weekend-656c69b6faa9",
+      "race_name": "Austrian Grand Prix",
+      "season": 2026,
+      "round": 8,
+      "stage": "pre_weekend",
+      "model_version": "2026.06-strategy-actuals-v7",
+      "top_pick": "Lewis Hamilton",
+      "top_pick_confidence": 0,
+      "finish_position_mae": 3.2043601728585074,
+      "finish_position_rmse": 4.057184277141447,
+      "winner_hit_rate": 0.5,
+      "top3_recall": 0.6786,
+      "top10_recall": 0.7893
+    },
     {
       "race_id": "2026-7-barcelona-grand-prix",
       "prediction_id": "2026-7-barcelona-grand-prix-race-post_qualifying-df2ac8aba43d",
