@@ -908,6 +908,56 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(comparison["status"], "available")
         self.assertEqual(comparison["actual_winner"]["driver_id"], "api_driver")
 
+    def test_normalized_contract_recomputes_stale_pending_actuals_after_cutoff(self):
+        completed_race = {
+            "season": "2026",
+            "round": "7",
+            "raceName": "Example Completed Grand Prix",
+            "date": "2026-06-14",
+            "time": "13:00:00Z",
+        }
+        stale_cache = {
+            "status": "future_or_partial",
+            "data": {"results": [], "qualifying": [], "pitstops": [], "laps": [], "sprint": [], "sprint_qualifying": []},
+        }
+        api_payload = {
+            "results": [{
+                "Results": [{
+                    "Driver": {"driverId": "api_driver", "givenName": "API", "familyName": "Driver"},
+                    "Constructor": {"name": "API Team"},
+                    "positionOrder": "1",
+                    "position": "1",
+                    "status": "Finished",
+                    "points": "25",
+                }]
+            }]
+        }
+        entry = {
+            "season": 2026,
+            "round": 7,
+            "race_name": "Example Completed Grand Prix",
+            "title": "Example Completed Grand Prix",
+            "target_type": "race",
+            "stage": "post_race",
+            "jolpica_race": completed_race,
+            "top10": [{"driver_id": "api_driver", "name": "API Driver", "rank": 1, "score": 95}],
+            "actual_result_comparison": f1.pitwall_default_actual_result_comparison(
+                status="pending",
+                race={"season": 2026, "round": 7, "race_name": "Example Completed Grand Prix"},
+            ),
+        }
+
+        with patch.object(f1, "read_full_race_cache", return_value=stale_cache), \
+             patch.object(f1, "fetch_round_data_cached", return_value=api_payload) as fetch_mock, \
+             patch.object(f1, "now_local", return_value=f1.datetime(2026, 6, 15, 12, 0, tzinfo=f1.USER_TIMEZONE)):
+            normalized = f1.normalize_entry_contract(entry)
+
+        fetch_mock.assert_called_once()
+        self.assertEqual(normalized["actual_result"]["winner"]["driver_id"], "api_driver")
+        self.assertEqual(normalized["actual_result_comparison"]["status"], "available")
+        self.assertTrue(normalized["actual_result_comparison"]["winner_hit"])
+        self.assertEqual(normalized["actual_result_comparison"]["actual_winner"]["driver_id"], "api_driver")
+
     def test_training_rows_include_completed_monaco_and_skip_pending_barcelona(self):
         monaco = {
             "season": "2026",
@@ -978,6 +1028,56 @@ class F1BriefingCoreTests(unittest.TestCase):
             data = f1.fetch_round_data_cached(2026, "7", race=barcelona, training_mode=True)
 
         self.assertTrue(f1.race_has_results(data))
+
+    def test_training_refreshes_stale_completed_cache_even_when_backfill_budget_is_zero(self):
+        completed_race = {
+            "season": "2026",
+            "round": "7",
+            "raceName": "Example Completed Grand Prix",
+            "date": "2026-06-14",
+            "time": "13:00:00Z",
+            "Circuit": {"circuitId": "example", "circuitName": "Example Circuit"},
+        }
+        api_results = []
+        for idx in range(1, 23):
+            api_results.append({
+                "Driver": {"driverId": f"driver_{idx}", "givenName": "Driver", "familyName": str(idx)},
+                "Constructor": {"name": "Example Team"},
+                "positionOrder": str(idx),
+                "position": str(idx),
+                "grid": str(idx),
+                "status": "Finished",
+                "points": str(max(0, 26 - idx)),
+            })
+        api_payload = {
+            "results": [{"Results": api_results}],
+            "qualifying": [],
+            "pitstops": [],
+            "laps": [],
+            "sprint": [],
+            "sprint_qualifying": [],
+        }
+        stale_payload = {
+            "season": 2026,
+            "round": "7",
+            "source": "jolpica_api",
+            "status": "future_or_partial",
+            "data": {"results": [], "qualifying": [], "pitstops": [], "laps": [], "sprint": [], "sprint_qualifying": []},
+        }
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with patch.object(f1, "FULL_RACE_CACHE_DIR", Path(tmp)), \
+                 patch.object(f1, "fetch_schedule", return_value=[completed_race]), \
+                 patch.object(f1, "fetch_round_data_direct", return_value=api_payload) as fetch_mock, \
+                 patch.object(f1, "BACKFILL_BUDGET", f1.BackfillBudget(0)), \
+                 patch.object(f1, "CACHE_AWARE_DOWNLOADS", False), \
+                 patch.object(f1, "now_local", return_value=f1.datetime(2026, 6, 15, 12, 0, tzinfo=f1.USER_TIMEZONE)):
+                f1.write_full_race_cache(2026, 7, stale_payload)
+                rows = f1.collect_race_rows(2026, 2026)
+
+        fetch_mock.assert_called_once()
+        self.assertEqual(len(rows[rows["race_id"] == "2026-7"]), 22)
+        self.assertIn("actual_pit_stop_count", rows.columns)
 
     def test_generated_feature_store_exists(self):
         for name in ["race_features.json", "driver_features.json", "team_features.json", "session_features.json"]:

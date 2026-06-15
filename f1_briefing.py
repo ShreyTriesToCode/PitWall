@@ -7500,6 +7500,13 @@ def actual_result_comparison_for_entry(entry, full_grid=None):
     )
 
 
+def actual_result_comparison_needs_refresh(comparison):
+    if not isinstance(comparison, dict):
+        return True
+    status = str(comparison.get("status") or "").lower()
+    return status in {"", "pending", "unavailable", "incomplete", "source_failed", "source_stale"}
+
+
 def model_comparison_contract(decision=None, metrics=None, meta=None):
     decision = decision or {}
     metrics = metrics or {}
@@ -7760,7 +7767,7 @@ def race_line(label, race):
 def save_model_status_report(bundle=None, mode=None, payloads=None, errors=None):
     meta = read_model_meta()
     decision = (bundle or {}).get("training_decision") or model_retrain_status(False)
-    readiness = decision.get("readiness") or latest_result_readiness()
+    readiness = latest_result_readiness(refresh=True)
     metrics = (bundle or {}).get("metrics") or meta.get("metrics") or {}
     feature_columns = (bundle or {}).get("feature_columns") or meta.get("feature_columns") or []
     bundle_size_mb = MODEL_BUNDLE_PATH.stat().st_size / (1024 * 1024) if MODEL_BUNDLE_PATH.exists() else None
@@ -7871,7 +7878,7 @@ def metric_get(metrics, target, key):
 def save_model_status_json(bundle=None, mode=None, payloads=None, errors=None, readiness=None, metrics=None, feature_columns=None, bundle_size_mb=None, decision=None):
     ensure_dirs()
     meta = read_model_meta()
-    readiness = readiness or latest_result_readiness()
+    readiness = readiness or latest_result_readiness(refresh=True)
     metrics = metrics or (bundle or {}).get("metrics") or meta.get("metrics") or {}
     feature_columns = feature_columns or (bundle or {}).get("feature_columns") or meta.get("feature_columns") or []
     decision = decision or (bundle or {}).get("training_decision") or model_retrain_status(False)
@@ -8446,6 +8453,30 @@ def normalize_entry_contract(entry):
         "prediction_trust_label": event_trust_label,
         "stage": stage,
     })
+    actual_result = entry.get("actual_result") or actual_result_from_cached_round(
+        season,
+        round_no,
+        target_type,
+        race=race if isinstance(race, dict) else None,
+        allow_fetch=COMPARE_ACTUAL_RESULTS,
+    )
+    actual_entry = {
+        **entry,
+        "race_id": race_id,
+        "race_name": entry.get("race_name") or race.get("raceName") or entry.get("title"),
+        "season": season,
+        "round": round_no,
+        "target_type": target_type,
+        "stage": stage,
+        "source_health": source_health,
+        "actual_result": actual_result,
+    }
+    existing_actual_comparison = entry.get("actual_result_comparison")
+    actual_result_comparison = (
+        actual_result_comparison_for_entry(actual_entry, full_grid)
+        if actual_result or actual_result_comparison_needs_refresh(existing_actual_comparison)
+        else existing_actual_comparison
+    )
     return {
         **entry,
         "race_id": race_id,
@@ -8509,11 +8540,8 @@ def normalize_entry_contract(entry):
         "strategy": entry.get("strategy") or build_strategy_contract(entry, entry.get("weather") or {}, top10, prediction_model),
         "model_metrics": entry.get("model_metrics") or ((prediction_model.get("ml_model_meta") or {}).get("metrics") or {}),
         "correction_summary": entry.get("correction_summary") or correction_summary_for_entry(race_id),
-        "actual_result": entry.get("actual_result"),
-        "actual_result_comparison": entry.get("actual_result_comparison") or actual_result_comparison_for_entry(
-            entry,
-            full_grid,
-        ),
+        "actual_result": actual_result,
+        "actual_result_comparison": actual_result_comparison,
         "warnings": contract_warnings,
         "top10": top10,
         "top_10": top10,
@@ -8530,11 +8558,19 @@ def build_archive_contract(briefings):
             entry.get("season"),
             entry.get("round"),
             entry.get("target_type") or "race",
+            race=entry.get("jolpica_race") if isinstance(entry.get("jolpica_race"), dict) else None,
+            allow_fetch=COMPARE_ACTUAL_RESULTS,
         )
         actual_winner = (actual or {}).get("winner") if isinstance(actual, dict) else None
         accuracy = None
         if actual_winner and top.get("driver_id"):
             accuracy = 1.0 if actual_winner.get("driver_id") == top.get("driver_id") else 0.0
+        existing_actual_comparison = entry.get("actual_result_comparison")
+        archive_actual_comparison = (
+            actual_result_comparison_for_entry({**entry, "actual_result": actual}, entry.get("full_grid"))
+            if actual or actual_result_comparison_needs_refresh(existing_actual_comparison)
+            else existing_actual_comparison
+        )
         archive.append({
             "race_id": entry.get("race_id"),
             "prediction_id": entry.get("prediction_id"),
@@ -8553,7 +8589,7 @@ def build_archive_contract(briefings):
             "confidence": top.get("confidence"),
             "actual_winner": actual_winner.get("name") if actual_winner else None,
             "accuracy": accuracy,
-            "actual_result_comparison": entry.get("actual_result_comparison") or actual_result_comparison_for_entry(entry, entry.get("full_grid")),
+            "actual_result_comparison": archive_actual_comparison,
             "correction_summary": entry.get("correction_summary"),
             "briefing": entry,
         })

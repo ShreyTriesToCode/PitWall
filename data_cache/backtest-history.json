@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-06-15T18:12:30.113706+05:30",
+  "generated_at": "2026-06-15T18:56:17.513602+05:30",
   "history": [
     {
       "race_id": "2026-8-austrian-grand-prix",
@@ -12,10 +12,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -28,10 +28,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 39.55,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -44,10 +44,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 19.2,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -60,10 +60,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -76,10 +76,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -92,10 +92,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -108,10 +108,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -124,10 +124,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     },
     {
@@ -140,10 +140,10 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.2043601728585074,
-      "finish_position_rmse": 4.057184277141447,
-      "winner_hit_rate": 0.5,
-      "top3_recall": 0.6786,
+      "finish_position_mae": 3.208596922528809,
+      "finish_position_rmse": 4.060638161556718,
+      "winner_hit_rate": 0.4643,
+      "top3_recall": 0.6667,
       "top10_recall": 0.7893
     }
   ]

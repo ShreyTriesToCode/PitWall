@@ -1,7 +1,7 @@
 # Codex Handoff State
 
 ## Current objective
-- [DONE] Dynamic completed-race strategy/result feature training update validated locally, committed, and pushed to main.
+- [DONE] Refreshed completed-race actual-result comparison and training artifacts through Barcelona 2026 round 7.
 
 ## Repository status
 - Repo path: /Users/shrey-mac/Downloads/Codes/PitWall-main 2
@@ -23,7 +23,7 @@
 - None.
 
 ## Remaining
-- None.
+- [ ] [PUSH] Commit and push the actual-result refresh fix.
 
 ## Files changed
 - f1_briefing.py: Adds completed-race strategy/weather/race-control/tyre features, prediction-row historical aggregates, and schema `2026.06-strategy-actuals-v7`.
@@ -46,16 +46,25 @@
 
 ## Important decisions
 - Completed race actuals are sourced dynamically from cached/API-backed race results; no driver positions, winners, or strategies are hardcoded.
+- Pending actual-result comparisons are not final state. If a race is past the configured final-results delay, contract normalization now rechecks trusted API/cache results and recomputes the comparison when results are available.
 - Post-race result, strategy, weather, and race-control fields are used only after the final-result gate, and future prediction rows receive historical aggregates rather than same-race actuals.
 - The model schema was bumped to `2026.06-strategy-actuals-v7` so CI/local training does not silently reuse the older artifact.
 - Empty post-race refreshes no longer overwrite valid cached final-result files; this protects Monaco/Canada-style actual-result comparisons during DNS/API outages while still allowing API-backed refresh when real results are returned.
 - Actual results are read only from existing trusted cached race result files; no winners or classifications are fabricated.
-- Barcelona remains pending because the cached round file does not contain trusted race Results rows.
+- Barcelona 2026 round 7 has now been refreshed from Jolpica-compatible API data into `data_cache/full_races/2026-7.json.gz` with 22 trusted result rows.
+- Frontend contracts now show Barcelona 2026 round 7 actual-result comparison as available, and the saved model/training metadata now includes `latest_completed_race_id=2026-7`.
 - Playwright is intentionally not part of the default validation path because it caused workflow timeout through browser downloads.
 - The workflow still builds the frontend with `npm run build`; it does not run Playwright in the default path.
 - Current saved model metadata already includes completed results through `2026-6`; no fabricated retraining claim is made.
 
 ## Validation status
+- `.venv/bin/python -m unittest tests.test_f1_briefing_core.F1BriefingCoreTests.test_normalized_contract_recomputes_stale_pending_actuals_after_cutoff`: passed after failing before the fix.
+- `FORCE_RETRAIN=true FORCE_REFRESH_DATA=false CACHE_AWARE_DOWNLOADS=true PITWALL_CI=true SHOW_TRAINING_PROGRESS=true COMPARE_ACTUAL_RESULTS=true .venv/bin/python - <<'PY' ... train_ml_model(force=True) ...`: model training completed and saved artifacts with `latest_completed_race_id=2026-7`; wrapper exited nonzero afterward because it expected the wrong return tuple shape.
+- `.venv/bin/python - <<'PY' ... load saved model metadata ...`: passed; model artifact and training metadata both report `latest_completed_race_id=2026-7`.
+- `.venv/bin/python scripts/validate_contracts.py`: passed; latest contract has 10 Top 10 rows and 22 Full Grid rows.
+- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed with 0 missing references.
+- `PATH=/Users/shrey-mac/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:$PATH npm run build` from `frontend/`: passed.
+- `.venv/bin/python scripts/check_links.py`: passed.
 - `.venv/bin/python -m unittest tests.test_f1_briefing_core.F1BriefingCoreTests.test_completed_race_rows_flatten_full_grid_strategy_weather_features tests.test_f1_briefing_core.F1BriefingCoreTests.test_prediction_features_use_historical_strategy_weather_actuals`: passed.
 - `.venv/bin/python -m py_compile f1_briefing.py`: passed.
 - `.venv/bin/ruff check pitwall scripts tests`: passed.
