@@ -1,8 +1,8 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-06-21T17:06:04.819308+05:30",
-  "status": "Success",
-  "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: weekend\\nTargets: race=F1 Austrian GP - Race\\nBackfill used this run: 0\\nErrors: None",
+  "generated_at": "2026-06-21T19:39:03.328680+05:30",
+  "status": "Skipped",
+  "details": "No Sprint/Race output target selected.\\n\\nOutput mode: today\\nReason: Manual runs use weekend mode; scheduled runs use today mode. Practice, Qualifying, and Sprint Qualifying are ignored as direct outputs.",
   "source_discovery": {
     "schema_version": "source-registry-v1",
     "season": 2026,
@@ -68,7 +68,7 @@
   "parse_failures": [],
   "sessions_detected": [],
   "sessions_waiting_for_data": [],
-  "predictions_regenerated": true,
+  "predictions_regenerated": false,
   "model_retraining": "auto",
   "frontend_contracts_written": true,
   "timing_freshness": {
