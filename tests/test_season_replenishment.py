@@ -110,6 +110,7 @@ class FiaDocumentParsingTests(unittest.TestCase):
 
 class SessionLifecycleAndModelGuardTests(unittest.TestCase):
     def test_missing_ics_url_uses_jolpica_schedule_fallback_calendar(self):
+        fixed_now = datetime(2026, 6, 20, 12, 0, tzinfo=timezone.utc).astimezone(f1.USER_TIMEZONE)
         race = {
             "round": "1",
             "raceName": "Australian Grand Prix",
@@ -117,9 +118,11 @@ class SessionLifecycleAndModelGuardTests(unittest.TestCase):
             "time": "05:00:00Z",
             "Circuit": {"Location": {"country": "Australia"}},
         }
-        with patch.object(f1, "F1_ICS_URL", ""), patch.object(f1, "fetch_schedule", return_value=[race]):
+        with patch.object(f1, "F1_ICS_URL", ""), \
+             patch.object(f1, "fetch_schedule", return_value=[race]), \
+             patch.object(f1, "now_local", return_value=fixed_now):
             calendar = f1.fetch_ics_calendar()
-        events = f1.get_f1_calendar_events(calendar)
+            events = f1.get_f1_calendar_events(calendar)
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0]["target_type"], "race")
         self.assertIn("Australian Grand Prix", events[0]["title"])
