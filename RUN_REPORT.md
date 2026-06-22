@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-06-22T16:57:11.640986+00:00
+- Generated at: 2026-06-22T20:47:19.044690+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Austrian Grand Prix / race
 - Top 10 availability: 10 rows
