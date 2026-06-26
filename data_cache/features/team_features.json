@@ -2,7 +2,7 @@
   {
     "team": "Ferrari",
     "expected_team_points": 51.98,
-    "average_score": 61.5,
+    "average_score": 61.35,
     "average_confidence": 33.95,
     "average_active_aero_suitability": 67.0,
     "average_energy_boost_advantage": 63.86,
@@ -30,8 +30,8 @@
   {
     "team": "Mercedes",
     "expected_team_points": 73.36,
-    "average_score": 68.3,
-    "average_confidence": 26.37,
+    "average_score": 68.19,
+    "average_confidence": 26.06,
     "average_active_aero_suitability": 71.17,
     "average_energy_boost_advantage": 66.49,
     "drivers": [
@@ -56,10 +56,38 @@
     ]
   },
   {
+    "team": "Red Bull",
+    "expected_team_points": 37.26,
+    "average_score": 53.43,
+    "average_confidence": 45.18,
+    "average_active_aero_suitability": 57.81,
+    "average_energy_boost_advantage": 56.11,
+    "drivers": [
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Isack Hadjar",
+      "Max Verstappen",
+      "Isack Hadjar"
+    ]
+  },
+  {
     "team": "McLaren",
     "expected_team_points": 51.36,
-    "average_score": 56.71,
-    "average_confidence": 35.46,
+    "average_score": 56.6,
+    "average_confidence": 35.67,
     "average_active_aero_suitability": 61.61,
     "average_energy_boost_advantage": 56.05,
     "drivers": [
@@ -84,38 +112,10 @@
     ]
   },
   {
-    "team": "Red Bull",
-    "expected_team_points": 37.26,
-    "average_score": 53.4,
-    "average_confidence": 45.79,
-    "average_active_aero_suitability": 57.79,
-    "average_energy_boost_advantage": 56.08,
-    "drivers": [
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Isack Hadjar",
-      "Max Verstappen",
-      "Isack Hadjar"
-    ]
-  },
-  {
     "team": "RB F1 Team",
     "expected_team_points": 6.89,
-    "average_score": 37.21,
-    "average_confidence": 38.71,
+    "average_score": 37.2,
+    "average_confidence": 38.35,
     "average_active_aero_suitability": 46.3,
     "average_energy_boost_advantage": 47.27,
     "drivers": [
@@ -142,8 +142,8 @@
   {
     "team": "Alpine",
     "expected_team_points": 6.31,
-    "average_score": 39.0,
-    "average_confidence": 36.66,
+    "average_score": 39.07,
+    "average_confidence": 35.91,
     "average_active_aero_suitability": 44.37,
     "average_energy_boost_advantage": 46.1,
     "drivers": [
@@ -166,8 +166,8 @@
   {
     "team": "Haas",
     "expected_team_points": 3.19,
-    "average_score": 33.48,
-    "average_confidence": 41.05,
+    "average_score": 33.55,
+    "average_confidence": 40.29,
     "average_active_aero_suitability": 41.97,
     "average_energy_boost_advantage": 44.01,
     "drivers": [
@@ -190,8 +190,8 @@
   {
     "team": "Audi",
     "expected_team_points": 5.33,
-    "average_score": 37.66,
-    "average_confidence": 55.47,
+    "average_score": 37.63,
+    "average_confidence": 54.86,
     "average_active_aero_suitability": 45.76,
     "average_energy_boost_advantage": 48.45,
     "drivers": [
@@ -216,10 +216,34 @@
     ]
   },
   {
+    "team": "Cadillac",
+    "expected_team_points": 0.81,
+    "average_score": 30.86,
+    "average_confidence": 38.18,
+    "average_active_aero_suitability": 40.66,
+    "average_energy_boost_advantage": 41.65,
+    "drivers": [
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez"
+    ]
+  },
+  {
     "team": "Aston Martin",
     "expected_team_points": 3.67,
-    "average_score": 32.56,
-    "average_confidence": 48.54,
+    "average_score": 32.49,
+    "average_confidence": 47.1,
     "average_active_aero_suitability": 46.24,
     "average_energy_boost_advantage": 44.48,
     "drivers": [
@@ -244,34 +268,10 @@
     ]
   },
   {
-    "team": "Cadillac",
-    "expected_team_points": 0.81,
-    "average_score": 30.78,
-    "average_confidence": 38.9,
-    "average_active_aero_suitability": 40.66,
-    "average_energy_boost_advantage": 41.65,
-    "drivers": [
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez"
-    ]
-  },
-  {
     "team": "Williams",
     "expected_team_points": 3.28,
-    "average_score": 34.77,
-    "average_confidence": 49.82,
+    "average_score": 34.7,
+    "average_confidence": 49.21,
     "average_active_aero_suitability": 43.03,
     "average_energy_boost_advantage": 45.37,
     "drivers": [
