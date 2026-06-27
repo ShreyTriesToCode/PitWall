@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-06-27T08:38:47.307448+00:00
+- Generated at: 2026-06-27T13:40:52.891591+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Austrian Grand Prix / race
 - Top 10 availability: 10 rows
@@ -8,7 +8,7 @@
 - Contract validation: passed
 - Event trust: 44.25
 - Source health: Fallback / 70.27
-- Source conflicts: 3
+- Source conflicts: 2
 - Major model disagreements: 4
 - Missing data groups: pit_stop_data, practice_or_lap_pace, qualifying
 
