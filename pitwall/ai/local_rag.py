@@ -9,6 +9,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from pitwall.io.atomic import atomic_write_json
+
 
 DEFAULT_INDEX_PATH = Path("data_cache/rag_index/index.json")
 DEFAULT_SOURCE_GLOBS = [
@@ -57,8 +59,7 @@ def build_keyword_index(base_dir: Path | str = ".", output_path: Path | str = DE
         "documents": docs,
     }
     output = base / output_path
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    atomic_write_json(output, payload, indent=2, ensure_ascii=False)
     return payload
 
 

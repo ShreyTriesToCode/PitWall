@@ -9,6 +9,8 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any, Callable
 
+from pitwall.io.atomic import atomic_write_json as shared_atomic_write_json
+
 
 Manifest = dict[str, Any]
 
@@ -32,12 +34,7 @@ def load_manifest(path: Path) -> Manifest:
 
 
 def atomic_write_json(path: Path, payload: Manifest) -> Path:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
-    json.loads(tmp.read_text(encoding="utf-8"))
-    tmp.replace(path)
-    return path
+    return shared_atomic_write_json(path, payload, indent=2, ensure_ascii=True)
 
 
 def file_checksum(path: Path) -> str | None:

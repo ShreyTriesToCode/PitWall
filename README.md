@@ -64,6 +64,7 @@ Run backend validation:
 
 ```bash
 .venv/bin/python -m py_compile f1_briefing.py
+.venv/bin/ruff check f1_briefing.py pitwall scripts tests
 .venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
 ```
 
@@ -179,6 +180,26 @@ FORCE_REDOWNLOAD_FIA_DOCUMENTS=true KEEP_FIA_PDFS=false .venv/bin/python f1_brie
 ```
 
 If FIA serves a deterministic `403` for an individual decision PDF, PitWall now makes one browser-header request, reuses cached official text/parsed JSON when present, marks the document `stale_cache_forbidden`, and continues the run. Without cache it marks the document `forbidden` in source health instead of retrying four times or hiding the failure.
+
+FIA document lookup is source-priority based and never fabricates missing documents. The resolver tries official FIA document pages first, then configured official FIA event/archive routes, then verified third-party document indexes, regulation mirrors for regulation PDFs only, verified local cache, and finally an explicit unavailable state. Third-party summaries are context only and must not drive document-based model features as official evidence.
+
+Key resolver controls:
+
+```bash
+FIA_DOCUMENT_SOURCE_PRIORITY=official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache
+FIA_DOCUMENT_FIA_PRIMARY_ENABLED=true
+FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED=true
+FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED=true
+FIA_DOCUMENT_F1LIVEPULSE_ENABLED=true
+FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED=false
+FIA_DOCUMENT_REGULATION_MIRROR_ENABLED=true
+FIA_DOCUMENT_CACHE_ENABLED=true
+FIA_DOCUMENT_STALE_CACHE_MAX_DAYS=14
+FIA_DOCUMENT_REQUIRE_SHA256=false
+FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT=true
+```
+
+Indexed FIA rows expose trust metadata including `source_authority`, `source_status`, `is_official`, `is_verified`, `is_stale`, `source_url`, `download_url`, `fetched_at`, `sha256`, `error_summary`, and `context_summary_available`.
 
 Session ingestion uses official session windows when available, waits after completed sessions, then marks `waiting_for_api_data`, `data_ingested`, or `unavailable` in the contract. Common controls:
 
@@ -334,7 +355,8 @@ Automatic behavior:
 - If a Grand Prix has just ended, the workflow waits until `FINAL_RESULTS_DELAY_HOURS` has passed.
 - After that cutoff, it bypasses stale HTTP result cache and retrains only once the API returns final `Results` rows.
 - If the API still has no final results, it records that state in `MODEL_STATUS.md` and keeps the current model for predictions.
-- Email/GitHub issue output is sent only inside the notification window unless `FORCE_NOTIFY=true`.
+- Email/GitHub notification output is sent only inside the notification window unless `FORCE_NOTIFY=true`.
+- GitHub notifications default to issue fallback with `briefing-notification` labels and auto-close enabled so automated briefings do not look like open bugs. Configure with `BRIEFING_NOTIFICATION_TARGET=discussion|issue|none` and `BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES=true`.
 - Challenger promotion remains gated: finish-position MAE, top-3 recall, top-10 recall, Brier score, critical source health, contract validation, unit tests, and saved artifacts must pass before the champion model is replaced.
 
 Manual controls from `workflow_dispatch`:
@@ -386,6 +408,7 @@ Before pushing, run:
 
 ```bash
 .venv/bin/python -m py_compile f1_briefing.py
+.venv/bin/ruff check f1_briefing.py pitwall scripts tests
 .venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
 cd frontend
 npm install
@@ -532,7 +555,7 @@ python scripts/check_artifact_sizes.py
 
 ```bash
 python -m py_compile f1_briefing.py
-ruff check pitwall scripts tests
+ruff check f1_briefing.py pitwall scripts tests
 python -m unittest discover -s ./tests -p "test_*.py" -t .
 cd frontend && npm ci && npm run build
 ```

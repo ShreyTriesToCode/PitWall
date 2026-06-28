@@ -102,6 +102,7 @@ on:
 permissions:
   contents: write
   issues: write
+  discussions: write
 
 concurrency:
   group: pitwall-${{ github.ref }}
@@ -183,7 +184,7 @@ jobs:
       - name: Validate briefing pipeline
         run: |
           python -m py_compile f1_briefing.py
-          ruff check pitwall scripts tests
+          ruff check f1_briefing.py pitwall scripts tests
           python -m unittest discover -s ./tests -p "test_*.py" -t .
           python scripts/validate_cache_manifest.py --allow-missing
           python scripts/check_links.py
@@ -215,6 +216,8 @@ jobs:
           FINAL_RESULTS_DELAY_HOURS: "8"
           NOTIFICATION_WINDOW_HOURS: ${{ github.event.inputs.notification_window_hours || '8' }}
           FORCE_NOTIFY: ${{ github.event.inputs.force_notify || 'false' }}
+          BRIEFING_NOTIFICATION_TARGET: "issue"
+          BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES: "true"
           OUTPUT_MODE: ${{ github.event.inputs.output_mode || 'auto' }}
           TARGET_SEASON: ${{ github.event.inputs.target_season || 'auto' }}
           TARGET_EVENT: ${{ github.event.inputs.target_event || '' }}
@@ -248,6 +251,16 @@ jobs:
           FIA_DOCUMENTS_ENABLED: "true"
           FIA_DOCUMENTS_BASE_URL: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14"
           FIA_DOCUMENTS_SEASON_URL_2026: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+          FIA_DOCUMENT_SOURCE_PRIORITY: "official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache"
+          FIA_DOCUMENT_FIA_PRIMARY_ENABLED: "true"
+          FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED: "true"
+          FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED: "true"
+          FIA_DOCUMENT_F1LIVEPULSE_ENABLED: "true"
+          FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED: "false"
+          FIA_DOCUMENT_REGULATION_MIRROR_ENABLED: "true"
+          FIA_DOCUMENT_CACHE_ENABLED: "true"
+          FIA_DOCUMENT_STALE_CACHE_MAX_DAYS: "14"
+          FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT: "true"
           FIA_DOCUMENT_CACHE_DIR: "data_cache/fia-documents"
           REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'false' }}
           FORCE_REPARSE_FIA_DOCUMENTS: ${{ github.event.inputs.force_reparse_fia_documents || 'false' }}
@@ -340,11 +353,13 @@ jobs:
           echo "Git state after generation:"
           git status --short
 
-          # Stage outputs first. The previous workflow failed because it tried to rebase
-          # while fastf1_cache/data_cache had unstaged changes.
+          # Stage small frontend/model-facing outputs first. Runtime caches stay in
+          # Actions cache/artifacts, not normal git history.
           git add briefings MODEL_STATUS.md RUN_REPORT.md data_cache/latest-model-debug.json 2>/dev/null || true
-          git add data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/latest-run-status.json data_cache/features data_cache/source_registry data_cache/fia-documents data_cache/mappings 2>/dev/null || true
-          git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
+          git add data_cache/frontend-contract.json data_cache/model-status.json data_cache/backtest-history.json data_cache/model_corrections.json data_cache/latest-run-status.json data_cache/features data_cache/source_registry data_cache/mappings 2>/dev/null || true
+          git add data_cache/fia-documents ':!data_cache/fia-documents/**/pdfs/**' ':!data_cache/fia-documents/**/*.pdf' 2>/dev/null || true
+
+          python scripts/check_artifact_sizes.py --staged --fail-cache-paths
 
           if ! git diff --cached --quiet; then
             git commit -m "chore: update PitWall generated outputs" \
@@ -369,8 +384,9 @@ jobs:
                 fi
               done
 
-              git add data_cache/http data_cache/full_races models/saved_models fastf1_cache 2>/dev/null || true
-              git add data_cache/source_registry data_cache/fia-documents data_cache/mappings 2>/dev/null || true
+              git add data_cache/source_registry data_cache/mappings 2>/dev/null || true
+              git add data_cache/fia-documents ':!data_cache/fia-documents/**/pdfs/**' ':!data_cache/fia-documents/**/*.pdf' 2>/dev/null || true
+              python scripts/check_artifact_sizes.py --staged --fail-cache-paths
 
               if ! git diff --cached --quiet; then
                 git commit --no-edit || true

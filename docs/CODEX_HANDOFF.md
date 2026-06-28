@@ -1,90 +1,68 @@
 # Codex Handoff State
 
 ## Current objective
-- [DONE] Refreshed completed-race actual-result comparison and training artifacts through Barcelona 2026 round 7.
+- [BLOCKED] Fix FIA document source resilience, lint coverage, atomic JSON writes, leakage diagnostics, artifact bloat controls, and notification cleanup; local commit is complete, but GitHub push is blocked by HTTPS authentication.
 
 ## Repository status
 - Repo path: /Users/shrey-mac/Downloads/Codes/PitWall-main 2
 - Is Git repo: yes
 - Remote origin: https://github.com/ShreyTriesToCode/PitWall.git
 - Branch: main
-- Latest known commit: `825c6e4 fix: train with post-race strategy actuals`
-- Push status: succeeded for `825c6e4`; local `origin/main` matched local HEAD. `git ls-remote origin main` could not be re-run afterward because local DNS could not resolve `github.com`.
+- Latest known local commit before this handoff update: `4194c67 Fix FIA docs sources, lint coverage, and atomic artifacts`
+- Push status: failed. Command: `git push origin main`. Error: `fatal: could not read Username for 'https://github.com': Device not configured`.
 
 ## Completed
-- [x] [REPO] Confirmed local repository and origin.
-- [x] [ACTUALS] Added cached Jolpica-compatible full-race result lookup for completed race archive comparisons.
-- [x] [ACTUALS] Regenerated frontend contracts so Monaco and Canada use cached actual winners while Barcelona remains pending.
-- [x] [TEST] Added regression coverage for cached Monaco and Canada race actuals.
-- [x] [TRAIN] Changed the scheduled briefing workflow to run `python -u` with `PYTHONUNBUFFERED=1` for visible CI logs.
-- [x] [UI] Tightened archive card layout and changed pending actual-result badges from error red to pending amber.
+- [x] [REPO] Confirmed repository, branch, and origin.
+- [x] [AUDIT] Inspected workflows, docs, relevant Python modules, tests, artifact policy, and existing handoff.
+- [x] [TEST] Added a regression test for the FIA season-index live-path cache-miss success path that failed before the undefined-name fix.
+- [x] [MODEL] Removed the stray undefined `model_comparison_contract(decision, metrics, meta)` call from `fetch_fia_season_index()`.
+- [x] [TEST] Added no-network FIA resolver tests covering official, secondary official, archive/API, third-party index, summary-only, regulation mirror, verified cache, stale cache, SHA mismatch, HTML masquerading as PDF, conflict, dedupe, and failure states.
+- [x] [DOCS] Added `AGENTS.md` with durable project rules.
+- [x] [CACHE] Added shared atomic text/JSON writers and routed key JSON artifacts through them.
+- [x] [VALIDATE] Expanded Ruff coverage to `f1_briefing.py pitwall scripts tests` in local docs and workflows.
+- [x] [MODEL] Added bounded single-feature leakage diagnostic reporting.
+- [x] [DOCS] Updated README, RUNBOOK, AUDIT, MODEL_REPORT, and ARTIFACT_POLICY.
+- [x] [PUSH] Created the local commit and rebased it on `origin/main`.
 
 ## In progress
-- None.
+- [ ] [PUSH] Push local `main` to GitHub after HTTPS credentials are available.
 
 ## Remaining
-- [ ] [PUSH] Commit and push the actual-result refresh fix.
+- [ ] Run `git push origin main` once GitHub authentication is configured for this machine/session.
+- [ ] Verify `git rev-parse HEAD` matches `git ls-remote origin main`.
 
 ## Files changed
-- f1_briefing.py: Adds completed-race strategy/weather/race-control/tyre features, prediction-row historical aggregates, and schema `2026.06-strategy-actuals-v7`.
-- tests/test_f1_briefing_core.py: Covers 22-driver completed result rows and future prediction rows using historical strategy/weather actuals.
-- MODEL_REPORT.md: Documents post-race actual strategy feature ingestion and no-leakage guardrails.
-- f1_briefing.py: Falls back to trusted cached full-race results when archive entries do not embed actual results.
-- .github/workflows/f1-briefing.yml: Runs briefing script unbuffered so workflow logs do not appear blank.
-- frontend/app/archive/page.jsx: Displays actual-result status with safe labels and tones.
-- frontend/app/globals.css: Tightens archive card, badge, metric, and action layouts.
-- tests/test_f1_briefing_core.py: Covers Monaco and Canada cached actual-result comparison.
-- data_cache/frontend-contract.json: Regenerated archive and prediction contract.
-- data_cache/model-status.json: Regenerated model/readiness metadata.
-- data_cache/backtest-history.json: Regenerated comparison history.
-- data_cache/cache_manifest.json: Regenerated cache manifest.
-- data_cache/model_corrections.json: Regenerated correction metadata.
-- data_cache/pitwall.db: Regenerated local artifact database.
-- model_artifacts/evaluation.json: Regenerated evaluation artifact.
-- model_artifacts/feature_importance.json: Regenerated feature importance artifact.
-- model_artifacts/training_metadata.json: Regenerated training metadata.
+- `f1_briefing.py`: Fixes the FIA season-index undefined-name crash, integrates the FIA resolver, adds leakage diagnostics, atomic writes, and notification target/auto-close behavior.
+- `pitwall/data/fia_document_resolver.py`: Adds the real multi-source FIA document resolver with trust/status metadata and no synthetic document creation.
+- `pitwall/io/atomic.py`: Adds shared atomic text/JSON writers.
+- `pitwall/contracts/frontend_contract.py`, `pitwall/data/cache_manager.py`, `pitwall/models/artifacts.py`, `pitwall/ai/local_rag.py`: Route JSON/text artifact writes through shared atomic helpers.
+- `scripts/check_artifact_sizes.py`: Adds staged cache/PDF guardrails while allowing small FIA parsed/index JSON.
+- `.github/workflows/*.yml`: Expands Ruff coverage and adds staged artifact checks plus notification env defaults.
+- `tests/`: Adds resolver, atomic writer, artifact policy, notification, leakage, and FIA season-index regression tests.
+- Docs: Adds/updates durable project rules, FIA trust/fallback docs, leakage diagnostics, and artifact policy.
 
 ## Important decisions
-- Completed race actuals are sourced dynamically from cached/API-backed race results; no driver positions, winners, or strategies are hardcoded.
-- Pending actual-result comparisons are not final state. If a race is past the configured final-results delay, contract normalization now rechecks trusted API/cache results and recomputes the comparison when results are available.
-- Post-race result, strategy, weather, and race-control fields are used only after the final-result gate, and future prediction rows receive historical aggregates rather than same-race actuals.
-- The model schema was bumped to `2026.06-strategy-actuals-v7` so CI/local training does not silently reuse the older artifact.
-- Empty post-race refreshes no longer overwrite valid cached final-result files; this protects Monaco/Canada-style actual-result comparisons during DNS/API outages while still allowing API-backed refresh when real results are returned.
-- Actual results are read only from existing trusted cached race result files; no winners or classifications are fabricated.
-- Barcelona 2026 round 7 has now been refreshed from Jolpica-compatible API data into `data_cache/full_races/2026-7.json.gz` with 22 trusted result rows.
-- Frontend contracts now show Barcelona 2026 round 7 actual-result comparison as available, and the saved model/training metadata now includes `latest_completed_race_id=2026-7`.
-- Playwright is intentionally not part of the default validation path because it caused workflow timeout through browser downloads.
-- The workflow still builds the frontend with `npm run build`; it does not run Playwright in the default path.
-- Current saved model metadata already includes completed results through `2026-6`; no fabricated retraining claim is made.
+- FIA documents are never synthesized. Third-party summaries are context only and cannot replace official documents.
+- Official FIA sources win over third-party copies; verified cache is used only as an explicit cache/stale fallback.
+- FIA PDF mirrors and runtime caches are blocked from staged commits; small FIA parsed/index JSON remains allowed when validated.
+- Probability/model validation behavior is unchanged except for added bounded leakage diagnostics.
+- Dependency pins were not bumped because package-index verification is unavailable in this restricted session and the existing pins are already recent/future-looking.
 
 ## Validation status
-- `.venv/bin/python -m unittest tests.test_f1_briefing_core.F1BriefingCoreTests.test_normalized_contract_recomputes_stale_pending_actuals_after_cutoff`: passed after failing before the fix.
-- `FORCE_RETRAIN=true FORCE_REFRESH_DATA=false CACHE_AWARE_DOWNLOADS=true PITWALL_CI=true SHOW_TRAINING_PROGRESS=true COMPARE_ACTUAL_RESULTS=true .venv/bin/python - <<'PY' ... train_ml_model(force=True) ...`: model training completed and saved artifacts with `latest_completed_race_id=2026-7`; wrapper exited nonzero afterward because it expected the wrong return tuple shape.
-- `.venv/bin/python - <<'PY' ... load saved model metadata ...`: passed; model artifact and training metadata both report `latest_completed_race_id=2026-7`.
-- `.venv/bin/python scripts/validate_contracts.py`: passed; latest contract has 10 Top 10 rows and 22 Full Grid rows.
-- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed with 0 missing references.
-- `PATH=/Users/shrey-mac/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:$PATH npm run build` from `frontend/`: passed.
-- `.venv/bin/python scripts/check_links.py`: passed.
-- `.venv/bin/python -m unittest tests.test_f1_briefing_core.F1BriefingCoreTests.test_completed_race_rows_flatten_full_grid_strategy_weather_features tests.test_f1_briefing_core.F1BriefingCoreTests.test_prediction_features_use_historical_strategy_weather_actuals`: passed.
-- `.venv/bin/python -m py_compile f1_briefing.py`: passed.
-- `.venv/bin/ruff check pitwall scripts tests`: passed.
-- `FORCE_RETRAIN=true FORCE_REFRESH_DATA=false CACHE_AWARE_DOWNLOADS=true PITWALL_CI=true SHOW_TRAINING_PROGRESS=true COMPARE_ACTUAL_RESULTS=true .venv/bin/python -c 'import f1_briefing as f; ... train_ml_model(True) ...'`: passed; trained schema `2026.06-strategy-actuals-v7`, 179 cached races reused, 0 refreshed, latest completed race `2026-6`, feature count 42.
-- `.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed, 102 tests.
-- `.venv/bin/python scripts/validate_contracts.py`: passed with 22 Full Grid rows, 10 Top 10 rows, schema/model `2026.06-strategy-actuals-v7`.
-- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed with 0 missing references.
-- `.venv/bin/python scripts/check_artifact_sizes.py`: passed; two FastF1 Canadian GP cache files are warning-sized but below the failure threshold.
-- `frontend build via bundled Node`: passed.
-- `.venv/bin/python scripts/validate_contracts.py`: passed.
-- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed with 0 missing references.
-- `.venv/bin/python scripts/check_links.py`: passed.
-- `frontend build via bundled Node`: passed.
-- `frontend build via bundled Node after archive UI changes`: passed.
-- `frontend npm test`: skipped because it runs Playwright, which the user asked to avoid in default workflow validation.
-- `FORCE_RETRAIN=true FORCE_REFRESH_DATA=false CACHE_AWARE_DOWNLOADS=true PITWALL_CI=true SHOW_TRAINING_PROGRESS=true COMPARE_ACTUAL_RESULTS=true .venv/bin/python f1_briefing.py`: stopped locally because the process remained silent long enough to reproduce the blank-log concern; workflow now uses unbuffered Python, and targeted cache-aware generation plus validators passed.
-- Contract spot check: latest payload has 10 Top 10 rows and 22 Full Grid rows; Monaco and Canada archive rows are `available`; Barcelona remains `pending`.
+- `.venv/bin/python -m compileall f1_briefing.py pitwall scripts tests`: passed after rebase.
+- `.venv/bin/ruff check f1_briefing.py pitwall scripts tests`: passed after rebase.
+- `.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed after rebase, 135 tests.
+- `.venv/bin/pytest`: passed after rebase, 135 tests.
+- `.venv/bin/python scripts/validate_contracts.py`: passed; Top 10 = 10, Full Grid = 22.
+- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed; 0 missing references.
+- `.venv/bin/python scripts/check_artifact_sizes.py`: passed; existing local large cache files only warned.
+- `.venv/bin/python scripts/check_artifact_sizes.py --staged --fail-cache-paths`: passed; no staged large artifacts, runtime caches, or FIA PDFs.
+- `.venv/bin/python scripts/check_links.py`: passed with 0 warnings.
+- `npm run build` in `frontend/`: passed after rebase.
+- `git push origin main`: failed with `fatal: could not read Username for 'https://github.com': Device not configured`.
 
 ## Known blockers
-- None.
+- GitHub HTTPS authentication is unavailable in this Codex session. Local work is committed and validated; push needs credentials.
 
 ## Resume instructions
 1. Run `pwd`.
@@ -92,6 +70,6 @@
 3. Run `git remote -v`.
 4. Run `git status --short`.
 5. Read this file fully.
-6. Inspect the latest diff.
-7. Continue from the first unchecked item in "Remaining".
-8. Do not restart from scratch unless the repo state is broken.
+6. Run `git log -1 --oneline`.
+7. If the working tree is clean, run `git push origin main` after configuring GitHub authentication.
+8. Verify local and remote hashes with `git rev-parse HEAD` and `git ls-remote origin main`.

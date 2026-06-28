@@ -38,7 +38,7 @@ jobs:
       - name: Run backend checks
         run: |
           python -m py_compile f1_briefing.py
-          ruff check pitwall scripts tests
+          ruff check f1_briefing.py pitwall scripts tests
           python -m unittest discover -s ./tests -p "test_*.py" -t .
           python scripts/validate_contracts.py
           python scripts/check_artifact_sizes.py

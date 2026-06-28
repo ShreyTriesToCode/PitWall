@@ -45,6 +45,7 @@ The event-level contract exposes:
 - Stage gating blocks future-session and post-race fields from earlier prediction stages.
 - Target-like fields are excluded from feature columns.
 - Race rows are skipped from training until the configured final-result delay has elapsed and actual results exist.
+- A bounded single-feature leakage diagnostic permutes the top selected features on validation data, writes `model_artifacts/leakage_diagnostic.json`, and flags extreme AUC collapse. Local runs warn/report; CI can fail only when the drop exceeds `LEAKAGE_DIAGNOSTIC_AUC_DROP_THRESHOLD` and the feature is not in `LEAKAGE_DIAGNOSTIC_ALLOWLIST`.
 - Challenger promotion requires valid data checks, no-leakage checks, ranking metrics, artifact save/load checks, backend tests, frontend contract validation, and frontend build.
 - Ranking quality matters more than classifier-only metrics because F1 prediction quality is primarily ordered-grid quality.
 
@@ -95,3 +96,10 @@ Optional heavy tools such as MLflow, DVC, Optuna, SHAP, LightGBM, and XGBoost sh
 - Added visible training logs and a terminal/GitHub Actions summary table so cache reuse, feature shape, split sizes, metrics, promotion, artifacts, and contract paths are observable.
 
 Known limitation: the model remains probabilistic and can be wrong because racing outcomes include incidents, penalties, weather shifts, reliability, strategy calls, and delayed or missing source data.
+
+## 2026-06-28 Validation Hardening
+
+- `f1_briefing.py` is now part of Ruff coverage, closing the lint escape that hid an undefined-name live FIA index crash.
+- Empirical probability calibration remains intentionally unweighted; model fit paths continue to use season sample weights.
+- `standing_proxy` was removed as dead inference-only code rather than adding an asymmetric feature outside the training schema.
+- Single-feature leakage diagnostics are bounded by `LEAKAGE_DIAGNOSTIC_TOP_N` so routine training does not become a full ablation run.

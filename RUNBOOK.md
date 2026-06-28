@@ -36,7 +36,7 @@ Plan optional offline dataset setup without downloading large artifacts:
 
 ```bash
 .venv/bin/python -m py_compile f1_briefing.py
-.venv/bin/ruff check pitwall scripts tests
+.venv/bin/ruff check f1_briefing.py pitwall scripts tests
 .venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .
 .venv/bin/python scripts/validate_contracts.py
 .venv/bin/python scripts/validate_cache_manifest.py
@@ -74,6 +74,24 @@ This updates frontend contracts, rollback contracts, feature summaries, backtest
 ## FIA Document 403s
 
 FIA PDFs can return deterministic `403`. PitWall fetches decision documents with browser-like headers once. If a cached parse exists, it marks the source as `stale_cache_forbidden`; otherwise it marks the document `forbidden` and continues with warnings. Do not hide these warnings.
+
+FIA document replacement sources are trust-labelled. Official FIA pages and configured official event/archive endpoints are trusted official sources. F1LivePulse/community-style sources are only third-party official-document indexes when they expose real FIA-origin or downloadable document links; summary-only pages are context and must not replace official FIA documents. Regulation mirrors are valid for regulation PDFs only. If no trusted source or verified cache is available, the correct state is unavailable.
+
+Useful controls:
+
+```bash
+FIA_DOCUMENT_SOURCE_PRIORITY=official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache
+FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED=false
+FIA_DOCUMENT_STALE_CACHE_MAX_DAYS=14
+FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT=true
+```
+
+GitHub notifications should not look like open bugs. The default issue fallback labels them `briefing-notification` and auto-closes them:
+
+```bash
+BRIEFING_NOTIFICATION_TARGET=issue
+BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES=true
+```
 
 ## Live Timing
 

@@ -4,20 +4,15 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from tempfile import NamedTemporaryFile
 from typing import Any
 
 import joblib
 
+from pitwall.io.atomic import atomic_write_json as shared_atomic_write_json
+
 
 def atomic_write_json(path: Path, payload: dict[str, Any]) -> Path:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False, suffix=".tmp") as handle:
-        json.dump(payload, handle, indent=2, default=str)
-        tmp = Path(handle.name)
-    json.loads(tmp.read_text(encoding="utf-8"))
-    tmp.replace(path)
-    return path
+    return shared_atomic_write_json(path, payload, indent=2, ensure_ascii=True)
 
 
 def save_model_bundle(bundle: dict[str, Any], path: Path) -> Path:

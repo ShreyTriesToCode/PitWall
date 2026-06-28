@@ -28,6 +28,12 @@ yarn-error.log*
 # Generated debug snapshots. Keep canonical contracts in Git; upload snapshots as
 # workflow artifacts when needed instead of committing every run.
 data_cache/model-input-snapshots/
+data_cache/full_races/
+fastf1_cache/
+data_cache/fia-documents/**/pdfs/
+data_cache/fia-documents/**/*.pdf
+data_cache/frontend-contract.previous.*.json
+data_cache/model-status.previous.*.json
 
 # Local secrets
 .env
@@ -35,8 +41,7 @@ data_cache/model-input-snapshots/
 frontend/.env
 frontend/.env.local
 
-# Intentionally tracked for PitWall model/data reproducibility:
+# Intentionally tracked for PitWall reproducibility:
 # - briefings/
-# - data_cache/
-# - fastf1_cache/
-# - models/saved_models/
+# - small canonical data_cache/*.json contracts/manifests
+# Large runtime caches belong in Actions cache, release assets, or object storage.

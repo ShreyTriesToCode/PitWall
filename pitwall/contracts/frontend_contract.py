@@ -7,6 +7,8 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+from pitwall.io.atomic import atomic_write_json
+
 
 def preserve_previous_valid_json(path: Path, previous_path: Path) -> bool:
     """Copy the current JSON artifact before overwrite when it is non-empty and valid."""
@@ -25,7 +27,4 @@ def preserve_previous_valid_json(path: Path, previous_path: Path) -> bool:
 def write_json_artifact(path: Path, payload: dict[str, Any], *, previous_path: Path | None = None) -> None:
     if previous_path is not None:
         preserve_previous_valid_json(path, previous_path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
-    tmp.replace(path)
+    atomic_write_json(path, payload, indent=2, ensure_ascii=False)

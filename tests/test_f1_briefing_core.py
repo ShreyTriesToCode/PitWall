@@ -276,6 +276,15 @@ class F1BriefingCoreTests(unittest.TestCase):
         rows = f1.result_rows_from_race_data(2025, 1, race, data)
         self.assertEqual(rows[0]["grid"], 3)
 
+    def test_score_position_uses_dynamic_field_size(self):
+        self.assertEqual(f1.score_position(22, field_size=22), 0.0)
+        self.assertEqual(f1.score_position(24, field_size=24), 0.0)
+        self.assertGreater(f1.score_position(12, field_size=24), f1.score_position(12, field_size=20))
+
+    def test_regulation_era_factor_is_monotonic_across_eras(self):
+        values = [f1.regulation_era_factor(year) for year in [2021, 2022, 2025, 2026, 2027]]
+        self.assertEqual(values, sorted(values))
+
     def test_constructor_alias_normalization_preserves_cross_season_form(self):
         self.assertEqual(f1.canonical_constructor_name("Mercedes-AMG Petronas F1 Team"), "Mercedes")
         self.assertEqual(f1.canonical_constructor_name("MoneyGram Haas F1 Team"), "Haas")
@@ -341,6 +350,33 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertGreater(scores["fast"], scores["slow"])
         self.assertEqual(scores["fast"], 100.0)
         self.assertEqual(scores["slow"], 0.0)
+
+    def test_single_feature_leakage_diagnostic_flags_extreme_collapse(self):
+        class LeakModel:
+            def predict_proba(self, matrix):
+                p = matrix["leak"].astype(float).to_numpy()
+                return pd.DataFrame({0: 1 - p, 1: p}).to_numpy()
+
+        valid_df = pd.DataFrame({"is_win": [0, 0, 0, 0, 1, 1, 1, 1, 1, 1]})
+        valid_matrix = pd.DataFrame({
+            "leak": valid_df["is_win"].astype(float),
+            "noise": [0.4, 0.2, 0.6, 0.3, 0.5, 0.8, 0.1, 0.7, 0.9, 0.0],
+        })
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(os.environ, {"PITWALL_CI": "false"}):
+            path = Path(tmp) / "leakage.json"
+            report = f1.run_single_feature_leakage_diagnostic(
+                {"rf": LeakModel()},
+                valid_matrix,
+                valid_df,
+                ["leak", "noise"],
+                top_n=2,
+                threshold=0.2,
+                output_path=path,
+            )
+            self.assertTrue(path.exists())
+
+        self.assertEqual(report["status"], "flagged")
+        self.assertEqual(report["flagged"][0]["feature"], "leak")
 
     def test_prediction_contract_files_are_frontend_safe(self):
         contract_path = Path("data_cache/frontend-contract.json")
@@ -632,6 +668,56 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(result["parse_status"], "forbidden")
         self.assertIsNone(result["text"])
         self.assertIn("403", result["error"])
+
+    def test_fia_season_index_success_writes_cache_without_model_context(self):
+        html = """
+        <html><body>
+          <h2>Example Grand Prix</h2>
+          <a href="/system/files/decision-document/2026_example_doc_01.pdf">Document 1 - Decision</a>
+        </body></html>
+        """
+        response = f1.requests.Response()
+        response.status_code = 200
+        response._content = html.encode("utf-8")
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_dir = Path(tmp) / "fia-documents"
+            registry = {"fia_season_document_url": "https://www.fia.com/documents/example-season"}
+            with patch.object(f1, "FIA_DOCUMENT_CACHE_DIR", cache_dir), \
+                 patch.object(f1, "FIA_DOCUMENTS_ENABLED", True), \
+                 patch.object(f1, "REFRESH_FIA_DOCUMENTS", False), \
+                 patch.object(f1, "FIA_DOCUMENT_CACHE_TTL_MINUTES", 0), \
+                 patch.object(f1, "safe_get", return_value=response):
+                payload = f1.fetch_fia_season_index(2026, registry=registry, refresh=True)
+
+            self.assertEqual(payload["status"], "available")
+            self.assertEqual(len(payload["documents"]), 1)
+            self.assertEqual(payload["documents"][0]["source_url"], "https://www.fia.com/system/files/decision-document/2026_example_doc_01.pdf")
+            cached = json.loads((cache_dir / "2026" / "season_index.json").read_text(encoding="utf-8"))
+            self.assertEqual(cached["documents"][0]["source_url"], payload["documents"][0]["source_url"])
+
+    def test_issue_notification_labels_and_auto_closes(self):
+        calls = []
+
+        def fake_github_api(method, endpoint, payload=None):
+            calls.append((method, endpoint, payload))
+            if method == "GET":
+                return []
+            if method == "POST" and endpoint == "/issues":
+                return {"number": 42}
+            return {}
+
+        with patch.object(f1, "github_api", side_effect=fake_github_api), \
+             patch.object(f1, "BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES", True):
+            f1.create_or_update_issue("PitWall Briefing", "body")
+
+        issue_posts = [payload for method, endpoint, payload in calls if method == "POST" and endpoint == "/issues"]
+        self.assertEqual(issue_posts[0]["labels"], ["f1-briefing", "briefing-notification"])
+        self.assertIn(("PATCH", "/issues/42", {"state": "closed", "state_reason": "completed"}), calls)
+
+    def test_notification_target_none_skips_github_api(self):
+        with patch.object(f1, "BRIEFING_NOTIFICATION_TARGET", "none"), \
+             patch.object(f1, "github_api", side_effect=AssertionError("github should not be called")):
+            self.assertIsNone(f1.publish_github_notification("title", "body"))
 
     def test_strategy_context_builder_uses_pit_weather_race_control_and_pace(self):
         strategy = importlib.import_module("pitwall.features.strategy")

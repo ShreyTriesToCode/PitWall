@@ -6,7 +6,6 @@ import gzip
 import io
 import zlib
 import base64
-import random
 import smtplib
 import argparse
 import subprocess
@@ -27,10 +26,7 @@ from icalendar import Calendar, Event
 from dateutil import tz
 from sklearn.ensemble import ExtraTreesClassifier, ExtraTreesRegressor, RandomForestClassifier, RandomForestRegressor, HistGradientBoostingClassifier, HistGradientBoostingRegressor
 from sklearn.metrics import roc_auc_score, brier_score_loss, mean_absolute_error, ndcg_score
-from sklearn.neural_network import MLPRegressor
-from sklearn.pipeline import make_pipeline
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler
 from scipy.stats import spearmanr
 
 try:
@@ -72,6 +68,7 @@ from pitwall.ai.summaries import (
     build_race_intelligence_summary as pitwall_build_race_intelligence_summary,
 )
 from pitwall.contracts.frontend_contract import write_json_artifact as pitwall_write_json_artifact
+from pitwall.io.atomic import atomic_write_json, atomic_write_text
 from pitwall.validation.contracts import validate_contract_files as pitwall_validate_contract_files
 
 try:
@@ -86,6 +83,32 @@ try:
 except Exception as error:
     print(f"Optional FIA document adapter unavailable: {error}")
     pitwall_fetch_fia_document_text = None
+
+try:
+    from pitwall.data.fia_document_resolver import (
+        CommunityDocumentIndexSource,
+        F1LivePulseDocumentSource,
+        FiaDocumentResolver,
+        FiaResolverConfig,
+        OfficialFiaArchiveApiSource,
+        OfficialFiaDocumentPageSource,
+        OfficialFiaEventPageSource,
+        RegulationMirrorSource,
+        VerifiedCacheDocumentSource,
+        manifest_to_legacy_index,
+    )
+except Exception as error:
+    print(f"Optional FIA document resolver unavailable: {error}")
+    CommunityDocumentIndexSource = None
+    F1LivePulseDocumentSource = None
+    FiaDocumentResolver = None
+    FiaResolverConfig = None
+    OfficialFiaArchiveApiSource = None
+    OfficialFiaDocumentPageSource = None
+    OfficialFiaEventPageSource = None
+    RegulationMirrorSource = None
+    VerifiedCacheDocumentSource = None
+    manifest_to_legacy_index = None
 
 try:
     from pitwall.data.relbench_f1 import relbench_metadata, relbench_status
@@ -104,6 +127,9 @@ EMAIL_TO = os.getenv("EMAIL_TO")
 
 GITHUB_REPOSITORY = os.getenv("GITHUB_REPOSITORY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+BRIEFING_NOTIFICATION_TARGET = os.getenv("BRIEFING_NOTIFICATION_TARGET", "issue").strip().lower()
+BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES = os.getenv("BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES", "true").lower() == "true"
+GITHUB_DISCUSSION_CATEGORY_ID = os.getenv("GITHUB_DISCUSSION_CATEGORY_ID", "").strip()
 
 USER_TIMEZONE_NAME = os.getenv("USER_TIMEZONE", "Asia/Kolkata")
 USER_TIMEZONE = tz.gettz(USER_TIMEZONE_NAME) or timezone.utc
@@ -185,6 +211,24 @@ KEEP_FIA_PDFS = os.getenv("KEEP_FIA_PDFS", "false").lower() == "true"
 FIA_DOCUMENT_USER_AGENT = os.getenv("FIA_DOCUMENT_USER_AGENT", "Mozilla/5.0 (compatible; PitWall/3.0; +https://github.com/ShreyTriesToCode/PitWall)")
 FIA_DOCUMENT_REFERER = os.getenv("FIA_DOCUMENT_REFERER", FIA_DOCUMENTS_BASE_URL)
 FIA_DOCUMENT_STRICT_DOWNLOADS = os.getenv("FIA_DOCUMENT_STRICT_DOWNLOADS", "false").lower() == "true"
+FIA_DOCUMENT_SOURCE_PRIORITY = os.getenv("FIA_DOCUMENT_SOURCE_PRIORITY", "official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache")
+FIA_DOCUMENT_FIA_PRIMARY_ENABLED = os.getenv("FIA_DOCUMENT_FIA_PRIMARY_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED = os.getenv("FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED = os.getenv("FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_F1LIVEPULSE_ENABLED = os.getenv("FIA_DOCUMENT_F1LIVEPULSE_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED = os.getenv("FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED", "false").lower() == "true"
+FIA_DOCUMENT_REGULATION_MIRROR_ENABLED = os.getenv("FIA_DOCUMENT_REGULATION_MIRROR_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_CACHE_ENABLED = os.getenv("FIA_DOCUMENT_CACHE_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_STALE_CACHE_MAX_DAYS = int(os.getenv("FIA_DOCUMENT_STALE_CACHE_MAX_DAYS", "14"))
+FIA_DOCUMENT_REQUIRE_SHA256 = os.getenv("FIA_DOCUMENT_REQUIRE_SHA256", "false").lower() == "true"
+FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT = os.getenv("FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT", "true").lower() == "true"
+FIA_DOCUMENT_BACKUP_WRITE_ENABLED = os.getenv("FIA_DOCUMENT_BACKUP_WRITE_ENABLED", "false").lower() == "true"
+FIA_DOCUMENT_BACKUP_TARGET = os.getenv("FIA_DOCUMENT_BACKUP_TARGET", "").strip()
+FIA_DOCUMENT_FIA_EVENT_PAGE_URL = os.getenv("FIA_DOCUMENT_FIA_EVENT_PAGE_URL", "").strip()
+FIA_DOCUMENT_FIA_ARCHIVE_API_URL = os.getenv("FIA_DOCUMENT_FIA_ARCHIVE_API_URL", "").strip()
+FIA_DOCUMENT_F1LIVEPULSE_URL = os.getenv("FIA_DOCUMENT_F1LIVEPULSE_URL", "").strip()
+FIA_DOCUMENT_COMMUNITY_INDEX_URL = os.getenv("FIA_DOCUMENT_COMMUNITY_INDEX_URL", "").strip()
+FIA_DOCUMENT_REGULATION_MIRROR_URL = os.getenv("FIA_DOCUMENT_REGULATION_MIRROR_URL", "").strip()
 FORMULA1_CALENDAR_BASE_URL = os.getenv("FORMULA1_CALENDAR_BASE_URL", "https://www.formula1.com/en/racing").rstrip("/")
 FORMULA1_SEASON_URL = os.getenv("FORMULA1_SEASON_URL", "").strip()
 JOLPICA_ENABLED = os.getenv("JOLPICA_ENABLED", "true").lower() == "true"
@@ -218,6 +262,15 @@ TRAINING_MODE = os.getenv("TRAINING_MODE", "auto")
 MODEL_TRAINING_MAX_SECONDS = int(os.getenv("MODEL_TRAINING_MAX_SECONDS", "900"))
 ENABLE_FEATURE_ABLATION = os.getenv("ENABLE_FEATURE_ABLATION", "false").lower() == "true"
 ENABLE_HYPERPARAMETER_SEARCH = os.getenv("ENABLE_HYPERPARAMETER_SEARCH", "false").lower() == "true"
+LEAKAGE_DIAGNOSTIC_ENABLED = os.getenv("LEAKAGE_DIAGNOSTIC_ENABLED", "true").lower() == "true"
+LEAKAGE_DIAGNOSTIC_TOP_N = int(os.getenv("LEAKAGE_DIAGNOSTIC_TOP_N", "12"))
+LEAKAGE_DIAGNOSTIC_AUC_DROP_THRESHOLD = float(os.getenv("LEAKAGE_DIAGNOSTIC_AUC_DROP_THRESHOLD", "0.35"))
+LEAKAGE_DIAGNOSTIC_FAIL_IN_CI = os.getenv("LEAKAGE_DIAGNOSTIC_FAIL_IN_CI", "true").lower() == "true"
+LEAKAGE_DIAGNOSTIC_ALLOWLIST = {
+    item.strip()
+    for item in os.getenv("LEAKAGE_DIAGNOSTIC_ALLOWLIST", "").split(",")
+    if item.strip()
+}
 MAX_TRAINING_RACES = os.getenv("MAX_TRAINING_RACES", "auto")
 MODEL_LIGHT_MODE = os.getenv("MODEL_LIGHT_MODE", "false").lower() == "true"
 LATEST_RUN_STATUS_PATH = Path(os.getenv("LATEST_RUN_STATUS_PATH", DATA_CACHE_DIR / "latest-run-status.json"))
@@ -967,8 +1020,8 @@ def build_source_registry(season=None, env=None, cache_dir=None, championship_ht
             "openf1": {"available": OPENF1_ENABLED, "status": "configured", "confidence": 0.65},
         },
     }
-    (registry_dir / f"{season}.json").write_text(json.dumps(registry, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
-    (registry_dir / "source_registry.json").write_text(json.dumps(registry, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_write_json(registry_dir / f"{season}.json", registry, indent=2, ensure_ascii=False)
+    atomic_write_json(registry_dir / "source_registry.json", registry, indent=2, ensure_ascii=False)
     return registry
 
 
@@ -1139,6 +1192,100 @@ def fia_season_index_path(season):
     return FIA_DOCUMENT_CACHE_DIR / str(season) / "season_index.json"
 
 
+def resolver_url_template(value, season, event_slug=None):
+    value = str(value or "").strip()
+    if not value:
+        return ""
+    try:
+        return value.format(season=season, event_slug=event_slug or "")
+    except Exception:
+        return value
+
+
+def build_fia_document_resolver(season, registry=None):
+    if FiaDocumentResolver is None or FiaResolverConfig is None:
+        return None
+
+    def fetch_text(url):
+        response = safe_get(url, timeout=30, optional_404=True, use_cache=False)
+        return response.text if response is not None else None
+
+    registry = registry or {}
+    config = FiaResolverConfig(
+        enabled=FIA_DOCUMENTS_ENABLED,
+        source_priority=[item.strip() for item in FIA_DOCUMENT_SOURCE_PRIORITY.split(",") if item.strip()],
+        fia_primary_enabled=FIA_DOCUMENT_FIA_PRIMARY_ENABLED,
+        fia_event_page_enabled=FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED,
+        fia_archive_api_enabled=FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED,
+        f1livepulse_enabled=FIA_DOCUMENT_F1LIVEPULSE_ENABLED,
+        community_index_enabled=FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED,
+        regulation_mirror_enabled=FIA_DOCUMENT_REGULATION_MIRROR_ENABLED,
+        cache_enabled=FIA_DOCUMENT_CACHE_ENABLED,
+        stale_cache_max_days=FIA_DOCUMENT_STALE_CACHE_MAX_DAYS,
+        require_sha256=FIA_DOCUMENT_REQUIRE_SHA256,
+        allow_summary_context=FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT,
+    )
+    sources = [
+        OfficialFiaDocumentPageSource(
+            source_key="official_fia",
+            url=registry.get("fia_season_document_url"),
+            source_authority="official_fia",
+            source_status="official_live",
+            fetch_text=fetch_text,
+            parse_index=parse_fia_document_index,
+            enabled=config.fia_primary_enabled,
+        ),
+        OfficialFiaEventPageSource(
+            source_key="official_fia_event_page",
+            url=resolver_url_template(FIA_DOCUMENT_FIA_EVENT_PAGE_URL, season),
+            source_authority="official_fia_event_page",
+            source_status="official_secondary_live",
+            fetch_text=fetch_text,
+            parse_index=parse_fia_document_index,
+            enabled=config.fia_event_page_enabled,
+        ),
+        OfficialFiaArchiveApiSource(
+            source_key="official_fia_archive_api",
+            url=resolver_url_template(FIA_DOCUMENT_FIA_ARCHIVE_API_URL, season),
+            source_authority="official_fia_archive_api",
+            source_status="official_secondary_live",
+            fetch_text=fetch_text,
+            parse_index=parse_fia_document_index,
+            enabled=config.fia_archive_api_enabled,
+        ),
+        F1LivePulseDocumentSource(
+            source_key="f1livepulse",
+            url=resolver_url_template(FIA_DOCUMENT_F1LIVEPULSE_URL, season),
+            source_authority="third_party_official_doc_index",
+            source_status="third_party_index_live",
+            fetch_text=fetch_text,
+            enabled=config.f1livepulse_enabled,
+        ),
+        CommunityDocumentIndexSource(
+            source_key="community_index",
+            url=resolver_url_template(FIA_DOCUMENT_COMMUNITY_INDEX_URL, season),
+            source_authority="third_party_official_doc_index",
+            source_status="third_party_index_live",
+            fetch_text=fetch_text,
+            enabled=config.community_index_enabled,
+        ),
+        RegulationMirrorSource(
+            source_key="regulation_mirror",
+            url=resolver_url_template(FIA_DOCUMENT_REGULATION_MIRROR_URL, season),
+            source_authority="regulation_pdf_mirror",
+            source_status="regulation_mirror_live",
+            fetch_text=fetch_text,
+            enabled=config.regulation_mirror_enabled,
+        ),
+        VerifiedCacheDocumentSource(
+            fia_season_index_path(season),
+            max_age_days=config.stale_cache_max_days,
+            enabled=config.cache_enabled,
+        ),
+    ]
+    return FiaDocumentResolver(sources, config=config)
+
+
 def load_fia_season_index(season):
     path = fia_season_index_path(season)
     if not path.exists():
@@ -1174,17 +1321,59 @@ def fetch_fia_season_index(season, registry=None, refresh=False):
             "checked_at": now_local().isoformat(),
             "errors": [] if url else ["fia_season_url_unavailable"],
         }
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        atomic_write_json(path, payload, indent=2, ensure_ascii=False)
         return payload
     if FIA_REQUEST_SLEEP_SECONDS > 0:
         time.sleep(FIA_REQUEST_SLEEP_SECONDS)
-    response = safe_get(url, timeout=30, optional_404=True, use_cache=False)
-    if not response:
-        cached["status"] = "unavailable_using_cached_index" if cached.get("documents") else "unavailable"
-        cached.setdefault("errors", []).append("fia_index_fetch_failed")
-        return cached
-    documents = parse_fia_document_index(response.text, season=season, season_url=url)
+    resolver = build_fia_document_resolver(season, registry)
+    resolver_payload = None
+    if resolver is not None and manifest_to_legacy_index is not None:
+        try:
+            manifest = resolver.resolve(season)
+            resolver_payload = manifest_to_legacy_index(manifest, season_url=url)
+        except Exception as error:
+            resolver_payload = {
+                "status": "unavailable",
+                "source_authority": "unavailable",
+                "source_status": "unavailable",
+                "context_summaries": [],
+                "errors": [f"fia_document_resolver_failed:{error}"],
+                "conflicts": [],
+            }
+        documents = resolver_payload.get("documents") or []
+    else:
+        response = safe_get(url, timeout=30, optional_404=True, use_cache=False)
+        if not response:
+            cached["status"] = "unavailable_using_cached_index" if cached.get("documents") else "unavailable"
+            cached.setdefault("errors", []).append("fia_index_fetch_failed")
+            return cached
+        documents = parse_fia_document_index(response.text, season=season, season_url=url)
+        resolver_payload = {
+            "status": "available" if documents else "unavailable",
+            "source_authority": "official_fia" if documents else "unavailable",
+            "source_status": "official_live" if documents else "unavailable",
+            "context_summaries": [],
+            "errors": [],
+            "conflicts": [],
+        }
+    if not documents:
+        payload = {
+            "season": season,
+            "season_url": url,
+            "status": resolver_payload.get("status") or "unavailable",
+            "source_authority": resolver_payload.get("source_authority") or "unavailable",
+            "source_status": resolver_payload.get("source_status") or "unavailable",
+            "checked_at": now_local().isoformat(),
+            "documents": [],
+            "context_summaries": resolver_payload.get("context_summaries") or [],
+            "cache_status": "miss",
+            "documents_changed": [],
+            "documents_reused": [],
+            "errors": resolver_payload.get("errors") or ["fia_documents_unavailable"],
+            "conflicts": resolver_payload.get("conflicts") or [],
+        }
+        atomic_write_json(path, payload, indent=2, ensure_ascii=False)
+        return payload
     previous = {doc.get("source_url"): doc for doc in cached.get("documents", [])}
     changed = []
     reused = []
@@ -1204,20 +1393,22 @@ def fetch_fia_season_index(season, registry=None, refresh=False):
         else:
             doc["cache_status"] = "miss"
             changed.append(doc.get("document_id"))
-    comparison = model_comparison_contract(decision, metrics, meta)
     payload = {
         "season": season,
         "season_url": url,
         "status": "available",
+        "source_authority": resolver_payload.get("source_authority") or "official_fia",
+        "source_status": resolver_payload.get("source_status") or "official_live",
         "checked_at": now_local().isoformat(),
         "documents": documents,
+        "context_summaries": resolver_payload.get("context_summaries") or [],
         "cache_status": "refresh" if refresh or REFRESH_FIA_DOCUMENTS else "revalidated",
         "documents_changed": changed,
         "documents_reused": reused,
-        "errors": [],
+        "errors": resolver_payload.get("errors") or [],
+        "conflicts": resolver_payload.get("conflicts") or [],
     }
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_write_json(path, payload, indent=2, ensure_ascii=False)
     return payload
 
 
@@ -1352,11 +1543,9 @@ def refresh_fia_documents_for_season(season, registry=None, refresh=False):
                     updated_documents.append(doc)
                     continue
             if text is not None:
-                text_path.parent.mkdir(parents=True, exist_ok=True)
-                text_path.write_text(text or "", encoding="utf-8")
+                atomic_write_text(text_path, text or "")
             parsed_doc = parse_fia_document_text(doc, text or "")
-            parsed_path.parent.mkdir(parents=True, exist_ok=True)
-            parsed_path.write_text(json.dumps(parsed_doc, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+            atomic_write_json(parsed_path, parsed_doc, indent=2, ensure_ascii=False)
             if fetch_result and fetch_result.get("parse_status", "").startswith("stale_cache_"):
                 doc["parse_status"] = fetch_result.get("parse_status")
                 doc["parse_error"] = fetch_result.get("error")
@@ -1382,8 +1571,7 @@ def refresh_fia_documents_for_season(season, registry=None, refresh=False):
         index_payload["errors"] = errors[:50]
         index_payload["checked_at"] = now_local().isoformat()
         path = fia_season_index_path(season)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(index_payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        atomic_write_json(path, index_payload, indent=2, ensure_ascii=False)
     _FIA_REFRESHED_SEASONS.add(season)
     return index_payload
 
@@ -3352,7 +3540,7 @@ def write_model_artifacts(meta=None):
         "training_metadata.json": training_metadata,
     }
     for filename, payload in artifacts.items():
-        (MODEL_ARTIFACTS_DIR / filename).write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        atomic_write_json(MODEL_ARTIFACTS_DIR / filename, payload, indent=2, ensure_ascii=False)
     return artifacts
 
 
@@ -3633,6 +3821,110 @@ def apply_probability_calibrator(probabilities, calibrator):
     return np.clip(np.interp(probs, centers, observed, left=observed[0], right=observed[-1]), 0.0, 1.0)
 
 
+def predict_weighted_probability(model_set, matrix, calibrator=None):
+    parts = []
+    weights = {"rf": 0.32, "hgb": 0.28, "et": 0.18, "lgb": 0.14, "xgb": 0.08}
+    for key, weight in weights.items():
+        model = (model_set or {}).get(key)
+        if model is not None and hasattr(model, "predict_proba"):
+            parts.append((model.predict_proba(matrix)[:, 1], weight))
+    if not parts:
+        return np.zeros(len(matrix), dtype=float)
+    weight_sum = sum(weight for _, weight in parts)
+    raw_prob = sum(prob * (weight / weight_sum) for prob, weight in parts)
+    return apply_probability_calibrator(raw_prob, calibrator)
+
+
+def run_single_feature_leakage_diagnostic(
+    model_set,
+    valid_matrix,
+    valid_df,
+    feature_columns,
+    *,
+    target_col="is_win",
+    calibrator=None,
+    importances=None,
+    top_n=None,
+    threshold=None,
+    allowlist=None,
+    fail_in_ci=None,
+    output_path=None,
+):
+    top_n = LEAKAGE_DIAGNOSTIC_TOP_N if top_n is None else top_n
+    threshold = LEAKAGE_DIAGNOSTIC_AUC_DROP_THRESHOLD if threshold is None else threshold
+    allowlist = set(LEAKAGE_DIAGNOSTIC_ALLOWLIST if allowlist is None else allowlist)
+    fail_in_ci = LEAKAGE_DIAGNOSTIC_FAIL_IN_CI if fail_in_ci is None else fail_in_ci
+    output_path = Path(output_path or (MODEL_ARTIFACTS_DIR / "leakage_diagnostic.json"))
+    report = {
+        "schema_version": "pitwall-leakage-diagnostic-v1",
+        "generated_at": now_local().isoformat(),
+        "enabled": bool(LEAKAGE_DIAGNOSTIC_ENABLED),
+        "target": target_col,
+        "baseline_auc": None,
+        "threshold_auc_drop": threshold,
+        "top_n": top_n,
+        "features": [],
+        "flagged": [],
+        "status": "skipped",
+        "fail_in_ci": bool(fail_in_ci),
+    }
+    if not LEAKAGE_DIAGNOSTIC_ENABLED:
+        atomic_write_json(output_path, report, indent=2, ensure_ascii=False)
+        return report
+    if target_col not in valid_df or len(valid_df) < 10:
+        report["status"] = "skipped_insufficient_validation_rows"
+        atomic_write_json(output_path, report, indent=2, ensure_ascii=False)
+        return report
+    y = valid_df[target_col].astype(int)
+    if y.nunique() < 2:
+        report["status"] = "skipped_single_class_target"
+        atomic_write_json(output_path, report, indent=2, ensure_ascii=False)
+        return report
+    baseline = predict_weighted_probability(model_set, valid_matrix, calibrator)
+    try:
+        baseline_auc = float(roc_auc_score(y, baseline))
+    except Exception as error:
+        report["status"] = "skipped_metric_unavailable"
+        report["error"] = str(error)
+        atomic_write_json(output_path, report, indent=2, ensure_ascii=False)
+        return report
+    report["baseline_auc"] = baseline_auc
+    ranked_features = list(feature_columns)
+    if importances:
+        ranked_features.sort(key=lambda col: importances.get(col, 0), reverse=True)
+    rng = np.random.default_rng(202606)
+    for feature in ranked_features[: max(0, top_n)]:
+        if feature not in valid_matrix.columns:
+            continue
+        probe = valid_matrix.copy()
+        values = np.asarray(probe[feature])
+        if len(values) > 1:
+            probe[feature] = rng.permutation(values)
+        probe_prob = predict_weighted_probability(model_set, probe, calibrator)
+        try:
+            probe_auc = float(roc_auc_score(y, probe_prob))
+        except Exception:
+            continue
+        drop = baseline_auc - probe_auc
+        row = {
+            "feature": feature,
+            "baseline_auc": baseline_auc,
+            "permuted_auc": probe_auc,
+            "auc_drop": float(drop),
+            "allowlisted": feature in allowlist,
+            "flagged": bool(drop >= threshold and feature not in allowlist),
+        }
+        report["features"].append(row)
+        if row["flagged"]:
+            report["flagged"].append(row)
+    report["status"] = "flagged" if report["flagged"] else "passed"
+    atomic_write_json(output_path, report, indent=2, ensure_ascii=False)
+    if report["flagged"] and fail_in_ci and os.getenv("PITWALL_CI", "false").lower() == "true":
+        flagged = ", ".join(item["feature"] for item in report["flagged"])
+        raise RuntimeError(f"Potential single-feature leakage detected: {flagged}")
+    return report
+
+
 def train_ml_model(force=False):
     _TRAINING_RUNTIME["started"] = time.perf_counter()
     _TRAINING_RUNTIME["timings"] = {"start": _TRAINING_RUNTIME["started"]}
@@ -3738,7 +4030,8 @@ def train_ml_model(force=False):
     validation_probabilities = {}
     probability_calibrators = {}
     train_weights = season_sample_weights(train_df)
-    calibration_weights = season_sample_weights(calibration_df) if not calibration_df.empty else None
+    # Empirical quantile calibration is intentionally unweighted; sklearn's
+    # weighted sample handling is applied to the model fit paths below.
 
     for name, target_col in targets.items():
         training_log(f"[MODEL] challenger model training target: {name}")
@@ -3861,6 +4154,21 @@ def train_ml_model(force=False):
             "validation_rows": len(valid_df),
         }
         validation_probabilities[name] = prob
+
+    leakage_diagnostic = run_single_feature_leakage_diagnostic(
+        models.get("win"),
+        X_valid,
+        valid_df,
+        feature_columns,
+        target_col="is_win",
+        calibrator=probability_calibrators.get("win"),
+        importances=feature_selection.get("top_importances") if isinstance(feature_selection, dict) else None,
+    )
+    metrics["leakage_diagnostic"] = {
+        "status": leakage_diagnostic.get("status"),
+        "flagged_count": len(leakage_diagnostic.get("flagged") or []),
+        "report_path": public_path(MODEL_ARTIFACTS_DIR / "leakage_diagnostic.json"),
+    }
 
     training_log("[MODEL] challenger finish-position model training started")
     y_train_finish = train_df["finish_position"].astype(float)
@@ -4092,11 +4400,11 @@ def train_ml_model(force=False):
         "training_reasons": retrain_decision.get("reasons", []),
         "result_readiness": retrain_decision.get("readiness", {}),
     }
-    MODEL_META_PATH.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    atomic_write_json(MODEL_META_PATH, meta, indent=2, ensure_ascii=False)
     write_model_artifacts(meta)
 
     print(f"ML model saved: {MODEL_BUNDLE_PATH}")
-    training_log(f"[MODEL] challenger model trained")
+    training_log("[MODEL] challenger model trained")
     training_log(f"[MODEL] promotion decision: {model_promotion_decision(retrain_decision, metrics).get('decision')}")
     training_log(f"[MODEL] artifact saved path: {MODEL_BUNDLE_PATH}")
     print_training_summary({
@@ -4227,7 +4535,6 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
         driver_weather_rain_experience = mean_or(recent10, "actual_weather_rainfall", mean_or(d_hist, "actual_weather_rainfall", 0))
         team_weather_rain_experience = mean_or(team_recent10, "actual_weather_rainfall", mean_or(t_hist, "actual_weather_rainfall", 0))
 
-        standing_proxy = min(20, max(1, safe_int(driver.get("position")) or 12))
         lap_now = current_laps.get(driver_id, {})
         pit_now = current_pits.get(driver_id, {})
         current_lap_pace = lap_now.get("avg_best_35pct") or driver_recent_pace
@@ -7176,7 +7483,7 @@ def notification_status_for_events(events):
 def maybe_send_outputs(title, briefing, event_or_events):
     """
     Always generate and commit dashboard data.
-    Only send email and update GitHub issue inside notification window.
+    Only send email and publish GitHub notifications inside notification window.
     """
     events = event_or_events if isinstance(event_or_events, list) else [event_or_events]
     status = notification_status_for_events(events)
@@ -7185,7 +7492,7 @@ def maybe_send_outputs(title, briefing, event_or_events):
     if not status["allowed"]:
         return status
 
-    safe_step("Create or update issue", create_or_update_issue, title, briefing)
+    safe_step("Publish GitHub notification", publish_github_notification, title, briefing)
     safe_step("Send email", send_email, title, briefing)
     return status
 
@@ -7327,14 +7634,14 @@ def save_markdown(event, briefing):
     date = event["start"].strftime("%Y-%m-%d")
     slug = make_slug(event["title"])
     path = BRIEFINGS_DIR / f"{date}-{slug}.md"
-    path.write_text(briefing, encoding="utf-8")
+    atomic_write_text(path, briefing)
     return path
 
 
 def save_run_status(status, details):
     BRIEFINGS_DIR.mkdir(exist_ok=True)
     path = BRIEFINGS_DIR / "latest-run-status.md"
-    path.write_text(f"# PitWall Run Status\n\nGenerated: {now_local().strftime('%A, %d %B %Y, %I:%M %p %Z')}\n\nStatus: {status}\n\n## Details\n\n{details}\n", encoding="utf-8")
+    atomic_write_text(path, f"# PitWall Run Status\n\nGenerated: {now_local().strftime('%A, %d %B %Y, %I:%M %p %Z')}\n\nStatus: {status}\n\n## Details\n\n{details}\n")
     ensure_dirs()
     registry = load_or_build_source_registry(resolve_target_season())
     json_payload = {
@@ -7359,8 +7666,7 @@ def save_run_status(status, details):
         "errors": registry.get("errors", []),
     }
     json_payload = sanitize_public_paths(json_payload)
-    LATEST_RUN_STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    LATEST_RUN_STATUS_PATH.write_text(json.dumps(json_payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_write_json(LATEST_RUN_STATUS_PATH, json_payload, indent=2, ensure_ascii=False)
     sqlite_insert_run_status("latest_run_status", json_payload)
     return path
 
@@ -7567,12 +7873,12 @@ def correction_summary_for_entry(race_id):
 def save_model_input_snapshot(prediction_id, payload, input_data_hash):
     ensure_dirs()
     path = MODEL_INPUT_SNAPSHOT_DIR / f"{make_slug(prediction_id)}.json"
-    path.write_text(json.dumps({
+    atomic_write_json(path, {
         "prediction_id": prediction_id,
         "input_data_hash": input_data_hash,
         "saved_at": now_local().isoformat(),
         "features_used": payload,
-    }, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    }, indent=2, ensure_ascii=False)
     return path
 
 
@@ -7692,7 +7998,7 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
 
 def save_debug(payload):
     path = DATA_CACHE_DIR / "latest-model-debug.json"
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_write_json(path, payload, indent=2, ensure_ascii=False)
     return path
 
 
@@ -7701,8 +8007,7 @@ def write_json_artifact(path, payload, previous_path=None):
     if pitwall_write_json_artifact:
         pitwall_write_json_artifact(path, payload, previous_path=Path(previous_path) if previous_path else None)
     else:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        atomic_write_json(path, payload, indent=2, ensure_ascii=False)
 
 
 def md_value(value, fallback="-"):
@@ -7866,7 +8171,7 @@ Retrain rule: the workflow does not train on a just-finished GP until the config
 
 Local equivalent: run `.venv/bin/python f1_briefing.py --force-retrain` or set the same environment variables before running.
 """
-    MODEL_STATUS_PATH.write_text(content, encoding="utf-8")
+    atomic_write_text(MODEL_STATUS_PATH, content)
     save_model_status_json(bundle=bundle, mode=mode, payloads=payloads, errors=errors, readiness=readiness, metrics=metrics, feature_columns=feature_columns, bundle_size_mb=bundle_size_mb, decision=decision)
     return MODEL_STATUS_PATH
 
@@ -8657,7 +8962,7 @@ def generate_feature_store(briefings):
         ("team_features.json", team_features),
         ("session_features.json", session_features),
     ]:
-        (FEATURES_DIR / name).write_text(json.dumps(data, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        atomic_write_json(FEATURES_DIR / name, data, indent=2, ensure_ascii=False)
         try:
             init_pitwall_db()
             with sqlite3.connect(PITWALL_DB_PATH) as conn:
@@ -8739,7 +9044,7 @@ def generate_correction_log(briefings):
         }
     )
     payload = sanitize_public_paths(payload)
-    MODEL_CORRECTIONS_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_write_json(MODEL_CORRECTIONS_PATH, payload, indent=2, ensure_ascii=False)
     return payload
 
 
@@ -8771,7 +9076,7 @@ def generate_backtest_history(briefings):
         "history": rows,
     }
     payload = sanitize_public_paths(payload)
-    BACKTEST_HISTORY_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_write_json(BACKTEST_HISTORY_PATH, payload, indent=2, ensure_ascii=False)
     return payload
 
 
@@ -9014,26 +9319,64 @@ def github_api(method, endpoint, payload=None):
     return response.json() if response.text else None
 
 
-def ensure_issue_label():
+def ensure_github_label(name, description, color):
     try:
-        github_api("POST", "/labels", {"name": "f1-briefing", "description": "Automated F1 briefing", "color": "e10600"})
+        github_api("POST", "/labels", {"name": name, "description": description, "color": color})
     except requests.HTTPError as error:
         if error.response is not None and error.response.status_code == 422:
             return
         raise
 
 
+def ensure_issue_label():
+    ensure_github_label("f1-briefing", "Automated F1 briefing", "e10600")
+    ensure_github_label("briefing-notification", "Automated PitWall briefing notification; not a bug report", "0e8a16")
+
+
+def issue_notification_labels():
+    return ["f1-briefing", "briefing-notification"]
+
+
+def auto_close_issue(issue_number):
+    if not BRIEFING_NOTIFICATION_AUTO_CLOSE_ISSUES or not issue_number:
+        return
+    github_api("PATCH", f"/issues/{issue_number}", {"state": "closed", "state_reason": "completed"})
+    print(f"Auto-closed briefing notification issue #{issue_number}.")
+
+
 def create_or_update_issue(title, body):
     ensure_issue_label()
-    existing = github_api("GET", "/issues?state=open&labels=f1-briefing&per_page=100")
+    existing = github_api("GET", "/issues?state=all&labels=briefing-notification&per_page=100")
     if existing:
         for issue in existing:
             if issue.get("title") == title:
-                github_api("PATCH", f"/issues/{issue['number']}", {"body": body})
+                github_api("PATCH", f"/issues/{issue['number']}", {"body": body, "labels": issue_notification_labels(), "state": "open"})
                 print(f"Updated issue #{issue['number']}.")
+                auto_close_issue(issue.get("number"))
                 return
-    github_api("POST", "/issues", {"title": title, "body": body, "labels": ["f1-briefing"]})
-    print("Created issue.")
+    created = github_api("POST", "/issues", {"title": title, "body": body, "labels": issue_notification_labels()})
+    issue_number = (created or {}).get("number")
+    print("Created briefing notification issue.")
+    auto_close_issue(issue_number)
+
+
+def create_or_update_discussion(title, body):
+    if not GITHUB_DISCUSSION_CATEGORY_ID:
+        print("GitHub Discussions requested but GITHUB_DISCUSSION_CATEGORY_ID is not configured; falling back to issue notification.")
+        return False
+    print("GitHub Discussions publishing is not available through the REST issue helper in this run; falling back to issue notification.")
+    return False
+
+
+def publish_github_notification(title, body):
+    target = BRIEFING_NOTIFICATION_TARGET if BRIEFING_NOTIFICATION_TARGET in {"discussion", "issue", "none"} else "issue"
+    if target == "none":
+        print("GitHub briefing notification disabled by BRIEFING_NOTIFICATION_TARGET=none.")
+        return None
+    if target == "discussion" and create_or_update_discussion(title, body):
+        return "discussion"
+    create_or_update_issue(title, body)
+    return "issue"
 
 
 def commit_and_push(paths):
@@ -9064,7 +9407,7 @@ def commit_and_push(paths):
 def write_skip_outputs(subject, details):
     status_path = save_run_status("Skipped", details)
     safe_step("Commit status", commit_and_push, [status_path])
-    safe_step("Issue status", create_or_update_issue, "PitWall Status", details)
+    safe_step("GitHub notification status", publish_github_notification, "PitWall Status", details)
     safe_step("Email status", send_email, subject, details)
 
 

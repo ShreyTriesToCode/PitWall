@@ -20,16 +20,19 @@ PitWall keeps small frontend-facing JSON artifacts in Git so Vercel can serve us
 
 - `fastf1_cache/`
 - `data_cache/full_races/`
-- `data_cache/fia-documents/`
+- FIA document JSON indexes and parsed text metadata under `data_cache/fia-documents/`
 - `models/saved_models/`
 
 Run:
 
 ```bash
 python scripts/check_artifact_sizes.py
+python scripts/check_artifact_sizes.py --staged --fail-cache-paths
 ```
 
 The checker warns at 25 MB and fails at 95 MB by default. Large generated caches should move to GitHub Actions artifacts, GitHub Releases, Git LFS, Supabase Storage, Cloudflare R2, or another explicit artifact store before they make routine commits noisy.
+
+`--staged --fail-cache-paths` fails when generated runtime caches are accidentally staged. Routine workflow commits must not include `fastf1_cache/`, `data_cache/full_races/`, FIA PDF mirrors, or saved-model cache churn. Small FIA document index/parsed JSON can be committed when it preserves source authority and verification metadata. Large payloads belong in Actions cache/artifacts, release assets, object storage, or another explicit external artifact store.
 
 ## Never Commit
 
@@ -39,7 +42,13 @@ The checker warns at 25 MB and fails at 95 MB by default. Large generated caches
 - `frontend/node_modules`
 - `frontend/.next`
 - `data_cache/model-input-snapshots`
+- `data_cache/full_races`
+- `fastf1_cache`
+- FIA PDF mirrors under `data_cache/fia-documents/**/pdfs/`
+- large reproducible previous frontend-contract/model-status variants
 - local screenshots, traces, and temporary browser artifacts
+
+FIA summaries or third-party article text must never be committed or displayed as official FIA documents. Only real document links, verified local cache entries, or explicit unavailable states are allowed.
 
 ## Recovery
 

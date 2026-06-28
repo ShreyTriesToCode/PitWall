@@ -77,3 +77,15 @@ Generated: 2026-05-28
 - ADDED: `scripts/check_links.py` and unit tests for offline route/link validation.
 
 Remaining limitation: feature-building logic is still duplicated between historical and online prediction paths behind wrappers. Tests now cover schema and contract behavior, but a future deeper extraction should make the shared feature list a single source of truth.
+
+## 2026-06-28 FIA, Lint, Atomic Artifact, And Notification Hardening
+
+- FIXED: `fetch_fia_season_index()` no longer references out-of-scope model comparison variables on a successful FIA index fetch.
+- ADDED: regression coverage for a mocked successful FIA season-index fetch with a cache miss, without live FIA network access.
+- UPDATED: Ruff coverage now includes `f1_briefing.py` in local commands and CI workflows.
+- ADDED: shared atomic text/JSON writers under `pitwall/io/atomic.py`; source registry, FIA index/parsed docs, model metadata, model artifacts, run status, feature snapshots, correction history, backtest history, frontend contracts, and local RAG JSON now route through atomic writes.
+- ADDED: trust-aware FIA document resolver with official FIA, official event/archive, verified third-party index, regulation-mirror, verified-cache, summary-only, and unavailable states. It never synthesizes FIA documents.
+- ADDED: bounded single-feature leakage diagnostic that writes `model_artifacts/leakage_diagnostic.json` and can fail CI only for extreme non-allowlisted metric collapse.
+- UPDATED: workflow generated-output commits no longer stage reproducible runtime caches such as `data_cache/full_races/`, `fastf1_cache/`, or `models/saved_models/`.
+- ADDED: staged artifact-policy check for forbidden runtime cache paths.
+- UPDATED: GitHub notification fallback issues are labeled `briefing-notification` and auto-closed by default so automated briefings do not appear as open bugs.
