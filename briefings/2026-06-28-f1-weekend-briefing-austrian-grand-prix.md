@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Austrian GP - Race
 
-Generated: Friday, 26 June 2026, 07:53 PM IST
+Generated: Sunday, 28 June 2026, 09:33 AM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Friday, 26 June 2026, 07:53 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 62.2, confidence 11%, car performance; pit-stop execution; same-circuit history; regulation-era fit; driver form
-2. George Russell, score 57.0, confidence 1%, car performance; constructor form; regulation-era fit; same-circuit history; current-season car performance
-3. Charles Leclerc, score 54.8, confidence 1%, car performance; pit-stop execution; same-circuit history; regulation-era fit; track trait fit
-4. Max Verstappen, score 53.5, confidence 29%, pit-stop execution; car performance; same-circuit history; neural lap-time forecast; ML finish-position model
-5. Oscar Piastri, score 53.0, confidence 29%, pit-stop execution; car performance; same-circuit history; regulation-era fit; track trait fit
-6. Andrea Kimi Antonelli, score 52.1, confidence 29%, car performance; driver form; constructor form; current-season car performance; regulation-era fit
-7. Lando Norris, score 51.0, confidence 29%, car performance; pit-stop execution; regulation-era fit; same-circuit history; recent race result
-8. Isack Hadjar, score 48.1, confidence 42%, pit-stop execution; car performance; neural lap-time forecast; ML finish-position model; official upgrade package impact
-9. Liam Lawson, score 45.7, confidence 24%, pit-stop execution; same-circuit history; neural lap-time forecast; team strategy gain; car performance
-10. Pierre Gasly, score 40.3, confidence 29%, neural lap-time forecast; pit-stop execution; official upgrade package impact; ML finish-position model; regulation-era fit
+1. Lewis Hamilton, score 66.1, confidence 29%, qualifying and grid position; car performance; ML finish-position model; neural lap-time forecast; pit-stop execution
+2. George Russell, score 63.3, confidence 21%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; constructor form
+3. Charles Leclerc, score 61.8, confidence 21%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; pit-stop execution
+4. Max Verstappen, score 56.7, confidence 42%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance
+5. Andrea Kimi Antonelli, score 55.7, confidence 40%, qualifying and grid position; car performance; driver form; neural lap-time forecast; ML finish-position model
+6. Lando Norris, score 55.1, confidence 52%, qualifying and grid position; ML finish-position model; car performance; pit-stop execution; neural lap-time forecast
+7. Oscar Piastri, score 54.6, confidence 40%, qualifying and grid position; pit-stop execution; car performance; same-circuit history; ML finish-position model
+8. Isack Hadjar, score 49.9, confidence 52%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance
+9. Liam Lawson, score 46.9, confidence 39%, qualifying and grid position; neural lap-time forecast; pit-stop execution; same-circuit history; ML finish-position model
+10. Pierre Gasly, score 40.7, confidence 39%, qualifying and grid position; neural lap-time forecast; ML finish-position model; pit-stop execution; official upgrade package impact
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Friday, 26 June 2026, 07:53 PM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 34.0°C, rain 15%, wind 7.7 km/h
-- Weather impact: dry baseline more likely; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth
+- Weather: 34.8°C, rain 28%, wind 7.0 km/h
+- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand
 
 ## Strategy
 
@@ -48,9 +48,9 @@ Generated: Friday, 26 June 2026, 07:53 PM IST
 
 ## Upgrade impact
 
-- Red Bull: 45.6/100, downforce, aero efficiency, cooling
 - Alpine: 40.0/100, downforce, braking, cooling
 - Aston Martin: 40.0/100, downforce, braking, cooling
+- Audi: 40.0/100, straight line, power efficiency
 
 ## Regulation context
 
@@ -61,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- race pace: 6.3%
-- ml podium probability: 5.1%
-- car performance: 4.6%
-- fastf1 race pace: 4.6%
-- upgrade package impact: 4.2%
+- qualifying: 6.5%
+- ml podium probability: 6.1%
+- race pace: 6.1%
+- ml finish position score: 4.5%
+- car performance: 4.5%
 
 ## Model accuracy audit
 
@@ -77,7 +77,7 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Source status
 
-- Stage: Race prediction, Practice-aware race-weekend prediction
+- Stage: Race prediction, Post-qualifying prediction
 - ML model: loaded
 - F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token
 - FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']

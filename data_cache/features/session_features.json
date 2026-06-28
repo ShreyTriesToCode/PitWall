@@ -2,11 +2,11 @@
   {
     "race_id": "2026-8-austrian-grand-prix",
     "target_type": "race",
-    "stage": "post_fp1",
+    "stage": "post_qualifying",
     "start_iso": "2026-06-28T18:30:00+05:30",
     "source_health": {
-      "generated_at": "2026-06-26T19:53:57.729694+05:30",
-      "overall_score": 70.27,
+      "generated_at": "2026-06-28T09:33:28.438404+05:30",
+      "overall_score": 72.09,
       "status": "Fallback",
       "sources": [
         {
@@ -16,8 +16,8 @@
         },
         {
           "source": "Jolpica",
-          "score": 62.0,
-          "status": "Fallback"
+          "score": 82.0,
+          "status": "Available"
         },
         {
           "source": "OpenF1",
@@ -83,7 +83,7 @@
           "source_url": "https://github.com/f1db/f1db",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-06-26T14:23:57.729434+00:00",
+          "checked_at": "2026-06-28T04:03:28.438122+00:00",
           "errors": [],
           "warnings": [
             "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -103,7 +103,7 @@
           "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
           "schema_url": null,
           "artifact_path": null,
-          "checked_at": "2026-06-26T14:23:57.729609+00:00",
+          "checked_at": "2026-06-28T04:03:28.438320+00:00",
           "errors": [],
           "warnings": [
             "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
