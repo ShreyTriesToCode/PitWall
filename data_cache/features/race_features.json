@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-8-austrian-grand-prix",
-    "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-e755fe3594a2",
+    "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-42c7fb9b3222",
     "season": 2026,
     "round": 8,
     "circuit": "Red Bull Ring",
@@ -13,17 +13,17 @@
     "safety_car": "high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "34.8°C",
+      "temperature": "35.0°C",
       "rain": "28%",
       "humidity": "27%",
-      "wind": "4.1 km/h",
-      "wind_gust": "18.0 km/h",
-      "cloud_cover": "82%",
+      "wind": "5.8 km/h",
+      "wind_gust": "14.0 km/h",
+      "cloud_cover": "2%",
       "track_temperature": "Unavailable",
       "rain_score": 28.0,
       "heat_score": 85,
-      "wind_score": 46.800000000000004,
-      "impact": "moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth"
+      "wind_score": 36.4,
+      "impact": "moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand"
     },
     "strategy": {
       "risk_meter": 55.8,
@@ -85,35 +85,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 69.89,
+          "scenario_score": 69.34,
           "rank": 1
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 67.29,
+          "scenario_score": 66.45,
           "rank": 2
         },
         {
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 67.14,
+          "scenario_score": 66.41,
           "rank": 3
-        },
-        {
-          "driver_id": "lawson",
-          "name": "Liam Lawson",
-          "team": "RB F1 Team",
-          "scenario_score": 63.38,
-          "rank": 4
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 62.87,
+          "scenario_score": 61.79,
+          "rank": 4
+        },
+        {
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
+          "scenario_score": 61.65,
           "rank": 5
         }
       ],
@@ -122,46 +122,46 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 64.1,
+          "scenario_score": 62.29,
           "rank": 1
-        },
-        {
-          "driver_id": "piastri",
-          "name": "Oscar Piastri",
-          "team": "McLaren",
-          "scenario_score": 61.41,
-          "rank": 2
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 61.1,
+          "scenario_score": 58.28,
+          "rank": 2
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "scenario_score": 58.22,
           "rank": 3
         },
         {
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 60.08,
+          "scenario_score": 58.13,
           "rank": 4
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 58.59,
+          "scenario_score": 56.56,
           "rank": 5
         }
       ],
       "active_aero": {
         "straight_mode": "low-drag straight configuration",
         "corner_mode": "high-downforce corner configuration",
-        "average_suitability": 61.37
+        "average_suitability": 59.88
       },
       "energy_deployment": {
         "title": "2026 Boost / Overtake Mode Intelligence",
-        "average_boost_advantage": 62.18,
+        "average_boost_advantage": 55.45,
         "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
       },
       "decision_log": [

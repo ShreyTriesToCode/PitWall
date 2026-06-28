@@ -1,6 +1,6 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-06-28T12:51:18.771138+05:30",
+  "generated_at": "2026-06-28T14:21:13.261709+05:30",
   "status": "Success",
   "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: race=F1 Austrian GP - Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {

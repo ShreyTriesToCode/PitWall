@@ -2,10 +2,10 @@
   {
     "team": "Ferrari",
     "expected_team_points": 58.96,
-    "average_score": 62.72,
-    "average_confidence": 28.43,
-    "average_active_aero_suitability": 67.33,
-    "average_energy_boost_advantage": 64.06,
+    "average_score": 62.52,
+    "average_confidence": 29.71,
+    "average_active_aero_suitability": 67.26,
+    "average_energy_boost_advantage": 63.89,
     "drivers": [
       "Lewis Hamilton",
       "Charles Leclerc",
@@ -32,10 +32,10 @@
   {
     "team": "Mercedes",
     "expected_team_points": 77.49,
-    "average_score": 68.86,
-    "average_confidence": 24.38,
-    "average_active_aero_suitability": 71.03,
-    "average_energy_boost_advantage": 67.67,
+    "average_score": 68.42,
+    "average_confidence": 25.54,
+    "average_active_aero_suitability": 70.92,
+    "average_energy_boost_advantage": 66.85,
     "drivers": [
       "George Russell",
       "Andrea Kimi Antonelli",
@@ -62,10 +62,10 @@
   {
     "team": "Red Bull",
     "expected_team_points": 40.71,
-    "average_score": 54.33,
-    "average_confidence": 50.23,
-    "average_active_aero_suitability": 57.95,
-    "average_energy_boost_advantage": 57.01,
+    "average_score": 54.04,
+    "average_confidence": 47.64,
+    "average_active_aero_suitability": 57.8,
+    "average_energy_boost_advantage": 56.36,
     "drivers": [
       "Max Verstappen",
       "Isack Hadjar",
@@ -92,13 +92,13 @@
   {
     "team": "McLaren",
     "expected_team_points": 55.98,
-    "average_score": 57.53,
-    "average_confidence": 41.65,
-    "average_active_aero_suitability": 61.9,
-    "average_energy_boost_advantage": 57.28,
+    "average_score": 57.17,
+    "average_confidence": 39.8,
+    "average_active_aero_suitability": 61.76,
+    "average_energy_boost_advantage": 56.65,
     "drivers": [
-      "Oscar Piastri",
       "Lando Norris",
+      "Oscar Piastri",
       "Oscar Piastri",
       "Lando Norris",
       "Lando Norris",
@@ -122,10 +122,10 @@
   {
     "team": "RB F1 Team",
     "expected_team_points": 7.74,
-    "average_score": 38.8,
-    "average_confidence": 43.75,
-    "average_active_aero_suitability": 47.16,
-    "average_energy_boost_advantage": 49.65,
+    "average_score": 38.34,
+    "average_confidence": 42.05,
+    "average_active_aero_suitability": 46.94,
+    "average_energy_boost_advantage": 48.59,
     "drivers": [
       "Liam Lawson",
       "Arvid Lindblad",
@@ -152,10 +152,10 @@
   {
     "team": "Alpine",
     "expected_team_points": 7.04,
-    "average_score": 39.76,
-    "average_confidence": 41.38,
-    "average_active_aero_suitability": 45.19,
-    "average_energy_boost_advantage": 48.75,
+    "average_score": 39.25,
+    "average_confidence": 39.19,
+    "average_active_aero_suitability": 44.78,
+    "average_energy_boost_advantage": 47.34,
     "drivers": [
       "Pierre Gasly",
       "Franco Colapinto",
@@ -178,10 +178,10 @@
   {
     "team": "Audi",
     "expected_team_points": 5.47,
-    "average_score": 38.18,
-    "average_confidence": 58.91,
-    "average_active_aero_suitability": 46.09,
-    "average_energy_boost_advantage": 50.2,
+    "average_score": 37.79,
+    "average_confidence": 57.06,
+    "average_active_aero_suitability": 45.89,
+    "average_energy_boost_advantage": 49.26,
     "drivers": [
       "Gabriel Bortoleto",
       "Nico Hülkenberg",
@@ -208,10 +208,10 @@
   {
     "team": "Haas",
     "expected_team_points": 3.15,
-    "average_score": 34.31,
-    "average_confidence": 46.18,
-    "average_active_aero_suitability": 42.78,
-    "average_energy_boost_advantage": 45.97,
+    "average_score": 33.85,
+    "average_confidence": 43.99,
+    "average_active_aero_suitability": 42.36,
+    "average_energy_boost_advantage": 45.11,
     "drivers": [
       "Oliver Bearman",
       "Esteban Ocon",
@@ -234,10 +234,10 @@
   {
     "team": "Williams",
     "expected_team_points": 3.04,
-    "average_score": 34.33,
-    "average_confidence": 54.57,
-    "average_active_aero_suitability": 42.94,
-    "average_energy_boost_advantage": 46.56,
+    "average_score": 34.09,
+    "average_confidence": 52.72,
+    "average_active_aero_suitability": 42.86,
+    "average_energy_boost_advantage": 45.74,
     "drivers": [
       "Carlos Sainz",
       "Alexander Albon",
@@ -262,38 +262,12 @@
     ]
   },
   {
-    "team": "Cadillac",
-    "expected_team_points": 0.62,
-    "average_score": 29.69,
-    "average_confidence": 44.14,
-    "average_active_aero_suitability": 40.98,
-    "average_energy_boost_advantage": 42.63,
-    "drivers": [
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Valtteri Bottas",
-      "Sergio Pérez",
-      "Valtteri Bottas",
-      "Sergio Pérez"
-    ]
-  },
-  {
     "team": "Aston Martin",
     "expected_team_points": 3.61,
-    "average_score": 30.91,
-    "average_confidence": 50.45,
-    "average_active_aero_suitability": 45.75,
-    "average_energy_boost_advantage": 43.06,
+    "average_score": 31.17,
+    "average_confidence": 49.34,
+    "average_active_aero_suitability": 45.85,
+    "average_energy_boost_advantage": 43.79,
     "drivers": [
       "Fernando Alonso",
       "Lance Stroll",
@@ -315,6 +289,32 @@
       "Lance Stroll",
       "Fernando Alonso",
       "Lance Stroll"
+    ]
+  },
+  {
+    "team": "Cadillac",
+    "expected_team_points": 0.62,
+    "average_score": 29.6,
+    "average_confidence": 42.08,
+    "average_active_aero_suitability": 40.67,
+    "average_energy_boost_advantage": 41.98,
+    "drivers": [
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Valtteri Bottas",
+      "Sergio Pérez",
+      "Valtteri Bottas",
+      "Sergio Pérez"
     ]
   },
   {

@@ -2,7 +2,7 @@
   "schema_version": "2026.06-strategy-actuals-v7",
   "model_version": "2026.06-strategy-actuals-v7",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-06-28T12:51:18.851964+05:30",
+  "generated_at": "2026-06-28T14:21:13.335807+05:30",
   "trained_at": "2026-06-15T17:43:04.620923+05:30",
   "latest_completed_race_included": "2026-7",
   "latest_available_api_result": "2026-7",
@@ -706,7 +706,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-28T07:21:18.851620+00:00",
+      "checked_at": "2026-06-28T08:51:13.335497+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -726,7 +726,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-06-28T07:21:18.851851+00:00",
+      "checked_at": "2026-06-28T08:51:13.335703+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -743,16 +743,16 @@
     "fia_latest_document": {
       "season": 2026,
       "event_slug": "austrian-grand-prix",
-      "title": "Doc 37 - Provisional Starting Grid Published on 27.06.26 20:00 CET",
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_provisional_starting_grid.pdf",
+      "title": "Doc 39 - Post-Race Procedure Published on 28.06.26 10:13 CET",
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_post-race_procedure.pdf",
       "source_authority": "official_fia",
       "source_status": "official_live",
-      "document_id": "09a2915f8e5ab974",
-      "document_number": 37,
-      "published_at": "2026-06-27T18:56:00+00:00",
-      "download_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_provisional_starting_grid.pdf",
+      "document_id": "89656533d40c2ef6",
+      "document_number": 39,
+      "published_at": "2026-06-28T09:10:00+00:00",
+      "download_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_post-race_procedure.pdf",
       "content_type": null,
-      "fetched_at": "2026-06-28T06:22:15.632805+00:00",
+      "fetched_at": "2026-06-28T08:50:39.368023+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -762,22 +762,22 @@
       "is_verified": true,
       "is_stale": false,
       "context_summary_available": false,
-      "published_date": "2026-06-27",
-      "published_time": "18:56",
+      "published_date": "2026-06-28",
+      "published_time": "09:10",
       "parse_status": "parsed",
       "parse_error": null,
       "source_confidence": 1.0,
       "cache_status": "miss",
       "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
-      "local_text_path": "data_cache/fia-documents/2026/austrian-grand-prix/text/doc-37-doc-37-provisional-starting-grid-published-on-27-06-26-20-00-cet.txt",
-      "local_parsed_json_path": "data_cache/fia-documents/2026/austrian-grand-prix/parsed/doc-37-doc-37-provisional-starting-grid-published-on-27-06-26-20-00-cet.json",
+      "local_text_path": "data_cache/fia-documents/2026/austrian-grand-prix/text/doc-39-doc-39-post-race-procedure-published-on-28-06-26-10-13-cet.txt",
+      "local_parsed_json_path": "data_cache/fia-documents/2026/austrian-grand-prix/parsed/doc-39-doc-39-post-race-procedure-published-on-28-06-26-10-13-cet.json",
       "local_pdf_path": null,
       "http_status": 200,
-      "hash": "d28bbfb118e0e4d30cc343ecca19986e0ab55b7f0c7de157f90e9ebadc5194fa"
+      "hash": "97db750547401efdc38c284d9749f4e929165bcfd76281a9048185566745224b"
     },
-    "fia_document_count": 46,
+    "fia_document_count": 48,
     "fia_documents_by_type": {
-      "unknown": 46
+      "unknown": 48
     },
     "fia_session_timetable": [],
     "fia_upgrade_summary": {
@@ -794,14 +794,33 @@
     },
     "latest_fia_ingested_at": null,
     "fia_parse_errors": [
-      "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403",
+      "fia_document_forbidden:403"
     ],
     "fia_cache_hits": 1,
     "fia_cache_misses": 0
   },
   "source_health": {
-    "generated_at": "2026-06-28T12:51:14.973070+05:30",
-    "overall_score": 70.09,
+    "generated_at": "2026-06-28T14:21:09.596217+05:30",
+    "overall_score": 72.09,
     "status": "Fallback",
     "sources": [
       {
@@ -816,8 +835,8 @@
       },
       {
         "source": "OpenF1",
-        "score": 48.0,
-        "status": "Stale"
+        "score": 70.0,
+        "status": "Fallback"
       },
       {
         "source": "FastF1",
@@ -878,7 +897,7 @@
         "source_url": "https://github.com/f1db/f1db",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-28T07:21:14.972791+00:00",
+        "checked_at": "2026-06-28T08:51:09.595951+00:00",
         "errors": [],
         "warnings": [
           "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -898,7 +917,7 @@
         "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
         "schema_url": null,
         "artifact_path": null,
-        "checked_at": "2026-06-28T07:21:14.972991+00:00",
+        "checked_at": "2026-06-28T08:51:09.596141+00:00",
         "errors": [],
         "warnings": [
           "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -930,19 +949,6 @@
     "local_llm_enabled": false
   },
   "source_conflicts": [
-    {
-      "conflict_type": "stale_cache",
-      "affected_fields": [
-        "source freshness"
-      ],
-      "sources": [
-        "OpenF1"
-      ],
-      "preferred_source": "fresh official/current source when available",
-      "reason": "OpenF1 data is stale.",
-      "confidence": "medium",
-      "action_needed": "Refresh cache or wait for next generated run."
-    },
     {
       "conflict_type": "stale_cache",
       "affected_fields": [
@@ -1055,13 +1061,13 @@
         "top10": 0.1605316965559789
       }
     },
-    "generated_at": "2026-06-28T12:51:18.851940+05:30",
+    "generated_at": "2026-06-28T14:21:13.335786+05:30",
     "warnings": [
       "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy."
     ]
   },
   "readiness_state": {
-    "checked_at": "2026-06-28T12:51:18.808933+05:30",
+    "checked_at": "2026-06-28T14:21:13.295992+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-7",
