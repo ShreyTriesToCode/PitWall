@@ -103,3 +103,4 @@ Known limitation: the model remains probabilistic and can be wrong because racin
 - Empirical probability calibration remains intentionally unweighted; model fit paths continue to use season sample weights.
 - `standing_proxy` was removed as dead inference-only code rather than adding an asymmetric feature outside the training schema.
 - Single-feature leakage diagnostics are bounded by `LEAKAGE_DIAGNOSTIC_TOP_N` so routine training does not become a full ablation run.
+- FIA car-presentation upgrade packages now feed the ML feature matrix directly through `fia_upgrade_*` columns for completed-race training rows and current-race inference rows. Missing or unverified upgrade data remains an explicit `missing_fia_upgrade_data` signal rather than fabricated input.

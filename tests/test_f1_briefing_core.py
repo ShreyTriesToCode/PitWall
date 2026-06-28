@@ -114,6 +114,87 @@ class F1BriefingCoreTests(unittest.TestCase):
             self.assertIn(feature, feature_columns)
             self.assertIn(feature, feature_df.columns)
 
+    def test_ml_features_include_fia_upgrade_package_signals(self):
+        base = {
+            "race_name": "Example Grand Prix",
+            "circuit_id": "example",
+            "driver_id": "driver_a",
+            "driver_name": "Driver A",
+            "constructor": "Ferrari",
+            "grid": 3,
+            "qualifying": 3,
+            "sprint_position": 20,
+            "finish_position": 2,
+            "points": 18,
+            "is_win": 0,
+            "is_podium": 1,
+            "is_top10": 1,
+            "is_finished": 1,
+            "best_clean_lap": 91.0,
+            "avg_best_35pct_lap": 91.2,
+            "lap_consistency": 0.4,
+            "valid_laps": 55,
+            "pit_stop_count": 1,
+            "avg_pit_duration": 2.8,
+            "min_pit_duration": 2.7,
+            "actual_first_pit_lap": 18,
+            "actual_pit_stop_count": 1,
+            "actual_starting_compound_code": 2,
+            "actual_strategy_annotation_count": 1,
+            "actual_safety_car_strategy_flag": 0,
+            "actual_race_control_event_count": 0,
+            "actual_weather_rainfall": 0,
+            "actual_weather_rain_probability": 0,
+            "actual_post_switch_pace_delta": 0,
+            "actual_degradation_slope": 0,
+            "actual_double_stack_loss": 0,
+            "actual_traffic_loss": 0,
+        }
+        rows = [
+            {
+                **base,
+                "race_id": "2026-1",
+                "season": 2026,
+                "round": 1,
+                "fia_upgrade_score": 0,
+                "fia_upgrade_count": 0,
+                "fia_upgrade_component_count": 0,
+                "fia_upgrade_trait_count": 0,
+                "fia_upgrade_aero_score": 0,
+                "missing_fia_upgrade_data": 1,
+            },
+            {
+                **base,
+                "race_id": "2026-2",
+                "season": 2026,
+                "round": 2,
+                "fia_upgrade_score": 82,
+                "fia_upgrade_count": 2,
+                "fia_upgrade_component_count": 2,
+                "fia_upgrade_trait_count": 5,
+                "fia_upgrade_aero_score": 3,
+                "missing_fia_upgrade_data": 0,
+            },
+        ]
+
+        feature_df, feature_columns = f1.create_ml_features(pd.DataFrame(rows))
+        target = feature_df[feature_df["race_id"] == "2026-2"].iloc[0]
+
+        for feature in [
+            "fia_upgrade_score",
+            "fia_upgrade_count",
+            "fia_upgrade_component_count",
+            "fia_upgrade_trait_count",
+            "fia_upgrade_aero_score",
+            "missing_fia_upgrade_data",
+        ]:
+            self.assertIn(feature, feature_columns)
+            self.assertIn(feature, feature_df.columns)
+        self.assertEqual(target["fia_upgrade_score"], 82)
+        self.assertEqual(target["fia_upgrade_count"], 2)
+        self.assertEqual(target["fia_upgrade_aero_score"], 3)
+        self.assertEqual(target["missing_fia_upgrade_data"], 0)
+
     def test_prediction_features_use_historical_strategy_weather_actuals(self):
         historical_df = pd.DataFrame([{
             "season": 2025,
@@ -169,6 +250,75 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(rows.loc[0, "team_strategy_pit_stop_count"], 1)
         self.assertEqual(rows.loc[0, "track_strategy_safety_car_rate"], 1)
         self.assertAlmostEqual(rows.loc[0, "track_weather_rainfall_rate"], 0.2)
+
+    def test_prediction_feature_rows_include_fia_upgrade_context_for_model_inference(self):
+        historical_df = pd.DataFrame([{
+            "season": 2025,
+            "round": 1,
+            "driver_id": "driver_a",
+            "constructor": "Ferrari",
+            "circuit_id": "example",
+            "finish_position": 4,
+            "points": 12,
+            "is_win": 0,
+            "is_podium": 0,
+            "is_top10": 1,
+            "is_finished": 1,
+            "grid": 5,
+            "qualifying": 5,
+            "sprint_position": 20,
+            "avg_best_35pct_lap": 91.2,
+            "lap_consistency": 0.4,
+            "valid_laps": 55,
+            "pit_stop_count": 1,
+            "avg_pit_duration": 2.8,
+            "min_pit_duration": 2.7,
+        }])
+        race = {
+            "season": "2026",
+            "round": "2",
+            "Circuit": {"circuitId": "example"},
+        }
+        feature_columns = [
+            "fia_upgrade_score",
+            "fia_upgrade_count",
+            "fia_upgrade_component_count",
+            "fia_upgrade_trait_count",
+            "fia_upgrade_aero_score",
+            "fia_upgrade_cooling_score",
+            "missing_fia_upgrade_data",
+        ]
+        upgrade_context = {
+            "provider_status": "official_upgrade_data_used",
+            "team_scores": {"Ferrari": 86.0},
+            "team_traits": {"Ferrari": {"downforce": 1.0, "aero_efficiency": 1.0, "cooling": 1.0}},
+            "notes": [
+                {"team": "Ferrari", "component": "floor", "traits": ["downforce", "aero_efficiency"]},
+                {"team": "Ferrari", "component": "sidepod", "traits": ["cooling"]},
+            ],
+        }
+
+        rows = f1.build_prediction_feature_rows(
+            [
+                {"driver_id": "driver_a", "name": "Driver A", "team": "Ferrari", "position": 1},
+                {"driver_id": "driver_b", "name": "Driver B", "team": "Mercedes", "position": 2},
+            ],
+            race,
+            {},
+            historical_df,
+            feature_columns,
+            upgrade_context=upgrade_context,
+        )
+
+        ferrari = rows[rows["constructor"] == "Ferrari"].iloc[0]
+        mercedes = rows[rows["constructor"] == "Mercedes"].iloc[0]
+        self.assertEqual(ferrari["fia_upgrade_score"], 86.0)
+        self.assertEqual(ferrari["fia_upgrade_count"], 2)
+        self.assertEqual(ferrari["fia_upgrade_component_count"], 2)
+        self.assertGreaterEqual(ferrari["fia_upgrade_aero_score"], 2)
+        self.assertEqual(ferrari["missing_fia_upgrade_data"], 0)
+        self.assertEqual(mercedes["fia_upgrade_score"], 0)
+        self.assertEqual(mercedes["missing_fia_upgrade_data"], 1)
 
     def test_jolpica_cache_hit_does_not_sleep_or_fetch_network(self):
         with tempfile.TemporaryDirectory() as tmp:

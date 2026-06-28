@@ -89,3 +89,4 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - UPDATED: workflow generated-output commits no longer stage reproducible runtime caches such as `data_cache/full_races/`, `fastf1_cache/`, or `models/saved_models/`.
 - ADDED: staged artifact-policy check for forbidden runtime cache paths.
 - UPDATED: GitHub notification fallback issues are labeled `briefing-notification` and auto-closed by default so automated briefings do not appear as open bugs.
+- FIXED: FIA car-presentation upgrade packages are no longer limited to transparent ranking adjustments; parsed official upgrade rows now become bounded `fia_upgrade_*` ML training and inference features with explicit missing-data flags.

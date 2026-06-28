@@ -1,64 +1,54 @@
 # Codex Handoff State
 
 ## Current objective
-- [BLOCKED] Fix FIA document source resilience, lint coverage, atomic JSON writes, leakage diagnostics, artifact bloat controls, and notification cleanup; local commit is complete, but GitHub push is blocked by HTTPS authentication.
+- [BLOCKED] Feed trusted FIA car-presentation upgrade package data into direct ML training/inference features. Local work is committed, but GitHub push is blocked by HTTPS authentication.
 
 ## Repository status
 - Repo path: /Users/shrey-mac/Downloads/Codes/PitWall-main 2
 - Is Git repo: yes
 - Remote origin: https://github.com/ShreyTriesToCode/PitWall.git
 - Branch: main
-- Latest known local commit before this handoff update: `4194c67 Fix FIA docs sources, lint coverage, and atomic artifacts`
+- Latest known local commit: run `git log -1 --oneline` after reading this file; the commit message is `feat: feed FIA upgrades into ML features`.
 - Push status: failed. Command: `git push origin main`. Error: `fatal: could not read Username for 'https://github.com': Device not configured`.
 
 ## Completed
-- [x] [REPO] Confirmed repository, branch, and origin.
-- [x] [AUDIT] Inspected workflows, docs, relevant Python modules, tests, artifact policy, and existing handoff.
-- [x] [TEST] Added a regression test for the FIA season-index live-path cache-miss success path that failed before the undefined-name fix.
-- [x] [MODEL] Removed the stray undefined `model_comparison_contract(decision, metrics, meta)` call from `fetch_fia_season_index()`.
-- [x] [TEST] Added no-network FIA resolver tests covering official, secondary official, archive/API, third-party index, summary-only, regulation mirror, verified cache, stale cache, SHA mismatch, HTML masquerading as PDF, conflict, dedupe, and failure states.
-- [x] [DOCS] Added `AGENTS.md` with durable project rules.
-- [x] [CACHE] Added shared atomic text/JSON writers and routed key JSON artifacts through them.
-- [x] [VALIDATE] Expanded Ruff coverage to `f1_briefing.py pitwall scripts tests` in local docs and workflows.
-- [x] [MODEL] Added bounded single-feature leakage diagnostic reporting.
-- [x] [DOCS] Updated README, RUNBOOK, AUDIT, MODEL_REPORT, and ARTIFACT_POLICY.
-- [x] [PUSH] Created the local commit and rebased it on `origin/main`.
+- [x] [REPO] Rebasing on latest `origin/main` completed with `git pull --rebase --autostash origin main`.
+- [x] [MODEL] Added `fia_upgrade_*` feature columns and stage-gated them as pre-weekend FIA upgrade signals.
+- [x] [MODEL] Expanded FIA car-presentation parsing so table-style team sections produce real upgrade rows from official cached text.
+- [x] [MODEL] Added safe summarizers for FIA upgrade package intensity, component counts, trait groups, performance counts, and missing-data flags.
+- [x] [MODEL] Completed-race training rows now read parsed FIA upgrade documents from `data_cache/fia-documents/<season>/<event>/parsed/` and reparse cached text in-memory when old parsed JSON lacks upgrade rows.
+- [x] [MODEL] Current-race inference rows now receive the same feature schema from `upgrade_context`, so retrained models can use upgrade signals at prediction time.
+- [x] [TEST] Added regression tests proving ML training rows and prediction rows include FIA upgrade features without hardcoded race results.
+- [x] [DOCS] Updated `AUDIT.md` and `MODEL_REPORT.md` to document direct ML upgrade-package features.
+- [x] [VALIDATE] Backend lint, contract validation, artifact-size policy, compile, and unit tests passed.
+- [x] [PUSH] Created local commit `feat: feed FIA upgrades into ML features`; push attempted and failed due missing GitHub HTTPS credentials.
 
 ## In progress
-- [ ] [PUSH] Push local `main` to GitHub after HTTPS credentials are available.
+- [ ] [PUSH] Push local `main` to GitHub after authentication is available.
 
 ## Remaining
-- [ ] Run `git push origin main` once GitHub authentication is configured for this machine/session.
+- [ ] Run `git push origin main` from an authenticated shell/session.
 - [ ] Verify `git rev-parse HEAD` matches `git ls-remote origin main`.
 
 ## Files changed
-- `f1_briefing.py`: Fixes the FIA season-index undefined-name crash, integrates the FIA resolver, adds leakage diagnostics, atomic writes, and notification target/auto-close behavior.
-- `pitwall/data/fia_document_resolver.py`: Adds the real multi-source FIA document resolver with trust/status metadata and no synthetic document creation.
-- `pitwall/io/atomic.py`: Adds shared atomic text/JSON writers.
-- `pitwall/contracts/frontend_contract.py`, `pitwall/data/cache_manager.py`, `pitwall/models/artifacts.py`, `pitwall/ai/local_rag.py`: Route JSON/text artifact writes through shared atomic helpers.
-- `scripts/check_artifact_sizes.py`: Adds staged cache/PDF guardrails while allowing small FIA parsed/index JSON.
-- `.github/workflows/*.yml`: Expands Ruff coverage and adds staged artifact checks plus notification env defaults.
-- `tests/`: Adds resolver, atomic writer, artifact policy, notification, leakage, and FIA season-index regression tests.
-- Docs: Adds/updates durable project rules, FIA trust/fallback docs, leakage diagnostics, and artifact policy.
+- `f1_briefing.py`: Adds FIA upgrade ML feature columns, parser improvements, training-row extraction, inference-row plumbing, and mandatory feature-selection retention for core upgrade signals.
+- `tests/test_f1_briefing_core.py`: Adds direct ML training/inference regression coverage for FIA upgrade features.
+- `MODEL_REPORT.md`: Documents FIA upgrade package features as direct ML inputs with missing-data flags.
+- `AUDIT.md`: Notes that FIA upgrade packages are no longer transparent-ranking only.
+- `docs/CODEX_HANDOFF.md`: Records current commit and push blocker.
 
 ## Important decisions
-- FIA documents are never synthesized. Third-party summaries are context only and cannot replace official documents.
-- Official FIA sources win over third-party copies; verified cache is used only as an explicit cache/stale fallback.
-- FIA PDF mirrors and runtime caches are blocked from staged commits; small FIA parsed/index JSON remains allowed when validated.
-- Probability/model validation behavior is unchanged except for added bounded leakage diagnostics.
-- Dependency pins were not bumped because package-index verification is unavailable in this restricted session and the existing pins are already recent/future-looking.
+- No race results, winners, strategies, FIA documents, or upgrade packages were hardcoded.
+- Upgrade-package features are derived from trusted parsed FIA/F1 upgrade context or marked missing with `missing_fia_upgrade_data`.
+- Existing Top 10 and Full Grid contract behavior was not changed.
+- Model schema version was not bumped in this commit because generated artifacts were not retrained locally; the workflow/forced retrain path will train with the new feature columns.
 
 ## Validation status
-- `.venv/bin/python -m compileall f1_briefing.py pitwall scripts tests`: passed after rebase.
-- `.venv/bin/ruff check f1_briefing.py pitwall scripts tests`: passed after rebase.
-- `.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed after rebase, 135 tests.
-- `.venv/bin/pytest`: passed after rebase, 135 tests.
+- `.venv/bin/python -m compileall f1_briefing.py pitwall scripts tests`: passed.
+- `.venv/bin/ruff check f1_briefing.py pitwall scripts tests`: passed.
+- `.venv/bin/python -m unittest discover -s ./tests -p "test_*.py" -t .`: passed, 137 tests.
 - `.venv/bin/python scripts/validate_contracts.py`: passed; Top 10 = 10, Full Grid = 22.
-- `.venv/bin/python scripts/validate_cache_manifest.py --allow-missing`: passed; 0 missing references.
-- `.venv/bin/python scripts/check_artifact_sizes.py`: passed; existing local large cache files only warned.
-- `.venv/bin/python scripts/check_artifact_sizes.py --staged --fail-cache-paths`: passed; no staged large artifacts, runtime caches, or FIA PDFs.
-- `.venv/bin/python scripts/check_links.py`: passed with 0 warnings.
-- `npm run build` in `frontend/`: passed after rebase.
+- `.venv/bin/python scripts/check_artifact_sizes.py`: passed; existing large runtime artifacts warn only, no failed policy checks.
 - `git push origin main`: failed with `fatal: could not read Username for 'https://github.com': Device not configured`.
 
 ## Known blockers

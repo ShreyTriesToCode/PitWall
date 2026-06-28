@@ -374,6 +374,7 @@ FEATURE_STAGE_MATRIX = {
     "historical_form": "pre_weekend",
     "constructor_form": "pre_weekend",
     "fia_upgrades": "pre_weekend",
+    "fia_upgrade": "pre_weekend",
     "pu_documents": "pre_weekend",
     "weather": "pre_weekend",
     "fp1_pace": "post_fp1",
@@ -390,6 +391,52 @@ FEATURE_STAGE_MATRIX = {
     "is_win": "post_race_audited",
     "is_podium": "post_race_audited",
     "is_top10": "post_race_audited",
+}
+
+FIA_UPGRADE_FEATURE_COLUMNS = [
+    "fia_upgrade_score",
+    "fia_upgrade_count",
+    "fia_upgrade_component_count",
+    "fia_upgrade_trait_count",
+    "fia_upgrade_performance_count",
+    "fia_upgrade_aero_score",
+    "fia_upgrade_cooling_score",
+    "fia_upgrade_efficiency_score",
+    "fia_upgrade_reliability_score",
+    "fia_upgrade_mechanical_score",
+    "missing_fia_upgrade_data",
+]
+
+FIA_UPGRADE_TRAIT_GROUPS = {
+    "fia_upgrade_aero_score": {
+        "aero_balance", "aero_efficiency", "downforce", "flow_conditioning",
+        "high_speed_load", "local_flow_conditioning", "local_load",
+        "platform_sensitivity", "rear_flow", "rear_flow_conditioning",
+        "rear_load", "sealing", "tyre_wake_control",
+    },
+    "fia_upgrade_cooling_score": {
+        "brake_cooling", "cooling", "cooling_range", "heat_management",
+        "heat_rejection", "tyre_temperature_control",
+    },
+    "fia_upgrade_efficiency_score": {
+        "drag", "drs_efficiency", "straight_line", "straight_line_efficiency",
+        "straight_line_speed", "aero_efficiency",
+    },
+    "fia_upgrade_reliability_score": {
+        "braking_stability", "cooling", "heat_management", "rear_stability",
+        "stability",
+    },
+    "fia_upgrade_mechanical_score": {
+        "corner_entry_stability", "low_speed_balance", "mechanical_grip",
+        "platform_stability", "traction", "tyre_management",
+    },
+}
+
+TRUSTED_UPGRADE_CONTEXT_STATUSES = {
+    "official_upgrade_data_used",
+    "official_live",
+    "official_secondary_live",
+    "third_party_index_live",
 }
 
 
@@ -855,6 +902,8 @@ def select_feature_columns_by_importance(train_df, feature_columns, max_features
         "track_dnf_rate", "track_position_sensitivity", "regulation_era_factor", "season_progress",
         "driver_strategy_first_pit_lap", "team_strategy_pit_stop_count",
         "track_strategy_safety_car_rate", "track_weather_rainfall_rate",
+        "fia_upgrade_score", "fia_upgrade_count", "fia_upgrade_component_count",
+        "missing_fia_upgrade_data",
     }
     if len(feature_columns) <= max_features:
         return feature_columns, {"method": "not_needed", "selected_count": len(feature_columns), "dropped": []}
@@ -1443,7 +1492,7 @@ def parse_fia_document_text(document, text):
         "document_id": document.get("document_id"),
         "document_type": doc_type,
         "source_url": document.get("source_url"),
-        "parser_version": "fia-parser-v1",
+        "parser_version": "fia-parser-v2",
         "parsed_at": now_local().isoformat(),
         "confidence": 0.55,
         "classification": [],
@@ -1638,35 +1687,198 @@ UPGRADE_COMPONENT_TRAITS = {
 
 def extract_car_presentation_updates(text, event_name=None, source_url=None):
     updates = []
-    teams = [
-        "Red Bull", "Ferrari", "Mercedes", "McLaren", "Aston Martin", "Alpine", "Williams",
-        "Haas", "RB", "Racing Bulls", "Sauber", "Audi", "Cadillac",
-    ]
+    team_aliases = {
+        "Red Bull": ["Red Bull", "Oracle Red Bull"],
+        "Ferrari": ["Ferrari", "Scuderia Ferrari"],
+        "Mercedes": ["Mercedes", "Mercedes-AMG"],
+        "McLaren": ["McLaren"],
+        "Aston Martin": ["Aston Martin"],
+        "Alpine": ["Alpine"],
+        "Williams": ["Williams"],
+        "Haas": ["Haas"],
+        "RB F1 Team": ["RB", "Racing Bulls", "Visa Cash App"],
+        "Sauber": ["Sauber", "Kick Sauber"],
+        "Audi": ["Audi"],
+        "Cadillac": ["Cadillac"],
+    }
     lines = [re.sub(r"\s+", " ", line).strip() for line in (text or "").splitlines() if line.strip()]
     blob = "\n".join(lines)
-    for team in teams:
-        for match in re.finditer(rf"\b{re.escape(team)}\b(.{{0,260}})", blob, flags=re.I):
-            excerpt = match.group(0)
-            lower = excerpt.lower()
-            components = [component for component in UPGRADE_COMPONENT_TRAITS if component in lower]
-            if not components and "no update" in lower:
-                continue
-            traits = sorted({trait for component in components for trait in UPGRADE_COMPONENT_TRAITS[component]})
-            if components or traits:
-                updates.append({
-                    "team": normalize_name(team),
-                    "component": components[0] if components else "unknown",
-                    "components": components,
-                    "primary_reason_for_update": "performance" if "performance" in lower else "reliability" if "reliability" in lower else "unknown",
-                    "geometric_difference": excerpt[:180],
-                    "description": excerpt[:260],
-                    "event": event_name,
-                    "source_url": source_url,
-                    "confidence_score": 1.0,
-                    "raw_excerpt": excerpt,
-                    "traits": traits,
-                })
+    section_starts = [m.start() for m in re.finditer(r"\bCar Presentation\b", blob, flags=re.I)]
+
+    def section_after(start):
+        section_start = start
+        for boundary in section_starts:
+            if boundary <= start:
+                section_start = boundary
+        end = len(blob)
+        for boundary in section_starts:
+            if boundary > section_start:
+                end = min(end, boundary)
+        return blob[section_start:min(end, section_start + 4200)]
+
+    for team, aliases in team_aliases.items():
+        canonical_team = canonical_constructor_name(team)
+        seen_sections = set()
+        for alias in aliases:
+            for match in re.finditer(rf"\b{re.escape(alias)}\b", blob, flags=re.I):
+                excerpt = section_after(match.start())
+                fingerprint = stable_hash({"team": canonical_team, "excerpt": excerpt[:900]})
+                if fingerprint in seen_sections:
+                    continue
+                seen_sections.add(fingerprint)
+                lower = excerpt.lower()
+                components = [component for component in UPGRADE_COMPONENT_TRAITS if component in lower]
+                if not components and "no update" in lower:
+                    continue
+                traits = sorted({trait for component in components for trait in UPGRADE_COMPONENT_TRAITS[component]})
+                if components or traits:
+                    updates.append({
+                        "team": canonical_team,
+                        "component": components[0] if components else "unknown",
+                        "components": components,
+                        "primary_reason_for_update": "performance" if "performance" in lower else "reliability" if "reliability" in lower else "unknown",
+                        "geometric_difference": excerpt[:180],
+                        "description": excerpt[:260],
+                        "event": event_name,
+                        "source_url": source_url,
+                        "confidence_score": 1.0,
+                        "raw_excerpt": excerpt,
+                        "traits": traits,
+                    })
     return updates
+
+
+def blank_fia_upgrade_features(missing=True):
+    features = {column: 0.0 for column in FIA_UPGRADE_FEATURE_COLUMNS}
+    features["missing_fia_upgrade_data"] = 1 if missing else 0
+    return features
+
+
+def normalize_upgrade_traits(raw_traits):
+    if isinstance(raw_traits, dict):
+        traits = []
+        for trait, value in raw_traits.items():
+            numeric = safe_float(value)
+            if numeric is None or numeric > 0:
+                traits.append(str(trait))
+        return sorted(set(traits))
+    if isinstance(raw_traits, (list, tuple, set)):
+        return sorted({str(trait) for trait in raw_traits if str(trait or "").strip()})
+    return []
+
+
+def summarize_fia_upgrade_updates(updates):
+    by_team = {}
+    for update in updates or []:
+        if not isinstance(update, dict):
+            continue
+        team = canonical_constructor_name(update.get("team") or update.get("constructor"))
+        if not team or team == "Unknown Team":
+            continue
+        bucket = by_team.setdefault(team, {"updates": 0, "components": set(), "traits": set(), "performance": 0})
+        bucket["updates"] += 1
+        components = update.get("components")
+        if not isinstance(components, (list, tuple, set)):
+            components = [update.get("component")] if update.get("component") else []
+        for component in components:
+            if str(component or "").strip():
+                bucket["components"].add(str(component).strip().lower())
+        traits = normalize_upgrade_traits(update.get("traits"))
+        for trait in traits:
+            bucket["traits"].add(str(trait).strip().lower())
+        reason = str(update.get("primary_reason_for_update") or update.get("reason") or "").lower()
+        if "performance" in reason:
+            bucket["performance"] += 1
+
+    summaries = {}
+    for team, bucket in by_team.items():
+        component_count = len(bucket["components"])
+        trait_count = len(bucket["traits"])
+        performance_count = bucket["performance"]
+        score = clamp(35 + component_count * 6 + trait_count * 3 + performance_count * 4, 0, 100, 0)
+        features = blank_fia_upgrade_features(missing=False)
+        features.update({
+            "fia_upgrade_score": float(score or 0),
+            "fia_upgrade_count": float(bucket["updates"]),
+            "fia_upgrade_component_count": float(component_count),
+            "fia_upgrade_trait_count": float(trait_count),
+            "fia_upgrade_performance_count": float(performance_count),
+        })
+        for feature, trait_group in FIA_UPGRADE_TRAIT_GROUPS.items():
+            features[feature] = float(len(bucket["traits"] & trait_group))
+        summaries[team] = features
+    return summaries
+
+
+def fia_upgrade_features_from_parsed_docs(season, race):
+    season = safe_int(season) or now_local().year
+    event_slug = make_slug((race or {}).get("raceName") or (race or {}).get("event_slug") or "")
+    if not event_slug:
+        return {}
+    parsed_dir = FIA_DOCUMENT_CACHE_DIR / str(season) / event_slug / "parsed"
+    if not parsed_dir.exists():
+        return {}
+    updates = []
+    for path in sorted(parsed_dir.glob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if payload.get("document_type") != "car_presentation_submissions":
+            continue
+        doc_updates = payload.get("upgrades") or []
+        if not doc_updates:
+            text_path = path.parent.parent / "text" / f"{path.stem}.txt"
+            if text_path.exists():
+                try:
+                    doc_updates = extract_car_presentation_updates(
+                        text_path.read_text(encoding="utf-8"),
+                        event_name=str(event_slug).replace("-", " ").title(),
+                    )
+                except Exception:
+                    doc_updates = []
+        updates.extend(doc_updates)
+    return summarize_fia_upgrade_updates(updates)
+
+
+def fia_upgrade_features_from_context(upgrade_context):
+    context = upgrade_context or {}
+    provider_status = context.get("provider_status") or context.get("source_status")
+    team_scores = context.get("team_scores") or {}
+    team_traits = context.get("team_traits") or {}
+    notes = context.get("notes") or []
+    if provider_status and provider_status not in TRUSTED_UPGRADE_CONTEXT_STATUSES:
+        return {}
+
+    updates = []
+    for note in notes:
+        if not isinstance(note, dict):
+            continue
+        updates.append({
+            "team": note.get("team"),
+            "component": note.get("component"),
+            "components": note.get("components"),
+            "traits": note.get("traits"),
+            "primary_reason_for_update": note.get("primary_reason_for_update") or "performance",
+        })
+    summaries = summarize_fia_upgrade_updates(updates)
+
+    for raw_team, raw_score in team_scores.items():
+        team = canonical_constructor_name(raw_team)
+        features = summaries.setdefault(team, blank_fia_upgrade_features(missing=False))
+        score = clamp(raw_score, 0, 100, None)
+        if score is not None:
+            features["fia_upgrade_score"] = float(score)
+        features["missing_fia_upgrade_data"] = 0
+        traits = normalize_upgrade_traits(team_traits.get(raw_team) or team_traits.get(team) or {})
+        if traits:
+            features["fia_upgrade_trait_count"] = max(float(features.get("fia_upgrade_trait_count") or 0), float(len(traits)))
+            for feature, trait_group in FIA_UPGRADE_TRAIT_GROUPS.items():
+                features[feature] = max(float(features.get(feature) or 0), float(len(set(traits) & trait_group)))
+        if not features.get("fia_upgrade_count"):
+            features["fia_upgrade_count"] = 1.0
+
+    return summaries
 
 
 def extract_pu_features(text):
@@ -2785,6 +2997,7 @@ def result_rows_from_race_data(season, round_no, race, data):
     all_stints = data.get("stints", []) or data.get("Stints", []) or []
     race_control_events = data.get("race_control", []) or data.get("raceControl", []) or data.get("race_control_messages", []) or []
     weather_context = data.get("weather", {}) if isinstance(data.get("weather", {}), dict) else {}
+    fia_upgrade_features = fia_upgrade_features_from_parsed_docs(season, race)
 
     race_id = f"{season}-{round_no}"
     circuit = race.get("Circuit", {})
@@ -2804,6 +3017,7 @@ def result_rows_from_race_data(season, round_no, race, data):
         if not driver_id or not team or not pos:
             continue
 
+        upgrade_features = fia_upgrade_features.get(team, blank_fia_upgrade_features(missing=True))
         dm = lap_metrics.get(driver_id, {})
         pm = pit_metrics.get(driver_id, {})
         fastest_lap_seconds = parse_lap_time_to_seconds(((result.get("FastestLap") or {}).get("Time") or {}).get("time"))
@@ -2830,6 +3044,7 @@ def result_rows_from_race_data(season, round_no, race, data):
             "driver_id": driver_id,
             "driver_name": driver_name(driver),
             "constructor": team,
+            **upgrade_features,
             "grid": ((field_size + 1) if grid == 0 else grid) if grid is not None and grid >= 0 else q_positions.get(driver_id),
             "qualifying": q_positions.get(driver_id),
             "sprint_position": sprint_positions.get(driver_id),
@@ -3023,9 +3238,13 @@ def create_ml_features(df):
         "actual_race_control_event_count", "actual_weather_rainfall", "actual_weather_rain_probability",
         "actual_post_switch_pace_delta", "actual_degradation_slope", "actual_double_stack_loss",
         "actual_traffic_loss",
+        *FIA_UPGRADE_FEATURE_COLUMNS,
     ]
     for col in numeric_cols:
-        df[col] = pd.to_numeric(df.get(col), errors="coerce")
+        if col in df:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+        else:
+            df[col] = np.nan
 
     missing_source_cols = [
         "grid", "qualifying", "sprint_position", "avg_best_35pct_lap", "lap_consistency",
@@ -3048,6 +3267,15 @@ def create_ml_features(df):
     df["actual_weather_rainfall"] = df["actual_weather_rainfall"].fillna(0)
     df["actual_weather_rain_probability"] = df["actual_weather_rain_probability"].fillna(0)
     df["actual_starting_compound_code"] = df["actual_starting_compound_code"].fillna(0)
+    upgrade_missing = (
+        (df["fia_upgrade_score"].fillna(0) <= 0)
+        & (df["fia_upgrade_count"].fillna(0) <= 0)
+        & (df["fia_upgrade_component_count"].fillna(0) <= 0)
+    ).astype(int)
+    df["missing_fia_upgrade_data"] = df["missing_fia_upgrade_data"].fillna(upgrade_missing)
+    for col in FIA_UPGRADE_FEATURE_COLUMNS:
+        if col != "missing_fia_upgrade_data":
+            df[col] = df[col].fillna(0)
 
     feature_rows = []
     grouped_driver = {k: g.sort_values(["season", "round"]) for k, g in df.groupby("driver_id")}
@@ -3158,6 +3386,7 @@ def create_ml_features(df):
             "missing_sprint_position": race.get("missing_sprint_position", 0),
             "missing_lap_pace": max(race.get("missing_avg_best_35pct_lap", 0), race.get("missing_lap_consistency", 0)),
             "missing_pit_data": max(race.get("missing_avg_pit_duration", 0), race.get("missing_min_pit_duration", 0)),
+            **{column: race.get(column, 0) for column in FIA_UPGRADE_FEATURE_COLUMNS},
 
             "driver_avg_finish": d_hist["finish_position"].mean(),
             "driver_median_finish": d_hist["finish_position"].median(),
@@ -3272,6 +3501,7 @@ def create_ml_features(df):
         "grid_position", "qualifying_position", "sprint_position",
         "insufficient_driver_history", "insufficient_team_history", "rookie_prior",
         "missing_grid", "missing_qualifying", "missing_sprint_position", "missing_lap_pace", "missing_pit_data",
+        *FIA_UPGRADE_FEATURE_COLUMNS,
         "driver_avg_finish", "driver_median_finish", "driver_avg_points",
         "driver_win_rate", "driver_podium_rate", "driver_top10_rate", "driver_finish_rate",
         "driver_recent3_finish", "driver_recent5_finish", "driver_recent10_finish",
@@ -4444,7 +4674,7 @@ def historical_feature_context(start_year, target_season):
     return df.sort_values(["season", "round"]).reset_index(drop=True)
 
 
-def build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns, stage="pre_weekend"):
+def build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns, stage="pre_weekend", upgrade_context=None):
     season = safe_int(race.get("season")) or now_local().year
     round_no = safe_int(race.get("round")) or 0
     circuit_id = race.get("Circuit", {}).get("circuitId")
@@ -4465,6 +4695,7 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
 
     current_laps = driver_lap_metrics_from_data(current_round_data) if current_session_features_allowed else {}
     current_pits = pit_metrics_from_data(current_round_data) if current_session_features_allowed else {}
+    upgrade_features_by_team = fia_upgrade_features_from_context(upgrade_context)
 
     rows = []
     for driver in drivers:
@@ -4540,6 +4771,7 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
         current_lap_pace = lap_now.get("avg_best_35pct") or driver_recent_pace
         current_lap_consistency = lap_now.get("consistency") or mean_or(recent5, "lap_consistency", 3)
         current_pit_duration = pit_now.get("avg_pit_duration") or driver_recent_pit
+        upgrade_features = upgrade_features_by_team.get(team, blank_fia_upgrade_features(missing=True))
 
         row = {
             "driver_id": driver_id,
@@ -4556,6 +4788,7 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
             "missing_sprint_position": 0 if sprint_positions.get(driver_id) is not None else 1,
             "missing_lap_pace": 0 if lap_now.get("avg_best_35pct") is not None else 1,
             "missing_pit_data": 0 if pit_now.get("avg_pit_duration") is not None else 1,
+            **upgrade_features,
 
             "driver_avg_finish": mean_or(d_hist, "finish_position", 12),
             "driver_median_finish": float(pd.to_numeric(d_hist["finish_position"], errors="coerce").median()) if len(d_hist) else 12,
@@ -4670,13 +4903,21 @@ def build_prediction_feature_rows(drivers, race, current_round_data, historical_
     return df
 
 
-def ml_predict_probabilities(drivers, race, current_round_data, bundle, stage="pre_weekend"):
+def ml_predict_probabilities(drivers, race, current_round_data, bundle, stage="pre_weekend", upgrade_context=None):
     if not bundle:
         return {}, {"status": "no model bundle available"}
     try:
         feature_columns = bundle["feature_columns"]
         historical_df = historical_feature_context(bundle.get("ml_start_year", ML_START_YEAR), safe_int(race.get("season")) or now_local().year)
-        pred_df = build_prediction_feature_rows(drivers, race, current_round_data, historical_df, feature_columns, stage=stage)
+        pred_df = build_prediction_feature_rows(
+            drivers,
+            race,
+            current_round_data,
+            historical_df,
+            feature_columns,
+            stage=stage,
+            upgrade_context=upgrade_context,
+        )
         feature_imputer = bundle.get("feature_imputer")
         if feature_imputer is not None:
             X, _ = prepare_feature_matrix(pred_df, feature_columns, imputer=feature_imputer)
@@ -9476,7 +9717,14 @@ def build_single_output_payload(event, bundle):
     elif target_type == "race":
         stage_label = f"Race prediction, {stage_label}"
 
-    ml_outputs, ml_debug = ml_predict_probabilities(drivers, race, current_round_data, bundle, stage=stage)
+    ml_outputs, ml_debug = ml_predict_probabilities(
+        drivers,
+        race,
+        current_round_data,
+        bundle,
+        stage=stage,
+        upgrade_context=upgrade_context,
+    )
     timing_scores = safe_step("External timing enhancement", external_timing_enhancement_scores, race, drivers) or {"provider_status": "failed"}
     fastf1_scores = safe_step("FastF1 enhancement", fastf1_enhancement_scores, season, round_no) or {"sessions_loaded": []}
 
