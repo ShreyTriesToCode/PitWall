@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Austrian GP - Race
 
-Generated: Sunday, 28 June 2026, 12:46 PM IST
+Generated: Sunday, 28 June 2026, 03:24 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Sunday, 28 June 2026, 12:46 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 69.7, confidence 43%, qualifying and grid position; car performance; ML finish-position model; neural lap-time forecast; pit-stop execution
-2. George Russell, score 69.3, confidence 36%, qualifying and grid position; car performance; neural lap-time forecast; official timing car performance; constructor form
-3. Charles Leclerc, score 65.5, confidence 36%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; pit-stop execution
-4. Andrea Kimi Antonelli, score 61.9, confidence 49%, qualifying and grid position; car performance; driver form; neural lap-time forecast; official timing car performance
-5. Max Verstappen, score 61.1, confidence 61%, qualifying and grid position; pit-stop execution; neural lap-time forecast; car performance; ML finish-position model
-6. Oscar Piastri, score 59.9, confidence 54%, qualifying and grid position; car performance; pit-stop execution; official timing car performance; same-circuit history
-7. Lando Norris, score 59.1, confidence 66%, qualifying and grid position; ML finish-position model; car performance; pit-stop execution; official timing car performance
-8. Isack Hadjar, score 53.2, confidence 66%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance
-9. Liam Lawson, score 51.0, confidence 59%, qualifying and grid position; neural lap-time forecast; pit-stop execution; same-circuit history; ML finish-position model
-10. Pierre Gasly, score 44.8, confidence 52%, qualifying and grid position; neural lap-time forecast; ML finish-position model; official timing car performance; pit-stop execution
+1. Lewis Hamilton, score 68.8, confidence 29%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast
+2. George Russell, score 65.5, confidence 21%, qualifying and grid position; car performance; official upgrade package impact; neural lap-time forecast; constructor form
+3. Charles Leclerc, score 64.5, confidence 21%, qualifying and grid position; car performance; official upgrade package impact; neural lap-time forecast; ML finish-position model
+4. Max Verstappen, score 59.8, confidence 42%, qualifying and grid position; official upgrade package impact; pit-stop execution; neural lap-time forecast; car performance
+5. Andrea Kimi Antonelli, score 57.9, confidence 40%, qualifying and grid position; car performance; official upgrade package impact; driver form; neural lap-time forecast
+6. Lando Norris, score 57.8, confidence 52%, qualifying and grid position; official upgrade package impact; ML finish-position model; car performance; pit-stop execution
+7. Oscar Piastri, score 57.2, confidence 40%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; same-circuit history
+8. Isack Hadjar, score 53.0, confidence 52%, qualifying and grid position; official upgrade package impact; pit-stop execution; neural lap-time forecast; ML finish-position model
+9. Liam Lawson, score 48.9, confidence 44%, qualifying and grid position; official upgrade package impact; neural lap-time forecast; pit-stop execution; same-circuit history
+10. Pierre Gasly, score 44.3, confidence 39%, qualifying and grid position; official upgrade package impact; neural lap-time forecast; ML finish-position model; car performance
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Sunday, 28 June 2026, 12:46 PM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 34.8°C, rain 28%, wind 4.1 km/h
-- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth
+- Weather: 35.0°C, rain 25%, wind 5.8 km/h
+- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand
 
 ## Strategy
 
@@ -48,7 +48,9 @@ Generated: Sunday, 28 June 2026, 12:46 PM IST
 
 ## Upgrade impact
 
-- No trusted upgrade-package signal found for this event.
+- Cadillac: 83.5/100, aero efficiency, brake cooling, cooling
+- Audi: 83.5/100, aero balance, aero efficiency, brake cooling
+- Red Bull: 83.5/100, aero efficiency, brake cooling, cooling
 
 ## Regulation context
 
@@ -59,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- qualifying: 6.7%
-- ml podium probability: 6.3%
-- race pace: 6.3%
-- ml finish position score: 4.6%
-- car performance: 4.6%
+- qualifying: 6.5%
+- ml podium probability: 6.1%
+- race pace: 6.1%
+- ml finish position score: 4.5%
+- car performance: 4.5%
 
 ## Model accuracy audit
 
@@ -77,7 +79,7 @@ Era: 2026+ active-aero and new power-unit era
 
 - Stage: Race prediction, Post-qualifying prediction
 - ML model: loaded
-- F1 timing: official_f1_live_timing_static_used
+- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token
 - FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']
 - Calendar check: official_f1_calendar_page_reachable
 
