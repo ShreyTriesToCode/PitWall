@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T09:33:31.448254+05:30",
+  "generated_at": "2026-06-28T11:54:13.478037+05:30",
   "output_mode": "weekend",
   "selected_targets": [
     {
@@ -101,7 +101,7 @@
       "round_no": "8",
       "target_type": "race",
       "title": "F1 Race Briefing: F1 Austrian GP - Race",
-      "briefing": "# F1 Race Briefing: F1 Austrian GP - Race\n\nGenerated: Sunday, 28 June 2026, 09:33 AM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 28 June 2026, 06:30 PM IST\n- Circuit: Red Bull Ring\n- Location: Spielberg, Austria\n\n## Prediction\n\n1. Lewis Hamilton, score 66.1, confidence 29%, qualifying and grid position; car performance; ML finish-position model; neural lap-time forecast; pit-stop execution\n2. George Russell, score 63.3, confidence 21%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; constructor form\n3. Charles Leclerc, score 61.8, confidence 21%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; pit-stop execution\n4. Max Verstappen, score 56.7, confidence 42%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance\n5. Andrea Kimi Antonelli, score 55.7, confidence 40%, qualifying and grid position; car performance; driver form; neural lap-time forecast; ML finish-position model\n6. Lando Norris, score 55.1, confidence 52%, qualifying and grid position; ML finish-position model; car performance; pit-stop execution; neural lap-time forecast\n7. Oscar Piastri, score 54.6, confidence 40%, qualifying and grid position; pit-stop execution; car performance; same-circuit history; ML finish-position model\n8. Isack Hadjar, score 49.9, confidence 52%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance\n9. Liam Lawson, score 46.9, confidence 39%, qualifying and grid position; neural lap-time forecast; pit-stop execution; same-circuit history; ML finish-position model\n10. Pierre Gasly, score 40.7, confidence 39%, qualifying and grid position; neural lap-time forecast; ML finish-position model; pit-stop execution; official upgrade package impact\n\n## Track and weather\n\n- Key car trait: balanced aero, traction, braking, and tyre management\n- Track profile: balanced speed profile\n- Overtaking: medium-good\n- Tyre stress: medium-high\n- Safety car/DNF risk proxy: high\n- Weather: 34.8°C, rain 28%, wind 7.0 km/h\n- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand\n\n## Strategy\n\n- Baseline: two-stop risk if degradation appears in long runs\n- Pit window: Lap 16-28, with safety car flexibility.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Ferrari\n2. Mercedes\n3. McLaren\n4. Red Bull\n5. RB F1 Team\n\n## Upgrade impact\n\n- Alpine: 40.0/100, downforce, braking, cooling\n- Aston Martin: 40.0/100, downforce, braking, cooling\n- Audi: 40.0/100, straight line, power efficiency\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.5%\n- ml podium probability: 6.1%\n- race pace: 6.1%\n- ml finish position score: 4.5%\n- car performance: 4.5%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.20; RMSE: 4.06\n- Neural lap-time MAE: 3.74s; RMSE: 5.08s\n- Backtest winner hit: 50.0%; top-3 recall: 67.9%; top-5 recall: 76.4%\n- Win model AUC/Brier: 0.947 / 0.038\n- Podium model AUC/Brier: 0.939 / 0.069\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
+      "briefing": "# F1 Race Briefing: F1 Austrian GP - Race\n\nGenerated: Sunday, 28 June 2026, 11:54 AM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 28 June 2026, 06:30 PM IST\n- Circuit: Red Bull Ring\n- Location: Spielberg, Austria\n\n## Prediction\n\n1. Lewis Hamilton, score 66.1, confidence 29%, qualifying and grid position; car performance; ML finish-position model; neural lap-time forecast; pit-stop execution\n2. George Russell, score 63.3, confidence 21%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; constructor form\n3. Charles Leclerc, score 61.8, confidence 21%, qualifying and grid position; car performance; neural lap-time forecast; ML finish-position model; pit-stop execution\n4. Max Verstappen, score 56.7, confidence 42%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance\n5. Andrea Kimi Antonelli, score 55.7, confidence 40%, qualifying and grid position; car performance; driver form; neural lap-time forecast; ML finish-position model\n6. Lando Norris, score 55.1, confidence 52%, qualifying and grid position; ML finish-position model; car performance; pit-stop execution; neural lap-time forecast\n7. Oscar Piastri, score 54.6, confidence 40%, qualifying and grid position; pit-stop execution; car performance; same-circuit history; ML finish-position model\n8. Isack Hadjar, score 49.9, confidence 52%, qualifying and grid position; pit-stop execution; neural lap-time forecast; ML finish-position model; car performance\n9. Liam Lawson, score 46.9, confidence 39%, qualifying and grid position; neural lap-time forecast; pit-stop execution; same-circuit history; ML finish-position model\n10. Pierre Gasly, score 40.7, confidence 39%, qualifying and grid position; neural lap-time forecast; ML finish-position model; pit-stop execution; official upgrade package impact\n\n## Track and weather\n\n- Key car trait: balanced aero, traction, braking, and tyre management\n- Track profile: balanced speed profile\n- Overtaking: medium-good\n- Tyre stress: medium-high\n- Safety car/DNF risk proxy: high\n- Weather: 34.8°C, rain 28%, wind 4.1 km/h\n- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: two-stop risk if degradation appears in long runs\n- Pit window: Lap 16-28, with safety car flexibility.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Ferrari\n2. Mercedes\n3. McLaren\n4. Red Bull\n5. RB F1 Team\n\n## Upgrade impact\n\n- Alpine: 40.0/100, downforce, braking, cooling\n- Aston Martin: 40.0/100, downforce, braking, cooling\n- Audi: 40.0/100, straight line, power efficiency\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.5%\n- ml podium probability: 6.1%\n- race pace: 6.1%\n- ml finish position score: 4.5%\n- car performance: 4.5%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.20; RMSE: 4.06\n- Neural lap-time MAE: 3.74s; RMSE: 5.08s\n- Backtest winner hit: 50.0%; top-3 recall: 67.9%; top-5 recall: 76.4%\n- Win model AUC/Brier: 0.947 / 0.038\n- Podium model AUC/Brier: 0.939 / 0.069\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'FP3', 'FP2', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
       "profile": {
         "race_name": "Austrian Grand Prix",
         "circuit": "Red Bull Ring",
@@ -183,15 +183,15 @@
         "source": "Open-Meteo forecast",
         "temperature": "34.8°C",
         "rain": "28%",
-        "humidity": "29%",
-        "wind": "7.0 km/h",
+        "humidity": "27%",
+        "wind": "4.1 km/h",
         "wind_gust": "18.0 km/h",
-        "cloud_cover": "8%",
+        "cloud_cover": "82%",
         "track_temperature": "Unavailable",
         "rain_score": 28.0,
         "heat_score": 85,
         "wind_score": 46.800000000000004,
-        "impact": "moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand"
+        "impact": "moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth"
       },
       "historical_weather": {
         "source": "Open-Meteo archive",
@@ -500,7 +500,7 @@
           },
           "teammate_prediction_gap": 4.33,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -508,8 +508,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -779,7 +779,7 @@
           },
           "teammate_prediction_gap": 7.59,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -787,8 +787,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1058,7 +1058,7 @@
           },
           "teammate_prediction_gap": 4.33,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -1066,8 +1066,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1333,7 +1333,7 @@
           },
           "teammate_prediction_gap": 6.8,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -1341,8 +1341,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1608,7 +1608,7 @@
           },
           "teammate_prediction_gap": 7.59,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -1616,8 +1616,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -1880,7 +1880,7 @@
           },
           "teammate_prediction_gap": 0.56,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -1888,8 +1888,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2157,7 +2157,7 @@
           },
           "teammate_prediction_gap": 0.56,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -2165,8 +2165,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2428,7 +2428,7 @@
           },
           "teammate_prediction_gap": 6.8,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -2436,8 +2436,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2701,7 +2701,7 @@
           },
           "teammate_prediction_gap": 7.13,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -2709,8 +2709,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -2972,7 +2972,7 @@
           },
           "teammate_prediction_gap": 6.5,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -2980,8 +2980,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -3251,7 +3251,7 @@
           },
           "teammate_prediction_gap": 4.33,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -3259,8 +3259,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3530,7 +3530,7 @@
           },
           "teammate_prediction_gap": 7.59,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -3538,8 +3538,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -3809,7 +3809,7 @@
           },
           "teammate_prediction_gap": 4.33,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -3817,8 +3817,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4084,7 +4084,7 @@
           },
           "teammate_prediction_gap": 6.8,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -4092,8 +4092,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4359,7 +4359,7 @@
           },
           "teammate_prediction_gap": 7.59,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -4367,8 +4367,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4631,7 +4631,7 @@
           },
           "teammate_prediction_gap": 0.56,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -4639,8 +4639,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -4908,7 +4908,7 @@
           },
           "teammate_prediction_gap": 0.56,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -4916,8 +4916,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5179,7 +5179,7 @@
           },
           "teammate_prediction_gap": 6.8,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -5187,8 +5187,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5452,7 +5452,7 @@
           },
           "teammate_prediction_gap": 7.13,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -5460,8 +5460,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5723,7 +5723,7 @@
           },
           "teammate_prediction_gap": 6.5,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -5731,8 +5731,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -5988,7 +5988,7 @@
           },
           "teammate_prediction_gap": 7.13,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -5996,8 +5996,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6260,7 +6260,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -6268,8 +6268,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6532,7 +6532,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -6540,8 +6540,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -6800,7 +6800,7 @@
           },
           "teammate_prediction_gap": 0.61,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -6808,8 +6808,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7068,7 +7068,7 @@
           },
           "teammate_prediction_gap": 0.61,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -7076,8 +7076,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7333,7 +7333,7 @@
           },
           "teammate_prediction_gap": 6.5,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -7341,8 +7341,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7603,7 +7603,7 @@
           },
           "teammate_prediction_gap": 2.61,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -7611,8 +7611,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -7875,7 +7875,7 @@
           },
           "teammate_prediction_gap": 2.14,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -7883,8 +7883,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8142,7 +8142,7 @@
           },
           "teammate_prediction_gap": 2.61,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -8150,8 +8150,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8408,7 +8408,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -8416,8 +8416,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8683,7 +8683,7 @@
           },
           "teammate_prediction_gap": 2.14,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -8691,8 +8691,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -8952,7 +8952,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -8960,8 +8960,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -9231,7 +9231,7 @@
           },
           "teammate_prediction_gap": 4.33,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -9239,8 +9239,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9510,7 +9510,7 @@
           },
           "teammate_prediction_gap": 7.59,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -9518,8 +9518,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -9789,7 +9789,7 @@
           },
           "teammate_prediction_gap": 4.33,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -9797,8 +9797,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10064,7 +10064,7 @@
           },
           "teammate_prediction_gap": 6.8,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -10072,8 +10072,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10339,7 +10339,7 @@
           },
           "teammate_prediction_gap": 7.59,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -10347,8 +10347,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10611,7 +10611,7 @@
           },
           "teammate_prediction_gap": 0.56,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -10619,8 +10619,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -10888,7 +10888,7 @@
           },
           "teammate_prediction_gap": 0.56,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -10896,8 +10896,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11159,7 +11159,7 @@
           },
           "teammate_prediction_gap": 6.8,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -11167,8 +11167,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11432,7 +11432,7 @@
           },
           "teammate_prediction_gap": 7.13,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -11440,8 +11440,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11703,7 +11703,7 @@
           },
           "teammate_prediction_gap": 6.5,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -11711,8 +11711,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11968,7 +11968,7 @@
           },
           "teammate_prediction_gap": 7.13,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -11976,8 +11976,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12240,7 +12240,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -12248,8 +12248,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12512,7 +12512,7 @@
           },
           "teammate_prediction_gap": 1.17,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -12520,8 +12520,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12780,7 +12780,7 @@
           },
           "teammate_prediction_gap": 0.61,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -12788,8 +12788,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13048,7 +13048,7 @@
           },
           "teammate_prediction_gap": 0.61,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -13056,8 +13056,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13313,7 +13313,7 @@
           },
           "teammate_prediction_gap": 6.5,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -13321,8 +13321,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13583,7 +13583,7 @@
           },
           "teammate_prediction_gap": 2.61,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -13591,8 +13591,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13855,7 +13855,7 @@
           },
           "teammate_prediction_gap": 2.14,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -13863,8 +13863,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14122,7 +14122,7 @@
           },
           "teammate_prediction_gap": 2.61,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -14130,8 +14130,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14388,7 +14388,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -14396,8 +14396,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14663,7 +14663,7 @@
           },
           "teammate_prediction_gap": 2.14,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -14671,8 +14671,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14932,7 +14932,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+          "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
           "race_id": "2026-8-austrian-grand-prix",
           "season": 2026,
           "round": 8,
@@ -14940,8 +14940,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-06-28T09:33:28.441042+05:30",
-          "input_data_hash": "ac891727a0056d673d85fc279f4586c765b96ecea9b3f97f988cf4e3beb1e37d",
+          "generated_at": "2026-06-28T11:54:10.371282+05:30",
+          "input_data_hash": "52f9449b8b5516db947099e92ebae4799a002437661738840c09047985414bfb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -15000,7 +15000,7 @@
           "fastf1_tyre_stint": 0.0204
         },
         "source_health_snapshot": {
-          "generated_at": "2026-06-28T09:33:28.438404+05:30",
+          "generated_at": "2026-06-28T11:54:10.368956+05:30",
           "overall_score": 72.09,
           "status": "Fallback",
           "sources": [
@@ -15078,7 +15078,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-06-28T04:03:28.438122+00:00",
+              "checked_at": "2026-06-28T06:24:10.368714+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -15098,7 +15098,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-06-28T04:03:28.438320+00:00",
+              "checked_at": "2026-06-28T06:24:10.368875+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -19146,7 +19146,7 @@
             "model_latest_completed_race_id": "2026-7",
             "api_latest_completed_race_id": "2026-7",
             "readiness": {
-              "checked_at": "2026-06-28T09:32:33.613626+05:30",
+              "checked_at": "2026-06-28T11:53:39.236580+05:30",
               "current_year": 2026,
               "final_results_delay_hours": 8,
               "latest_completed_race_id": "2026-7",
@@ -20551,9 +20551,9 @@
   ],
   "errors": [],
   "notification_gate": {
-    "allowed": false,
-    "reason": "Nearest Sprint/Race target is more than 8 hours away.",
-    "hours_until_event": 8.94,
+    "allowed": true,
+    "reason": "Event starts within 8 hours.",
+    "hours_until_event": 6.6,
     "matched_event": "F1 Austrian GP - Race"
   },
   "backfill": {

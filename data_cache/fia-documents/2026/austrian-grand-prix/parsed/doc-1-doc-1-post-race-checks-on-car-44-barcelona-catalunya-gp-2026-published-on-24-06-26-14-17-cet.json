@@ -1,0 +1,13 @@
+{
+  "document_id": "1e1051b56e32b426",
+  "document_type": "post_race_checks",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_post-race_checks_on_car_44_barcelona-catalunya_gp_2026.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-28T11:53:27.296980+05:30",
+  "confidence": 0.55,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nTechnical Delegate’s Report\n \n \nAfter the race in Barcelona, car number 44 was randomly chosen among the top ten cars for more\nextensive physical inspections.\n \nSubject to these physical inspections was the rear brake system.\nOn the hardware side, checks were carried out in relation to Articles C11.1, C11.2 (rear only), C11.3\n(rear only), C11.4, C11.5 and C11.6.\nOn the electronics and software side, checks were carried out in relation to Articles C8.1, C8.2,\nC11.6 and FIA-F1-DOC-001:\nBrake control software registration and verification.\nBrake control software inspection for the interfaces to standard and custom software applications.\nIdentification of sensor and their connections to the FIA standard ECU.\nData logging of signals.\nHomologation status of sensors.\nFIA-F1-DOC-001 submissions.\nBBW FMEA.\n \nAll inspected components were found to be in conformance with the 2026 Formula One Technical\nRegulations.\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 1\nDate 24 June 2026\nTime 14:01\nJo Bauer\n"
+}

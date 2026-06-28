@@ -1,0 +1,26 @@
+{
+  "document_id": "80198d29e68f6946",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times_-_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-28T11:52:45.715350+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To All Teams, All Officials Document 21 Date 26 June 2026 Time 18:25 Title Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flags Description Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flag",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 21\nDate 26 June 2026\nTime 18:25\nTitle Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flags\nDescription Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flags\nEnclosed AUT DOC 21 - Free Practice 2 Deleted Lap Times - Double Yellow Flags.pdf\nFelix Holter Tanja Geilhausen\nPedro Lamy Wilhelm Singer\n\n \n \n \n \n2026 AUSTRIAN GRAND PRIX \n26 – 28 June 2026 \n \n    \nFrom The Stewards      Document 21 \n  \nTo All Officials, All Teams      Date  26 June 2026 \n \n        Time  18:25 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag zone will be deleted as detailed in the \nRace Director’s Competition Notes (item 10, document 6): \n \nSession Free Practice 2 \n  \nFact The F1 cars passed through a double waved yellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 5 16  Charles Leclerc Scuderia Ferrari HP 17:08:26 1:29.491 \n2 5 44  Lewis Hamilton Scuderia Ferrari HP 17:08:30 OUT LAP \n \n \nDecision Deletion of the lap times shown.   \nNote Competitors are reminded that they have the right to appe"
+}

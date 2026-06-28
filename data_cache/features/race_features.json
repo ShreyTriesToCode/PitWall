@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-8-austrian-grand-prix",
-    "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-0f3d9a037fe8",
+    "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-3ab44260847b",
     "season": 2026,
     "round": 8,
     "circuit": "Red Bull Ring",
@@ -15,15 +15,15 @@
       "source": "Open-Meteo forecast",
       "temperature": "34.8°C",
       "rain": "28%",
-      "humidity": "29%",
-      "wind": "7.0 km/h",
+      "humidity": "27%",
+      "wind": "4.1 km/h",
       "wind_gust": "18.0 km/h",
-      "cloud_cover": "8%",
+      "cloud_cover": "82%",
       "track_temperature": "Unavailable",
       "rain_score": 28.0,
       "heat_score": 85,
       "wind_score": 46.800000000000004,
-      "impact": "moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand"
+      "impact": "moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth"
     },
     "strategy": {
       "risk_meter": 55.8,

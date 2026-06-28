@@ -1,0 +1,26 @@
+{
+  "document_id": "651129fb360f7e3b",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_infringement_-_car_6_-_failing_to_follow_race_directors_instructions_sc2-sc1.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-28T11:52:25.979420+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To The Team Manager, Oracle Red Bull Racing Document 32 Date 27 June 2026 Time 18:09 The Stewards, having received a report from the Race Director, summoned (document 29) and heard from the driver and team representative, have ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 32\nDate 27 June 2026\nTime 18:09\nThe Stewards, having received a report from the Race Director, summoned (document 29) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 6 - Isack Hadjar\nCompetitor Oracle Red Bull Racing\nTime 16:14\nSession Qualifying\nFact Car 6 exceeded the time limit between the Safety Car lines.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations and non-compliance with Race\nDirector’s Competition Note (item 1, document 6).\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 6 (Isack Hadjar), team representative and\nreviewed positioning/marshalling system data, timing, and in-car video evidence.\nThe Stewards determine that the driver completed the relevant lap without overtaking\nor being overtaken by any other cars and therefore drove unnecessarily slowly.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter "
+}

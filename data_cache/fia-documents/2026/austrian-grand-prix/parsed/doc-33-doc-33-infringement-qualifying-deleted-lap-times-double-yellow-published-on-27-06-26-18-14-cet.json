@@ -1,0 +1,26 @@
+{
+  "document_id": "a8168596e6ef204c",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_infringement_-_qualifying_deleted_lap_times_-_double_yellow.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-28T11:52:24.551821+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To All Teams, All Officials Document 33 Date 27 June 2026 Time 18:14 Title Infringement - Qualifying Deleted Lap Times - Double Yellow Description Infringement - Qualifying Deleted Lap Times - Double Yellow Enclosed AUT DOC 33 ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 33\nDate 27 June 2026\nTime 18:14\nTitle Infringement - Qualifying Deleted Lap Times - Double Yellow\nDescription Infringement - Qualifying Deleted Lap Times - Double Yellow\nEnclosed AUT DOC 33 - Qualifying Deleted Lap Times - Double Yellow Flags.pdf\nFelix Holter Loïc Bacquelaine\nPedro Lamy Wilhelm Singer\n\n \n \n \n \n2026 AUSTRIAN GRAND PRIX \n26 – 28 June 2026 \n \n    \nFrom The Stewards      Document 33 \n  \nTo All Officials, All Teams      Date  27 June 2026 \n \n        Time  18:14 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag marshalling sector will be deleted as \ndetailed in Article B1.8.4b of the FIA F1 Regulations: \n \nSession Qualifying \n  \nFact The F1 cars passed through a double waved yellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 9 6  Isack Hadjar Oracle Red Bull Racing 17:00:45 PIT \n2 9 44  Lewis Hamilton Scuderia Ferrari HP 17:00:56 PIT \n3 9 30 Liam Lawson Visa Cash App Racing Bulls F1 Team 17:01:04 PIT \n4 9 16 Charles Leclerc Scuderia Ferrari HP 17:01:15 PIT \n5 9 1 Lando Norris McLaren Maste"
+}

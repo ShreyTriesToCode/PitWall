@@ -1,0 +1,13 @@
+{
+  "document_id": "4edb7f1c0b5a4777",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-28T11:53:17.241884+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 5\nDate 25 June 2026\nTime 11:54\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R08_Austria_Power_Unit_Information.pdf\nRui Marques\n\nROUND No. R08\nVENUE Spielberg\nCENTRELINE 4.236 km\nFORMAT Standard\nDATE 26-28 June\nOvertake not active Overtake active\n8.0 MJ 8.5 MJ 6.0 MJ 8.5 MJ 8.5 MJ 2923 m 100 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT4-T7\nT9-T10\n2170-2960\n3720-3920\nT6-T7\nT9-T10\n[Exit T10]\n2700-3000\n3750-3900\n[3950-4150]\n350kW\n350kW\n[350kW]\n[Exit T10] [4100-4400]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n3936 m 4088 m\nL19 L20\nArticle C5.2.8\nMaximum DC power of\nERS-K function of car speed\nOther parts of the Lap\nIDENTIFICATION OF SECTO"
+}

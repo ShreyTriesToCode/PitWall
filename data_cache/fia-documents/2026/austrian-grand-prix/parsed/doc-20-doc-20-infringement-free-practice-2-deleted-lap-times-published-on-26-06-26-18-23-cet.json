@@ -1,0 +1,26 @@
+{
+  "document_id": "67791de23c9dbfc7",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v1",
+  "parsed_at": "2026-06-28T11:52:47.514382+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To All Teams, All Officials Document 20 Date 26 June 2026 Time 18:20 Title Infringement - Free Practice 2 Deleted Lap Times Description Infringement - Free Practice 2 Deleted Lap Times Enclosed AUT DOC 20 - Free Practice 2 Dele",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 20\nDate 26 June 2026\nTime 18:20\nTitle Infringement - Free Practice 2 Deleted Lap Times\nDescription Infringement - Free Practice 2 Deleted Lap Times\nEnclosed AUT DOC 20 - Free Practice 2 Deleted Lap Times.pdf\nFelix Holter Tanja Geilhausen\nPedro Lamy Wilhelm Singer\n\n \n \n2026 AUSTRIAN GRAND PRIX \n26 – 28 June 2026 \n \n    \nFrom The Stewards      Document 20 \n  \nTo All Officials, All Teams      Date  26 June 2026 \n \n        Time  18:20 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 2 \n  \nFact The F1 cars below did not use the track at turns 1, 3 and 6. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 1 27  Nico Hulkenberg Audi Revolut F1 Team 17:01:36 1:25.670 \n2 3 14  Fernando Alonso Aston Martin Aramco F1 Team 17:03:42 1:35.141 \n3 3 77 Valtteri Bottas Cadillac Formula 1 Team 17:08:38 PIT \n4 6 43 Franco Colapinto BWT Alpine F1 Team 17:17:53 PIT \n5 3 1 Lando Norris McLaren Mastercard F1 Team 17:19:56 1:29.795 \n6 3 1 Lando Norris McLaren Mastercard F1 Team 17"
+}

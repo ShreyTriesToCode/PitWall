@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Austrian GP - Race
 
-Generated: Sunday, 28 June 2026, 09:33 AM IST
+Generated: Sunday, 28 June 2026, 11:54 AM IST
 
 ## Event
 
@@ -29,8 +29,8 @@ Generated: Sunday, 28 June 2026, 09:33 AM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: high
-- Weather: 34.8°C, rain 28%, wind 7.0 km/h
-- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand
+- Weather: 34.8°C, rain 28%, wind 4.1 km/h
+- Weather impact: moderate rain risk, radar should influence pit timing; heat may increase degradation and cooling demand; cloud cover may reduce track-temperature growth
 
 ## Strategy
 
