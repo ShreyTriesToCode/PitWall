@@ -1,7 +1,23 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-06-28T12:47:05.904215+05:30",
+  "generated_at": "2026-06-28T12:51:21.939728+05:30",
   "history": [
+    {
+      "race_id": "2026-8-austrian-grand-prix",
+      "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-e755fe3594a2",
+      "race_name": "Austrian Grand Prix",
+      "season": 2026,
+      "round": 8,
+      "stage": "post_qualifying",
+      "model_version": "2026.06-strategy-actuals-v7",
+      "top_pick": "Lewis Hamilton",
+      "top_pick_confidence": 1.4,
+      "finish_position_mae": 3.2043601728585074,
+      "finish_position_rmse": 4.057184277141447,
+      "winner_hit_rate": 0.5,
+      "top3_recall": 0.6786,
+      "top10_recall": 0.7893
+    },
     {
       "race_id": "2026-8-austrian-grand-prix",
       "prediction_id": "2026-8-austrian-grand-prix-race-post_qualifying-9f59d8b19bb6",

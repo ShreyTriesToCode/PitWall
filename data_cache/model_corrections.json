@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-06-28T12:47:05.861787+05:30",
+  "generated_at": "2026-06-28T12:51:21.894738+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -394,7 +394,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -732,7 +732,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -1073,7 +1073,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -1413,7 +1413,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -1750,7 +1750,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -2085,7 +2085,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -2420,7 +2420,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -2757,7 +2757,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -3095,7 +3095,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -3431,7 +3431,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -4069,7 +4069,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -4417,7 +4417,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -4765,7 +4765,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -5111,7 +5111,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -5457,7 +5457,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -5802,7 +5802,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -6147,7 +6147,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -6491,7 +6491,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -6833,7 +6833,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -7175,7 +7175,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -7802,7 +7802,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -8142,7 +8142,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -8482,7 +8482,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -8822,7 +8822,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -9160,7 +9160,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -9499,7 +9499,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -9838,7 +9838,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10176,7 +10176,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -10514,7 +10514,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -10849,7 +10849,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -11474,7 +11474,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -11814,7 +11814,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -12154,7 +12154,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -12494,7 +12494,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -12832,7 +12832,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -13171,7 +13171,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -13510,7 +13510,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -13848,7 +13848,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -14186,7 +14186,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -14521,7 +14521,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -15163,7 +15163,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -15503,7 +15503,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -15845,7 +15845,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -16184,7 +16184,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -16524,7 +16524,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -16863,7 +16863,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -17202,7 +17202,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -17537,7 +17537,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -17875,7 +17875,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -18212,7 +18212,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -18838,7 +18838,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -19178,7 +19178,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -19520,7 +19520,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "high",
@@ -19859,7 +19859,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -20199,7 +20199,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -20538,7 +20538,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -20877,7 +20877,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -21212,7 +21212,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -21550,7 +21550,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -21887,7 +21887,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -22523,7 +22523,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -22875,7 +22875,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -23225,7 +23225,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -23578,7 +23578,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -23931,7 +23931,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -24284,7 +24284,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -24638,7 +24638,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -24991,7 +24991,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -25347,7 +25347,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -25704,7 +25704,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -26347,7 +26347,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -26695,7 +26695,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -27046,7 +27046,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -27397,7 +27397,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -27750,7 +27750,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -28103,7 +28103,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -28456,7 +28456,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -28808,7 +28808,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
@@ -29160,7 +29160,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "medium",
@@ -29513,7 +29513,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "fia_document_forbidden:403"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60296"
             ]
           },
           "model_disagreement_level": "low",
