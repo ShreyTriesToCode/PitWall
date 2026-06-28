@@ -1,0 +1,26 @@
+{
+  "document_id": "f7b39968680ab789",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_decision_-_car_30_-_failure_to_follow_race_directors_instructions_-_practice_starts.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-06-29T00:49:00.465134+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 47 Date 28 June 2026 Time 17:30 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: N",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 47\nDate 28 June 2026\nTime 17:30\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 30 - Liam Lawson\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 14:25\nSession Race\nFact The Driver did not follow the Race Director’s instruction considering practice starts\n(item 13.6 of the Competition Notes) by crossing the white line at pit exit and\nsubsequently cutting back in to make a practice start.\nInfringement Breach of Article 12.2.1.i of the International Sporting Code and non-compliance with\nRace Director’s Competition Notes (item 13.6, document 6).\nDecision No penalty is applied.\nReason The Stewards reviewed in-car video evidence.\nCar 30 was trying to line up for a practice start, but encountered another car which\nstopped in the pit exit road. In the process of passing this car and then making way\nfor it after it started moving, Car 30 crossed the white line at pit exit at slow speed.\nAfter that, Car 30 crossed the line again to line up for a practice start a"
+}

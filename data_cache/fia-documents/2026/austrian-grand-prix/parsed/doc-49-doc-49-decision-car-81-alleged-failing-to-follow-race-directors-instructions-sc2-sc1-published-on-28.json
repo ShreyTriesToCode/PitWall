@@ -1,0 +1,26 @@
+{
+  "document_id": "c696190b3ddfd8fd",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_decision_-_car_81_-_alleged_failing_to_follow_race_directors_instructions_sc2-sc1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-06-29T00:48:58.598564+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 49 Date 28 June 2026 Time 17:38 The Stewards, having received a report from the Race Director, summoned (document 43) and heard from the driver and team representative, h",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 49\nDate 28 June 2026\nTime 17:38\nThe Stewards, having received a report from the Race Director, summoned (document 43) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 81 - Oscar Piastri\nCompetitor McLaren Mastercard F1 Team\nTime 14:29\nSession Reconnaissance Laps\nFact Car 81 allegedly exceeded the time limit between the Safety Car lines.\nInfringement Alleged breach of Article 12.2.1.i of the International Sporting Code.\nDecision No further action.\nReason The Stewards heard from the driver of Car 81 (Oscar Piastri), team representative\nand reviewed video, timing in-car video evidence.\nAfter reviewing the video footage it was evident that the car was well within the\nspecified delta time. Therefore the Stewards take no further action.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time "
+}

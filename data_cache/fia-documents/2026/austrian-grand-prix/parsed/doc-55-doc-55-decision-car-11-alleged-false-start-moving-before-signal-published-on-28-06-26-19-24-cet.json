@@ -1,0 +1,26 @@
+{
+  "document_id": "f16ba105a2f646ea",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_decision_-_car_11_-_alleged_false_start_-_moving_before_signal.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-06-29T00:48:45.592829+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 55 Date 28 June 2026 Time 19:18 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 55\nDate 28 June 2026\nTime 19:18\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 15:03\nSession Race\nFact Car 11 moved prior to the start signal.\nInfringement Breach of Article B5.11.1 of the FIA F1 Regulations.\nDecision No penalty is applied.\nReason The Stewards reviewed positioning/marshalling system data and in-car video\nevidence.\nThe car moved before the start signal was given. This normally warrants a 5 second\npenalty (which would not convert into a grid drop for the next race).\nHowever, as the car had already retired from the race at the time the incident was\nbrought to the attention of the Stewards, it does not seem appropriate to apply any\ntime penalty. Therefore the Stewards decide not to impose any penalty.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judici"
+}

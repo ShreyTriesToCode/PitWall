@@ -1,0 +1,26 @@
+{
+  "document_id": "d7b351323f3fee07",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_decision_-_car_14_-_alleged_ignoring_blue_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-06-29T00:48:56.838202+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 50 Date 28 June 2026 Time 17:41 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Dri",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 50\nDate 28 June 2026\nTime 17:41\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 14 - Fernando Alonso\nCompetitor Aston Martin Aramco F1 Team\nTime 15:53\nSession Race\nFact Car 14 had several blue flags displayed prior to the car behind passing\nInfringement Alleged breach of Appendix H, Article 2.5.5 e) of the International Sporting Code.\nDecision No further action.\nReason The Stewards reviewed positioning/marshalling system data and in-car video\nevidence.\nAlthough Car 14 received several blue flags before giving way for Car 5, the\nStewards determine that Car 5 was neither trying to overtake, nor was it in close\nenough proximity to mandate Car 14 to move away immediately.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken indepe"
+}

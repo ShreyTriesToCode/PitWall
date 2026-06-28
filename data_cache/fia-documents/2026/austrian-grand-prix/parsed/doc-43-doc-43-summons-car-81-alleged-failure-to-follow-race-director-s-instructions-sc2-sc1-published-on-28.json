@@ -1,0 +1,26 @@
+{
+  "document_id": "9335a65068ab0e67",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_summons_-_car_81_-_alleged_failure_to_follow_race_directors_instructions_sc2_-_sc1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-06-29T00:49:08.239264+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AUSTRIAN GRAND PRIX 26 - 28 Jun 2026 The driver and team representative are required to report to the Stewards at 17:10, in relation to the incident below: The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 43 Date 28 June 2026 Time 16:38 No / Driver 81 - Os",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AUSTRIAN GRAND PRIX\n26 - 28 Jun 2026\nThe driver and team representative are required to report to the Stewards at 17:10, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 43\nDate 28 June 2026\nTime 16:38\nNo / Driver 81 - Oscar Piastri\nReason Alleged breach of Article 12.2.1.i of the International Sporting Code and non-\ncompliance with Race Director’s Event Note (item 1, document 6) – Driving\nunnecessarily slowly during reconnaissance laps.\nFelix Holter Loïc Bacquelaine\nPedro Lamy Wilhelm Singer\n"
+}
