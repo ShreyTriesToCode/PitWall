@@ -27,6 +27,7 @@ yarn-error.log*
 
 # Generated debug snapshots. Keep canonical contracts in Git; upload snapshots as
 # workflow artifacts when needed instead of committing every run.
+docs/CODEX_HANDOFF.md
 data_cache/model-input-snapshots/
 data_cache/full_races/
 fastf1_cache/
