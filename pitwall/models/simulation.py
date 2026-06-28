@@ -48,18 +48,95 @@ def probability_from_score(score: Any, low: float = 1.0, high: float = 18.0) -> 
     return round(low + (high - low) * (score / 100.0), 3)
 
 
+def _round_to_target(values: list[float], target_sum: float, *, cap: float | None = None) -> list[float]:
+    rounded = [round(min(cap, value) if cap is not None else value, 4) for value in values]
+    remaining = round(target_sum - sum(rounded), 4)
+    if abs(remaining) < 0.0001:
+        return rounded
+
+    if remaining > 0:
+        for idx in range(len(rounded) - 1, -1, -1):
+            capacity = remaining if cap is None else round(cap - rounded[idx], 4)
+            if capacity <= 0:
+                continue
+            delta = min(capacity, remaining)
+            rounded[idx] = round(rounded[idx] + delta, 4)
+            remaining = round(remaining - delta, 4)
+            if remaining <= 0:
+                break
+    else:
+        remaining = abs(remaining)
+        for idx in range(len(rounded) - 1, -1, -1):
+            capacity = rounded[idx]
+            if capacity <= 0:
+                continue
+            delta = min(capacity, remaining)
+            rounded[idx] = round(rounded[idx] - delta, 4)
+            remaining = round(remaining - delta, 4)
+            if remaining <= 0:
+                break
+    return rounded
+
+
+def _normalize_to_sum(values: list[float], target_sum: float, *, cap: float | None = None) -> list[float]:
+    if not values:
+        return []
+
+    target = min(target_sum, cap * len(values)) if cap is not None else target_sum
+    if target <= 0:
+        return [0.0 for _ in values]
+
+    total = sum(values)
+    if total <= 0:
+        values = [1.0 for _ in values]
+        total = sum(values)
+
+    if cap is None:
+        scaled = [value / total * target for value in values]
+        return _round_to_target(scaled, target)
+
+    result = [0.0 for _ in values]
+    active = set(range(len(values)))
+    remaining = target
+    weights = values[:]
+
+    while active and remaining > 0:
+        weight_total = sum(weights[idx] for idx in active)
+        if weight_total <= 0:
+            share = remaining / len(active)
+            if share <= cap:
+                for idx in active:
+                    result[idx] = share
+                remaining = 0
+                break
+            capped_now = set(active)
+        else:
+            allocations = {idx: remaining * weights[idx] / weight_total for idx in active}
+            capped_now = {idx for idx, allocation in allocations.items() if allocation >= cap}
+            if not capped_now:
+                for idx, allocation in allocations.items():
+                    result[idx] = allocation
+                remaining = 0
+                break
+
+        for idx in capped_now:
+            result[idx] = cap
+            remaining -= cap
+        active -= capped_now
+
+    return _round_to_target(result, target, cap=cap)
+
+
 def normalize_race_probabilities(rows: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
     out = [dict(row) for row in rows or []]
     for key, target_sum in [("win_probability", 100.0), ("podium_probability", 300.0), ("top10_probability", 1000.0)]:
         values = [max(0.0, safe_float(row.get(key)) or 0.0) for row in out]
-        total = sum(values)
-        if total <= 0:
+        if sum(values) <= 0:
             values = [max(0.01, safe_float(row.get("score")) or 1.0) for row in out]
-            total = sum(values)
-        for row, value in zip(out, values):
-            row[key] = round(value / total * target_sum, 4) if total else 0.0
-            if key != "win_probability":
-                row[key] = round(min(100.0, row[key]), 4)
+        cap = None if key == "win_probability" else 100.0
+        normalized = _normalize_to_sum(values, target_sum, cap=cap)
+        for row, value in zip(out, normalized):
+            row[key] = value
     return out
 
 

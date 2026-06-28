@@ -8,6 +8,7 @@ from pitwall.data.cache_manager import cache_aware_json_loader, load_manifest, m
 from pitwall.features.build_features import feature_schema, missing_value_report
 from pitwall.models.evaluate import evaluate_finish_predictions
 from pitwall.models.predict import normalize_prediction_row, top10_from_full_grid, validate_top10_subset
+from pitwall.models.simulation import normalize_race_probabilities
 from pitwall.models.validation import assert_chronological_split, promotion_gate, validate_training_frame
 
 
@@ -139,6 +140,24 @@ class ModelModuleTests(unittest.TestCase):
             cache_file.parent.mkdir(parents=True, exist_ok=True)
             cache_file.write_text('{"ok": true}', encoding="utf-8")
             self.assertEqual(manifest_file_path(cache_file, manifest), "data_cache/payload.json")
+
+    def test_probability_normalization_redistributes_capped_mass(self):
+        rows = [
+            {
+                "driver_id": f"driver_{idx}",
+                "score": 50,
+                "win_probability": 1,
+                "podium_probability": 300 if idx == 0 else 8,
+                "top10_probability": 500 if idx == 0 else 20,
+            }
+            for idx in range(22)
+        ]
+        normalized = normalize_race_probabilities(rows)
+        self.assertAlmostEqual(sum(row["win_probability"] for row in normalized), 100.0, places=3)
+        self.assertAlmostEqual(sum(row["podium_probability"] for row in normalized), 300.0, places=3)
+        self.assertAlmostEqual(sum(row["top10_probability"] for row in normalized), 1000.0, places=3)
+        self.assertLessEqual(max(row["podium_probability"] for row in normalized), 100.0)
+        self.assertLessEqual(max(row["top10_probability"] for row in normalized), 100.0)
 
 
 if __name__ == "__main__":
