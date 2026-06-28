@@ -247,7 +247,7 @@ jobs:
           UPGRADES_ENABLED: "true"
           F1_REGULATIONS_ENABLED: "true"
           SOURCE_DISCOVERY_ENABLED: "true"
-          REFRESH_SOURCE_REGISTRY: ${{ github.event.inputs.refresh_source_registry || 'false' }}
+          REFRESH_SOURCE_REGISTRY: ${{ github.event.inputs.refresh_source_registry || 'true' }}
           FIA_DOCUMENTS_ENABLED: "true"
           FIA_DOCUMENTS_BASE_URL: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14"
           FIA_DOCUMENTS_SEASON_URL_2026: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
@@ -262,7 +262,7 @@ jobs:
           FIA_DOCUMENT_STALE_CACHE_MAX_DAYS: "14"
           FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT: "true"
           FIA_DOCUMENT_CACHE_DIR: "data_cache/fia-documents"
-          REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'false' }}
+          REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'true' }}
           FORCE_REPARSE_FIA_DOCUMENTS: ${{ github.event.inputs.force_reparse_fia_documents || 'false' }}
           FORCE_REDOWNLOAD_FIA_DOCUMENTS: ${{ github.event.inputs.force_redownload_fia_documents || 'false' }}
           FIA_DOCUMENT_CACHE_TTL_MINUTES: "60"

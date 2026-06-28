@@ -90,3 +90,5 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - ADDED: staged artifact-policy check for forbidden runtime cache paths.
 - UPDATED: GitHub notification fallback issues are labeled `briefing-notification` and auto-closed by default so automated briefings do not appear as open bugs.
 - FIXED: FIA car-presentation upgrade packages are no longer limited to transparent ranking adjustments; parsed official upgrade rows now become bounded `fia_upgrade_*` ML training and inference features with explicit missing-data flags.
+- FIXED: FIA upgrade context now reuses verified parsed car-presentation documents before probing live URLs. Blocked FIA/news URLs are attempted once, then the resolver moves to the next trusted candidate and finally exposes an explicit unavailable state instead of retrying the same forbidden source repeatedly.
+- UPDATED: The scheduled briefing workflow refreshes FIA document metadata and the source registry by default, while still avoiding forced PDF redownloads unless explicitly requested.

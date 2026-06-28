@@ -104,3 +104,5 @@ Known limitation: the model remains probabilistic and can be wrong because racin
 - `standing_proxy` was removed as dead inference-only code rather than adding an asymmetric feature outside the training schema.
 - Single-feature leakage diagnostics are bounded by `LEAKAGE_DIAGNOSTIC_TOP_N` so routine training does not become a full ablation run.
 - FIA car-presentation upgrade packages now feed the ML feature matrix directly through `fia_upgrade_*` columns for completed-race training rows and current-race inference rows. Missing or unverified upgrade data remains an explicit `missing_fia_upgrade_data` signal rather than fabricated input.
+- Upgrade package context is cache-first: verified parsed FIA car-presentation documents are used before any live URL probes. If live FIA/news candidates return 401/403/404 or empty content, each candidate is skipped after one attempt and the source state becomes `unavailable` when no trusted replacement exists.
+- Scheduled briefing runs refresh FIA document metadata and the source registry by default so newly published upgrade-package documents can flow into the next training/inference pass without manual intervention.

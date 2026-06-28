@@ -437,6 +437,7 @@ TRUSTED_UPGRADE_CONTEXT_STATUSES = {
     "official_live",
     "official_secondary_live",
     "third_party_index_live",
+    "verified_cache",
 }
 
 
@@ -1810,14 +1811,14 @@ def summarize_fia_upgrade_updates(updates):
     return summaries
 
 
-def fia_upgrade_features_from_parsed_docs(season, race):
+def fia_upgrade_updates_from_parsed_docs(season, race):
     season = safe_int(season) or now_local().year
     event_slug = make_slug((race or {}).get("raceName") or (race or {}).get("event_slug") or "")
     if not event_slug:
-        return {}
+        return []
     parsed_dir = FIA_DOCUMENT_CACHE_DIR / str(season) / event_slug / "parsed"
     if not parsed_dir.exists():
-        return {}
+        return []
     updates = []
     for path in sorted(parsed_dir.glob("*.json")):
         try:
@@ -1834,10 +1835,16 @@ def fia_upgrade_features_from_parsed_docs(season, race):
                     doc_updates = extract_car_presentation_updates(
                         text_path.read_text(encoding="utf-8"),
                         event_name=str(event_slug).replace("-", " ").title(),
+                        source_url=payload.get("source_url"),
                     )
                 except Exception:
                     doc_updates = []
         updates.extend(doc_updates)
+    return updates
+
+
+def fia_upgrade_features_from_parsed_docs(season, race):
+    updates = fia_upgrade_updates_from_parsed_docs(season, race)
     return summarize_fia_upgrade_updates(updates)
 
 
@@ -2215,10 +2222,21 @@ def atomic_write_bytes(path, content):
     os.replace(tmp, path)
 
 
-def safe_get(url, params=None, timeout=30, headers=None, optional_404=False, use_cache=True, return_on_statuses=None, request_sleep=0.0):
+def safe_get(
+    url,
+    params=None,
+    timeout=30,
+    headers=None,
+    optional_404=False,
+    use_cache=True,
+    return_on_statuses=None,
+    request_sleep=0.0,
+    max_attempts=4,
+):
     ensure_dirs()
     cache_path = HTTP_CACHE_DIR / f"{cache_key_for_url(url, params)}.json"
     return_on_statuses = set(return_on_statuses or [])
+    max_attempts = max(1, safe_int(max_attempts) or 1)
 
     if use_cache and cache_path.exists():
         try:
@@ -2232,7 +2250,7 @@ def safe_get(url, params=None, timeout=30, headers=None, optional_404=False, use
             pass
 
     slept_for_request = False
-    for attempt in range(4):
+    for attempt in range(max_attempts):
         try:
             if request_sleep and not slept_for_request:
                 time.sleep(request_sleep)
@@ -2264,8 +2282,8 @@ def safe_get(url, params=None, timeout=30, headers=None, optional_404=False, use
 
             return response
         except Exception as error:
-            print(f"GET failed: {url} params={params} attempt={attempt + 1}/4 error={error}")
-            if attempt < 3:
+            print(f"GET failed: {url} params={params} attempt={attempt + 1}/{max_attempts} error={error}")
+            if attempt < max_attempts - 1:
                 time.sleep(2 + attempt * 2)
 
     if use_cache and cache_path.exists():
@@ -6604,10 +6622,20 @@ def candidate_fia_upgrade_urls(race):
 def fetch_text_from_trusted_url(url):
     if not any(domain in url for domain in TRUSTED_UPGRADE_SOURCE_DOMAINS):
         return None
-    response = safe_get(url, timeout=25, use_cache=False, optional_404=True)
+    response = safe_get(
+        url,
+        timeout=25,
+        use_cache=False,
+        optional_404=True,
+        return_on_statuses={401, 403, 404},
+        max_attempts=1,
+    )
     if not response:
         return None
     try:
+        if response.status_code in {401, 403, 404}:
+            print(f"Upgrade source unavailable ({response.status_code}): {url}")
+            return None
         content_type = response.headers.get("content-type", "").lower()
         if "pdf" in content_type or url.lower().endswith(".pdf"):
             try:
@@ -6620,6 +6648,71 @@ def fetch_text_from_trusted_url(url):
         return strip_html(response.text)
     except Exception:
         return None
+
+
+def upgrade_context_from_fia_updates(
+    updates,
+    teams,
+    profile,
+    weather_summary,
+    regulation_context,
+    source_status="verified_cache",
+):
+    """Convert verified FIA car-presentation rows into model upgrade context."""
+    team_names = sorted({canonical_constructor_name(team) for team in teams if team})
+    if not updates or not team_names:
+        return {}
+
+    team_traits = {team: {} for team in team_names}
+    notes = []
+    sources = []
+    features_by_team = summarize_fia_upgrade_updates(updates)
+
+    for update in updates:
+        if not isinstance(update, dict):
+            continue
+        team = canonical_constructor_name(update.get("team") or update.get("constructor"))
+        if not team or team == "Unknown Team" or team not in team_names:
+            continue
+        traits = normalize_upgrade_traits(update.get("traits"))
+        merged = team_traits.setdefault(team, {})
+        for trait in traits:
+            merged[trait] = max(safe_float(merged.get(trait)) or 0, 70)
+        components = update.get("components")
+        if not isinstance(components, (list, tuple, set)):
+            components = [update.get("component")] if update.get("component") else []
+        source = update.get("source_url") or update.get("download_url") or "fia_document_cache"
+        if source not in sources:
+            sources.append(source)
+        notes.append({
+            "team": team,
+            "source": source,
+            "components": [str(component) for component in components if str(component or "").strip()],
+            "traits": traits,
+            "primary_reason_for_update": update.get("primary_reason_for_update") or update.get("reason") or "performance",
+            "excerpt": str(update.get("description") or update.get("raw_excerpt") or "")[:420],
+        })
+
+    team_scores = {}
+    for team in team_names:
+        traits = team_traits.get(team) or {}
+        feature_score = (features_by_team.get(team) or {}).get("fia_upgrade_score")
+        alignment = trait_alignment_score(traits, profile, weather_summary, regulation_context)
+        score = weighted_average([(feature_score, 0.45), (alignment, 0.55)])
+        if score is not None:
+            team_scores[team] = max(45, min(88, score))
+
+    if not team_scores:
+        return {}
+    return {
+        "provider_status": "official_upgrade_data_used",
+        "source_status": source_status,
+        "sources": sources,
+        "team_scores": team_scores,
+        "team_traits": team_traits,
+        "notes": notes[:20],
+        "errors": [],
+    }
 
 
 def classify_upgrade_text(text):
@@ -6753,14 +6846,30 @@ def regulation_fit_score_for_driver(team, profile, weather_summary, regulation_c
 
 def fetch_upgrade_package_context(race, drivers, profile, weather_summary, regulation_context):
     if not UPGRADES_ENABLED:
-        return {"provider_status": "disabled", "sources": [], "team_scores": {}, "team_traits": {}, "notes": []}
+        return {"provider_status": "disabled", "source_status": "unavailable", "sources": [], "team_scores": {}, "team_traits": {}, "notes": [], "errors": []}
     teams = sorted(set(d.get("team") for d in drivers if d.get("team")))
     sources = []
     team_traits = {team: {} for team in teams}
     notes = []
+
+    season = safe_int(race.get("season")) or now_local().year
+    cached_updates = fia_upgrade_updates_from_parsed_docs(season, race)
+    cached_context = upgrade_context_from_fia_updates(
+        cached_updates,
+        teams,
+        profile,
+        weather_summary,
+        regulation_context,
+        source_status="verified_cache",
+    )
+    if cached_context:
+        return cached_context
+
+    errors = []
     for url in candidate_fia_upgrade_urls(race):
         text = fetch_text_from_trusted_url(url)
         if not text or len(text) < 400:
+            errors.append({"source": url, "status": "unavailable_or_empty"})
             continue
         sources.append(url)
         sections = extract_team_upgrade_sections(text, teams)
@@ -6778,8 +6887,25 @@ def fetch_upgrade_package_context(race, drivers, profile, weather_summary, regul
         if score is not None:
             # Conservative cap: upgrades can move predictions, but they must not overwhelm race pace, grid, or car data.
             team_scores[team] = max(40, min(88, score))
-    status = "official_upgrade_data_used" if team_scores else "no_current_official_upgrade_data_found"
-    return {"provider_status": status, "sources": sources, "team_scores": team_scores, "team_traits": team_traits, "notes": notes[:20]}
+    if team_scores:
+        return {
+            "provider_status": "official_upgrade_data_used",
+            "source_status": "official_live",
+            "sources": sources,
+            "team_scores": team_scores,
+            "team_traits": team_traits,
+            "notes": notes[:20],
+            "errors": errors[:20],
+        }
+    return {
+        "provider_status": "upgrade_sources_unavailable",
+        "source_status": "unavailable",
+        "sources": sources,
+        "team_scores": {},
+        "team_traits": team_traits,
+        "notes": notes[:20],
+        "errors": errors[:20],
+    }
 
 
 def official_calendar_context_for_season(season, race=None):

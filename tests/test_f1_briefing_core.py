@@ -320,6 +320,65 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertEqual(mercedes["fia_upgrade_score"], 0)
         self.assertEqual(mercedes["missing_fia_upgrade_data"], 1)
 
+    def test_upgrade_package_context_uses_cached_fia_documents_before_live_urls(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_dir = Path(tmp)
+            parsed_dir = cache_dir / "2026" / "austrian-grand-prix" / "parsed"
+            parsed_dir.mkdir(parents=True)
+            (parsed_dir / "doc-14-car-presentation-submissions.json").write_text(json.dumps({
+                "document_type": "car_presentation_submissions",
+                "source_url": "https://www.fia.com/documents/austria/doc-14",
+                "upgrades": [
+                    {
+                        "team": "Ferrari",
+                        "component": "floor",
+                        "components": ["floor", "sidepod"],
+                        "primary_reason_for_update": "performance",
+                        "traits": ["downforce", "aero_efficiency", "cooling", "tyre_management"],
+                        "source_url": "https://www.fia.com/documents/austria/doc-14",
+                    }
+                ],
+            }), encoding="utf-8")
+            race = {
+                "season": "2026",
+                "round": "10",
+                "raceName": "Austrian Grand Prix",
+                "Circuit": {"circuitName": "Red Bull Ring"},
+            }
+            drivers = [{"driver_id": "lec", "name": "Charles Leclerc", "team": "Ferrari"}]
+            with patch.object(f1, "FIA_DOCUMENT_CACHE_DIR", cache_dir), \
+                 patch.object(f1, "fetch_text_from_trusted_url", side_effect=AssertionError("live upgrade URL should not be used")):
+                context = f1.fetch_upgrade_package_context(
+                    race,
+                    drivers,
+                    profile={"dominance": "aero", "speed_profile": "medium", "tyre_stress": "high"},
+                    weather_summary={"rain_score": 0, "heat_score": 65, "wind_score": 10},
+                    regulation_context={"boost_traits": ["aero_efficiency", "cooling"]},
+                )
+
+        self.assertEqual(context["provider_status"], "official_upgrade_data_used")
+        self.assertGreater(context["team_scores"]["Ferrari"], 40)
+        self.assertEqual(context["source_status"], "verified_cache")
+        self.assertTrue(context["notes"])
+
+    def test_blocked_upgrade_url_is_attempted_once_and_then_skipped(self):
+        response = f1.requests.Response()
+        response.status_code = 403
+        response.url = "https://www.fia.com/news/f1-tech-updates-austrian-grand-prix"
+        response._content = b"Forbidden"
+        with patch.object(f1.requests, "get", return_value=response) as get_mock, \
+             patch.object(f1.time, "sleep") as sleep_mock:
+            text = f1.fetch_text_from_trusted_url(response.url)
+
+        self.assertIsNone(text)
+        self.assertEqual(get_mock.call_count, 1)
+        sleep_mock.assert_not_called()
+
+    def test_daily_workflow_refreshes_fia_document_metadata_by_default(self):
+        workflow = Path(".github/workflows/f1-briefing.yml").read_text(encoding="utf-8")
+        self.assertIn("REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'true' }}", workflow)
+        self.assertIn("FIA_DOCUMENTS_ENABLED: \"true\"", workflow)
+
     def test_jolpica_cache_hit_does_not_sleep_or_fetch_network(self):
         with tempfile.TemporaryDirectory() as tmp:
             cache_dir = Path(tmp)

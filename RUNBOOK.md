@@ -170,6 +170,19 @@ The run prints `[TRAIN]`, `[CACHE]`, `[MODEL]`, `[VALIDATE]`, `[ACTUALS]`, `[ROU
 
 The model page shows champion/challenger, promotion, ranking/calibration metrics, and predicted-vs-actual details. The archive page shows per-briefing actual-result status and recall when available.
 
+## FIA Upgrade Packages
+
+Daily briefing automation refreshes FIA document metadata and the source registry by default:
+
+```env
+FIA_DOCUMENTS_ENABLED=true
+REFRESH_FIA_DOCUMENTS=true
+REFRESH_SOURCE_REGISTRY=true
+FORCE_REDOWNLOAD_FIA_DOCUMENTS=false
+```
+
+PitWall uses verified parsed FIA car-presentation submissions from `data_cache/fia-documents/<season>/<event>/parsed/` before trying live upgrade-document URLs. A blocked or missing live FIA/news URL is attempted once, skipped, and recorded as unavailable so the run can continue to the next trusted source. If no trusted official, verified third-party index, regulation mirror, or verified cache is available, upgrade-package features are marked missing/unavailable; they are never fabricated.
+
 ## Link Checks
 
 Offline route/link validation:
