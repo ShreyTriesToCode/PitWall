@@ -198,9 +198,11 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertIn("latest-model-debug.json", source)
 
     def test_predictions_api_does_not_use_archive_briefings_as_live_targets(self):
-        source = Path("frontend/app/api/predictions/route.js").read_text(encoding="utf-8")
-        self.assertIn("currentTargetOnly", source)
-        self.assertNotIn("contract.briefings || []).filter((row) => row?.target_type", source)
+        route = Path("frontend/app/api/predictions/route.js").read_text(encoding="utf-8")
+        loader = Path("frontend/app/api/_lib/contracts.js").read_text(encoding="utf-8")
+        self.assertIn("loadPredictionsPayload", route)
+        self.assertIn("currentTargetOnly", loader)
+        self.assertNotIn("contract.briefings || []).filter((row) => row?.target_type", loader)
 
     def test_current_contract_points_to_selected_calendar_race_with_current_model_version(self):
         contract = json.loads(Path("data_cache/frontend-contract.json").read_text(encoding="utf-8"))

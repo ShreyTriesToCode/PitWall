@@ -112,3 +112,14 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - ADDED: same-circuit safety-car/VSC/red-flag lap-window aggregation from cached race-control rows. Thin history reports `thin_data` instead of presenting a fragile window as robust.
 - UPDATED: `/strategy` now renders a compact stint timeline, safety-car window notes, and FIA compound source attribution only when the FIA mapping is available.
 - VERIFIED: Unit tests cover C2/C3/C4 and C3/C4/C5 mapping direction, missing/malformed nominations, strategy mandatory-compound enforcement, safety-car buckets, thin-data state, and legacy parsed-cache reuse.
+
+## 2026-06-29 Frontend SSR And Public Rendering
+
+- FIXED: `/` and `/model` now load prediction/model contracts in server components and pass real initial data into the existing interactive client UI, so first render is driven by current generated data instead of a client-only placeholder shell.
+- ADDED: shared `loadPredictionsPayload()` contract builder used by both `/api/predictions` and the server-rendered pages, reducing route drift between SSR and API responses.
+- ADDED: SEO/Open Graph/Twitter metadata with a self-hosted PitWall visual asset.
+- FIXED: direct Formula 1 CDN image hotlinks were removed from the frontend/timing API and replaced with original self-hosted PitWall visuals while preserving official race-page links as links.
+- ADDED: route error boundaries for `/predictions` and `/live` so malformed contracts show a clear retryable fallback.
+- ADDED: `/sources` now displays FIA resolver trust metadata (`source_authority`, `source_status`, official/verified/stale flags, URLs, and SHA256 when present).
+- ADDED: `/predictions` now surfaces existing Monte Carlo simulation output from the generated contract without presenting it as actual race results.
+- VERIFIED: `npm run build` passes and the server bundle imports `loadPredictionsPayload()` for `/` and `/model`; local `next start` HTTP verification was blocked by sandbox port binding, so raw HTTP fetch needs a human/local shell check.

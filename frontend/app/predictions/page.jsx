@@ -196,6 +196,7 @@ export default function PredictionsPage() {
               </div>
             </section>
           )}
+          {predictions.length > 0 && <MonteCarloSimulationPanel payload={selectedPayload} rows={predictions} />}
           <DeveloperOnlyPanel enabled={developerMode} toggle={toggleDeveloperMode} title="Developer Contract Signals">
             {predictions.length > 0 && (
               <>
@@ -243,6 +244,56 @@ export default function PredictionsPage() {
         </>
       )}
     </AppShell>
+  );
+}
+
+function MonteCarloSimulationPanel({ payload, rows }) {
+  const simulation = payload?.simulation || {};
+  const driverRows = Array.isArray(simulation.drivers) && simulation.drivers.length
+    ? simulation.drivers
+    : rows.map((row) => ({
+      driver_id: row.driver_id,
+      name: row.name,
+      team: row.team,
+      ...row.simulation,
+    })).filter((row) => row.simulated_win_probability !== undefined || row.expected_finish !== undefined);
+  if (!driverRows.length) return null;
+  const safest = simulation.safest_top10_drivers || driverRows
+    .filter((row) => Number.isFinite(Number(row.simulated_top10_probability)))
+    .sort((a, b) => Number(b.simulated_top10_probability) - Number(a.simulated_top10_probability))
+    .slice(0, 5);
+  const darkHorse = simulation.dark_horse_candidates || driverRows
+    .filter((row) => Number(row.simulated_podium_probability) >= 12 && Number(row.expected_finish) > 5)
+    .slice(0, 5);
+  const bustRisk = simulation.bust_risk_candidates || driverRows
+    .filter((row) => Number(row.simulated_dnf_probability) >= 12 || Number(row.confidence_interval_width) >= 8)
+    .slice(0, 5);
+  return (
+    <section className="panel reveal">
+      <SectionTitle title="Race Simulation Outlook" action={<StatusBadge label="Monte Carlo" tone="amber" />} />
+      <p className="metric-help">Simulation values come from the generated prediction contract and model uncertainty, not from actual race results.</p>
+      <div className="dashboard-grid compact-dashboard">
+        <SimulationList title="Win Distribution" rows={driverRows.slice(0, 5)} metric="simulated_win_probability" suffix=" win" />
+        <SimulationList title="Safest Top 10" rows={safest.slice(0, 5)} metric="simulated_top10_probability" suffix=" top-10" />
+        <SimulationList title="Dark Horse Candidates" rows={darkHorse.slice(0, 5)} metric="simulated_podium_probability" suffix=" podium" empty="No dark-horse simulation signal in this run." />
+        <SimulationList title="Bust Risk" rows={bustRisk.slice(0, 5)} metric="simulated_dnf_probability" suffix=" DNF" empty="No elevated bust-risk signal in this run." />
+      </div>
+    </section>
+  );
+}
+
+function SimulationList({ title, rows, metric, suffix, empty }) {
+  return (
+    <div className="podium-list compact">
+      <SectionTitle title={title} />
+      {rows.length ? rows.map((row, index) => (
+        <article key={`${title}-${row.driver_id || row.name || index}`}>
+          <span>{index + 1}</span>
+          <strong>{row.name || row.driver_id || "Driver"}</strong>
+          <small>{row.team || "Team pending"} · {pct(row[metric])}{suffix}</small>
+        </article>
+      )) : <EmptyState title="Simulation slice unavailable" body={empty || "The generated simulation contract did not include this slice."} />}
+    </div>
   );
 }
 

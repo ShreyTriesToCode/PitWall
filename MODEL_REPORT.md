@@ -122,3 +122,9 @@ Known limitation: the model remains probabilistic and can be wrong because racin
 - Strategy output now includes `predicted_strategy` with stint sequence, lap ranges, basis, confidence, pit-duration sample count, and degradation sample status. When cached same-circuit pit data is thin, the status is `heuristic_fallback` and the basis says so explicitly.
 - Safety-car windows are derived from cached race-control history by lap bucket only when enough same-circuit races are available. Otherwise the output is `thin_data`, not a fabricated probability window.
 - The `/strategy` page now shows the stint plan and FIA compound source attribution only when the backend contract contains verified mapping data. Missing FIA tyre documents intentionally render no C-number identity field.
+
+## 2026-06-29 Model Center Rendering
+
+- `/model` now receives model-status and prediction comparison contracts through server-side data loading before hydration.
+- The Model Center still does not invent actual-result comparison metrics; pending/unavailable actual results remain hidden behind the explicit pending state until trusted result rows exist.
+- The frontend now exposes existing Monte Carlo simulation output in prediction views as probabilistic simulation output, not as observed race data.

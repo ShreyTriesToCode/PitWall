@@ -685,63 +685,6 @@ const OFFICIAL_RACE_SLUGS = {
   "abu dhabi": "abu-dhabi",
 };
 
-const TRACK_IMAGE_SLUGS = {
-  australia: "melbourne",
-  china: "shanghai",
-  japan: "suzuka",
-  bahrain: "bahrain",
-  "saudi-arabia": "jeddah",
-  miami: "miami",
-  canada: "montreal",
-  monaco: "monaco",
-  spain: "barcelona",
-  austria: "austria",
-  "great-britain": "silverstone",
-  belgium: "spa",
-  hungary: "hungary",
-  netherlands: "zandvoort",
-  italy: "monza",
-  azerbaijan: "baku",
-  singapore: "singapore",
-  "united-states": "austin",
-  mexico: "mexico",
-  brazil: "interlagos",
-  "las-vegas": "lasvegas",
-  qatar: "lusail",
-  "abu-dhabi": "abudhabi",
-};
-
-const TRACK_IMAGE_EXAMPLES = [
-  "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
-  "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
-];
-
-const OFFICIAL_CIRCUIT_MAP_ASSETS = {
-  australia: "Australia_Circuit",
-  china: "China_Circuit",
-  japan: "Japan_Circuit",
-  bahrain: "Bahrain_Circuit",
-  "saudi-arabia": "Saudi_Arabia_Circuit",
-  miami: "Miami_Circuit",
-  canada: "Canada_Circuit",
-  monaco: "Monaco_Circuit",
-  spain: "Spain_Circuit",
-  austria: "Austria_Circuit",
-  "great-britain": "Great_Britain_Circuit",
-  belgium: "Belgium_Circuit",
-  hungary: "Hungary_Circuit",
-  netherlands: "Netherlands_Circuit",
-  italy: "Italy_Circuit",
-  azerbaijan: "Azerbaijan_Circuit",
-  singapore: "Singapore_Circuit",
-  "united-states": "United_States_Circuit",
-  mexico: "Mexico_Circuit",
-  brazil: "Brazil_Circuit",
-  "las-vegas": "Las_Vegas_Circuit",
-  qatar: "Qatar_Circuit",
-  "abu-dhabi": "Abu_Dhabi_Circuit",
-};
-
 function officialRaceSlug(meeting) {
   const text = normalizeToken([meetingName(meeting), meeting?.Location, meeting?.Country?.Name, meeting?.Path].filter(Boolean).join(" "));
   const match = Object.entries(OFFICIAL_RACE_SLUGS)
@@ -750,27 +693,21 @@ function officialRaceSlug(meeting) {
   return match?.[1] || "";
 }
 
-function seasonTrackImageUrl(cleanYear, trackSlug) {
-  return `https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/${cleanYear}/track/${cleanYear}track${trackSlug}detailed.webp`;
-}
-
 async function officialRaceVisual(year, meeting) {
   const raceSlug = officialRaceSlug(meeting);
   if (!raceSlug) return null;
-  const trackSlug = TRACK_IMAGE_SLUGS[raceSlug] || raceSlug.replace(/-/g, "");
-  const circuitAsset = OFFICIAL_CIRCUIT_MAP_ASSETS[raceSlug] || `${raceSlug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join("_")}_Circuit`;
   const cleanYear = String(year || new Date().getUTCFullYear());
   const pageUrl = `https://www.formula1.com/en/racing/${cleanYear}/${raceSlug}/`;
   const cacheKey = `${cleanYear}:${raceSlug}`;
   if (OFFICIAL_VISUAL_CACHE.has(cacheKey)) return OFFICIAL_VISUAL_CACHE.get(cacheKey);
 
   const visual = {
-    source: "Formula 1",
+    source: "PitWall self-hosted visual",
     page_url: pageUrl,
-    image_url: seasonTrackImageUrl(cleanYear, trackSlug),
-    fallback_image_url: `https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/${circuitAsset}.webp`,
-    image_status: "season-track-detailed",
-    alt: `${meetingName(meeting)} official circuit and grid visual`,
+    image_url: "/pitwall-hero.svg",
+    fallback_image_url: "/pitwall-hero.svg",
+    image_status: "self-hosted",
+    alt: `${meetingName(meeting)} PitWall timing visual`,
   };
   OFFICIAL_VISUAL_CACHE.set(cacheKey, visual);
   return visual;

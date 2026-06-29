@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedTicker, AppShell, EmptyState, InlineNotice, LoadingSkeleton, Metric, PageHeader, SectionTitle, SourceHealthCard, StatusBadge, statusTone, usePitWallData } from "../components/PitWallComponents";
+import { AnimatedTicker, AppShell, DataStateBadge, EmptyState, InlineNotice, LoadingSkeleton, Metric, PageHeader, SectionTitle, SourceHealthCard, StatusBadge, statusTone, usePitWallData } from "../components/PitWallComponents";
 
 export default function SourcesPage() {
   const predictions = usePitWallData("/api/predictions");
@@ -9,6 +9,16 @@ export default function SourcesPage() {
   const health = sourceHealth.data || latest?.source_health || latest?.source_status;
   const sources = health?.sources || [];
   const conflicts = sourceHealth.data?.source_conflicts || predictions.data?.source_conflicts || latest?.source_conflicts || [];
+  const fiaDocument = predictions.data?.fia_latest_document || latest?.fia_latest_document || null;
+  const fiaTrustRows = [
+    ["Source authority", fiaDocument?.source_authority],
+    ["Source status", fiaDocument?.source_status],
+    ["Official", fiaDocument ? (fiaDocument.is_official ? "Yes" : "No") : null],
+    ["Verified", fiaDocument ? (fiaDocument.is_verified ? "Yes" : "No") : null],
+    ["Stale", fiaDocument ? (fiaDocument.is_stale ? "Yes" : "No") : null],
+    ["Fetched", fiaDocument?.fetched_at],
+    ["SHA256", fiaDocument?.sha256],
+  ];
   return (
     <AppShell active="/sources">
       <AnimatedTicker latest={latest} />
@@ -18,6 +28,28 @@ export default function SourcesPage() {
       {health && (
         <>
           <SourceHealthCard health={health} />
+          <section className="panel reveal">
+            <SectionTitle
+              title="FIA Document Trust"
+              action={<DataStateBadge status={fiaDocument?.source_status || predictions.data?.fia_source_discovery_status || "unavailable"} />}
+            />
+            {fiaDocument ? (
+              <>
+                <div className="metric-grid compact">
+                  {fiaTrustRows.map(([label, value]) => <Metric label={label} value={value || "Unavailable"} key={label} />)}
+                </div>
+                <p className="panel-note">
+                  {fiaDocument.title || "Latest FIA document"} is labelled from resolver metadata. Third-party summaries are never displayed here as official documents.
+                </p>
+                <div className="tag-row">
+                  {fiaDocument.source_url && <a href={fiaDocument.source_url} target="_blank" rel="noopener noreferrer">Source URL</a>}
+                  {fiaDocument.download_url && <a href={fiaDocument.download_url} target="_blank" rel="noopener noreferrer">Download URL</a>}
+                </div>
+              </>
+            ) : (
+              <EmptyState title="No trusted FIA document row" body="FIA document metadata will appear only after a verified official, archive, third-party document-index, or cache source is available." />
+            )}
+          </section>
           <section className="panel reveal">
             <SectionTitle title="Source Conflicts" action={<StatusBadge label={`${conflicts.length} conflicts`} tone={conflicts.length ? "amber" : "green"} />} />
             {conflicts.length ? (

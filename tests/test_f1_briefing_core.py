@@ -840,9 +840,11 @@ class F1BriefingCoreTests(unittest.TestCase):
 
     def test_model_and_archive_pages_render_comparison_sections(self):
         model_page = Path("frontend/app/model/page.jsx").read_text(encoding="utf-8")
+        model_client = Path("frontend/app/model/ModelCenterClient.jsx").read_text(encoding="utf-8")
         archive_page = Path("frontend/app/archive/page.jsx").read_text(encoding="utf-8")
-        self.assertIn("Actual Result Comparison", model_page)
-        self.assertIn("Model comparison metrics", model_page)
+        self.assertIn("loadPredictionsPayload", model_page)
+        self.assertIn("Actual Result Comparison", model_client)
+        self.assertIn("Model Comparison Metrics", model_client)
         self.assertIn("actual_result_comparison", archive_page)
         self.assertIn("Top 10 Recall", archive_page)
 
@@ -877,12 +879,12 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("warnings", route)
         self.assertIn("safeNormalizedTimingPayload", route)
 
-    def test_f1timing_uses_season_based_track_images_first(self):
+    def test_f1timing_uses_self_hosted_track_visuals(self):
         route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
-        self.assertIn("seasonTrackImageUrl", route)
-        self.assertIn("common/f1/${cleanYear}/track/${cleanYear}track${trackSlug}detailed.webp", route)
-        self.assertIn("2026trackmontrealdetailed.webp", route)
-        self.assertIn("2026trackmontecarlodetailed.webp", route)
+        self.assertIn('image_url: "/pitwall-hero.svg"', route)
+        self.assertIn('source: "PitWall self-hosted visual"', route)
+        self.assertIn("page_url: pageUrl", route)
+        self.assertNotIn("media.formula1.com", route)
 
     def test_extracted_modules_preserve_public_wrapper_outputs(self):
         simulation = importlib.import_module("pitwall.models.simulation")

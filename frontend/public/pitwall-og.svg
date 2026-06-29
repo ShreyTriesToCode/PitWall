@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">PitWall race intelligence dashboard</title>
+  <desc id="desc">An original dark motorsport-inspired PitWall visual with timing panels and a stylized track line.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#170706"/>
+      <stop offset="0.55" stop-color="#27100d"/>
+      <stop offset="1" stop-color="#070808"/>
+    </linearGradient>
+    <linearGradient id="track" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff2218"/>
+      <stop offset="0.45" stop-color="#36f1df"/>
+      <stop offset="1" stop-color="#f6d265"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#ffb9aa" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <path d="M92 418C178 302 265 327 330 215c46-79 139-98 220-39 91 66 182 44 241-28 62-76 195-42 238 52 39 85-8 189-108 207-85 15-130-50-214-32-95 20-127 123-245 131-147 10-254-102-370-88Z" fill="none" stroke="#321411" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M92 418C178 302 265 327 330 215c46-79 139-98 220-39 91 66 182 44 241-28 62-76 195-42 238 52 39 85-8 189-108 207-85 15-130-50-214-32-95 20-127 123-245 131-147 10-254-102-370-88Z" fill="none" stroke="url(#track)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="70" y="68" width="1060" height="494" rx="20" fill="#120605" fill-opacity=".72" stroke="#ffe2d6" stroke-opacity=".18"/>
+  <text x="104" y="148" fill="#ffe2d6" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">PITWALL</text>
+  <text x="104" y="224" fill="#ffffff" font-family="Arial, sans-serif" font-size="78" font-weight="900" font-style="italic">Prediction Intelligence</text>
+  <text x="108" y="280" fill="#ffcabd" font-family="Arial, sans-serif" font-size="26">Full-grid forecasts, source health, model status, and transparent fallback states.</text>
+  <g transform="translate(104 360)">
+    <rect width="245" height="92" rx="10" fill="#2b120f" stroke="#ffe2d6" stroke-opacity=".18"/>
+    <text x="22" y="36" fill="#36f1df" font-family="Arial, sans-serif" font-size="18" font-weight="700">FULL GRID</text>
+    <text x="22" y="70" fill="#fff0eb" font-family="Arial, sans-serif" font-size="26" font-weight="800">22 driver ranking</text>
+    <rect x="279" width="245" height="92" rx="10" fill="#2b120f" stroke="#ffe2d6" stroke-opacity=".18"/>
+    <text x="301" y="36" fill="#36f1df" font-family="Arial, sans-serif" font-size="18" font-weight="700">SOURCE STATE</text>
+    <text x="301" y="70" fill="#fff0eb" font-family="Arial, sans-serif" font-size="26" font-weight="800">Fallback-aware</text>
+    <rect x="558" width="245" height="92" rx="10" fill="#2b120f" stroke="#ffe2d6" stroke-opacity=".18"/>
+    <text x="580" y="36" fill="#36f1df" font-family="Arial, sans-serif" font-size="18" font-weight="700">MODEL</text>
+    <text x="580" y="70" fill="#fff0eb" font-family="Arial, sans-serif" font-size="26" font-weight="800">Chronological gate</text>
+  </g>
+</svg>

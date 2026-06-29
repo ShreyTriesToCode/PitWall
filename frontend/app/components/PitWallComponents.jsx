@@ -48,78 +48,78 @@ const transitionLiveries = [
     team: "Mercedes",
     fullName: "Mercedes-AMG PETRONAS Formula One Team",
     accent: "#00d2be",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedescarright.webp",
-    source: "https://www.formula1.com/en/teams/mercedes",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Ferrari",
     fullName: "Scuderia Ferrari HP",
     accent: "#e10600",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/ferrari/2026ferraricarright.webp",
-    source: "https://www.formula1.com/en/teams/ferrari",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "McLaren",
     fullName: "McLaren Mastercard F1 Team",
     accent: "#ff8700",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarencarright.webp",
-    source: "https://www.formula1.com/en/teams/mclaren",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Red Bull",
     fullName: "Oracle Red Bull Racing",
     accent: "#ffcc00",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracingcarright.webp",
-    source: "https://www.formula1.com/en/teams/red-bull-racing",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Alpine",
     fullName: "BWT Alpine Formula One Team",
     accent: "#ff87bc",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/alpine/2026alpinecarright.webp",
-    source: "https://www.formula1.com/en/teams/alpine",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Haas",
     fullName: "TGR Haas F1 Team",
     accent: "#e10600",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/haas/2026haascarright.webp",
-    source: "https://www.formula1.com/en/teams/haas",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Racing Bulls",
     fullName: "Visa Cash App Racing Bulls Formula One Team",
     accent: "#1535d1",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/racingbulls/2026racingbullscarright.webp",
-    source: "https://www.formula1.com/en/teams/racing-bulls",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Williams",
     fullName: "Atlassian Williams F1 Team",
     accent: "#005aff",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/williams/2026williamscarright.webp",
-    source: "https://www.formula1.com/en/teams/williams",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Audi",
     fullName: "Audi Revolut F1 Team",
     accent: "#e4002b",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/audi/2026audicarright.webp",
-    source: "https://www.formula1.com/en/teams/audi",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Cadillac",
     fullName: "Cadillac Formula 1 Team",
     accent: "#b8b8b8",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaccarright.webp",
-    source: "https://www.formula1.com/en/teams/cadillac",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
   {
     team: "Aston Martin",
     fullName: "Aston Martin Aramco Formula One Team",
     accent: "#b6ff00",
-    image: "https://media.formula1.com/image/upload/c_lfill%2Cw_3392/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartincarright.webp",
-    source: "https://www.formula1.com/en/teams/aston-martin",
+    image: "/pitwall-hero.svg",
+    source: "self-hosted PitWall visual",
   },
 ];
 
@@ -210,8 +210,15 @@ export function normalizeQuery(value) {
 
 export function usePitWallData(endpoint = "/api/predictions", options = {}) {
   const timeoutMs = Number(options.timeoutMs || 15000);
+  const initialData = options.initialData || null;
   const [reloadKey, setReloadKey] = useState(0);
-  const [state, setState] = useState({ loading: true, data: null, error: "", warning: "", refreshing: false });
+  const [state, setState] = useState({
+    loading: !initialData,
+    data: initialData,
+    error: "",
+    warning: initialData?.ok === false ? initialData.error || initialData.reason || "This data source returned a fallback response." : "",
+    refreshing: false,
+  });
   useEffect(() => {
     const controller = new AbortController();
     let didTimeout = false;
