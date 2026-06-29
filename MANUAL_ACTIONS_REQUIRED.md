@@ -26,17 +26,16 @@
 - What was verified instead: `npm run build` passed, the compiled `/` and `/model` server bundles call `loadPredictionsPayload()`, and a direct contract-loader probe returned the real current race, top prediction, full-grid size, and model version.
 - Manual check: from a normal local shell, run `cd frontend && npm run build && npm run start -- -p 3017`, then `curl -s http://127.0.0.1:3017/ | grep -E "Austrian Grand Prix|Lewis Hamilton"` and `curl -s http://127.0.0.1:3017/model | grep -E "Model Center|2026.06"`.
 
-## 2026-06-29 Cache untracking blocked by escalation window
+## 2026-06-29 Cache untracking
 
-- Status: pending git-index action.
-- Finding: `git ls-files fastf1_cache data_cache/full_races models/saved_models | wc -l` reports 295 tracked reproducible runtime cache/model files.
-- Local disk footprint at inspection: `fastf1_cache` 547 MB, `data_cache/full_races` 852 KB, `models/saved_models` 32 MB.
-- Required action when git index writes are available: run `git rm -r --cached fastf1_cache data_cache/full_races models/saved_models`, verify no files were deleted from disk, run the full validation gate, commit as `chore: untrack reproducible runtime caches`, and push.
+- Status: completed locally in this session.
+- Action taken: `git rm -r --cached fastf1_cache data_cache/full_races models/saved_models`.
+- Safety check: representative files in `data_cache/full_races/`, `fastf1_cache/`, and `models/saved_models/` still exist on disk.
+- Current index check: `git ls-files | grep -E "^(fastf1_cache|data_cache/full_races|models/saved_models)/" | wc -l` reports 0.
 - Do not rewrite git history without explicit owner approval.
 
-## 2026-06-29 Phase 3 safe-slice commit blocked by escalation window
+## 2026-06-29 Phase 3 safe-slice commit
 
-- Status: pending commit/push.
-- Completed locally: hidden neutral score fallbacks were removed from legacy contract normalization, Monte Carlo DNF fallback basis is now explicit, `models/saved_models/` is ignored, MIT `LICENSE` was added, and repo-footprint docs were updated.
-- Validation passed locally: py_compile, Ruff, 158 unit tests, contract validation, artifact-size check, run report, `npm ci`, and `npm run build`.
-- Required action when git index/ref writes are available: run `git add .`, `git commit -m "fix: expose missing score states"`, `git push origin main`, then verify local/remote hashes.
+- Status: completed and pushed before this continuation.
+- Completed: hidden neutral score fallbacks were removed from legacy contract normalization, Monte Carlo DNF fallback basis is now explicit, `models/saved_models/` is ignored, MIT `LICENSE` was added, and repo-footprint docs were updated.
+- Pushed commit: `9e4f1fb4 fix: expose missing score states`.

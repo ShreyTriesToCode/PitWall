@@ -8,7 +8,7 @@ PitWall has active hardening for source-aware predictions, FIA document fallback
 
 - `/` and `/model` use server-side contract loaders so the first render is backed by current generated prediction/model data instead of waiting for client-only fetches.
 - `/api/predictions` and server-rendered pages share `loadPredictionsPayload()` to avoid shape drift.
-- The frontend no longer embeds Formula 1 CDN image assets. It uses self-hosted PitWall SVG visuals and keeps official race pages as outbound links only.
+- General hero/metadata visuals are self-hosted PitWall SVG assets. The route preloader intentionally uses real Formula1.com team car renders for the loading transition and falls back to the self-hosted PitWall SVG if an external render fails.
 - SEO, Open Graph, Twitter metadata, and basic security headers are configured.
 - `/predictions` and `/live` have route error boundaries for malformed or temporarily unavailable contracts.
 - `/sources` exposes FIA resolver trust metadata, including source authority/status, official/verified/stale flags, URLs, and SHA256 where present.
@@ -26,9 +26,8 @@ PitWall has active hardening for source-aware predictions, FIA document fallback
 
 ## Artifact And Cache Footprint
 
-- `data_cache/frontend-contract.json` is 28.18 MB at the latest inspection, with 10 briefing/archive entries plus the current 22-row full grid. This is acceptable for the current generated contract but should be split or trimmed if archive history grows materially beyond the current count.
-- Reproducible runtime artifacts are still tracked from earlier history: 295 files across `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/`.
-- Future commits are protected by `.gitignore` for `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/`; the tracked copies still need `git rm --cached` in a separate hygiene commit when git-index writes are available.
+- `data_cache/frontend-contract.json` is about 29.9 MB at the latest inspection, with 10 briefing/archive entries plus the current 22-row full grid. This is acceptable for the current generated contract but should be split or trimmed if archive history grows materially beyond the current count.
+- Reproducible runtime artifacts from earlier history have been untracked with `git rm --cached`: 295 files across `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/`. The files remain on local disk for cache reuse, but future commits are protected by `.gitignore`.
 - No cached FIA PDFs should be committed; FIA PDFs and mirrors belong in Actions caches, release assets, object storage, or external cache storage.
 
 ## Known Limitations
