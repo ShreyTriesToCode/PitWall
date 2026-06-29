@@ -24,6 +24,13 @@ PitWall has active hardening for source-aware predictions, FIA document fallback
   - Model version: 2026.06-strategy-actuals-v7
 - The compiled `/` and `/model` server bundles call `loadPredictionsPayload()`.
 
+## Artifact And Cache Footprint
+
+- `data_cache/frontend-contract.json` is 28.18 MB at the latest inspection, with 10 briefing/archive entries plus the current 22-row full grid. This is acceptable for the current generated contract but should be split or trimmed if archive history grows materially beyond the current count.
+- Reproducible runtime artifacts are still tracked from earlier history: 295 files across `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/`.
+- Future commits are protected by `.gitignore` for `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/`; the tracked copies still need `git rm --cached` in a separate hygiene commit when git-index writes are available.
+- No cached FIA PDFs should be committed; FIA PDFs and mirrors belong in Actions caches, release assets, object storage, or external cache storage.
+
 ## Known Limitations
 
 - Local raw HTTP verification through `next start` was blocked by sandbox port permissions. `MANUAL_ACTIONS_REQUIRED.md` contains the exact manual curl check.

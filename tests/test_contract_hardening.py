@@ -191,6 +191,35 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertLess(row["prediction_trust_score"], 70)
         self.assertIn("qualifying", row["missing_feature_groups"])
 
+    def test_legacy_contract_normalizer_does_not_invent_shared_scores(self):
+        normalized = f1.normalize_entry_contract({
+            "season": 2026,
+            "round": 1,
+            "race_id": "2026-1-test-grand-prix",
+            "jolpica_race": {"raceName": "Test Grand Prix", "season": 2026, "round": 1},
+            "prediction_model": {},
+            "source_health": {"status": "unavailable"},
+            "full_grid": [{
+                "driver_id": "driver_a",
+                "name": "Driver A",
+                "team": "Team A",
+                "rank": 1,
+                "score": 82,
+                "component_scores": {},
+            }],
+        })
+        row = normalized["full_grid"][0]
+
+        self.assertIsNone(row["energy_boost_advantage_score"])
+        self.assertFalse(row["energy_boost_advantage_score_available"])
+        self.assertIsNone(row["active_aero_suitability_score"])
+        self.assertFalse(row["active_aero_suitability_score_available"])
+        self.assertIsNone(row["defend_risk_score"])
+        self.assertFalse(row["defend_risk_score_available"])
+        self.assertIsNone(row["dnf_probability"])
+        self.assertFalse(row["dnf_probability_available"])
+        self.assertIn("missing_reliability_component", row["score_unavailable_reasons"])
+
     def test_frontend_contract_loader_contains_debug_recovery_path(self):
         source = Path("frontend/app/api/_lib/contracts.js").read_text(encoding="utf-8")
         self.assertIn("contract_recovered_from_debug", source)

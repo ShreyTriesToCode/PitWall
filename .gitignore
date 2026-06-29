@@ -31,6 +31,7 @@ docs/CODEX_HANDOFF.md
 data_cache/model-input-snapshots/
 data_cache/full_races/
 fastf1_cache/
+models/saved_models/
 data_cache/fia-documents/**/pdfs/
 data_cache/fia-documents/**/*.pdf
 data_cache/frontend-contract.previous.*.json

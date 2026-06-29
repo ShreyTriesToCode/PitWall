@@ -154,11 +154,20 @@ def simulate_race_outcomes(
     rng = random.Random(seed)
     tallies = {row.get("driver_id") or row.get("name"): [] for row in rows}
     dnf_counts = {key: 0 for key in tallies}
+    dnf_basis = {}
     for _ in range(max(1, runs)):
         sampled = []
         for row in rows:
             key = row.get("driver_id") or row.get("name")
-            dnf = rng.random() < (safe_float(row.get("dnf_probability")) or safe_float(row.get("simulated_dnf_probability")) or 5) / 100.0
+            dnf_probability = safe_float(row.get("dnf_probability"))
+            basis = "contract_dnf_probability"
+            if dnf_probability is None:
+                dnf_probability = safe_float(row.get("simulated_dnf_probability"))
+                basis = "row_simulated_dnf_probability" if dnf_probability is not None else "fallback_default_unavailable_reliability"
+            if dnf_probability is None:
+                dnf_probability = 5.0
+            dnf_basis[key] = basis
+            dnf = rng.random() < dnf_probability / 100.0
             if dnf:
                 dnf_counts[key] += 1
             base_score = safe_float(row.get("score")) or (100 - (safe_float(row.get("rank")) or 10))
@@ -183,6 +192,8 @@ def simulate_race_outcomes(
             "simulated_top5_probability": round(sum(1 for x in finishes if x <= 5) / n * 100, 3),
             "simulated_top10_probability": round(sum(1 for x in finishes if x <= 10) / n * 100, 3),
             "simulated_dnf_probability": round(dnf_counts[key] / n * 100, 3),
+            "dnf_probability_basis": dnf_basis.get(key, "fallback_default_unavailable_reliability"),
+            "dnf_probability_fallback_used": dnf_basis.get(key) == "fallback_default_unavailable_reliability",
             "expected_finish": round(sum(finishes) / n, 2),
             "median_finish": finishes[n // 2],
             "p10_finish": p10,

@@ -718,6 +718,26 @@ def pct_value(value):
     return round(clamp(value, 0, 100, 0), 2)
 
 
+def first_score_value(*values):
+    for value in values:
+        score = pct_value(value)
+        if score is not None:
+            return score
+    return None
+
+
+def mark_score_availability(row, key, value, reason):
+    row.setdefault(key, value)
+    available_key = f"{key}_available"
+    if row.get(key) is None:
+        row.setdefault(available_key, False)
+        row.setdefault("score_unavailable_reasons", [])
+        if reason not in row["score_unavailable_reasons"]:
+            row["score_unavailable_reasons"].append(reason)
+    else:
+        row.setdefault(available_key, True)
+
+
 def stable_hash(payload):
     return sha256(json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()
 
@@ -7490,8 +7510,15 @@ def enrich_prediction_item(item, rank, field_size, current_round_data, profile, 
         (component_scores.get("qualifying"), 0.20),
         (item.get("score"), 0.20),
     ]) or item.get("score"), low=0.8, high=16.0))
-    item.setdefault("dnf_probability", round(clamp(100 - (safe_float(item.get("reliability")) or 70), 2, 45, 12), 2))
-    item.setdefault("classified_finish_probability", round(100 - item["dnf_probability"], 2))
+    reliability_for_dnf = safe_float(item.get("reliability"))
+    dnf_probability = round(clamp(100 - reliability_for_dnf, 2, 45, 12), 2) if reliability_for_dnf is not None else None
+    mark_score_availability(item, "dnf_probability", dnf_probability, "missing_reliability_component")
+    mark_score_availability(
+        item,
+        "classified_finish_probability",
+        round(100 - item["dnf_probability"], 2) if item.get("dnf_probability") is not None else None,
+        "missing_reliability_component",
+    )
     item.setdefault("position_range", [item.get("best_case_finish"), item.get("worst_case_finish")])
     item.setdefault("expected_strategy", strategy_profile_for_row(item, profile, weather_summary))
     item.setdefault("strategy_annotations", detect_strategy_context_annotations(item.get("strategy_context"), weather_summary))
@@ -9100,8 +9127,15 @@ def enrich_predictions_with_quality_outputs(rows, source_health=None, stage=None
         ])
         row.setdefault("prediction_risk_level", uncertainty["prediction_risk_level"])
         row.setdefault("recommended_interpretation", "Use as calibrated probabilities and uncertainty-aware ranking, not a guarantee.")
-        row.setdefault("dnf_probability", round(clamp(100 - (safe_float(row.get("reliability")) or 70), 2, 45, 12), 2))
-        row.setdefault("classified_finish_probability", round(100 - row["dnf_probability"], 2))
+        reliability_for_dnf = safe_float(row.get("reliability"))
+        dnf_probability = round(clamp(100 - reliability_for_dnf, 2, 45, 12), 2) if reliability_for_dnf is not None else None
+        mark_score_availability(row, "dnf_probability", dnf_probability, "missing_reliability_component")
+        mark_score_availability(
+            row,
+            "classified_finish_probability",
+            round(100 - row["dnf_probability"], 2) if row.get("dnf_probability") is not None else None,
+            "missing_reliability_component",
+        )
         sim = sim_by_driver.get(row.get("driver_id")) or {}
         row.setdefault("simulation", sim)
         row.update(enrich_model_disagreement(row))
@@ -9164,12 +9198,20 @@ def normalize_entry_contract(entry):
             enriched.setdefault("disagreement_flags", [])
             enriched.setdefault("evidence_status", {"available": [k for k, v in components.items() if v is not None], "missing": [], "penalties": {}, "penalty_total": 0})
             enriched.setdefault("missing_data_penalties", {})
-            enriched.setdefault("attack_potential_score", pct_value(components.get("race_pace")) or pct_value(enriched.get("score")) or 50)
-            enriched.setdefault("defend_risk_score", 100 - (pct_value(components.get("reliability")) or 50))
-            enriched.setdefault("energy_boost_advantage_score", pct_value(components.get("regulation_fit")) or 55)
-            enriched.setdefault("active_aero_suitability_score", pct_value(components.get("track_trait_fit")) or 55)
+            attack_score = first_score_value(components.get("race_pace"), enriched.get("score"))
+            mark_score_availability(enriched, "attack_potential_score", attack_score, "missing_attack_potential_components")
+            reliability_score = first_score_value(enriched.get("reliability"), components.get("reliability"))
+            defend_score = 100 - reliability_score if reliability_score is not None else None
+            mark_score_availability(enriched, "defend_risk_score", defend_score, "missing_reliability_component")
+            mark_score_availability(enriched, "energy_boost_advantage_score", first_score_value(components.get("regulation_fit")), "missing_regulation_fit_component")
+            mark_score_availability(enriched, "active_aero_suitability_score", first_score_value(components.get("track_trait_fit")), "missing_track_trait_component")
             enriched.setdefault("expected_points", finish_points_for_position(enriched.get("likely_finish")))
-            enriched.setdefault("top10_safety_score", weighted_average([(enriched.get("top10_probability"), 0.6), (enriched.get("reliability"), 0.4)]) or 50)
+            mark_score_availability(
+                enriched,
+                "top10_safety_score",
+                weighted_average([(enriched.get("top10_probability"), 0.6), (enriched.get("reliability"), 0.4)]),
+                "missing_top10_safety_components",
+            )
             enriched.setdefault("dark_horse_flag", False)
             enriched.setdefault("bust_risk_flag", False)
             enriched.setdefault("predicted_finish", enriched.get("predicted_finish_position"))

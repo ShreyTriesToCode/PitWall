@@ -44,6 +44,7 @@ The checker warns at 25 MB and fails at 95 MB by default. Large generated caches
 - `data_cache/model-input-snapshots`
 - `data_cache/full_races`
 - `fastf1_cache`
+- `models/saved_models`
 - FIA PDF mirrors under `data_cache/fia-documents/**/pdfs/`
 - large reproducible previous frontend-contract/model-status variants
 - local screenshots, traces, and temporary browser artifacts

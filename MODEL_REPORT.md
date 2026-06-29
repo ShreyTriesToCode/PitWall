@@ -128,3 +128,9 @@ Known limitation: the model remains probabilistic and can be wrong because racin
 - `/model` now receives model-status and prediction comparison contracts through server-side data loading before hydration.
 - The Model Center still does not invent actual-result comparison metrics; pending/unavailable actual results remain hidden behind the explicit pending state until trusted result rows exist.
 - The frontend now exposes existing Monte Carlo simulation output in prediction views as probabilistic simulation output, not as observed race data.
+
+## 2026-06-29 Score Missingness Guardrails
+
+- Legacy contract backfill no longer converts missing reliability, active-aero, energy-boost, defend-risk, top-10-safety, DNF, or classified-finish fields into neutral-looking shared values. Missing values stay `null` with `*_available=false` and a `score_unavailable_reasons` entry.
+- Race simulation still uses a bounded 5% DNF assumption when no reliability/DNF signal exists, but each simulated driver row now includes `dnf_probability_basis` and `dnf_probability_fallback_used` so the UI/reporting layer can disclose the assumption.
+- The ranking model still uses weighted component coverage; missing `team_track_fit`, `weather_adaptation`, and `reliability` inputs reduce available evidence instead of being treated as trusted observed data.

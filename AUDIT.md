@@ -123,3 +123,11 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - ADDED: `/sources` now displays FIA resolver trust metadata (`source_authority`, `source_status`, official/verified/stale flags, URLs, and SHA256 when present).
 - ADDED: `/predictions` now surfaces existing Monte Carlo simulation output from the generated contract without presenting it as actual race results.
 - VERIFIED: `npm run build` passes and the server bundle imports `loadPredictionsPayload()` for `/` and `/model`; local `next start` HTTP verification was blocked by sandbox port binding, so raw HTTP fetch needs a human/local shell check.
+
+## 2026-06-29 Score Missingness And Repo Hygiene Audit
+
+- FIXED: Legacy contract normalization no longer fills `energy_boost_advantage_score`, `active_aero_suitability_score`, `defend_risk_score`, `top10_safety_score`, DNF probability, or classified-finish probability with shared neutral constants when the underlying per-driver components are missing. Those fields now expose `*_available=false` and `score_unavailable_reasons`.
+- FIXED: Monte Carlo race simulation now labels when DNF probability used the explicit `fallback_default_unavailable_reliability` assumption rather than a contract-provided driver value.
+- AUDITED: `team_track_fit`, `weather_adaptation`, and `reliability` ranking inputs are already carried through `component_scores`; unavailable inputs remain `None` for weighted scoring instead of being promoted as measured per-driver data.
+- FOUND: 295 reproducible cache/model files are still tracked from earlier history across `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/`. `.gitignore` now blocks future additions, but untracking needs a separate `git rm --cached` commit when git-index writes are available.
+- MEASURED: `data_cache/frontend-contract.json` is 28.18 MB with 10 briefing/archive entries; growth should be monitored before adding many more archived contracts to the canonical JSON.

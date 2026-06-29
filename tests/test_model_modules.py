@@ -8,7 +8,7 @@ from pitwall.data.cache_manager import cache_aware_json_loader, load_manifest, m
 from pitwall.features.build_features import feature_schema, missing_value_report
 from pitwall.models.evaluate import evaluate_finish_predictions
 from pitwall.models.predict import normalize_prediction_row, top10_from_full_grid, validate_top10_subset
-from pitwall.models.simulation import normalize_race_probabilities
+from pitwall.models.simulation import normalize_race_probabilities, simulate_race_outcomes
 from pitwall.models.validation import assert_chronological_split, promotion_gate, validate_training_frame
 
 
@@ -158,6 +158,18 @@ class ModelModuleTests(unittest.TestCase):
         self.assertAlmostEqual(sum(row["top10_probability"] for row in normalized), 1000.0, places=3)
         self.assertLessEqual(max(row["podium_probability"] for row in normalized), 100.0)
         self.assertLessEqual(max(row["top10_probability"] for row in normalized), 100.0)
+
+    def test_simulation_marks_default_dnf_fallback(self):
+        simulation = simulate_race_outcomes([
+            {"driver_id": "driver_a", "name": "Driver A", "score": 82, "rank": 1},
+            {"driver_id": "driver_b", "name": "Driver B", "score": 70, "rank": 2, "dnf_probability": 12},
+        ], runs=25, seed=3)
+        by_driver = {row["driver_id"]: row for row in simulation["drivers"]}
+
+        self.assertTrue(by_driver["driver_a"]["dnf_probability_fallback_used"])
+        self.assertEqual(by_driver["driver_a"]["dnf_probability_basis"], "fallback_default_unavailable_reliability")
+        self.assertFalse(by_driver["driver_b"]["dnf_probability_fallback_used"])
+        self.assertEqual(by_driver["driver_b"]["dnf_probability_basis"], "contract_dnf_probability")
 
 
 if __name__ == "__main__":
