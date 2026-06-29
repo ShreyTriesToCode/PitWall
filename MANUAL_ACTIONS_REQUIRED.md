@@ -15,5 +15,5 @@
 ## 2026-06-29 F1LivePulse FIA documents fallback
 
 - Status: pending owner/API verification.
-- Current finding: the public F1LivePulse FIA documents URL resolves to a feature/marketing page, not a confirmed machine-parseable document feed.
+- Current finding: `https://f1livepulse.com/fia-documents` returns HTTP 200 but redirects to `https://www.f1livepulse.com/en/features/fia-documents/`, a feature/marketing page rather than a confirmed machine-parseable document feed.
 - Planned behavior: keep `FIA_DOCUMENT_F1LIVEPULSE_ENABLED=false` until a stable parseable page or API endpoint is verified.

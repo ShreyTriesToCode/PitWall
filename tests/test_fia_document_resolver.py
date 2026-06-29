@@ -19,6 +19,7 @@ from pitwall.data.fia_document_resolver import (
     OfficialFiaEventPageSource,
     RegulationMirrorSource,
     VerifiedCacheDocumentSource,
+    WaybackSeasonIndexSource,
     verify_document_download,
 )
 
@@ -83,6 +84,30 @@ class FiaDocumentResolverTests(unittest.TestCase):
         manifest = FiaDocumentResolver([EmptySource(), archive], config(["empty", "official_fia_archive_api"])).resolve(2026)
         self.assertEqual(manifest.source_authority, "official_fia_archive_api")
 
+    def test_live_archive_api_document_is_not_overwritten_by_same_url_cache_entry(self):
+        url = "https://www.fia.com/system/files/decision-document/doc-01.pdf"
+        archive = OfficialFiaArchiveApiSource(
+            source_key="official_fia_archive_api",
+            url="https://api.fia.com/archive",
+            source_authority="official_fia_archive_api",
+            source_status="official_secondary_live",
+            fetch_text=lambda _: html_link(url, "Document 1 - Decision"),
+            enabled=True,
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_path = Path(tmp) / "season_index.json"
+            cache_path.write_text(
+                json.dumps({"documents": [{"title": "Document 1 - Decision", "source_url": url}]}),
+                encoding="utf-8",
+            )
+            cache = VerifiedCacheDocumentSource(cache_path, max_age_days=14, enabled=True)
+            manifest = FiaDocumentResolver(
+                [archive, cache],
+                config(["official_fia_archive_api", "verified_cache"]),
+            ).resolve(2026)
+        self.assertEqual(manifest.source_authority, "official_fia_archive_api")
+        self.assertEqual(manifest.documents[0]["source_authority"], "official_fia_archive_api")
+
     def test_f1livepulse_verifiable_official_document_link(self):
         source = F1LivePulseDocumentSource(
             source_key="f1livepulse",
@@ -114,6 +139,9 @@ class FiaDocumentResolverTests(unittest.TestCase):
 
     def test_community_index_disabled_by_default(self):
         self.assertFalse(FiaResolverConfig.from_env().community_index_enabled)
+
+    def test_f1livepulse_disabled_by_default_until_parseable_feed_is_configured(self):
+        self.assertFalse(FiaResolverConfig.from_env().f1livepulse_enabled)
 
     def test_community_index_enabled_but_unstable_metadata_rejected(self):
         source = CommunityDocumentIndexSource(
@@ -203,6 +231,75 @@ class FiaDocumentResolverTests(unittest.TestCase):
             manifest = FiaDocumentResolver([EmptySource(), cache], config(["empty", "verified_cache"])).resolve(2026)
             self.assertEqual(manifest.source_authority, "verified_cache")
             self.assertTrue(manifest.documents[0]["is_stale"])
+
+    def test_all_live_hosts_fail_wayback_snapshot_available_before_cache(self):
+        calls = []
+
+        def fetch_text(url):
+            calls.append(url)
+            if "archive.org/wayback/available" in url:
+                return json.dumps({
+                    "archived_snapshots": {
+                        "closest": {
+                            "available": True,
+                            "url": "https://web.archive.org/web/20260601000000/https://www.fia.com/documents",
+                        }
+                    }
+                })
+            return html_link("https://www.fia.com/system/files/decision-document/doc-77.pdf", "Doc 77 - Race Director Notes")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_path = Path(tmp) / "season_index.json"
+            cache_path.write_text(
+                json.dumps({"documents": [{"title": "Cached Decision", "source_url": "https://www.fia.com/cached.pdf"}]}),
+                encoding="utf-8",
+            )
+            wayback = WaybackSeasonIndexSource(
+                original_url="https://www.fia.com/documents",
+                fetch_text=fetch_text,
+                enabled=True,
+            )
+            cache = VerifiedCacheDocumentSource(cache_path, max_age_days=14, enabled=True)
+            manifest = FiaDocumentResolver(
+                [EmptySource(), wayback, cache],
+                config(["empty", "wayback_snapshot", "verified_cache"]),
+            ).resolve(2026)
+
+        self.assertEqual(manifest.source_authority, "wayback_snapshot")
+        self.assertEqual(manifest.source_status, "archived_snapshot")
+        self.assertTrue(manifest.documents[0]["is_stale"])
+        self.assertIn("archive.org/wayback/available", calls[0])
+
+    def test_wayback_unavailable_falls_through_to_verified_cache(self):
+        def fetch_text(url):
+            self.assertIn("archive.org/wayback/available", url)
+            return json.dumps({"archived_snapshots": {}})
+
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_path = Path(tmp) / "season_index.json"
+            cache_path.write_text(
+                json.dumps({"documents": [{"title": "Cached Decision", "source_url": "https://www.fia.com/cached.pdf"}]}),
+                encoding="utf-8",
+            )
+            wayback = WaybackSeasonIndexSource(
+                original_url="https://www.fia.com/documents",
+                fetch_text=fetch_text,
+                enabled=True,
+            )
+            cache = VerifiedCacheDocumentSource(cache_path, max_age_days=14, enabled=True)
+            manifest = FiaDocumentResolver([wayback, cache], config(["wayback_snapshot", "verified_cache"])).resolve(2026)
+
+        self.assertEqual(manifest.source_authority, "verified_cache")
+        self.assertIn("wayback_snapshot_unavailable", manifest.errors)
+
+    def test_build_resolver_uses_verified_2026_api_fia_fallback_when_env_is_empty(self):
+        registry = {"fia_season_document_url": "https://www.fia.com/documents/championships/example"}
+        with patch.object(f1, "FIA_DOCUMENT_FIA_ARCHIVE_API_URL", ""), \
+             patch.dict(os.environ, {"FIA_DOCUMENT_FIA_ARCHIVE_API_URL_2026": ""}, clear=False):
+            resolver = f1.build_fia_document_resolver(2026, registry=registry)
+        archive_sources = [source for source in resolver.sources if source.source_key == "official_fia_archive_api"]
+        self.assertEqual(len(archive_sources), 1)
+        self.assertIn("https://api.fia.com/documents/", archive_sources[0].url)
 
     def test_stale_cache_beyond_max_age_gives_unavailable(self):
         with tempfile.TemporaryDirectory() as tmp:

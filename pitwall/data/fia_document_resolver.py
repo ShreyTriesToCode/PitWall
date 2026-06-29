@@ -14,7 +14,7 @@ from datetime import datetime, timedelta, timezone
 from hashlib import sha256
 from pathlib import Path
 from typing import Any, Callable
-from urllib.parse import urljoin, urlparse
+from urllib.parse import quote, urljoin, urlparse
 
 
 OFFICIAL_AUTHORITIES = {"official_fia", "official_fia_event_page", "official_fia_archive_api"}
@@ -22,6 +22,7 @@ THIRD_PARTY_INDEX = "third_party_official_doc_index"
 SUMMARY_ONLY = "third_party_summary"
 REGULATION_MIRROR = "regulation_pdf_mirror"
 VERIFIED_CACHE = "verified_cache"
+WAYBACK_SNAPSHOT = "wayback_snapshot"
 UNAVAILABLE = "unavailable"
 
 
@@ -108,7 +109,7 @@ class FiaDocumentCandidate:
         payload["download_url"] = payload["download_url"] or self.source_url
         payload["is_official"] = self.source_authority in OFFICIAL_AUTHORITIES
         payload["is_verified"] = self.verification_status in {"indexed", "verified"} and self.source_authority != SUMMARY_ONLY
-        payload["is_stale"] = self.source_status == "stale_cache"
+        payload["is_stale"] = self.source_status in {"stale_cache", "archived_snapshot"}
         payload["context_summary_available"] = bool(self.context_summary)
         return payload
 
@@ -142,6 +143,7 @@ class FiaResolverConfig:
         "f1livepulse",
         "community_index",
         "regulation_mirror",
+        "wayback_snapshot",
         "verified_cache",
     ])
     fia_primary_enabled: bool = True
@@ -150,6 +152,7 @@ class FiaResolverConfig:
     f1livepulse_enabled: bool = True
     community_index_enabled: bool = False
     regulation_mirror_enabled: bool = True
+    wayback_enabled: bool = True
     cache_enabled: bool = True
     stale_cache_max_days: int = 14
     require_sha256: bool = False
@@ -161,7 +164,7 @@ class FiaResolverConfig:
             item.strip()
             for item in os.getenv(
                 "FIA_DOCUMENT_SOURCE_PRIORITY",
-                "official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache",
+                "official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,wayback_snapshot,verified_cache",
             ).split(",")
             if item.strip()
         ]
@@ -171,9 +174,10 @@ class FiaResolverConfig:
             fia_primary_enabled=env_bool("FIA_DOCUMENT_FIA_PRIMARY_ENABLED", True),
             fia_event_page_enabled=env_bool("FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED", True),
             fia_archive_api_enabled=env_bool("FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED", True),
-            f1livepulse_enabled=env_bool("FIA_DOCUMENT_F1LIVEPULSE_ENABLED", True),
+            f1livepulse_enabled=env_bool("FIA_DOCUMENT_F1LIVEPULSE_ENABLED", False),
             community_index_enabled=env_bool("FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED", False),
             regulation_mirror_enabled=env_bool("FIA_DOCUMENT_REGULATION_MIRROR_ENABLED", True),
+            wayback_enabled=env_bool("FIA_DOCUMENT_WAYBACK_ENABLED", True),
             cache_enabled=env_bool("FIA_DOCUMENT_CACHE_ENABLED", True),
             stale_cache_max_days=int(os.getenv("FIA_DOCUMENT_STALE_CACHE_MAX_DAYS", "14")),
             require_sha256=env_bool("FIA_DOCUMENT_REQUIRE_SHA256", False),
@@ -276,6 +280,52 @@ class RegulationMirrorSource(HtmlDocumentIndexSource):
         return super().fetch(season, event_slug=event_slug, document_kind=document_kind)
 
 
+class WaybackSeasonIndexSource(FiaDocumentSource):
+    source_key = "wayback_snapshot"
+
+    def __init__(
+        self,
+        *,
+        original_url: str | None,
+        fetch_text: Callable[[str], str | None],
+        parse_index: Callable[[str, int, str], list[dict[str, Any]]] | None = None,
+        enabled: bool = True,
+    ) -> None:
+        super().__init__(enabled=enabled and bool(original_url))
+        self.original_url = original_url
+        self.fetch_text = fetch_text
+        self.parse_index = parse_index
+
+    def fetch(self, season: int, event_slug: str | None = None, document_kind: str = "event") -> FiaDocumentManifest:
+        if not self.enabled or not self.original_url:
+            return FiaDocumentManifest(season=season, event_slug=event_slug, errors=["wayback_snapshot_disabled_or_unconfigured"])
+        api_url = f"https://archive.org/wayback/available?url={quote(str(self.original_url), safe='')}"
+        try:
+            payload = json.loads(self.fetch_text(api_url) or "{}")
+        except Exception as error:
+            return FiaDocumentManifest(season=season, event_slug=event_slug, errors=[f"wayback_snapshot_failed:{error}"])
+        snapshot = (payload.get("archived_snapshots") or {}).get("closest") or {}
+        if not snapshot.get("available") or not snapshot.get("url"):
+            return FiaDocumentManifest(season=season, event_slug=event_slug, errors=["wayback_snapshot_unavailable"])
+        snapshot_url = snapshot.get("url")
+        try:
+            html = self.fetch_text(snapshot_url) or ""
+        except Exception as error:
+            return FiaDocumentManifest(season=season, event_slug=event_slug, errors=[f"wayback_snapshot_html_failed:{error}"])
+        raw_docs = self.parse_index(html, season, snapshot_url) if self.parse_index else parse_document_links(html, season, snapshot_url)
+        candidates = [candidate_from_raw_doc(doc, WAYBACK_SNAPSHOT, "archived_snapshot") for doc in raw_docs]
+        docs, errors = verify_candidates(candidates, document_kind=document_kind)
+        return FiaDocumentManifest(
+            season=season,
+            event_slug=event_slug,
+            status="available" if docs else UNAVAILABLE,
+            source_authority=WAYBACK_SNAPSHOT if docs else UNAVAILABLE,
+            source_status="archived_snapshot" if docs else UNAVAILABLE,
+            documents=docs,
+            errors=errors if docs else errors + ["wayback_snapshot_empty"],
+        )
+
+
 class VerifiedCacheDocumentSource(FiaDocumentSource):
     source_key = "verified_cache"
 
@@ -341,12 +391,22 @@ class FiaDocumentResolver:
             for doc in manifest.documents:
                 key = (normalize_slug(doc.get("title")), str(doc.get("document_number") or ""), doc.get("sha256") or "")
                 existing = seen.get(key)
-                if existing and existing.get("source_url") != doc.get("source_url"):
+                if existing:
+                    existing_rank = source_preference_rank(existing)
+                    doc_rank = source_preference_rank(doc)
+                    if existing.get("source_url") == doc.get("source_url"):
+                        if doc_rank < existing_rank:
+                            conflicts.append(f"preferred_higher_authority_copy:{doc.get('title')}")
+                            seen[key] = doc
+                        continue
                     if doc.get("is_official") and not existing.get("is_official"):
                         conflicts.append(f"official_copy_preferred:{doc.get('title')}")
                         seen[key] = doc
                     elif existing.get("is_official") and not doc.get("is_official"):
                         conflicts.append(f"third_party_copy_ignored:{doc.get('title')}")
+                    elif doc_rank < existing_rank:
+                        conflicts.append(f"preferred_higher_authority_copy:{doc.get('title')}")
+                        seen[key] = doc
                     else:
                         conflicts.append(f"duplicate_source:{doc.get('title')}")
                 else:
@@ -375,6 +435,24 @@ class FiaDocumentResolver:
             errors=errors or ["fia_documents_unavailable"],
             conflicts=conflicts,
         )
+
+
+def source_preference_rank(doc: dict[str, Any]) -> int:
+    authority = doc.get("source_authority")
+    status = doc.get("source_status")
+    if authority == "official_fia" and status == "official_live":
+        return 0
+    if authority in OFFICIAL_AUTHORITIES:
+        return 1
+    if authority == THIRD_PARTY_INDEX:
+        return 2
+    if authority == REGULATION_MIRROR:
+        return 3
+    if authority == WAYBACK_SNAPSHOT:
+        return 4
+    if authority == VERIFIED_CACHE:
+        return 5
+    return 9
 
 
 def strip_html(html: str) -> str:

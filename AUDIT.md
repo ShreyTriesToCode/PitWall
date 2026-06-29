@@ -92,3 +92,13 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - FIXED: FIA car-presentation upgrade packages are no longer limited to transparent ranking adjustments; parsed official upgrade rows now become bounded `fia_upgrade_*` ML training and inference features with explicit missing-data flags.
 - FIXED: FIA upgrade context now reuses verified parsed car-presentation documents before probing live URLs. Blocked FIA/news URLs are attempted once, then the resolver moves to the next trusted candidate and finally exposes an explicit unavailable state instead of retrying the same forbidden source repeatedly.
 - UPDATED: The scheduled briefing workflow refreshes FIA document metadata and the source registry by default, while still avoiding forced PDF redownloads unless explicitly requested.
+
+## 2026-06-29 FIA Resolver Fallback Verification
+
+- FIXED: FIA season-index fallback is now wired to the live-verified 2026 `api.fia.com` archive route when `www.fia.com` returns 403.
+- FIXED: Resolver deduplication now prefers live official/archive documents over identical verified-cache rows, so stale cache cannot mask a working official fallback.
+- FIXED: Optional 401/403/404/410 source failures return after one attempt and allow the resolver to continue to the next configured source.
+- ADDED: Wayback season-index fallback before verified cache, labelled `source_authority=wayback_snapshot` and `source_status=archived_snapshot`; it is stale context, not live FIA.
+- UPDATED: F1LivePulse is disabled by default until a stable machine-parseable FIA document feed is verified.
+- VERIFIED: Live probe on 2026-06-29 returned `www.fia.com=403`, `api.fia.com=200`, Wayback availability `200` with a snapshot URL, and F1LivePulse redirecting to a feature page.
+- VERIFIED: `fetch_fia_season_index(2026, refresh=True)` returned `status=available`, `source_authority=official_fia_archive_api`, `source_status=official_secondary_live`, and `documents=131`.

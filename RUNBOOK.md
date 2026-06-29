@@ -80,11 +80,16 @@ FIA document replacement sources are trust-labelled. Official FIA pages and conf
 Useful controls:
 
 ```bash
-FIA_DOCUMENT_SOURCE_PRIORITY=official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache
+FIA_DOCUMENT_FIA_ARCHIVE_API_URL_2026=https://api.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072
+FIA_DOCUMENT_SOURCE_PRIORITY=official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,wayback_snapshot,verified_cache
+FIA_DOCUMENT_F1LIVEPULSE_ENABLED=false
+FIA_DOCUMENT_WAYBACK_ENABLED=true
 FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED=false
 FIA_DOCUMENT_STALE_CACHE_MAX_DAYS=14
 FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT=true
 ```
+
+As of 2026-06-29, `api.fia.com` is the verified 2026 secondary official route when `www.fia.com` returns 403. F1LivePulse is intentionally disabled until a stable parseable document endpoint is verified. Wayback is stale season-index context and must be labelled `wayback_snapshot`, never `official_fia`.
 
 GitHub notifications should not look like open bugs. The default issue fallback labels them `briefing-notification` and auto-closes them:
 

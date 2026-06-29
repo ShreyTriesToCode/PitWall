@@ -413,6 +413,18 @@ class F1BriefingCoreTests(unittest.TestCase):
             sleep_mock.assert_any_call(0.0)
             self.assertTrue((cache_dir / f"{f1.cache_key_for_url(url, {})}.json").exists())
 
+    def test_safe_get_optional_forbidden_returns_none_without_retries(self):
+        response = f1.requests.Response()
+        response.status_code = 403
+        response._content = b"Forbidden"
+        url = "https://www.fia.com/documents/example"
+        with patch.object(f1.requests, "get", return_value=response) as get_mock, \
+             patch.object(f1.time, "sleep") as sleep_mock:
+            result = f1.safe_get(url, optional_404=True, use_cache=False)
+        self.assertIsNone(result)
+        self.assertEqual(get_mock.call_count, 1)
+        sleep_mock.assert_not_called()
+
     def test_cache_key_uses_hash_not_sluggable_url(self):
         key_a = f1.cache_key_for_url("https://example.test/path", {"offset": 0, "limit": 100})
         key_b = f1.cache_key_for_url("https://example.test/path", {"offset": 100, "limit": 100})

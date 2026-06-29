@@ -106,3 +106,11 @@ Known limitation: the model remains probabilistic and can be wrong because racin
 - FIA car-presentation upgrade packages now feed the ML feature matrix directly through `fia_upgrade_*` columns for completed-race training rows and current-race inference rows. Missing or unverified upgrade data remains an explicit `missing_fia_upgrade_data` signal rather than fabricated input.
 - Upgrade package context is cache-first: verified parsed FIA car-presentation documents are used before any live URL probes. If live FIA/news candidates return 401/403/404 or empty content, each candidate is skipped after one attempt and the source state becomes `unavailable` when no trusted replacement exists.
 - Scheduled briefing runs refresh FIA document metadata and the source registry by default so newly published upgrade-package documents can flow into the next training/inference pass without manual intervention.
+
+## 2026-06-29 FIA Fallback Source Status
+
+- The 2026 official FIA archive/API URL is configured as a live secondary official source after `www.fia.com` season-index requests returned 403 from this environment.
+- A live refresh returned `official_fia_archive_api` with 131 indexed documents; this means FIA upgrade-package features can still be populated from live official metadata when the primary FIA host blocks the request.
+- Wayback is configured only as a stale season-index fallback before verified cache. It is not treated as live official data and must preserve `source_authority=wayback_snapshot`.
+- F1LivePulse remains disabled by default because the public URL currently resolves to a feature page rather than a verified, machine-parseable FIA document index.
+- Verified cache remains the last data-bearing fallback; it may feed model features only with stale/cache metadata. No unavailable FIA document is synthesized.

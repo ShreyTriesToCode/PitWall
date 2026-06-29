@@ -18,6 +18,8 @@ Generated: 2026-05-25
   - Forecast/historical weather by latitude/longitude and hourly fields.
 - FIA documents:
   - Official documents, classifications, decisions, race director notes, infringements, PU documents, grid documents, and context where available.
+  - Source order is trust-labelled: primary official FIA pages, verified 2026 `api.fia.com` archive/API fallback, configured third-party document indexes only when they expose real FIA-origin/downloadable documents, Wayback season-index snapshots as stale context, verified cache, then explicit unavailable.
+  - F1LivePulse is disabled by default until a stable parseable document feed is verified; summary-only pages must not replace official documents.
   - Individual PDF downloads that return `403` are marked as forbidden; cached official text is reused as stale evidence when present.
 - Formula 1 timing/static feeds:
   - Used for the `/live` timing dashboard with archive/live/stale/unavailable states.

@@ -95,6 +95,7 @@ try:
         OfficialFiaEventPageSource,
         RegulationMirrorSource,
         VerifiedCacheDocumentSource,
+        WaybackSeasonIndexSource,
         manifest_to_legacy_index,
     )
 except Exception as error:
@@ -108,6 +109,7 @@ except Exception as error:
     OfficialFiaEventPageSource = None
     RegulationMirrorSource = None
     VerifiedCacheDocumentSource = None
+    WaybackSeasonIndexSource = None
     manifest_to_legacy_index = None
 
 try:
@@ -211,13 +213,17 @@ KEEP_FIA_PDFS = os.getenv("KEEP_FIA_PDFS", "false").lower() == "true"
 FIA_DOCUMENT_USER_AGENT = os.getenv("FIA_DOCUMENT_USER_AGENT", "Mozilla/5.0 (compatible; PitWall/3.0; +https://github.com/ShreyTriesToCode/PitWall)")
 FIA_DOCUMENT_REFERER = os.getenv("FIA_DOCUMENT_REFERER", FIA_DOCUMENTS_BASE_URL)
 FIA_DOCUMENT_STRICT_DOWNLOADS = os.getenv("FIA_DOCUMENT_STRICT_DOWNLOADS", "false").lower() == "true"
-FIA_DOCUMENT_SOURCE_PRIORITY = os.getenv("FIA_DOCUMENT_SOURCE_PRIORITY", "official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache")
+FIA_DOCUMENT_SOURCE_PRIORITY = os.getenv(
+    "FIA_DOCUMENT_SOURCE_PRIORITY",
+    "official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,wayback_snapshot,verified_cache",
+)
 FIA_DOCUMENT_FIA_PRIMARY_ENABLED = os.getenv("FIA_DOCUMENT_FIA_PRIMARY_ENABLED", "true").lower() == "true"
 FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED = os.getenv("FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED", "true").lower() == "true"
 FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED = os.getenv("FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED", "true").lower() == "true"
-FIA_DOCUMENT_F1LIVEPULSE_ENABLED = os.getenv("FIA_DOCUMENT_F1LIVEPULSE_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_F1LIVEPULSE_ENABLED = os.getenv("FIA_DOCUMENT_F1LIVEPULSE_ENABLED", "false").lower() == "true"
 FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED = os.getenv("FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED", "false").lower() == "true"
 FIA_DOCUMENT_REGULATION_MIRROR_ENABLED = os.getenv("FIA_DOCUMENT_REGULATION_MIRROR_ENABLED", "true").lower() == "true"
+FIA_DOCUMENT_WAYBACK_ENABLED = os.getenv("FIA_DOCUMENT_WAYBACK_ENABLED", "true").lower() == "true"
 FIA_DOCUMENT_CACHE_ENABLED = os.getenv("FIA_DOCUMENT_CACHE_ENABLED", "true").lower() == "true"
 FIA_DOCUMENT_STALE_CACHE_MAX_DAYS = int(os.getenv("FIA_DOCUMENT_STALE_CACHE_MAX_DAYS", "14"))
 FIA_DOCUMENT_REQUIRE_SHA256 = os.getenv("FIA_DOCUMENT_REQUIRE_SHA256", "false").lower() == "true"
@@ -1252,6 +1258,21 @@ def resolver_url_template(value, season, event_slug=None):
         return value
 
 
+FIA_ARCHIVE_API_DEFAULTS_BY_SEASON = {
+    2026: "https://api.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+}
+
+
+def resolver_season_url(env_name, configured_value, season, defaults=None):
+    configured = str(configured_value or "").strip()
+    if configured:
+        return configured
+    defaults = defaults or {}
+    default_value = defaults.get(safe_int(season), "")
+    year_specific = os.getenv(f"{env_name}_{season}", "").strip()
+    return year_specific or default_value
+
+
 def build_fia_document_resolver(season, registry=None):
     if FiaDocumentResolver is None or FiaResolverConfig is None:
         return None
@@ -1270,10 +1291,17 @@ def build_fia_document_resolver(season, registry=None):
         f1livepulse_enabled=FIA_DOCUMENT_F1LIVEPULSE_ENABLED,
         community_index_enabled=FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED,
         regulation_mirror_enabled=FIA_DOCUMENT_REGULATION_MIRROR_ENABLED,
+        wayback_enabled=FIA_DOCUMENT_WAYBACK_ENABLED,
         cache_enabled=FIA_DOCUMENT_CACHE_ENABLED,
         stale_cache_max_days=FIA_DOCUMENT_STALE_CACHE_MAX_DAYS,
         require_sha256=FIA_DOCUMENT_REQUIRE_SHA256,
         allow_summary_context=FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT,
+    )
+    archive_api_url = resolver_season_url(
+        "FIA_DOCUMENT_FIA_ARCHIVE_API_URL",
+        FIA_DOCUMENT_FIA_ARCHIVE_API_URL,
+        season,
+        FIA_ARCHIVE_API_DEFAULTS_BY_SEASON,
     )
     sources = [
         OfficialFiaDocumentPageSource(
@@ -1296,7 +1324,7 @@ def build_fia_document_resolver(season, registry=None):
         ),
         OfficialFiaArchiveApiSource(
             source_key="official_fia_archive_api",
-            url=resolver_url_template(FIA_DOCUMENT_FIA_ARCHIVE_API_URL, season),
+            url=resolver_url_template(archive_api_url, season),
             source_authority="official_fia_archive_api",
             source_status="official_secondary_live",
             fetch_text=fetch_text,
@@ -1326,6 +1354,12 @@ def build_fia_document_resolver(season, registry=None):
             source_status="regulation_mirror_live",
             fetch_text=fetch_text,
             enabled=config.regulation_mirror_enabled,
+        ),
+        WaybackSeasonIndexSource(
+            original_url=registry.get("fia_season_document_url"),
+            fetch_text=fetch_text,
+            parse_index=parse_fia_document_index,
+            enabled=config.wayback_enabled,
         ),
         VerifiedCacheDocumentSource(
             fia_season_index_path(season),
@@ -2257,8 +2291,8 @@ def safe_get(
                 slept_for_request = True
             response = requests.get(url, params=params or {}, headers=headers or {}, timeout=timeout)
 
-            if response.status_code == 404 and optional_404:
-                print(f"Optional endpoint not available: {url}")
+            if response.status_code in {401, 403, 404, 410} and optional_404:
+                print(f"Optional endpoint not available ({response.status_code}): {url}")
                 return None
 
             if response.status_code in return_on_statuses:

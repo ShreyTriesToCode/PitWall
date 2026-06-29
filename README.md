@@ -181,23 +181,27 @@ FORCE_REDOWNLOAD_FIA_DOCUMENTS=true KEEP_FIA_PDFS=false .venv/bin/python f1_brie
 
 If FIA serves a deterministic `403` for an individual decision PDF, PitWall now makes one browser-header request, reuses cached official text/parsed JSON when present, marks the document `stale_cache_forbidden`, and continues the run. Without cache it marks the document `forbidden` in source health instead of retrying four times or hiding the failure.
 
-FIA document lookup is source-priority based and never fabricates missing documents. The resolver tries official FIA document pages first, then configured official FIA event/archive routes, then verified third-party document indexes, regulation mirrors for regulation PDFs only, verified local cache, and finally an explicit unavailable state. Third-party summaries are context only and must not drive document-based model features as official evidence.
+FIA document lookup is source-priority based and never fabricates missing documents. The resolver tries official FIA document pages first, then configured official FIA event/archive routes, then verified third-party document indexes, regulation mirrors for regulation PDFs only, Wayback season-index snapshots, verified local cache, and finally an explicit unavailable state. Third-party summaries are context only and must not drive document-based model features as official evidence.
 
 Key resolver controls:
 
 ```bash
-FIA_DOCUMENT_SOURCE_PRIORITY=official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,verified_cache
+FIA_DOCUMENT_FIA_ARCHIVE_API_URL_2026=https://api.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072
+FIA_DOCUMENT_SOURCE_PRIORITY=official_fia,official_fia_event_page,official_fia_archive_api,f1livepulse,community_index,regulation_mirror,wayback_snapshot,verified_cache
 FIA_DOCUMENT_FIA_PRIMARY_ENABLED=true
 FIA_DOCUMENT_FIA_EVENT_PAGE_ENABLED=true
 FIA_DOCUMENT_FIA_ARCHIVE_API_ENABLED=true
-FIA_DOCUMENT_F1LIVEPULSE_ENABLED=true
+FIA_DOCUMENT_F1LIVEPULSE_ENABLED=false
 FIA_DOCUMENT_COMMUNITY_INDEX_ENABLED=false
 FIA_DOCUMENT_REGULATION_MIRROR_ENABLED=true
+FIA_DOCUMENT_WAYBACK_ENABLED=true
 FIA_DOCUMENT_CACHE_ENABLED=true
 FIA_DOCUMENT_STALE_CACHE_MAX_DAYS=14
 FIA_DOCUMENT_REQUIRE_SHA256=false
 FIA_DOCUMENT_ALLOW_SUMMARY_CONTEXT=true
 ```
+
+The 2026 `api.fia.com` archive route above is live-verified. F1LivePulse remains disabled until a stable parseable document endpoint is confirmed. Wayback snapshots are marked stale/non-live and cannot be presented as fresh FIA data.
 
 Indexed FIA rows expose trust metadata including `source_authority`, `source_status`, `is_official`, `is_verified`, `is_stale`, `source_url`, `download_url`, `fetched_at`, `sha256`, `error_summary`, and `context_summary_available`.
 
@@ -460,6 +464,7 @@ FIA_DOCUMENTS_ENABLED=true
 FIA_DOCUMENTS_BASE_URL=https://www.fia.com/documents/championships/fia-formula-one-world-championship-14
 FIA_DOCUMENTS_SEASON_URL=
 FIA_DOCUMENTS_SEASON_URL_2026=https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072
+FIA_DOCUMENT_FIA_ARCHIVE_API_URL_2026=https://api.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072
 FIA_DOCUMENTS_SEASON_URL_2027=
 FIA_DOCUMENTS_SEASON_URL_2028=
 FIA_DOCUMENT_CACHE_DIR=data_cache/fia-documents
