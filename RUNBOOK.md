@@ -188,6 +188,18 @@ FORCE_REDOWNLOAD_FIA_DOCUMENTS=false
 
 PitWall uses verified parsed FIA car-presentation submissions from `data_cache/fia-documents/<season>/<event>/parsed/` before trying live upgrade-document URLs. A blocked or missing live FIA/news URL is attempted once, skipped, and recorded as unavailable so the run can continue to the next trusted source. If no trusted official, verified third-party index, regulation mirror, or verified cache is available, upgrade-package features are marked missing/unavailable; they are never fabricated.
 
+## Tyre Compounds And Strategy Evidence
+
+FIA Pirelli Preview/Competition Notes documents can provide the three nominated dry compounds for an event. PitWall maps them per event only: the lowest C-number is Hard, the middle C-number is Medium, and the highest C-number is Soft. If the document is missing, malformed, or not yet parsed, no C-number identity is shown.
+
+The generated contract exposes this under:
+
+- `latest.strategy.compound_mapping`
+- `latest.strategy.predicted_strategy`
+- `latest.strategy.safety_car_window`
+
+`predicted_strategy.status=data_derived` means cached same-circuit pit-stop history was available. `heuristic_fallback` means the system fell back to track tyre-stress/overtaking/weather heuristics and labels that state in the UI. Safety-car windows require enough same-circuit cached race-control history; otherwise they report `thin_data`.
+
 ## Link Checks
 
 Offline route/link validation:

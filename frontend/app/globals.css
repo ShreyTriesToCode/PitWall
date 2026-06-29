@@ -704,6 +704,55 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   line-height: 1.45;
 }
 .metric-card:hover, .metric:hover { border-color: var(--line2); background: rgba(255,218,212,.06); }
+.strategy-timeline-panel {
+  overflow: hidden;
+}
+.strategy-timeline {
+  display: flex;
+  gap: 6px;
+  align-items: stretch;
+  min-height: 84px;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+.strategy-stint {
+  min-width: 120px;
+  display: grid;
+  gap: 4px;
+  align-content: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,218,212,.055);
+}
+.strategy-stint span,
+.strategy-stint small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.strategy-stint strong {
+  font-size: 15px;
+  line-height: 1.2;
+}
+.strategy-stint.soft { border-color: rgba(225,6,0,.35); }
+.strategy-stint.medium { border-color: rgba(247,183,49,.35); }
+.strategy-stint.hard { border-color: rgba(255,255,255,.24); }
+.strategy-stint.intermediate { border-color: rgba(71,239,218,.35); }
+.strategy-stint.wet { border-color: rgba(116,170,255,.35); }
+.strategy-window-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+.strategy-window-list strong,
+.strategy-window-list span {
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  background: rgba(26,9,7,.45);
+  font-size: 12px;
+}
+.strategy-window-list strong { color: var(--cyan); }
 .prediction-overview .metric-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .prediction-overview .metric:first-child { grid-column: span 2; }
 .prediction-overview .metric:first-child strong {

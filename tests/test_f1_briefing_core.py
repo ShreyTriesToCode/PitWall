@@ -379,6 +379,61 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'true' }}", workflow)
         self.assertIn("FIA_DOCUMENTS_ENABLED: \"true\"", workflow)
 
+    def test_fia_pirelli_preview_extracts_event_relative_compounds(self):
+        text = """
+        Compound
+        C4
+        C3
+        C5
+        Q3 tyre
+        C5
+        Mandatory race tyres
+        C3
+        C4
+        """
+        mapping = f1.extract_fia_tyre_compound_nomination(
+            text,
+            {"title": "Competition Notes - Pirelli Preview", "source_url": "https://www.fia.com/pirelli.pdf"},
+        )
+
+        self.assertEqual(mapping["status"], "available")
+        self.assertEqual(mapping["mapping"], {"hard": "C3", "medium": "C4", "soft": "C5"})
+        self.assertEqual(mapping["source"]["source_url"], "https://www.fia.com/pirelli.pdf")
+
+    def test_fia_pirelli_preview_missing_compounds_does_not_default(self):
+        mapping = f1.extract_fia_tyre_compound_nomination("Compound C3 Mandatory race tyres C3", {"title": "Pirelli Preview"})
+
+        self.assertEqual(mapping["status"], "unavailable")
+        self.assertIn("expected_exactly_three", mapping["reason"])
+
+    def test_tyre_compound_code_uses_event_mapping_for_c_numbers_only_when_available(self):
+        mapping = f1.extract_fia_tyre_compound_nomination("Compound C2 C3 C4 Q3 tyre C4", {"title": "Pirelli Preview"})
+
+        self.assertEqual(f1.tyre_compound_code("C2", mapping), 3)
+        self.assertEqual(f1.tyre_compound_code("C4", mapping), 1)
+        self.assertEqual(f1.tyre_compound_code("C2"), 0)
+        self.assertEqual(f1.tyre_compound_code("SOFT"), 1)
+
+    def test_load_fia_tyre_mapping_reuses_cached_text_when_parsed_json_is_legacy(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache_dir = Path(tmp)
+            parsed_dir = cache_dir / "2026" / "austrian-grand-prix" / "parsed"
+            text_dir = cache_dir / "2026" / "austrian-grand-prix" / "text"
+            parsed_dir.mkdir(parents=True)
+            text_dir.mkdir(parents=True)
+            (parsed_dir / "doc-3-pirelli.json").write_text(json.dumps({
+                "document_id": "doc-3",
+                "document_type": "pirelli_preview",
+                "source_url": "https://www.fia.com/austria-pirelli.pdf",
+            }), encoding="utf-8")
+            (text_dir / "doc-3-pirelli.txt").write_text("Compound C4 C3 C5 Q3 tyre C5", encoding="utf-8")
+            with patch.object(f1, "FIA_DOCUMENT_CACHE_DIR", cache_dir):
+                mapping = f1.load_fia_tyre_compound_mapping(2026, "austrian-grand-prix")
+
+        self.assertEqual(mapping["status"], "available")
+        self.assertEqual(mapping["mapping"]["hard"], "C3")
+        self.assertEqual(mapping["mapping"]["soft"], "C5")
+
     def test_jolpica_cache_hit_does_not_sleep_or_fetch_network(self):
         with tempfile.TemporaryDirectory() as tmp:
             cache_dir = Path(tmp)

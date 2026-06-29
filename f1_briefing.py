@@ -1521,6 +1521,49 @@ def fetch_fia_document_text(document, text_path, parsed_path, pdf_path):
     )
 
 
+def extract_fia_tyre_compound_nomination(text, document=None):
+    document = document or {}
+    source = {
+        "document_id": document.get("document_id"),
+        "document_title": document.get("title"),
+        "source_url": document.get("source_url"),
+        "source_authority": document.get("source_authority"),
+        "source_status": document.get("source_status"),
+    }
+    normalized = re.sub(r"\s+", " ", str(text or "").replace("\xa0", " ")).strip()
+    if not normalized:
+        return {
+            "status": "unavailable",
+            "reason": "empty_fia_tyre_document_text",
+            "source": source,
+        }
+
+    def c_numbers(fragment):
+        numbers = []
+        for match in re.finditer(r"\bC([1-5])\b", fragment.upper()):
+            number = int(match.group(1))
+            if number not in numbers:
+                numbers.append(number)
+        return numbers
+
+    candidates = c_numbers(normalized)
+    if len(candidates) != 3:
+        for pattern in [
+            r"Compound\s+(.*?)\s+Q3 tyre",
+            r"Compound\s+(.*?)\s+Mandatory race tyres",
+            r"Compounds?\s+(.*?)\s+Prescriptions",
+        ]:
+            match = re.search(pattern, normalized, flags=re.I)
+            if match:
+                candidates = c_numbers(match.group(1))
+                if len(candidates) == 3:
+                    break
+    mapping = pitwall_strategy.compound_mapping_from_nomination([f"C{number}" for number in candidates], source=source)
+    if mapping.get("status") != "available":
+        mapping["reason"] = mapping.get("reason") or "fia_tyre_nomination_parse_failed"
+    return mapping
+
+
 def parse_fia_document_text(document, text):
     doc_type = document.get("document_type") or classify_fia_document_type(document.get("title"))
     parsed = {
@@ -1548,6 +1591,11 @@ def parse_fia_document_text(document, text):
     if doc_type in {"deleted_lap_times", "infringement", "summons", "decision", "unsafe_release", "impeding", "parc_ferme"}:
         parsed["infringements"] = extract_infringement_features(text)
         parsed["confidence"] = 0.78
+    if doc_type in {"pirelli_preview", "competition_notes"} or "pirelli" in str(document.get("title") or "").lower():
+        nomination = extract_fia_tyre_compound_nomination(text, document)
+        parsed["tyre_compound_nomination"] = nomination
+        if nomination.get("status") == "available":
+            parsed["confidence"] = max(safe_float(parsed.get("confidence")) or 0.55, 0.85)
     return parsed
 
 
@@ -1658,6 +1706,59 @@ def refresh_fia_documents_for_season(season, registry=None, refresh=False):
         atomic_write_json(path, index_payload, indent=2, ensure_ascii=False)
     _FIA_REFRESHED_SEASONS.add(season)
     return index_payload
+
+
+def load_fia_tyre_compound_mapping(season, event_slug):
+    parsed_dir = FIA_DOCUMENT_CACHE_DIR / str(season) / str(event_slug or "season") / "parsed"
+    text_dir = parsed_dir.parent / "text"
+    if not parsed_dir.exists():
+        return {
+            "status": "unavailable",
+            "reason": "fia_pirelli_preview_not_cached_for_event",
+        }
+    unavailable = []
+    for parsed_path in sorted(parsed_dir.glob("*.json")):
+        try:
+            parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
+        except Exception as error:
+            unavailable.append(f"{parsed_path.name}: {error}")
+            continue
+        doc_type = str(parsed.get("document_type") or "").lower()
+        raw_source = str(parsed.get("source_url") or "")
+        title = str(parsed.get("document_title") or parsed.get("title") or raw_source)
+        relevant = doc_type in {"pirelli_preview", "competition_notes"} or "pirelli" in title.lower() or "pirelli" in raw_source.lower()
+        if not relevant:
+            continue
+        nomination = parsed.get("tyre_compound_nomination")
+        if isinstance(nomination, dict) and nomination.get("status") == "available":
+            return nomination
+        text_path = text_dir / f"{parsed_path.stem}.txt"
+        text = ""
+        if text_path.exists():
+            try:
+                text = text_path.read_text(encoding="utf-8")
+            except Exception as error:
+                unavailable.append(f"{text_path.name}: {error}")
+        if not text:
+            text = parsed.get("raw_text_excerpt") or ""
+        nomination = extract_fia_tyre_compound_nomination(
+            text,
+            {
+                "document_id": parsed.get("document_id"),
+                "title": title,
+                "source_url": parsed.get("source_url"),
+                "source_authority": parsed.get("source_authority"),
+                "source_status": parsed.get("source_status"),
+            },
+        )
+        if nomination.get("status") == "available":
+            return nomination
+        unavailable.append(nomination.get("reason") or "fia_tyre_nomination_unavailable")
+    return {
+        "status": "unavailable",
+        "reason": "fia_pirelli_preview_not_found_or_unparseable",
+        "warnings": unavailable[:8],
+    }
 
 
 def extract_fia_classification_rows(text):
@@ -2132,8 +2233,8 @@ def probability_from_score(score, low=1.0, high=18.0):
     return pitwall_simulation.probability_from_score(score, low=low, high=high)
 
 
-def strategy_profile_for_row(row, profile=None, weather=None):
-    return pitwall_strategy.strategy_profile_for_row(row, profile, weather)
+def strategy_profile_for_row(row, profile=None, weather=None, compound_mapping=None):
+    return pitwall_strategy.strategy_profile_for_row(row, profile, weather, compound_mapping)
 
 
 def detect_strategy_context_annotations(strategy_context=None, weather_context=None):
@@ -3185,8 +3286,12 @@ def pit_metrics_from_data(data):
     return out
 
 
-def tyre_compound_code(compound):
-    value = str(compound or "").strip().lower()
+def tyre_compound_code(compound, compound_mapping=None):
+    role = pitwall_strategy.compound_role_for_value(compound, compound_mapping)
+    if role:
+        value = role
+    else:
+        value = str(compound or "").strip().lower()
     mapping = {
         "soft": 1,
         "medium": 2,
@@ -8072,7 +8177,7 @@ def save_run_status(status, details):
     return path
 
 
-def build_strategy_contract(profile, weather, top10=None, prediction_model=None):
+def build_strategy_contract(profile, weather, top10=None, prediction_model=None, compound_mapping=None, historical_records=None):
     top10 = top10 or []
     prediction_model = prediction_model or {}
     rain_score = safe_float(weather.get("rain_score")) or text_level(weather.get("rain"))
@@ -8080,6 +8185,14 @@ def build_strategy_contract(profile, weather, top10=None, prediction_model=None)
     tyre_score = text_level(profile.get("tyre_stress"))
     overtaking_score = text_level(profile.get("overtaking"))
     chaos = weighted_average([(rain_score, 0.30), (safety_score, 0.30), (tyre_score, 0.25), (100 - overtaking_score, 0.15)]) or 50
+    predicted_strategy = pitwall_strategy.simulate_multi_stint_strategy(
+        profile,
+        weather,
+        top10,
+        compound_mapping=compound_mapping,
+        historical_records=historical_records,
+    )
+    safety_car_window = pitwall_strategy.safety_car_window_from_history(historical_records)
     return {
         "risk_meter": round(clamp(chaos, 0, 100, 50), 2),
         "strategy_chaos_score": round(clamp(chaos, 0, 100, 50), 2),
@@ -8103,6 +8216,9 @@ def build_strategy_contract(profile, weather, top10=None, prediction_model=None)
         ], key=lambda x: x.get("score") or 0, reverse=True)[:8],
         "rain_beneficiaries": (prediction_model.get("scenarios") or {}).get("rain", {}).get("top10", [])[:5],
         "safety_car_beneficiaries": (prediction_model.get("scenarios") or {}).get("safety_car", {}).get("top10", [])[:5],
+        "predicted_strategy": predicted_strategy,
+        "safety_car_window": safety_car_window,
+        "compound_mapping": compound_mapping if compound_mapping and compound_mapping.get("status") == "available" else None,
         "active_aero": {
             "straight_mode": "low-drag straight configuration",
             "corner_mode": "high-downforce corner configuration",
@@ -8283,7 +8399,7 @@ def save_model_input_snapshot(prediction_id, payload, input_data_hash):
     return path
 
 
-def update_index(event, race, profile, weather, markdown_path, title, top10, team_fit, prediction_model, upgrade_context, regulation_context, calendar_context, full_grid=None):
+def update_index(event, race, profile, weather, markdown_path, title, top10, team_fit, prediction_model, upgrade_context, regulation_context, calendar_context, full_grid=None, historical_records=None):
     index_path = BRIEFINGS_DIR / "index.json"
     season = safe_int(race.get("season")) or event["start"].year
     round_no = safe_int(race.get("round")) or 0
@@ -8317,6 +8433,15 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
         item.setdefault("input_data_hash", input_data_hash)
         item.setdefault("prediction_data_version", PREDICTION_DATA_VERSION)
     actual_result = actual_result_from_race(race)
+    tyre_compound_mapping = load_fia_tyre_compound_mapping(season, make_slug(race.get("raceName") or title))
+    strategy_contract = build_strategy_contract(
+        profile,
+        weather,
+        top10,
+        prediction_model,
+        compound_mapping=tyre_compound_mapping if tyre_compound_mapping.get("status") == "available" else None,
+        historical_records=historical_records or [],
+    )
     entry = {
         "title": title,
         "path": str(markdown_path.relative_to(BASE_DIR)).replace("\\", "/"),
@@ -8361,7 +8486,8 @@ def update_index(event, race, profile, weather, markdown_path, title, top10, tea
         "full_grid": full_grid,
         "all_predictions": full_grid,
         "prediction_model": prediction_model,
-        "strategy": build_strategy_contract(profile, weather, top10, prediction_model),
+        "strategy": strategy_contract,
+        "tyre_compound_mapping": tyre_compound_mapping,
         "source_health": source_health,
         "source_status": source_health,
         "scenarios": prediction_model.get("scenarios") or scenario_rankings(top10, profile, weather),
@@ -9942,6 +10068,7 @@ def build_single_output_payload(event, bundle):
         "profile": profile,
         "weather": weather,
         "historical_weather": historical_weather,
+        "historical_records": historical_records,
         "top10_text": top10_text,
         "top10": top10,
         "full_grid": full_grid,
@@ -10108,6 +10235,7 @@ def run(force_retrain=False):
         primary["regulation_context"],
         primary["calendar_context"],
         primary.get("full_grid"),
+        primary.get("historical_records"),
     )
 
     generated_targets = ", ".join(f"{payload['target_type']}={payload['event']['title']}" for payload in payloads)

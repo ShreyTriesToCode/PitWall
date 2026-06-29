@@ -114,3 +114,11 @@ Known limitation: the model remains probabilistic and can be wrong because racin
 - Wayback is configured only as a stale season-index fallback before verified cache. It is not treated as live official data and must preserve `source_authority=wayback_snapshot`.
 - F1LivePulse remains disabled by default because the public URL currently resolves to a feature page rather than a verified, machine-parseable FIA document index.
 - Verified cache remains the last data-bearing fallback; it may feed model features only with stale/cache metadata. No unavailable FIA document is synthesized.
+
+## 2026-06-29 Strategy And Tyre Evidence
+
+- FIA Pirelli Preview/Competition Notes documents now produce event-specific dry-compound mappings only when exactly three slick compounds are found. The model and UI do not infer a C-number mapping from circuit history or general tyre knowledge.
+- `tyre_compound_code()` accepts event-specific FIA mappings for C-number compounds while preserving existing relative `SOFT`/`MEDIUM`/`HARD` labels from timing/stint feeds. A C-number without a verified mapping encodes as unknown.
+- Strategy output now includes `predicted_strategy` with stint sequence, lap ranges, basis, confidence, pit-duration sample count, and degradation sample status. When cached same-circuit pit data is thin, the status is `heuristic_fallback` and the basis says so explicitly.
+- Safety-car windows are derived from cached race-control history by lap bucket only when enough same-circuit races are available. Otherwise the output is `thin_data`, not a fabricated probability window.
+- The `/strategy` page now shows the stint plan and FIA compound source attribution only when the backend contract contains verified mapping data. Missing FIA tyre documents intentionally render no C-number identity field.

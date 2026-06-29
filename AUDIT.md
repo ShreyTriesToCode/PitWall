@@ -102,3 +102,13 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - UPDATED: F1LivePulse is disabled by default until a stable machine-parseable FIA document feed is verified.
 - VERIFIED: Live probe on 2026-06-29 returned `www.fia.com=403`, `api.fia.com=200`, Wayback availability `200` with a snapshot URL, and F1LivePulse redirecting to a feature page.
 - VERIFIED: `fetch_fia_season_index(2026, refresh=True)` returned `status=available`, `source_authority=official_fia_archive_api`, `source_status=official_secondary_live`, and `documents=131`.
+
+## 2026-06-29 FIA Tyres And Strategy Timeline
+
+- ADDED: FIA Pirelli Preview/Competition Notes parsing for exactly three nominated slick compounds. The mapping is event-relative: lowest C-number is Hard, middle is Medium, highest is Soft.
+- FIXED: C-number tyre handling no longer assumes a global compound identity. `C2` without a verified event mapping remains unknown; relative `SOFT`/`MEDIUM`/`HARD` labels continue to work.
+- ADDED: cache-aware FIA tyre mapping lookup from `data_cache/fia-documents/<season>/<event>/text|parsed`, including compatibility for older parsed JSON that lacks the new `tyre_compound_nomination` field.
+- ADDED: `predicted_strategy` contract output with stint sequence, lap ranges, mandatory two-dry-compound rule status, pit-duration basis, degradation basis, and explicit `data_derived` vs `heuristic_fallback` state.
+- ADDED: same-circuit safety-car/VSC/red-flag lap-window aggregation from cached race-control rows. Thin history reports `thin_data` instead of presenting a fragile window as robust.
+- UPDATED: `/strategy` now renders a compact stint timeline, safety-car window notes, and FIA compound source attribution only when the FIA mapping is available.
+- VERIFIED: Unit tests cover C2/C3/C4 and C3/C4/C5 mapping direction, missing/malformed nominations, strategy mandatory-compound enforcement, safety-car buckets, thin-data state, and legacy parsed-cache reuse.
