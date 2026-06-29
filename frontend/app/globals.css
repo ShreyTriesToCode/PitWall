@@ -444,8 +444,8 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
 .transition-car {
   position: relative;
   z-index: 1;
-  width: min(610px, 86vw);
-  margin: 3px 0 -4px;
+  width: min(760px, 88vw);
+  margin: 0 0 -2px;
   transform: translateX(-120vw);
   animation: carLaunch 1.28s cubic-bezier(.15,.8,.2,1) .18s both;
   filter: drop-shadow(0 18px 24px rgba(0,0,0,.54)) drop-shadow(0 0 20px color-mix(in srgb, var(--car-accent), transparent 42%));
@@ -465,8 +465,8 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   content: "";
   position: absolute;
   z-index: 0;
-  left: 3%;
-  right: 2%;
+  left: 6%;
+  right: 6%;
   bottom: 3%;
   height: 18px;
   border-top: 2px solid rgba(255,255,255,.22);
@@ -484,7 +484,7 @@ button, a, input, select, textarea { transition: border-color .18s ease, backgro
   z-index: 2;
   display: block;
   width: 100%;
-  height: auto;
+  height: min(28vh, 230px);
   object-fit: contain;
 }
 .race-hero {
