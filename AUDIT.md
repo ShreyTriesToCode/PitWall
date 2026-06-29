@@ -137,3 +137,8 @@ Remaining limitation: feature-building logic is still duplicated between histori
 - UPDATED: The start/loading transition now uses the real Formula1.com 2026 team car renders again, matching the earlier visual behavior. The owned PitWall SVG remains only as an error fallback when a remote car render cannot load.
 - FIXED: `fastf1_cache/`, `data_cache/full_races/`, and `models/saved_models/` were untracked with `git rm --cached` while preserving the local files on disk. `git ls-files` now reports 0 tracked paths under those reproducible cache/model directories.
 - VERIFIED: Cache untracking is accepted by `scripts/check_artifact_sizes.py`; staged deletions of ignored cache files are not treated as newly staged forbidden cache artifacts.
+
+## 2026-06-29 Fresh-Clone Actual-Result Test Fix
+
+- FIXED: The actual-result comparison regression test no longer depends on `data_cache/full_races/2026-5.json.gz` or `2026-6.json.gz` being tracked in git. It now seeds trusted Jolpica-shaped synthetic cache fixtures through `read_full_race_cache`, preserving the actual-result comparison coverage without requiring reproducible cache files in a fresh CI checkout.
+- VERIFIED: The backend CI failure `test_actual_result_comparison_uses_cached_completed_race_results` is reproduced by the missing tracked cache and passes after the fixture change; full backend and frontend validation also pass locally.

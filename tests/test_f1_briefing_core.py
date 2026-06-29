@@ -1111,33 +1111,61 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("corrections", corrections)
 
     def test_actual_result_comparison_uses_cached_completed_race_results(self):
-        monaco_actual = f1.actual_result_from_cached_round(2026, 6, "race")
-        canada_actual = f1.actual_result_from_cached_round(2026, 5, "race")
-        self.assertIsNotNone(monaco_actual)
-        self.assertIsNotNone(canada_actual)
-        self.assertEqual(monaco_actual["winner"]["driver_id"], monaco_actual["classification"][0]["driver_id"])
-        self.assertEqual(canada_actual["winner"]["driver_id"], canada_actual["classification"][0]["driver_id"])
-        self.assertGreaterEqual(len(monaco_actual["classification"]), 20)
-        self.assertGreaterEqual(len(canada_actual["classification"]), 20)
+        def cached_round(seed):
+            results = []
+            for idx in range(1, 23):
+                results.append({
+                    "positionOrder": str(idx),
+                    "position": str(idx),
+                    "points": str(max(0, 26 - idx)),
+                    "status": "Finished",
+                    "Driver": {
+                        "driverId": f"{seed}_driver_{idx:02d}",
+                        "givenName": f"{seed.title()}",
+                        "familyName": f"Driver {idx:02d}",
+                    },
+                    "Constructor": {"name": f"Fixture Team {((idx - 1) // 2) + 1}"},
+                })
+            return {
+                "source": "jolpica_api",
+                "status": "final_results_available",
+                "data": {"results": [{"Results": results}]},
+            }
+
+        cached_results = {
+            6: cached_round("round6"),
+            5: cached_round("round5"),
+        }
+
+        with patch.object(f1, "read_full_race_cache", side_effect=lambda _season, round_no: cached_results.get(int(round_no))):
+            round6_actual = f1.actual_result_from_cached_round(2026, 6, "race")
+            round5_actual = f1.actual_result_from_cached_round(2026, 5, "race")
+
+        self.assertIsNotNone(round6_actual)
+        self.assertIsNotNone(round5_actual)
+        self.assertEqual(round6_actual["winner"]["driver_id"], round6_actual["classification"][0]["driver_id"])
+        self.assertEqual(round5_actual["winner"]["driver_id"], round5_actual["classification"][0]["driver_id"])
+        self.assertGreaterEqual(len(round6_actual["classification"]), 20)
+        self.assertGreaterEqual(len(round5_actual["classification"]), 20)
 
         comparison = f1.actual_result_comparison_for_entry(
             {
                 "season": 2026,
                 "round": 6,
                 "target_type": "race",
-                "race_name": "Monaco Grand Prix",
-                "actual_result": monaco_actual,
+                "race_name": "Fixture Grand Prix",
+                "actual_result": round6_actual,
             },
             [{
-                "driver_id": monaco_actual["winner"]["driver_id"],
-                "name": monaco_actual["winner"]["name"],
+                "driver_id": round6_actual["winner"]["driver_id"],
+                "name": round6_actual["winner"]["name"],
                 "rank": 1,
                 "predicted_position": 1,
             }],
         )
         self.assertEqual(comparison["status"], "available")
         self.assertTrue(comparison["winner_hit"])
-        self.assertEqual(comparison["actual_winner"]["driver_id"], monaco_actual["winner"]["driver_id"])
+        self.assertEqual(comparison["actual_winner"]["driver_id"], round6_actual["winner"]["driver_id"])
 
     def test_empty_completed_refresh_preserves_existing_final_cache(self):
         with tempfile.TemporaryDirectory() as tmp:
