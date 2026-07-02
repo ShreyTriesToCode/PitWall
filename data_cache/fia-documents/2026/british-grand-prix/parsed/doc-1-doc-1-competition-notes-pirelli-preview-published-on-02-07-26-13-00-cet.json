@@ -1,0 +1,39 @@
+{
+  "document_id": "22284e3f5239cf1e",
+  "document_type": "pirelli_preview",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-02T19:28:04.211630+05:30",
+  "confidence": 0.85,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 1\nDate 02 July 2026\nTime 09:37\nTitle Competition Notes - Pirelli Preview\nDescription Pirelli Preview - Issue A\nEnclosed 26R09SLV Preview - Issue A.pdf\nRui Marques\n\nPstartf:\nPstartr:\nT:\nTeams are kindly reminded that the following will be subject to FIA checks during the event:\n•  Starting pressures\n•  Cold pressures (according to the cold pressure cooling curves)\n•  Re-heat pressures\n•  EOS Camber\n•  Maximum tyre temperatures and times in blankets\n•  Tyre swapping\n• Not permitted to switch tyres from their originally allocated position.\n• Do not subject tyres to large deformation or heavy impact.\n• Do not leave fitted tyres exposed at an air temperature lower than 10°C and/or any excessive UV emission.\n• Revised prescriptions could be issued during the race weekend in accordance with FIA-F1-DOC-062.\n• Cut-off time for fitting tyres at an event on sunday morning: 4 hours prior to the race start\n• Heating time temperature limits apply to the actual tyre surface temperature measured with the IR gun as detailed in the FIA-F1-DOC-062.\n• BLAN",
+  "tyre_compound_nomination": {
+    "status": "available",
+    "nominated_compounds": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "mapping": {
+      "hard": "C1",
+      "medium": "C2",
+      "soft": "C3"
+    },
+    "reverse_mapping": {
+      "C1": "hard",
+      "C2": "medium",
+      "C3": "soft"
+    },
+    "rule": "lowest_C_number_is_hard_middle_is_medium_highest_is_soft_for_this_event",
+    "source": {
+      "document_id": "22284e3f5239cf1e",
+      "document_title": "Doc 1 - Competition Notes - Pirelli Preview Published on 02.07.26 13:00 CET",
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
+      "source_authority": "official_fia",
+      "source_status": "official_live"
+    }
+  }
+}
