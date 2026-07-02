@@ -1,0 +1,13 @@
+{
+  "document_id": "51418d80cb8a0375",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-03T00:53:28.539986+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 7\nDate 02 July 2026\nTime 19:00\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R09_Great_Britain_Power_Unit_Information_V02.pdf\nRui Marques\n\nROUND No. R09\nVENUE Silverstone\nCENTRELINE 5.891 km\nFORMAT Alternative\nDATE 03-05 July\nOvertake not active Overtake active\n8.0 MJ 8.5 MJ 6.5 MJ 8.5 MJ 8.5 MJ 3833 m 50 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT1-T4\nT15-T16\n350-1000\n4950-5450\nT1-T4\nT6-T7\nT15-T16\n[Exit T17]\n350-1000\n1950-2100\n4950-5200\n[5550-5750]\n350kW\n350kW\n350kW\n[350kW]\nExit T1\nExit T9\n[Exit T17-T18]\n400-550\n3000-3300\n[5650-5900]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n5560 m (TBC) 5631 m\nL25 L26\nArticle C5.2.8\nMaximum DC pow"
+}
