@@ -1,0 +1,26 @@
+{
+  "document_id": "0a2227ca429834e5",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_failing_to_follow_race_directors_instructions_sc2-sc1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-04T00:50:34.045961+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 29 Date 03 July 2026 Time 19:47 The Stewards, having received a report from the Race Director, summoned (document 20) and heard from the driver and team representative, have considere",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 29\nDate 03 July 2026\nTime 19:47\nThe Stewards, having received a report from the Race Director, summoned (document 20) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 16:39\nSession Sprint Qualifying\nFact Car 23 exceeded the time limit between the Saftey Car lines.\nInfringement Breach of Article 12.2.1.i of the FIA International Sporting Code and non-compliance\nwith Race Director’s Competition Notes (Item 1, Document 5) in combination with\nDocument 17.\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 23 (Alexander Albon), the team\nrepresentative and reviewed positioning/marshalling system data, video, timing,\ntelemetry, team radio and in-car video evidence.\nCar 23 exceeded the maximum time between Safety Car Line 2 and Safety Car Line\n1 during SQ1 by 4.6 seconds on a cool down lap.\nThe driver explained that Silverstone is particularly demanding in terms of energy\nharvesting and that, on this lap, the "
+}

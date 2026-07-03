@@ -1,0 +1,25 @@
+{
+  "document_id": "d3ddbcbcd8517087",
+  "document_type": "competition_notes",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_competition_notes_-_red_zone_v2.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-04T00:50:46.412643+05:30",
+  "confidence": 0.55,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 22\nDate 03 July 2026\nTime 17:44\nTitle Red Zone V2\nDescription Red Zone V2\nEnclosed 2026 Formula 1 British Grand Prix - Red Zones Map - updated.pdf\nRui Marques\n\nOfficial Formula 1™ Media Kit\nSilverstone Circuit, Northamptonshire NN12 8TN United Kingdom\nTel: 0844 3728 200\nwww.silverstone.co.uk\nThe F1 logo, FORMULA 1, F1, FIA FORMULA ONE WORLD CHAMPIONSHIP, BRITISH GRAND PRIX and \nrelated marks are trade marks of Formula One Licensing BV, a Formula 1 company. All rights reserved\nRED ZONES MAP\nSTOWE\nCORNER\n VALE\nCHAPEL CURVE\n   HANGAR\nSTRAIGHT\nWELLINGTON\n    STRAIGHT\nAINTREE\nCORNER\nTHE LOOP\nVILLAGE \nCORNER\nFARM CURVE\nHAMILTON \nSTRAIGHT\nBROOKLANDS CORNER \nNATIONAL PITS STRAIGHT\nLUFFIELD \nCORNER\nWOODCOTE \nCORNER\nCOPSE \nCORNER\nMAGGOTTS \nCORNER\nBECKETTS\nCORNER\nCLUB \nCORNER\nABBEY\nINTERNATIONAL\nMEDIA CENTRE\nB\nB\nB\nB\nB\nT\nT\nBunker\nTower\nBUS\nRED ZONES\nPirelli British Grand Prix 2026\nSilverstone 03-05 July\nFORMULA 1/registered.ss01 PIRELLI BRITISH GRAND PRIX 2026\nSILVERSTONE 03-05 JULY\nALL PHOTOGRAPHERS \nTO REMAIN BEHIND THE \nDEBRIS FENCE.STRICTLY \nNO",
+  "tyre_compound_nomination": {
+    "status": "unavailable",
+    "reason": "expected_exactly_three_fia_slick_compounds",
+    "nominated_compounds": [],
+    "source": {
+      "document_id": "d3ddbcbcd8517087",
+      "document_title": "Doc 22 - Competition Notes - Red Zone V2 Published on 03.07.26 18:45 CET",
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_competition_notes_-_red_zone_v2.pdf",
+      "source_authority": "official_fia",
+      "source_status": "official_live"
+    }
+  }
+}

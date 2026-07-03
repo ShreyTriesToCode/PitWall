@@ -1,12 +1,12 @@
 # PitWall Run Report
 
-- Generated at: 2026-07-03T14:04:19.677332+00:00
+- Generated at: 2026-07-03T19:25:05.309531+00:00
 - Model version: 2026.06-strategy-actuals-v7
-- Target event/session: British Grand Prix / race
+- Target event/session: British Grand Prix / sprint
 - Top 10 availability: 10 rows
 - Full grid availability: 22 rows
 - Contract validation: passed
-- Event trust: 42.5
+- Event trust: 41.98
 - Source health: Fallback / 70.27
 - Source conflicts: 2
 - Major model disagreements: 8
@@ -19,8 +19,8 @@
   "ok": true,
   "schema_version": "2026.06-strategy-actuals-v7",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "briefing_count": 11,
-  "debug_payload_count": 2,
+  "briefing_count": 12,
+  "debug_payload_count": 1,
   "model_version": "2026.06-strategy-actuals-v7",
   "latest_top10_count": 10,
   "latest_full_grid_count": 22,

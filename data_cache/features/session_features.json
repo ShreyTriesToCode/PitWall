@@ -1,6 +1,121 @@
 [
   {
     "race_id": "2026-9-british-grand-prix",
+    "target_type": "sprint",
+    "stage": "post_fp1",
+    "start_iso": "2026-07-04T16:30:00+05:30",
+    "source_health": {
+      "generated_at": "2026-07-04T00:54:56.568654+05:30",
+      "overall_score": 70.27,
+      "status": "Fallback",
+      "sources": [
+        {
+          "source": "F1 timing/static feed",
+          "score": 88.0,
+          "status": "Available"
+        },
+        {
+          "source": "Jolpica",
+          "score": 62.0,
+          "status": "Fallback"
+        },
+        {
+          "source": "OpenF1",
+          "score": 70.0,
+          "status": "Fallback"
+        },
+        {
+          "source": "FastF1",
+          "score": 78.0,
+          "status": "Available"
+        },
+        {
+          "source": "Open-Meteo",
+          "score": 76.0,
+          "status": "Available"
+        },
+        {
+          "source": "FIA/F1 upgrade/regulation sources",
+          "score": 74.0,
+          "status": "Fallback"
+        },
+        {
+          "source": "Local cache",
+          "score": 92.0,
+          "status": "Available"
+        },
+        {
+          "source": "Model bundle",
+          "score": 86.0,
+          "status": "Available"
+        },
+        {
+          "source": "Calendar",
+          "score": 82.0,
+          "status": "Available"
+        },
+        {
+          "source": "F1DB historical dataset",
+          "score": 35.0,
+          "status": "Stale"
+        },
+        {
+          "source": "RelBench rel-f1 benchmark",
+          "score": 30.0,
+          "status": "Stale"
+        }
+      ],
+      "api_notes": {
+        "openf1": {
+          "status": "not_checked",
+          "auth_required": false,
+          "errors": []
+        },
+        "f1db": {
+          "source_name": "F1DB",
+          "source_type": "historical_dataset",
+          "enabled": false,
+          "available": false,
+          "status": "disabled",
+          "confidence": 0.35,
+          "license": "CC-BY-4.0",
+          "version": "v2026.4.2",
+          "source_url": "https://github.com/f1db/f1db",
+          "schema_url": null,
+          "artifact_path": null,
+          "checked_at": "2026-07-03T19:24:56.568463+00:00",
+          "errors": [],
+          "warnings": [
+            "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
+          ],
+          "supported_categories": [],
+          "notes": {}
+        },
+        "relbench_f1": {
+          "source_name": "RelBench rel-f1",
+          "source_type": "offline_relational_benchmark",
+          "enabled": false,
+          "available": false,
+          "status": "disabled",
+          "confidence": 0.3,
+          "license": "CC-BY-4.0",
+          "version": null,
+          "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
+          "schema_url": null,
+          "artifact_path": null,
+          "checked_at": "2026-07-03T19:24:56.568595+00:00",
+          "errors": [],
+          "warnings": [
+            "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
+          ],
+          "supported_categories": [],
+          "notes": {}
+        }
+      }
+    }
+  },
+  {
+    "race_id": "2026-9-british-grand-prix",
     "target_type": "race",
     "stage": "pre_weekend",
     "start_iso": "2026-07-04T16:30:00+05:30",

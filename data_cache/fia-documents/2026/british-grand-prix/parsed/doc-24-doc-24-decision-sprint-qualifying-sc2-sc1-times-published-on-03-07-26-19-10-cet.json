@@ -1,0 +1,26 @@
+{
+  "document_id": "ce4e66c9b0dcf5ca",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_decision_-_sprint_qualifying_sc2-sc1_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-04T00:50:42.415630+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 24 Date 03 July 2026 Time 18:10 Title Decision - Sprint Qualifying SC2-SC1 Times Description Decision - Sprint Qualifying SC2-SC1 Times Enclosed GBR DOC 24 - Sprint Qualifying SC2-SC1 delete",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 24\nDate 03 July 2026\nTime 18:10\nTitle Decision - Sprint Qualifying SC2-SC1 Times\nDescription Decision - Sprint Qualifying SC2-SC1 Times\nEnclosed GBR DOC 24 - Sprint Qualifying SC2-SC1 deleted lap times.pdf\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n\n \n \n2026 BRITISH GRAND PRIX \n03 – 05 July 2026 \n \n    \nFrom The Stewards      Document 24 \n  \nTo All Officials, All Teams      Date  03 July 2026 \n \n        Time  18:10 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Sprint Qualifying \n  \nFact The F1 cars below exceeded the 1:39.0 time limit between the Safety Car lines. \n \nNo. Car Driver Competitor Time of Day Lap Time \n1 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:36:41 L4 (SQ1) \n2 10 Pierre Gasly BWT Alpine F1 Team 16:38:27 L4 (SQ1) \n3 43 Franco Colapinto BWT Alpine F1 Team 16:38:45 L4 (SQ1) \n4 6 Isack Hadjar Oracle Red Bull Racing 16:40:25 L5 (SQ1) \n5 14 Fernando Alonso Aston Martin Aramco F1 Team 16:40:37 L4 (SQ1) \n6 18 Lance Stroll Aston M"
+}
