@@ -1,0 +1,157 @@
+{
+  "document_id": "d43eae4c6913295f",
+  "document_type": "car_presentation_submissions",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-03T14:46:47.688304+05:30",
+  "confidence": 1.0,
+  "classification": [],
+  "upgrades": [
+    {
+      "team": "Red Bull",
+      "component": "bodywork",
+      "components": [
+        "bodywork",
+        "rear corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – British Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on ho",
+      "description": "Car Presentation – British Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner Performance -\nLocal Loa",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – British Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner Performance -\nLocal Load Rear wheel bodywork winglets\nInboard of the rear rims and as part of the rear\nwheel bodywork assembly, the cascade wings have\nbeen revised by changing the number of elements\nto improve the load characteristics and stability.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "cooling",
+        "diffuser_feed",
+        "flow_conditioning",
+        "rear_stability"
+      ]
+    },
+    {
+      "team": "Ferrari",
+      "component": "rear corner",
+      "components": [
+        "rear corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – British Grand Prix\nSCUDERIA FERRARI HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how th",
+      "description": "Car Presentation – British Grand Prix\nSCUDERIA FERRARI HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner\nPerformance -\nLocal Load an",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – British Grand Prix\nSCUDERIA FERRARI HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner\nPerformance -\nLocal Load and\nCooling\nIncreased cooling inlet and outlet sections , updated\nlower deflector, re -optimized rearward winglet\ncluster\nThis update has 2 main objectives: corner cooling via\nincreased inlet/outlet sections, and local loading via\nlower deflector redesign and winglet loading\noptimisation, maximizing aerodynamic efficiency\n",
+      "traits": [
+        "brake_cooling",
+        "diffuser_feed",
+        "rear_stability"
+      ]
+    },
+    {
+      "team": "McLaren",
+      "component": "floor",
+      "components": [
+        "floor",
+        "brake duct",
+        "front corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – British Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on",
+      "description": "Car Presentation – British Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Corner Performance -\nFlow ",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – British Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Corner Performance -\nFlow Conditioning New Front Brake Duct\nA new front brake duct design is introduced at this\nevent, resulting in improved flow conditioning and\ngain in aerodynamic load.\n2 Floor Furniture Performance -\nFlow Conditioning Revised Floor Board and Furniture\nThe floor board and various elements of the floor\nfurniture have been revised, resulting in an\nimprovement of flow physics and gain in overall\nefficiency.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "braking_stability",
+        "downforce",
+        "flow_conditioning",
+        "high_speed_load",
+        "platform_stability",
+        "tyre_management",
+        "tyre_temperature_control",
+        "tyre_wake_control"
+      ]
+    },
+    {
+      "team": "Williams",
+      "component": "front wing",
+      "components": [
+        "front wing"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – British Grand Prix\nWilliams\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update wo",
+      "description": "Car Presentation – British Grand Prix\nWilliams\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Front Wing Performance –\nFlow Conditioning\nA new f",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – British Grand Prix\nWilliams\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Front Wing Performance –\nFlow Conditioning\nA new front wing geometry with updated profiles\nand endplate surfaces.\nAn updated front wing assembly has been\ndeveloped, which aims to generate an increase in\nlocal loading combined with an improved flow field\ninteraction with downstream components.\n",
+      "traits": [
+        "aero_balance",
+        "corner_entry_stability",
+        "downforce",
+        "flow_conditioning",
+        "low_speed_balance"
+      ]
+    },
+    {
+      "team": "Haas",
+      "component": "rear wing",
+      "components": [
+        "rear wing"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – British Grand Prix\n*TGR HAAS F1 TEAM*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the",
+      "description": "Car Presentation – British Grand Prix\n*TGR HAAS F1 TEAM*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Rear Wing Performance -\nLocal Load\nNew R",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – British Grand Prix\n*TGR HAAS F1 TEAM*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Rear Wing Performance -\nLocal Load\nNew Rear Wing profiles The rear wing profiles were comprehensively\nrevised, with particular emphasis placed on the\noptimisation of flap geometry, leading to an\nincrease in aerodynamic load while preserving a\nhigh level of overall efficiency across the operating\nrange.\n2 Rear Wing\nEndplate\nPerformance -\nFlow Conditioning\nRear Wing Endplate with external protrusions The Rear Wing Endplates were refined through the\nintroduction of localized protrusions aimed at\npromoting upwash, contributing to the increase of\nload of this assembly.\n",
+      "traits": [
+        "drag",
+        "drs_efficiency",
+        "local_load",
+        "rear_stability",
+        "straight_line_speed"
+      ]
+    },
+    {
+      "team": "RB F1 Team",
+      "component": "floor edge",
+      "components": [
+        "floor edge",
+        "floor",
+        "diffuser",
+        "rear corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – British Grand Prix\nVisa Cash App Racing Bulls\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on",
+      "description": "Car Presentation – British Grand Prix\nVisa Cash App Racing Bulls\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Floor Edge &\nDiffuser\nPerformanc",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – British Grand Prix\nVisa Cash App Racing Bulls\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Floor Edge &\nDiffuser\nPerformance –\nLocal Load Updated floor corner & diffuser geometry\nThe combined updates optimise the flow around\nthe rear floor, allowing it to generate more load\nand provide increased performance.\n2 Rear Corner Performance –\nFlow Conditioning New forward deflector geometry\nIn combination with the above, the new deflector\ntargets an improvement in local flow conditioning\nand improved floor performance.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "diffuser_feed",
+        "downforce",
+        "high_speed_load",
+        "platform_sensitivity",
+        "platform_stability",
+        "rear_load",
+        "rear_stability",
+        "sealing",
+        "stability",
+        "tyre_management"
+      ]
+    }
+  ],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe FIA Formula 1 Media Delegate\nFrom The FIA Formula 1 Media Delegate\nTo All Teams, All Officials\nDocument 13\nDate 03 July 2026\nTime 09:54\nTitle Car Presentation Submissions\nDescription Car Presentation Submissions\nEnclosed 2026 British Grand Prix - Car Presentation Submissions.pdf\nCameron Kelleher\n\n \nCar Presentation – British Grand Prix \nMcLaren Mastercard F1 Team \n \n  Updated \ncomponent \nPrimary reason \nfor update \nGeometric differences compared to \nprevious version  \nBrief description on how the update works \n(min 20, max 100 words) \n1 Front Corner Performance - \nFlow Conditioning New Front Brake Duct  \nA new front brake duct design is introduced at this \nevent, resulting in improved flow conditioning and \ngain in aerodynamic load. \n2 Floor Furniture Performance - \nFlow Conditioning Revised Floor Board and Furniture \nThe floor board and various elements of the floor \nfurniture have been revised, resulting in an \nimprovement of flow physics and gain in overall \nefficiency. \n \n \n\n \nCar Presentation – 2026 British Grand Prix \nMercedes-AMG PETRONAS F1 Team \n \nNo updates submitted for this event. \n \n \n \n \nCar Presentation – British Grand Pr"
+}

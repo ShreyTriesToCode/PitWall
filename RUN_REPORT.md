@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-07-03T06:48:34.806935+00:00
+- Generated at: 2026-07-03T09:19:43.343836+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: British Grand Prix / race
 - Top 10 availability: 10 rows
@@ -8,7 +8,7 @@
 - Contract validation: passed
 - Event trust: 42.5
 - Source health: Fallback / 70.27
-- Source conflicts: 3
+- Source conflicts: 2
 - Major model disagreements: 8
 - Missing data groups: pit_stop_data, practice_or_lap_pace, qualifying
 
