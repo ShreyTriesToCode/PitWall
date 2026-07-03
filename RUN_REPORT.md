@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-07-03T09:19:43.343836+00:00
+- Generated at: 2026-07-03T14:04:19.677332+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: British Grand Prix / race
 - Top 10 availability: 10 rows
