@@ -1,6 +1,6 @@
 # F1 Sprint Briefing: F1 British GP - Sprint Race
 
-Generated: Saturday, 04 July 2026, 12:54 AM IST
+Generated: Saturday, 04 July 2026, 08:24 AM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Saturday, 04 July 2026, 12:54 AM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 62.3, confidence 16%, car performance; track trait fit; same-circuit history; reliability; official upgrade package impact
-2. Oscar Piastri, score 60.6, confidence 6%, car performance; team-track fit; official upgrade package impact; track trait fit; reliability
-3. Lando Norris, score 59.9, confidence 6%, car performance; team-track fit; official upgrade package impact; track trait fit; same-circuit history
-4. Andrea Kimi Antonelli, score 57.9, confidence 24%, car performance; track trait fit; driver form; team-track fit; constructor form
-5. George Russell, score 57.3, confidence 24%, car performance; track trait fit; team-track fit; constructor form; regulation-era fit
-6. Max Verstappen, score 56.9, confidence 42%, car performance; official upgrade package impact; team-track fit; track trait fit; reliability
-7. Charles Leclerc, score 54.5, confidence 34%, car performance; track trait fit; official upgrade package impact; team-track fit; reliability
-8. Isack Hadjar, score 47.2, confidence 47%, car performance; official upgrade package impact; team-track fit; track trait fit; regulation-era fit
-9. Oliver Bearman, score 43.9, confidence 29%, team strategy gain; official upgrade package impact; reliability; weather adaptation; team-track fit
-10. Arvid Lindblad, score 41.5, confidence 27%, official upgrade package impact; car performance; track trait fit; pit-stop execution; team strategy gain
+1. Lewis Hamilton, score 61.4, confidence 15%, car performance; track trait fit; same-circuit history; official upgrade package impact; team-track fit
+2. Oscar Piastri, score 59.7, confidence 5%, car performance; team-track fit; official upgrade package impact; track trait fit; same-circuit history
+3. Lando Norris, score 58.9, confidence 5%, car performance; team-track fit; official upgrade package impact; track trait fit; same-circuit history
+4. Andrea Kimi Antonelli, score 58.2, confidence 23%, car performance; track trait fit; driver form; team-track fit; constructor form
+5. George Russell, score 57.1, confidence 23%, car performance; track trait fit; team-track fit; constructor form; regulation-era fit
+6. Max Verstappen, score 56.2, confidence 41%, car performance; official upgrade package impact; team-track fit; track trait fit; same-circuit history
+7. Charles Leclerc, score 53.8, confidence 33%, car performance; track trait fit; official upgrade package impact; team-track fit; regulation-era fit
+8. Isack Hadjar, score 47.3, confidence 46%, car performance; official upgrade package impact; team-track fit; track trait fit; regulation-era fit
+9. Oliver Bearman, score 42.4, confidence 28%, team strategy gain; official upgrade package impact; team-track fit; track trait fit; regulation-era fit
+10. Arvid Lindblad, score 41.2, confidence 27%, official upgrade package impact; car performance; track trait fit; pit-stop execution; team strategy gain
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Saturday, 04 July 2026, 12:54 AM IST
 - Overtaking: medium-good
 - Tyre stress: medium
 - Safety car/DNF risk proxy: medium-high
-- Weather: 21.8°C, rain 1%, wind 19.1 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
+- Weather: Unavailable, rain Unavailable, wind Unavailable
+- Weather impact: Open-Meteo request failed or timed out.
 
 ## Strategy
 
@@ -49,7 +49,7 @@ Generated: Saturday, 04 July 2026, 12:54 AM IST
 ## Upgrade impact
 
 - RB F1 Team: 83.1/100, aero efficiency, brake cooling, diffuser feed
-- McLaren: 77.7/100, aero efficiency, brake cooling, braking stability
+- McLaren: 77.6/100, aero efficiency, brake cooling, braking stability
 - Red Bull: 69.5/100, aero efficiency, brake cooling, cooling
 
 ## Regulation context
@@ -61,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- car performance: 6.2%
-- ml podium probability: 4.9%
-- race pace: 4.5%
-- fastf1 race pace: 4.5%
-- team track fit: 4.1%
+- car performance: 6.3%
+- ml podium probability: 5.0%
+- race pace: 4.6%
+- fastf1 race pace: 4.6%
+- team track fit: 4.2%
 
 ## Model accuracy audit
 
