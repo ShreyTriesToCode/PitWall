@@ -1,0 +1,26 @@
+{
+  "document_id": "11a4d9313b39754f",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_41_-_unsafe_release.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:40:47.799074+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 62 Date 04 July 2026 Time 19:12 The Stewards, having received a report from the Race Director, summoned (documents 54 & 55) and heard from the driver of Car 41 and the team re",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 62\nDate 04 July 2026\nTime 19:12\nThe Stewards, having received a report from the Race Director, summoned (documents 54 & 55)\nand heard from the driver of Car 41 and the team representatives, have considered the following\nmatter and determine the following:\nNo / Driver 41 - Arvid Lindblad\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 17:04\nSession Qualifying\nFact Unsafe Release by Car 41 at 17:04.\nInfringement Breach of Article B1.6.2b.i of the FIA F1 Regulations.\nDecision The competitor (Visa Cash App Racing Bulls F1 Team) is fined €5,000.\nReason The Stewards heard from the driver of Car 41 (Arvid Lindblad), the team\nrepresentatives and reviewed video and in-car video evidence.\nCar 41 was released into the path of Car 81, requiring the driver of Car 81 to take\nevasive action to avoid a collision.\nThe representative of the Competitor of Car 41 acknowledged that the release was\nthe result of an error of judgement by the team and accepted responsibility for the\nunsafe release.\nConsistent with previous similar incidents during qualifying sessions, and taking "
+}

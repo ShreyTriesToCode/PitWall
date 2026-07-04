@@ -1,0 +1,26 @@
+{
+  "document_id": "f414033c80fc162a",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:40:51.638453+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 3,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, BWT Alpine F1 Team Document 60 Date 04 July 2026 Time 19:01 The Stewards, having received a report from the Race Director, summoned (documents 51 & 52) and heard from the driver of Car 10 and the team representatives, h",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 60\nDate 04 July 2026\nTime 19:01\nThe Stewards, having received a report from the Race Director, summoned (documents 51 & 52)\nand heard from the driver of Car 10 and the team representatives, have considered the following\nmatter and determine the following:\nNo / Driver 10 - Pierre Gasly\nCompetitor BWT Alpine F1 Team\nTime 16:09\nSession Qualifying\nFact Car 10 unnecessarily impeded Car 18 at Turn 15 at 16:09.\nInfringement Breach of Article B4.1.1 of the FIA F1 Regulations.\nDecision Drop of 3 grid positions for the next Race in which the driver participates.\nReason The Stewards heard from the driver of Car 10 (Pierre Gasly), the team\nrepresentatives and reviewed video, telemetry, team radio and in-car video evidence.\nSTR was on a timed lap in Q1. GAS was on an in lap and, on the approach to Turn\n15, remained on the racing line at a slow speed, requiring STR to move off line in\norder to pass.\nGAS explained that he had no functioning radio at the time, that he had been\nattempting radio checks and that he expected another driver (ANT), to remain behind\nhim rather than overtake, as he"
+}

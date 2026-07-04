@@ -1,0 +1,26 @@
+{
+  "document_id": "f6994a62ec777207",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_decision_-_car_31_-_alleged_yellow_flag_infringement.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:40:55.830749+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 58 Date 04 July 2026 Time 18:37 The Stewards, having received a report from the Race Director, summoned (document 50) and heard from the driver and team representative, have considered the foll",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 58\nDate 04 July 2026\nTime 18:37\nThe Stewards, having received a report from the Race Director, summoned (document 50) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 31 - Esteban Ocon\nCompetitor TGR Haas F1 Team\nTime 16:16\nSession Qualifying\nFact Car 31 was alleged to have failed to reduce speed under a single waved yellow flag in\nTurn 13 during Lap 9.\nInfringement Alleged Breach of Article B1.8.4 a) of the FIA Formula One Sporting Regulations and\nArticle 2.5.5 b) of Appendix H to the FIA International Sporting Code\nDecision No further action.\nReason The Stewards heard from the driver of Car 31 (Esteban Ocon) and the team\nrepresentative and reviewed positioning/marshalling system data, video, timing,\ntelemetry and in-car video evidence.\nThe driver explained that, before Turn 10, he observed white smoke further ahead\nand was therefore already anticipating that a yellow or possibly a red flag might be\ndisplayed. He saw the illuminated yellow light panel on the right-hand side approaching\nTurn 12 and"
+}

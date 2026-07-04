@@ -1,0 +1,26 @@
+{
+  "document_id": "fa6a3aa7ebb69716",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_30_-_abnormal_change_of_direction.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:41:22.497141+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 45 Date 04 July 2026 Time 14:43 The Stewards, having received a report from the Race Director, summoned (documents 40 & 41) and heard from the drivers and team representatives",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 45\nDate 04 July 2026\nTime 14:43\nThe Stewards, having received a report from the Race Director, summoned (documents 40 & 41)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 30 - Liam Lawson\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 12:27\nSession Sprint\nFact Abnormal change of direction by Car 30 at Turn 15 (change of direction after the\ndeceleration phase had commenced).\nInfringement Breach of Appendix L, Chapter IV, Article 2 b) of the International Sporting Code.\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 30 (Liam Lawson), the driver of Car 6\n(Isack Hadjar), the team representatives and reviewed video, telemetry and in-car\nvideo evidence.\nThe matter concerned the defensive move by Car 30 on the approach to Turn 15 on\nLap 16 while defending position against Car 6.\nThe driver of Car 30 stated that, at the relevant time, he was still at full throttle and\nhad not yet commenced braking, and that the movement of the car was part of\ndecelerati"
+}

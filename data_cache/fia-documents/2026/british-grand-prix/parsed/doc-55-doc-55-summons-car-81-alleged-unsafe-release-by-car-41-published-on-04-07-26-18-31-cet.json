@@ -1,0 +1,26 @@
+{
+  "document_id": "e0c035ab5f149454",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_81_-_alleged_unsafe_release_by_car_41.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:41:01.784879+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The driver and team representative are required to report to the Stewards at 18:00, in relation to the incident below: The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 55 Date 04 July 2026 Time 17:23 No / Driver 81 - Os",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe driver and team representative are required to report to the Stewards at 18:00, in relation to the\nincident below:\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 55\nDate 04 July 2026\nTime 17:23\nNo / Driver 81 - Oscar Piastri\nReason Alleged Breach of Article B1.6.2 b) i) of the FIA F1 Regulations – Unsafe Release by\nCar 41 at 17:04.\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n"
+}

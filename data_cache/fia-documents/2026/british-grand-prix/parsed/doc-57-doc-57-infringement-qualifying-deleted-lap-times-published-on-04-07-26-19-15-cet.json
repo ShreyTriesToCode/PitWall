@@ -1,0 +1,26 @@
+{
+  "document_id": "c004c3a1bdc3c9f4",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:40:57.800340+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 57 Date 04 July 2026 Time 18:15 Title Infringement - Qualifying Deleted Lap Times Description Infringement - Qualifying Deleted Lap Times Enclosed GBR DOC 57 - Qualifying Deleted Lap Times.p",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 57\nDate 04 July 2026\nTime 18:15\nTitle Infringement - Qualifying Deleted Lap Times\nDescription Infringement - Qualifying Deleted Lap Times\nEnclosed GBR DOC 57 - Qualifying Deleted Lap Times.pdf\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n\n \n \n \n2026 BRITISH GRAND PRIX \n03 – 05 July 2026 \n \n    \nFrom The Stewards      Document 57 \n  \nTo All Officials, All Teams      Date  04 July 2026 \n \n        Time  18:15 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 cars below did not use the track at turns 3, 7, 9, 13 and 17. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 3 55  Carlos Sainz Atlassian Williams F1 Team 16:02:18 1:33.460 \n2 9 14  Fernando Alonso Aston Martin Aramco F1 Team 16:03:35 PIT \n3 7 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:07:12 PIT \n4 13 43 Franco Colapinto BWT Alpine F1 Team 16:16:56 PIT \n5 17 14 Fernando Alonso Aston Martin Aramco F1 Team 16:18:42 1:32.888 \n6 13 27 Nico Hulkenberg Audi Rev"
+}

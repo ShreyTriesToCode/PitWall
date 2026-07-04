@@ -1,0 +1,26 @@
+{
+  "document_id": "1a2c51ee93fc79b1",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_27_-_leaving_the_track_and_gaining_an_advantage.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:41:20.697390+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Audi Revolut F1 Team Document 46 Date 04 July 2026 Time 14:48 The Stewards, having received a report from the Race Director, summoned (document 38) and heard from the driver and team representative, have considered the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 46\nDate 04 July 2026\nTime 14:48\nThe Stewards, having received a report from the Race Director, summoned (document 38) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 27 - Nico Hulkenberg\nCompetitor Audi Revolut F1 Team\nTime 12:04\nSession Sprint\nFact Car 27 left the track at Turn 9 at 12:04, without a justifiable reason, and gained a\nlasting advantage.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations.\nDecision 5 second time penalty imposed after the Sprint.\nReason The Stewards heard from the driver of Car 27 (Nico Hulkenberg), the team\nrepresentative and reviewed video, telemetry, team radio and in-car video evidence.\nOn Lap 1, at Turn 9, Car 27 was defending position against Car 31. In doing so, Car\n27 approached the corner with slightly higher speed than on comparable laps and left\nthe track at the exit of Turn 9. The position was not conceded by Car 27 after leaving\nthe track, although Car 31 passed Car 27 one lap later in a genuine overtaking\nmanoeuvre.\nThe driver of Car 27 e"
+}

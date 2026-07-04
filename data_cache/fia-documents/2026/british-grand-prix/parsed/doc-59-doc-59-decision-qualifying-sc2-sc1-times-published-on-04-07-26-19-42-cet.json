@@ -1,0 +1,26 @@
+{
+  "document_id": "4d918cd81f10d1a1",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_decision_-_qualifying_sc2_-_sc1_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:40:53.908588+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 59 Date 04 July 2026 Time 18:42 Title Decision - Qualifying SC2 - SC1 Times Description Decision - Qualifying SC2 - SC1 Times Enclosed GBR DOC 59 - Qualifying SC2-SC1 Times.pdf Gerd Ennser T",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 59\nDate 04 July 2026\nTime 18:42\nTitle Decision - Qualifying SC2 - SC1 Times\nDescription Decision - Qualifying SC2 - SC1 Times\nEnclosed GBR DOC 59 - Qualifying SC2-SC1 Times.pdf\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n\n \n \n2026 BRITISH GRAND PRIX \n03 – 05 July 2026 \n \n    \nFrom The Stewards      Document 59 \n  \nTo All Officials, All Teams      Date  04 July 2026 \n \n        Time  18:42 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 car below exceeded the 1:39.0 time limit between the Safety Car lines. \n \nNo. Car Driver Competitor Time of Day Lap Time \n1 6 Isack Hadjar Oracle Red Bull Racing 16:18:10 L7 (Q1) \n \n \nInfringement Alleged Breach of Article B1.8.5 of the FIA F1 Regulations and Article 12.2.1.i of the FIA International \nSporting Code by failing to comply with the Race Director's Competition Notes (Item 1, Document 5) \nand the Note to Teams (Document 17). \n  \nDecision No further action.   \nReasons The Stewards "
+}

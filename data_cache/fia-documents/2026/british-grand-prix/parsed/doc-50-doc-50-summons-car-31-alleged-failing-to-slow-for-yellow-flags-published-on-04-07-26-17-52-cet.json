@@ -1,0 +1,26 @@
+{
+  "document_id": "d257f9b62fd365f1",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_31_-_alleged_failing_to_slow_for_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:41:11.818882+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The driver and team representative are required to report to the Stewards at 17:30, in relation to the incident below: The Stewards From The Stewards To The Team Manager, TGR Haas F1 Team Document 50 Date 04 July 2026 Time 16:51 No / Driver 31 - Esteban Ocon",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe driver and team representative are required to report to the Stewards at 17:30, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 50\nDate 04 July 2026\nTime 16:51\nNo / Driver 31 - Esteban Ocon\nReason Alleged Breach of Article B1.8.4 a) of the FIA F1 Regulations and Article 2.5.5 b) of\nAppendix H to the FIA International Sporting Code (failing to slow for single yellow\nflags in Turn 13).\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n"
+}

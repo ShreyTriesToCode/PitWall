@@ -1,0 +1,26 @@
+{
+  "document_id": "4bf0f9bac942f24f",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_10_-_alleged_impeding_of_car_18.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T00:41:09.728795+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The driver and team representative are required to report to the Stewards at 17:45, in relation to the incident below: The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 51 Date 04 July 2026 Time 16:57 No / Driver 10 - Pierre Gas",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe driver and team representative are required to report to the Stewards at 17:45, in relation to the\nincident below:\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 51\nDate 04 July 2026\nTime 16:57\nNo / Driver 10 - Pierre Gasly\nReason Alleged Breach of Article B4.1.1 of the FIA F1 Regulations – Car 10 allegedly\nimpeded Car 18 at Turn 15 at 16:09.\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n"
+}
