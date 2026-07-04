@@ -1,0 +1,26 @@
+{
+  "document_id": "7a8d2890e0ae4dd9",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_11_-_causing_a_collision_with_car_14.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-04T18:52:46.238551+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 42 Date 04 July 2026 Time 13:44 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 42\nDate 04 July 2026\nTime 13:44\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 12:05\nSession Sprint\nFact Car 11 collided with Car 14 at Turn 3 on Lap 2.\nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 10 second time penalty.\nReason The Stewards reviewed positioning/marshalling system data, video, timing, telemetry\nand in-car video evidence.\nCar 11 attempted to overtake Car 14 on the inside of Turn 3. However, Car 11 had\nnot established its front axle at least alongside the mirror of Car 14 prior to and at the\napex. Car 11 made contact with the right-rear of Car 14, causing Car 14 to spin.\nThe Stewards determined that Car 11 was wholly at fault for the collision and\ntherefore imposed the standard of a 10 second time penalty.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 o"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "870216e650f42fdc",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-04T18:52:59.357199+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 35 Date 04 July 2026 Time 10:54 The Stewards, having received a report from the Technical Delegate (document 34), have considered the following matter and determine the f",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 35\nDate 04 July 2026\nTime 10:54\nThe Stewards, having received a report from the Technical Delegate (document 34), have\nconsidered the following matter and determine the following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 10:27\nSession Sprint Qualifying\nFact The setup of the suspension has been changed while under parc fermé.\nInfringement Breach of Article B3.5.3 and B3.5.4 of the FIA F1 Regulations.\nDecision Required to start the Sprint from the pit lane.\nReason Required to start the Sprint from the pit lane.\nAtlassian Williams F1 Team changed the setup of the suspension of Car 23 under\nparc fermé, without the approval of the Technical Delegate. This is not accordance\nwith Articles B3.5.3 and B3.5.4 of the FIA F1 Regulations.\nCar 23 is therefore required to start the Sprint from pit lane as per Article B3.5.3 b) of\nthe FIA F1 Regulations.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of t"
+}
