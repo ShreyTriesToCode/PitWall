@@ -1,17 +1,17 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-07-04T12:07:32.550332+05:30",
+  "generated_at": "2026-07-04T14:10:46.320525+05:30",
   "history": [
     {
       "race_id": "2026-9-british-grand-prix",
-      "prediction_id": "2026-9-british-grand-prix-sprint-post_fp1-272f84933c66",
+      "prediction_id": "2026-9-british-grand-prix-sprint-post_fp1-ef7bfb74b149",
       "race_name": "British Grand Prix",
       "season": 2026,
       "round": 9,
       "stage": "post_fp1",
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
-      "top_pick_confidence": 0,
+      "top_pick_confidence": 19.2,
       "finish_position_mae": 3.2874867961453846,
       "finish_position_rmse": 4.121780427834163,
       "winner_hit_rate": 0.4643,

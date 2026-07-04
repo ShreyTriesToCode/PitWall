@@ -1,14 +1,14 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-07-04T12:07:28.949635+05:30",
+  "generated_at": "2026-07-04T14:10:42.748371+05:30",
   "status": "Success",
   "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: sprint=F1 British GP - Sprint Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {
     "schema_version": "source-registry-v1",
     "season": 2026,
     "target_season_mode": "auto",
-    "discovered_at": "2026-07-04T12:07:28.948816+05:30",
-    "last_checked_at": "2026-07-04T12:07:28.948816+05:30",
+    "discovered_at": "2026-07-04T14:10:42.747534+05:30",
+    "last_checked_at": "2026-07-04T14:10:42.747534+05:30",
     "fia_championship_identifier": "fia-formula-one-world-championship-14",
     "fia_base_championship_documents_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
     "fia_season_document_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
