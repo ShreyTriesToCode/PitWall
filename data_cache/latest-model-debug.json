@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T08:32:31.449446+05:30",
+  "generated_at": "2026-07-05T12:30:12.787718+05:30",
   "output_mode": "today",
   "selected_targets": [
     {
@@ -101,7 +101,7 @@
       "round_no": "9",
       "target_type": "race",
       "title": "F1 Race Briefing: F1 British GP - Race",
-      "briefing": "# F1 Race Briefing: F1 British GP - Race\n\nGenerated: Sunday, 05 July 2026, 08:32 AM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 05 July 2026, 07:30 PM IST\n- Circuit: Silverstone Circuit\n- Location: Silverstone, UK\n\n## Prediction\n\n1. Lewis Hamilton, score 67.5, confidence 36%, qualifying and grid position; car performance; ML finish-position model; track trait fit; same-circuit history\n2. Andrea Kimi Antonelli, score 65.7, confidence 48%, qualifying and grid position; car performance; ML finish-position model; track trait fit; driver form\n3. Lando Norris, score 64.1, confidence 26%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n4. George Russell, score 62.8, confidence 48%, qualifying and grid position; car performance; track trait fit; neural lap-time forecast; ML finish-position model\n5. Charles Leclerc, score 62.5, confidence 59%, qualifying and grid position; car performance; ML finish-position model; track trait fit; official upgrade package impact\n6. Oscar Piastri, score 62.0, confidence 54%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n7. Max Verstappen, score 58.9, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast\n8. Isack Hadjar, score 51.4, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; team-track fit\n9. Arvid Lindblad, score 44.8, confidence 51%, qualifying and grid position; official upgrade package impact; car performance; ML finish-position model; neural lap-time forecast\n10. Liam Lawson, score 43.0, confidence 59%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; track trait fit\n\n## Track and weather\n\n- Key car trait: high-speed downforce, aero efficiency, tyre load control\n- Track profile: aero-efficiency dominant\n- Overtaking: medium-good\n- Tyre stress: medium\n- Safety car/DNF risk proxy: medium-high\n- Weather: 24.3°C, rain 0%, wind 11.9 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance\n\n## Strategy\n\n- Baseline: one-stop or two-stop depending on safety car and tyre delta\n- Pit window: Lap 18-32 for normal dry strategy.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. McLaren\n4. Red Bull\n5. RB F1 Team\n\n## Upgrade impact\n\n- RB F1 Team: 83.1/100, aero efficiency, brake cooling, diffuser feed\n- McLaren: 77.7/100, aero efficiency, brake cooling, braking stability\n- Red Bull: 69.5/100, aero efficiency, brake cooling, cooling\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.3%\n- ml podium probability: 5.9%\n- car performance: 5.9%\n- ml finish position score: 4.4%\n- race pace: 4.4%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.29; RMSE: 4.12\n- Neural lap-time MAE: 3.86s; RMSE: 5.37s\n- Backtest winner hit: 46.4%; top-3 recall: 63.1%; top-5 recall: 75.7%\n- Win model AUC/Brier: 0.951 / 0.038\n- Podium model AUC/Brier: 0.937 / 0.067\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
+      "briefing": "# F1 Race Briefing: F1 British GP - Race\n\nGenerated: Sunday, 05 July 2026, 12:30 PM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 05 July 2026, 07:30 PM IST\n- Circuit: Silverstone Circuit\n- Location: Silverstone, UK\n\n## Prediction\n\n1. Lewis Hamilton, score 67.5, confidence 36%, qualifying and grid position; car performance; ML finish-position model; track trait fit; same-circuit history\n2. Andrea Kimi Antonelli, score 65.7, confidence 48%, qualifying and grid position; car performance; ML finish-position model; track trait fit; driver form\n3. Lando Norris, score 64.1, confidence 26%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n4. George Russell, score 62.8, confidence 48%, qualifying and grid position; car performance; track trait fit; neural lap-time forecast; ML finish-position model\n5. Charles Leclerc, score 62.5, confidence 59%, qualifying and grid position; car performance; ML finish-position model; track trait fit; official upgrade package impact\n6. Oscar Piastri, score 62.0, confidence 54%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n7. Max Verstappen, score 58.9, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast\n8. Isack Hadjar, score 51.4, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; team-track fit\n9. Arvid Lindblad, score 44.8, confidence 51%, qualifying and grid position; official upgrade package impact; car performance; ML finish-position model; neural lap-time forecast\n10. Liam Lawson, score 43.0, confidence 59%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; track trait fit\n\n## Track and weather\n\n- Key car trait: high-speed downforce, aero efficiency, tyre load control\n- Track profile: aero-efficiency dominant\n- Overtaking: medium-good\n- Tyre stress: medium\n- Safety car/DNF risk proxy: medium-high\n- Weather: 24.9°C, rain 0%, wind 10.1 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: one-stop or two-stop depending on safety car and tyre delta\n- Pit window: Lap 18-32 for normal dry strategy.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. McLaren\n4. Red Bull\n5. RB F1 Team\n\n## Upgrade impact\n\n- RB F1 Team: 83.1/100, aero efficiency, brake cooling, diffuser feed\n- McLaren: 77.7/100, aero efficiency, brake cooling, braking stability\n- Red Bull: 69.5/100, aero efficiency, brake cooling, cooling\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.3%\n- ml podium probability: 5.9%\n- car performance: 5.9%\n- ml finish position score: 4.4%\n- race pace: 4.4%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.29; RMSE: 4.12\n- Neural lap-time MAE: 3.86s; RMSE: 5.37s\n- Backtest winner hit: 46.4%; top-3 recall: 63.1%; top-5 recall: 75.7%\n- Win model AUC/Brier: 0.951 / 0.038\n- Podium model AUC/Brier: 0.937 / 0.067\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
       "profile": {
         "race_name": "British Grand Prix",
         "circuit": "Silverstone Circuit",
@@ -181,17 +181,17 @@
       },
       "weather": {
         "source": "Open-Meteo forecast",
-        "temperature": "24.3°C",
+        "temperature": "24.9°C",
         "rain": "0%",
-        "humidity": "53%",
-        "wind": "11.9 km/h",
-        "wind_gust": "27.0 km/h",
-        "cloud_cover": "65%",
+        "humidity": "49%",
+        "wind": "10.1 km/h",
+        "wind_gust": "23.8 km/h",
+        "cloud_cover": "100%",
         "track_temperature": "Unavailable",
         "rain_score": 0,
         "heat_score": 0,
-        "wind_score": 70.2,
-        "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
+        "wind_score": 61.88,
+        "impact": "dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth"
       },
       "historical_weather": {
         "source": "Open-Meteo archive",
@@ -275,6 +275,8 @@
           "data": {
             "laps": [],
             "results": [],
+            "pitstops": [],
+            "sprint_qualifying": [],
             "sprint": [
               {
                 "season": "2026",
@@ -1090,8 +1092,6 @@
                 ]
               }
             ],
-            "pitstops": [],
-            "sprint_qualifying": [],
             "qualifying": [
               {
                 "season": "2026",
@@ -11053,7 +11053,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11061,8 +11061,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11330,7 +11330,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11338,8 +11338,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11612,7 +11612,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11620,8 +11620,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11889,7 +11889,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11897,8 +11897,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12165,7 +12165,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -12173,8 +12173,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12443,7 +12443,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -12451,8 +12451,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12719,7 +12719,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -12727,8 +12727,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12993,7 +12993,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13001,8 +13001,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13265,7 +13265,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13273,8 +13273,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13542,7 +13542,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13550,8 +13550,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -13824,7 +13824,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13832,8 +13832,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14101,7 +14101,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14109,8 +14109,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14383,7 +14383,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14391,8 +14391,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14660,7 +14660,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14668,8 +14668,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14936,7 +14936,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14944,8 +14944,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15214,7 +15214,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -15222,8 +15222,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15490,7 +15490,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -15498,8 +15498,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15764,7 +15764,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -15772,8 +15772,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16036,7 +16036,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16044,8 +16044,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16313,7 +16313,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16321,8 +16321,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16589,7 +16589,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16597,8 +16597,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16867,7 +16867,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16875,8 +16875,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17144,7 +17144,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17152,8 +17152,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17413,7 +17413,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17421,8 +17421,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17690,7 +17690,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17698,8 +17698,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17965,7 +17965,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17973,8 +17973,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -18240,7 +18240,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -18248,8 +18248,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -18513,7 +18513,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -18521,8 +18521,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -18781,7 +18781,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -18789,8 +18789,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -19048,7 +19048,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19056,8 +19056,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -19322,7 +19322,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19330,8 +19330,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -19596,7 +19596,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19604,8 +19604,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -19878,7 +19878,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19886,8 +19886,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20155,7 +20155,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20163,8 +20163,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20437,7 +20437,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20445,8 +20445,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20714,7 +20714,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20722,8 +20722,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20990,7 +20990,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20998,8 +20998,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -21268,7 +21268,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -21276,8 +21276,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -21544,7 +21544,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -21552,8 +21552,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -21818,7 +21818,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -21826,8 +21826,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22090,7 +22090,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22098,8 +22098,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22367,7 +22367,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22375,8 +22375,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22643,7 +22643,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22651,8 +22651,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22921,7 +22921,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22929,8 +22929,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -23198,7 +23198,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -23206,8 +23206,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -23467,7 +23467,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -23475,8 +23475,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -23744,7 +23744,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -23752,8 +23752,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24019,7 +24019,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24027,8 +24027,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24294,7 +24294,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24302,8 +24302,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24567,7 +24567,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24575,8 +24575,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24835,7 +24835,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24843,8 +24843,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -25102,7 +25102,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -25110,8 +25110,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -25376,7 +25376,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -25384,8 +25384,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -25650,7 +25650,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-c7d49868439f",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -25658,8 +25658,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T08:32:26.619203+05:30",
-          "input_data_hash": "1924b314dc34bdb06f8ab9345e167c28b7a4d39c97a47722ba0afb4e62dc2778",
+          "generated_at": "2026-07-05T12:30:08.055320+05:30",
+          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -25718,7 +25718,7 @@
           "fastf1_tyre_stint": 0.0079
         },
         "source_health_snapshot": {
-          "generated_at": "2026-07-05T08:32:26.617291+05:30",
+          "generated_at": "2026-07-05T12:30:08.053403+05:30",
           "overall_score": 72.09,
           "status": "Fallback",
           "sources": [
@@ -25796,7 +25796,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-07-05T03:02:26.617037+00:00",
+              "checked_at": "2026-07-05T07:00:08.053173+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -25816,7 +25816,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-07-05T03:02:26.617215+00:00",
+              "checked_at": "2026-07-05T07:00:08.053323+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -27089,7 +27089,7 @@
             "missing_sprint_position": 0,
             "missing_lap_pace": 1,
             "missing_pit_data": 1,
-            "fia_upgrade_score": 77.65000000000002,
+            "fia_upgrade_score": 77.65,
             "fia_upgrade_count": 1.0,
             "fia_upgrade_component_count": 3.0,
             "fia_upgrade_trait_count": 10.0,
@@ -27343,7 +27343,7 @@
             "missing_sprint_position": 0,
             "missing_lap_pace": 1,
             "missing_pit_data": 1,
-            "fia_upgrade_score": 77.65000000000002,
+            "fia_upgrade_score": 77.65,
             "fia_upgrade_count": 1.0,
             "fia_upgrade_component_count": 3.0,
             "fia_upgrade_trait_count": 10.0,
@@ -27851,7 +27851,7 @@
             "missing_sprint_position": 0,
             "missing_lap_pace": 1,
             "missing_pit_data": 1,
-            "fia_upgrade_score": 83.05000000000003,
+            "fia_upgrade_score": 83.05000000000001,
             "fia_upgrade_count": 1.0,
             "fia_upgrade_component_count": 4.0,
             "fia_upgrade_trait_count": 12.0,
@@ -28232,7 +28232,7 @@
             "missing_sprint_position": 0,
             "missing_lap_pace": 1,
             "missing_pit_data": 1,
-            "fia_upgrade_score": 83.05000000000003,
+            "fia_upgrade_score": 83.05000000000001,
             "fia_upgrade_count": 1.0,
             "fia_upgrade_component_count": 4.0,
             "fia_upgrade_trait_count": 12.0,
@@ -30116,7 +30116,7 @@
             "model_latest_completed_race_id": "2026-8",
             "api_latest_completed_race_id": "2026-8",
             "readiness": {
-              "checked_at": "2026-07-05T08:31:38.282451+05:30",
+              "checked_at": "2026-07-05T12:29:15.994799+05:30",
               "current_year": 2026,
               "final_results_delay_hours": 8,
               "latest_completed_race_id": "2026-8",
@@ -31123,8 +31123,8 @@
         "team_scores": {
           "Ferrari": 62.80000000000001,
           "Haas": 65.5,
-          "McLaren": 77.65000000000002,
-          "RB F1 Team": 83.05000000000003,
+          "McLaren": 77.65,
+          "RB F1 Team": 83.05000000000001,
           "Red Bull": 69.55,
           "Williams": 65.5
         },
@@ -31339,9 +31339,9 @@
   ],
   "errors": [],
   "notification_gate": {
-    "allowed": false,
-    "reason": "Nearest Sprint/Race target is more than 8 hours away.",
-    "hours_until_event": 10.96,
+    "allowed": true,
+    "reason": "Event starts within 8 hours.",
+    "hours_until_event": 7.0,
     "matched_event": "F1 British GP - Race"
   },
   "backfill": {
