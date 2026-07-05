@@ -2,8 +2,8 @@
   {
     "team": "Ferrari",
     "expected_team_points": 67.8,
-    "average_score": 61.9,
-    "average_confidence": 28.97,
+    "average_score": 61.93,
+    "average_confidence": 29.0,
     "average_active_aero_suitability": 67.45,
     "average_energy_boost_advantage": 63.36,
     "drivers": [
@@ -38,8 +38,8 @@
   {
     "team": "Mercedes",
     "expected_team_points": 86.76,
-    "average_score": 66.09,
-    "average_confidence": 23.6,
+    "average_score": 66.06,
+    "average_confidence": 23.67,
     "average_active_aero_suitability": 70.61,
     "average_energy_boost_advantage": 64.54,
     "drivers": [
@@ -74,8 +74,8 @@
   {
     "team": "McLaren",
     "expected_team_points": 61.95,
-    "average_score": 57.68,
-    "average_confidence": 35.23,
+    "average_score": 57.73,
+    "average_confidence": 35.26,
     "average_active_aero_suitability": 64.22,
     "average_energy_boost_advantage": 58.19,
     "drivers": [
@@ -110,8 +110,8 @@
   {
     "team": "Red Bull",
     "expected_team_points": 50.6,
-    "average_score": 53.54,
-    "average_confidence": 45.71,
+    "average_score": 53.56,
+    "average_confidence": 45.78,
     "average_active_aero_suitability": 59.08,
     "average_energy_boost_advantage": 55.56,
     "drivers": [
@@ -146,8 +146,8 @@
   {
     "team": "RB F1 Team",
     "expected_team_points": 10.44,
-    "average_score": 38.78,
-    "average_confidence": 40.44,
+    "average_score": 38.79,
+    "average_confidence": 40.45,
     "average_active_aero_suitability": 47.8,
     "average_energy_boost_advantage": 48.19,
     "drivers": [
@@ -182,8 +182,8 @@
   {
     "team": "Haas",
     "expected_team_points": 4.08,
-    "average_score": 35.07,
-    "average_confidence": 39.16,
+    "average_score": 35.18,
+    "average_confidence": 39.24,
     "average_active_aero_suitability": 44.6,
     "average_energy_boost_advantage": 46.58,
     "drivers": [
@@ -214,8 +214,8 @@
   {
     "team": "Audi",
     "expected_team_points": 6.67,
-    "average_score": 37.19,
-    "average_confidence": 51.71,
+    "average_score": 37.28,
+    "average_confidence": 51.78,
     "average_active_aero_suitability": 46.82,
     "average_energy_boost_advantage": 48.88,
     "drivers": [
@@ -248,42 +248,10 @@
     ]
   },
   {
-    "team": "Alpine",
-    "expected_team_points": 9.37,
-    "average_score": 37.92,
-    "average_confidence": 35.69,
-    "average_active_aero_suitability": 45.39,
-    "average_energy_boost_advantage": 45.56,
-    "drivers": [
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto",
-      "Pierre Gasly",
-      "Franco Colapinto"
-    ]
-  },
-  {
     "team": "Williams",
     "expected_team_points": 4.07,
-    "average_score": 34.66,
-    "average_confidence": 50.32,
+    "average_score": 34.75,
+    "average_confidence": 50.39,
     "average_active_aero_suitability": 45.11,
     "average_energy_boost_advantage": 46.09,
     "drivers": [
@@ -316,10 +284,42 @@
     ]
   },
   {
+    "team": "Alpine",
+    "expected_team_points": 9.37,
+    "average_score": 37.98,
+    "average_confidence": 35.79,
+    "average_active_aero_suitability": 45.39,
+    "average_energy_boost_advantage": 45.56,
+    "drivers": [
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto",
+      "Pierre Gasly",
+      "Franco Colapinto"
+    ]
+  },
+  {
     "team": "Aston Martin",
     "expected_team_points": 5.13,
-    "average_score": 33.05,
-    "average_confidence": 46.53,
+    "average_score": 33.18,
+    "average_confidence": 46.59,
     "average_active_aero_suitability": 48.29,
     "average_energy_boost_advantage": 47.06,
     "drivers": [
@@ -354,8 +354,8 @@
   {
     "team": "Cadillac",
     "expected_team_points": 1.51,
-    "average_score": 29.77,
-    "average_confidence": 35.05,
+    "average_score": 29.91,
+    "average_confidence": 35.15,
     "average_active_aero_suitability": 41.66,
     "average_energy_boost_advantage": 42.52,
     "drivers": [
