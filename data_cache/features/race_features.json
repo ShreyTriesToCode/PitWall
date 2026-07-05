@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-9-british-grand-prix",
-    "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
+    "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-a6cc17717691",
     "season": 2026,
     "round": 9,
     "circuit": "Silverstone Circuit",
@@ -13,17 +13,17 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "24.5°C",
+      "temperature": "24.0°C",
       "rain": "0%",
-      "humidity": "50%",
-      "wind": "10.4 km/h",
-      "wind_gust": "24.5 km/h",
-      "cloud_cover": "48%",
+      "humidity": "52%",
+      "wind": "9.4 km/h",
+      "wind_gust": "23.0 km/h",
+      "cloud_cover": "40%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 0,
-      "wind_score": 63.7,
-      "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
+      "wind_score": 59.800000000000004,
+      "impact": "dry baseline more likely"
     },
     "strategy": {
       "risk_meter": 54.9,
@@ -85,35 +85,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 72.78,
+          "scenario_score": 72.54,
           "rank": 1
         },
         {
           "driver_id": "norris",
           "name": "Lando Norris",
           "team": "McLaren",
-          "scenario_score": 71.65,
+          "scenario_score": 71.36,
           "rank": 2
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 70.08,
+          "scenario_score": 69.76,
           "rank": 3
         },
         {
           "driver_id": "bearman",
           "name": "Oliver Bearman",
           "team": "Haas",
-          "scenario_score": 64.76,
+          "scenario_score": 64.15,
           "rank": 4
         },
         {
           "driver_id": "hulkenberg",
           "name": "Nico Hülkenberg",
           "team": "Audi",
-          "scenario_score": 63.94,
+          "scenario_score": 63.26,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 68.19,
+          "scenario_score": 67.92,
           "rank": 1
         },
         {
           "driver_id": "bearman",
           "name": "Oliver Bearman",
           "team": "Haas",
-          "scenario_score": 65.96,
+          "scenario_score": 65.31,
           "rank": 2
         },
         {
           "driver_id": "stroll",
           "name": "Lance Stroll",
           "team": "Aston Martin",
-          "scenario_score": 64.01,
+          "scenario_score": 63.25,
           "rank": 3
-        },
-        {
-          "driver_id": "norris",
-          "name": "Lando Norris",
-          "team": "McLaren",
-          "scenario_score": 62.22,
-          "rank": 4
         },
         {
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 62.07,
+          "scenario_score": 61.93,
+          "rank": 4
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "scenario_score": 61.9,
           "rank": 5
         }
       ],

@@ -1,0 +1,26 @@
+{
+  "document_id": "68316dc70a68d2ad",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-05T18:59:02.093644+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 10,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 68 Date 05 July 2026 Time 12:18 The Stewards, having received a report from the Technical Delegate (document 49), have considered the following matter and determine the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 68\nDate 05 July 2026\nTime 12:18\nThe Stewards, having received a report from the Technical Delegate (document 49), have\nconsidered the following matter and determine the following:\nNo / Driver 18 - Lance Stroll\nCompetitor Aston Martin Aramco F1 Team\nTime 16:00\nSession Qualifying\nFact The following Power Unit elements have been used:\n \n5th Energy Store (ES)\n5th Control Electronics Unit (PU-CE)\nInfringement Breaches of Articles B8.2.2 (read with B8.2.3) of the FIA F1 Regulations.\nDecision Drop of 10 grid positions for the next Race in which the driver participates.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nThe use of each additional element in this case carries a 5 grid place penalty\ntherefore there is an accumulation of 10 places.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Steward"
+}

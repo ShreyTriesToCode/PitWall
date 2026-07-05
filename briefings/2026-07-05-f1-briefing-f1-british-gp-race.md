@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 British GP - Race
 
-Generated: Sunday, 05 July 2026, 02:26 PM IST
+Generated: Sunday, 05 July 2026, 07:04 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Sunday, 05 July 2026, 02:26 PM IST
 
 ## Prediction
 
-1. Lewis Hamilton, score 67.5, confidence 36%, qualifying and grid position; car performance; ML finish-position model; track trait fit; same-circuit history
-2. Andrea Kimi Antonelli, score 65.7, confidence 48%, qualifying and grid position; car performance; ML finish-position model; track trait fit; driver form
-3. Lando Norris, score 64.1, confidence 26%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit
-4. George Russell, score 62.8, confidence 48%, qualifying and grid position; car performance; track trait fit; neural lap-time forecast; ML finish-position model
-5. Charles Leclerc, score 62.5, confidence 59%, qualifying and grid position; car performance; ML finish-position model; track trait fit; official upgrade package impact
-6. Oscar Piastri, score 62.0, confidence 54%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit
-7. Max Verstappen, score 58.9, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast
-8. Isack Hadjar, score 51.4, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; team-track fit
-9. Arvid Lindblad, score 44.8, confidence 51%, qualifying and grid position; official upgrade package impact; car performance; ML finish-position model; neural lap-time forecast
-10. Liam Lawson, score 43.0, confidence 59%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; track trait fit
+1. Lewis Hamilton, score 66.9, confidence 35%, qualifying and grid position; car performance; ML finish-position model; track trait fit; same-circuit history
+2. Andrea Kimi Antonelli, score 66.4, confidence 47%, qualifying and grid position; car performance; ML finish-position model; track trait fit; driver form
+3. Lando Norris, score 63.4, confidence 25%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit
+4. George Russell, score 62.9, confidence 47%, qualifying and grid position; car performance; track trait fit; neural lap-time forecast; ML finish-position model
+5. Charles Leclerc, score 62.1, confidence 58%, qualifying and grid position; car performance; ML finish-position model; track trait fit; official upgrade package impact
+6. Oscar Piastri, score 61.2, confidence 53%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit
+7. Max Verstappen, score 58.3, confidence 58%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast
+8. Isack Hadjar, score 51.6, confidence 58%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; team-track fit
+9. Arvid Lindblad, score 44.7, confidence 52%, qualifying and grid position; official upgrade package impact; car performance; ML finish-position model; neural lap-time forecast
+10. Liam Lawson, score 42.9, confidence 58%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; track trait fit
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Sunday, 05 July 2026, 02:26 PM IST
 - Overtaking: medium-good
 - Tyre stress: medium
 - Safety car/DNF risk proxy: medium-high
-- Weather: 24.5°C, rain 0%, wind 10.4 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
+- Weather: 24.0°C, rain 0%, wind 9.4 km/h
+- Weather impact: dry baseline more likely
 
 ## Strategy
 
@@ -61,11 +61,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Main model signals
 
-- qualifying: 6.3%
-- ml podium probability: 5.9%
-- car performance: 5.9%
-- ml finish position score: 4.4%
-- race pace: 4.4%
+- qualifying: 6.5%
+- ml podium probability: 6.1%
+- car performance: 6.1%
+- ml finish position score: 4.5%
+- race pace: 4.5%
 
 ## Model accuracy audit
 
