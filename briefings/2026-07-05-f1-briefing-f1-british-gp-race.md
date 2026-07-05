@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 British GP - Race
 
-Generated: Sunday, 05 July 2026, 12:30 PM IST
+Generated: Sunday, 05 July 2026, 02:26 PM IST
 
 ## Event
 
@@ -29,8 +29,8 @@ Generated: Sunday, 05 July 2026, 12:30 PM IST
 - Overtaking: medium-good
 - Tyre stress: medium
 - Safety car/DNF risk proxy: medium-high
-- Weather: 24.9°C, rain 0%, wind 10.1 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth
+- Weather: 24.5°C, rain 0%, wind 10.4 km/h
+- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
 
 ## Strategy
 

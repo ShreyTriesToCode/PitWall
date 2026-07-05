@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T12:30:12.787718+05:30",
+  "generated_at": "2026-07-05T14:27:01.379709+05:30",
   "output_mode": "today",
   "selected_targets": [
     {
@@ -101,7 +101,7 @@
       "round_no": "9",
       "target_type": "race",
       "title": "F1 Race Briefing: F1 British GP - Race",
-      "briefing": "# F1 Race Briefing: F1 British GP - Race\n\nGenerated: Sunday, 05 July 2026, 12:30 PM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 05 July 2026, 07:30 PM IST\n- Circuit: Silverstone Circuit\n- Location: Silverstone, UK\n\n## Prediction\n\n1. Lewis Hamilton, score 67.5, confidence 36%, qualifying and grid position; car performance; ML finish-position model; track trait fit; same-circuit history\n2. Andrea Kimi Antonelli, score 65.7, confidence 48%, qualifying and grid position; car performance; ML finish-position model; track trait fit; driver form\n3. Lando Norris, score 64.1, confidence 26%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n4. George Russell, score 62.8, confidence 48%, qualifying and grid position; car performance; track trait fit; neural lap-time forecast; ML finish-position model\n5. Charles Leclerc, score 62.5, confidence 59%, qualifying and grid position; car performance; ML finish-position model; track trait fit; official upgrade package impact\n6. Oscar Piastri, score 62.0, confidence 54%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n7. Max Verstappen, score 58.9, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast\n8. Isack Hadjar, score 51.4, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; team-track fit\n9. Arvid Lindblad, score 44.8, confidence 51%, qualifying and grid position; official upgrade package impact; car performance; ML finish-position model; neural lap-time forecast\n10. Liam Lawson, score 43.0, confidence 59%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; track trait fit\n\n## Track and weather\n\n- Key car trait: high-speed downforce, aero efficiency, tyre load control\n- Track profile: aero-efficiency dominant\n- Overtaking: medium-good\n- Tyre stress: medium\n- Safety car/DNF risk proxy: medium-high\n- Weather: 24.9°C, rain 0%, wind 10.1 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth\n\n## Strategy\n\n- Baseline: one-stop or two-stop depending on safety car and tyre delta\n- Pit window: Lap 18-32 for normal dry strategy.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. McLaren\n4. Red Bull\n5. RB F1 Team\n\n## Upgrade impact\n\n- RB F1 Team: 83.1/100, aero efficiency, brake cooling, diffuser feed\n- McLaren: 77.7/100, aero efficiency, brake cooling, braking stability\n- Red Bull: 69.5/100, aero efficiency, brake cooling, cooling\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.3%\n- ml podium probability: 5.9%\n- car performance: 5.9%\n- ml finish position score: 4.4%\n- race pace: 4.4%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.29; RMSE: 4.12\n- Neural lap-time MAE: 3.86s; RMSE: 5.37s\n- Backtest winner hit: 46.4%; top-3 recall: 63.1%; top-5 recall: 75.7%\n- Win model AUC/Brier: 0.951 / 0.038\n- Podium model AUC/Brier: 0.937 / 0.067\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
+      "briefing": "# F1 Race Briefing: F1 British GP - Race\n\nGenerated: Sunday, 05 July 2026, 02:26 PM IST\n\n## Event\n\n- Target: Race\n- Start: Sunday, 05 July 2026, 07:30 PM IST\n- Circuit: Silverstone Circuit\n- Location: Silverstone, UK\n\n## Prediction\n\n1. Lewis Hamilton, score 67.5, confidence 36%, qualifying and grid position; car performance; ML finish-position model; track trait fit; same-circuit history\n2. Andrea Kimi Antonelli, score 65.7, confidence 48%, qualifying and grid position; car performance; ML finish-position model; track trait fit; driver form\n3. Lando Norris, score 64.1, confidence 26%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n4. George Russell, score 62.8, confidence 48%, qualifying and grid position; car performance; track trait fit; neural lap-time forecast; ML finish-position model\n5. Charles Leclerc, score 62.5, confidence 59%, qualifying and grid position; car performance; ML finish-position model; track trait fit; official upgrade package impact\n6. Oscar Piastri, score 62.0, confidence 54%, qualifying and grid position; car performance; team-track fit; official upgrade package impact; track trait fit\n7. Max Verstappen, score 58.9, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; neural lap-time forecast\n8. Isack Hadjar, score 51.4, confidence 59%, qualifying and grid position; car performance; official upgrade package impact; ML finish-position model; team-track fit\n9. Arvid Lindblad, score 44.8, confidence 51%, qualifying and grid position; official upgrade package impact; car performance; ML finish-position model; neural lap-time forecast\n10. Liam Lawson, score 43.0, confidence 59%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; track trait fit\n\n## Track and weather\n\n- Key car trait: high-speed downforce, aero efficiency, tyre load control\n- Track profile: aero-efficiency dominant\n- Overtaking: medium-good\n- Tyre stress: medium\n- Safety car/DNF risk proxy: medium-high\n- Weather: 24.5°C, rain 0%, wind 10.4 km/h\n- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance\n\n## Strategy\n\n- Baseline: one-stop or two-stop depending on safety car and tyre delta\n- Pit window: Lap 18-32 for normal dry strategy.\n- Main risk: tyre drop-off, safety-car timing, traffic after pit stop, and weather crossover.\n\n## Team fit\n\n1. Mercedes\n2. Ferrari\n3. McLaren\n4. Red Bull\n5. RB F1 Team\n\n## Upgrade impact\n\n- RB F1 Team: 83.1/100, aero efficiency, brake cooling, diffuser feed\n- McLaren: 77.7/100, aero efficiency, brake cooling, braking stability\n- Red Bull: 69.5/100, aero efficiency, brake cooling, cooling\n\n## Regulation context\n\nEra: 2026+ active-aero and new power-unit era\n\n- The FIA/F1 2026 rules introduce smaller, lighter cars, reduced drag/downforce targets, active aerodynamics, more electrical power, sustainable fuels, and Manual Override Mode.\n- Prediction should reward efficient aero switching, straight-line efficiency, energy deployment, traction, braking stability, reliability, and driver adaptability.\n\n## Main model signals\n\n- qualifying: 6.3%\n- ml podium probability: 5.9%\n- car performance: 5.9%\n- ml finish position score: 4.4%\n- race pace: 4.4%\n\n## Model accuracy audit\n\n- Finish-position MAE: 3.29; RMSE: 4.12\n- Neural lap-time MAE: 3.86s; RMSE: 5.37s\n- Backtest winner hit: 46.4%; top-3 recall: 63.1%; top-5 recall: 75.7%\n- Win model AUC/Brier: 0.951 / 0.038\n- Podium model AUC/Brier: 0.937 / 0.067\n\n## Source status\n\n- Stage: Race prediction, Post-qualifying prediction\n- ML model: loaded\n- F1 timing: official_f1_timing_no_completed_sessions_yet;openf1_skipped_optional_no_token\n- FastF1 sessions: ['R', 'Q', 'SQ', 'S', 'FP1']\n- Calendar check: official_f1_calendar_page_reachable\n\n---\n\nPredictions are estimates, not guaranteed race results.\n",
       "profile": {
         "race_name": "British Grand Prix",
         "circuit": "Silverstone Circuit",
@@ -181,17 +181,17 @@
       },
       "weather": {
         "source": "Open-Meteo forecast",
-        "temperature": "24.9°C",
+        "temperature": "24.5°C",
         "rain": "0%",
-        "humidity": "49%",
-        "wind": "10.1 km/h",
-        "wind_gust": "23.8 km/h",
-        "cloud_cover": "100%",
+        "humidity": "50%",
+        "wind": "10.4 km/h",
+        "wind_gust": "24.5 km/h",
+        "cloud_cover": "48%",
         "track_temperature": "Unavailable",
         "rain_score": 0,
         "heat_score": 0,
-        "wind_score": 61.88,
-        "impact": "dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth"
+        "wind_score": 63.7,
+        "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
       },
       "historical_weather": {
         "source": "Open-Meteo archive",
@@ -275,8 +275,519 @@
           "data": {
             "laps": [],
             "results": [],
-            "pitstops": [],
             "sprint_qualifying": [],
+            "qualifying": [
+              {
+                "season": "2026",
+                "round": "9",
+                "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix",
+                "raceName": "British Grand Prix",
+                "Circuit": {
+                  "circuitId": "silverstone",
+                  "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit",
+                  "circuitName": "Silverstone Circuit",
+                  "Location": {
+                    "lat": "52.0786",
+                    "long": "-1.01694",
+                    "locality": "Silverstone",
+                    "country": "UK"
+                  }
+                },
+                "date": "2026-07-05",
+                "time": "14:00:00Z",
+                "QualifyingResults": [
+                  {
+                    "number": "12",
+                    "position": "1",
+                    "Driver": {
+                      "driverId": "antonelli",
+                      "permanentNumber": "12",
+                      "code": "ANT",
+                      "url": "https://en.wikipedia.org/wiki/Andrea_Kimi_Antonelli",
+                      "givenName": "Andrea Kimi",
+                      "familyName": "Antonelli",
+                      "dateOfBirth": "2006-08-25",
+                      "nationality": "Italian"
+                    },
+                    "Constructor": {
+                      "constructorId": "mercedes",
+                      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+                      "name": "Mercedes",
+                      "nationality": "German"
+                    },
+                    "Q1": "1:29.719",
+                    "Q2": "1:28.493",
+                    "Q3": "1:28.111"
+                  },
+                  {
+                    "number": "16",
+                    "position": "2",
+                    "Driver": {
+                      "driverId": "leclerc",
+                      "permanentNumber": "16",
+                      "code": "LEC",
+                      "url": "http://en.wikipedia.org/wiki/Charles_Leclerc",
+                      "givenName": "Charles",
+                      "familyName": "Leclerc",
+                      "dateOfBirth": "1997-10-16",
+                      "nationality": "Monegasque"
+                    },
+                    "Constructor": {
+                      "constructorId": "ferrari",
+                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+                      "name": "Ferrari",
+                      "nationality": "Italian"
+                    },
+                    "Q1": "1:29.534",
+                    "Q2": "1:28.626",
+                    "Q3": "1:28.286"
+                  },
+                  {
+                    "number": "44",
+                    "position": "3",
+                    "Driver": {
+                      "driverId": "hamilton",
+                      "permanentNumber": "44",
+                      "code": "HAM",
+                      "url": "http://en.wikipedia.org/wiki/Lewis_Hamilton",
+                      "givenName": "Lewis",
+                      "familyName": "Hamilton",
+                      "dateOfBirth": "1985-01-07",
+                      "nationality": "British"
+                    },
+                    "Constructor": {
+                      "constructorId": "ferrari",
+                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+                      "name": "Ferrari",
+                      "nationality": "Italian"
+                    },
+                    "Q1": "1:29.644",
+                    "Q2": "1:28.864",
+                    "Q3": "1:28.458"
+                  },
+                  {
+                    "number": "63",
+                    "position": "4",
+                    "Driver": {
+                      "driverId": "russell",
+                      "permanentNumber": "63",
+                      "code": "RUS",
+                      "url": "http://en.wikipedia.org/wiki/George_Russell_(racing_driver)",
+                      "givenName": "George",
+                      "familyName": "Russell",
+                      "dateOfBirth": "1998-02-15",
+                      "nationality": "British"
+                    },
+                    "Constructor": {
+                      "constructorId": "mercedes",
+                      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+                      "name": "Mercedes",
+                      "nationality": "German"
+                    },
+                    "Q1": "1:29.985",
+                    "Q2": "1:28.920",
+                    "Q3": "1:28.481"
+                  },
+                  {
+                    "number": "6",
+                    "position": "5",
+                    "Driver": {
+                      "driverId": "hadjar",
+                      "permanentNumber": "6",
+                      "code": "HAD",
+                      "url": "https://en.wikipedia.org/wiki/Isack_Hadjar",
+                      "givenName": "Isack",
+                      "familyName": "Hadjar",
+                      "dateOfBirth": "2004-09-28",
+                      "nationality": "French"
+                    },
+                    "Constructor": {
+                      "constructorId": "red_bull",
+                      "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
+                      "name": "Red Bull",
+                      "nationality": "Austrian"
+                    },
+                    "Q1": "1:29.276",
+                    "Q2": "1:29.069",
+                    "Q3": "1:28.746"
+                  },
+                  {
+                    "number": "1",
+                    "position": "6",
+                    "Driver": {
+                      "driverId": "norris",
+                      "permanentNumber": "1",
+                      "code": "NOR",
+                      "url": "http://en.wikipedia.org/wiki/Lando_Norris",
+                      "givenName": "Lando",
+                      "familyName": "Norris",
+                      "dateOfBirth": "1999-11-13",
+                      "nationality": "British"
+                    },
+                    "Constructor": {
+                      "constructorId": "mclaren",
+                      "url": "https://en.wikipedia.org/wiki/McLaren",
+                      "name": "McLaren",
+                      "nationality": "British"
+                    },
+                    "Q1": "1:30.186",
+                    "Q2": "1:29.383",
+                    "Q3": "1:28.877"
+                  },
+                  {
+                    "number": "3",
+                    "position": "7",
+                    "Driver": {
+                      "driverId": "max_verstappen",
+                      "permanentNumber": "3",
+                      "code": "VER",
+                      "url": "http://en.wikipedia.org/wiki/Max_Verstappen",
+                      "givenName": "Max",
+                      "familyName": "Verstappen",
+                      "dateOfBirth": "1997-09-30",
+                      "nationality": "Dutch"
+                    },
+                    "Constructor": {
+                      "constructorId": "red_bull",
+                      "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
+                      "name": "Red Bull",
+                      "nationality": "Austrian"
+                    },
+                    "Q1": "1:29.549",
+                    "Q2": "1:29.113",
+                    "Q3": "1:28.893"
+                  },
+                  {
+                    "number": "81",
+                    "position": "8",
+                    "Driver": {
+                      "driverId": "piastri",
+                      "permanentNumber": "81",
+                      "code": "PIA",
+                      "url": "http://en.wikipedia.org/wiki/Oscar_Piastri",
+                      "givenName": "Oscar",
+                      "familyName": "Piastri",
+                      "dateOfBirth": "2001-04-06",
+                      "nationality": "Australian"
+                    },
+                    "Constructor": {
+                      "constructorId": "mclaren",
+                      "url": "https://en.wikipedia.org/wiki/McLaren",
+                      "name": "McLaren",
+                      "nationality": "British"
+                    },
+                    "Q1": "1:29.971",
+                    "Q2": "1:29.218",
+                    "Q3": "1:29.032"
+                  },
+                  {
+                    "number": "41",
+                    "position": "9",
+                    "Driver": {
+                      "driverId": "arvid_lindblad",
+                      "permanentNumber": "41",
+                      "code": "LIN",
+                      "url": "https://en.wikipedia.org/wiki/Arvid_Lindblad",
+                      "givenName": "Arvid",
+                      "familyName": "Lindblad",
+                      "dateOfBirth": "2007-08-08",
+                      "nationality": "British"
+                    },
+                    "Constructor": {
+                      "constructorId": "rb",
+                      "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
+                      "name": "RB F1 Team",
+                      "nationality": "Italian"
+                    },
+                    "Q1": "1:29.661",
+                    "Q2": "1:29.324",
+                    "Q3": "1:29.305"
+                  },
+                  {
+                    "number": "30",
+                    "position": "10",
+                    "Driver": {
+                      "driverId": "lawson",
+                      "permanentNumber": "30",
+                      "code": "LAW",
+                      "url": "http://en.wikipedia.org/wiki/Liam_Lawson",
+                      "givenName": "Liam",
+                      "familyName": "Lawson",
+                      "dateOfBirth": "2002-02-11",
+                      "nationality": "New Zealander"
+                    },
+                    "Constructor": {
+                      "constructorId": "rb",
+                      "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
+                      "name": "RB F1 Team",
+                      "nationality": "Italian"
+                    },
+                    "Q1": "1:29.300",
+                    "Q2": "1:29.429",
+                    "Q3": "1:29.716"
+                  },
+                  {
+                    "number": "5",
+                    "position": "11",
+                    "Driver": {
+                      "driverId": "bortoleto",
+                      "permanentNumber": "5",
+                      "code": "BOR",
+                      "url": "https://en.wikipedia.org/wiki/Gabriel_Bortoleto",
+                      "givenName": "Gabriel",
+                      "familyName": "Bortoleto",
+                      "dateOfBirth": "2004-10-14",
+                      "nationality": "Brazilian"
+                    },
+                    "Constructor": {
+                      "constructorId": "audi",
+                      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
+                      "name": "Audi",
+                      "nationality": "German"
+                    },
+                    "Q1": "1:30.269",
+                    "Q2": "1:29.461"
+                  },
+                  {
+                    "number": "10",
+                    "position": "12",
+                    "Driver": {
+                      "driverId": "gasly",
+                      "permanentNumber": "10",
+                      "code": "GAS",
+                      "url": "http://en.wikipedia.org/wiki/Pierre_Gasly",
+                      "givenName": "Pierre",
+                      "familyName": "Gasly",
+                      "dateOfBirth": "1996-02-07",
+                      "nationality": "French"
+                    },
+                    "Constructor": {
+                      "constructorId": "alpine",
+                      "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team",
+                      "name": "Alpine F1 Team",
+                      "nationality": "French"
+                    },
+                    "Q1": "1:30.345",
+                    "Q2": "1:30.063"
+                  },
+                  {
+                    "number": "27",
+                    "position": "13",
+                    "Driver": {
+                      "driverId": "hulkenberg",
+                      "permanentNumber": "27",
+                      "code": "HUL",
+                      "url": "http://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg",
+                      "givenName": "Nico",
+                      "familyName": "Hülkenberg",
+                      "dateOfBirth": "1987-08-19",
+                      "nationality": "German"
+                    },
+                    "Constructor": {
+                      "constructorId": "audi",
+                      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
+                      "name": "Audi",
+                      "nationality": "German"
+                    },
+                    "Q1": "1:29.539",
+                    "Q2": "1:30.076"
+                  },
+                  {
+                    "number": "87",
+                    "position": "14",
+                    "Driver": {
+                      "driverId": "bearman",
+                      "permanentNumber": "87",
+                      "code": "BEA",
+                      "url": "http://en.wikipedia.org/wiki/Oliver_Bearman",
+                      "givenName": "Oliver",
+                      "familyName": "Bearman",
+                      "dateOfBirth": "2005-05-08",
+                      "nationality": "British"
+                    },
+                    "Constructor": {
+                      "constructorId": "haas",
+                      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team",
+                      "name": "Haas F1 Team",
+                      "nationality": "American"
+                    },
+                    "Q1": "1:30.570",
+                    "Q2": "1:30.501"
+                  },
+                  {
+                    "number": "55",
+                    "position": "15",
+                    "Driver": {
+                      "driverId": "sainz",
+                      "permanentNumber": "55",
+                      "code": "SAI",
+                      "url": "http://en.wikipedia.org/wiki/Carlos_Sainz_Jr.",
+                      "givenName": "Carlos",
+                      "familyName": "Sainz",
+                      "dateOfBirth": "1994-09-01",
+                      "nationality": "Spanish"
+                    },
+                    "Constructor": {
+                      "constructorId": "williams",
+                      "url": "https://en.wikipedia.org/wiki/Williams_Racing",
+                      "name": "Williams",
+                      "nationality": "British"
+                    },
+                    "Q1": "1:30.562",
+                    "Q2": "1:30.623"
+                  },
+                  {
+                    "number": "23",
+                    "position": "16",
+                    "Driver": {
+                      "driverId": "albon",
+                      "permanentNumber": "23",
+                      "code": "ALB",
+                      "url": "http://en.wikipedia.org/wiki/Alexander_Albon",
+                      "givenName": "Alexander",
+                      "familyName": "Albon",
+                      "dateOfBirth": "1996-03-23",
+                      "nationality": "Thai"
+                    },
+                    "Constructor": {
+                      "constructorId": "williams",
+                      "url": "https://en.wikipedia.org/wiki/Williams_Racing",
+                      "name": "Williams",
+                      "nationality": "British"
+                    },
+                    "Q1": "1:30.638",
+                    "Q2": "1:31.341"
+                  },
+                  {
+                    "number": "31",
+                    "position": "17",
+                    "Driver": {
+                      "driverId": "ocon",
+                      "permanentNumber": "31",
+                      "code": "OCO",
+                      "url": "http://en.wikipedia.org/wiki/Esteban_Ocon",
+                      "givenName": "Esteban",
+                      "familyName": "Ocon",
+                      "dateOfBirth": "1996-09-17",
+                      "nationality": "French"
+                    },
+                    "Constructor": {
+                      "constructorId": "haas",
+                      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team",
+                      "name": "Haas F1 Team",
+                      "nationality": "American"
+                    },
+                    "Q1": "1:30.680"
+                  },
+                  {
+                    "number": "77",
+                    "position": "18",
+                    "Driver": {
+                      "driverId": "bottas",
+                      "permanentNumber": "77",
+                      "code": "BOT",
+                      "url": "http://en.wikipedia.org/wiki/Valtteri_Bottas",
+                      "givenName": "Valtteri",
+                      "familyName": "Bottas",
+                      "dateOfBirth": "1989-08-28",
+                      "nationality": "Finnish"
+                    },
+                    "Constructor": {
+                      "constructorId": "cadillac",
+                      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+                      "name": "Cadillac F1 Team",
+                      "nationality": "American"
+                    },
+                    "Q1": "1:31.227"
+                  },
+                  {
+                    "number": "43",
+                    "position": "19",
+                    "Driver": {
+                      "driverId": "colapinto",
+                      "permanentNumber": "43",
+                      "code": "COL",
+                      "url": "http://en.wikipedia.org/wiki/Franco_Colapinto",
+                      "givenName": "Franco",
+                      "familyName": "Colapinto",
+                      "dateOfBirth": "2003-05-27",
+                      "nationality": "Argentine"
+                    },
+                    "Constructor": {
+                      "constructorId": "alpine",
+                      "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team",
+                      "name": "Alpine F1 Team",
+                      "nationality": "French"
+                    },
+                    "Q1": "1:31.321"
+                  },
+                  {
+                    "number": "11",
+                    "position": "20",
+                    "Driver": {
+                      "driverId": "perez",
+                      "permanentNumber": "11",
+                      "code": "PER",
+                      "url": "http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez",
+                      "givenName": "Sergio",
+                      "familyName": "Pérez",
+                      "dateOfBirth": "1990-01-26",
+                      "nationality": "Mexican"
+                    },
+                    "Constructor": {
+                      "constructorId": "cadillac",
+                      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+                      "name": "Cadillac F1 Team",
+                      "nationality": "American"
+                    },
+                    "Q1": "1:31.451"
+                  },
+                  {
+                    "number": "18",
+                    "position": "21",
+                    "Driver": {
+                      "driverId": "stroll",
+                      "permanentNumber": "18",
+                      "code": "STR",
+                      "url": "http://en.wikipedia.org/wiki/Lance_Stroll",
+                      "givenName": "Lance",
+                      "familyName": "Stroll",
+                      "dateOfBirth": "1998-10-29",
+                      "nationality": "Canadian"
+                    },
+                    "Constructor": {
+                      "constructorId": "aston_martin",
+                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+                      "name": "Aston Martin",
+                      "nationality": "British"
+                    },
+                    "Q1": "1:32.863"
+                  },
+                  {
+                    "number": "14",
+                    "position": "22",
+                    "Driver": {
+                      "driverId": "alonso",
+                      "permanentNumber": "14",
+                      "code": "ALO",
+                      "url": "http://en.wikipedia.org/wiki/Fernando_Alonso",
+                      "givenName": "Fernando",
+                      "familyName": "Alonso",
+                      "dateOfBirth": "1981-07-29",
+                      "nationality": "Spanish"
+                    },
+                    "Constructor": {
+                      "constructorId": "aston_martin",
+                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+                      "name": "Aston Martin",
+                      "nationality": "British"
+                    },
+                    "Q1": "1:33.025"
+                  }
+                ]
+              }
+            ],
+            "pitstops": [],
             "sprint": [
               {
                 "season": "2026",
@@ -1088,517 +1599,6 @@
                         "time": "1:34.528"
                       }
                     }
-                  }
-                ]
-              }
-            ],
-            "qualifying": [
-              {
-                "season": "2026",
-                "round": "9",
-                "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix",
-                "raceName": "British Grand Prix",
-                "Circuit": {
-                  "circuitId": "silverstone",
-                  "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit",
-                  "circuitName": "Silverstone Circuit",
-                  "Location": {
-                    "lat": "52.0786",
-                    "long": "-1.01694",
-                    "locality": "Silverstone",
-                    "country": "UK"
-                  }
-                },
-                "date": "2026-07-05",
-                "time": "14:00:00Z",
-                "QualifyingResults": [
-                  {
-                    "number": "12",
-                    "position": "1",
-                    "Driver": {
-                      "driverId": "antonelli",
-                      "permanentNumber": "12",
-                      "code": "ANT",
-                      "url": "https://en.wikipedia.org/wiki/Andrea_Kimi_Antonelli",
-                      "givenName": "Andrea Kimi",
-                      "familyName": "Antonelli",
-                      "dateOfBirth": "2006-08-25",
-                      "nationality": "Italian"
-                    },
-                    "Constructor": {
-                      "constructorId": "mercedes",
-                      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-                      "name": "Mercedes",
-                      "nationality": "German"
-                    },
-                    "Q1": "1:29.719",
-                    "Q2": "1:28.493",
-                    "Q3": "1:28.111"
-                  },
-                  {
-                    "number": "16",
-                    "position": "2",
-                    "Driver": {
-                      "driverId": "leclerc",
-                      "permanentNumber": "16",
-                      "code": "LEC",
-                      "url": "http://en.wikipedia.org/wiki/Charles_Leclerc",
-                      "givenName": "Charles",
-                      "familyName": "Leclerc",
-                      "dateOfBirth": "1997-10-16",
-                      "nationality": "Monegasque"
-                    },
-                    "Constructor": {
-                      "constructorId": "ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-                      "name": "Ferrari",
-                      "nationality": "Italian"
-                    },
-                    "Q1": "1:29.534",
-                    "Q2": "1:28.626",
-                    "Q3": "1:28.286"
-                  },
-                  {
-                    "number": "44",
-                    "position": "3",
-                    "Driver": {
-                      "driverId": "hamilton",
-                      "permanentNumber": "44",
-                      "code": "HAM",
-                      "url": "http://en.wikipedia.org/wiki/Lewis_Hamilton",
-                      "givenName": "Lewis",
-                      "familyName": "Hamilton",
-                      "dateOfBirth": "1985-01-07",
-                      "nationality": "British"
-                    },
-                    "Constructor": {
-                      "constructorId": "ferrari",
-                      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
-                      "name": "Ferrari",
-                      "nationality": "Italian"
-                    },
-                    "Q1": "1:29.644",
-                    "Q2": "1:28.864",
-                    "Q3": "1:28.458"
-                  },
-                  {
-                    "number": "63",
-                    "position": "4",
-                    "Driver": {
-                      "driverId": "russell",
-                      "permanentNumber": "63",
-                      "code": "RUS",
-                      "url": "http://en.wikipedia.org/wiki/George_Russell_(racing_driver)",
-                      "givenName": "George",
-                      "familyName": "Russell",
-                      "dateOfBirth": "1998-02-15",
-                      "nationality": "British"
-                    },
-                    "Constructor": {
-                      "constructorId": "mercedes",
-                      "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
-                      "name": "Mercedes",
-                      "nationality": "German"
-                    },
-                    "Q1": "1:29.985",
-                    "Q2": "1:28.920",
-                    "Q3": "1:28.481"
-                  },
-                  {
-                    "number": "6",
-                    "position": "5",
-                    "Driver": {
-                      "driverId": "hadjar",
-                      "permanentNumber": "6",
-                      "code": "HAD",
-                      "url": "https://en.wikipedia.org/wiki/Isack_Hadjar",
-                      "givenName": "Isack",
-                      "familyName": "Hadjar",
-                      "dateOfBirth": "2004-09-28",
-                      "nationality": "French"
-                    },
-                    "Constructor": {
-                      "constructorId": "red_bull",
-                      "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-                      "name": "Red Bull",
-                      "nationality": "Austrian"
-                    },
-                    "Q1": "1:29.276",
-                    "Q2": "1:29.069",
-                    "Q3": "1:28.746"
-                  },
-                  {
-                    "number": "1",
-                    "position": "6",
-                    "Driver": {
-                      "driverId": "norris",
-                      "permanentNumber": "1",
-                      "code": "NOR",
-                      "url": "http://en.wikipedia.org/wiki/Lando_Norris",
-                      "givenName": "Lando",
-                      "familyName": "Norris",
-                      "dateOfBirth": "1999-11-13",
-                      "nationality": "British"
-                    },
-                    "Constructor": {
-                      "constructorId": "mclaren",
-                      "url": "https://en.wikipedia.org/wiki/McLaren",
-                      "name": "McLaren",
-                      "nationality": "British"
-                    },
-                    "Q1": "1:30.186",
-                    "Q2": "1:29.383",
-                    "Q3": "1:28.877"
-                  },
-                  {
-                    "number": "3",
-                    "position": "7",
-                    "Driver": {
-                      "driverId": "max_verstappen",
-                      "permanentNumber": "3",
-                      "code": "VER",
-                      "url": "http://en.wikipedia.org/wiki/Max_Verstappen",
-                      "givenName": "Max",
-                      "familyName": "Verstappen",
-                      "dateOfBirth": "1997-09-30",
-                      "nationality": "Dutch"
-                    },
-                    "Constructor": {
-                      "constructorId": "red_bull",
-                      "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-                      "name": "Red Bull",
-                      "nationality": "Austrian"
-                    },
-                    "Q1": "1:29.549",
-                    "Q2": "1:29.113",
-                    "Q3": "1:28.893"
-                  },
-                  {
-                    "number": "81",
-                    "position": "8",
-                    "Driver": {
-                      "driverId": "piastri",
-                      "permanentNumber": "81",
-                      "code": "PIA",
-                      "url": "http://en.wikipedia.org/wiki/Oscar_Piastri",
-                      "givenName": "Oscar",
-                      "familyName": "Piastri",
-                      "dateOfBirth": "2001-04-06",
-                      "nationality": "Australian"
-                    },
-                    "Constructor": {
-                      "constructorId": "mclaren",
-                      "url": "https://en.wikipedia.org/wiki/McLaren",
-                      "name": "McLaren",
-                      "nationality": "British"
-                    },
-                    "Q1": "1:29.971",
-                    "Q2": "1:29.218",
-                    "Q3": "1:29.032"
-                  },
-                  {
-                    "number": "41",
-                    "position": "9",
-                    "Driver": {
-                      "driverId": "arvid_lindblad",
-                      "permanentNumber": "41",
-                      "code": "LIN",
-                      "url": "https://en.wikipedia.org/wiki/Arvid_Lindblad",
-                      "givenName": "Arvid",
-                      "familyName": "Lindblad",
-                      "dateOfBirth": "2007-08-08",
-                      "nationality": "British"
-                    },
-                    "Constructor": {
-                      "constructorId": "rb",
-                      "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
-                      "name": "RB F1 Team",
-                      "nationality": "Italian"
-                    },
-                    "Q1": "1:29.661",
-                    "Q2": "1:29.324",
-                    "Q3": "1:29.305"
-                  },
-                  {
-                    "number": "30",
-                    "position": "10",
-                    "Driver": {
-                      "driverId": "lawson",
-                      "permanentNumber": "30",
-                      "code": "LAW",
-                      "url": "http://en.wikipedia.org/wiki/Liam_Lawson",
-                      "givenName": "Liam",
-                      "familyName": "Lawson",
-                      "dateOfBirth": "2002-02-11",
-                      "nationality": "New Zealander"
-                    },
-                    "Constructor": {
-                      "constructorId": "rb",
-                      "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
-                      "name": "RB F1 Team",
-                      "nationality": "Italian"
-                    },
-                    "Q1": "1:29.300",
-                    "Q2": "1:29.429",
-                    "Q3": "1:29.716"
-                  },
-                  {
-                    "number": "5",
-                    "position": "11",
-                    "Driver": {
-                      "driverId": "bortoleto",
-                      "permanentNumber": "5",
-                      "code": "BOR",
-                      "url": "https://en.wikipedia.org/wiki/Gabriel_Bortoleto",
-                      "givenName": "Gabriel",
-                      "familyName": "Bortoleto",
-                      "dateOfBirth": "2004-10-14",
-                      "nationality": "Brazilian"
-                    },
-                    "Constructor": {
-                      "constructorId": "audi",
-                      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
-                      "name": "Audi",
-                      "nationality": "German"
-                    },
-                    "Q1": "1:30.269",
-                    "Q2": "1:29.461"
-                  },
-                  {
-                    "number": "10",
-                    "position": "12",
-                    "Driver": {
-                      "driverId": "gasly",
-                      "permanentNumber": "10",
-                      "code": "GAS",
-                      "url": "http://en.wikipedia.org/wiki/Pierre_Gasly",
-                      "givenName": "Pierre",
-                      "familyName": "Gasly",
-                      "dateOfBirth": "1996-02-07",
-                      "nationality": "French"
-                    },
-                    "Constructor": {
-                      "constructorId": "alpine",
-                      "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team",
-                      "name": "Alpine F1 Team",
-                      "nationality": "French"
-                    },
-                    "Q1": "1:30.345",
-                    "Q2": "1:30.063"
-                  },
-                  {
-                    "number": "27",
-                    "position": "13",
-                    "Driver": {
-                      "driverId": "hulkenberg",
-                      "permanentNumber": "27",
-                      "code": "HUL",
-                      "url": "http://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg",
-                      "givenName": "Nico",
-                      "familyName": "Hülkenberg",
-                      "dateOfBirth": "1987-08-19",
-                      "nationality": "German"
-                    },
-                    "Constructor": {
-                      "constructorId": "audi",
-                      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
-                      "name": "Audi",
-                      "nationality": "German"
-                    },
-                    "Q1": "1:29.539",
-                    "Q2": "1:30.076"
-                  },
-                  {
-                    "number": "87",
-                    "position": "14",
-                    "Driver": {
-                      "driverId": "bearman",
-                      "permanentNumber": "87",
-                      "code": "BEA",
-                      "url": "http://en.wikipedia.org/wiki/Oliver_Bearman",
-                      "givenName": "Oliver",
-                      "familyName": "Bearman",
-                      "dateOfBirth": "2005-05-08",
-                      "nationality": "British"
-                    },
-                    "Constructor": {
-                      "constructorId": "haas",
-                      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team",
-                      "name": "Haas F1 Team",
-                      "nationality": "American"
-                    },
-                    "Q1": "1:30.570",
-                    "Q2": "1:30.501"
-                  },
-                  {
-                    "number": "55",
-                    "position": "15",
-                    "Driver": {
-                      "driverId": "sainz",
-                      "permanentNumber": "55",
-                      "code": "SAI",
-                      "url": "http://en.wikipedia.org/wiki/Carlos_Sainz_Jr.",
-                      "givenName": "Carlos",
-                      "familyName": "Sainz",
-                      "dateOfBirth": "1994-09-01",
-                      "nationality": "Spanish"
-                    },
-                    "Constructor": {
-                      "constructorId": "williams",
-                      "url": "https://en.wikipedia.org/wiki/Williams_Racing",
-                      "name": "Williams",
-                      "nationality": "British"
-                    },
-                    "Q1": "1:30.562",
-                    "Q2": "1:30.623"
-                  },
-                  {
-                    "number": "23",
-                    "position": "16",
-                    "Driver": {
-                      "driverId": "albon",
-                      "permanentNumber": "23",
-                      "code": "ALB",
-                      "url": "http://en.wikipedia.org/wiki/Alexander_Albon",
-                      "givenName": "Alexander",
-                      "familyName": "Albon",
-                      "dateOfBirth": "1996-03-23",
-                      "nationality": "Thai"
-                    },
-                    "Constructor": {
-                      "constructorId": "williams",
-                      "url": "https://en.wikipedia.org/wiki/Williams_Racing",
-                      "name": "Williams",
-                      "nationality": "British"
-                    },
-                    "Q1": "1:30.638",
-                    "Q2": "1:31.341"
-                  },
-                  {
-                    "number": "31",
-                    "position": "17",
-                    "Driver": {
-                      "driverId": "ocon",
-                      "permanentNumber": "31",
-                      "code": "OCO",
-                      "url": "http://en.wikipedia.org/wiki/Esteban_Ocon",
-                      "givenName": "Esteban",
-                      "familyName": "Ocon",
-                      "dateOfBirth": "1996-09-17",
-                      "nationality": "French"
-                    },
-                    "Constructor": {
-                      "constructorId": "haas",
-                      "url": "https://en.wikipedia.org/wiki/Haas_F1_Team",
-                      "name": "Haas F1 Team",
-                      "nationality": "American"
-                    },
-                    "Q1": "1:30.680"
-                  },
-                  {
-                    "number": "77",
-                    "position": "18",
-                    "Driver": {
-                      "driverId": "bottas",
-                      "permanentNumber": "77",
-                      "code": "BOT",
-                      "url": "http://en.wikipedia.org/wiki/Valtteri_Bottas",
-                      "givenName": "Valtteri",
-                      "familyName": "Bottas",
-                      "dateOfBirth": "1989-08-28",
-                      "nationality": "Finnish"
-                    },
-                    "Constructor": {
-                      "constructorId": "cadillac",
-                      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
-                      "name": "Cadillac F1 Team",
-                      "nationality": "American"
-                    },
-                    "Q1": "1:31.227"
-                  },
-                  {
-                    "number": "43",
-                    "position": "19",
-                    "Driver": {
-                      "driverId": "colapinto",
-                      "permanentNumber": "43",
-                      "code": "COL",
-                      "url": "http://en.wikipedia.org/wiki/Franco_Colapinto",
-                      "givenName": "Franco",
-                      "familyName": "Colapinto",
-                      "dateOfBirth": "2003-05-27",
-                      "nationality": "Argentine"
-                    },
-                    "Constructor": {
-                      "constructorId": "alpine",
-                      "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team",
-                      "name": "Alpine F1 Team",
-                      "nationality": "French"
-                    },
-                    "Q1": "1:31.321"
-                  },
-                  {
-                    "number": "11",
-                    "position": "20",
-                    "Driver": {
-                      "driverId": "perez",
-                      "permanentNumber": "11",
-                      "code": "PER",
-                      "url": "http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez",
-                      "givenName": "Sergio",
-                      "familyName": "Pérez",
-                      "dateOfBirth": "1990-01-26",
-                      "nationality": "Mexican"
-                    },
-                    "Constructor": {
-                      "constructorId": "cadillac",
-                      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
-                      "name": "Cadillac F1 Team",
-                      "nationality": "American"
-                    },
-                    "Q1": "1:31.451"
-                  },
-                  {
-                    "number": "18",
-                    "position": "21",
-                    "Driver": {
-                      "driverId": "stroll",
-                      "permanentNumber": "18",
-                      "code": "STR",
-                      "url": "http://en.wikipedia.org/wiki/Lance_Stroll",
-                      "givenName": "Lance",
-                      "familyName": "Stroll",
-                      "dateOfBirth": "1998-10-29",
-                      "nationality": "Canadian"
-                    },
-                    "Constructor": {
-                      "constructorId": "aston_martin",
-                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
-                      "name": "Aston Martin",
-                      "nationality": "British"
-                    },
-                    "Q1": "1:32.863"
-                  },
-                  {
-                    "number": "14",
-                    "position": "22",
-                    "Driver": {
-                      "driverId": "alonso",
-                      "permanentNumber": "14",
-                      "code": "ALO",
-                      "url": "http://en.wikipedia.org/wiki/Fernando_Alonso",
-                      "givenName": "Fernando",
-                      "familyName": "Alonso",
-                      "dateOfBirth": "1981-07-29",
-                      "nationality": "Spanish"
-                    },
-                    "Constructor": {
-                      "constructorId": "aston_martin",
-                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
-                      "name": "Aston Martin",
-                      "nationality": "British"
-                    },
-                    "Q1": "1:33.025"
                   }
                 ]
               }
@@ -11053,7 +11053,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11061,8 +11061,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11330,7 +11330,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11338,8 +11338,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11612,7 +11612,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11620,8 +11620,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -11889,7 +11889,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -11897,8 +11897,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12165,7 +12165,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -12173,8 +12173,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12443,7 +12443,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -12451,8 +12451,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12719,7 +12719,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -12727,8 +12727,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -12993,7 +12993,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13001,8 +13001,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13265,7 +13265,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13273,8 +13273,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -13542,7 +13542,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13550,8 +13550,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -13824,7 +13824,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -13832,8 +13832,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14101,7 +14101,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14109,8 +14109,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14383,7 +14383,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14391,8 +14391,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14660,7 +14660,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14668,8 +14668,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -14936,7 +14936,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -14944,8 +14944,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15214,7 +15214,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -15222,8 +15222,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15490,7 +15490,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -15498,8 +15498,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -15764,7 +15764,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -15772,8 +15772,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16036,7 +16036,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16044,8 +16044,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16313,7 +16313,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16321,8 +16321,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16589,7 +16589,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16597,8 +16597,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -16867,7 +16867,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -16875,8 +16875,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17144,7 +17144,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17152,8 +17152,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17413,7 +17413,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17421,8 +17421,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17690,7 +17690,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17698,8 +17698,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -17965,7 +17965,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -17973,8 +17973,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -18240,7 +18240,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -18248,8 +18248,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -18513,7 +18513,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -18521,8 +18521,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -18781,7 +18781,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -18789,8 +18789,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -19048,7 +19048,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19056,8 +19056,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -19322,7 +19322,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19330,8 +19330,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -19596,7 +19596,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19604,8 +19604,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -19878,7 +19878,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Charles Leclerc",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -19886,8 +19886,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20155,7 +20155,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "George Russell",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20163,8 +20163,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20437,7 +20437,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Oscar Piastri",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20445,8 +20445,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20714,7 +20714,7 @@
           },
           "teammate_prediction_gap": 2.9,
           "teammate_reference": "Andrea Kimi Antonelli",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20722,8 +20722,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -20990,7 +20990,7 @@
           },
           "teammate_prediction_gap": 5.04,
           "teammate_reference": "Lewis Hamilton",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -20998,8 +20998,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -21268,7 +21268,7 @@
           },
           "teammate_prediction_gap": 2.11,
           "teammate_reference": "Lando Norris",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -21276,8 +21276,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -21544,7 +21544,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Isack Hadjar",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -21552,8 +21552,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -21818,7 +21818,7 @@
           },
           "teammate_prediction_gap": 7.47,
           "teammate_reference": "Max Verstappen",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -21826,8 +21826,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22090,7 +22090,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Liam Lawson",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22098,8 +22098,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22367,7 +22367,7 @@
           },
           "teammate_prediction_gap": 1.84,
           "teammate_reference": "Arvid Lindblad",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22375,8 +22375,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22643,7 +22643,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Esteban Ocon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22651,8 +22651,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -22921,7 +22921,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Gabriel Bortoleto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -22929,8 +22929,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -23198,7 +23198,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Alexander Albon",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -23206,8 +23206,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -23467,7 +23467,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Franco Colapinto",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -23475,8 +23475,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -23744,7 +23744,7 @@
           },
           "teammate_prediction_gap": 2.16,
           "teammate_reference": "Carlos Sainz",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -23752,8 +23752,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24019,7 +24019,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Lance Stroll",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24027,8 +24027,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24294,7 +24294,7 @@
           },
           "teammate_prediction_gap": 0.08,
           "teammate_reference": "Fernando Alonso",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24302,8 +24302,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24567,7 +24567,7 @@
           },
           "teammate_prediction_gap": 8.57,
           "teammate_reference": "Oliver Bearman",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24575,8 +24575,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -24835,7 +24835,7 @@
           },
           "teammate_prediction_gap": 7.32,
           "teammate_reference": "Nico Hülkenberg",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -24843,8 +24843,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -25102,7 +25102,7 @@
           },
           "teammate_prediction_gap": 9.74,
           "teammate_reference": "Pierre Gasly",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -25110,8 +25110,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -25376,7 +25376,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Valtteri Bottas",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -25384,8 +25384,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         },
         {
@@ -25650,7 +25650,7 @@
           },
           "teammate_prediction_gap": 0.69,
           "teammate_reference": "Sergio Pérez",
-          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-63aa9fbc27a0",
+          "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-dfa7f029c3a0",
           "race_id": "2026-9-british-grand-prix",
           "season": 2026,
           "round": 9,
@@ -25658,8 +25658,8 @@
           "stage": "post_qualifying",
           "model_version": "2026.06-strategy-actuals-v7",
           "schema_version": "2026.06-strategy-actuals-v7",
-          "generated_at": "2026-07-05T12:30:08.055320+05:30",
-          "input_data_hash": "d34b077c05355102905ab506e948e79eff8036b562b0d38d5067ae4df318a4fd",
+          "generated_at": "2026-07-05T14:26:56.347411+05:30",
+          "input_data_hash": "734fe9d4bed22430cf9eba1c9fdd0afd4bccf09dea711962a3a89fad96e80acb",
           "prediction_data_version": "2026.05-race-control-contract-v2"
         }
       ],
@@ -25718,7 +25718,7 @@
           "fastf1_tyre_stint": 0.0079
         },
         "source_health_snapshot": {
-          "generated_at": "2026-07-05T12:30:08.053403+05:30",
+          "generated_at": "2026-07-05T14:26:56.345431+05:30",
           "overall_score": 72.09,
           "status": "Fallback",
           "sources": [
@@ -25796,7 +25796,7 @@
               "source_url": "https://github.com/f1db/f1db",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-07-05T07:00:08.053173+00:00",
+              "checked_at": "2026-07-05T08:56:56.345188+00:00",
               "errors": [],
               "warnings": [
                 "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -25816,7 +25816,7 @@
               "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
               "schema_url": null,
               "artifact_path": null,
-              "checked_at": "2026-07-05T07:00:08.053323+00:00",
+              "checked_at": "2026-07-05T08:56:56.345356+00:00",
               "errors": [],
               "warnings": [
                 "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -30116,7 +30116,7 @@
             "model_latest_completed_race_id": "2026-8",
             "api_latest_completed_race_id": "2026-8",
             "readiness": {
-              "checked_at": "2026-07-05T12:29:15.994799+05:30",
+              "checked_at": "2026-07-05T14:26:06.940164+05:30",
               "current_year": 2026,
               "final_results_delay_hours": 8,
               "latest_completed_race_id": "2026-8",
@@ -31341,7 +31341,7 @@
   "notification_gate": {
     "allowed": true,
     "reason": "Event starts within 8 hours.",
-    "hours_until_event": 7.0,
+    "hours_until_event": 5.05,
     "matched_event": "F1 British GP - Race"
   },
   "backfill": {
