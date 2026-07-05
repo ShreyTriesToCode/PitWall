@@ -1,0 +1,26 @@
+{
+  "document_id": "68c523906822b63b",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_44_-_false_start_-_moving_before_start_signal.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-06T00:46:49.998095+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 72 Date 05 July 2026 Time 15:49 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 44 - Lewis Hamilt",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 72\nDate 05 July 2026\nTime 15:49\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 44 - Lewis Hamilton\nCompetitor Scuderia Ferrari HP\nTime 15:03\nSession Race\nFact Car 44 moved before the start signal was given.\nInfringement Breach of Article B5.11.1 of the FIA F1 Regulations.\nDecision 5 second time penalty.\nReason The Stewards reviewed video, timing and in-car video evidence.\nThe Stewards determined that after the third red light was illuminated, and before the\nstart signal was given, Car 44 moved. This was clearly visible on the on-board\nfootage by reference to the yellow Pirelli lettering on the tyre, which rotated upwards\nand forwards before the lights were extinguished.\nThe fact that the movement was limited does not negate the infringement. Any such\nmovement in that interval constitutes a false start / moving before the start signal.\nThe Stewards therefore find that Car 44 was in breach of Article B5.11.1 of the FIA\nF1 Regulations and impose the standard penalty for minor movement"
+}

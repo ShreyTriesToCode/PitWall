@@ -1,0 +1,26 @@
+{
+  "document_id": "1a863a1a7bc8463e",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_55_-_overtaking_the_safety_car.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-06T00:46:35.307200+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 83 Date 05 July 2026 Time 19:56 The Stewards, having received a report from the Race Director, summoned (document 76) and heard from the team representative, have considered the follo",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 83\nDate 05 July 2026\nTime 19:56\nThe Stewards, having received a report from the Race Director, summoned (document 76) and\nheard from the team representative, have considered the following matter and determine the\nfollowing:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 16:26\nSession Race\nFact Car 55 overtook the Safety Car after the \"LAPPED CARS MAY NOW OVERTAKE\"\nmessage had been displayed, despite not being entitled to do so under Article\nB5.13.4c of the FIA F1 Regulations.\nInfringement Breach of Article B5.13.4c of the FIA F1 Regulations.\nDecision 1 Penalty Lap.\nReason The Stewards heard from the team representative and reviewed\npositioning/marshalling system data, video, timing and in-car video evidence.\nAlthough Car 55 was lapped at Safety Car Line 1 when entering the pit lane, due to\nthe specific track and pit lane configuration at Silverstone it had temporarily unlapped\nitself by the time it crossed the Line at the end of the lap during which it crossed\nSafety Car Line 1 for the second time after the Safety Car was deployed.\nConsequen"
+}

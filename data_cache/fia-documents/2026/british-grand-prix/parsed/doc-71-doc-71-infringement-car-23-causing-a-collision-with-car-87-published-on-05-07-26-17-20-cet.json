@@ -1,0 +1,26 @@
+{
+  "document_id": "8d1f88f8d8ba6115",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_causing_a_collision_with_car_87.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-06T00:46:51.395875+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 71 Date 05 July 2026 Time 15:44 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driv",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 71\nDate 05 July 2026\nTime 15:44\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 15:04\nSession Race\nFact Car 23 caused a collision with Car 87 at Turn 6. \nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 10 second time penalty.\nReason The Stewards reviewed video, team radio and in-car video evidence.\nCar 23 attempted to overtake Car 87 on the inside of Turn 6. While doing so, the\ndriver of Car 23 locked the left-front wheel and understeered into the rear-left tyre of\nCar 87, causing Car 87 to spin.\nThe Stewards determined that Car 23 was not driving in a fully controlled manner from\nentry to the apex of the corner and therefore did not satisfy the requirements of the\nDriving Standards Guidelines for an inside overtake. Car 23 was wholly at fault for the\ncollision.\nThe Stewards therefore imposed the standard 10 second time penalty.\nCompetitors"
+}

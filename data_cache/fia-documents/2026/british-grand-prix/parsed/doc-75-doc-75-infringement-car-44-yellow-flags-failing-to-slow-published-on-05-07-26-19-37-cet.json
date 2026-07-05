@@ -1,0 +1,26 @@
+{
+  "document_id": "86f1ac238c46b4c8",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_44_-_yellow_flags_-_failing_to_slow.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-06T00:46:45.752326+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 75 Date 05 July 2026 Time 18:27 The Stewards, having received a report from the Race Director, summoned (document 73) and heard from the driver and team representative, have considered the f",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 75\nDate 05 July 2026\nTime 18:27\nThe Stewards, having received a report from the Race Director, summoned (document 73) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 44 - Lewis Hamilton\nCompetitor Scuderia Ferrari HP\nTime 16:03\nSession Race\nFact Car 44 failed to slow for a single yellow flag at Turn 9 on Lap 38.\nInfringement Breach of Article B1.8.4 a. of the FIA F1 Regulations.\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 1st reprimand of the season.\nReason The Stewards heard from the driver of Car 44 (Lewis Hamilton), the team\nrepresentative and reviewed positioning/marshalling system data, video, timing,\ntelemetry and in-car video evidence.\nHAM entered the relevant sector before any yellow flag or yellow light panel was\ndisplayed, with no such indication present before Turn 9. The first light panel\nencountered after Turn 9 was displaying green immediately before Turn 10. The\nyellow indication on the steering wheel display only appeared once the driver was\nalready on the straigh"
+}

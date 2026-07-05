@@ -1,0 +1,26 @@
+{
+  "document_id": "1a88ce1a47e765ae",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-06T00:46:36.430209+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 82 Date 05 July 2026 Time 19:38 Title Infringement - Race Deleted Lap Times Description Infringement - Race Deleted Lap Times Enclosed GBR DOC 82 - Race Deleted Lap Times .pdf Gerd Ennser Ta",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 82\nDate 05 July 2026\nTime 19:38\nTitle Infringement - Race Deleted Lap Times\nDescription Infringement - Race Deleted Lap Times\nEnclosed GBR DOC 82 - Race Deleted Lap Times .pdf\nGerd Ennser Tanja Geilhausen\nMathieu Remmerie Pedro Lamy\nRichard Norbury\n\n \n \n2026 BRITISH GRAND PRIX \n03 – 05 July 2026 \n \n    \nFrom The Stewards      Document 82 \n  \nTo All Officials, All Teams      Date  05 July 2026 \n \n        Time  19:38 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 1, 3, 5, 6, 9, 15 and 18. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 1 81  Oscar Piastri McLaren Mastercard F1 Team 15:05:47 PIT \n2 5 55  Carlos Sainz Atlassian Williams F1 Team 15:14:08 1:37.155 \n3 15 55 Carlos Sainz Atlassian Williams F1 Team 15:16:43 1:37.177 \n4 9 18 Lance Stroll Aston Martin Aramco F1 Team 15:18:12 1:39.331 \n5 6 27 Nico Hulkenberg Audi Revolut F1 Team 15:19:16 1:36.607 \n6 9 18 Lance Stroll Aston Martin Aramco F1 Team 15:1"
+}

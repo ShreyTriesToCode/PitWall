@@ -1,0 +1,26 @@
+{
+  "document_id": "8305024c62a242a4",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-06T00:46:40.220085+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BRITISH GRAND PRIX 03 - 05 July 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 79 Date 05 July 2026 Time 18:52 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Dri",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BRITISH GRAND PRIX\n03 - 05 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 79\nDate 05 July 2026\nTime 18:52\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 18 - Lance Stroll\nCompetitor Aston Martin Aramco F1 Team\nTime 16:01\nSession Race\nFact Car 18 left the track at Turn 9 in Lap 35 without a justifiable reason.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations.\nDecision 5 second time penalty.\nReason The Stewards reviewed positioning/marshalling system data, video and in-car video\nevidence.\nIt was evident that Car 18 left the track at Turn 9 on Lap 35 without a justifiable\nreason. This was the driver's fifth track limits infringement of the race.\nThe standard penalty for a fifth track limits infringement during the race is a further 5\nsecond time penalty. The Stewards therefore imposed the standard penalty.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rule"
+}
