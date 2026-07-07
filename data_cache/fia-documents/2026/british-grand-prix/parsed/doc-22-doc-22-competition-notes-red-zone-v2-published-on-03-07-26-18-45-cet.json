@@ -3,7 +3,7 @@
   "document_type": "competition_notes",
   "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_competition_notes_-_red_zone_v2.pdf",
   "parser_version": "fia-parser-v2",
-  "parsed_at": "2026-07-07T01:27:13.575231+05:30",
+  "parsed_at": "2026-07-07T12:32:04.405143+05:30",
   "confidence": 0.55,
   "classification": [],
   "upgrades": [],
@@ -18,8 +18,8 @@
       "document_id": "d3ddbcbcd8517087",
       "document_title": "Doc 22 - Competition Notes - Red Zone V2 Published on 03.07.26 18:45 CET",
       "source_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_competition_notes_-_red_zone_v2.pdf",
-      "source_authority": "official_fia",
-      "source_status": "official_live"
+      "source_authority": "official_fia_archive_api",
+      "source_status": "official_secondary_live"
     }
   }
 }
