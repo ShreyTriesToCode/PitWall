@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-07-11T08:09:02.524664+05:30",
+  "generated_at": "2026-07-11T11:33:44.019218+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -398,8 +398,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -748,8 +747,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -1098,8 +1096,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -1449,8 +1446,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -1797,8 +1793,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -2144,8 +2139,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -2493,8 +2487,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -2838,8 +2831,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -3183,8 +3175,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -3529,8 +3520,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -4175,8 +4165,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -4534,8 +4523,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -4892,8 +4880,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -5249,8 +5236,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -5604,8 +5590,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -5958,8 +5943,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -6314,8 +6298,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -6665,8 +6648,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -7017,8 +6999,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -7370,8 +7351,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -8018,8 +7998,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -8381,8 +8360,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -8743,8 +8721,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -9104,8 +9081,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -9464,8 +9440,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -9822,8 +9797,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -10181,8 +10155,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -10535,8 +10508,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -10890,8 +10862,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -11247,8 +11218,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -11890,8 +11860,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -12242,8 +12211,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -12594,8 +12562,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -12944,8 +12911,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -13292,8 +13258,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -13640,8 +13605,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -13988,8 +13952,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -14335,8 +14298,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -14682,8 +14644,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -15027,8 +14988,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -15665,8 +15625,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -16017,8 +15976,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -16369,8 +16327,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -16719,8 +16676,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -17067,8 +17023,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -17415,8 +17370,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -17763,8 +17717,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -18110,8 +18063,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -18456,8 +18408,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -18800,8 +18751,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -19435,8 +19385,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -19783,8 +19732,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -20134,8 +20082,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -20484,8 +20431,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -20831,8 +20777,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -21176,8 +21121,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -21521,8 +21465,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -21868,8 +21811,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -22216,8 +22158,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -22562,8 +22503,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -23210,8 +23150,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -23568,8 +23507,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -23926,8 +23864,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -24282,8 +24219,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -24638,8 +24574,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -24993,8 +24928,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -25348,8 +25282,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -25702,8 +25635,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -26054,8 +25986,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -26406,8 +26337,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -27043,8 +26973,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -27393,8 +27322,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -27743,8 +27671,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -28093,8 +28020,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -28441,8 +28367,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -28790,8 +28715,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -29139,8 +29063,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -29487,8 +29410,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -29835,8 +29757,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -30180,8 +30101,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -30815,8 +30735,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -31165,8 +31084,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -31515,8 +31433,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -31865,8 +31782,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -32213,8 +32129,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -32562,8 +32477,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -32911,8 +32825,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -33259,8 +33172,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -33607,8 +33519,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -33952,8 +33863,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -34610,8 +34520,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -34961,8 +34870,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -35314,8 +35222,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -35664,8 +35571,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -36015,8 +35921,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -36365,8 +36270,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -36715,8 +36619,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -37061,8 +36964,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -37410,8 +37312,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -37758,8 +37659,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -38395,8 +38295,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -38746,8 +38645,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -39099,8 +38997,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -39449,8 +39346,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -39800,8 +39696,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -40150,8 +40045,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -40500,8 +40394,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -40846,8 +40739,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -41195,8 +41087,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -41543,8 +41434,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -42190,8 +42080,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -42553,8 +42442,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -42914,8 +42802,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -43278,8 +43165,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -43642,8 +43528,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -44006,8 +43891,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -44371,8 +44255,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -44735,8 +44618,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -45102,8 +44984,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -45470,8 +45351,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -46124,8 +46004,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -46483,8 +46362,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -46845,8 +46723,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -47207,8 +47084,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -47571,8 +47447,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -47935,8 +47810,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -48299,8 +48173,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -48662,8 +48535,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -49025,8 +48897,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -49389,8 +49260,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_summons_-_car_18_-_alleged_impeding_by_car_10.pdf",
-              "fia_document_not_found:404"
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
