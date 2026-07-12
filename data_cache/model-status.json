@@ -2,36 +2,36 @@
   "schema_version": "2026.06-strategy-actuals-v7",
   "model_version": "2026.06-strategy-actuals-v7",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "generated_at": "2026-07-12T00:42:21.436719+05:30",
-  "trained_at": "2026-07-12T00:42:13.697482+05:30",
+  "generated_at": "2026-07-12T08:14:04.864614+05:30",
+  "trained_at": "2026-07-12T08:13:58.084750+05:30",
   "latest_completed_race_included": "2026-9",
   "latest_available_api_result": "2026-9",
   "feature_count": 42,
   "feature_columns": [
-    "track_weather_rainfall_rate",
-    "driver_strategy_first_pit_lap",
-    "team_recent_points",
-    "team_strategy_pit_stop_count",
-    "missing_lap_pace",
-    "sprint_position",
-    "missing_fia_upgrade_data",
-    "fia_upgrade_score",
-    "season_progress",
-    "grid_position",
-    "missing_pit_data",
-    "team_avg_finish",
-    "missing_qualifying",
-    "driver_avg_finish",
-    "missing_sprint_position",
-    "track_position_sensitivity",
-    "fia_upgrade_count",
     "qualifying_position",
     "track_dnf_rate",
-    "missing_grid",
-    "driver_recent3_finish",
-    "regulation_era_factor",
+    "sprint_position",
     "fia_upgrade_component_count",
+    "track_position_sensitivity",
+    "grid_position",
     "track_strategy_safety_car_rate",
+    "season_progress",
+    "regulation_era_factor",
+    "fia_upgrade_count",
+    "missing_pit_data",
+    "track_weather_rainfall_rate",
+    "driver_recent3_finish",
+    "team_avg_finish",
+    "missing_fia_upgrade_data",
+    "missing_grid",
+    "driver_strategy_first_pit_lap",
+    "team_strategy_pit_stop_count",
+    "missing_qualifying",
+    "fia_upgrade_score",
+    "missing_sprint_position",
+    "team_recent_points",
+    "driver_avg_finish",
+    "missing_lap_pace",
     "team_avg_points",
     "driver_recent10_points",
     "team_qualifying_strength_recent",
@@ -53,45 +53,45 @@
   ],
   "model_bundle_size_mb": 14.73,
   "metrics": {
-    "win_auc": 0.9553403282216841,
-    "win_brier": 0.03734625238306403,
-    "podium_auc": 0.9377192982456141,
-    "podium_brier": 0.06445937575707861,
-    "top10_auc": 0.853763440860215,
-    "top10_brier": 0.1581646748331088,
-    "finish_position_mae": 3.2304099794329058,
-    "finish_position_rmse": 4.045502442088452,
+    "win_auc": 0.9531880548829701,
+    "win_brier": 0.03756493381241053,
+    "podium_auc": 0.9372305764411029,
+    "podium_brier": 0.06368925952982624,
+    "top10_auc": 0.8531746031746033,
+    "top10_brier": 0.16073346269584243,
+    "finish_position_mae": 3.2407415746986006,
+    "finish_position_rmse": 4.051784951634658,
     "winner_hit_rate": 0.4643,
     "top3_recall": 0.6429,
     "top5_recall": 0.7786,
-    "top10_recall": 0.7893,
-    "spearman_rank_correlation": 0.7021,
-    "ndcg_at_3": 0.9272,
-    "ndcg_at_10": 0.9067,
-    "exact_position_accuracy": 0.0751,
-    "mean_position_error": 3.2261,
-    "lap_time_mae": 4.106979666132282,
-    "lap_time_rmse": 5.5639976193460745
+    "top10_recall": 0.7929,
+    "spearman_rank_correlation": 0.7062,
+    "ndcg_at_3": 0.9268,
+    "ndcg_at_10": 0.9089,
+    "exact_position_accuracy": 0.0715,
+    "mean_position_error": 3.2511,
+    "lap_time_mae": 3.926141136876181,
+    "lap_time_rmse": 5.328649075121579
   },
   "raw_metrics": {
     "win": {
-      "auc": 0.9553403282216841,
-      "brier": 0.03734625238306403,
-      "raw_brier": 0.03498417012799286,
+      "auc": 0.9531880548829701,
+      "brier": 0.03756493381241053,
+      "raw_brier": 0.035476050458083684,
       "calibration_method": "empirical_quantile_bins",
       "validation_rows": 559
     },
     "podium": {
-      "auc": 0.9377192982456141,
-      "brier": 0.06445937575707861,
-      "raw_brier": 0.07105472344005445,
+      "auc": 0.9372305764411029,
+      "brier": 0.06368925952982624,
+      "raw_brier": 0.07096675289572243,
       "calibration_method": "empirical_quantile_bins",
       "validation_rows": 559
     },
     "top10": {
-      "auc": 0.853763440860215,
-      "brier": 0.1581646748331088,
-      "raw_brier": 0.15595952474510277,
+      "auc": 0.8531746031746033,
+      "brier": 0.16073346269584243,
+      "raw_brier": 0.15560248595790171,
       "calibration_method": "empirical_quantile_bins",
       "validation_rows": 559
     },
@@ -101,8 +101,8 @@
       "report_path": "model_artifacts/leakage_diagnostic.json"
     },
     "finish_position": {
-      "mae": 3.2304099794329058,
-      "rmse": 4.045502442088452,
+      "mae": 3.2407415746986006,
+      "rmse": 4.051784951634658,
       "validation_rows": 559,
       "ranking": {
         "winner_hit": 0.4643,
@@ -110,13 +110,13 @@
         "top3_precision": 0.6429,
         "top5_recall": 0.7786,
         "top5_precision": 0.7786,
-        "top10_recall": 0.7893,
-        "top10_precision": 0.7893,
-        "ndcg_at_3": 0.9272,
-        "ndcg_at_10": 0.9067,
-        "spearman": 0.7021,
-        "exact_position_accuracy": 0.0751,
-        "mean_position_error": 3.2261
+        "top10_recall": 0.7929,
+        "top10_precision": 0.7929,
+        "ndcg_at_3": 0.9268,
+        "ndcg_at_10": 0.9089,
+        "spearman": 0.7062,
+        "exact_position_accuracy": 0.0715,
+        "mean_position_error": 3.2511
       },
       "beats_baselines": {
         "grid_order": true,
@@ -133,20 +133,20 @@
         2025,
         2026
       ],
-      "finish_mae": 3.796495471546183,
+      "finish_mae": 3.8040573188751896,
       "ranking": {
-        "winner_hit": 0.5833,
+        "winner_hit": 0.5,
         "top3_recall": 0.6111,
         "top3_precision": 0.6111,
         "top5_recall": 0.75,
         "top5_precision": 0.75,
         "top10_recall": 0.75,
         "top10_precision": 0.75,
-        "ndcg_at_3": 0.8537,
-        "ndcg_at_10": 0.8839,
-        "spearman": 0.6478,
-        "exact_position_accuracy": 0.0576,
-        "mean_position_error": 3.7875
+        "ndcg_at_3": 0.853,
+        "ndcg_at_10": 0.8833,
+        "spearman": 0.6477,
+        "exact_position_accuracy": 0.0652,
+        "mean_position_error": 3.7837
       },
       "baselines": {
         "grid_order": {
@@ -238,30 +238,30 @@
     },
     "win_probability_ranking": {
       "winner_hit": 0.5714,
-      "top3_recall": 0.6667,
-      "top3_precision": 0.6667,
-      "top5_recall": 0.7643,
-      "top5_precision": 0.7643,
-      "top10_recall": 0.9321,
-      "top10_precision": 0.9321,
-      "ndcg_at_3": 0.9165,
-      "ndcg_at_10": 0.8567,
-      "spearman": 0.626,
+      "top3_recall": 0.6548,
+      "top3_precision": 0.6548,
+      "top5_recall": 0.7714,
+      "top5_precision": 0.7714,
+      "top10_recall": 0.9357,
+      "top10_precision": 0.9357,
+      "ndcg_at_3": 0.9145,
+      "ndcg_at_10": 0.8563,
+      "spearman": 0.6272,
       "exact_position_accuracy": 0.0482,
-      "mean_position_error": 8.7039
+      "mean_position_error": 8.695
     },
     "lap_time_delta_forecast": {
       "model": "hist_gradient_boosting_lap_delta",
       "target": "target_lap_pace_minus_circuit_baseline",
-      "mae_seconds": 4.106979666132282,
-      "rmse_seconds": 5.5639976193460745,
+      "mae_seconds": 3.926141136876181,
+      "rmse_seconds": 5.328649075121579,
       "validation_rows": 532
     },
     "neural_lap_time_forecast": {
       "model": "hist_gradient_boosting_lap_delta",
       "target": "target_lap_pace_minus_circuit_baseline",
-      "mae_seconds": 4.106979666132282,
-      "rmse_seconds": 5.5639976193460745,
+      "mae_seconds": 3.926141136876181,
+      "rmse_seconds": 5.328649075121579,
       "validation_rows": 532,
       "deprecated_name": true,
       "replacement": "lap_time_delta_forecast"
@@ -593,8 +593,8 @@
           12,
           13
         ],
-        "brier_before": 0.052418339054388675,
-        "brier_after": 0.04063410937255079
+        "brier_before": 0.052673927992493555,
+        "brier_after": 0.040684001173675995
       },
       "podium": {
         "method": "empirical_quantile_bins",
@@ -609,8 +609,8 @@
           12,
           13
         ],
-        "brier_before": 0.083270660306145,
-        "brier_after": 0.06393486296726683
+        "brier_before": 0.0835945784972474,
+        "brier_after": 0.06331891880751034
       },
       "top10": {
         "method": "empirical_quantile_bins",
@@ -625,8 +625,8 @@
           12,
           13
         ],
-        "brier_before": 0.10960564592303815,
-        "brier_after": 0.10154293659961056
+        "brier_before": 0.10838515173715386,
+        "brier_after": 0.10104529100070722
       }
     }
   },
@@ -652,8 +652,8 @@
     "schema_version": "source-registry-v1",
     "season": 2026,
     "target_season_mode": "auto",
-    "discovered_at": "2026-07-12T00:42:21.435591+05:30",
-    "last_checked_at": "2026-07-12T00:42:21.435591+05:30",
+    "discovered_at": "2026-07-12T08:14:04.863344+05:30",
+    "last_checked_at": "2026-07-12T08:14:04.863344+05:30",
     "fia_championship_identifier": "fia-formula-one-world-championship-14",
     "fia_base_championship_documents_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
     "fia_season_document_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
@@ -711,7 +711,7 @@
       "source_url": "https://github.com/f1db/f1db",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-07-11T19:12:21.436422+00:00",
+      "checked_at": "2026-07-12T02:44:04.864297+00:00",
       "errors": [],
       "warnings": [
         "Set F1DB_SQLITE_PATH or F1DB_CSV_DIR to enable local F1DB enrichment."
@@ -731,7 +731,7 @@
       "source_url": "https://relbench.stanford.edu/datasets/rel-f1/",
       "schema_url": null,
       "artifact_path": null,
-      "checked_at": "2026-07-11T19:12:21.436616+00:00",
+      "checked_at": "2026-07-12T02:44:04.864505+00:00",
       "errors": [],
       "warnings": [
         "Set RELBENCH_F1_ENABLED=true and install relbench to run offline benchmarks."
@@ -757,7 +757,7 @@
       "published_at": "2026-07-05T20:35:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_championship_points.pdf",
       "content_type": null,
-      "fetched_at": "2026-07-11T19:02:09.257291+00:00",
+      "fetched_at": "2026-07-12T02:37:30.736753+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1022,7 +1022,10 @@
   "promotion_decision": {
     "decision": "hold_champion",
     "blockers": [
-      "out_of_time_did_not_beat_grid_order_finish_mae"
+      "out_of_time_did_not_beat_constructor_form_winner_hit",
+      "out_of_time_did_not_beat_grid_order_finish_mae",
+      "out_of_time_did_not_beat_grid_order_winner_hit",
+      "out_of_time_did_not_beat_qualifying_only_winner_hit"
     ],
     "baseline_gate": {
       "grid_order": true,
@@ -1036,7 +1039,7 @@
     "champion": {
       "name": "2026.06-strategy-actuals-v7",
       "schema_version": "2026.06-strategy-actuals-v7",
-      "trained_at": "2026-07-12T00:42:13.697482+05:30",
+      "trained_at": "2026-07-12T08:13:58.084750+05:30",
       "latest_completed_race_included": "2026-9"
     },
     "challenger": {
@@ -1046,7 +1049,10 @@
     "promotion_decision": {
       "decision": "hold_champion",
       "blockers": [
-        "out_of_time_did_not_beat_grid_order_finish_mae"
+        "out_of_time_did_not_beat_constructor_form_winner_hit",
+        "out_of_time_did_not_beat_grid_order_finish_mae",
+        "out_of_time_did_not_beat_grid_order_winner_hit",
+        "out_of_time_did_not_beat_qualifying_only_winner_hit"
       ],
       "baseline_gate": {
         "grid_order": true,
@@ -1059,24 +1065,24 @@
     "metrics": {
       "winner_hit_rate": 0.4643,
       "podium_recall": 0.6429,
-      "top10_recall": 0.7893,
-      "position_mae": 3.2304099794329058,
-      "spearman_rank_correlation": 0.7021,
-      "ndcg_at_3": 0.9272,
-      "ndcg_at_10": 0.9067,
+      "top10_recall": 0.7929,
+      "position_mae": 3.2407415746986006,
+      "spearman_rank_correlation": 0.7062,
+      "ndcg_at_3": 0.9268,
+      "ndcg_at_10": 0.9089,
       "brier": {
-        "win": 0.03734625238306403,
-        "podium": 0.06445937575707861,
-        "top10": 0.1581646748331088
+        "win": 0.03756493381241053,
+        "podium": 0.06368925952982624,
+        "top10": 0.16073346269584243
       }
     },
-    "generated_at": "2026-07-12T00:42:21.436695+05:30",
+    "generated_at": "2026-07-12T08:14:04.864590+05:30",
     "warnings": [
       "Model comparison is promotion-gate metadata, not proof of guaranteed prediction accuracy."
     ]
   },
   "readiness_state": {
-    "checked_at": "2026-07-12T00:42:21.387346+05:30",
+    "checked_at": "2026-07-12T08:14:04.815882+05:30",
     "current_year": 2026,
     "final_results_delay_hours": 8,
     "latest_completed_race_id": "2026-9",
