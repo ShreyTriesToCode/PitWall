@@ -1,5 +1,234 @@
 [
   {
+    "race_id": "2026-10-belgian-grand-prix",
+    "prediction_id": "2026-10-belgian-grand-prix-race-pre_weekend-c1c9581ddc64",
+    "season": 2026,
+    "round": 10,
+    "circuit": "Circuit de Spa-Francorchamps",
+    "city": "Spa",
+    "country": "Belgium",
+    "track_type": "permanent circuit",
+    "overtaking": "medium",
+    "tyre_stress": "medium-high",
+    "safety_car": "low-medium",
+    "weather": {
+      "source": "Open-Meteo forecast",
+      "temperature": "19.5°C",
+      "rain": "22%",
+      "humidity": "83%",
+      "wind": "15.5 km/h",
+      "wind_gust": "36.7 km/h",
+      "cloud_cover": "100%",
+      "track_temperature": "Unavailable",
+      "rain_score": 22.0,
+      "heat_score": 0,
+      "wind_score": 95.42000000000002,
+      "impact": "dry baseline more likely; wind may affect braking stability and aero balance; cloud cover may reduce track-temperature growth"
+    },
+    "strategy": {
+      "risk_meter": 47.7,
+      "strategy_chaos_score": 47.7,
+      "circuit_difficulty_score": 57.5,
+      "track_evolution_indicator": "High",
+      "clean_air_dirty_air_impact": "Medium",
+      "qualifying_importance_score": 66.0,
+      "pit_window": "Lap 16-28, with safety car flexibility.",
+      "tyre_degradation_model": {
+        "score": 72.0,
+        "label": "medium-high",
+        "basis": "Historical stint, tyre stress, track temperature, and pit-stop profile where available."
+      },
+      "pit_execution_model": [
+        {
+          "driver": "Liam Lawson",
+          "team": "RB F1 Team",
+          "score": 97.31
+        },
+        {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "score": 96.11
+        },
+        {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "score": 95.81
+        },
+        {
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "score": 94.35
+        },
+        {
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "score": 92.06
+        },
+        {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "score": 85.58
+        },
+        {
+          "driver": "Isack Hadjar",
+          "team": "Red Bull",
+          "score": 84.94
+        },
+        {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "score": 82.89
+        }
+      ],
+      "rain_beneficiaries": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 76.39,
+          "rank": 1
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 73.94,
+          "rank": 2
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "scenario_score": 72.08,
+          "rank": 3
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "scenario_score": 66.69,
+          "rank": 4
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "scenario_score": 65.65,
+          "rank": 5
+        }
+      ],
+      "safety_car_beneficiaries": [
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "scenario_score": 76.35,
+          "rank": 1
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 74.83,
+          "rank": 2
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "scenario_score": 74.67,
+          "rank": 3
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "scenario_score": 71.41,
+          "rank": 4
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 68.4,
+          "rank": 5
+        }
+      ],
+      "predicted_strategy": {
+        "status": "data_derived",
+        "stops": 2,
+        "sequence": [
+          {
+            "stint": 1,
+            "compound": "medium",
+            "laps": 13,
+            "lap_start": 1,
+            "lap_end": 13
+          },
+          {
+            "stint": 2,
+            "compound": "hard",
+            "laps": 16,
+            "lap_start": 14,
+            "lap_end": 29
+          },
+          {
+            "stint": 3,
+            "compound": "medium",
+            "laps": 15,
+            "lap_start": 30,
+            "lap_end": 44
+          }
+        ],
+        "first_pit_lap": 13,
+        "total_laps": 44,
+        "mandatory_compound_rule": "applied_to_dry_race_candidates",
+        "confidence": "medium",
+        "basis": "Derived from 6 cached same-circuit race(s), 116 pit-lap samples, and 76 driver stop-count samples.",
+        "data_points": {
+          "historical_races": 6,
+          "pit_lap_samples": 116,
+          "stop_count_samples": 76,
+          "pit_duration_samples": 116
+        },
+        "pit_loss_basis": {
+          "status": "stationary_pit_duration",
+          "average_seconds": 23.698,
+          "note": "Cached data exposes stationary pit duration; full in-lap/out-lap pit-lane loss was not available for every historical race."
+        },
+        "degradation_model": {
+          "status": "unavailable",
+          "basis": "No usable cached lap-time stints were available for a data-derived degradation slope.",
+          "samples": 0
+        },
+        "compound_mapping": null
+      },
+      "safety_car_window": {
+        "status": "no_events_observed",
+        "supporting_races": 6,
+        "bucket_size_laps": 5,
+        "windows": [],
+        "basis": "Aggregated race-control safety car/VSC/red-flag events across 6 cached same-circuit races."
+      },
+      "compound_mapping": null,
+      "active_aero": {
+        "straight_mode": "low-drag straight configuration",
+        "corner_mode": "high-downforce corner configuration",
+        "average_suitability": 69.43
+      },
+      "energy_deployment": {
+        "title": "2026 Boost / Overtake Mode Intelligence",
+        "average_boost_advantage": 65.87,
+        "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
+      },
+      "decision_log": [
+        "Model checks source health and missing critical data before ranking.",
+        "Scenario layer reweights real component scores for rain, safety car, tyre degradation, and low-overtaking cases.",
+        "2026 layer uses Boost, Overtake Mode, energy deployment, and Active Aero terminology with fallback proxies when exact data is unavailable."
+      ]
+    }
+  },
+  {
     "race_id": "2026-9-british-grand-prix",
     "prediction_id": "2026-9-british-grand-prix-race-post_qualifying-a6cc17717691",
     "season": 2026,
