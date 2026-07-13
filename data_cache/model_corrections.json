@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-07-13T08:40:10.421334+05:30",
+  "generated_at": "2026-07-13T12:16:46.672449+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -398,10 +398,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -751,10 +747,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -1104,10 +1096,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -1458,10 +1446,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -1809,10 +1793,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -2159,10 +2139,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -2511,10 +2487,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -2859,10 +2831,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -3207,10 +3175,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -3556,10 +3520,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -4205,10 +4165,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -4567,10 +4523,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -4928,10 +4880,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -5288,10 +5236,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -5646,10 +5590,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -6003,10 +5943,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -6362,10 +6298,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -6716,10 +6648,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -7071,10 +6999,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -7427,10 +7351,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -8078,10 +7998,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -8444,10 +8360,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -8809,10 +8721,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -9173,10 +9081,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -9536,10 +9440,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -9897,10 +9797,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -10259,10 +10155,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -10616,10 +10508,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -10974,10 +10862,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -11334,10 +11218,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -11980,10 +11860,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -12335,10 +12211,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -12690,10 +12562,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -13043,10 +12911,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -13394,10 +13258,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -13745,10 +13605,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -14096,10 +13952,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -14446,10 +14298,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -14796,10 +14644,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -15144,10 +14988,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -15785,10 +15625,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -16140,10 +15976,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -16495,10 +16327,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -16848,10 +16676,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -17199,10 +17023,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -17550,10 +17370,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -17901,10 +17717,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -18251,10 +18063,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -18600,10 +18408,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -18947,10 +18751,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -19585,10 +19385,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -19936,10 +19732,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -20290,10 +20082,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -20643,10 +20431,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -20993,10 +20777,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -21341,10 +21121,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -21689,10 +21465,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -22039,10 +21811,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -22390,10 +22158,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -22739,10 +22503,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -23390,10 +23150,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -23751,10 +23507,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -24112,10 +23864,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -24471,10 +24219,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -24830,10 +24574,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -25188,10 +24928,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -25546,10 +25282,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -25903,10 +25635,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -26258,10 +25986,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -26613,10 +26337,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -27253,10 +26973,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -27606,10 +27322,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -27959,10 +27671,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -28312,10 +28020,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -28663,10 +28367,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -29015,10 +28715,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -29367,10 +29063,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -29718,10 +29410,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -30069,10 +29757,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -30417,10 +30101,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -31055,10 +30735,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -31408,10 +31084,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -31761,10 +31433,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -32114,10 +31782,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -32465,10 +32129,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -32817,10 +32477,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -33169,10 +32825,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -33520,10 +33172,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -33871,10 +33519,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -34219,10 +33863,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -34880,10 +34520,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -35234,10 +34870,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -35590,10 +35222,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -35943,10 +35571,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -36297,10 +35921,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -36650,10 +36270,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -37003,10 +36619,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -37352,10 +36964,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -37704,10 +37312,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -38055,10 +37659,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -38695,10 +38295,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -39049,10 +38645,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -39405,10 +38997,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -39758,10 +39346,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -40112,10 +39696,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -40465,10 +40045,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -40818,10 +40394,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -41167,10 +40739,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -41519,10 +41087,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -41870,10 +41434,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -42520,10 +42080,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -42886,10 +42442,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -43250,10 +42802,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -43617,10 +43165,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -43984,10 +43528,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -44351,10 +43891,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -44719,10 +44255,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -45086,10 +44618,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -45456,10 +44984,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -45827,10 +45351,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -46484,10 +46004,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -46846,10 +46362,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -47211,10 +46723,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -47576,10 +47084,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -47943,10 +47447,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -48310,10 +47810,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -48677,10 +48173,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -49043,10 +48535,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -49409,10 +48897,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -49776,10 +49260,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "HTTPSConnectionPool(host='www.fia.com', port=443): Read timed out. (read timeout=45)",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times_0.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_leaving_the_track_multiple_times.pdf",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
               "fia_document_not_found:404"
             ]
           },
