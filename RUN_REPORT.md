@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-07-13T09:30:05.818463+00:00
+- Generated at: 2026-07-13T14:42:14.851470+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Belgian Grand Prix / race
 - Top 10 availability: 10 rows
@@ -8,7 +8,7 @@
 - Contract validation: passed
 - Event trust: 40.92
 - Source health: Fallback / 65.64
-- Source conflicts: 5
+- Source conflicts: 6
 - Major model disagreements: 6
 - Missing data groups: pit_stop_data, practice_or_lap_pace, qualifying
 
