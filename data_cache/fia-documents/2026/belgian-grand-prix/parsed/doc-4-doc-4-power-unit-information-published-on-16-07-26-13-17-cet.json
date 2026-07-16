@@ -1,0 +1,13 @@
+{
+  "document_id": "07e7ec252e51e77b",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-16T19:17:45.935461+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 4\nDate 16 July 2026\nTime 12:38\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R10_Belgium_Power_Unit_Information.pdf\nRui Marques\n\nROUND No. R10\nVENUE Spa-Francorchamps\nCENTRELINE 7.004 km\nFORMAT Standard\nDATE 17-19 July\nOvertake not active Overtake active\n8.5 MJ 9.0 MJ 7.0 MJ 9.0 MJ 9.0 MJ 4594 m 50 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT5-T14 2400-4900\nT5-T9\nT10-T11\nT12-T14\n[Exit T19]\n2350-3250\n3750-4000\n4450-4850\n[6730-6900]\n350kW\n350kW\n350kW\n[350kW]\nExit T3\nExit T7\nExit T10\nExit T17\n[Exit T19]\n1150-1400\n2650-2750\n3800-4000\n6150-6350\n[6800-7000]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n6745 m 6885 m\nL27/SC1 L28\nArticle C5.2.8\n"
+}
