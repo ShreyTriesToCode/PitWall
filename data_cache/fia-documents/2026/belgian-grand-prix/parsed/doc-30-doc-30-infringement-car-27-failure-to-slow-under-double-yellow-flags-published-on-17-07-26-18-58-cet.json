@@ -1,0 +1,26 @@
+{
+  "document_id": "41ca1ede4b803a1a",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_27_-_failure_to_slow_under_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:22.257967+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Audi Revolut F1 Team Document 30 Date 17 July 2026 Time 18:55 The Stewards, having received a report from the Race Director, summoned (document 17) and heard from the driver and team representative, have considered the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 30\nDate 17 July 2026\nTime 18:55\nThe Stewards, having received a report from the Race Director, summoned (document 17) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 27 - Nico Hulkenberg\nCompetitor Audi Revolut F1 Team\nTime 14:28\nSession Free Practice 1\nFact Failing to slow under double yellow flags.\nInfringement Breaches of Appendix H, Article 2.5.5 b) of the International Sporting Code and\nB1.8.4b of the FIA F1 Regulations.\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 2nd reprimand of the season.\n \nReason The Stewards heard from the driver of Car 27 (Nico Hulkenberg), team\nrepresentative and reviewed positioning and marshalling system data, video, timing,\ntelemetry and in-car video evidence.\nDuring the session a car was stopped on drivers’ right at the entry to turn 5, triggering\na double yellow flag. The evidence established that the double yellow flag condition\nwas initiated after Car 27 had already entered the relevant marshalling sector and\nafter Car 27 had already passed t"
+}

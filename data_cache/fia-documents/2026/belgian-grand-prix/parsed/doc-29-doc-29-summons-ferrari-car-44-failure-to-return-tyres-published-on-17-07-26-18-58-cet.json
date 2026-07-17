@@ -1,0 +1,26 @@
+{
+  "document_id": "61517ba8c440adc6",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_summons_-_ferrari_-_car_44_failure_to_return_tyres.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:24.313163+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The team representative is required to report to the Stewards at 19:10 in relation to the incident below: The Stewards From The Stewards To The Team Manager, Scuderia Ferrari HP Document 29 Date 17 July 2026 Time 18:55 No / Driver 44 - Lewis Hamilton Reason ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe team representative is required to report to the Stewards at 19:10 in relation to the incident\nbelow:\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 29\nDate 17 July 2026\nTime 18:55\nNo / Driver 44 - Lewis Hamilton\nReason Alleged breach of Article B6.4.2 of the FIA F1 Regulations – Failure to return tyres\nwhich have been electronically returned after FP1. Refer to Technical Delegate's\nreport (document 24).\nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro Lamy\nLoïc Bacquelaine\n"
+}

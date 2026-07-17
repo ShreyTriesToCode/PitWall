@@ -1,0 +1,26 @@
+{
+  "document_id": "8ce024db2bab62e3",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_6_-_changes_to_pu_elements.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:37.643470+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 10,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Oracle Red Bull Racing Document 21 Date 17 July 2026 Time 16:42 The Stewards, having received a report from the Technical Delegate (document 14), have considered the following matter and determine the following: No / Dr",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 21\nDate 17 July 2026\nTime 16:42\nThe Stewards, having received a report from the Technical Delegate (document 14), have\nconsidered the following matter and determine the following:\nNo / Driver 6 - Isack Hadjar\nCompetitor Oracle Red Bull Racing\nTime 13:36\nSession Free Practice 1\nFact The following Power Unit elements have been used:\n5th Engine (ICE)\n5th Turbocharger (TC)\n5th Exhaust Set (EXH)\nInfringement Breach of Article B8.2.2 (read with Article B8.2.3) of the FIA F1 Regulations.\nDecision Required to start the Race from the back of the starting grid.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nThe use of each additional element in this case carries a 10 grid place penalty.\nTherefore there is an accumulation of 30 places. Article B2.5.4b.iv of the FIA F1\nRegulations provides that a driver who has accrued more than 15 cumulative and\nunserved grid position penalties must start from the back of the grid.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 1"
+}

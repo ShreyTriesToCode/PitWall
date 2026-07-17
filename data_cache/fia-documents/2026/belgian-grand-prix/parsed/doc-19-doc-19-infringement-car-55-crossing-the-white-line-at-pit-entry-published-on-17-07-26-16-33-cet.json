@@ -1,0 +1,26 @@
+{
+  "document_id": "05ad5c22caea0b48",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_crossing_the_white_line_at_pit_entry.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:40.461372+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 5,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 19 Date 17 July 2026 Time 16:33 The Stewards, having received a report from the Race Director, summoned (document 16) and heard from the driver and team representative, have considere",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 19\nDate 17 July 2026\nTime 16:33\nThe Stewards, having received a report from the Race Director, summoned (document 16) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 13:54\nSession Free Practice 1\nFact Crossing the white line at pit entry.\nInfringement Breach of Appendix L, Chapter IV Article 4 of the International Sporting Code as\nclarified by Race Director’s Event Notes (item 15.2, document 6).\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 1st reprimand of the season.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz), team representative\nand reviewed in-car video evidence.\nItem 15.2 of the Race Director’s Event Notes provides that any driver passing to the\nright-hand side of the bollard at safety car line 1 will be considered as entering the pit\nlane for the purposes of Appendix L, Chapter IV Article 4 of the International Sporting\nCode which provides that any car entering the pit lane must not cr"
+}

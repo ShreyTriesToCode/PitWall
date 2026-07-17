@@ -1,0 +1,26 @@
+{
+  "document_id": "4c405381a5c6745a",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_tyre_return_infringement.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:32.829239+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 Technical Delegate’s Report Following FP1, the Scuderia Ferrari HP team electronically returned two sets of dry-weather tyres (sets 16-301 & 16-401) for Car 16 (LEC) in accordance with Articles B6.4.1 and B6.3.8 a) iii). However, the corresponding tyres were",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nTechnical Delegate’s Report\n \n \nFollowing FP1, the Scuderia Ferrari HP team electronically returned two sets of dry-weather tyres\n(sets 16-301 & 16-401) for Car 16 (LEC) in accordance with Articles B6.4.1 and B6.3.8 a) iii).\nHowever, the corresponding tyres were not physically returned to the Appointed Tyre Supplier before\nthe start of the FP2. This is non-compliant with Article B6.4.2.\n \n \nFollowing FP1, the Scuderia Ferrari HP team electronically returned two sets of dry-weather tyres\n(sets 44-301 & 44-401) for Car 44 (HAM) in accordance with Articles B6.4.1 and B6.3.8 a) iii). \nHowever, the corresponding tyres were not physically returned to the Appointed Tyre Supplier before\nthe start of the FP2. This is non-compliant with Article B6.4.2.\n \n \nI am reporting these matters to the stewards for their consideration.\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 24\nDate 17 July 2026\nTime 18:21\nJo Bauer\n"
+}

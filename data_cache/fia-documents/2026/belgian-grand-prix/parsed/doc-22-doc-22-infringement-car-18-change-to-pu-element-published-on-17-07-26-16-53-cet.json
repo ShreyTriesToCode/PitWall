@@ -1,0 +1,26 @@
+{
+  "document_id": "d0c50faf0d245e2f",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:36.239665+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 10,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 22 Date 17 July 2026 Time 16:43 The Stewards, having received a report from the Technical Delegate (document 14), have considered the following matter and determine the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 22\nDate 17 July 2026\nTime 16:43\nThe Stewards, having received a report from the Technical Delegate (document 14), have\nconsidered the following matter and determine the following:\nNo / Driver 18 - Lance Stroll\nCompetitor Aston Martin Aramco F1 Team\nTime 13:36\nSession Free Practice 1\nFact The following Power Unit element has been used:\n4th MGU-K\nInfringement Breach of Article B8.2.2 (read with B8.2.3) of the FIA F1 Regulations.\nDecision Drop of 10 grid positions for the next Race in which the driver participates.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\n \nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\n \n \nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro L"
+}

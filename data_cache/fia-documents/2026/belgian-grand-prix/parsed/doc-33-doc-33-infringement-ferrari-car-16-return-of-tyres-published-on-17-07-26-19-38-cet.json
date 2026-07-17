@@ -1,0 +1,26 @@
+{
+  "document_id": "55fb0c1a3be2d3f5",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_ferrari_-_car_16_return_of_tyres.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T00:36:19.420830+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The Stewards From The Stewards To The Team Manager, Scuderia Ferrari HP Document 33 Date 17 July 2026 Time 19:34 The Stewards, having received a report from the Technical Delegate (document 24), summoned the team representative (document 28), heard from the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 33\nDate 17 July 2026\nTime 19:34\nThe Stewards, having received a report from the Technical Delegate (document 24), summoned the\nteam representative (document 28), heard from the team representative, have considered the\nfollowing matter and determine the following:\nNo / Driver 16 - Charles Leclerc\nCompetitor Scuderia Ferrari HP\nTime 17:00\nSession Free Practice 2\nFact The team failed to physically return electronically returned tyres to the appointed tyre\nsupplier before the start of Free Practice 2. \nInfringement Breach of Article B6.4.2 of the FIA F1 Regulations.\nDecision The competitor (Scuderia Ferrari HP) is fined €5,000.\nReason The Stewards heard from the team representative of Car 44 (Lewis Hamilton) who\nacknowledged the breach and attributed it to an oversight.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\n \nDecisions of the Stewards are taken ind"
+}
