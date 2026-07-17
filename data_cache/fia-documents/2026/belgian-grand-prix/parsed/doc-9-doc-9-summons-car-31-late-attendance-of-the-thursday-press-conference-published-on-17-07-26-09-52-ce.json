@@ -1,0 +1,26 @@
+{
+  "document_id": "e84a43f0c357937c",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_summons_-_car_31_-_late_attendance_of_the_thursday_press_conference.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-17T13:38:31.888754+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The driver and team representative are required to report to the Stewards at 12:00 Friday July 17 2026, in relation to the incident below: The Stewards From The Stewards To The Team Manager, TGR Haas F1 Team Document 9 Date 17 July 2026 Time 09:51 No / Drive",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe driver and team representative are required to report to the Stewards at 12:00 Friday July 17\n2026, in relation to the incident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 9\nDate 17 July 2026\nTime 09:51\nNo / Driver 31 - Esteban Ocon\nReason Alleged breach of Article B10.1.1.a of the FIA F1 Regulations - Late attendance of\nthe Thursday Press Conference. \nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro Lamy\nLoïc Bacquelaine\n"
+}
