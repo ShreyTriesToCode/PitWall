@@ -1,0 +1,26 @@
+{
+  "document_id": "4494c07d6be08a6d",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_31_-_media_commitment.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-17T18:55:38.038250+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 6,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 13 Date 17 July 2026 Time 12:27 The Stewards, having received a report from the FIA Media Delegate, summoned (document 09) and heard from the driver and team representative, have considered the",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 13\nDate 17 July 2026\nTime 12:27\nThe Stewards, having received a report from the FIA Media Delegate, summoned (document 09)\nand heard from the driver and team representative, have considered the following matter and\ndetermine the following:\nNo / Driver 31 - Esteban Ocon\nCompetitor TGR Haas F1 Team\nTime 14:30\nFact The driver was late attending the Thursday Press Conference\nInfringement Breach of Article B10.1.1.a of the FIA F1 Regulations and Articles 12.2.1.i and\n12.2.1.p of the FIA International Sporting Code.\nDecision The competitor (TGR Haas F1 Team) is fined €5,000.  This fine is suspended for a\nperiod of 12 months subject to there being no further breach of a similar nature.\nReason The Stewards heard from the driver of Car 31 (Esteban Ocon) and the Team\nRepresentative.\nCar 31 was scheduled to attend the FIA Drivers' Press Conference at 14:30 as\npublished in the official FIA Media Schedule but arrived approximately one minute\nlate.\nThe Driver explained that he was unexpectedly briefly delayed when rushing from a\nteam meeting to get to the Press Conference and underestimated"
+}
