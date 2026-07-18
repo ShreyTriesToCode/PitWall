@@ -1,0 +1,26 @@
+{
+  "document_id": "7c3e4b7f42935b90",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-19T00:32:45.450633+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 20,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 45 Date 18 July 2026 Time 15:49 The Stewards, having received a report from the Technical Delegate (document 36), have considered the following matter and determine the following: No",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 45\nDate 18 July 2026\nTime 15:49\nThe Stewards, having received a report from the Technical Delegate (document 36), have\nconsidered the following matter and determine the following:\nNo / Driver 14 - Fernando Alonso\nCompetitor Aston Martin Aramco F1 Team\nTime 12:29\nSession Free Practice 3\nFact The following Power Unit elements have been used:\n5th Energy Store (ES)\n5th Control Electronics Unit (PU-CE)\n7th Power Unit Ancillary Component (PU-ANC)\nInfringement Breach of Article B8.2.2 (read with B8.2.3) of the FIA F1 Regulations.\nDecision Drop of 20 grid positions for the next Race in which the driver participates.\n(Subject to Car 14 being classified in the results of qualifying, Car 14 will be allocated\na grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1\nRegulations)\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nThe use of Energy Store and Control Electronics additional elements in this case\ncarries a 5 grid place penalty by virtue of Article B8.2.8.b FIA F1 Regulations, the use\nof the 7th Ancillary "
+}
