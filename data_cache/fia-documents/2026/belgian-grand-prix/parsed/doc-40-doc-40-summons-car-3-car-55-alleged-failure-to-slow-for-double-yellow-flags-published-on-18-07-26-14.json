@@ -1,0 +1,26 @@
+{
+  "document_id": "a841eba982f9b129",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_summons_-_car_3_-_car_55_alleged_failure_to_slow_for_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T18:42:12.830565+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The driver and team representative are required to report to the Stewards at 14:25, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Oracle Red Bull Racing Document 40 Date 18 July 2026 Time 14:09 No / Driver 3 - Max Ver",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe driver and team representative are required to report to the Stewards at 14:25, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 40\nDate 18 July 2026\nTime 14:09\nNo / Driver 3 - Max Verstappen\nReason Alleged breaches by Car 55 of Appendix H, Article 2.5.5 b) of the International\nSporting Code and B1.8.4b of the FIA F1 Regulations – Failing to slow under yellow\nflags at 13:33\nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro Lamy\nLoïc Bacquelaine\n"
+}

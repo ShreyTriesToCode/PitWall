@@ -1,0 +1,26 @@
+{
+  "document_id": "6d6d16a5a616b8ca",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_14_-_change_to_pu_elements.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T18:42:16.021831+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 5,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 37 Date 18 July 2026 Time 13:35 The Stewards, having received a report from the Technical Delegate (document 36), have considered the following matter and determine the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 37\nDate 18 July 2026\nTime 13:35\nThe Stewards, having received a report from the Technical Delegate (document 36), have\nconsidered the following matter and determine the following:\nNo / Driver 14 - Fernando Alonso\nCompetitor Aston Martin Aramco F1 Team\nTime 12:29\nSession Free Practice 3\nFact The following Power Unit elements have been used:\n5th Energy Store (ES)\n5th Control Electronics Unit (PU-CE)\n7th Power Unit Ancillary Component (PU-ANC)\nInfringement Breach of Article B8.2.2 (read with B8.2.3) of the FIA F1 Regulations.\nDecision Required to start the Race from the back of the starting grid.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nThe use of Energy Store and Control Electronics additional elements in this case\ncarries a 5 grid place penalty by virtue of Article B8.2.8.b FIA F1 Regulations, the use\nof the 7th Ancillary Component carries a 10 grid place penalty by virtue of Article\nB8.2.8.a FIA F1 Regulations. Therefore there is an accumulation of 20 places.\nArticle B2.5.4b.iv of the FIA F1 Regulations "
+}

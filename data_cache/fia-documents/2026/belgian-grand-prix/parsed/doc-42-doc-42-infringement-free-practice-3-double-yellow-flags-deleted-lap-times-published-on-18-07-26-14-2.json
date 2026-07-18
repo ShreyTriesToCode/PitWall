@@ -1,0 +1,26 @@
+{
+  "document_id": "fc91de3fa42b6d16",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_free_practice_3_double_yellow_flags_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T18:42:10.702779+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 42 Date 18 July 2026 Time 14:25 Title Infringement - Free Practice 3 Double Yellow Flags Deleted Lap Times Description Infringement - Free Practice 3 Double Yellow Flags Deleted Lap Times En",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 42\nDate 18 July 2026\nTime 14:25\nTitle Infringement - Free Practice 3 Double Yellow Flags Deleted Lap Times\nDescription Infringement - Free Practice 3 Double Yellow Flags Deleted Lap Times\nEnclosed BEL DOC 42 - Free Practice 3 Double Yellow Flag Deleted Lap Times.pdf\nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro Lamy\nLoïc Bacquelaine\n\n \n \n \n \n2026 BELGIAN GRAND PRIX \n17 – 19 July 2026 \n \n  \n  \nFrom The Stewards      Document 42 \n  \nTo All Officials, All Teams      Date  18 July 2026 \n \n        T i m e   14:25 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag zone will be deleted as detailed in the \nRace Director’s Competition Notes (item 9, document 6): \n \nSession Free Practice 3 \n  \nFact The F1 cars passed through a double waved \nyellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 14 23  Alexander Albon Atlassian Williams F1 Team 13:30:05 2:03.744 \n2 13 5  Gabriel Bortoleto Audi Revolut F1 Team 13:30:18 2:14.697 \n3 13 81 Oscar Piastri McLaren Mast ercard F1 Team 13:30:22 7:42.429 \n43 13 31 Esteban"
+}

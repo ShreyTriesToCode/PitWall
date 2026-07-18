@@ -1,0 +1,26 @@
+{
+  "document_id": "8ddf9431ca1c6692",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_decision_-_car_55_-_alleged_failure_to_slow_for_double_yellow_flags_.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T18:42:09.625467+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 43 Date 18 July 2026 Time 15:05 The Stewards, having received a report from the Race Director, summoned (documents 39 & 40) and heard from the drivers and team representatives, have c",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 43\nDate 18 July 2026\nTime 15:05\nThe Stewards, having received a report from the Race Director, summoned (documents 39 & 40)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 13:33\nSession Free Practice 3\nFact Alleged failing to slow under yellow flags\nInfringement Alleged breaches of Appendix H, Article 2.5.5 b) of the International Sporting Code\nand Article 1.8.4.b of the FIA F1 Regulations.\nDecision No further action.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz), the driver of Car 3\n(Max Verstappen), team representatives and reviewed positioning/marshalling\nsystem data, video, telemetry, team radio and in-car video evidence.\nDuring the session Car 44 collided with the barrier at the exit of turn 13 triggering a\ndouble yellow sector from the approach to turn 12 to turn 14. Car 55 and Car 3 had\nboth passed through this double yellow sector on the previous lap.\nCar 55 was behind Car 3 on the approach to the"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "f691d1c119c0b7bb",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-18T18:42:11.778115+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 41 Date 18 July 2026 Time 14:23 Title Infringement - Free Practice 3 Deleted Lap Times Description Infringement - Free Practice 3 Deleted Lap Times Enclosed BEL DOC 41 - Free Practice 3 Dele",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 41\nDate 18 July 2026\nTime 14:23\nTitle Infringement - Free Practice 3 Deleted Lap Times\nDescription Infringement - Free Practice 3 Deleted Lap Times\nEnclosed BEL DOC 41 - Free Practice 3 Deleted Lap Times.pdf\nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro Lamy\nLoïc Bacquelaine\n\n \n \n2026 BELGIAN GRAND PRIX \n17 – 19 July 2026 \n \n  \n  \nFrom The Stewards      Document 41 \n  \nTo All Officials, All Teams      Date  18 July 2026 \n \n        T i m e   14:22 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 3 \n  \nFact The F1 cars below did not use the track at turns 4,6, 9 and 19. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 19 43  Franco Colapinto BWT Alpine F1 Team 12:42:21 1:49.204 \n2 4 18  Lance Stroll Aston Martin Aramco F1 Team 12:42:05 OUT LAP \n3 19 43 Franco Colapinto BWT Alpine F1 Team NEXT LAP PIT \n4 4 1 Lando Norris McLaren Mastercard F1 Team 12:58:25 1:49.368 \n5 4 16 Charles Leclerc Scuderia Ferrari HP 12:58:44 PIT \n6 4 18 Lance Stroll Aston Martin"
+}
