@@ -1,0 +1,26 @@
+{
+  "document_id": "f26195b165ccb1e3",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_23_-_car_safety_lights_.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-20T00:34:46.440296+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 64 Date 19 July 2026 Time 19:06 The Stewards, having received a report from the Technical Delegate have considered the following matter and determine the following: No / Driver 23 - A",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 64\nDate 19 July 2026\nTime 19:06\nThe Stewards, having received a report from the Technical Delegate have considered the following\nmatter and determine the following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 14:22\nSession Reconnaissance Laps\nFact Car 23 left the pit lane during the reconnaissance laps without functioning rear lights\nInfringement Breach of Article B1.5.5 of the FIA F1 Regulations.\nDecision Competitor: Reprimand.\nReason The Stewards reviewed video of Car 23 traversing the pit lane during the\nreconnaissance laps which confirmed that the rear lights on Car 23 were not\nilluminated as required by Article B1.5.5 of the FIA F1 Regulations.\nThe Technical Delegate subsequently confirmed that the team had rectified the issue\nprior to the start of the Race. However, as a functioning rear light is an essential\nsafety device, the Stewards see no basis to refrain from imposing a penalty. All\ncompetitors are reminded of the importance of ensuring that this safety system is\nchecked thoroughly and maintained in proper working order at "
+}
