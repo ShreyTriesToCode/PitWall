@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Belgian GP - Race
 
-Generated: Sunday, 19 July 2026, 12:37 AM IST
+Generated: Sunday, 19 July 2026, 08:08 AM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Sunday, 19 July 2026, 12:37 AM IST
 
 ## Prediction
 
-1. Andrea Kimi Antonelli, score 68.9, confidence 33%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; pit-stop execution
-2. George Russell, score 68.8, confidence 25%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; pit-stop execution
-3. Lewis Hamilton, score 66.1, confidence 20%, qualifying and grid position; car performance; track trait fit; pit-stop execution; team-track fit
-4. Charles Leclerc, score 66.0, confidence 33%, qualifying and grid position; car performance; track trait fit; pit-stop execution; team-track fit
-5. Max Verstappen, score 64.1, confidence 51%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
-6. Lando Norris, score 63.8, confidence 51%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
-7. Oscar Piastri, score 57.1, confidence 43%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
-8. Liam Lawson, score 50.3, confidence 43%, qualifying and grid position; official upgrade package impact; pit-stop execution; car performance; reliability
-9. Isack Hadjar, score 50.3, confidence 56%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
-10. Arvid Lindblad, score 46.2, confidence 48%, qualifying and grid position; official upgrade package impact; pit-stop execution; car performance; neural lap-time forecast
+1. Andrea Kimi Antonelli, score 68.7, confidence 25%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; pit-stop execution
+2. George Russell, score 68.4, confidence 25%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; pit-stop execution
+3. Lewis Hamilton, score 65.8, confidence 20%, qualifying and grid position; car performance; track trait fit; pit-stop execution; team-track fit
+4. Charles Leclerc, score 65.5, confidence 33%, qualifying and grid position; car performance; track trait fit; pit-stop execution; team-track fit
+5. Max Verstappen, score 64.2, confidence 51%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
+6. Lando Norris, score 64.1, confidence 51%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
+7. Oscar Piastri, score 57.3, confidence 43%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
+8. Isack Hadjar, score 50.1, confidence 48%, qualifying and grid position; car performance; team-track fit; track trait fit; pit-stop execution
+9. Liam Lawson, score 50.0, confidence 43%, qualifying and grid position; official upgrade package impact; pit-stop execution; car performance; reliability
+10. Arvid Lindblad, score 45.7, confidence 40%, qualifying and grid position; official upgrade package impact; pit-stop execution; car performance; neural lap-time forecast
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Sunday, 19 July 2026, 12:37 AM IST
 - Overtaking: medium
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: low-medium
-- Weather: 18.1°C, rain 13%, wind 10.8 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
+- Weather: 18.5°C, rain 33%, wind 10.1 km/h
+- Weather impact: moderate rain risk, radar should influence pit timing; wind may affect braking stability and aero balance
 
 ## Strategy
 
@@ -69,11 +69,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.22; RMSE: 4.03
-- Neural lap-time MAE: 4.10s; RMSE: 5.58s
-- Backtest winner hit: 42.9%; top-3 recall: 65.5%; top-5 recall: 77.9%
-- Win model AUC/Brier: 0.953 / 0.038
-- Podium model AUC/Brier: 0.938 / 0.065
+- Finish-position MAE: 3.23; RMSE: 4.05
+- Neural lap-time MAE: 3.93s; RMSE: 5.33s
+- Backtest winner hit: 46.4%; top-3 recall: 64.3%; top-5 recall: 77.9%
+- Win model AUC/Brier: 0.956 / 0.038
+- Podium model AUC/Brier: 0.937 / 0.065
 
 ## Source status
 

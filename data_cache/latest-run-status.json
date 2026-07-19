@@ -1,14 +1,14 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-07-19T00:37:38.865956+05:30",
+  "generated_at": "2026-07-19T08:08:17.479130+05:30",
   "status": "Success",
   "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: race=F1 Belgian GP - Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {
     "schema_version": "source-registry-v1",
     "season": 2026,
     "target_season_mode": "auto",
-    "discovered_at": "2026-07-19T00:37:38.865436+05:30",
-    "last_checked_at": "2026-07-19T00:37:38.865436+05:30",
+    "discovered_at": "2026-07-19T08:08:17.478394+05:30",
+    "last_checked_at": "2026-07-19T08:08:17.478394+05:30",
     "fia_championship_identifier": "fia-formula-one-world-championship-14",
     "fia_base_championship_documents_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
     "fia_season_document_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
