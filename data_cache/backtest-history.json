@@ -1,22 +1,22 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-07-19T11:47:24.384794+05:30",
+  "generated_at": "2026-07-19T13:50:22.226345+05:30",
   "history": [
     {
       "race_id": "2026-10-belgian-grand-prix",
-      "prediction_id": "2026-10-belgian-grand-prix-race-post_qualifying-ed0134a398ef",
+      "prediction_id": "2026-10-belgian-grand-prix-race-post_qualifying-4422cb26e9a5",
       "race_name": "Belgian Grand Prix",
       "season": 2026,
       "round": 10,
       "stage": "post_qualifying",
       "model_version": "2026.06-strategy-actuals-v7",
-      "top_pick": "Andrea Kimi Antonelli",
-      "top_pick_confidence": 0,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "top_pick": "George Russell",
+      "top_pick_confidence": 26.9,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-10-belgian-grand-prix",
@@ -28,11 +28,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "George Russell",
       "top_pick_confidence": 26.9,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-9-british-grand-prix",
@@ -44,11 +44,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-9-british-grand-prix",
@@ -60,11 +60,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 19.2,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-9-british-grand-prix",
@@ -76,11 +76,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 19.2,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-8-austrian-grand-prix",
@@ -92,11 +92,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-8-austrian-grand-prix",
@@ -108,11 +108,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-7-barcelona-grand-prix",
@@ -124,11 +124,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 39.55,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-7-barcelona-grand-prix",
@@ -140,11 +140,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Lewis Hamilton",
       "top_pick_confidence": 19.2,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -156,11 +156,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-6-monaco-grand-prix",
@@ -172,11 +172,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 0,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -188,11 +188,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -204,11 +204,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "George Russell",
       "top_pick_confidence": 8.7,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -220,11 +220,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 79.7,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     },
     {
       "race_id": "2026-5-canadian-grand-prix",
@@ -236,11 +236,11 @@
       "model_version": "2026.06-strategy-actuals-v7",
       "top_pick": "Andrea Kimi Antonelli",
       "top_pick_confidence": 81.5,
-      "finish_position_mae": 3.2324705577485022,
-      "finish_position_rmse": 4.048132235205654,
+      "finish_position_mae": 3.236732566935845,
+      "finish_position_rmse": 4.0534665637954586,
       "winner_hit_rate": 0.4643,
       "top3_recall": 0.6548,
-      "top10_recall": 0.7929
+      "top10_recall": 0.7893
     }
   ]
 }
