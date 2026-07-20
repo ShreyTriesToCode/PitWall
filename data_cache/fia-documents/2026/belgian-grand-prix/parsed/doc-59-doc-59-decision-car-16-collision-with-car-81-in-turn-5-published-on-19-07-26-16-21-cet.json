@@ -1,0 +1,26 @@
+{
+  "document_id": "2cd307aaab19a4e0",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_decision_-_car_16_-_collision_with_car_81_in_turn_5.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-20T08:19:28.568184+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 59 Date 19 July 2026 Time 16:19 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 16 - Charles Lecl",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 59\nDate 19 July 2026\nTime 16:19\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 16 - Charles Leclerc\nCompetitor Scuderia Ferrari HP\nTime 15:20\nSession Race\nFact Collision with Car 81 in turn 5.\nInfringement Alleged breach of Appendix L, Chapter IV, Article 2 d) of the FIA International\nSporting Code.\nDecision No further action\nReason The Stewards reviewed video and in-car video evidence.\nOn the approach to turn 5, Car 81 moved to overtake Car 16 on the outside. Car 81\nhad some overlap on Car 16 but the front axle of Car 81 was not ahead of the front\naxle of Car 16 and there was no possibility of Car 81 completing an overtake from\nthat position.\nIn the Stewards’ determination, Car 16 did not deliberately crowd Car 81 off the edge\nof the track. Car 16 followed the racing line before the entry to turn 5 by moving\nslightly to the left to open up for turn 5 and side to side contact occurred between the\ntwo cars.\nIn the circumstances, the Stewards determined to take no further action,\nCom"
+}

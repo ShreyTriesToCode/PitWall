@@ -1,0 +1,26 @@
+{
+  "document_id": "23bd9d39dc26ab39",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_44_-_causing_a_collision_with_car_63_in_turn_5.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-20T08:19:31.746249+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 57 Date 19 July 2026 Time 16:18 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 44 - Lewis Hamilt",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 57\nDate 19 July 2026\nTime 16:18\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 44 - Lewis Hamilton\nCompetitor Scuderia Ferrari HP\nTime 15:04\nSession Race\nFact Causing a collision with Car 63 in turn 5\nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 5 second time penalty.\nReason The Stewards reviewed video, team radio and in-car video evidence.\nApproaching Turn 5 on the opening lap, Car 63 attempted an overtake around the\noutside of Car 44 and had established sufficient overlap to be entitled to racing room.\nCar 44 remained on the inside.\nDuring the corner, Car 44 experienced understeer and, despite attempting to avoid\nCar 63 by applying corrective steering, made contact with the right-hand side of Car\n63 with its left-front wheel. The Stewards determined that Car 63 remained within the\navailable racing room and that the collision was caused by Car 44 being unable to\nmaintain sufficient separation.\nThe Stewards recognise s"
+}

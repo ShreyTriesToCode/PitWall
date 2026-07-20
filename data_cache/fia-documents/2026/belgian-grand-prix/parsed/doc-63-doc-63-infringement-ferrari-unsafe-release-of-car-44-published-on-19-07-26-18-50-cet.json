@@ -1,0 +1,26 @@
+{
+  "document_id": "ebe8b6de4efd900d",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_ferrari_-_unsafe_release_of_car_44.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-20T08:19:21.678534+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 63 Date 19 July 2026 Time 18:46 The Stewards, having received a report from the Race Director, summoned (document 59) and heard from the team representative, have considered the following ma",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 63\nDate 19 July 2026\nTime 18:46\nThe Stewards, having received a report from the Race Director, summoned (document 59) and\nheard from the team representative, have considered the following matter and determine the\nfollowing:\nNo / Driver 44 - Lewis Hamilton\nCompetitor Scuderia Ferrari HP\nTime 15:45\nSession Race\nFact Unsafe release of car 44 from a pit stop.\nInfringement Breach of Article B1.6.2a of the FIA F1 Regulations.\nDecision The competitor (Scuderia Ferrari HP) is fined €30,000 of which €10,000 is\nsuspended for 12 months on condition that the Competitor does not commit a similar\ninfringement in the meantime and on the further condition that within 14 days the\nCompetitor submits a report to the FIA regarding the incident and protocols\nintroduced to mitigate the risk of such an incident occurring in the future.\nReason The Stewards heard from the team representative and reviewed video evidence.\nAs Car 44 was being released from its pit stop, a mechanic stepped in the path of the\nfront right tyre as the F1 Car moved forward. He fell but was not injured.\nThe team explained t"
+}

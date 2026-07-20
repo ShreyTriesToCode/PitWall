@@ -1,0 +1,26 @@
+{
+  "document_id": "96c4f458fc874109",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-20T08:19:25.082200+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 BELGIAN GRAND PRIX 17 - 19 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 61 Date 19 July 2026 Time 17:25 Title Infringement - Race Deleted Lap Times Description Race Deleted Lap Times Enclosed BEL DOC 61 - Race Deleted Lap Times .pdf Gerd Ennser Matthew Selley Al",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 BELGIAN GRAND PRIX\n17 - 19 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 61\nDate 19 July 2026\nTime 17:25\nTitle Infringement - Race Deleted Lap Times\nDescription Race Deleted Lap Times\nEnclosed BEL DOC 61 - Race Deleted Lap Times .pdf\nGerd Ennser Matthew Selley\nAlfonso Orihuela Pedro Lamy\nLoïc Bacquelaine\n\n \n \n2026 BELGIAN GRAND PRIX \n17 – 19 July 2026 \n \n  \n  \nFrom The Stewards      Document 61 \n  \nTo All Officials, All Teams      Date  19 July 2026 \n \n        T i m e   17:25 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 4, 6 and 19. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 4 55  Carlos Sainz Atlassian Williams F1 Team 15:14:32 1:53.978 \n2 4 11  Sergio Perez Cadillac Formula 1 Team 15:22:16 1:53.477 \n3 4 14 Fernando Alonso Aston Martin Aramco F1 Team 15:24:17 1:55.304 \n4 4 12 Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 15:25:32 1:51.090 \n5 4 44 Lewis Hamilton Scuderia Ferrari HP 15:38:35 2:02.860 \n6 6 30 Liam Lawson Visa Cash App Racing Bulls F1 Team 15:37:34 1:53.39"
+}
