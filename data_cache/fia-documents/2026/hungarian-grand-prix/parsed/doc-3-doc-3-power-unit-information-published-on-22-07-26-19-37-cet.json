@@ -1,0 +1,13 @@
+{
+  "document_id": "a62fc00be6b9c4cf",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-23T11:45:21.788700+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 3\nDate 22 July 2026\nTime 19:35\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R11_Hungary_Power_Unit_Information.pdf\nRui Marques\n\nROUND No. R11\nVENUE Budapest\nCENTRELINE 4.381 km\nFORMAT Standard\nDATE 24-26 July\nOvertake not active Overtake active\n8.5 MJ 9.0 MJ 9.0 MJ 9.0 MJ 9.0 MJ 1885 m 100 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT4-T9\nT12-T14\n1780-2700\n3500-4000\nT4-T5\nT8-T9\nT12-T14\n[Exit T14]\n1780-2000\n2570-2700\n3500-4000\n[4000-4200]\n350kW\n350kW\n350kW\n[350kW]\n[Exit T14] [4150-4400]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n3974 m 4121 m\nL20/SC1 L21\nArticle C5.2.10\nMaximum Recharge per lap\nArticle C5.12.8\nMaximum PU Power Reduct"
+}
