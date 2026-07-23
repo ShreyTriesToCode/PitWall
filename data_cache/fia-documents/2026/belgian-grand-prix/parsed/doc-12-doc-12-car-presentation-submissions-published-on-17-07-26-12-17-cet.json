@@ -1,9 +1,9 @@
 {
-  "document_id": "9301e86b31a924ae",
+  "document_id": "06095b3bb26ee48a",
   "document_type": "car_presentation_submissions",
-  "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+  "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
   "parser_version": "fia-parser-v2",
-  "parsed_at": "2026-07-22T11:40:49.443083+05:30",
+  "parsed_at": "2026-07-23T08:07:40.402838+05:30",
   "confidence": 1.0,
   "classification": [],
   "upgrades": [
@@ -17,7 +17,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on ho",
       "description": "Car Presentation – Belgian Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance -\nLocal Load ",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance -\nLocal Load Revised pylon profiles\nGiven the pylons now by regulation contact the\nmainplane underside, the interface is sensitive and\nrevised with pylon changes to existing element\nprofiles seeking to extract more load and at least\nmaintain flow stability.\n",
       "traits": [
@@ -40,7 +40,7 @@
       "geometric_difference": "Car Presentation – 2026 Belgian Grand Prix\n*Mercedes-AMG PETRONAS F1 Team*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to\nprevious version\nBrief desc",
       "description": "Car Presentation – 2026 Belgian Grand Prix\n*Mercedes-AMG PETRONAS F1 Team*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to\nprevious version\nBrief description on how the update works (min 20, max\n100 words)\n1 Rear Wing Circuit spec",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – 2026 Belgian Grand Prix\n*Mercedes-AMG PETRONAS F1 Team*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to\nprevious version\nBrief description on how the update works (min 20, max\n100 words)\n1 Rear Wing Circuit specific - Drag\nRange Reduce camber upper wing elements\nThe upper wing element camber has been reduced to drop local\ndownforce and drag at a level appropriate for Spa L/D.\n2 Rear Corner Performance - Local\nLoad Rear drum winglets position and span\nRear drum winglets position and span optimised around evolving\nonset flow and local load requirements – improved robustness\nthrough operating envelope.\n3 Front Wing\nEndplate\nPerformance - Flow\nConditioning Endplate top edge camber increased\nEndplate top edge camber increased to improve front wing\nperformance throughout the operating envelope, improving\nonset flow to the rear of the car.\n",
       "traits": [
@@ -68,7 +68,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on",
       "description": "Car Presentation – Belgian Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance -\nFlow Con",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance -\nFlow Conditioning Endplate modification\nA small revision to the rear wing endplate resulting\nin improved flow conditioning and aerodynamic\ncharacteristics across the full operating range.\n2 Rear Wing Circuit Specific –\nDrag Reduction New Rear Wing assembly\nA new rear wing assembly specifically designed for\nthe increased isochronal of this circuit, resulting in\nan efficient reduction of drag in straight line and\ncornering mode.\n",
       "traits": [
@@ -92,7 +92,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\nWilliams\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update wo",
       "description": "Car Presentation – Belgian Grand Prix\nWilliams\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner Circuit specific -\nDrag Range A revise",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\nWilliams\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner Circuit specific -\nDrag Range A revised rear brake duct winglet array\nTo suit the demands of the Spa-Francorchamps\ncircuit, we have reduced the loading on the rear\ncorner which offers a local efficiency improvement.\n2 Floor Body Circuit specific -\nDrag Range A local trim has been applied to the main Floor Body\nA further circuit specific change, altering the\nbalance between downforce and drag at the rear of\nthe main floor.\n3 Floor Body Performance -\nFlow Conditioning\nAn updated main floor profile which adds volume to\nthe central part of the diffuser.\nTo change the distribution of diffuser expansion\nvolume across the car operating envelope, a new\nfloor body surface has been introduced.\n",
       "traits": [
@@ -123,7 +123,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\n*TGR HAAS F1 TEAM*\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the",
       "description": "Car Presentation – Belgian Grand Prix\n*TGR HAAS F1 TEAM*\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Wing Performance -\nLocal Load\nRevi",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\n*TGR HAAS F1 TEAM*\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Wing Performance -\nLocal Load\nRevised Profiles and Pylon geometry A revised Front Wing geometry has been\nintroduced to increase local aerodynamic load\nwhile maintaining aerodynamic efficiency,\nimproving airflow management and overall front-\nend performance across a range of operating\nconditions.\n2 Front Wing\nEndplate\nPerformance -\nFlow Conditioning\nRevised Endplate geometry A revised Front Wing endplate geometry has been\nintroduced to complement the updated Front Wing\nprofiles, optimising local airflow control and\nmaintaining aerodynamic efficiency across the front\nwing assembly.\n3 Front Corner Performance -\nLocal Load\nMarginal geometry changes to deflector A circuit-specific Front Corner configuration has\nbeen made available, providing additional flexibility\nto better match the aerodynamic load\nrequirements of this circuit.\n4 Beam Wing Performance -\nDrag reduction\nRevised lower Rear Wing geometry A new Lower Rear Wing configuration has been\nintroduced as a circuit-specific option, providing\nadditional flexibility to align the car’s aerodynamic\ncharacteristics with the demands of this venue and\noptimise overall performance.\n",
       "traits": [
@@ -158,7 +158,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\nVisa Cash App Racing Bulls\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on",
       "description": "Car Presentation – Belgian Grand Prix\nVisa Cash App Racing Bulls\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Coke/Engine\nCover\nPerformance –\n",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\nVisa Cash App Racing Bulls\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Coke/Engine\nCover\nPerformance –\nFlow Conditioning Updated sidepod & upper bodywork\nThe profile of the sidepods has been modified to\nprovide better control of the airflow passing around\nthe side of the car.\n2 Roll Hoop Performance –\nFlow Conditioning Revised roll hoop inlet shape\nA narrower roll hoop has been introduced, which\nimproves the flow quality reaching the back of the\ncar and on to the rear wing.\n3 Front Corner Performance –\nFlow Conditioning Updated brake drum assembly\nDetail changes on the front brake drum\ncomponents bring improvements in air flow\nmanagement at the front of the car.\n4 Rear Wing Performance –\nLocal Load New upper rear wing assembly\nA number of changes to the mainplane and flap\nprofiles allow the rear wing to generate downforce\nmore efficiently, bringing performance\nimprovement at Spa and other circuits.\n",
       "traits": [
@@ -186,7 +186,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\nAudi Revolut F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how t",
       "description": "Car Presentation – Belgian Grand Prix\nAudi Revolut F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Circuit specific –\nDrag Rang",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\nAudi Revolut F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Circuit specific –\nDrag Range Rear wing upper cluster\nA circuit-specific rear wing assembly has been\nintroduced to align the aerodynamic configuration\nwith the requirements of the upcoming event.\n2 Diffuser Performance –\nLocal load Diffuser sidewall winglet\nA minor refinement has been made to the diffuser\nas part of the ongoing aerodynamic development\nprogramme. The update is intended to enhance the\naerodynamic behaviour of the surrounding flow\nfield.\n",
       "traits": [
@@ -211,7 +211,7 @@
       "geometric_difference": "Car Presentation – Belgian Grand Prix\nCadillac\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update wo",
       "description": "Car Presentation – Belgian Grand Prix\nCadillac\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Wing\nEndplate\nPerformance –\nFlow Conditionin",
       "event": null,
-      "source_url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
+      "source_url": "https://www.fia.com/web/20260718230205/https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_car_presentation_submissions.pdf",
       "confidence_score": 1.0,
       "raw_excerpt": "Car Presentation – Belgian Grand Prix\nCadillac\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Wing\nEndplate\nPerformance –\nFlow Conditioning\nRevised Front Wing Endplate footplate surfaces and\nturning vanes, and addition of horizontal vane to\nEndplate body\nUpdated Front Wing Endplate geometry improves\nflow quality to the forward floor, increasing the\naerodynamic load generated in this area\nthroughout the operating ride height range",
       "traits": [
