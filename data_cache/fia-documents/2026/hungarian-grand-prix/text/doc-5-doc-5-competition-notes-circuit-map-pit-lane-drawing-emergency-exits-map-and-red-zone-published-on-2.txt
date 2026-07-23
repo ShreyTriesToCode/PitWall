@@ -1,0 +1,276 @@
+2026 HUNGARIAN GRAND PRIX
+23 - 25 July 2026
+The FIA Formula 1 Race Director
+From The FIA Formula 1 Race Director
+To All Teams, All Officials
+Document 5
+Date 23 July 2026
+Time 17:10
+Title Circuit Map, Pit Lane Drawing, Emergency Exits Map and Red Zone
+Description Circuit Map, Pit Lane Drawing, Emergency Exits Map and Red Zone
+Enclosed 11HUN - Maps.pdf
+Rui Marques
+
+M1.5
+M1.2
+1A
+1
+4
+M1
+M0.7
+M0.5
+M0
+M14.7
+M14.3
+M14
+M13.5
+M13
+M12
+M11.5
+M11
+M10
+M9
+M8
+M6
+M5.5
+M5
+M4
+M3.8
+M3.3
+M3
+M2
+M2.5
+3
+2
+3
+4
+5
+6
+7
+9
+10
+11
+12
+12A
+13
+14
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+17
+18
+19
+20
+2
+8
+1
+TRACK
+LIMIT 1
+.
+TRACK
+LIMIT 2
+SM
+ A1
+SM
+ A1 OT D
+SM
+ A
+2
+SM 
+A
+2
+SM A3SM A3
+SM
+ A4
+SM A4
+TRACK
+LIMIT 3
+O
+T
+ A
+S1
+S2T
+16
+VERSION 2 - ISSUED 21.07.26
+© 2026 Formula One World Championship Limited
+The F1 FORMULA 1 logo, F1 logo, FORMULA 1, FORMULA ONE, F1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing BV, a Formula 1 company.
+The FIA logo is a trade mark of the Fédération Internationale de l'Automobile. All rights reserved.
+FORMULA 1 AWS HUNGARIAN GRAND PRIX 2026 - Budapest
+CIRCUIT DATA
+SECTOR 3
+SECTOR 2
+SECTOR 1
+-  1.103km
+-  1.542km
+-  1.736km
+ SPEED TRAP  [T]
+ INTERMEDIATE 2  [S2]
+-  310m before T1
+-  100m after T11
+-  85m before T4 INTERMEDIATE 1  [S1]
+CIRCUIT CENTRELINE LENGTH -  4.381km
+Circuit Map
+OVERTAKE STRAIGHT MODE
+-   ZONE A1   -
+-   ZONE A2   -
+-   ZONE A3   -
+-   ZONE A4   -
+ACTIVATION
+DETECTION 40m after T14
+50m after T3
+60m after T11
+100m after T14
+80m after T3
+90m after T11
+-  Entry T14
+15
+LEGEND
+START LINE
+CONTROL LINE
+CORNER NUMBER
+SM A [ZONE No.]
+STRAIGHT MODE
+NORMAL GRIP ACTIVATION
+SM A [ZONE No.]
+ STRAIGHT MODE
+LOW GRIP ACTIVATION
+OT A
+OT D
+OVERTAKE ACTIVATION 
+OVERTAKE DETECTION
+FIA LIGHT PANEL22
+M2 MARSHAL POST
+100m after T1A-entry30m after T1A-entry-  30m before
+   T14-exit
+®
+FIA FORMULA 1 WORLD CHAMPIONSHIPV1 - 23/07/2026
+Yellow Flag
+Marshal
+Pit Entry Road Signal
+Blue Flag
+Marshal
+HV Personnel Collection Point
+Pit ExitSafety Car Line 2Safety Car Line 1 Pit Entry21
+8
+0F1 GARAGES19
+18
+Pit Entry Status Panels FAST LANE
+McLAREN
+MERCEDES
+MERCEDES
+MERCEDES
+RED BULL
+RED BULL
+FERRARI
+FERRARI
+FERRARI
+11
+121415161718192021222324252627282930313213 D 123634 3533 B CA 3456107 89FOM
+CIRCUIT
+WILLIAMS
+WILLIAMS
+RACING BULLS
+RACING BULLS
+RACING BULLS
+ASTON MARTIN
+ASTON MARTIN
+HAAS
+HAAS
+HAAS
+AUDI
+AUDI
+ALPINE
+ALPINE
+WILLIAMS
+CADILLAC
+CADILLAC
+CADILLAC
+ALPINE
+CIRCUIT
+AUDI
+ASTON MARTIN
+RED BULL
+McLAREN
+McLAREN
+FOM
+FIA
+FIA
+FIA
+CADILLAC
+MERCEDES RED BULLFERRARIWILLIAMSRACING BULLSASTON MARTINHAASAUDIALPINEMcLAREN PIT LANE - 2026 HUNGARIAN GRAND PRIX
+WALKWAY
+WALKWAY
+WALKWAY
+WALKWAY
+E
+F
+EMERGENCY EXITS - 2026 HUNGARIAN GRAND PRIX
+V1 - 22/07/2026
+!
+!
+P Exit on the LEFT
+Exit on the RIGHT
+Drive in refuge
+Push in refuge
+LEGEND
+!
+!
+P S
+1S
+2T
+1
+A1
+2
+3
+4
+5
+6
+9
+1
+01
+11
+21
+2A1
+31
+48
+7
+!
+!
+!
+! !
+!
+P !
+!
+!
+P !
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! !
+!
+!
+!
+!
+!
+!
+!
+!
+P ®
+FIA FORMULA 1 WORLD CHAMPIONSHIP
