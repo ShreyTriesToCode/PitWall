@@ -1,0 +1,26 @@
+{
+  "document_id": "a06e9410cd2eeacf",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-24T19:12:43.671850+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 17 Date 24 July 2026 Time 14:45 Title Infringement - Free Practice 1 Deleted Lap Times Description Free Practice 1 Deleted Lap Times Enclosed HUN DOC 17 - Free Practice 1 Deleted Lap Times",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 17\nDate 24 July 2026\nTime 14:45\nTitle Infringement - Free Practice 1 Deleted Lap Times\nDescription Free Practice 1 Deleted Lap Times\nEnclosed HUN DOC 17 - Free Practice 1 Deleted Lap Times.pdf\nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n\n \n \n2026 HUNGARIAN GRAND PRIX \n24 – 26 July 2026 \n \n  \n  \nFrom The Stewards      Document 17 \n  \nTo All Officials, All Teams      Date  24 July 2026 \n \n        T i m e   14:45 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 1 \n  \nFact The F1 cars below did not use the track at turns 1,2,3,7,9 and 11. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 7 30  Liam Lawson Visa Cash App Racing Bulls F1 Team 13:33:42 1:23.506 \n2 7 25  Colton Herta Cadillac Formula 1 Team 13:35:52 1:27.157 \n3 7 10 Pierre Gasly BWT Alpine F1 Team 13:36:30 1:24.549 \n4 9 1 Lando Norris McLaren Mastercard F1 Team 13:36:04 1:22.404 \n5 1 61 Paul Aron BWT Alpine F1 Team 13:38:26 1:51.568 \n6 1 25 Colton Herta Cadillac Fo"
+}
