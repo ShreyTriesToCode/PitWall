@@ -1,0 +1,26 @@
+{
+  "document_id": "e7e30b870eb52b08",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_decision_-_car_55_-_alleged_erratic_driving_in_turn_9.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-25T00:54:09.170603+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 21 Date 24 July 2026 Time 16:23 The Stewards, having received a report from the Race Director, summoned (document 16) and heard from the driver and team representative, have conside",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 21\nDate 24 July 2026\nTime 16:23\nThe Stewards, having received a report from the Race Director, summoned (document 16) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 14:15\nSession Free Practice 1\nFact After overtaking Car 61, the driver of Car 55 slowed significantly at turn 9.\nInfringement Alleged breach of Appendix L, Chapter IV, Article 2 e) of the International Sporting\nCode.\nDecision No further action.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz), team representative\nand reviewed video, telemetry, team radio and in-car video evidence.\nOn the approach to Turn 9, the driver was on a low fuel push lap and was affected by\nthe actions of the driver of Car 61. He overtook Car 61 and then slowed through, and\nat the exit of, turn 9, aborting his lap. The driver of Car 61 then overtook Car 55 at\nturn 10.\nThe driver of Car 55 denied that by slowing through and after turn 9, he was driving\nerratically. He said"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "8bd5b9fc867c4f4a",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_55_-_erratic_driving_in_turn_12_0.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-25T00:54:12.825673+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 19 Date 24 July 2026 Time 16:04 The Stewards, having received a report from the Race Director, summoned (document 14) and heard from the driver and team representative, have conside",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 19\nDate 24 July 2026\nTime 16:04\nThe Stewards, having received a report from the Race Director, summoned (document 14) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 13:35\nSession Free Practice 1\nFact The driver of Car 55 was preparing his brakes when on the racing line between turns\n11 and 12 and hindered Car 3 which was on a push lap.\nInfringement Breach of Appendix L, Chapter IV, Article 2 b) of the International Sporting Code.\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz), the driver of Car 3\n(Max Verstappen) and their team representatives and reviewed video, telemetry,\nteam radio and in-car video evidence.\nOn the straight approaching turn 12, Car 55 was on the racing line and braked early\nas Car 3 approached from behind on a push lap. Car 3 had to move to the right to\navoid a collision.\nTeam radio recorded the engineer having warned the driver of Car 55 of Car 3’s\napproach m"
+}

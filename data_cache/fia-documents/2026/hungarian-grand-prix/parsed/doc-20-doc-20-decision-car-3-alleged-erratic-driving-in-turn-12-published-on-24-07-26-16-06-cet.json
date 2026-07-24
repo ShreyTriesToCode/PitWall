@@ -1,0 +1,26 @@
+{
+  "document_id": "2d40d38a5caf1623",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_decision_-_car_3_-_alleged_erratic_driving_in_turn_12.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-25T00:54:10.986791+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, Oracle Red Bull Racing Document 20 Date 24 July 2026 Time 16:05 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 3 - Max Vers",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 20\nDate 24 July 2026\nTime 16:05\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 3 - Max Verstappen\nCompetitor Oracle Red Bull Racing\nTime 13:35\nSession Free Practice 1\nFact The driver of Car 3 slowed significantly in turn 12 \nInfringement Alleged Breach of Appendix L, Chapter IV, Article 2 e) of the International Sporting\nCode.\nDecision No further action.\nReason The Stewards heard from the drivers of Car 3 (Max Verstappen) and Car 55 (Carlos\nSainz) and the team representatives and reviewed video, telemetry, team radio and\nin-car video evidence.\nOn the approach to turn 12, Car 3 had to move off the racing line to avoid Car 55\nwhich had slowed unexpectedly on the racing line. The Driver of Car 3 then slowed\nsignificantly at turn 12 and gesticulated to the driver of Car 55 to mark his frustration\nthat he had been impeded by Car 55. The driver of Car 55 then overtook Car 3.\nThe driver of Car 55 said that he was not in any way affected by Car 3 slowing at turn\n12. No other car was a"
+}

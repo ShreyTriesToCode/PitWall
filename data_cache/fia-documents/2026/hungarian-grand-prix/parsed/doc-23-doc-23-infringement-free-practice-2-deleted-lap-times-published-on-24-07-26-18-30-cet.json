@@ -1,0 +1,26 @@
+{
+  "document_id": "082479616f481866",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-25T00:54:05.835440+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 23 Date 24 July 2026 Time 18:25 Title Infringement - Free Practice 2 Deleted Lap Times Description Infringement - Free Practice 2 Deleted Lap Times Enclosed HUN DOC 23 - Free Practice 2 De",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 23\nDate 24 July 2026\nTime 18:25\nTitle Infringement - Free Practice 2 Deleted Lap Times\nDescription Infringement - Free Practice 2 Deleted Lap Times\nEnclosed HUN DOC 23 - Free Practice 2 Deleted Lap Times.pdf\nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n\n \n \n2026 HUNGARIAN GRAND PRIX \n24 – 26 July 2026 \n \n  \n  \nFrom The Stewards      Document 23 \n  \nTo All Officials, All Teams      Date  24 July 2026 \n \n        T i m e   18:25 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 2 \n  \nFact The F1 cars below did not use the track at turns 1,2,3, 7, 9,11,12, 13 and 14. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 11 81  Oscar Piastri McLaren Mastercard F1 Team 17:03:32 1:30.941 \n2 12 11  Sergio Perez Cadillac Formula 1 Team 17:03:05 1:28.782 \n3 7 43 Franco Colapinto BWT Alpine F1 Team 17:04:29 2:14.517 \n4 14 6 Isack Hadjar Oracle Red Bull Racing 17:04:45 OUT LAP \n5 14 6 Isack Hadjar Oracle Red Bull Racing NEXT LAP 1:40.260 \n6"
+}
