@@ -1,0 +1,26 @@
+{
+  "document_id": "19430fb0217c6925",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_summons_-_car_12_-_alleged_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-26T00:36:02.975579+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The driver and team representative are required to report to the Stewards at 18:25, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 35 Date 25 July 2026 Time 17:45 No / Driver 12",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe driver and team representative are required to report to the Stewards at 18:25, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 35\nDate 25 July 2026\nTime 17:45\nNo / Driver 12 - Kimi Antonelli\nReason Alleged breach of Article 12.2.1.i of the International Sporting Code and non-\ncompliance with Race Director’s Event Note (item 1, document 4) – Driving\nunnecessarily slowly during Qualifying. \n \n \n \nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n"
+}

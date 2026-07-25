@@ -1,0 +1,26 @@
+{
+  "document_id": "fc779389b992cb7b",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-26T00:35:59.488770+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 39 Date 25 July 2026 Time 18:50 Title Infringement - Qualifying Deleted Lap Times Description Qualifying Deleted Lap Times Enclosed HUN DOC 39 - Qualifying Deleted Lap Times.pdf Garry Conn",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 39\nDate 25 July 2026\nTime 18:50\nTitle Infringement - Qualifying Deleted Lap Times\nDescription Qualifying Deleted Lap Times\nEnclosed HUN DOC 39 - Qualifying Deleted Lap Times.pdf\nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n\n \n \n \n2026 HUNGARIAN GRAND PRIX \n24 – 26 July 2026 \n \n  \n  \nFrom The Stewards      Document 39 \n  \nTo All Officials, All Teams      Date  25 July 2026 \n \n        T i m e   18:50 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 cars below did not use the track at turns 1, 3, 4, 7 and 14. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 4 55  Carlos Sainz Atlassian Williams F1 Team 16:02:17 1:23.576 \n2 3 16  Charles Leclerc Scuderia Ferrari HP 16:04:20 1:18.878 \n3 4 5 Gabriel Bortoleto Audi Revolut F1 Team 16:08:40 1:19.476 \n4 1 10 Pierre Gasly BWT Alpine F1 Team 16:08:19 PIT \n5 7 43 Franco Colapinto BWT Alpine F1 Team 16:09:25 PIT \n6 14 12 Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 16:16:0"
+}

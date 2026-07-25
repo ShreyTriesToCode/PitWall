@@ -1,0 +1,26 @@
+{
+  "document_id": "922d61095e5068ca",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_alleged_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-26T00:35:53.973051+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 43 Date 25 July 2026 Time 19:38 The Stewards, having received a report from the Race Director, summoned (document 35) and heard from the driver and team representative, have cons",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 43\nDate 25 July 2026\nTime 19:38\nThe Stewards, having received a report from the Race Director, summoned (document 35) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 12 - Kimi Antonelli\nCompetitor Mercedes-AMG PETRONAS F1 Team\nTime 17:01\nSession Qualifying\nFact Driving unnecessarily slowly during Qualifying.\nInfringement Breach of Article 12.2.1.i of the International Sporting Code and non-compliance with\nRace Director’s Event Note (item 1, document 4).\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 12 (Kimi Antonelli), team representative\nand timing and in-car video evidence.\nThe driver was on an in-lap and his time between SC2 and SC1 exceeded the\nprescribed maximum for this event. Car 12 was not overtaken by any other car.\nThe driver acknowledged that he had exceeded the delta. He said he was pre-\noccupied by his push lap having being affected by a yellow flag and wasn’t focusing\nsufficiently on adhering to the delta. The team explained that they were "
+}

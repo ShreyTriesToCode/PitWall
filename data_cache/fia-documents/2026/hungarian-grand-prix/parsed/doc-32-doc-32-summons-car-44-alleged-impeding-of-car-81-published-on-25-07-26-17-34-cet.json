@@ -1,0 +1,26 @@
+{
+  "document_id": "fa99b92b2c449561",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_summons_-_car_44_-_alleged_impeding_of_car_81.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-26T00:36:06.416466+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The driver and team representative are required to report to the Stewards at 18:00, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Scuderia Ferrari HP Document 32 Date 25 July 2026 Time 17:26 No / Driver 44 - Lewis H",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe driver and team representative are required to report to the Stewards at 18:00, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 32\nDate 25 July 2026\nTime 17:26\nNo / Driver 44 - Lewis Hamilton\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations – Car 44 unnecessarily\nimpeding Car 81 at 16:59.\n \n \n \nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "718eb0d185e63641",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_decision_-_qualifying_sc2-sc1_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-26T00:35:52.294023+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 44 Date 25 July 2026 Time 19:48 Title Decision - Qualifying SC2-SC1 Times Description Qualifying SC2-SC1 Times Enclosed HUN DOC 44 - Qualifying SC2-SC1 Times .pdf Garry Connelly Matthew Se",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 44\nDate 25 July 2026\nTime 19:48\nTitle Decision - Qualifying SC2-SC1 Times\nDescription Qualifying SC2-SC1 Times\nEnclosed HUN DOC 44 - Qualifying SC2-SC1 Times .pdf\nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n\n \n \n2026 HUNGARIAN GRAND PRIX \n24 – 26 July 2026 \n \n  \n  \nFrom The Stewards      Document 44 \n  \nTo All Officials, All Teams      Date  25 July 2026 \n \n        T i m e   19:48 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualif\nying \n  \nFact The F1 car below exceeded the 1:32.0 time limit between the Safety Car lines. \n \nNo. Car Driver Competitor Time of Day Lap Time \n1 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:10:41 L5 (Q1) \n \n \nInfringement Alleged breach of Article B1.8.5 of the FIA F1 Regulations and Article 12.2.1.i of the FIA International \nSporting Code (non-compliance with the Race Director’s Competition Notes, item 1, document 4). \n  \nDecision No further action.  \n  \nReasons The Stewards thoroughly reviewed Marshalling"
+}

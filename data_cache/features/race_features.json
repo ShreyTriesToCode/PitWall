@@ -1,5 +1,287 @@
 [
   {
+    "race_id": "2026-11-hungarian-grand-prix",
+    "prediction_id": "2026-11-hungarian-grand-prix-race-post_qualifying-1177f3702247",
+    "season": 2026,
+    "round": 11,
+    "circuit": "Hungaroring",
+    "city": "Budapest",
+    "country": "Hungary",
+    "track_type": "permanent circuit",
+    "overtaking": "medium-good",
+    "tyre_stress": "medium",
+    "safety_car": "high",
+    "weather": {
+      "source": "Open-Meteo forecast",
+      "temperature": "32.8°C",
+      "rain": "4%",
+      "humidity": "23%",
+      "wind": "16.6 km/h",
+      "wind_gust": "38.5 km/h",
+      "cloud_cover": "1%",
+      "track_temperature": "Unavailable",
+      "rain_score": 4.0,
+      "heat_score": 60,
+      "wind_score": 100,
+      "impact": "dry baseline more likely; heat may increase degradation and cooling demand; wind may affect braking stability and aero balance"
+    },
+    "strategy": {
+      "risk_meter": 44.1,
+      "strategy_chaos_score": 44.1,
+      "circuit_difficulty_score": 53.3,
+      "track_evolution_indicator": "Medium",
+      "clean_air_dirty_air_impact": "Medium",
+      "qualifying_importance_score": 52.0,
+      "pit_window": "Lap 18-32 for normal dry strategy.",
+      "tyre_degradation_model": {
+        "score": 54.0,
+        "label": "medium",
+        "basis": "Historical stint, tyre stress, track temperature, and pit-stop profile where available."
+      },
+      "pit_execution_model": [
+        {
+          "driver": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "score": 100.0
+        },
+        {
+          "driver": "Isack Hadjar",
+          "team": "Red Bull",
+          "score": 99.69
+        },
+        {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "score": 97.85
+        },
+        {
+          "driver": "Liam Lawson",
+          "team": "RB F1 Team",
+          "score": 96.74
+        },
+        {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "score": 93.07
+        },
+        {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "score": 91.99
+        },
+        {
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "score": 81.22
+        },
+        {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "score": 80.9
+        }
+      ],
+      "rain_beneficiaries": [
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 78.46,
+          "rank": 1
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 74.87,
+          "rank": 2
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "scenario_score": 71.84,
+          "rank": 3
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "scenario_score": 71.43,
+          "rank": 4
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "scenario_score": 70.22,
+          "rank": 5
+        }
+      ],
+      "safety_car_beneficiaries": [
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "scenario_score": 82.2,
+          "rank": 1
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 81.73,
+          "rank": 2
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 76.54,
+          "rank": 3
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "scenario_score": 71.95,
+          "rank": 4
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "scenario_score": 70.47,
+          "rank": 5
+        }
+      ],
+      "predicted_strategy": {
+        "status": "data_derived",
+        "stops": 2,
+        "sequence": [
+          {
+            "stint": 1,
+            "compound": "soft",
+            "laps": 18,
+            "lap_start": 1,
+            "lap_end": 18,
+            "compound_identity": "C5"
+          },
+          {
+            "stint": 2,
+            "compound": "hard",
+            "laps": 26,
+            "lap_start": 19,
+            "lap_end": 44,
+            "compound_identity": "C3"
+          },
+          {
+            "stint": 3,
+            "compound": "medium",
+            "laps": 26,
+            "lap_start": 45,
+            "lap_end": 70,
+            "compound_identity": "C4"
+          }
+        ],
+        "first_pit_lap": 18,
+        "total_laps": 70,
+        "mandatory_compound_rule": "applied_to_dry_race_candidates",
+        "confidence": "medium",
+        "basis": "Derived from 6 cached same-circuit race(s), 149 pit-lap samples, and 94 driver stop-count samples.",
+        "data_points": {
+          "historical_races": 6,
+          "pit_lap_samples": 149,
+          "stop_count_samples": 94,
+          "pit_duration_samples": 134
+        },
+        "pit_loss_basis": {
+          "status": "stationary_pit_duration",
+          "average_seconds": 23.843,
+          "note": "Cached data exposes stationary pit duration; full in-lap/out-lap pit-lane loss was not available for every historical race."
+        },
+        "degradation_model": {
+          "status": "unavailable",
+          "basis": "No usable cached lap-time stints were available for a data-derived degradation slope.",
+          "samples": 0
+        },
+        "compound_mapping": {
+          "status": "available",
+          "nominated_compounds": [
+            "C3",
+            "C4",
+            "C5"
+          ],
+          "mapping": {
+            "hard": "C3",
+            "medium": "C4",
+            "soft": "C5"
+          },
+          "reverse_mapping": {
+            "C3": "hard",
+            "C4": "medium",
+            "C5": "soft"
+          },
+          "rule": "lowest_C_number_is_hard_middle_is_medium_highest_is_soft_for_this_event",
+          "source": {
+            "document_id": "c3b5b42781fc323e",
+            "document_title": "Doc 2 - Competition Notes - Pirelli Preview Published on 22.07.26 15:15 CET",
+            "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
+            "source_authority": "official_fia",
+            "source_status": "official_live"
+          }
+        }
+      },
+      "safety_car_window": {
+        "status": "no_events_observed",
+        "supporting_races": 6,
+        "bucket_size_laps": 5,
+        "windows": [],
+        "basis": "Aggregated race-control safety car/VSC/red-flag events across 6 cached same-circuit races."
+      },
+      "compound_mapping": {
+        "status": "available",
+        "nominated_compounds": [
+          "C3",
+          "C4",
+          "C5"
+        ],
+        "mapping": {
+          "hard": "C3",
+          "medium": "C4",
+          "soft": "C5"
+        },
+        "reverse_mapping": {
+          "C3": "hard",
+          "C4": "medium",
+          "C5": "soft"
+        },
+        "rule": "lowest_C_number_is_hard_middle_is_medium_highest_is_soft_for_this_event",
+        "source": {
+          "document_id": "c3b5b42781fc323e",
+          "document_title": "Doc 2 - Competition Notes - Pirelli Preview Published on 22.07.26 15:15 CET",
+          "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
+          "source_authority": "official_fia",
+          "source_status": "official_live"
+        }
+      },
+      "active_aero": {
+        "straight_mode": "low-drag straight configuration",
+        "corner_mode": "high-downforce corner configuration",
+        "average_suitability": 67.24
+      },
+      "energy_deployment": {
+        "title": "2026 Boost / Overtake Mode Intelligence",
+        "average_boost_advantage": 68.35,
+        "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
+      },
+      "decision_log": [
+        "Model checks source health and missing critical data before ranking.",
+        "Scenario layer reweights real component scores for rain, safety car, tyre degradation, and low-overtaking cases.",
+        "2026 layer uses Boost, Overtake Mode, energy deployment, and Active Aero terminology with fallback proxies when exact data is unavailable."
+      ]
+    }
+  },
+  {
     "race_id": "2026-10-belgian-grand-prix",
     "prediction_id": "2026-10-belgian-grand-prix-race-post_qualifying-4422cb26e9a5",
     "season": 2026,
