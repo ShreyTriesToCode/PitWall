@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-11-hungarian-grand-prix",
-    "prediction_id": "2026-11-hungarian-grand-prix-race-post_qualifying-1177f3702247",
+    "prediction_id": "2026-11-hungarian-grand-prix-race-post_qualifying-b29a00396d15",
     "season": 2026,
     "round": 11,
     "circuit": "Hungaroring",
@@ -13,21 +13,21 @@
     "safety_car": "high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "32.8°C",
-      "rain": "4%",
-      "humidity": "23%",
-      "wind": "16.6 km/h",
-      "wind_gust": "38.5 km/h",
-      "cloud_cover": "1%",
+      "temperature": "32.9°C",
+      "rain": "0%",
+      "humidity": "22%",
+      "wind": "17.3 km/h",
+      "wind_gust": "39.2 km/h",
+      "cloud_cover": "0%",
       "track_temperature": "Unavailable",
-      "rain_score": 4.0,
+      "rain_score": 0,
       "heat_score": 60,
       "wind_score": 100,
       "impact": "dry baseline more likely; heat may increase degradation and cooling demand; wind may affect braking stability and aero balance"
     },
     "strategy": {
-      "risk_meter": 44.1,
-      "strategy_chaos_score": 44.1,
+      "risk_meter": 57.9,
+      "strategy_chaos_score": 57.9,
       "circuit_difficulty_score": 53.3,
       "track_evolution_indicator": "Medium",
       "clean_air_dirty_air_impact": "Medium",
@@ -85,35 +85,35 @@
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 78.46,
+          "scenario_score": 78.47,
           "rank": 1
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 74.87,
+          "scenario_score": 74.75,
           "rank": 2
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 71.84,
+          "scenario_score": 71.77,
           "rank": 3
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 71.43,
+          "scenario_score": 71.36,
           "rank": 4
         },
         {
           "driver_id": "norris",
           "name": "Lando Norris",
           "team": "McLaren",
-          "scenario_score": 70.22,
+          "scenario_score": 70.28,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 82.2,
+          "scenario_score": 82.22,
           "rank": 1
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 81.73,
+          "scenario_score": 81.74,
           "rank": 2
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 76.54,
+          "scenario_score": 76.44,
           "rank": 3
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 71.95,
+          "scenario_score": 71.97,
           "rank": 4
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 70.47,
+          "scenario_score": 70.43,
           "rank": 5
         }
       ],

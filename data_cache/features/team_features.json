@@ -43,7 +43,7 @@
   },
   {
     "team": "Ferrari",
-    "expected_team_points": 73.9,
+    "expected_team_points": 73.89,
     "average_score": 62.83,
     "average_confidence": 26.19,
     "average_active_aero_suitability": 68.58,
@@ -85,7 +85,7 @@
   },
   {
     "team": "McLaren",
-    "expected_team_points": 68.28,
+    "expected_team_points": 68.2,
     "average_score": 58.49,
     "average_confidence": 34.68,
     "average_active_aero_suitability": 65.52,
@@ -127,8 +127,8 @@
   },
   {
     "team": "Red Bull",
-    "expected_team_points": 58.47,
-    "average_score": 54.49,
+    "expected_team_points": 58.51,
+    "average_score": 54.48,
     "average_confidence": 45.55,
     "average_active_aero_suitability": 60.64,
     "average_energy_boost_advantage": 57.34,
@@ -169,8 +169,8 @@
   },
   {
     "team": "RB F1 Team",
-    "expected_team_points": 13.25,
-    "average_score": 40.65,
+    "expected_team_points": 13.13,
+    "average_score": 40.64,
     "average_confidence": 39.71,
     "average_active_aero_suitability": 49.15,
     "average_energy_boost_advantage": 49.59,
@@ -337,7 +337,7 @@
   },
   {
     "team": "Alpine",
-    "expected_team_points": 10.9,
+    "expected_team_points": 10.95,
     "average_score": 38.37,
     "average_confidence": 37.76,
     "average_active_aero_suitability": 45.96,
@@ -375,7 +375,7 @@
   },
   {
     "team": "Cadillac",
-    "expected_team_points": 1.87,
+    "expected_team_points": 1.85,
     "average_score": 30.48,
     "average_confidence": 37.5,
     "average_active_aero_suitability": 42.84,
@@ -413,8 +413,8 @@
   },
   {
     "team": "Haas",
-    "expected_team_points": 4.45,
-    "average_score": 35.52,
+    "expected_team_points": 4.46,
+    "average_score": 35.53,
     "average_confidence": 41.79,
     "average_active_aero_suitability": 45.62,
     "average_energy_boost_advantage": 46.93,
