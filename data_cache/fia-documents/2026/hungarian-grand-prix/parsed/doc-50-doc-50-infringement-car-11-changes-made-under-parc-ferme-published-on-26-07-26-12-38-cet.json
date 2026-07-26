@@ -1,0 +1,26 @@
+{
+  "document_id": "10074039786da5ec",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-26T18:48:53.761618+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 50 Date 26 July 2026 Time 12:29 The Stewards, having received a report from the Technical Delegate (document 49), have considered the following matter and determine the fo",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 50\nDate 26 July 2026\nTime 12:29\nThe Stewards, having received a report from the Technical Delegate (document 49), have\nconsidered the following matter and determine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 11:15\nSession Qualifying\nFact The setup of the suspension has been changed while under parc fermé without the\napproval of the Technical Director.\nInfringement Breach of Article B3.5.3a and B3.5.4 of the FIA F1 Regulations.\nDecision Required to start the Race from the pit lane.\nReason Cadillac Formula 1 Team changed the setup of the suspension of Car 11 under parc\nfermé, without the approval of the Technical Delegate. This is not in accordance with\nArticle B3.5.4 of the FIA F1 Regulations.\nIn addition, the change of setup is not in accordance with Article B3.5.3a of the FIA\nF1 Regulations. Car 11 is therefore required to start the Race from pit lane as per\nArticle Article B3.5.3a of the FIA F1 Regulations.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordan"
+}
