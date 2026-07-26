@@ -1,0 +1,26 @@
+{
+  "document_id": "b0831d7d4aea9cf4",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_87_-_ignoring_blue_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-27T00:39:00.679090+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 59 Date 26 July 2026 Time 18:03 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 87 - Oliver Bearma",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 59\nDate 26 July 2026\nTime 18:03\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 87 - Oliver Bearman\nCompetitor TGR Haas F1 Team\nTime 16:01\nSession Race\nFact The driver ignored Blue Flags being displayed for Car 6’s approach.\nInfringement Breach of Appendix H, Article 2.5.5 e) of the International Sporting Code.\nDecision 5 second time penalty.\nReason The Stewards reviewed positioning/marshalling system data, video and in-car video\nevidence from Car 87.\nBlue flags were displayed to Car 87 (Oliver Bearman) due to the approach of Car 6\n(Isack Hadjar) between turns 7 and 1 on the following lap. Car 87 passed 11 blue flag\nlight panels before letting Car 6 past. The driver of Car 87 was required to allow Car 6\nto pass at the earliest opportunity. In the Stewards’ assessment, that opportunity\narose at the latest between turns 11 and 12 but Car 87 did not allow Car 6 to pass\nuntil the entry to turn 1 on the following lap.The Stewards therefore imposed a 5\nsecond time penalty on Car 87.\n \nComp"
+}

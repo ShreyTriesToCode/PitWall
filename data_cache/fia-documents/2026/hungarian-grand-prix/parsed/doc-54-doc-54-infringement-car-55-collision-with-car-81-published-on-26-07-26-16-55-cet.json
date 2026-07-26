@@ -1,0 +1,26 @@
+{
+  "document_id": "af4509856b6f87b8",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_55_-_collision_with_car_81.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-27T00:39:07.591491+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 54 Date 26 July 2026 Time 16:54 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 55 - Car",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 54\nDate 26 July 2026\nTime 16:54\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 15:57\nSession Race\nFact Car 55 collided with car 81.\nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 5 second time penalty.\nReason The Stewards examined video, telemetry, team radio and in-car camera evidence.\nOn Lap 38, at the approach to Turn 3, Car 55 was engaged in a battle with Car 14.\nThe driver of Car 55 had been informed by the team that blue flags were being shown\ndue to the approach of Car 81. As Car 81 attempted to overtake, contact occurred\nbetween Cars 55 and 81.\nThe Stewards determined that the driver of Car 55 was wholly responsible for the\ncollision with Car 81. While the standard penalty for causing a collision is a 10-\nsecond time penalty, the Stewards identified a mitigating factor. At the point of the\nincident, the positioning of Car 55 relative to the cir"
+}
