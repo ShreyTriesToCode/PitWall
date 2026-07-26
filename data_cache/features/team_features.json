@@ -1,7 +1,7 @@
 [
   {
     "team": "Mercedes",
-    "expected_team_points": 93.66,
+    "expected_team_points": 93.64,
     "average_score": 66.58,
     "average_confidence": 23.07,
     "average_active_aero_suitability": 71.44,
@@ -43,7 +43,7 @@
   },
   {
     "team": "Ferrari",
-    "expected_team_points": 74.0,
+    "expected_team_points": 73.98,
     "average_score": 62.84,
     "average_confidence": 26.19,
     "average_active_aero_suitability": 68.58,
@@ -85,8 +85,8 @@
   },
   {
     "team": "McLaren",
-    "expected_team_points": 68.33,
-    "average_score": 58.49,
+    "expected_team_points": 68.29,
+    "average_score": 58.5,
     "average_confidence": 34.68,
     "average_active_aero_suitability": 65.52,
     "average_energy_boost_advantage": 59.31,
@@ -127,9 +127,9 @@
   },
   {
     "team": "Red Bull",
-    "expected_team_points": 58.5,
+    "expected_team_points": 58.51,
     "average_score": 54.49,
-    "average_confidence": 46.03,
+    "average_confidence": 45.55,
     "average_active_aero_suitability": 60.64,
     "average_energy_boost_advantage": 57.34,
     "drivers": [
@@ -169,7 +169,7 @@
   },
   {
     "team": "RB F1 Team",
-    "expected_team_points": 13.21,
+    "expected_team_points": 13.27,
     "average_score": 40.65,
     "average_confidence": 39.71,
     "average_active_aero_suitability": 49.15,
@@ -337,8 +337,8 @@
   },
   {
     "team": "Alpine",
-    "expected_team_points": 10.91,
-    "average_score": 38.36,
+    "expected_team_points": 10.98,
+    "average_score": 38.38,
     "average_confidence": 37.76,
     "average_active_aero_suitability": 45.96,
     "average_energy_boost_advantage": 46.09,
@@ -375,7 +375,7 @@
   },
   {
     "team": "Cadillac",
-    "expected_team_points": 1.87,
+    "expected_team_points": 1.85,
     "average_score": 30.48,
     "average_confidence": 37.5,
     "average_active_aero_suitability": 42.84,
@@ -414,7 +414,7 @@
   {
     "team": "Haas",
     "expected_team_points": 4.46,
-    "average_score": 35.52,
+    "average_score": 35.53,
     "average_confidence": 41.79,
     "average_active_aero_suitability": 45.62,
     "average_energy_boost_advantage": 46.93,

@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-11-hungarian-grand-prix",
-    "prediction_id": "2026-11-hungarian-grand-prix-race-post_qualifying-dac068e5a546",
+    "prediction_id": "2026-11-hungarian-grand-prix-race-post_qualifying-8faefe42d83f",
     "season": 2026,
     "round": 11,
     "circuit": "Hungaroring",
@@ -85,35 +85,35 @@
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 78.53,
+          "scenario_score": 78.47,
           "rank": 1
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 74.85,
+          "scenario_score": 74.84,
           "rank": 2
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 71.91,
+          "scenario_score": 71.89,
           "rank": 3
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 71.52,
+          "scenario_score": 71.51,
           "rank": 4
         },
         {
           "driver_id": "norris",
           "name": "Lando Norris",
           "team": "McLaren",
-          "scenario_score": 70.22,
+          "scenario_score": 70.26,
           "rank": 5
         }
       ],
@@ -122,28 +122,28 @@
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 82.18,
+          "scenario_score": 82.2,
           "rank": 1
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 81.77,
+          "scenario_score": 81.73,
           "rank": 2
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 76.53,
+          "scenario_score": 76.52,
           "rank": 3
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 71.98,
+          "scenario_score": 72.01,
           "rank": 4
         },
         {
