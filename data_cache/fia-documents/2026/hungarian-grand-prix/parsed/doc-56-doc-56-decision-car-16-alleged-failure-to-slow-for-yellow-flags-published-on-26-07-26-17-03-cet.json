@@ -1,0 +1,26 @@
+{
+  "document_id": "36bab5025181bb94",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_decision_-_car_16_-_alleged_failure_to_slow_for_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-27T08:17:26.678576+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 56 Date 26 July 2026 Time 17:02 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 16 - Charles Le",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 56\nDate 26 July 2026\nTime 17:02\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 16 - Charles Leclerc\nCompetitor Scuderia Ferrari HP\nTime 15:58\nSession Race\nFact The driver of Car 16 appeared not to take appropriate action when yellow flags were\ndisplayed at Turn 2.\nInfringement Alleged breach of Article B1.8.4a of the FIA F1 Regulations.\nDecision No further action.\nReason The Stewards reviewed positioning/marshalling system data, video, telemetry and in-\ncar video evidence.\nAs Car 16 (Charles Leclerc) was approaching Turn, 2 a single yellow flag was\ndisplayed because Car 87 (Oliver Bearman) had spun after the apex of Turn 2. The\nyellow flag sector was only 90 metres. Car 16 had already committed to braking for\nTurn 2 at the point the driver could first have sighted the yellow flag. Car 16 slowed\nthrough Turn 2 and did not gain on a car ahead of Car 16 as he passed Car 87.\nGiven the very short notice the driver received of the yellow flag, the Stewards were\nsatisfied that the drive"
+}

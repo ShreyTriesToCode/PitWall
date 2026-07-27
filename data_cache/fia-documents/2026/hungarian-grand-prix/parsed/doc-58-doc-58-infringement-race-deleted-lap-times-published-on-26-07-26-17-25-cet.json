@@ -1,0 +1,26 @@
+{
+  "document_id": "357b5cb375801014",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-07-27T08:17:23.040304+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 HUNGARIAN GRAND PRIX 23 - 25 July 2026 The Stewards From The Stewards To All Teams, All Officials Document 58 Date 26 July 2026 Time 17:25 Title Infringement - Race Deleted Lap Times Description Race Deleted Lap Times Enclosed HUN DOC 58 - Race Deleted Lap Times.pdf Garry Connelly Matthew Selle",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 HUNGARIAN GRAND PRIX\n23 - 25 July 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 58\nDate 26 July 2026\nTime 17:25\nTitle Infringement - Race Deleted Lap Times\nDescription Race Deleted Lap Times\nEnclosed HUN DOC 58 - Race Deleted Lap Times.pdf\nGarry Connelly Matthew Selley\nRicha Mergulhao Vitantonio Liuzzi\nIstván Moni\n\n \n \n2026 HUNGARIAN GRAND PRIX \n24 – 26 July 2026 \n \n  \n  \nFrom The Stewards      Document 58 \n  \nTo All Officials, All Teams      Date  26 July 2026 \n \n        T i m e   17:25 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 1, 2, 3, 4, 5, 7, 9, 13 and 14. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 4 43 Franco Colapinto BWT Alpine F1 Team 15:03:59 LAP 1 \n2 1 31 Esteban Ocon TGR Haas F1 Team 15:03:36 LAP 1 \n3 14 18 Lance Stroll Aston Martin Aramco F1 Team 15:04:56 LAP 1 \n4 4 23 Alexander Albon Atlassian Williams F1 Team 15:20:18 1:31.197 \n5 4 43 Franco Colapinto BWT Alpine F1 Team 15:23:06 1:29.139 \n6 7 23 Alexander Albon Atlassian Williams F1 Team 15:24:59 1:28.500 \n"
+}
