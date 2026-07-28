@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-07-27T19:31:01.210208+00:00
+- Generated at: 2026-07-28T06:12:18.584555+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Hungarian Grand Prix / race
 - Top 10 availability: 10 rows
