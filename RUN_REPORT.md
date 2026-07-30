@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-07-30T08:29:10.939109+00:00
+- Generated at: 2026-07-30T14:01:44.412506+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Hungarian Grand Prix / race
 - Top 10 availability: 10 rows
@@ -8,7 +8,7 @@
 - Contract validation: passed
 - Event trust: 49.66
 - Source health: Fallback / 72.09
-- Source conflicts: 2
+- Source conflicts: 3
 - Major model disagreements: 5
 - Missing data groups: pit_stop_data, practice_or_lap_pace
 
