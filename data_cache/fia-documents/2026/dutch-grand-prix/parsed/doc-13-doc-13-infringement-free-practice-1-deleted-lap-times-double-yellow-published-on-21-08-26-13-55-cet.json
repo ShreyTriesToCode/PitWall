@@ -1,0 +1,26 @@
+{
+  "document_id": "c892c53fe5af6a68",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times_double_yellow.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-21T18:13:40.564034+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 13 Date 21 August 2026 Time 13:50 Title Infringement - Free Practice 1 Deleted Lap Times Double Yellow Description Infringement - Free Practice 1 Deleted Lap Times Double Yellow Enclosed NED",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 13\nDate 21 August 2026\nTime 13:50\nTitle Infringement - Free Practice 1 Deleted Lap Times Double Yellow\nDescription Infringement - Free Practice 1 Deleted Lap Times Double Yellow\nEnclosed NED DOC 13 - Free Practice 1 Deleted Lap Times - Double Yellow.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n  \n 2026 DUTCH GRAND PRIX 21 – 23 August 2026  From The Stewards      Document 13   To All Officials, All Teams      Date  21 August 2026          Time  13:47  The lap times set by the F1 cars that went through the double waved yellow flag zone will be deleted as detailed in the Race Director’s Competition Notes (item 9, document 5):  Session Free Practice 1   FactThe F1 cars passed through a double waved yellow flag marshalling sector. No. Turn Car Driver Competitor Time of Day Lap Time 1 13 14 Fernando Alonso Aston Martin Aramco F1 Team 12:47:45 1:23.0942 13 87 Oliver Bearman TGR Haas F1 Team 12:47:50 2:18.9513 13 12 Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 12:47:52 PIT 4 13 1 Lando Norris McLaren Mastercard F1 Team 13:14:14 1:16.212  Decisio"
+}

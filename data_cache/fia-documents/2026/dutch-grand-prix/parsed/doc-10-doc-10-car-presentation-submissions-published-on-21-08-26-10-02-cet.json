@@ -1,0 +1,190 @@
+{
+  "document_id": "833f86c0566a947a",
+  "document_type": "car_presentation_submissions",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-21T18:13:46.557631+05:30",
+  "confidence": 1.0,
+  "classification": [],
+  "upgrades": [
+    {
+      "team": "Red Bull",
+      "component": "bodywork",
+      "components": [
+        "bodywork",
+        "front corner"
+      ],
+      "primary_reason_for_update": "reliability",
+      "geometric_difference": "Car Presentation – Netherlands Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description o",
+      "description": "Car Presentation – Netherlands Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Corner Reliability Wishbo",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Netherlands Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Corner Reliability Wishbone shroud chord length and wheel bodywork\ngaitor\nTo improve reliability of the wheel bodywork\nassembly, the lower wishbone rearward leg chord\nlength has been locally shrunk to reduce strain on\nthe gaitor at high steering angles.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "cooling",
+        "flow_conditioning",
+        "tyre_wake_control"
+      ]
+    },
+    {
+      "team": "Ferrari",
+      "component": "beam wing",
+      "components": [
+        "beam wing",
+        "floor edge",
+        "floor",
+        "diffuser"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Dutch Grand Prix\nSCUDERIA FERRARI HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the ",
+      "description": "Car Presentation – Dutch Grand Prix\nSCUDERIA FERRARI HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Floor Body\nPerformance -\nLocal Load\nUpdat",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Dutch Grand Prix\nSCUDERIA FERRARI HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Floor Body\nPerformance -\nLocal Load\nUpdated board brace layout and pick-ups, Front\nfloor and vanes arrangement revision. Reshaped\nfloor edge curl and revised board foot geometry.\nThis floor development targets a global increase in\naerodynamic load across the entire operating range,\ncombined with improved robustness of the\nunderlying flow mechanisms, enhanced flow\ntopology, and greater flow energy delivered to the\nrear diffuser\n2 Floor Board\n3 Floor Edge\n4 Diffuser Alternative diffuser stays layout, revised diffuser\nexpansion profile and diffuser fence loading\nBenefitting from improved onset f low quality, the\ndiffuser expansion and geometry has been further\noptimized and returns increased aerodynamic load,\nwhilst still maintaining flow stability\n5 Beam Wing Revised lower beam wing spanwise twist\nMinor update, working in interaction with the new\nrear diffuser, with particular attention put on flow\nquality\n",
+      "traits": [
+        "aero_efficiency",
+        "diffuser_interaction",
+        "downforce",
+        "drag",
+        "high_speed_load",
+        "platform_sensitivity",
+        "platform_stability",
+        "rear_load",
+        "sealing",
+        "stability",
+        "straight_line_efficiency",
+        "tyre_management"
+      ]
+    },
+    {
+      "team": "Mercedes",
+      "component": "front corner",
+      "components": [
+        "front corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – 2026 Dutch Grand Prix\n*Mercedes-AMG PETRONAS F1 Team*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to\nprevious version\nBrief descri",
+      "description": "Car Presentation – 2026 Dutch Grand Prix\n*Mercedes-AMG PETRONAS F1 Team*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to\nprevious version\nBrief description on how the update works (min 20, max\n100 words)\n1 Front Corner Performance",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – 2026 Dutch Grand Prix\n*Mercedes-AMG PETRONAS F1 Team*\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to\nprevious version\nBrief description on how the update works (min 20, max\n100 words)\n1 Front Corner Performance - Flow\nConditioning\nDrum front lip detached from the duct inlet and\ncamber adjusted.\nDetaching the lip from the duct inlet improves flow quality over\nthe inboard face of the drum throughout the steer range,\nimproving flow to the rear of the car.\n",
+      "traits": [
+        "brake_cooling",
+        "flow_conditioning",
+        "tyre_wake_control"
+      ]
+    },
+    {
+      "team": "McLaren",
+      "component": "rear wing",
+      "components": [
+        "rear wing",
+        "coke",
+        "bodywork",
+        "brake duct",
+        "rear corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Dutch Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on h",
+      "description": "Car Presentation – Dutch Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance –\nLocal Load",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Dutch Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance –\nLocal Load New Rear Wing Assembly\nA new rear wing assembly has been designed and\ndelivered to this event, aiming to increase\naerodynamic load efficiently in all conditions.\n2 Coke/Engine\nCover\nPerformance –\nLocal Load Revised Central Bodywork\nThe furniture around the coke as well as the\ntailpipe have been revised to extract additional\nefficient aerodynamic performance in conjunction\nwith the rear wing.\n3 Rear Corner Performance -\nFlow Conditioning Revised Rear Brake Duct\nThe rear brake duct has been revised internally as\nwell as externally, aiming at improved flow\nconditioning resulting in better aerodynamic and\nbrake cooling performance.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "braking_stability",
+        "cooling",
+        "diffuser_feed",
+        "drag",
+        "drs_efficiency",
+        "flow_conditioning",
+        "local_load",
+        "rear_flow_conditioning",
+        "rear_stability",
+        "straight_line_speed",
+        "tyre_temperature_control"
+      ]
+    },
+    {
+      "team": "Aston Martin",
+      "component": "front wing",
+      "components": [
+        "front wing",
+        "floor",
+        "diffuser"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Dutch Grand Prix\nAston Martin Aramco F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on ",
+      "description": "Car Presentation – Dutch Grand Prix\nAston Martin Aramco F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Wing Performance -\nLocal Lo",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Dutch Grand Prix\nAston Martin Aramco F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Front Wing Performance -\nLocal Load Reduced chord of the final element outboard. The local changes to the final element and to the\ninboard foot of the FWEP improves the\nperformance of the new front wing introduced at\nthe previous event. 2 Front Wing\nEndplate\nPerformance -\nLocal Load Modification to the inboard foot.\n3 Front Wing Performance -\nLocal Load Optional new front wing flap.\nThe flap extends the range of balance that can be\nachieved with front wing adjustment for car setup\noptimisation.\n4 Floor Fences Performance -\nLocal Load New floor fence in the diffuser. Changes at the back of the car work in combination\nto increase rear load after evaluating the\nperformance of the new package.\n5 Diffuser Performance -\nLocal Load\nModification to the lower edge of the diffuser\nwinglet.\n",
+      "traits": [
+        "aero_balance",
+        "aero_efficiency",
+        "corner_entry_stability",
+        "downforce",
+        "flow_conditioning",
+        "high_speed_load",
+        "low_speed_balance",
+        "platform_sensitivity",
+        "platform_stability",
+        "rear_load",
+        "tyre_management"
+      ]
+    },
+    {
+      "team": "Alpine",
+      "component": "rear wing",
+      "components": [
+        "rear wing",
+        "floor edge",
+        "floor",
+        "diffuser",
+        "sidepod",
+        "coke",
+        "bodywork",
+        "rear corner"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Dutch Grand Prix\nBWT Alpine F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the u",
+      "description": "Car Presentation – Dutch Grand Prix\nBWT Alpine F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Floor Body Performance -\nLocal Load New fl",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Dutch Grand Prix\nBWT Alpine F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Floor Body Performance -\nLocal Load New floor design\nThe floor geometry has been revised to improve\nsurface flow quality throughout the operating\nenvelope and deliver increased local aerodynamic\nloading.\n2 Floor Board Performance –\nFlow Conditioning Reprofiled elements The floor board has been reprofiled to improve the\nquality of the flow delivered to the rear of the car.\n3 Floor Edge Performance -\nLocal Load Optimised floor edges\nThe floor edges and profiles were redesigned to\nincrease local aerodynamic loading, enhancing\nairflow management, efficiency, and overall\nperformance gains.\n4 Diffuser Performance -\nLocal Load Reprofiled diffuser\nThis diffuser geometry has been developed to\nincrease local aerodynamic loading, providing an\nefficient performance gain across the full operating\nenvelope of the car.\n5 Sidepod/Coke Performance –\nFlow Conditioning New bodywork design\nAs part of this package update, the bodywork has\nbeen redesigned to work efficiently alongside the\nnew floor while maintaining sufficient cooling\ncapacity.\n6 Rear Corner Performance -\nLocal Load Reprofiled elements\nElements on the rear drum face have been\nreprofiled to improve flow interaction with the\nfloor and deliver local load.\n7\nRear impact\nstructure\nPerformance -\nLocal Load Updated geometry\nThe new updated geometry is aimed at increasing\naerodynamic load locally and efficiently throughout\nthe operating range of the car.\n8 Rear Wing Performance -\nLocal Load Redesigned flap geometry\nThe flap profile has been refined to efficiently\nincrease rear wing load while maintaining a high-\nquality, stable flowfield.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "cooling",
+        "diffuser_feed",
+        "downforce",
+        "drag",
+        "drs_efficiency",
+        "flow_conditioning",
+        "high_speed_load",
+        "local_load",
+        "platform_sensitivity",
+        "platform_stability",
+        "rear_flow_conditioning",
+        "rear_load",
+        "rear_stability",
+        "sealing",
+        "stability",
+        "straight_line_speed",
+        "tyre_management"
+      ]
+    }
+  ],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe FIA Formula 1 Media Delegate\nFrom The FIA Formula 1 Media Delegate\nTo All Teams, All Officials\nDocument 10\nDate 21 August 2026\nTime 09:50\nTitle Car Presentation Submissions\nDescription Car Presentation Submissions\nEnclosed 2026 Dutch Grand Prix - Car Presentation Submissions.pdf\nCameron Kelleher\n\n \nCar Presentation – Dutch Grand Prix \nMcLaren Mastercard F1 Team \n \n  Updated \ncomponent \nPrimary reason \nfor update \nGeometric differences compared to \nprevious version  \nBrief description on how the update works \n(min 20, max 100 words) \n1 Rear Wing Performance – \nLocal Load New Rear Wing Assembly \nA new rear wing assembly has been designed and \ndelivered to this event, aiming to increase \naerodynamic load efficiently in all conditions. \n2 Coke/Engine \nCover \nPerformance – \nLocal Load Revised Central Bodywork  \nThe furniture around the coke as well as the \ntailpipe have been revised to extract additional \nefficient aerodynamic performance in conjunction \nwith the rear wing. \n3 Rear Corner Performance - \nFlow Conditioning Revised Rear Brake Duct \nThe rear brake duct has been revised internally as \nwell as externally, aiming at improved flow \n"
+}

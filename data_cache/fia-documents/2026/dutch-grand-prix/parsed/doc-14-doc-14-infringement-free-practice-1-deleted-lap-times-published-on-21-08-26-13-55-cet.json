@@ -1,0 +1,26 @@
+{
+  "document_id": "0d9fd0f42a47f854",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-21T18:13:38.798287+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 14 Date 21 August 2026 Time 13:55 Title Infringement - Free Practice 1 Deleted Lap Times Description Infringement - Free Practice 1 Deleted Lap Times Enclosed NED DOC 14 - Free Practice 1 De",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 14\nDate 21 August 2026\nTime 13:55\nTitle Infringement - Free Practice 1 Deleted Lap Times\nDescription Infringement - Free Practice 1 Deleted Lap Times\nEnclosed NED DOC 14 - Free Practice 1 Deleted Lap Times.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n 2026 DUTCH GRAND PRIX 21 – 23 August 2026   From The Stewards      Document 14   To All Officials, All Teams      Date  21 August 2026          Time  13:55    The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: Session Free Practice 1   FactThe F1 cars below did not use the track at turns 3, 11, 12 and 13.  No. Turn Car Driver Competitor Time of Day Lap Time 1 13 55 Carlos Sainz Atlassian Williams F1 Team 12:47:44 PIT 2 12 55 Carlos Sainz Atlassian Williams F1 Team 12:51:44 1:27.491 3 11 55 Carlos Sainz Atlassian Williams F1 Team 13:01:05 1:24.676 4 12 44 Lewis Hamilton Scuderia Ferrari HP 13:09:26 1:17.185 5 3 27 Nico Hulkenberg Audi Revolut F1 Team 13:13:38 PIT 6 3 1 Lando Norris McLaren Mastercard F1 Team 13:23:"
+}
