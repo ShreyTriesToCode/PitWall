@@ -1,16 +1,16 @@
 # PitWall Run Report
 
-- Generated at: 2026-08-21T12:48:27.305303+00:00
+- Generated at: 2026-08-21T18:40:00.016790+00:00
 - Model version: 2026.06-strategy-actuals-v7
-- Target event/session: Hungarian Grand Prix / race
+- Target event/session: Dutch Grand Prix / sprint
 - Top 10 availability: 10 rows
 - Full grid availability: 22 rows
 - Contract validation: passed
-- Event trust: 49.66
-- Source health: Fallback / 72.09
-- Source conflicts: 2
-- Major model disagreements: 5
-- Missing data groups: pit_stop_data, practice_or_lap_pace
+- Event trust: 40.62
+- Source health: Fallback / 70.27
+- Source conflicts: 3
+- Major model disagreements: 8
+- Missing data groups: pit_stop_data, practice_or_lap_pace, qualifying
 
 ## Validation Details
 
@@ -19,7 +19,7 @@
   "ok": true,
   "schema_version": "2026.06-strategy-actuals-v7",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "briefing_count": 16,
+  "briefing_count": 17,
   "debug_payload_count": 1,
   "model_version": "2026.06-strategy-actuals-v7",
   "latest_top10_count": 10,
