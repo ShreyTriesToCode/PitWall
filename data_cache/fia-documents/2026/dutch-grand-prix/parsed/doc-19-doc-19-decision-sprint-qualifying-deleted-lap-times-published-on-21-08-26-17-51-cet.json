@@ -1,0 +1,26 @@
+{
+  "document_id": "d35e92fd8511ce60",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_decision_-_sprint_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T06:38:22.167462+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 19 Date 21 August 2026 Time 17:45 Title Decision - Sprint Qualifying Deleted Lap Times Description Decision - Sprint Qualifying Deleted Lap Times Enclosed NED DOC 19 - Sprint Qualifying Dele",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 19\nDate 21 August 2026\nTime 17:45\nTitle Decision - Sprint Qualifying Deleted Lap Times\nDescription Decision - Sprint Qualifying Deleted Lap Times\nEnclosed NED DOC 19 - Sprint Qualifying Deleted Lap Times.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n \n \n2026 DUTCH GRAND PRIX \n21 – 23 August 2026 \n \n  \n  \nFrom The Stewards      Document 19 \n  \nTo All Officials, All Teams      Date  21 August 2026 \n \n        T i m e   17:45 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Sprint Qualif\nying \n  \nFact The F1 cars below did not use the track at turns 1, 3 and 13. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 13 12 Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 16:34:32 PIT \n2 1 14 Fernando Alonso Aston Martin Aramco F1 Team 16:38:38 1:34.349 \n3 3 23 Alexander Albon Atlassian Williams F1 Team 16:58:12 PIT \n \n \nInfringement Breach of Appendix L Chapter IV Article 2 c) of the FIA International Sporting Code and Article \nB1.8.6 of the FIA F1"
+}

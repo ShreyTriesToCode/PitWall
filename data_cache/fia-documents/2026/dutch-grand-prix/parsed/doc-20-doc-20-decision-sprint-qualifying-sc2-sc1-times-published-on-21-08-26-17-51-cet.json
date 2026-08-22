@@ -1,0 +1,26 @@
+{
+  "document_id": "028d96b5dd02c1bf",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_decision_-_sprint_qualifying_sc2-sc1_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T06:38:20.486195+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 20 Date 21 August 2026 Time 17:50 Title Decision - Sprint Qualifying SC2-SC1 Times Description Decision - Sprint Qualifying SC2-SC1 Times Enclosed NED DOC 20 - Sprint Qualifying SC2-SC1 Time",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 20\nDate 21 August 2026\nTime 17:50\nTitle Decision - Sprint Qualifying SC2-SC1 Times\nDescription Decision - Sprint Qualifying SC2-SC1 Times\nEnclosed NED DOC 20 - Sprint Qualifying SC2-SC1 Times.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n \n \n2026 DUTCH GRAND PRIX \n21 – 23 August 2026 \n \n    \nFrom The Stewards      Document 20 \n  \nTo All Officials, All Teams      Date  21 August 2026 \n \n        Time  17:50 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Sprint Qualifying \n  \nFact The F1 cars below exceeded the 1:28.00 time limit between the Safety Car lines. \n \nNo. Car Driver Competitor Time of Day Lap Time \n1 31 Esteban Ocon TGR Haas F1 Team 16:33:34 L2 (SQ1) \n2 30 Liam Lawson Oracle Red Bull Racing 16:37:47 L4 (SQ1) \n3 41 Arvid Lindblad Visa Cash App Racing Bulls F1 Team 16:38:29 L5 (SQ1) \n4 18 Lance Stroll Aston Martin Aramco F1 Team 16:39:42 L4 (SQ1) \n5 5 Gabriel Bortoleto Audi Revolut F1 Team 16:39:44 L4 (SQ1) \n6 3 Max Verstappen Oracle "
+}
