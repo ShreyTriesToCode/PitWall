@@ -1,14 +1,14 @@
 {
   "schema_version": "pitwall-run-status-v1",
-  "generated_at": "2026-08-22T09:38:35.585791+05:30",
+  "generated_at": "2026-08-22T12:14:01.418842+05:30",
   "status": "Success",
   "details": "Generated Sprint/Race-only F1 briefing.\\n\\nOutput mode: today\\nTargets: sprint=F1 Dutch GP - Sprint Race\\nBackfill used this run: 0\\nErrors: None",
   "source_discovery": {
     "schema_version": "source-registry-v1",
     "season": 2026,
     "target_season_mode": "auto",
-    "discovered_at": "2026-08-22T09:38:35.585013+05:30",
-    "last_checked_at": "2026-08-22T09:38:35.585013+05:30",
+    "discovered_at": "2026-08-22T12:14:01.418051+05:30",
+    "last_checked_at": "2026-08-22T12:14:01.418051+05:30",
     "fia_championship_identifier": "fia-formula-one-world-championship-14",
     "fia_base_championship_documents_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
     "fia_season_document_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",

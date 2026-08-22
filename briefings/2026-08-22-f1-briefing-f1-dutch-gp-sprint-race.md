@@ -1,6 +1,6 @@
 # F1 Sprint Briefing: F1 Dutch GP - Sprint Race
 
-Generated: Saturday, 22 August 2026, 09:38 AM IST
+Generated: Saturday, 22 August 2026, 12:13 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Saturday, 22 August 2026, 09:38 AM IST
 
 ## Prediction
 
-1. Max Verstappen, score 63.3, confidence 15%, weather adaptation; reliability; pit-stop execution; same-circuit history; car performance
-2. Andrea Kimi Antonelli, score 61.8, confidence 15%, reliability; weather adaptation; car performance; pit-stop execution; driver form
-3. George Russell, score 60.5, confidence 5%, reliability; weather adaptation; car performance; pit-stop execution; official upgrade package impact
-4. Isack Hadjar, score 60.0, confidence 28%, weather adaptation; reliability; pit-stop execution; team strategy gain; car performance
-5. Lewis Hamilton, score 58.5, confidence 28%, reliability; official upgrade package impact; weather adaptation; car performance; driver form
-6. Oscar Piastri, score 56.2, confidence 33%, reliability; weather adaptation; official upgrade package impact; car performance; pit-stop execution
-7. Lando Norris, score 55.9, confidence 33%, reliability; weather adaptation; official upgrade package impact; car performance; pit-stop execution
-8. Charles Leclerc, score 53.6, confidence 33%, reliability; official upgrade package impact; car performance; weather adaptation; constructor form
-9. Franco Colapinto, score 49.4, confidence 28%, reliability; weather adaptation; official upgrade package impact; pit-stop execution; team strategy gain
-10. Pierre Gasly, score 46.8, confidence 33%, reliability; weather adaptation; official upgrade package impact; pit-stop execution; team strategy gain
+1. Max Verstappen, score 63.1, confidence 15%, weather adaptation; reliability; pit-stop execution; same-circuit history; car performance
+2. Andrea Kimi Antonelli, score 61.6, confidence 5%, reliability; weather adaptation; car performance; pit-stop execution; driver form
+3. George Russell, score 60.2, confidence 5%, reliability; weather adaptation; car performance; pit-stop execution; official upgrade package impact
+4. Isack Hadjar, score 59.9, confidence 28%, weather adaptation; reliability; pit-stop execution; team strategy gain; car performance
+5. Lewis Hamilton, score 58.2, confidence 28%, reliability; official upgrade package impact; weather adaptation; car performance; driver form
+6. Oscar Piastri, score 56.0, confidence 33%, reliability; weather adaptation; official upgrade package impact; car performance; pit-stop execution
+7. Lando Norris, score 55.8, confidence 33%, reliability; weather adaptation; official upgrade package impact; car performance; pit-stop execution
+8. Charles Leclerc, score 53.5, confidence 33%, reliability; official upgrade package impact; car performance; weather adaptation; constructor form
+9. Franco Colapinto, score 49.1, confidence 28%, reliability; weather adaptation; official upgrade package impact; pit-stop execution; team strategy gain
+10. Pierre Gasly, score 46.5, confidence 33%, reliability; weather adaptation; official upgrade package impact; pit-stop execution; team strategy gain
 
 ## Track and weather
 
@@ -29,7 +29,7 @@ Generated: Saturday, 22 August 2026, 09:38 AM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: medium-high
-- Weather: 17.6°C, rain 97%, wind 20.2 km/h
+- Weather: 17.7°C, rain 97%, wind 19.4 km/h
 - Weather impact: high rain risk, mixed strategy possible; wind may affect braking stability and aero balance
 
 ## Strategy
@@ -70,9 +70,9 @@ Era: 2026+ active-aero and new power-unit era
 ## Model accuracy audit
 
 - Finish-position MAE: 3.29; RMSE: 4.16
-- Neural lap-time MAE: 3.62s; RMSE: 4.99s
-- Backtest winner hit: 39.3%; top-3 recall: 65.5%; top-5 recall: 76.4%
-- Win model AUC/Brier: 0.964 / 0.037
+- Neural lap-time MAE: 3.64s; RMSE: 5.00s
+- Backtest winner hit: 35.7%; top-3 recall: 65.5%; top-5 recall: 76.4%
+- Win model AUC/Brier: 0.963 / 0.037
 - Podium model AUC/Brier: 0.929 / 0.067
 
 ## Source status

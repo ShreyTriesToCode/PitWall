@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-12-dutch-grand-prix",
-    "prediction_id": "2026-12-dutch-grand-prix-sprint-post_fp1-62cc7ae0b859",
+    "prediction_id": "2026-12-dutch-grand-prix-sprint-post_fp1-8d035f8dc757",
     "season": 2026,
     "round": 12,
     "circuit": "Circuit Park Zandvoort",
@@ -13,16 +13,16 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "17.6°C",
+      "temperature": "17.7°C",
       "rain": "97%",
-      "humidity": "66%",
-      "wind": "20.2 km/h",
-      "wind_gust": "38.9 km/h",
-      "cloud_cover": "32%",
+      "humidity": "67%",
+      "wind": "19.4 km/h",
+      "wind_gust": "37.4 km/h",
+      "cloud_cover": "67%",
       "track_temperature": "Unavailable",
       "rain_score": 97.0,
       "heat_score": 0,
-      "wind_score": 100,
+      "wind_score": 97.24,
       "impact": "high rain risk, mixed strategy possible; wind may affect braking stability and aero balance"
     },
     "strategy": {
@@ -85,35 +85,35 @@
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 70.7,
+          "scenario_score": 70.52,
           "rank": 1
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 68.64,
+          "scenario_score": 68.53,
           "rank": 2
         },
         {
           "driver_id": "bearman",
           "name": "Oliver Bearman",
           "team": "Haas",
-          "scenario_score": 68.2,
+          "scenario_score": 68.21,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 62.73,
+          "scenario_score": 62.54,
           "rank": 4
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 62.55,
+          "scenario_score": 62.35,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 66.55,
+          "scenario_score": 66.47,
           "rank": 1
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 66.0,
+          "scenario_score": 65.89,
           "rank": 2
         },
         {
           "driver_id": "bearman",
           "name": "Oliver Bearman",
           "team": "Haas",
-          "scenario_score": 64.4,
+          "scenario_score": 64.41,
           "rank": 3
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 63.7,
+          "scenario_score": 63.65,
           "rank": 4
         },
         {
           "driver_id": "colapinto",
           "name": "Franco Colapinto",
           "team": "Alpine",
-          "scenario_score": 61.88,
+          "scenario_score": 61.75,
           "rank": 5
         }
       ],
