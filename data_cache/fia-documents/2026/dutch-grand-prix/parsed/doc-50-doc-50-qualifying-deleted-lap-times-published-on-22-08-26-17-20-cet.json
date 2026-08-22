@@ -1,0 +1,26 @@
+{
+  "document_id": "b972f66c88b2df1e",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T23:58:28.615452+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 50 Date 22 August 2026 Time 17:20 Title Qualifying Deleted Lap Times Description Qualifying Deleted Lap Times Enclosed NED DOC 50 - Qualifying Deleted Lap Times.pdf Felix Holter Mathieu Remm",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 50\nDate 22 August 2026\nTime 17:20\nTitle Qualifying Deleted Lap Times\nDescription Qualifying Deleted Lap Times\nEnclosed NED DOC 50 - Qualifying Deleted Lap Times.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n \n \n \n2026 DUTCH GRAND PRIX \n21 – 23 August 2026 \n \n  \n  \nFrom The Stewards      Document 50 \n  \nTo All Officials, All Teams      Date  22 August 2026 \n \n        T i m e   17:20 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 cars below did not use the track at turns 1, 3 and 13. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 3 55 Carlos Sainz Atlassian Williams F1 Team 16:02:37 1:25.773 \n2 1 44 Lewis Hamilton Scuderia Ferrari HP 16:08:57 PIT \n3 13 18 Lance Stroll Aston Martin Aramco F1 Team 16:10:35 1:14.225 \n4 1 63 George Russell Mercedes-AMG PETRONAS F1 Team 16:38:00 PIT \n \n \nInfringement Breach of Appendix L Chapter IV Article 2 c) of the FIA International Sporting Code and Article \nB1.8.6 of the "
+}

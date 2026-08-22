@@ -1,0 +1,26 @@
+{
+  "document_id": "a26cc7bb7b322b5b",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_summons_-_car_10_-_alleged_unsafe_release.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T23:58:33.966789+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The team representative is required to report to the Stewards at 17:45, in relation to the incident below: The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 47 Date 22 August 2026 Time 16:59 No / Driver 10 - Pierre Gasly Reason ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe team representative is required to report to the Stewards at 17:45, in relation to the incident\nbelow:\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 47\nDate 22 August 2026\nTime 16:59\nNo / Driver 10 - Pierre Gasly\nReason Alleged breach of Article B1.6.2a of the FIA F1 Regulations – Unsafe release by Car\n10 at 16:07.\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n"
+}

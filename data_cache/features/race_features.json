@@ -1,6 +1,288 @@
 [
   {
     "race_id": "2026-12-dutch-grand-prix",
+    "prediction_id": "2026-12-dutch-grand-prix-race-post_qualifying-550c325ae1ed",
+    "season": 2026,
+    "round": 12,
+    "circuit": "Circuit Park Zandvoort",
+    "city": "Zandvoort",
+    "country": "Netherlands",
+    "track_type": "permanent circuit",
+    "overtaking": "medium-good",
+    "tyre_stress": "medium-high",
+    "safety_car": "medium-high",
+    "weather": {
+      "source": "Open-Meteo forecast",
+      "temperature": "17.0°C",
+      "rain": "17%",
+      "humidity": "66%",
+      "wind": "9.7 km/h",
+      "wind_gust": "22.0 km/h",
+      "cloud_cover": "100%",
+      "track_temperature": "Unavailable",
+      "rain_score": 17.0,
+      "heat_score": 0,
+      "wind_score": 57.2,
+      "impact": "dry baseline more likely; cloud cover may reduce track-temperature growth"
+    },
+    "strategy": {
+      "risk_meter": 49.5,
+      "strategy_chaos_score": 49.5,
+      "circuit_difficulty_score": 57.6,
+      "track_evolution_indicator": "High",
+      "clean_air_dirty_air_impact": "Medium",
+      "qualifying_importance_score": 52.0,
+      "pit_window": "Lap 16-28, with safety car flexibility.",
+      "tyre_degradation_model": {
+        "score": 72.0,
+        "label": "medium-high",
+        "basis": "Historical stint, tyre stress, track temperature, and pit-stop profile where available."
+      },
+      "pit_execution_model": [
+        {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "score": 98.0
+        },
+        {
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "score": 94.08
+        },
+        {
+          "driver": "Isack Hadjar",
+          "team": "Red Bull",
+          "score": 92.8
+        },
+        {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "score": 85.43
+        },
+        {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "score": 85.28
+        },
+        {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "score": 82.48
+        },
+        {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "score": 76.07
+        },
+        {
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "score": 63.54
+        }
+      ],
+      "rain_beneficiaries": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 70.26,
+          "rank": 1
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "scenario_score": 67.26,
+          "rank": 2
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 65.37,
+          "rank": 3
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "scenario_score": 64.33,
+          "rank": 4
+        },
+        {
+          "driver_id": "bearman",
+          "name": "Oliver Bearman",
+          "team": "Haas",
+          "scenario_score": 62.85,
+          "rank": 5
+        }
+      ],
+      "safety_car_beneficiaries": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "scenario_score": 65.24,
+          "rank": 1
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "scenario_score": 65.23,
+          "rank": 2
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "scenario_score": 64.84,
+          "rank": 3
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "scenario_score": 63.39,
+          "rank": 4
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine",
+          "scenario_score": 59.24,
+          "rank": 5
+        }
+      ],
+      "predicted_strategy": {
+        "status": "data_derived",
+        "stops": 2,
+        "sequence": [
+          {
+            "stint": 1,
+            "compound": "medium",
+            "laps": 23,
+            "lap_start": 1,
+            "lap_end": 23,
+            "compound_identity": "C3"
+          },
+          {
+            "stint": 2,
+            "compound": "hard",
+            "laps": 24,
+            "lap_start": 24,
+            "lap_end": 47,
+            "compound_identity": "C2"
+          },
+          {
+            "stint": 3,
+            "compound": "medium",
+            "laps": 25,
+            "lap_start": 48,
+            "lap_end": 72,
+            "compound_identity": "C3"
+          }
+        ],
+        "first_pit_lap": 23,
+        "total_laps": 72,
+        "mandatory_compound_rule": "applied_to_dry_race_candidates",
+        "confidence": "medium",
+        "basis": "Derived from 6 cached same-circuit race(s), 145 pit-lap samples, and 93 driver stop-count samples.",
+        "data_points": {
+          "historical_races": 6,
+          "pit_lap_samples": 145,
+          "stop_count_samples": 93,
+          "pit_duration_samples": 145
+        },
+        "pit_loss_basis": {
+          "status": "stationary_pit_duration",
+          "average_seconds": 20.93,
+          "note": "Cached data exposes stationary pit duration; full in-lap/out-lap pit-lane loss was not available for every historical race."
+        },
+        "degradation_model": {
+          "status": "unavailable",
+          "basis": "No usable cached lap-time stints were available for a data-derived degradation slope.",
+          "samples": 0
+        },
+        "compound_mapping": {
+          "status": "available",
+          "nominated_compounds": [
+            "C2",
+            "C3",
+            "C4"
+          ],
+          "mapping": {
+            "hard": "C2",
+            "medium": "C3",
+            "soft": "C4"
+          },
+          "reverse_mapping": {
+            "C2": "hard",
+            "C3": "medium",
+            "C4": "soft"
+          },
+          "rule": "lowest_C_number_is_hard_middle_is_medium_highest_is_soft_for_this_event",
+          "source": {
+            "document_id": "33556b6b77f925d4",
+            "document_title": "Doc 2 - Competition Notes - Pirelli Preview Published on 19.08.26 17:56 CET",
+            "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
+            "source_authority": "official_fia",
+            "source_status": "official_live"
+          }
+        }
+      },
+      "safety_car_window": {
+        "status": "no_events_observed",
+        "supporting_races": 6,
+        "bucket_size_laps": 5,
+        "windows": [],
+        "basis": "Aggregated race-control safety car/VSC/red-flag events across 6 cached same-circuit races."
+      },
+      "compound_mapping": {
+        "status": "available",
+        "nominated_compounds": [
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "mapping": {
+          "hard": "C2",
+          "medium": "C3",
+          "soft": "C4"
+        },
+        "reverse_mapping": {
+          "C2": "hard",
+          "C3": "medium",
+          "C4": "soft"
+        },
+        "rule": "lowest_C_number_is_hard_middle_is_medium_highest_is_soft_for_this_event",
+        "source": {
+          "document_id": "33556b6b77f925d4",
+          "document_title": "Doc 2 - Competition Notes - Pirelli Preview Published on 19.08.26 17:56 CET",
+          "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
+          "source_authority": "official_fia",
+          "source_status": "official_live"
+        }
+      },
+      "active_aero": {
+        "straight_mode": "low-drag straight configuration",
+        "corner_mode": "high-downforce corner configuration",
+        "average_suitability": 61.96
+      },
+      "energy_deployment": {
+        "title": "2026 Boost / Overtake Mode Intelligence",
+        "average_boost_advantage": 57.58,
+        "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
+      },
+      "decision_log": [
+        "Model checks source health and missing critical data before ranking.",
+        "Scenario layer reweights real component scores for rain, safety car, tyre degradation, and low-overtaking cases.",
+        "2026 layer uses Boost, Overtake Mode, energy deployment, and Active Aero terminology with fallback proxies when exact data is unavailable."
+      ]
+    }
+  },
+  {
+    "race_id": "2026-12-dutch-grand-prix",
     "prediction_id": "2026-12-dutch-grand-prix-sprint-post_fp1-8d035f8dc757",
     "season": 2026,
     "round": 12,

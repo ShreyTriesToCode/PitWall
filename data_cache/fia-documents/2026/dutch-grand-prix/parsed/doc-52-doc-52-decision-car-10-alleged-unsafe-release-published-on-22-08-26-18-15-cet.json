@@ -1,0 +1,26 @@
+{
+  "document_id": "f98c7cb1a26a68a6",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_decision_-_car_10_-_alleged_unsafe_release.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T23:58:25.086410+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 From The Stewards To The Team Manager, BWT Alpine F1 Team Document 52 Date 22 August 2026 Time 18:12 The Stewards, having received a report from the Race Director, summoned (documents 47 & 48) and heard from the drivers and team representatives, have conside",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 52\nDate 22 August 2026\nTime 18:12\nThe Stewards, having received a report from the Race Director, summoned (documents 47 & 48)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 10 - Pierre Gasly\nCompetitor BWT Alpine F1 Team\nTime 16:07\nSession Qualifying\nFact Alleged unsafe release of Car 10\nInfringement Alleged breach of Article B1.6.2a of the FIA F1 Regulations.\nDecision No further action.\nReason The Stewards heard from the driver of Car 5 (Gabriel Bortoleto), the driver of Car 10\n(Pierre Gasly) and their team representatives and reviewed video, timing, telemetry\nand in-car video evidence.\nCar 10 was released from its garage directly in front of Car 5 which had just left its\ngarage, thereby requiring the driver of Car 5 to slightly brake in the fast lane. During\nthe hearing both drivers agreed that the situation was not unsafe in any way, but\nrather very typical for cars heading out during qualifying.\nThe Stewards agree that, although the driver of Car 5 had to react to Car 10 entering\nthe fast"
+}
