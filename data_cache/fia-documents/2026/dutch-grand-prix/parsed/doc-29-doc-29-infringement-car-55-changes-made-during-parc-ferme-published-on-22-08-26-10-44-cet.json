@@ -1,0 +1,26 @@
+{
+  "document_id": "763fd116c46cca58",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T18:06:37.255381+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 29 Date 22 August 2026 Time 10:42 The Stewards, having received a report from the Technical Delegate (document 28), have considered the following matter and determine the",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 29\nDate 22 August 2026\nTime 10:42\nThe Stewards, having received a report from the Technical Delegate (document 28), have\nconsidered the following matter and determine the following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 10:00\nSession Sprint Qualifying\nFact The setup of the suspension has been changed while under parc fermé.\nInfringement Breaches of Article B3.5.3 and B3.5.4 of the FIA F1 Regulations.\nDecision Required to start the Sprint from the pit lane.\nReason Atlassian Williams F1 Team changed the setup of the suspension of Car 55 under\nparc fermé before the start of the Sprint, without the approval of the Technical\nDelegate. This is not accordance with Article B3.5.4 of the FIA F1 Regulations.\nIn addition, the change of setup is not in accordance with Article B3.5.3 of the FIA F1\nRegulations. Car 55 is therefore required to start the Sprint from pit lane as per\nArticle B3.5.3b of the FIA F1 Regulations.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance wi"
+}

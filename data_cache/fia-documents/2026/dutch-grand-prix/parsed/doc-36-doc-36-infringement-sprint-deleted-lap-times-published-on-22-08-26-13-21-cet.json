@@ -1,0 +1,26 @@
+{
+  "document_id": "e4d5d2c4404ea905",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_sprint_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T18:06:27.000378+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 36 Date 22 August 2026 Time 13:20 Title Infringement - Sprint Deleted Lap Times Description Sprint Deleted Lap Times Enclosed NED DOC 36 - Sprint Deleted Lap Times.pdf Felix Holter Mathieu R",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 36\nDate 22 August 2026\nTime 13:20\nTitle Infringement - Sprint Deleted Lap Times\nDescription Sprint Deleted Lap Times\nEnclosed NED DOC 36 - Sprint Deleted Lap Times.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n \n \n2026 DUTCH GRAND PRIX \n21 – 23 August 2026 \n \n  \n  \nFrom The Stewards      Document 36 \n  \nTo All Officials, All Teams      Date  22 August 2026 \n \n        T i m e   13:20 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Sprin\nt \n  \nFact The F1 car below did not use the track at turn 3. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 3 10 Pierre Gasly BWT Alpine F1 Team 12:24:10 1:17.789 \n \n \nInfringement Breach of Appendix L Chapter IV Article 2 c) of the FIA International Sporting Code and Article \nB1.8.6 of the FIA F1 Regulations. \n  \nDecision Deletion of the lap time shown in accordance with Article 12.4.1.e of the FIA International \nSporting Code. \n  \nNote Competitors are reminded that they have the right to appeal ce"
+}

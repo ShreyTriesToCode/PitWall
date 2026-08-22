@@ -1,0 +1,26 @@
+{
+  "document_id": "51ca2357ada88ef8",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_22_-_failure_to_follow_race_directors_instructions_reaching_the_grid.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T18:06:20.354338+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 40 Date 22 August 2026 Time 13:28 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following:",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 40\nDate 22 August 2026\nTime 13:28\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 22 - Yuki Tsunoda\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 11:34\nSession Sprint\nFact The driver of Car 22 stopped his car before Safety Car Line 1 when driving to the\ngrid.\nInfringement Breach of Article 12.2.1.i of the International Sporting Code – Non-compliance with\nRace Director’s Event Note (item 24, document 5).\nDecision No penalty is applied.\nReason The Stewards reviewed video and in-car video evidence.\nCar 22 stopped before reaching Safety Car Line 1 and therefore did not reach the\ngrid (as defined in item 24 of the Race Director’s Competition Notes) under its own\npower. However, as the end of the grid was extremely crowded when the car reached\nthe grid, the Stewards determine the the driver acted appropriately and stopped the\ncar in a safe spot as close as possible to the grid. Therefore no penalty is applied.\n \nCompetitors are reminded that they have the "
+}

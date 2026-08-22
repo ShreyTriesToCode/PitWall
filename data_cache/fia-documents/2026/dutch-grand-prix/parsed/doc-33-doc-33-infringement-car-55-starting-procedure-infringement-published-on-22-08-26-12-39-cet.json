@@ -1,0 +1,26 @@
+{
+  "document_id": "b8279a89678548e2",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_starting_procedure_infringement.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-22T18:06:31.776881+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 5,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 33 Date 22 August 2026 Time 12:36 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Dr",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 33\nDate 22 August 2026\nTime 12:36\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 12:02\nSession Sprint\nFact Car 55 overtook Car 77 during the formation lap.\nInfringement Breach of Article B5.6.4 of the FIA F1 Regulations \nDecision Driver: Warning.\nReason The Stewards reviewed video evidence.\nCar 55 was mandated to start the Sprint from the pit lane because of another breach\nand therefore the driver entered the pit lane at the end of the formation lap. By doing\nso, he overtook Car 77 shortly before reaching Safety Car Line 1 and this is\nconsidered a breach of Article B5.6.4 of the FIA F1 Regulations.\nAs the mandated consequence for such an infringement (pit lane start) is redundant\nin this case, the Stewards issue a Warning to the driver in line with previous\ndecisions.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA "
+}
