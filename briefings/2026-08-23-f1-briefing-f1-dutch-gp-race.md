@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Dutch GP - Race
 
-Generated: Sunday, 23 August 2026, 09:45 AM IST
+Generated: Sunday, 23 August 2026, 12:15 PM IST
 
 ## Event
 
@@ -11,15 +11,15 @@ Generated: Sunday, 23 August 2026, 09:45 AM IST
 
 ## Prediction
 
-1. Andrea Kimi Antonelli, score 66.0, confidence 24%, qualifying and grid position; car performance; pit-stop execution; driver form; neural lap-time forecast
-2. George Russell, score 65.8, confidence 24%, qualifying and grid position; car performance; neural lap-time forecast; pit-stop execution; official upgrade package impact
-3. Lando Norris, score 62.6, confidence 24%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; ML finish-position model
-4. Max Verstappen, score 62.4, confidence 37%, qualifying and grid position; pit-stop execution; same-circuit history; car performance; official upgrade package impact
-5. Lewis Hamilton, score 61.1, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; reliability
-6. Oscar Piastri, score 59.6, confidence 42%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; reliability
-7. Charles Leclerc, score 57.5, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; constructor form
-8. Isack Hadjar, score 57.3, confidence 37%, pit-stop execution; car performance; official upgrade package impact; same-circuit history; reliability
-9. Pierre Gasly, score 45.7, confidence 37%, qualifying and grid position; official upgrade package impact; neural lap-time forecast; reliability; pit-stop execution
+1. George Russell, score 65.9, confidence 24%, qualifying and grid position; car performance; neural lap-time forecast; pit-stop execution; official upgrade package impact
+2. Andrea Kimi Antonelli, score 65.8, confidence 24%, qualifying and grid position; car performance; pit-stop execution; driver form; neural lap-time forecast
+3. Max Verstappen, score 62.6, confidence 24%, qualifying and grid position; pit-stop execution; same-circuit history; car performance; official upgrade package impact
+4. Lando Norris, score 62.4, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; reliability
+5. Lewis Hamilton, score 61.2, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; reliability
+6. Oscar Piastri, score 59.8, confidence 42%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; reliability
+7. Charles Leclerc, score 57.9, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; constructor form
+8. Isack Hadjar, score 57.4, confidence 37%, pit-stop execution; car performance; official upgrade package impact; same-circuit history; reliability
+9. Pierre Gasly, score 45.8, confidence 37%, qualifying and grid position; official upgrade package impact; neural lap-time forecast; reliability; pit-stop execution
 10. Liam Lawson, score 44.8, confidence 42%, qualifying and grid position; reliability; ML finish-position model; car performance; weather adaptation
 
 ## Track and weather
@@ -29,7 +29,7 @@ Generated: Sunday, 23 August 2026, 09:45 AM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: medium-high
-- Weather: 18.4°C, rain 20%, wind 13.7 km/h
+- Weather: 18.5°C, rain 20%, wind 14.0 km/h
 - Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
 
 ## Strategy
@@ -69,11 +69,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.29; RMSE: 4.16
+- Finish-position MAE: 3.28; RMSE: 4.15
 - Neural lap-time MAE: 3.63s; RMSE: 4.99s
 - Backtest winner hit: 39.3%; top-3 recall: 65.5%; top-5 recall: 76.4%
-- Win model AUC/Brier: 0.963 / 0.037
-- Podium model AUC/Brier: 0.930 / 0.067
+- Win model AUC/Brier: 0.962 / 0.037
+- Podium model AUC/Brier: 0.929 / 0.067
 
 ## Source status
 
