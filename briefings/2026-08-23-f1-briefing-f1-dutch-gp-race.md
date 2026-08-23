@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Dutch GP - Race
 
-Generated: Sunday, 23 August 2026, 12:15 PM IST
+Generated: Sunday, 23 August 2026, 06:12 PM IST
 
 ## Event
 
@@ -11,16 +11,16 @@ Generated: Sunday, 23 August 2026, 12:15 PM IST
 
 ## Prediction
 
-1. George Russell, score 65.9, confidence 24%, qualifying and grid position; car performance; neural lap-time forecast; pit-stop execution; official upgrade package impact
-2. Andrea Kimi Antonelli, score 65.8, confidence 24%, qualifying and grid position; car performance; pit-stop execution; driver form; neural lap-time forecast
-3. Max Verstappen, score 62.6, confidence 24%, qualifying and grid position; pit-stop execution; same-circuit history; car performance; official upgrade package impact
-4. Lando Norris, score 62.4, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; reliability
-5. Lewis Hamilton, score 61.2, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; reliability
-6. Oscar Piastri, score 59.8, confidence 42%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; reliability
-7. Charles Leclerc, score 57.9, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; constructor form
-8. Isack Hadjar, score 57.4, confidence 37%, pit-stop execution; car performance; official upgrade package impact; same-circuit history; reliability
-9. Pierre Gasly, score 45.8, confidence 37%, qualifying and grid position; official upgrade package impact; neural lap-time forecast; reliability; pit-stop execution
-10. Liam Lawson, score 44.8, confidence 42%, qualifying and grid position; reliability; ML finish-position model; car performance; weather adaptation
+1. George Russell, score 65.5, confidence 24%, qualifying and grid position; car performance; neural lap-time forecast; pit-stop execution; official upgrade package impact
+2. Andrea Kimi Antonelli, score 65.3, confidence 24%, qualifying and grid position; car performance; pit-stop execution; driver form; neural lap-time forecast
+3. Lando Norris, score 62.3, confidence 24%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; ML finish-position model
+4. Max Verstappen, score 62.3, confidence 37%, qualifying and grid position; pit-stop execution; same-circuit history; car performance; official upgrade package impact
+5. Lewis Hamilton, score 60.5, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; reliability
+6. Oscar Piastri, score 59.4, confidence 42%, qualifying and grid position; official upgrade package impact; car performance; pit-stop execution; reliability
+7. Charles Leclerc, score 57.6, confidence 37%, qualifying and grid position; official upgrade package impact; car performance; neural lap-time forecast; constructor form
+8. Isack Hadjar, score 57.1, confidence 37%, pit-stop execution; car performance; official upgrade package impact; same-circuit history; reliability
+9. Pierre Gasly, score 45.5, confidence 37%, qualifying and grid position; official upgrade package impact; neural lap-time forecast; reliability; pit-stop execution
+10. Franco Colapinto, score 44.8, confidence 37%, official upgrade package impact; pit-stop execution; reliability; qualifying and grid position; neural lap-time forecast
 
 ## Track and weather
 
@@ -29,8 +29,8 @@ Generated: Sunday, 23 August 2026, 12:15 PM IST
 - Overtaking: medium-good
 - Tyre stress: medium-high
 - Safety car/DNF risk proxy: medium-high
-- Weather: 18.5°C, rain 20%, wind 14.0 km/h
-- Weather impact: dry baseline more likely; wind may affect braking stability and aero balance
+- Weather: 18.4°C, rain 32%, wind 11.5 km/h
+- Weather impact: moderate rain risk, radar should influence pit timing; wind may affect braking stability and aero balance
 
 ## Strategy
 
@@ -48,8 +48,8 @@ Generated: Sunday, 23 August 2026, 12:15 PM IST
 
 ## Upgrade impact
 
-- Alpine: 83.5/100, aero efficiency, brake cooling, cooling
 - McLaren: 83.5/100, aero efficiency, brake cooling, braking stability
+- Alpine: 83.5/100, aero efficiency, brake cooling, cooling
 - Ferrari: 83.1/100, aero efficiency, diffuser interaction, downforce
 
 ## Regulation context
@@ -69,11 +69,11 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.28; RMSE: 4.15
-- Neural lap-time MAE: 3.63s; RMSE: 4.99s
-- Backtest winner hit: 39.3%; top-3 recall: 65.5%; top-5 recall: 76.4%
-- Win model AUC/Brier: 0.962 / 0.037
-- Podium model AUC/Brier: 0.929 / 0.067
+- Finish-position MAE: 3.28; RMSE: 4.16
+- Neural lap-time MAE: 3.64s; RMSE: 5.00s
+- Backtest winner hit: 42.9%; top-3 recall: 65.5%; top-5 recall: 76.4%
+- Win model AUC/Brier: 0.963 / 0.037
+- Podium model AUC/Brier: 0.930 / 0.067
 
 ## Source status
 

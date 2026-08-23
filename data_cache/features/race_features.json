@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-12-dutch-grand-prix",
-    "prediction_id": "2026-12-dutch-grand-prix-race-post_qualifying-f9cfbb2db5ab",
+    "prediction_id": "2026-12-dutch-grand-prix-race-post_qualifying-2e6b20d97b0d",
     "season": 2026,
     "round": 12,
     "circuit": "Circuit Park Zandvoort",
@@ -13,21 +13,21 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "18.5°C",
-      "rain": "20%",
-      "humidity": "59%",
-      "wind": "14.0 km/h",
-      "wind_gust": "30.6 km/h",
-      "cloud_cover": "4%",
+      "temperature": "18.4°C",
+      "rain": "32%",
+      "humidity": "58%",
+      "wind": "11.5 km/h",
+      "wind_gust": "35.3 km/h",
+      "cloud_cover": "51%",
       "track_temperature": "Unavailable",
-      "rain_score": 20.0,
+      "rain_score": 32.0,
       "heat_score": 0,
-      "wind_score": 79.56,
-      "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
+      "wind_score": 91.78,
+      "impact": "moderate rain risk, radar should influence pit timing; wind may affect braking stability and aero balance"
     },
     "strategy": {
-      "risk_meter": 50.4,
-      "strategy_chaos_score": 50.4,
+      "risk_meter": 54.0,
+      "strategy_chaos_score": 54.0,
       "circuit_difficulty_score": 57.6,
       "track_evolution_indicator": "High",
       "clean_air_dirty_air_impact": "Medium",
@@ -43,6 +43,11 @@
           "driver": "Andrea Kimi Antonelli",
           "team": "Mercedes",
           "score": 98.0
+        },
+        {
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "score": 94.08
         },
         {
           "driver": "Isack Hadjar",
@@ -73,11 +78,6 @@
           "driver": "Pierre Gasly",
           "team": "Alpine",
           "score": 63.54
-        },
-        {
-          "driver": "Lewis Hamilton",
-          "team": "Ferrari",
-          "score": 59.95
         }
       ],
       "rain_beneficiaries": [
@@ -85,35 +85,35 @@
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 70.67,
+          "scenario_score": 70.46,
           "rank": 1
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 67.76,
+          "scenario_score": 67.57,
           "rank": 2
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 65.75,
+          "scenario_score": 65.46,
           "rank": 3
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 64.73,
+          "scenario_score": 64.52,
           "rank": 4
         },
         {
           "driver_id": "bearman",
           "name": "Oliver Bearman",
           "team": "Haas",
-          "scenario_score": 63.68,
+          "scenario_score": 63.65,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 65.67,
+          "scenario_score": 65.53,
           "rank": 1
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 65.54,
+          "scenario_score": 65.31,
           "rank": 2
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 65.35,
+          "scenario_score": 65.23,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 63.69,
+          "scenario_score": 63.5,
           "rank": 4
         },
         {
           "driver_id": "colapinto",
           "name": "Franco Colapinto",
           "team": "Alpine",
-          "scenario_score": 59.69,
+          "scenario_score": 59.79,
           "rank": 5
         }
       ],
@@ -267,11 +267,11 @@
       "active_aero": {
         "straight_mode": "low-drag straight configuration",
         "corner_mode": "high-downforce corner configuration",
-        "average_suitability": 62.0
+        "average_suitability": 61.96
       },
       "energy_deployment": {
         "title": "2026 Boost / Overtake Mode Intelligence",
-        "average_boost_advantage": 57.37,
+        "average_boost_advantage": 57.58,
         "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
       },
       "decision_log": [
