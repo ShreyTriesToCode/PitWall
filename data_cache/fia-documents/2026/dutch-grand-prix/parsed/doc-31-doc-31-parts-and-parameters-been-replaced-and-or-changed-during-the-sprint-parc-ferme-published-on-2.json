@@ -1,0 +1,26 @@
+{
+  "document_id": "3cbb0b91457d9368",
+  "document_type": "parc_ferme",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_parts_and_parameters_been_replaced_and_or_changed_during_the_sprint_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-25T00:09:54.227662+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 Technical Delegate’s Report The following parts and parameters have been replaced / changed during the Parc Fermé yesterday and today before the start of the Sprint: Mercedes: Car 12: LHS rear lower deflector Red Bull Racing RB Ford: Car 30: ICE (previously ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nTechnical Delegate’s Report\n \n \nThe following parts and parameters have been replaced / changed during the Parc Fermé yesterday\nand today before the start of the Sprint:\n \nMercedes:\n \nCar 12:           LHS rear lower deflector\n \n \nRed Bull Racing RB Ford:\n \nCar 30:           ICE (previously used)\n                        TC (previously used)\n                        EXH (previously used)\n                        Parameter changes associated with the PU elements replacement\n \n \nFerrari:\n \nCar 16:           Headrest pad\n \n \nAtlassian Williams Mercedes:\n \nCar 23:           RHS side impact structure to floor hanger\n \n \nRacing Bulls RB Ford:\n \nCar 41:           Gearbox assembly\n                        Gearbox control hydraulics\n                        LHS and RHS rear outboard suspension assemblies\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 31\nDate 22 August 2026\nTime 10:50\n\n                        Parameter changes associated with the gearbox assembly replacement\n \n \nAston Martin Aramco Honda:\n \nCar 18:           Forward chassis puck\n                        RHS fuel lift pump\n                        Parameter changes associ"
+}
