@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-08-24T07:02:21.208726+00:00
+- Generated at: 2026-08-24T12:58:08.763734+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Dutch Grand Prix / race
 - Top 10 availability: 10 rows
