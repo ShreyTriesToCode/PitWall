@@ -1,0 +1,26 @@
+{
+  "document_id": "805d8168ecfeba88",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_43_-_failure_to_slow_for_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-24T06:41:37.941755+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 65 Date 23 August 2026 Time 17:34 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 43 ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 65\nDate 23 August 2026\nTime 17:34\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 43 - Franco Colapinto\nCompetitor BWT Alpine F1 Team\nTime 16:44\nSession Race\nFact Failure to slow for a single yellow flag in Turn 3.\nInfringement Breach of Article B1.8.4a of the FIA F1 Regulations.\nDecision 10 second time penalty.\n1 penalty point (total of 4 for the 12 month period).\nReason The Stewards reviewed video, timing, telemetry and in-car video evidence.\nCar 43 passed a single yellow flag without discernibly reducing speed although also\nreceiving a visible warning on the dash. As the infringement was not considered\ndangerous or egregious, a penalty on the lower end of the available scale is imposed.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\n \nDecisions of the Stewards"
+}

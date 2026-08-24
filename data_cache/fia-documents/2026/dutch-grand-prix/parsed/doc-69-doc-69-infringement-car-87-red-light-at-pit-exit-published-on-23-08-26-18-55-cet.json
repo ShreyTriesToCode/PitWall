@@ -1,0 +1,26 @@
+{
+  "document_id": "05075e3eb7c6b698",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_87_-_red_light_at_pit_exit.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-24T06:41:31.876625+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 69 Date 23 August 2026 Time 18:50 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 87 - Oliver Bearma",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 69\nDate 23 August 2026\nTime 18:50\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 87 - Oliver Bearman\nCompetitor TGR Haas F1 Team\nTime 15:33\nSession Race\nFact Car 87 left the pit lane when the light at the end of the pit lane was red.\nInfringement Breach of Article B1.6.3e of the FIA F1 Regulations.\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 1st reprimand of the season.\nReason The Stewards reviewed in-car video evidence.\nThe pit exit light turned red when the driver was approaching the pit exit to join the\ntrack for the re-start of the race after a suspension. Such an infringement happening\nduring the race normally requires a very significant penalty as the drivers are obliged\nto obey light signals at all times. However, in this case the infringement did not happen\nduring a live race, but rather on the build-up before the re-start, although the race had\ntechnically already resumed in accordance with Article B5.15.2g.\nIn addition to that, the Stewards acknowledge that ne"
+}

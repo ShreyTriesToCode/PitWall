@@ -1,0 +1,26 @@
+{
+  "document_id": "fe14410763a168b3",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-08-24T06:41:35.167777+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 DUTCH GRAND PRIX 21 - 23 August 2026 The Stewards From The Stewards To All Teams, All Officials Document 67 Date 23 August 2026 Time 17:50 Title Infringement - Race Deleted Lap Times Description Race Deleted Lap Times Enclosed NED DOC 67 - Race Deleted Lap Times.pdf Felix Holter Mathieu Remmeri",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 DUTCH GRAND PRIX\n21 - 23 August 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 67\nDate 23 August 2026\nTime 17:50\nTitle Infringement - Race Deleted Lap Times\nDescription Race Deleted Lap Times\nEnclosed NED DOC 67 - Race Deleted Lap Times.pdf\nFelix Holter Mathieu Remmerie\nTomas Kunc Vitantonio Liuzzi\nStijn Drinkenburg\n\n \n \n2026 DUTCH GRAND PRIX \n21 – 23 August 2026 \n \n  \n  \nFrom The Stewards      Document 67 \n  \nTo All Officials, All Teams      Date  23 August 2026 \n \n        T i m e   17:50 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 1, 3, 11 and 13. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 3 27  Nico Hulkenberg Audi Revolut F1 Team 15:40:03 1:23.646 \n2 3 41  Arvid Lindblad Visa Cash App Racing Bulls F1 Team 15:41:36 1:29.772 \n3 3 18 Lance Stroll Aston Martin Aramco F1 Team 16:00:15 1:19.923 \n4 11 81 Oscar Piastri McLaren Mastercard F1 Team 16:22:17 1:17.753 \n5 3 27 Nico Hulkenberg Audi Revolut F1 Team 16:26:10 1:17.960 \n6 13 22 Yuki Tsunoda Visa Cash App Racing Bulls F1 T"
+}
