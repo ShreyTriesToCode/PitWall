@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-08-28T15:17:09.383427+05:30",
+  "generated_at": "2026-08-28T21:10:25.034334+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -402,8 +402,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -758,8 +756,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -1114,8 +1110,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -1467,8 +1461,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -1821,8 +1813,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -2175,8 +2165,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -2529,8 +2517,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -2881,8 +2867,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -3229,8 +3213,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -3579,8 +3561,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -4220,8 +4200,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -4580,8 +4558,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -4941,8 +4917,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -5301,8 +5275,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -5658,8 +5630,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -6016,8 +5986,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -6374,8 +6342,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -6732,8 +6698,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -7088,8 +7052,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -7441,8 +7403,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -8074,8 +8034,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -8426,8 +8384,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -8780,8 +8736,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -9130,8 +9084,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -9480,8 +9432,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -9828,8 +9778,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -10178,8 +10126,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -10529,8 +10475,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -10880,8 +10824,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -11229,8 +11171,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -11869,8 +11809,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -12222,8 +12160,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -12576,8 +12512,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -12927,8 +12861,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -13275,8 +13207,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -13626,8 +13556,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -13977,8 +13905,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -14329,8 +14255,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -14679,8 +14603,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -15025,8 +14947,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -15680,8 +15600,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -16059,8 +15977,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -16440,8 +16356,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -16818,8 +16732,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -17195,8 +17107,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -17572,8 +17482,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -17949,8 +17857,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -18325,8 +18231,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -18700,8 +18604,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -19074,8 +18976,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -19724,8 +19624,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -20075,8 +19973,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -20426,8 +20322,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -20778,8 +20672,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -21127,8 +21019,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -21475,8 +21365,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -21825,8 +21713,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -22171,8 +22057,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -22517,8 +22401,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -22864,8 +22746,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -23511,8 +23391,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -23871,8 +23749,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -24230,8 +24106,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -24588,8 +24462,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -24944,8 +24816,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -25299,8 +25169,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -25656,8 +25524,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -26008,8 +25874,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -26361,8 +26225,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -26715,8 +26577,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -27364,8 +27224,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -27728,8 +27586,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -28091,8 +27947,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -28453,8 +28307,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -28814,8 +28666,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -29173,8 +29023,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -29533,8 +29381,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -29888,8 +29734,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -30244,8 +30088,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -30602,8 +30444,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -31246,8 +31086,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -31599,8 +31437,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -31952,8 +31788,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -32303,8 +32137,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -32652,8 +32484,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -33001,8 +32831,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -33350,8 +33178,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -33698,8 +33524,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -34046,8 +33870,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -34392,8 +34214,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -35031,8 +34851,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -35384,8 +35202,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -35737,8 +35553,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -36088,8 +35902,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -36437,8 +36249,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -36786,8 +36596,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -37135,8 +36943,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -37483,8 +37289,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -37830,8 +37634,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -38175,8 +37977,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -38811,8 +38611,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -39160,8 +38958,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -39512,8 +39308,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -39863,8 +39657,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -40211,8 +40003,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -40557,8 +40347,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -40903,8 +40691,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -41251,8 +41037,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -41600,8 +41384,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -41947,8 +41729,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -42596,8 +42376,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -42955,8 +42733,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -43314,8 +43090,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -43671,8 +43445,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -44028,8 +43800,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -44384,8 +44154,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -44740,8 +44508,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -45095,8 +44861,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -45448,8 +45212,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -45801,8 +45563,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -46439,8 +46199,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -46790,8 +46548,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -47141,8 +46897,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -47492,8 +47246,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -47841,8 +47593,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -48191,8 +47941,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -48541,8 +48289,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -48890,8 +48636,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -49239,8 +48983,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -49585,8 +49327,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -50221,8 +49961,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -50572,8 +50310,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -50923,8 +50659,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -51274,8 +51008,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -51623,8 +51355,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -51973,8 +51703,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -52323,8 +52051,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -52672,8 +52398,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -53021,8 +52745,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -53367,8 +53089,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -54026,8 +53746,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -54378,8 +54096,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -54732,8 +54448,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -55083,8 +54797,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -55435,8 +55147,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -55786,8 +55496,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -56137,8 +55845,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -56484,8 +56190,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -56834,8 +56538,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -57183,8 +56885,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -57821,8 +57521,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -58173,8 +57871,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -58527,8 +58223,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -58878,8 +58572,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -59230,8 +58922,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -59581,8 +59271,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -59932,8 +59620,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -60279,8 +59965,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -60629,8 +60313,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -60978,8 +60660,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -61626,8 +61306,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -61990,8 +61668,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -62352,8 +62028,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -62717,8 +62391,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -63082,8 +62754,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -63447,8 +63117,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -63813,8 +63481,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -64178,8 +63844,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -64546,8 +64210,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -64915,8 +64577,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -65570,8 +65230,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -65930,8 +65588,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -66293,8 +65949,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -66656,8 +66310,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -67021,8 +66673,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -67386,8 +67036,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -67751,8 +67399,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -68115,8 +67761,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -68479,8 +68123,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
@@ -68844,8 +68486,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_final_race_classification.pdf",
               "fia_document_not_found:404"
             ]
           },
