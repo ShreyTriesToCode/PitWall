@@ -1,0 +1,13 @@
+{
+  "document_id": "1d839d90cb226235",
+  "document_type": "post_race_checks",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_post-race_checks_on_car_number_10_2026_dutch_gp.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-03T08:32:42.967018+05:30",
+  "confidence": 0.55,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n4 - 6 September 2026\nTechnical Delegate’s Report\n \n \nAfter the race in Zandvoort, car number 10 was randomly chosen among the top ten cars for more\nextensive physical inspections.\n \nSubject to these physical inspections were the re-programmable electronic devices and the SECU.\n \nIn particular, a team electronic device, containing reprogrammable software, was selected and\nchecked against the provisions of Article C8.1:\nThe software version and source code were registered with the FIA.\nA suitable mechanism was used to verify that the software version loaded onto the custom unit\nmatched the registered version.\nA detailed inspection of the source code was carried out.\n \nIn addition to the above, the SECU software, the configuration files and the data offloads were\nverified.\n \nAll inspected items were found to be in compliance with the 2026 Formula One Technical\nRegulations.\n \nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 2\nDate 02 September 2026\nTime 15:53\nJo Bauer\n"
+}
