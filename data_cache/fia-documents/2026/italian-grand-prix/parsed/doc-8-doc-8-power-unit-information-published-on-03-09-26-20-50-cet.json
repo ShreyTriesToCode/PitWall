@@ -1,0 +1,13 @@
+{
+  "document_id": "2fc550613b437954",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_power_unit_information.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-04T02:02:31.956106+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 8\nDate 03 September 2026\nTime 20:50\nTitle Power Unit Information\nDescription Power Unit Information\nEnclosed R13_Italy_Power_Unit_Information.pdf\nRui Marques\n\nROUND No. R13\nVENUE Monza\nCENTRELINE 5.793 km\nFORMAT Standard\nDATE 04-06 September\nOvertake not active Overtake active\n7.0 MJ 7.5 MJ 5.0 MJ 7.5 MJ 9.0 MJ 4218 m 50 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT4-T7 2100-2800 T4-T7\n[Exit T11]\n2100-2800\n[5050-5350]\n350kW\n[350kW] [Exit T11] [5300-5800]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n5050 m (TBC) 5249 m\nL18 L19\nArticle C5.2.8\nMaximum DC power of\nERS-K function of car speed\nOther parts of the Lap\nIDENTIFICATION OF SECTORS WHERE EXCEPTIONS APPLY\n"
+}
