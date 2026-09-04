@@ -1,0 +1,26 @@
+{
+  "document_id": "8990be60c7205fdf",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_12_-_pit_lane_speeding.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-05T01:49:13.352488+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 27 Date 04 September 2026 Time 18:17 The Stewards, having received a report from the Race Director, have considered the following matter and determine the followi",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 27\nDate 04 September 2026\nTime 18:17\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 12 - Kimi Antonelli\nCompetitor Mercedes-AMG PETRONAS F1 Team\nTime 16:58\nSession Free Practice 2\nFact Pit lane speeding – 80.1 km/h\nInfringement Breach of Article B1.6.3a of the FIA F1 Regulations. \nDecision The competitor (Mercedes-AMG PETRONAS F1 Team) is fined €100.\nReason Car 12 exceeded the pit lane speed limit which is set at 80 km/h for this event by 0.1\nkm/h.\n \nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\n \nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\n \nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n"
+}
