@@ -1,0 +1,26 @@
+{
+  "document_id": "a225c4e0aa9ae77f",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_12_-_changes_to_pu_elements.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-04T21:18:10.792751+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 30,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 19 Date 04 September 2026 Time 16:29 The Stewards, having received a report from the Technical Delegate (document 13), have considered the following matter and de",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 19\nDate 04 September 2026\nTime 16:29\nThe Stewards, having received a report from the Technical Delegate (document 13), have\nconsidered the following matter and determine the following:\nNo / Driver 12 - Kimi Antonelli\nCompetitor Mercedes-AMG PETRONAS F1 Team\nTime 12:32\nSession Free Practice 1\nFact The following Power Unit elements have been used:\n5th Engine (ICE)\n4th Energy Store (ES)\n4th Control Electronics Unit (PU-CE)\nInfringement Breaches of Article B8.2.2 (read in conjunction with B8.2.3) of the FIA F1\nRegulations.\nDecision Drop of 30 grid positions for the next Race in which the driver participates.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nThe use of each additional element in this case carries a 10 grid place penalty\ntherefore there is an accumulation of 30 places.\nSubject to Car 12 being classified in the results of Qualifying, Car 12 will be allocated\na grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1\nRegulations\nCompetitors are reminded that they have the righ"
+}

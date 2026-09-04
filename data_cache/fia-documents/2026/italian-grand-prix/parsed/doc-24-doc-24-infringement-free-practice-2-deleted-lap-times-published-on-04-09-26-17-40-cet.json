@@ -1,0 +1,26 @@
+{
+  "document_id": "4b658abdc9a33883",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-04T21:18:02.808862+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 24 Date 04 September 2026 Time 17:40 Title Infringement - Free Practice 2 Deleted Lap Times Description Free Practice 2 Deleted Lap Times Enclosed ITA DOC 24 - Free Practice 2 Deleted L",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 24\nDate 04 September 2026\nTime 17:40\nTitle Infringement - Free Practice 2 Deleted Lap Times\nDescription Free Practice 2 Deleted Lap Times\nEnclosed ITA DOC 24 - Free Practice 2 Deleted Lap Times.pdf\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n\n \n \n2026 ITALIAN GRAND PRIX \n04 – 06 September 2026 \n \n  \n  \nFrom The Stewards      Document 24 \n  \nTo All Officials, All Teams      Date  04 September 2026 \n \n        T i m e   17:40 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 2 \n  \nFact The F1 cars below did not use the track at turns 1, 4, 5, 6 and 10. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 1 18  Lance Stroll Aston Martin Aramco F1 Team 16:06:33 2:00.390 \n2 1 23  Alexander Albon Atlassian Williams F1 Team 16:07:39 1:45.889 \n3 1 16 Charles Leclerc Scuderia Ferrari HP 16:09:57 1:52.593 \n4 1 1 Lando Norris McLaren Mastercard F1 Team 16:12:34 PIT \n5 1 5 Gabriel Bortoleto Audi Revolut F1 Team 16:14:06 PIT \n6 1 18 Lance Stroll "
+}

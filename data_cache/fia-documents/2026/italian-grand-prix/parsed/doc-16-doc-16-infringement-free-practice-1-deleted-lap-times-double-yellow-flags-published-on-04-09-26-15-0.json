@@ -1,0 +1,26 @@
+{
+  "document_id": "64c6bb932dcd5c56",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times_-_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-04T21:18:13.987834+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 16 Date 04 September 2026 Time 14:57 Title Infringement - Free Practice 1 Deleted Lap Times - Double Yellow Flags Description Free Practice 1 Deleted Lap Times - Double Yellows Enclosed",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 16\nDate 04 September 2026\nTime 14:57\nTitle Infringement - Free Practice 1 Deleted Lap Times - Double Yellow Flags\nDescription Free Practice 1 Deleted Lap Times - Double Yellows\nEnclosed ITA DOC 16 - Free Practice 1 Deleted Lap Times - Double Yellow.pdf\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n\n \n \n \n \n2026 ITALIAN GRAND PRIX \n04 – 06 September 2026 \n \n  \n  \nFrom The Stewards      Document 16 \n  \nTo All Officials, All Teams      Date  04 September 2026 \n \n        T i m e   14:57 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag zone will be deleted as detailed in the \nRace Director’s Competition Notes (item 9, document 5): \n \nSession Free Practice 1 \n  \nFact The F1 cars passed through a double waved yellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 6 16 Charles Leclerc Scuderia Ferrari HP 12:47:26 PIT \n2 7 22 Yuki Tsunoda Visa Cash App Racing Bulls F1 Team 12:47:26 PIT \n3 6 31 Esteban Ocon TGR Haas F1 Team 12:47:26 2:32.705 \n4 5 1 Lando Norris McLaren Mastercard F1 Team"
+}
