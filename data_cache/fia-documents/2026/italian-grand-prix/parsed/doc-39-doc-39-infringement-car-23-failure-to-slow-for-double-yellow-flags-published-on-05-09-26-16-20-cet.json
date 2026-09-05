@@ -1,0 +1,26 @@
+{
+  "document_id": "6b54c58e829f1a6d",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_23_-_failure_to_slow_for_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-05T20:08:03.494738+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 10,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 39 Date 05 September 2026 Time 16:17 The Stewards, having received a report from the Race Director, summoned (document 35) and heard from the driver and team representative, have",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 39\nDate 05 September 2026\nTime 16:17\nThe Stewards, having received a report from the Race Director, summoned (document 35) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 13:02\nSession Free Practice 3\nFact The driver of Car 23 failed to slow for double Yellow Flags.\nInfringement Breach of Article B1.8.4b of the FIA F1 Regulations.\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 2nd reprimand of the season.\nReason The Stewards heard from the driver of Car 23 (Alexander Albon), team\nrepresentative and reviewed positioning/marshalling system data, video, timing,\ntelemetry and in-car video evidence.\n \nThe driver was not shown the yellow flag nor were yellow lights displayed to him\nhowever a green light panel denoting the end of a yellow flag zone was visible to him,\nalbeit for a very short time (less than 2 seconds).\n \nThe Stewards accept as mitigation, the fact that the driver was looking at the apex\nand had a v"
+}

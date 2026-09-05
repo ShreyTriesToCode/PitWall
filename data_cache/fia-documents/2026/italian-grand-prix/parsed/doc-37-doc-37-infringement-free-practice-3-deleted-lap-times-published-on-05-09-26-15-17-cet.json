@@ -1,0 +1,26 @@
+{
+  "document_id": "0d72ac63a0d4b674",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-05T20:08:07.060408+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 37 Date 05 September 2026 Time 15:15 Title Infringement - Free Practice 3 Deleted Lap Times Description Infringement - Free Practice 3 Deleted Lap Times Enclosed ITA DOC 37 - Free Pract",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 37\nDate 05 September 2026\nTime 15:15\nTitle Infringement - Free Practice 3 Deleted Lap Times\nDescription Infringement - Free Practice 3 Deleted Lap Times\nEnclosed ITA DOC 37 - Free Practice 3 Deleted Lap Times.pdf\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n\n \n \n2026 ITALIAN GRAND PRIX \n04 – 06 September 2026 \n \n  \n  \nFrom The Stewards      Document 37 \n  \nTo All Officials, All Teams      Date  05 September 2026 \n \n        T i m e   15:15 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 3 \n  \nFact The F1 cars below did not use the track at turns 1, 4, 5, 6, 7, 9 and 11. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 1 43  Franco Colapinto BWT Alpine F1 Team 12:35:46 1:26.561 \n2 4 23  Alexander Albon Atlassian Williams F1 Team 12:42:04 1:48.807 \n3 9 55 Carlos Sainz Atlassian Williams F1 Team 12:48:04 1:39.313 \n4 1 30 Liam Lawson Oracle Red Bull Racing 12:51:46 PIT \n5 4 18 Lance Stroll Aston Martin Aramco F1 Team 12:53:09 2:02.1"
+}

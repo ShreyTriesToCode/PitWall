@@ -1,0 +1,26 @@
+{
+  "document_id": "c318764114d4b534",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_55_-_failure_to_slow_for_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-05T20:08:02.394477+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 40 Date 05 September 2026 Time 16:17 The Stewards, having received a report from the Race Director, summoned (document 36) and heard from the driver and team representative, have",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 40\nDate 05 September 2026\nTime 16:17\nThe Stewards, having received a report from the Race Director, summoned (document 36) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 13:02\nSession Free Practice 3\nFact Car 55 appeared to fail to slow for double Yellow Flags.\nInfringement Breach of Article B1.8.4b of the FIA F1 Regulations.\nDecision No penalty is applied.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz), team representative\nand reviewed positioning/marshalling system data, video, telemetry and in-car video\nevidence.\n \nThe driver was not shown a yellow flag nor were yellow lights displayed to him,\nhowever a green light panel was visible for a very short period of time.  The driver\nstated that as he was exiting the corner he noticed the yellow light on his steering\nwheel and instinctively lifted off the accelerator.  This was verified by the telemetry.\n \nWhilst the lift occurred slightly past the yellow "
+}
