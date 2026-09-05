@@ -1,0 +1,26 @@
+{
+  "document_id": "5c0d6b6db65172bd",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_25_-_technical_non-conformity_cds.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T01:28:37.519120+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 32 Date 05 September 2026 Time 12:01 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 25 ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 32\nDate 05 September 2026\nTime 12:01\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 25 - Colton Herta\nCompetitor Cadillac Formula 1 Team\nTime 12:47\nSession Free Practice 1\nFact The Clutch Disengagement System (“CDS”) did not function when the car stopped on\nthe track.\nInfringement Breach of Article C9.3 of the FIA F1 Regulations.\nDecision The competitor (Cadillac F1 Team) is fined €30,000, €25,000 of which is suspended\nfor a period of 12 months subject to no further breaches of this regulation.\nReason The Stewards heard from the team Sporting Director and team Head of Reliability,\nand the FIA Technical Delegate and FIA F1 Electronics Engineer.\nThe team presented detailed schematics of how the CDS system was designed and\ninstalled. The Stewards were satisfied that the system was designed to operate\nindependently of the car’s other systems, as required by the regulations.\nThe team demonstrated to the Stewards’ satisfaction, that the system had been\nchecked and tested on the "
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "35999a91a99c799c",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_summons_-_car_81_-_alleged_impeding_of_car_30.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T01:28:24.474420+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The driver and team representative are required to report to the Stewards at 17:40 in relation to the incident below. The Stewards From The Stewards To The Team Manager, McLaren Mastercard F1 Team Document 42 Date 05 September 2026 Time 17:01 No / Drive",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe driver and team representative are required to report to the Stewards at 17:40 in relation to the\nincident below.\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMcLaren Mastercard F1 Team\nDocument 42\nDate 05 September 2026\nTime 17:01\nNo / Driver 81 - Oscar Piastri\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations - Car 81 allegedly\nimpeding car 30 at turn 2 at 16:38.\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n"
+}
