@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-09-05T01:55:21.724969+05:30",
+  "generated_at": "2026-09-05T08:38:00.394821+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -402,7 +402,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -757,7 +756,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -1112,7 +1110,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -1464,7 +1461,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -1817,7 +1813,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -2170,7 +2165,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -2523,7 +2517,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -2874,7 +2867,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -3221,7 +3213,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -3570,7 +3561,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -4210,7 +4200,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -4569,7 +4558,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -4929,7 +4917,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -5288,7 +5275,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -5644,7 +5630,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -6001,7 +5986,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -6358,7 +6342,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -6715,7 +6698,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -7070,7 +7052,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -7422,7 +7403,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -8054,7 +8034,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -8405,7 +8384,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -8758,7 +8736,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -9107,7 +9084,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -9456,7 +9432,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -9803,7 +9778,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -10152,7 +10126,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -10502,7 +10475,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -10852,7 +10824,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -11200,7 +11171,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -11839,7 +11809,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -12191,7 +12160,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -12544,7 +12512,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -12894,7 +12861,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -13241,7 +13207,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -13591,7 +13556,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -13941,7 +13905,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -14292,7 +14255,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -14641,7 +14603,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -14986,7 +14947,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -15640,7 +15600,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -16018,7 +15977,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -16398,7 +16356,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -16775,7 +16732,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -17151,7 +17107,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -17527,7 +17482,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -17903,7 +17857,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -18278,7 +18231,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -18652,7 +18604,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -19025,7 +18976,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -19674,7 +19624,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -20024,7 +19973,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -20374,7 +20322,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -20725,7 +20672,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -21073,7 +21019,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -21420,7 +21365,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -21769,7 +21713,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -22114,7 +22057,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -22459,7 +22401,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -22805,7 +22746,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -23451,7 +23391,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -23810,7 +23749,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -24168,7 +24106,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -24525,7 +24462,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -24880,7 +24816,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -25234,7 +25169,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -25590,7 +25524,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -25941,7 +25874,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -26293,7 +26225,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -26646,7 +26577,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -27294,7 +27224,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -27657,7 +27586,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -28019,7 +27947,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -28380,7 +28307,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -28740,7 +28666,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -29098,7 +29023,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -29457,7 +29381,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -29811,7 +29734,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -30166,7 +30088,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -30523,7 +30444,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -31166,7 +31086,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -31518,7 +31437,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -31870,7 +31788,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -32220,7 +32137,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -32568,7 +32484,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -32916,7 +32831,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -33264,7 +33178,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -33611,7 +33524,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -33958,7 +33870,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -34303,7 +34214,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -34941,7 +34851,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -35293,7 +35202,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -35645,7 +35553,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -35995,7 +35902,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -36343,7 +36249,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -36691,7 +36596,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -37039,7 +36943,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -37386,7 +37289,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -37732,7 +37634,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -38076,7 +37977,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -38711,7 +38611,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -39059,7 +38958,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -39410,7 +39308,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -39760,7 +39657,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -40107,7 +40003,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -40452,7 +40347,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -40797,7 +40691,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -41144,7 +41037,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -41492,7 +41384,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -41838,7 +41729,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -42486,7 +42376,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -42844,7 +42733,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -43202,7 +43090,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -43558,7 +43445,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -43914,7 +43800,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -44269,7 +44154,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -44624,7 +44508,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -44978,7 +44861,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -45330,7 +45212,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -45682,7 +45563,6 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -46319,7 +46199,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -46669,7 +46548,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -47019,7 +46897,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -47369,7 +47246,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -47717,7 +47593,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -48066,7 +47941,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -48415,7 +48289,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -48763,7 +48636,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -49111,7 +48983,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -49456,7 +49327,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -50091,7 +49961,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -50441,7 +50310,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -50791,7 +50659,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -51141,7 +51008,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -51489,7 +51355,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -51838,7 +51703,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -52187,7 +52051,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -52535,7 +52398,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -52883,7 +52745,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -53228,7 +53089,6 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -53886,7 +53746,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -54237,7 +54096,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -54590,7 +54448,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -54940,7 +54797,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -55291,7 +55147,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -55641,7 +55496,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -55991,7 +55845,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -56337,7 +56190,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -56686,7 +56538,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -57034,7 +56885,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -57671,7 +57521,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -58022,7 +57871,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -58375,7 +58223,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -58725,7 +58572,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -59076,7 +58922,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -59426,7 +59271,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -59776,7 +59620,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -60122,7 +59965,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -60471,7 +60313,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -60819,7 +60660,6 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -61466,7 +61306,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -61829,7 +61668,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -62190,7 +62028,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -62554,7 +62391,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -62918,7 +62754,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -63282,7 +63117,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -63647,7 +63481,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -64011,7 +63844,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -64378,7 +64210,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -64746,7 +64577,6 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -65400,7 +65230,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -65759,7 +65588,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -66121,7 +65949,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -66483,7 +66310,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -66847,7 +66673,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -67211,7 +67036,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -67575,7 +67399,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -67938,7 +67761,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -68301,7 +68123,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
@@ -68665,7 +68486,6 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60297",
               "fia_document_not_found:404"
             ]
           },
