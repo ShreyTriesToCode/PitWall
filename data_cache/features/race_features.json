@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-13-italian-grand-prix",
-    "prediction_id": "2026-13-italian-grand-prix-race-post_qualifying-ea19688dd3e9",
+    "prediction_id": "2026-13-italian-grand-prix-race-post_qualifying-00ac24cf918d",
     "season": 2026,
     "round": 13,
     "circuit": "Autodromo Nazionale di Monza",
@@ -13,16 +13,16 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "31.5°C",
+      "temperature": "31.1°C",
       "rain": "0%",
-      "humidity": "39%",
-      "wind": "7.4 km/h",
-      "wind_gust": "19.4 km/h",
-      "cloud_cover": "0%",
+      "humidity": "46%",
+      "wind": "7.3 km/h",
+      "wind_gust": "16.2 km/h",
+      "cloud_cover": "51%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 60,
-      "wind_score": 50.44,
+      "wind_score": 42.12,
       "impact": "dry baseline more likely; heat may increase degradation and cooling demand"
     },
     "strategy": {
@@ -85,35 +85,35 @@
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 76.46,
+          "scenario_score": 76.59,
           "rank": 1
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 73.37,
+          "scenario_score": 73.43,
           "rank": 2
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 71.52,
+          "scenario_score": 71.5,
           "rank": 3
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 68.75,
+          "scenario_score": 68.8,
           "rank": 4
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 67.81,
+          "scenario_score": 67.78,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 77.56,
+          "scenario_score": 77.6,
           "rank": 1
         },
         {
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 77.07,
+          "scenario_score": 77.17,
           "rank": 2
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 70.51,
+          "scenario_score": 70.53,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 66.66,
+          "scenario_score": 66.64,
           "rank": 4
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 64.6,
+          "scenario_score": 64.58,
           "rank": 5
         }
       ],
