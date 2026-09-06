@@ -1,0 +1,26 @@
+{
+  "document_id": "a5cc2c5b62d5cec7",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_decision_-_car_63_-_alleged_failure_to_slow_for_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-07T01:31:50.526483+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 65 Date 06 September 2026 Time 16:55 The Stewards, having received a report from the Race Director, have considered the following matter and determine the followi",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 65\nDate 06 September 2026\nTime 16:55\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 63 - George Russell\nCompetitor Mercedes-AMG PETRONAS F1 Team\nTime 16:17\nSession Race\nFact Allegedly the driver failed to slow for a single yellow flag at Turns 1 and 2.\nInfringement Alleged breach of Appendix H, Article 2.5.5 b) of the International Sporting Code.\nDecision No further action.\nReason The Stewards reviewed positioning/marshalling system data, video, timing, telemetry,\nand in-car video evidence.\nNo yellow flag and no steering wheel light was visible to the driver through the yellow\nflag sector.  A green light panel was visible as the car neared the end of the sector\nand the telemetry demonstrated that the driver did make a reduction in throttle.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Ru"
+}

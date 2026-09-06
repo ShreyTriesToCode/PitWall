@@ -1,0 +1,26 @@
+{
+  "document_id": "d0b557689307cb0f",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_decision_-_car_22_-_alleged_start_procedure_infringement.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-07T01:31:43.312848+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 69 Date 06 September 2026 Time 19:44 The Stewards, having received a report from the Race Director, summoned (document 62) and heard from the driver and team representati",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 69\nDate 06 September 2026\nTime 19:44\nThe Stewards, having received a report from the Race Director, summoned (document 62) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 22 - Yuki Tsunoda\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 15:41\nSession Race\nFact An extra formation lap was commenced and it was a result of a decision by Race\nControl based on the approach to, and position of, Car 22 on the grid.\nInfringement Alleged breach of Article B5.9.4 of the FIA F1 Regulations.\nDecision No further action.\nReason The Stewards heard from the driver of Car 22 (Yuki Tsunoda), the team\nrepresentative, the FIA Race Director and the FIA Sporting Director of the Single\nSeater Department, and reviewed video and in-car video evidence.\nCar 22 approached the grid initially heading for the left hand side of the grid, then\nrealising he was headed for the wrong grid position, the driver changed direction and\npositioned his car in the correct grid box and in the correct position within "
+}

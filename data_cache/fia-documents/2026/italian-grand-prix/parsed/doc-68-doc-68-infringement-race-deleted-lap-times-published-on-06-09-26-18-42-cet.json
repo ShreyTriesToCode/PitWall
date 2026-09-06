@@ -1,0 +1,26 @@
+{
+  "document_id": "333fad50b691a6dc",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-07T01:31:45.168598+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 68 Date 06 September 2026 Time 18:41 Title Infringement - Race Deleted Lap Times Description Race Deleted Lap Times Enclosed ITA DOC 68 - Race Deleted Lap Times.pdf Garry Connelly Mathi",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 68\nDate 06 September 2026\nTime 18:41\nTitle Infringement - Race Deleted Lap Times\nDescription Race Deleted Lap Times\nEnclosed ITA DOC 68 - Race Deleted Lap Times.pdf\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n\n \n \n2026 ITALIAN GRAND PRIX \n04 – 06 September 2026 \n \n  \n  \nFrom The Stewards      Document 68 \n  \nTo All Officials, All Teams      Date  06 September 2026 \n \n        T i m e   18:41 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 1, 2, 5, 6 and 7. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 1 23 Alexander Albon Atlassian Williams F1 Team 15:46:00 2:12.275 \n2 6 43  Franco Colapinto BWT Alpine F1 Team 15:46:31 2:47.838 \n3 1 63 George Russell Mercedes-AMG PETRONAS F1 Team 15:50:18 1:26.495 \n4 5 44 Lewis Hamilton Scuderia Ferrari HP 15:57:50 1:26.415 \n5 1 1 Lando Norris McLaren Mastercard F1 Team 16:06:13 1:28.809 \n6 1 23 Alexander Albon Atlassian Williams F1 Team 16:08"
+}
