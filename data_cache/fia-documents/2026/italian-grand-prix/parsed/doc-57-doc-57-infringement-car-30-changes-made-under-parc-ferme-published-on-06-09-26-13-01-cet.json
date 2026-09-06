@@ -1,0 +1,26 @@
+{
+  "document_id": "7c37bf10cec43c21",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_30_-_changes_made_under_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T20:28:02.224779+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To The Team Manager, Oracle Red Bull Racing Document 57 Date 06 September 2026 Time 12:53 The Stewards, having received a report from the Technical Delegate (document 54), have considered the following matter and determine",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 57\nDate 06 September 2026\nTime 12:53\nThe Stewards, having received a report from the Technical Delegate (document 54), have\nconsidered the following matter and determine the following:\nNo / Driver 30 - Liam Lawson\nCompetitor Oracle Red Bull Racing\nTime 11:36\nSession Qualifying\nFact The rear wing assembly has been changed while under parc fermé without the\napproval of the Technical Delegate. Changes to the set up of the suspension were\nalso made.\nInfringement Breaches of Articles B3.5.3 and B3.5.4 of the FIA F1 Regulations.\nDecision Required to start the Race from the pit lane.\nReason Oracle Red Bull Racing changed the rear wing of Car 30 under parc fermé before the\nstart of the Race, without the approval of the Technical Delegate. This is not in\naccordance with Article B3.5.4 of the FIA F1 Regulations. The suspension set up was\nalso changed. This is not in accordance with Article B3.5.3\nCar 30 is therefore required to start the Race from pit lane as per Article B3.5.3a of\nthe FIA F1 Regulations.\nCompetitors are reminded that they have the right to appea"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "e10d336533f52f5b",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_11_-_failure_to_follow_race_directors_instruction_-_turns_1_and_2.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T20:27:54.811150+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 64 Date 06 September 2026 Time 16:52 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 64\nDate 06 September 2026\nTime 16:52\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 16:09\nSession Race\nFact The driver failed to follow the Race Director’s Competition Notes at Turns 1 and 2.\nInfringement Breach of Article 12.2.1.i of the International Sporting Code and non-compliance with\nRace Director’s Competition Notes (item 25.1, document 48).\nDecision 5 second time penalty.\nReason The Stewards reviewed video evidence.\nCar 11 went off track in Turn 1 and failed to follow the route prescribed in item 25.1 of\nthe Race Director’s Competition Notes.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regu"
+}

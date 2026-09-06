@@ -1,0 +1,26 @@
+{
+  "document_id": "c9b66ede407dcd68",
+  "document_type": "parc_ferme",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_parts_and_parameters_been_replaced_and_or_changed_during_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T20:28:01.117795+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 Technical Delegate’s Report The following parts and parameters have been replaced / changed during the Parc Fermé yesterday and today: McLaren Mercedes: Car 01: Front brake friction material Parameter changes associated with the brake friction material ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nTechnical Delegate’s Report\n \n \nThe following parts and parameters have been replaced / changed during the Parc Fermé yesterday\nand today:\n \nMcLaren Mercedes:\n \nCar 01:           Front brake friction material\n                        Parameter changes associated with the brake friction material replacement\n \n \nMercedes:\n \nCar 63:           Front wing actuator acquisition unit\n \n \nAtlassian Williams Mercedes:\n \nCar 55:           Forward floor plank section\n \n \nRacing Bulls RB Ford:\n \nCar 22:           LHS fuel lift pump\n                        Fuel cell wiring loom\n                        Fuel line within the fuel cell\n                        Chassis ballast bush\n                        Rear wing assembly, previous specification (Article B3.5.5)\n                        Internal fuel overflow hose\n \n \nAston Martin Aramco Honda:\n \nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 58\nDate 06 September 2026\nTime 13:50\n\nCar 18:           Chassis chin assembly and associated linkage\n \n \nHaas Ferrari:\n \nCar 31:           RHS driveshaft fairing support\n \nCar 87:           RHS driveshaft fairing support\n \n \nAlpine Mercedes:\n \nCar"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "6c38da317da5d1c7",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_43_-_failure_to_follow_race_directors_instruction_-_practice_start.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T20:27:57.022406+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 61 Date 06 September 2026 Time 15:33 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Dr",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 61\nDate 06 September 2026\nTime 15:33\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 43 - Franco Colapinto\nCompetitor BWT Alpine F1 Team\nTime 14:27\nSession Reconnaissance Laps\nFact The driver failed to follow the Race Directors Instruction – Practice Start\nInfringement Breach of Article 12.2.1.i of the International Sporting Code and non-compliance with\nRace Director’s Competition Notes (item 12.6, document 48).\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 1st reprimand of the season.\nReason The Stewards reviewed video evidence.\nThe driver performed a practice start then failed to remain in the pit exit road,\ncrossing the white line in breach of the Race Director’s Competition Notes.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the"
+}
