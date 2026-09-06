@@ -1,0 +1,26 @@
+{
+  "document_id": "f83e7b73c5168c2b",
+  "document_type": "parc_ferme",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_parc_ferme_issues.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T15:48:11.171226+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The FIA Formula 1 Technical Delegate From The FIA Formula 1 Technical Delegate To The Stewards Document 54 Date 06 September 2026 Time 11:36 Title Technical Delegate's Report Description Parc Fermé Issues Enclosed 13 ITA GP 26 TDR9.pdf Jo Bauer 2026 ITA",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 54\nDate 06 September 2026\nTime 11:36\nTitle Technical Delegate's Report\nDescription Parc Fermé Issues\nEnclosed 13 ITA GP 26 TDR9.pdf\nJo Bauer\n\n2026 ITALIAN GRAND PRIX \n04 - 06 September 2026 \n  \n \nFrom :  The FIA Formula 1 Technical Delegate  \nTo :  The Stewards Date :  06 September 2026 \n  \n \nTECHNICAL DELEGATE’S REPORT \n \n \nThe following driver will be using a new motor generator unit-kinetic (MGU-K) for the remainder \nof the Competition: \n \nNumber Car Driver Previously used MGU-K \n    \n14 Aston Martin Aramco Honda Fernando Alonso 4 \n \nThe motor generator unit-kinetic used by Fernando Alonso is the fifth (5\nth) of the three (3) new \nmotor generator units-kinetic allowed for the 2026 Championship season and this is not in \nconformity with B8.2.2 f) of the 2026 Formula One Sporting Regulations. \n \n \nThe following driver will be using a new energy store unit (ES) for the remainder of the \nCompetition: \n \nNumber Car Driver Previously used ES \n    \n14 Aston Martin Aramco Honda Fernando Alonso 5 \n \nThe energy store unit used by Fernando A"
+}

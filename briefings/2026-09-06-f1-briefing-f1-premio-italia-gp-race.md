@@ -1,6 +1,6 @@
 # F1 Race Briefing: F1 Premio Italia GP - Race
 
-Generated: Sunday, 06 September 2026, 01:38 PM IST
+Generated: Sunday, 06 September 2026, 03:54 PM IST
 
 ## Event
 
@@ -11,13 +11,13 @@ Generated: Sunday, 06 September 2026, 01:38 PM IST
 
 ## Prediction
 
-1. Charles Leclerc, score 70.9, confidence 23%, qualifying and grid position; car performance; track trait fit; official upgrade package impact; team-track fit
-2. Lewis Hamilton, score 68.8, confidence 23%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; team-track fit
-3. George Russell, score 68.4, confidence 23%, qualifying and grid position; car performance; track trait fit; official upgrade package impact; neural lap-time forecast
-4. Andrea Kimi Antonelli, score 65.7, confidence 36%, qualifying and grid position; car performance; track trait fit; official upgrade package impact; driver form
-5. Oscar Piastri, score 62.3, confidence 41%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; team-track fit
-6. Max Verstappen, score 59.8, confidence 49%, qualifying and grid position; car performance; official upgrade package impact; team-track fit; track trait fit
-7. Lando Norris, score 58.8, confidence 41%, qualifying and grid position; car performance; official upgrade package impact; team-track fit; track trait fit
+1. Charles Leclerc, score 70.5, confidence 23%, qualifying and grid position; car performance; track trait fit; official upgrade package impact; team-track fit
+2. Lewis Hamilton, score 69.0, confidence 23%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; team-track fit
+3. George Russell, score 68.1, confidence 23%, qualifying and grid position; car performance; track trait fit; official upgrade package impact; neural lap-time forecast
+4. Andrea Kimi Antonelli, score 65.8, confidence 36%, qualifying and grid position; car performance; track trait fit; official upgrade package impact; driver form
+5. Oscar Piastri, score 62.0, confidence 41%, qualifying and grid position; car performance; official upgrade package impact; track trait fit; team-track fit
+6. Max Verstappen, score 59.6, confidence 49%, qualifying and grid position; car performance; official upgrade package impact; team-track fit; track trait fit
+7. Lando Norris, score 59.0, confidence 41%, qualifying and grid position; car performance; official upgrade package impact; team-track fit; track trait fit
 8. Isack Hadjar, score 56.8, confidence 35%, car performance; official upgrade package impact; team-track fit; track trait fit; pit-stop execution
 9. Pierre Gasly, score 49.5, confidence 48%, qualifying and grid position; official upgrade package impact; pit-stop execution; neural lap-time forecast; ML finish-position model
 10. Franco Colapinto, score 44.7, confidence 41%, qualifying and grid position; official upgrade package impact; pit-stop execution; neural lap-time forecast; car performance
@@ -69,9 +69,9 @@ Era: 2026+ active-aero and new power-unit era
 
 ## Model accuracy audit
 
-- Finish-position MAE: 3.27; RMSE: 4.15
-- Neural lap-time MAE: 3.61s; RMSE: 5.05s
-- Backtest winner hit: 60.7%; top-3 recall: 64.3%; top-5 recall: 78.6%
+- Finish-position MAE: 3.27; RMSE: 4.16
+- Neural lap-time MAE: 3.73s; RMSE: 5.21s
+- Backtest winner hit: 57.1%; top-3 recall: 65.5%; top-5 recall: 77.9%
 - Win model AUC/Brier: 0.961 / 0.037
 - Podium model AUC/Brier: 0.931 / 0.067
 

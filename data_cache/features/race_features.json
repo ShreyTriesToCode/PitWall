@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-13-italian-grand-prix",
-    "prediction_id": "2026-13-italian-grand-prix-race-post_qualifying-85bf2bc6fd25",
+    "prediction_id": "2026-13-italian-grand-prix-race-post_qualifying-6c2436fdf467",
     "season": 2026,
     "round": 13,
     "circuit": "Autodromo Nazionale di Monza",
@@ -85,35 +85,35 @@
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 76.6,
+          "scenario_score": 76.4,
           "rank": 1
         },
         {
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 73.35,
+          "scenario_score": 73.46,
           "rank": 2
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 71.52,
+          "scenario_score": 71.34,
           "rank": 3
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 68.67,
+          "scenario_score": 68.64,
           "rank": 4
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 67.68,
+          "scenario_score": 67.75,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "hamilton",
           "name": "Lewis Hamilton",
           "team": "Ferrari",
-          "scenario_score": 77.54,
+          "scenario_score": 77.63,
           "rank": 1
         },
         {
           "driver_id": "leclerc",
           "name": "Charles Leclerc",
           "team": "Ferrari",
-          "scenario_score": 77.18,
+          "scenario_score": 77.03,
           "rank": 2
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 70.45,
+          "scenario_score": 70.43,
           "rank": 3
         },
         {
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 66.66,
+          "scenario_score": 66.52,
           "rank": 4
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 64.52,
+          "scenario_score": 64.56,
           "rank": 5
         }
       ],
@@ -218,8 +218,8 @@
             "document_id": "8402de856cefd632",
             "document_title": "Doc 3 - Competition Notes - Pirelli Preview Published on 02.09.26 16:06 CET",
             "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
-            "source_authority": "official_fia",
-            "source_status": "official_live"
+            "source_authority": "official_fia_archive_api",
+            "source_status": "official_secondary_live"
           }
         }
       },
@@ -252,8 +252,8 @@
           "document_id": "8402de856cefd632",
           "document_title": "Doc 3 - Competition Notes - Pirelli Preview Published on 02.09.26 16:06 CET",
           "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
-          "source_authority": "official_fia",
-          "source_status": "official_live"
+          "source_authority": "official_fia_archive_api",
+          "source_status": "official_secondary_live"
         }
       },
       "active_aero": {
