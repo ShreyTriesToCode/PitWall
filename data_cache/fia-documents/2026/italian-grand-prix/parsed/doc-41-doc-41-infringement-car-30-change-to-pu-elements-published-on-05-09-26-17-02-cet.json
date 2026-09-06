@@ -1,0 +1,26 @@
+{
+  "document_id": "1e165939f69c8dfd",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_infringement_-_car_30_-_change_to_pu_elements.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T13:32:09.739401+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 35,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 From The Stewards To The Team Manager, Oracle Red Bull Racing Document 41 Date 05 September 2026 Time 16:40 The Stewards, having received a report from the Technical Delegate (document 33), have considered the following matter and determine the followin",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 41\nDate 05 September 2026\nTime 16:40\nThe Stewards, having received a report from the Technical Delegate (document 33), have\nconsidered the following matter and determine the following:\nNo / Driver 30 - Liam Lawson\nCompetitor Oracle Red Bull Racing\nTime 12:40\nSession Free Practice 3\nFact The following Power Unit elements have been used:\n \n6th Engine (ICE) \n6th Turbocharger (TC)\n6th Exhaust Set (EXH)\n4th MGU-K \n7th Power Unit Ancillary Component (PU-ANC) \nInfringement Breach of Article B8.2.2 (in conjunction with B8.2.3) of the FIA F1 Regulations.\nDecision Drop of 35 grid positions for the next Race in which the driver participates.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nIn this case, the use of ICE, TC and EXH additional element(s) carries a 5 grid place\npenalty by virtue of Article B8.2.8b of the FIA F1 Regulations and the use of MGU-K\nand PU-ANC additional elements carries a 10 grid place penalty by virtue of Article\nB8.2.8a of the FIA F1 Regulations. Therefore there is an accumulation of 35 places.\nSubject to Car"
+}

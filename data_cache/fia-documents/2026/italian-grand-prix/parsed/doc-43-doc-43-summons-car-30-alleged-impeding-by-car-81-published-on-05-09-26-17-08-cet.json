@@ -1,0 +1,26 @@
+{
+  "document_id": "2e754032448a46b0",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_summons_-_car_30_-_alleged_impeding_by_car_81.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T13:32:06.702773+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The driver and team representative are required to report to the Stewards at 17:40 in relation to the incident below. The Stewards From The Stewards To The Team Manager, Oracle Red Bull Racing Document 43 Date 05 September 2026 Time 17:01 No / Driver 30",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe driver and team representative are required to report to the Stewards at 17:40 in relation to the\nincident below.\n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 43\nDate 05 September 2026\nTime 17:01\nNo / Driver 30 - Liam Lawson\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations - Car 81 allegedly\nimpeding car 30 at turn 2 at 16:38.\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n"
+}

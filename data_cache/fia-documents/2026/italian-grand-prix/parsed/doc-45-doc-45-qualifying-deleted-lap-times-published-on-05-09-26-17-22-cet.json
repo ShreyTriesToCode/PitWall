@@ -1,0 +1,26 @@
+{
+  "document_id": "578ab7c975a2730d",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_qualifying_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-06T13:32:03.574254+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 ITALIAN GRAND PRIX 04 - 06 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 45 Date 05 September 2026 Time 17:22 Title Qualifying Deleted Lap Times Description Qualifying Deleted Lap Times Enclosed ITA DOC 45 - Qualifying Deleted Lap Times.pdf Garry Connelly Ma",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 ITALIAN GRAND PRIX\n04 - 06 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 45\nDate 05 September 2026\nTime 17:22\nTitle Qualifying Deleted Lap Times\nDescription Qualifying Deleted Lap Times\nEnclosed ITA DOC 45 - Qualifying Deleted Lap Times.pdf\nGarry Connelly Mathieu Remmerie\nVitantonio Liuzzi Iacopo Arcangeli\n\n \n \n \n2026 ITALIAN GRAND PRIX \n04 – 06 September 2026 \n \n  \n  \nFrom The Stewards      Document 45 \n  \nTo All Officials, All Teams      Date  05 September 2026 \n \n        T i m e   17:22 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Qualifying \n  \nFact The F1 cars below did not use the track at turn 1. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 1 1 Lando Norris McLaren Mastercard F1 Team 16:03:30 1:39.935 \n2 1 81 Oscar Piastri McLaren Mastercard F1 Team 16:16:19 1:47.848 \n3 1 30 Liam Lawson Oracle Red Bull Racing 16:39:28 PIT \n4 1 3 Max Verstappen Oracle Red Bull Racing 16:58:11 OUT LAP \n5 1 81 Oscar Piastri McLaren Mastercard F1 Team 16:59:32 PIT \n6 1 12 Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 16:59:50 PIT \n \n \nInfring"
+}
