@@ -1,0 +1,157 @@
+{
+  "document_id": "e560a039fcb79266",
+  "document_type": "car_presentation_submissions",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-11T16:09:25.131141+05:30",
+  "confidence": 1.0,
+  "classification": [],
+  "upgrades": [
+    {
+      "team": "Red Bull",
+      "component": "floor",
+      "components": [
+        "floor",
+        "bodywork",
+        "rear corner",
+        "suspension"
+      ],
+      "primary_reason_for_update": "reliability",
+      "geometric_difference": "Car Presentation – Spanish Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on ho",
+      "description": "Car Presentation – Spanish Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner Reliability Rear wheel ",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Spanish Grand Prix\nOracle Red Bull Racing.\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to previous\nversion\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Corner Reliability Rear wheel bodywork assembly\nContinuing the work from Monza, the new and\nmore robust gaitor gains winglets downstream of\nthe suspension fairings seeking to restore the load\nof earlier races whilst maintaining a sealed wheel\nbodywork.\n2 Floor Bib Reliability A geometric change between floor and chassis\nWhen deflected, the laminate and shape have been\naltered to ideally eliminate deterioration of the\nstructure and aerodynamic surfaces by reducing the\nlocal strain.\n",
+      "traits": [
+        "aero_efficiency",
+        "brake_cooling",
+        "cooling",
+        "diffuser_feed",
+        "downforce",
+        "flow_conditioning",
+        "high_speed_load",
+        "mechanical_grip",
+        "platform_stability",
+        "rear_stability",
+        "tyre_management"
+      ]
+    },
+    {
+      "team": "Ferrari",
+      "component": "suspension",
+      "components": [
+        "suspension"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Spanish Grand Prix\nScuderia Ferrari HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how th",
+      "description": "Car Presentation – Spanish Grand Prix\nScuderia Ferrari HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear\nSuspension\nPerformance -\nLocal Loa",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Spanish Grand Prix\nScuderia Ferrari HP\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear\nSuspension\nPerformance -\nLocal Load Rear top wishbone rearward leg fairing reprofiling\nSmall update on rear suspension fairing profile,\nadapting the overall incidence and spanwise loading\ndistribution, simply returning a local load benefit\n",
+      "traits": [
+        "diffuser_feed",
+        "flow_conditioning",
+        "mechanical_grip",
+        "platform_stability"
+      ]
+    },
+    {
+      "team": "Mercedes",
+      "component": "rear wing",
+      "components": [
+        "rear wing"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – 2026 Spanish Grand Prix\nMercedes-AMG PETRONAS F1 Team\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief descri",
+      "description": "Car Presentation – 2026 Spanish Grand Prix\nMercedes-AMG PETRONAS F1 Team\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Rear Wing Circuit specif",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – 2026 Spanish Grand Prix\nMercedes-AMG PETRONAS F1 Team\nUpdated\ncomponent\nPrimary reason for\nupdate\nGeometric differences compared to previous\nversion\nBrief description on how the update works (min\n20, max 100 words)\n1 Rear Wing Circuit specific - Drag\nRange Rear wing central winglet span reduced\nReducing the span of the central winglet mounted above\nthe rear wing flap sheds local downforce and drag at a\nratio appropriate for Madrid L/D.\n2 Exhaust Tailpipe Circuit specific - Drag\nRange Additional winglet added behind exhaust\nAdditional winglet added to increase exhaust flow\nturning to generate load and drag at a ratio appropriate\nfor Madrid L/D.\n3 Front Drum Performance - Flow\nConditioning Front lip reprofiled\nFront lip reprofiled to improve flow attachment through\nall steer conditions, resulting in improved flow to the\nrear of the car.\n",
+      "traits": [
+        "drag",
+        "drs_efficiency",
+        "local_load",
+        "rear_stability",
+        "straight_line_speed"
+      ]
+    },
+    {
+      "team": "McLaren",
+      "component": "rear wing",
+      "components": [
+        "rear wing"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Spanish Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on",
+      "description": "Car Presentation – Spanish Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance -\nFlow Con",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Spanish Grand Prix\nMcLaren Mastercard F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Performance -\nFlow Conditioning Additional Rear Wing Furniture\nAdditional elements have been added to the rear\nwing, improving flow conditioning onto the rear\nwing mainplane and flap elements.\n",
+      "traits": [
+        "drag",
+        "drs_efficiency",
+        "local_load",
+        "rear_stability",
+        "straight_line_speed"
+      ]
+    },
+    {
+      "team": "Alpine",
+      "component": "floor",
+      "components": [
+        "floor"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Spain Grand Prix\nBWT Alpine F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the u",
+      "description": "Car Presentation – Spain Grand Prix\nBWT Alpine F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Floor board Performance -\nLocal Load Addit",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Spain Grand Prix\nBWT Alpine F1 Team\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Floor board Performance -\nLocal Load Addition of an element to the forward floor board\nThe forward floor board has been optimised to\nimprove the local pressure distribution and flow\nmanagement, generating efficient local downforce.\n",
+      "traits": [
+        "aero_efficiency",
+        "downforce",
+        "high_speed_load",
+        "platform_stability",
+        "tyre_management"
+      ]
+    },
+    {
+      "team": "Cadillac",
+      "component": "rear wing",
+      "components": [
+        "rear wing",
+        "floor",
+        "diffuser"
+      ],
+      "primary_reason_for_update": "performance",
+      "geometric_difference": "Car Presentation – Spanish Grand Prix\nCadillac\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update wo",
+      "description": "Car Presentation – Spanish Grand Prix\nCadillac\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Flap Performance -\nLocal Load Updated Re",
+      "event": null,
+      "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "confidence_score": 1.0,
+      "raw_excerpt": "Car Presentation – Spanish Grand Prix\nCadillac\nUpdated\ncomponent\nPrimary reason\nfor update\nGeometric differences compared to\nprevious version\nBrief description on how the update works\n(min 20, max 100 words)\n1 Rear Wing Flap Performance -\nLocal Load Updated Rear Wing Flap Trailing Edge Winglet\nThe reintroduction of a revised Rear Wing Flap\ncentral trailing edge winglet serves to generate\nmore rear aerodynamic load, whilst improving\noverall aerodynamic stability throughout a range of\noperating conditions\n2 Diffuser Vane Performance –\nLocal Load\nAddition of vane to inner trailing edge of outboard\ndiffuser sidewall\nA small vertical turning vane has been added to the\ninner trailing edge of the outboard diffuser\nsidewall, which improves aerodynamic\nperformance in the outer floor channels and\nincreases the load at the rear of the car",
+      "traits": [
+        "aero_efficiency",
+        "downforce",
+        "drag",
+        "drs_efficiency",
+        "high_speed_load",
+        "local_load",
+        "platform_sensitivity",
+        "platform_stability",
+        "rear_load",
+        "rear_stability",
+        "straight_line_speed",
+        "tyre_management"
+      ]
+    }
+  ],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe FIA Formula 1 Media Delegate\nFrom The FIA Formula 1 Media Delegate\nTo All Teams, All Officials\nDocument 11\nDate 11 September 2026\nTime 11:00\nTitle Car Presentation Submissions\nDescription Car Presentation Submissions\nEnclosed 2026 Spanish Grand Prix - Car Presentation Submissions.pdf\nRoman De Lauw\n\n \nCar Presentation – Spanish Grand Prix \nMcLaren Mastercard F1 Team \n \n  Updated \ncomponent \nPrimary reason \nfor update \nGeometric differences compared to \nprevious version  \nBrief description on how the update works \n(min 20, max 100 words) \n1 Rear Wing Performance - \nFlow Conditioning Additional Rear Wing Furniture \nAdditional elements have been added to the rear \nwing, improving flow conditioning onto the rear \nwing mainplane and flap elements. \n \n \n\n \nCar Presentation – 2026 Spanish Grand Prix \nMercedes-AMG PETRONAS F1 Team \n \n  Updated \ncomponent \nPrimary reason for \nupdate \nGeometric differences compared to previous \nversion  \nBrief description on how the update works (min \n20, max 100 words) \n1 Rear Wing Circuit specific - Drag \nRange Rear wing central winglet span reduced \nReducing the span of the central winglet mounted above \nt"
+}

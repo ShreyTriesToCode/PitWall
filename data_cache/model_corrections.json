@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-09-11T13:46:43.916733+05:30",
+  "generated_at": "2026-09-11T16:14:35.171416+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -398,7 +398,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -747,7 +748,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -1097,7 +1099,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -1446,7 +1449,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -1794,7 +1798,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -2140,7 +2145,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -2488,7 +2494,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -2833,7 +2840,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -3173,7 +3181,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -3514,7 +3523,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -4146,7 +4156,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -4499,7 +4510,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -4852,7 +4864,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -5202,7 +5215,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -5553,7 +5567,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -5904,7 +5919,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -6255,7 +6271,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -6604,7 +6621,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -6949,7 +6967,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -7296,7 +7315,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -7934,7 +7954,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -8291,7 +8312,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -8649,7 +8671,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -9006,7 +9029,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -9360,7 +9384,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -9715,7 +9740,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10070,7 +10096,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10425,7 +10452,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10778,7 +10806,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -11128,7 +11157,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -11758,7 +11788,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -12107,7 +12138,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -12458,7 +12490,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -12805,7 +12838,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -13152,7 +13186,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -13497,7 +13532,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -13844,7 +13880,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -14192,7 +14229,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -14540,7 +14578,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -14886,7 +14925,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -15523,7 +15563,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -15873,7 +15914,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -16224,7 +16266,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -16572,7 +16615,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -16917,7 +16961,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -17265,7 +17310,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -17613,7 +17659,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -17962,7 +18009,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -18309,7 +18357,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -18652,7 +18701,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -19304,7 +19354,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -19680,7 +19731,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -20058,7 +20110,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -20433,7 +20486,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -20807,7 +20861,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -21181,7 +21236,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -21555,7 +21611,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -21928,7 +21985,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -22300,7 +22358,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -22671,7 +22730,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -23318,7 +23378,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -23666,7 +23727,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -24014,7 +24076,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -24363,7 +24426,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -24709,7 +24773,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -25054,7 +25119,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -25401,7 +25467,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -25744,7 +25811,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -26087,7 +26155,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -26431,7 +26500,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -27075,7 +27145,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -27432,7 +27503,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -27788,7 +27860,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -28143,7 +28216,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -28496,7 +28570,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -28848,7 +28923,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -29202,7 +29278,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -29551,7 +29628,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -29901,7 +29979,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -30252,7 +30331,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -30898,7 +30978,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -31259,7 +31340,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -31619,7 +31701,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -31978,7 +32061,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -32336,7 +32420,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -32692,7 +32777,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -33049,7 +33135,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -33401,7 +33488,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -33754,7 +33842,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -34109,7 +34198,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -34750,7 +34840,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -35100,7 +35191,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -35450,7 +35542,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -35798,7 +35891,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -36144,7 +36238,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -36490,7 +36585,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -36836,7 +36932,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -37181,7 +37278,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -37526,7 +37624,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -37869,7 +37968,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -38505,7 +38605,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -38855,7 +38956,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -39205,7 +39307,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -39553,7 +39656,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -39899,7 +40003,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -40245,7 +40350,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -40591,7 +40697,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -40936,7 +41043,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -41280,7 +41388,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -41622,7 +41731,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -42255,7 +42365,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -42601,7 +42712,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -42950,7 +43062,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -43298,7 +43411,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -43643,7 +43757,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -43986,7 +44101,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -44329,7 +44445,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -44674,7 +44791,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -45020,7 +45138,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -45364,7 +45483,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -46010,7 +46130,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -46366,7 +46487,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -46722,7 +46844,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -47076,7 +47199,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -47430,7 +47554,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -47783,7 +47908,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -48136,7 +48262,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -48488,7 +48615,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -48838,7 +48966,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -49188,7 +49317,8 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "qualifying"
+              "qualifying",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -49823,7 +49953,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -50171,7 +50302,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -50519,7 +50651,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -50867,7 +51000,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -51213,7 +51347,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -51560,7 +51695,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -51907,7 +52043,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -52253,7 +52390,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -52599,7 +52737,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -52942,7 +53081,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -53575,7 +53715,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -53923,7 +54064,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -54271,7 +54413,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "high",
@@ -54619,7 +54762,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -54965,7 +55109,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -55312,7 +55457,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -55659,7 +55805,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "medium",
@@ -56005,7 +56152,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -56351,7 +56499,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -56694,7 +56843,8 @@
             "source_health": "pending_source_snapshot",
             "warnings": [
               "pit_stop_data",
-              "practice_or_lap_pace"
+              "practice_or_lap_pace",
+              "fia_document_forbidden:403"
             ]
           },
           "model_disagreement_level": "low",
@@ -57350,7 +57500,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "high",
           "model_disagreement_reasons": [
@@ -57698,7 +57850,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "high",
           "model_disagreement_reasons": [
@@ -58048,7 +58202,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "high",
           "model_disagreement_reasons": [
@@ -58395,7 +58551,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -58743,7 +58901,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -59090,7 +59250,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -59437,7 +59599,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -59780,7 +59944,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -60126,7 +60292,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -60471,7 +60639,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -61105,7 +61275,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "high",
           "model_disagreement_reasons": [
@@ -61453,7 +61625,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "high",
           "model_disagreement_reasons": [
@@ -61803,7 +61977,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "high",
           "model_disagreement_reasons": [
@@ -62150,7 +62326,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -62498,7 +62676,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -62845,7 +63025,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -63192,7 +63374,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -63535,7 +63719,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -63881,7 +64067,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -64226,7 +64414,9 @@
           "source_notes": {
             "source_health": "Fallback",
             "source_score": 72.09,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [
@@ -64870,7 +65060,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -65230,7 +65422,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -65588,7 +65782,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -65949,7 +66145,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -66310,7 +66508,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -66671,7 +66871,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -67033,7 +67235,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -67394,7 +67598,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -67758,7 +67964,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -68123,7 +68331,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 78.67,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -68774,7 +68984,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -69130,7 +69342,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -69489,7 +69703,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -69848,7 +70064,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -70209,7 +70427,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -70570,7 +70790,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -70931,7 +71153,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -71291,7 +71515,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
@@ -71651,7 +71877,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "medium",
           "model_disagreement_reasons": [
@@ -72012,7 +72240,9 @@
           "source_notes": {
             "source_health": "Available",
             "source_score": 76.22,
-            "warnings": []
+            "warnings": [
+              "fia_document_forbidden:403"
+            ]
           },
           "model_disagreement_level": "low",
           "model_disagreement_reasons": [],
