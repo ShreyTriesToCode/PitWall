@@ -1,0 +1,13 @@
+{
+  "document_id": "deeab5d989b7b1fb",
+  "document_type": "power_unit_information",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_power_unit_information_v2.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-12T01:59:24.668130+05:30",
+  "confidence": 0.45,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe FIA Formula 1 Race Director\nFrom The FIA Formula 1 Race Director\nTo All Teams, All Officials\nDocument 25\nDate 11 September 2026\nTime 22:05\nTitle Power Unit Information V2\nDescription Power Unit Information V2\nEnclosed R14_Spain_Power_Unit_Information_V02.pdf\nRui Marques\n\nROUND No. R14\nVENUE Madrid\nCENTRELINE 5.416 km\nFORMAT Standard\nDATE 11-13 September\nOvertake not active Overtake active\n8.5 MJ 9.0 MJ 7.5 MJ 9.0 MJ 9.0 MJ 3206 m 100 kW/s\nOvertake not active Overtake active\nBase - Standard Base - Overtake Alt 1 Base - Overtake\nIdentification of \nSectors\nLap distance window \n[m]\nIdentification of \nSectors\nLap distance window \n[m]\nMaximum PU power \nreduction permitted\nIdentification of \nSectors\nLap distance window \n[m]\nT5-T22 1500-5100\nT7-T8\nT10-T11\nT15-T16\nT18-T21\n[Exit T22]\n1900-1975\n2200-2300\n3600-3800\n4100-4800\n[5100-5300]\n350kW\n350kW\n350kW\n350kW\n[350kW]\nT12\nExit T19\n[Exit T22]\n2550-2900\n4400-4500\n[5150-5400]\nIdentification of \nSectors\nLap distance window \n[m] Speed threshold Detection Gap \nDetection Line\n[sLap & Loop]\n(Art. B7.2.1b.viii)\nActivation Line\n[sLap & Loop]\n(Art. B7.2.1b.ix)\n5160 5230\nL24 L25\nArticle C5.2.10\nMaximum Re"
+}

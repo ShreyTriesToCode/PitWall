@@ -1,0 +1,26 @@
+{
+  "document_id": "48aff2f088fdf13b",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-12T01:59:29.402946+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 21 Date 11 September 2026 Time 18:30 Title Infringement - Free Practice 2 Deleted Lap Times Description Infringement - Free Practice 2 Deleted Lap Times Enclosed ESP DOC 21- Free Practi",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 21\nDate 11 September 2026\nTime 18:30\nTitle Infringement - Free Practice 2 Deleted Lap Times\nDescription Infringement - Free Practice 2 Deleted Lap Times\nEnclosed ESP DOC 21- Free Practice 2 Deleted Lap Times.pdf\nFelix Holter Natalie Corsmit\nMathieu Remmerie Derek Warwick\nDavid Domingo\n\n \n \n2026 SPANISH GRAND PRIX \n11 – 13 September 2026 \n \n    \nFrom The Stewards      Document 21 \n  \nTo All Officials, All Teams      Date  11 September 2026 \n \n        Time  18:30 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 2 \n  \nFact The F1 cars below did not use the track at turns 1, 5, 6, 7, 11, 15, 17 and 18. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 5 11  Sergio Perez Cadillac Formula 1 Team 17:03:07 1:37.800 \n2 5 12  Kimi Antonelli Mercedes-AMG PETRONAS F1 Team 17:03:29 2:01.053 \n3 5 81 Oscar Piastri McLaren Mastercard F1 Team 17:03:24 2:14.516 \n4 18 1 Lando Norris McLaren Mastercard F1 Team 17:04:45 PIT \n5 5 55 Carlos Sainz Atlassian Williams F1 Team "
+}
