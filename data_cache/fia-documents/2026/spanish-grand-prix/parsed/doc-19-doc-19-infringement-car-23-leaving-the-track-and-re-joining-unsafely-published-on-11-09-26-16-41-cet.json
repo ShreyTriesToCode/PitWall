@@ -1,0 +1,26 @@
+{
+  "document_id": "c8ee908f48d78d41",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_23_-_leaving_the_track_and_re-joining_unsafely_.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-11T21:24:50.522092+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 19 Date 11 September 2026 Time 16:31 The Stewards, having received a report from the Race Director, summoned (documents 14 & 15) and heard from the drivers and team representativ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 19\nDate 11 September 2026\nTime 16:31\nThe Stewards, having received a report from the Race Director, summoned (documents 14 & 15)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 23 - Alexander Albon\nCompetitor Atlassian Williams F1 Team\nTime 14:27\nSession Free Practice 1\nFact Leaving the track and re-joining unsafely in T6\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations.\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 23 (Alexander Albon), the driver of Car 41\n(Arvid Lindblad), team representatives and reviewed video and in-car video evidence.\nThe driver of Car 23 stated in the hearing that he was informed about Car 41 closing\nin and therefore continuously checked his mirrors. But doing so he missed out on\ntaking an appropriate line to stay to the right of the yellow line in the runoff area.\nWhen approaching the track edge, he made the decision to accelerate and cross the\ntrack as quickly as possible to not interfere with Car 41.\nThe Stewa"
+}

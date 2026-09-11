@@ -1,0 +1,26 @@
+{
+  "document_id": "bc09f8989a75ad65",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times_-_double_yellows.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-11T21:24:52.645608+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 18 Date 11 September 2026 Time 16:20 Title Infringement - Free Practice 1 Deleted Lap Times - Double Yellows Description Infringement - Free Practice 1 Deleted Lap Times - Double Yellow",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 18\nDate 11 September 2026\nTime 16:20\nTitle Infringement - Free Practice 1 Deleted Lap Times - Double Yellows\nDescription Infringement - Free Practice 1 Deleted Lap Times - Double Yellows\nEnclosed ESP DOC 18- Free Practice 1 Deleted Lap Times - Double Yellow.pdf\nFelix Holter Natalie Corsmit\nMathieu Remmerie Derek Warwick\nDavid Domingo\n\n \n \n \n \n2026 SPANISH GRAND PRIX \n11 – 13 September 2026 \n \n    \nFrom The Stewards      Document 18 \n  \nTo All Officials, All Teams      Date  11 September 2026 \n \n        Time  16:20 \n  \n \nThe lap times set by the F1 car that went through the double waved yellow flag zone will be deleted as detailed in the \nRace Director’s Competition Notes (item 9, document 5): \n \nSession Free Practice 1 \n  \nFact The F1 car passed through a double waved yellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 12 14  Fernando Alonso Aston Martin Aramco F1 Team 14:26:35 2:09.411 \n \n \nDecision Deletion of the lap time shown in accordance with Article 12.4.1.e of the FIA International \nSporting Code.   \nNote Competitors are r"
+}
