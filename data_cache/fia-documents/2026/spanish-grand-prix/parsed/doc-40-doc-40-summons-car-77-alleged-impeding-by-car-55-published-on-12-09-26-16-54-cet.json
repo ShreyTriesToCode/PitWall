@@ -1,0 +1,26 @@
+{
+  "document_id": "b06fc70a6631901f",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_summons_-_car_77_-_alleged_impeding_by_car_55.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-12T20:31:35.679407+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The driver and team representative are required to report to the Stewards at 17:30, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 40 Date 12 September 2026 Time 16:51 No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe driver and team representative are required to report to the Stewards at 17:30, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 40\nDate 12 September 2026\nTime 16:51\nNo / Driver 77 - Valtteri Bottas\nReason Alleged breach of Article B4.1.1 of the FIA F1 Regulations – Car 55 allegedly\nimpeding Car 77 in Turn 7 at 16:17.\nFelix Holter Natalie Corsmit\nMathieu Remmerie Derek Warwick\nDavid Domingo\n"
+}

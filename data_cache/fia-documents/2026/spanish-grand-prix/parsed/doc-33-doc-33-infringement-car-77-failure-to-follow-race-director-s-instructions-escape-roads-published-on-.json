@@ -1,0 +1,26 @@
+{
+  "document_id": "6daa9b51abfb607e",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_77_-_failure_to_follow_race_directors_instructions_escape_roads.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-12T20:31:45.720579+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 33 Date 12 September 2026 Time 14:23 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 77 ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 33\nDate 12 September 2026\nTime 14:23\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 77 - Valtteri Bottas\nCompetitor Cadillac Formula 1 Team\nTime 13:45\nSession Free Practice 3\nFact The driver failed to follow the Race Director’s Competition Notes by not staying to the\nright of the bollard in Turn 5.\nInfringement Breach of Article 12.2.1.i of the International Sporting Code and non-compliance with\nRace Director’s Competition Notes (item 26.2, document 28).\nDecision Driver: Warning.\nReason The Stewards reviewed video and in-car video evidence.\nThe driver of Car 77 slowed down before Turn 5 to make way for an incoming car.\nWhen approaching the corner, he accelerated to make way for another incoming car,\nleft the track while being to the right of the yellow line, but re-joined the track without\nstaying to the right of the bollard in the runoff area.\nThe Stewards acknowledge the efforts of the driver to manage traffic, but determine\nthat it would have been possible to follow the"
+}

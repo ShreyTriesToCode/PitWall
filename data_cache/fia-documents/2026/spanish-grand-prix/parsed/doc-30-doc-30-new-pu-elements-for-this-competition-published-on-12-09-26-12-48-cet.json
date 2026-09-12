@@ -1,0 +1,30 @@
+{
+  "document_id": "2056fe0a5f469fb5",
+  "document_type": "new_pu_elements",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_new_pu_elements_for_this_competition.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-12T20:31:50.572909+05:30",
+  "confidence": 1.0,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {
+    "18": {
+      "new_ice": false,
+      "new_tc": false,
+      "new_mgu_h": false,
+      "new_mgu_k": false,
+      "new_es": false,
+      "new_ce": false,
+      "new_exhaust": false,
+      "new_pu_anc": false,
+      "component_count_used": null,
+      "component_limit_margin": null,
+      "reliability_boost": 0,
+      "grid_penalty_risk": 5,
+      "pu_change_reason_text": "18 Aston Martin Aramco Honda Lance Stroll 6",
+      "source_confidence": 1.0
+    }
+  },
+  "infringements": {},
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 30\nDate 12 September 2026\nTime 12:38\nTitle Technical Delegate's Report\nDescription New PU elements for this Competition\nEnclosed 14 ESP GP 26 TDR06.pdf\nManuel Leal\n\n1 \n \n \n2026 SPANISH GRAND PRIX \n11 – 13 September 2026 \n \n  \n  \nFrom The FIA Formula 1 Technical Delegate   \n  \nTo The Stewards      Date  12 September 2026 \n  \n \n \nTECHNICAL DELEGATE’S REPORT \n \nThe following driver is using a new internal combustion engine (ICE)  for the remainder of the \nCompetition: \n \nNumber Car Driver Previously used ICE \n    \n18 Aston Martin Aramco Honda Lance Stroll 4 \n \nThe internal combustion engine used by Lance Stroll  is the fifth (5) of the four (4) new internal \ncombustion engines allowed for the 2026 Championship season and this is not in conformity with \nArticle B8.2.2 a) of the 2026 Formula One Sporting Regulations. \n \n \nThe following driver is using a new turbocharger (TC) for the remainder of the Competition: \n \nNumber Car Driver Previously used TC \n    \n18 Aston Martin Aramco Honda Lance Stroll 4 \n \nThe turbocharger used by Lance Stro"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "87e71b856c5a0e84",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_decision_-_temporary_stop_of_free_practice_3.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-12T20:31:48.915078+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards, exercising their authority given under Article 11.7.3.r of the FIA International Sporting Code, decided to temporarily stop Free Practice 3. Free Practice 3 was red flagged at 12:53:17 following an incident which required the safety barrie",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards, exercising their authority given under Article 11.7.3.r of the FIA International Sporting\nCode, decided to temporarily stop Free Practice 3.\nFree Practice 3 was red flagged at 12:53:17 following an incident which required the safety barriers\nto be repaired. As it turned out that these repairs required significantly more time than initially\nexpected, the session was stopped at 13:14:22 with 15 minutes and 38 seconds remaining. The\ntiming systems were stopped at this point in time.\nThe session was restarted at 13:32:00, the timing systems were resumed and the remainder of the\nsession was completed.\n \nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 31\nDate 12 September 2026\nTime 13:57\nFelix Holter Natalie Corsmit\nMathieu Remmerie Derek Warwick\nDavid Domingo\n"
+}
