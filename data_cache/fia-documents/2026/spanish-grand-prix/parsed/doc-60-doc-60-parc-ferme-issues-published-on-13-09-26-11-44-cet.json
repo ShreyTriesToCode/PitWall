@@ -1,0 +1,26 @@
+{
+  "document_id": "7c698fe020ccfbe5",
+  "document_type": "parc_ferme",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_parc_ferme_issues.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:11:41.903490+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The FIA Formula 1 Technical Delegate From The FIA Formula 1 Technical Delegate To The Stewards Document 60 Date 13 September 2026 Time 11:40 Title Technical Delegate's Report Description Parc Fermé Issues Enclosed 14 ESP GP 26 TDR08.pdf Manuel Leal 1 20",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe FIA Formula 1 Technical Delegate\nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 60\nDate 13 September 2026\nTime 11:40\nTitle Technical Delegate's Report\nDescription Parc Fermé Issues\nEnclosed 14 ESP GP 26 TDR08.pdf\nManuel Leal\n\n1 \n \n \n2026 SPANISH GRAND PRIX \n11 – 13 September 2026 \n \n  \n  \nFrom The FIA Formula 1 Technical Delegate   \n  \nTo The Stewards      Date  13 September 2026 \n  \n \n \nTECHNICAL DELEGATE’S REPORT \n \nThe following driver is using a new energy store (ES) for the remainder of the Competition: \n \nNumber Car Driver Previously used ES \n    \n87 Haas Ferrari Oliver Bearman 3 \n \nThe energy store unit used by Oliver Bearman is the fourth  (4) of the three (3) new energy store \nunits allowed for the 2026 Championship season and this is not in conformity with Article B8.2.2 \nd) of the 2026 Formula 1 Regulations. \n \n \nThe following driver is using a new control electronic s unit  (PU-CE) for the remainder of the \nCompetition: \n \nNumber Car Driver Previously used PU-CE \n    \n87 Haas Ferrari Oliver Bearman 3 \n \nThe control electronics unit used by Oliver Bearman is the fourth (4) of the three (3) new control"
+}

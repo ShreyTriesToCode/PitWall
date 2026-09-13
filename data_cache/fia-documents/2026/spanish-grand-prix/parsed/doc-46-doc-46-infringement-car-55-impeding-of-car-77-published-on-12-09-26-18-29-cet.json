@@ -1,0 +1,26 @@
+{
+  "document_id": "21aa1be52ff47420",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_55_-_impeding_of_car_77.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:13:18.670513+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 3,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 46 Date 12 September 2026 Time 18:21 The Stewards, having received a report from the Race Director, summoned (documents 39 & 40) and heard from the drivers and team ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 46\nDate 12 September 2026\nTime 18:21\nThe Stewards, having received a report from the Race Director, summoned (documents 39 & 40)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 16:17\nSession Qualifying\nFact Car 55 impeded Car 77 at Turns 6 and 7.\nInfringement Breach of Article B4.1.1 of the FIA F1 Regulations.\nDecision Drop of 3 grid positions for the next Race in which the driver participates.\nReason The Stewards heard from the driver of Car 55 (Carlos Sainz), the driver of Car 77\n(Valtteri Bottas), team representatives and reviewed video, timing, team radio and in-\ncar video evidence.\nThe team failed to inform the driver of Car 55 about Car 77 closing in on a flying lap\nand the driver did not take any action to make way for the incoming car. The\nStewards determine that Car 55 unnecessarily impeded Car 77.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in acco"
+}

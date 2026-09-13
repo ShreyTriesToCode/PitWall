@@ -1,0 +1,26 @@
+{
+  "document_id": "6fb63c0d5f73c399",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_87_-_pu_elements_changed_during_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:11:38.231065+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, TGR Haas F1 Team Document 63 Date 13 September 2026 Time 13:05 The Stewards, having received a report from the Technical Delegate (document 60), have considered the following matter and determine the following: No ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nTGR Haas F1 Team\nDocument 63\nDate 13 September 2026\nTime 13:05\nThe Stewards, having received a report from the Technical Delegate (document 60), have\nconsidered the following matter and determine the following:\nNo / Driver 87 - Oliver Bearman\nCompetitor TGR Haas F1 Team\nTime 11:40\nSession Qualifying\nFact The following Power Unit elements have been used:\n4th Energy Store (ES)\n4th Control Electronics Unit (PU-CE)\n4th MGU-K\nAll Power Unit elements were replaced without the approval of the FIA Technical\nDelegate during parc fermé.\nFurthermore, Car 87 was not covered two (2) hours after chequered flag of Q3.\n \nInfringement Breaches of Articles B8.2.2 (in conjunction with B8.2.3), B3.4.3a, B3.5.3 and B3.5.4\nof the FIA F1 Regulations.\nDecision Required to start the Race from the Pit Lane.\nReason TGR Haas F1 Team changed the above Power Unit elements under Parc Fermé\nbefore the start of the Race, without the approval of the Technical Delegate. This is\nnot in accordance with Article B3.5.4 of the FIA F1 Regulations.\nCar 87 is therefore required to start the Race from Pit Lane as per Article B3.5.3a of\nthe "
+}

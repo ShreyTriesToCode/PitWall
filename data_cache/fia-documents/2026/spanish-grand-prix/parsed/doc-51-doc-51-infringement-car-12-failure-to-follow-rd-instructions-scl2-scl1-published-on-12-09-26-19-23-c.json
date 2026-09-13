@@ -1,0 +1,26 @@
+{
+  "document_id": "e1a7450e13ff8c23",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_12_-_failure_to_follow_rd_instructions_scl2_-_scl1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:13:10.208436+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 51 Date 12 September 2026 Time 19:20 The Stewards, having received a report from the Race Director, summoned (document 37) and heard from the driver and team representative, h",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 51\nDate 12 September 2026\nTime 19:20\nThe Stewards, having received a report from the Race Director, summoned (document 37) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 12 - Kimi Antonelli\nCompetitor Mercedes-AMG PETRONAS F1 Team\nTime 17:01\nSession Qualifying\nFact Car 12 exceeded the time limit between the Saftety Car lines.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations and Article 12.2.1.i of the\nInternational Sporting Code – Non-compliance with Race Director’s Competition\nNotes (item 1, document 28).\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 12 (Kimi Antonelli), team representative\nand reviewed timing and in-car video evidence.\n \nCar 12 returned to the pits after setting his final lap time in Q3 without any other cars\ninterfering and did not comply with the delta time requirements. The driver stated\nduring the hearing that it was difficult for him to maintain the delta due to energy\nmanagement requirements and minor technical"
+}

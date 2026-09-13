@@ -1,0 +1,26 @@
+{
+  "document_id": "11f86651466753a9",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_63_-_failure_to_follow_race_director_instructions_-_scl2_-_scl1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:13:08.725245+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, Mercedes-AMG PETRONAS F1 Team Document 52 Date 12 September 2026 Time 19:22 The Stewards, having received a report from the Race Director, summoned (document 38) and heard from the driver and team representative, h",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nMercedes-AMG PETRONAS F1 Team\nDocument 52\nDate 12 September 2026\nTime 19:22\nThe Stewards, having received a report from the Race Director, summoned (document 38) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 63 - George Russell\nCompetitor Mercedes-AMG PETRONAS F1 Team\nTime 16:16\nSession Qualifying\nFact The driver failed to follow the Race Director’s Competition Notes at Turn 5 by not\nstaying to the right of the bollard.\nInfringement Breach of Article 12.2.1.i of the International Sporting Code and non-compliance with\nRace Director’s Competition Notes (item 26.2, document 28).\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 63 (George Russell), team representative\nand video, timing, team radio and in-car video evidence.\nThe driver of Car 63 left the track at Turn 5 to make way for an incoming car, but re-\njoined the track without staying to the right of the bollard in the runoff area. The driver\nstated during the hearing that he stayed to the left of the bollard to re-join earlier\nbecause h"
+}

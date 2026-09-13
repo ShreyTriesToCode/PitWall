@@ -1,0 +1,26 @@
+{
+  "document_id": "e4ffd74c47ddfc3b",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_5_-_failure_to_follow_rd_instructions_scl2_-_scl1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:13:13.679597+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, Audi Revolut F1 Team Document 49 Date 12 September 2026 Time 19:07 The Stewards, having received a report from the Race Director, summoned (document 37) and heard from the driver and team representative, have consi",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 49\nDate 12 September 2026\nTime 19:07\nThe Stewards, having received a report from the Race Director, summoned (document 37) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 5 - Gabriel Bortoleto\nCompetitor Audi Revolut F1 Team\nTime 16:07\nSession Qualifying\nFact Car 5 exceeded the time limit between the Safety Car lines.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations and Article 12.2.1.i of the\nInternational Sporting Code – Non-compliance with Race Director’s Competition\nNotes (item 1, document 28).\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 5 (Gabriel Bortoleto), team representative\nand reviewed timing and in-car video evidence.\nCar 5 had to make way for another car in the middle sector of the lap but did not\nrecover enough time to comply with the required delta time. The driver stated during\nthe hearing that it was very difficult for him to maintain the delta after letting the other\ncar by due to energy management requirements.\nThe Stewards "
+}

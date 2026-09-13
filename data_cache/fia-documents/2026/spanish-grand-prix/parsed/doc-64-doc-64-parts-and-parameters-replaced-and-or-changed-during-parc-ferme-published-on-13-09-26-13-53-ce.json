@@ -1,0 +1,26 @@
+{
+  "document_id": "c13d2c8af32b03bf",
+  "document_type": "parc_ferme",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_parts_and_parameters_replaced_and_or_changed_during_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:11:37.181379+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 Technical Delegate’s Report The following parts and parameters have been replaced / changed during the Parc Fermé yesterday and today: McLaren Mercedes: Car 01: RHS exhaust temperature sensor BBW assembly BBW accumulator Parameters associated with the B",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nTechnical Delegate’s Report\n \nThe following parts and parameters have been replaced / changed during the Parc Fermé yesterday\nand today:\n \nMcLaren Mercedes:\nCar 01:          RHS exhaust temperature sensor\n                       BBW assembly\n                       BBW accumulator\n                       Parameters associated with the BBW system\n \nMercedes:\nCar 63:           LHS rear lower mid suspension leg\n \nCar 12:           LHS driver mirror lens\n \nAston Martin Aramco Honda:\nCar 18:           ICE inlet water pipe\n                       Radiator feed and return pipes\n                       Header tank and PRV assembly\n \n Audi:\nCar 27:           ICE Cylinder 1 spark plug\n \nCar 05:           LHS front roll damper\n \nAlpine Mercedes:\nCar 10:           Clutch assembly and associated parameters\n                       ICE crankshaft seal\n                       ICE crank damper assembly\n                                          \n \n \n \nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 64\nDate 13 September 2026\nTime 13:52\n\nCadillac Ferrari:\nCar 11:           Parameters associated with the TAG700\n \nCar 77:           LHS and RHS f"
+}

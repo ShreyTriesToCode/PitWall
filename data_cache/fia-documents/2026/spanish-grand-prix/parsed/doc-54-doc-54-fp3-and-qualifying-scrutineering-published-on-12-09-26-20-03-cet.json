@@ -1,0 +1,13 @@
+{
+  "document_id": "f687a65bd7f216de",
+  "document_type": "scrutineering",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_fp3_and_qualifying_scrutineering.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:12:50.361020+05:30",
+  "confidence": 0.55,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {},
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nTechnical Delegate’s Report\n \nBefore the third free practice session:\nA spare LHS rear corner of car number 01 was digitally scanned and the scanned data were\ncompared with the team declared CAD drawings. Further the team declared CAD drawings were\nalso compared with previously submitted versions and checked for conformance with the\n2026 Formula One Technical Regulations.\n \nDuring the third free practice session:\nThe tyre starting pressures of all cars during P3 were checked.\nThe fuel pressure of all cars during the second free practice session was checked.\nThe logged pressure within the engine cooling system during the second free practice session was\nchecked on all cars.\nThe engine high rev limit bands were checked on all cars.\nThe fuel flow meter calibration checksum was checked on all cars.\nThe instantaneous fuel energy flow of all cars was checked.\nThe partial load fuel energy flow of all cars was checked.\nThe fuel temperature of all cars was checked.\nThe plenum temperature of all cars was checked.\nThe engine intake air pressure of all cars was checked.\nThe maximum turbocharger speed of all cars was checked.\nThe PU and MGU-K power"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "3b540bfb1e1133d0",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:10:31.689250+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards From The Stewards To The Team Manager, BWT Alpine F1 Team Document 68 Date 13 September 2026 Time 16:49 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Dr",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 68\nDate 13 September 2026\nTime 16:49\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 10 - Pierre Gasly\nCompetitor BWT Alpine F1 Team\nTime 16:37\nSession Race\nFact Pit lane speeding – 81.2 km/h\nInfringement Breach of Article B1.6.3a.iii of the FIA F1 Regulations. \nDecision 5 second time penalty.\nReason Car 10 exceeded the pit lane speed limit which is set at 80 km/h for this event by 1.2\nkm/h.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\n \nFelix Holter Natalie Corsmit\nMathieu Remmerie Derek Warwick\nDavid Domingo\n"
+}

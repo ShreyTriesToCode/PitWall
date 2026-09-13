@@ -1,0 +1,26 @@
+{
+  "document_id": "74e8ffafca26c1bb",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_race_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:09:44.084967+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 71 Date 13 September 2026 Time 17:35 Title Infringement - Race Deleted Lap Times Description Infringement - Race Deleted Lap Times Enclosed ESP DOC 71 - Race Deleted Lap Times.pdf Felix",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 71\nDate 13 September 2026\nTime 17:35\nTitle Infringement - Race Deleted Lap Times\nDescription Infringement - Race Deleted Lap Times\nEnclosed ESP DOC 71 - Race Deleted Lap Times.pdf\nFelix Holter Natalie Corsmit\nMathieu Remmerie Derek Warwick\nDavid Domingo\n\n \n \n2026 SPANISH GRAND PRIX \n11 – 13 September 2026 \n \n    \nFrom The Stewards      Document 71 \n  \nTo All Officials, All Teams      Date  13 September 2026 \n \n        Time  17:35 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Race \n  \nFact The F1 cars below did not use the track at turns 1, 2, 5, 6, 11, 15, 17, 18, 19 and 20. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 5 81  Oscar Piastri McLaren Mastercard F1 Team 15:04:34 1st Lap \n2 1 44  Lewis Hamilton Scuderia Ferrari HP 15:09:18 1:43.055 \n3 5 44 Lewis Hamilton Scuderia Ferrari HP 15:09:34 1:43.055 \n4 1 44 Lewis Hamilton Scuderia Ferrari HP 15:11:01 1:51.932 \n5 20 44 Lewis Hamilton Scuderia Ferrari HP 15:12:23 1:51.932 \n6 17 12 Kimi Antonelli Mercedes-A"
+}

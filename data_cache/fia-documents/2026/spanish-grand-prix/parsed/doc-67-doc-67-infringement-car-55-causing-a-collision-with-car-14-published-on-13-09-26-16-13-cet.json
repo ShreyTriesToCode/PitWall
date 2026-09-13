@@ -1,0 +1,26 @@
+{
+  "document_id": "ea151aa2c40374aa",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_55_-_causing_a_collision_with_car_14.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:11:03.023368+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 67 Date 13 September 2026 Time 16:10 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following:",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 67\nDate 13 September 2026\nTime 16:10\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 15:23\nSession Race\nFact Car 55 moved under braking and made contact with Car 14 in Turn 5.\nInfringement Breach of Appendix L, Chapter IV, Article 2 e) of the FIA International Sporting Code.\nDecision 5 second time penalty.\nReason The Stewards reviewed video, telemetry and in-car video evidence.\nCar 14 was closing in on Car 55 on the approach to Turn 5 and was in the process of\npulling alongside when Car 55 moved towards the right edge of the track after the\ndeceleration phase had commenced, causing both cars to slightly make contact.\nThe Stewards determine that Car 55 moved under braking and should have left more\nspace for Car 14 on the outside. The baseline penalty for moving under braking is a\nblack/white flag. However, the Stewards take into account the fact that both cars\nmade contact and therefore impose a tim"
+}

@@ -1,0 +1,26 @@
+{
+  "document_id": "12e89e2fc4c2954b",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_16_-_failure_to_follow_rd_instructions_scl2_-_scl1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-13T21:13:07.037720+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 SPANISH GRAND PRIX 11 - 13 September 2026 From The Stewards To The Team Manager, Scuderia Ferrari HP Document 53 Date 12 September 2026 Time 19:32 The Stewards, having received a report from the Race Director, summoned (document 43) and heard from the driver and team representative, have consid",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 SPANISH GRAND PRIX\n11 - 13 September 2026\nFrom The Stewards\nTo The Team Manager,\nScuderia Ferrari HP\nDocument 53\nDate 12 September 2026\nTime 19:32\nThe Stewards, having received a report from the Race Director, summoned (document 43) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 16 - Charles Leclerc\nCompetitor Scuderia Ferrari HP\nTime 17:01\nSession Qualifying\nFact Car 16 exceeded the time limit between the Safety Car lines.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations and Article 12.2.1.i of the\nInternational Sporting Code – Non-compliance with Race Director’s Competition\n Notes (item 1, document 28).\nDecision Competitor: Reprimand.\nReason The Stewards heard from the driver of Car 16 (Charles Leclerc), team representative\nand reviewed video, timing, telemetry and in-car video evidence.\nThe driver of Car 16 returned to the pits after setting his final lap time in Q3 without\nany other cars interfering and did not comply with the delta time requirements. During\nthe hearing the team representative admitted that they provided the driver with a\nwrong delta time profile due to a misca"
+}
