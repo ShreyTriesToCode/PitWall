@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.06-strategy-actuals-v7",
-  "generated_at": "2026-09-19T13:53:11.583546+05:30",
+  "generated_at": "2026-09-19T15:58:17.919115+05:30",
   "status": "Available",
   "corrections": [
     {
@@ -399,10 +399,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -752,10 +749,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -1106,10 +1100,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -1459,10 +1450,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -1811,10 +1799,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -2161,10 +2146,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -2513,10 +2495,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -2862,10 +2841,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -3206,10 +3182,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -3551,10 +3524,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -4187,10 +4157,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -4544,10 +4511,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -4901,10 +4865,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -5255,10 +5216,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -5610,10 +5568,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -5965,10 +5920,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -6320,10 +6272,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -6673,10 +6622,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -7022,10 +6968,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -7373,10 +7316,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -8015,10 +7955,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -8376,10 +8313,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -8738,10 +8672,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -9099,10 +9030,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -9457,10 +9385,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -9816,10 +9741,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10175,10 +10097,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10534,10 +10453,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -10891,10 +10807,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -11245,10 +11158,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -11879,10 +11789,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -12232,10 +12139,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -12587,10 +12491,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -12938,10 +12839,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -13289,10 +13187,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -13638,10 +13533,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -13989,10 +13881,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -14341,10 +14230,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -14693,10 +14579,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -15043,10 +14926,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -15684,10 +15564,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -16038,10 +15915,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -16393,10 +16267,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -16745,10 +16616,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -17094,10 +16962,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -17446,10 +17311,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -17798,10 +17660,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -18151,10 +18010,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -18502,10 +18358,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -18849,10 +18702,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -19505,10 +19355,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -19885,10 +19732,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -20267,10 +20111,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -20646,10 +20487,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -21024,10 +20862,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -21402,10 +21237,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -21780,10 +21612,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -22157,10 +21986,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -22533,10 +22359,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -22908,10 +22731,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -23559,10 +23379,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -23911,10 +23728,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -24263,10 +24077,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -24616,10 +24427,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -24966,10 +24774,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -25315,10 +25120,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -25666,10 +25468,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -26013,10 +25812,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -26360,10 +26156,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -26708,10 +26501,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -27356,10 +27146,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -27717,10 +27504,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -28077,10 +27861,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -28436,10 +28217,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -28793,10 +28571,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -29149,10 +28924,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -29507,10 +29279,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -29860,10 +29629,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -30214,10 +29980,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -30569,10 +30332,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -31219,10 +30979,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -31584,10 +31341,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -31948,10 +31702,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -32311,10 +32062,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -32673,10 +32421,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -33033,10 +32778,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -33394,10 +33136,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -33750,10 +33489,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -34107,10 +33843,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -34466,10 +34199,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -35111,10 +34841,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -35465,10 +35192,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -35819,10 +35543,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -36171,10 +35892,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -36521,10 +36239,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -36871,10 +36586,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -37221,10 +36933,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -37570,10 +37279,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -37919,10 +37625,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -38266,10 +37969,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -38906,10 +38606,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -39260,10 +38957,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -39614,10 +39308,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -39966,10 +39657,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -40316,10 +40004,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -40666,10 +40351,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -41016,10 +40698,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -41365,10 +41044,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -41713,10 +41389,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -42059,10 +41732,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -42696,10 +42366,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -43046,10 +42713,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -43399,10 +43063,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -43751,10 +43412,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -44100,10 +43758,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -44447,10 +44102,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -44794,10 +44446,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -45143,10 +44792,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -45493,10 +45139,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -45841,10 +45484,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -46491,10 +46131,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -46851,10 +46488,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -47211,10 +46845,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -47569,10 +47200,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -47927,10 +47555,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -48284,10 +47909,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -48641,10 +48263,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -48997,10 +48616,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -49351,10 +48967,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -49705,10 +49318,7 @@
               "pit_stop_data",
               "practice_or_lap_pace",
               "qualifying",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -50344,10 +49954,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -50696,10 +50303,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -51048,10 +50652,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -51400,10 +51001,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -51750,10 +51348,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -52101,10 +51696,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -52452,10 +52044,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -52802,10 +52391,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -53152,10 +52738,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -53499,10 +53082,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -54136,10 +53716,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -54488,10 +54065,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -54840,10 +54414,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -55192,10 +54763,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -55542,10 +55110,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -55893,10 +55458,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -56244,10 +55806,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -56594,10 +56153,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -56944,10 +56500,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -57291,10 +56844,7 @@
             "warnings": [
               "pit_stop_data",
               "practice_or_lap_pace",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -57951,10 +57501,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -58304,10 +57851,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -58659,10 +58203,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -59011,10 +58552,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -59364,10 +58902,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -59716,10 +59251,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -60068,10 +59600,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -60416,10 +59945,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -60767,10 +60293,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -61117,10 +60640,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -61756,10 +61276,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -62109,10 +61626,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -62464,10 +61978,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "high",
@@ -62816,10 +62327,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -63169,10 +62677,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -63521,10 +63026,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -63873,10 +63375,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -64221,10 +63720,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -64572,10 +64068,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -64922,10 +64415,7 @@
             "source_health": "Fallback",
             "source_score": 72.09,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -65571,10 +65061,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -65936,10 +65423,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -66299,10 +65783,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -66665,10 +66146,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -67031,10 +66509,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -67397,10 +66872,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -67764,10 +67236,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -68130,10 +67599,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -68499,10 +67965,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -68869,10 +68332,7 @@
             "source_health": "Available",
             "source_score": 78.67,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -69525,10 +68985,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -69886,10 +69343,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -70250,10 +69704,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -70614,10 +70065,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -70980,10 +70428,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -71346,10 +70791,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -71712,10 +71154,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -72077,10 +71516,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
@@ -72442,10 +71878,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "medium",
@@ -72808,10 +72241,7 @@
             "source_health": "Available",
             "source_score": 76.22,
             "warnings": [
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_championship_points.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_final_race_classification.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_race_scrutineering.pdf",
-              "504 Server Error: Gateway Time-out for url: https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_infringement_-_car_10_-_pit_lane_speeding.pdf"
+              "502 Server Error: Bad Gateway for url: https://www.fia.com/decision-document-list/nojs/60295"
             ]
           },
           "model_disagreement_level": "low",
