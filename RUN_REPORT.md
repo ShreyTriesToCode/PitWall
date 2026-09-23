@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-09-22T08:46:12.417230+00:00
+- Generated at: 2026-09-23T08:51:09.521233+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Italian Grand Prix / race
 - Top 10 availability: 10 rows
