@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-09-23T08:51:09.521233+00:00
+- Generated at: 2026-09-24T03:19:23.378897+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Italian Grand Prix / race
 - Top 10 availability: 10 rows
@@ -8,7 +8,7 @@
 - Contract validation: passed
 - Event trust: 50.04
 - Source health: Fallback / 72.09
-- Source conflicts: 2
+- Source conflicts: 3
 - Major model disagreements: 6
 - Missing data groups: pit_stop_data, practice_or_lap_pace
 
