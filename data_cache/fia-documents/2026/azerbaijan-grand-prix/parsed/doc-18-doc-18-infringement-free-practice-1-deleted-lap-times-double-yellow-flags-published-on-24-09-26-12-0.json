@@ -1,0 +1,26 @@
+{
+  "document_id": "3c35b795a31b3e97",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times_-_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-24T16:39:06.368073+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 18 Date 24 September 2026 Time 14:02 Title Infringement - Free Practice 1 Deleted Lap Times - Double Yellow Flags Description Infringement - Free Practice 1 DeletedInfringement - Fre",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 18\nDate 24 September 2026\nTime 14:02\nTitle Infringement - Free Practice 1 Deleted Lap Times - Double Yellow Flags\nDescription Infringement - Free Practice 1 DeletedInfringement - Free Practice 1 Deleted Lap\nTimes - Double Yellow FlagsLap Times\nEnclosed AZE DOC 18 - Free Practice 1 Deleted Lap Times - Double Yellow.pdf\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n\n \n \n \n \n2026 AZERBAIJAN GRAND PRIX \n24 – 26 September 2026 \n \n  \n  \nFrom The Stewards      Document 18 \n  \nTo All Officials, All Teams      Date  24 September 2026 \n \n        T i m e   14:02 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag marshalling sector will be deleted as \ndetailed in Article B1.8.4b of the FIA F1 Regulations: \n \nSession Free Practice 1 \n  \nFact The F1 cars passed through a double waved \nyellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 7 77  Valtteri Bottas Cadillac Formula 1 Team 12:53:52 2:23.403 \n2 7 23  Alexander Albon Atlassian Williams F1 Team 12:53:58 PIT \n3 7 10 Pierre Ga"
+}

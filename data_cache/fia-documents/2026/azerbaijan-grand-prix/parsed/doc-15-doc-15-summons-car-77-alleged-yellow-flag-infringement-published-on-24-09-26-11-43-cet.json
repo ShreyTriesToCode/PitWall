@@ -1,0 +1,26 @@
+{
+  "document_id": "1e6a48143a7b4aae",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_77_-_alleged_yellow_flag_infringement.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-24T16:39:14.422551+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The driver and team representative are required to report to the Stewards at 13:50, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 15 Date 24 September 2026 Time 13:32 No / Driv",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe driver and team representative are required to report to the Stewards at 13:50, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 15\nDate 24 September 2026\nTime 13:32\nNo / Driver 77 - Valtteri Bottas\nReason Alleged breach of Article 2.5.5. b. of Appendix H of the FIA International Sporting\nCode – overtaking under a yellow flag\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n"
+}
