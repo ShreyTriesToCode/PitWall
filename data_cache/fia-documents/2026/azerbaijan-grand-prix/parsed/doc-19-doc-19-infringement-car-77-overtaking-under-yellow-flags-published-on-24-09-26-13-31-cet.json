@@ -1,0 +1,26 @@
+{
+  "document_id": "fa0e1c2793c14184",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_77_-_overtaking_under_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T02:41:38.709346+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 19 Date 24 September 2026 Time 15:29 The Stewards, having received a report from the Race Director, summoned (document 15) and heard from the driver and team representative, have",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 19\nDate 24 September 2026\nTime 15:29\nThe Stewards, having received a report from the Race Director, summoned (document 15) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 77 - Valtteri Bottas\nCompetitor Cadillac Formula 1 Team\nTime 13:02\nSession Free Practice 1\nFact Overtaking under yellow flags\nInfringement Breach of Appendix H, Article 2.5.5 b) of the International Sporting Code.\nDecision No penalty is applied.\nReason The Stewards heard from the driver of Car 77 (Valtteri Bottas), team representative\nand reviewed positioning/marshalling system data, video, timing, telemetry, and in-car\nvideo evidence.\nCar 77 overtook Car 23 (ALB) between Turns 6 and 7 shortly after a Single Yellow\nFlag was displayed.\nAt the time the yellow was displayed, Car 77 was approaching at approximately 240\nkph Car 23 with a speed differential of approximately 120 kph. Given the very short\ntime between the display of the yellow and the overtake, the Stewards determined that\nCar 77 could not reasonably have "
+}

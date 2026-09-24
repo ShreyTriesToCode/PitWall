@@ -1,0 +1,26 @@
+{
+  "document_id": "915f3b3e8bef3581",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times_-_double_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T02:41:23.393469+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 26 Date 24 September 2026 Time 17:32 Title Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flags Description Infringement - Free Practice 2 Deleted Lap Times - Doubl",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 26\nDate 24 September 2026\nTime 17:32\nTitle Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flags\nDescription Infringement - Free Practice 2 Deleted Lap Times - Double Yellow Flags\nEnclosed AZE DOC 26 - Free Practice 2 Deleted Lap Times - Double Yellow.pdf\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n\n \n \n \n \n2026 AZERBAIJAN GRAND PRIX \n24 – 26 September 2026 \n \n  \n  \nFrom The Stewards      Document 26 \n  \nTo All Officials, All Teams      Date  24 September 2026 \n \n        T i m e   17:32 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag zone will be deleted as detailed in the \nRace Director’s Competition Notes (item 9, document 13): \n \nSession Free Practice 2 \n  \nFact The F1 cars passed through a double waved \nyellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 14 23 Alexander Albon Atlassian Williams F1 Team 16:16:55 PIT \n2 14 16 Charles Leclerc Scuderia Ferrari HP 16:16:56 1:52.546 \n3 14 5 Gabriel Bortoleto Audi Revolut F1 Team 16:16:58 2:26.624"
+}

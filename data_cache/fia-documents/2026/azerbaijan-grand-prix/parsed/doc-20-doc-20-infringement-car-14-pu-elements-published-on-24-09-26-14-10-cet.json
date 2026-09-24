@@ -1,0 +1,26 @@
+{
+  "document_id": "5f02733ff4628dd9",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_14_-_pu_elements.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T02:41:36.472997+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 25,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 20 Date 24 September 2026 Time 15:59 The Stewards, having received a report from the Technical Delegate (document 14), have considered the following matter and determine the ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 20\nDate 24 September 2026\nTime 15:59\nThe Stewards, having received a report from the Technical Delegate (document 14), have\nconsidered the following matter and determine the following:\nNo / Driver 14 - Fernando Alonso\nCompetitor Aston Martin Aramco F1 Team\nTime 12:34\nSession Free Practice 1\nFact The following Power Unit elements have been used:\n5th Engine (ICE)\n5th Turbocharger (TC)\n9th Power Unit Ancillary Component (PU-ANC)\nInfringement Breaches of Articles B8.2.2 (read with B8.2.3) of the FIA F1 Regulations.\nDecision Drop of 25 grid positions for the next Race in which the driver participates\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nIn this case, the use of (Element #1) and (Element #2) additional element(s) carries a\n10 grid place penalty by virtue of Article B8.2.8a of the FIA F1 Regulations and the\nuse of (Element #3) additional element carries a 5 grid place penalty by virtue of\nArticle B8.2.8b of the FIA F1 Regulations. Therefore there is an accumulation of 25\nplaces.\nSubject to Car 14 being classifie"
+}
