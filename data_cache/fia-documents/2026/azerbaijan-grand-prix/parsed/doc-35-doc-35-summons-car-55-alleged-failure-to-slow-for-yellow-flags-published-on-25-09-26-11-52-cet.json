@@ -1,0 +1,26 @@
+{
+  "document_id": "3d1631b35547261c",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_55_-_alleged_failure_to_slow_for_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T16:42:08.648056+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The driver and team representative are required to report to the Stewards at 13:50, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 35 Date 25 September 2026 Time 13:19 No / D",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe driver and team representative are required to report to the Stewards at 13:50, in relation to the\nincident below: \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 35\nDate 25 September 2026\nTime 13:19\nNo / Driver 55 - Carlos Sainz\nReason Alleged breach of Article 2.5.5. b. of Appendix H of the FIA International Sporting\nCode – failing to slow for yellow flags.\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n"
+}

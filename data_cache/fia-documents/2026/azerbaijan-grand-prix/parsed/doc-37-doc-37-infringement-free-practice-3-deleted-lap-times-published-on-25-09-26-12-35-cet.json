@@ -1,0 +1,26 @@
+{
+  "document_id": "799f3b61d1df6091",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T16:42:05.530200+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 4,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 37 Date 25 September 2026 Time 14:32 Title Infringement - Free Practice 3 Deleted Lap Times Description Infringement - Free Practice 3 Deleted Lap Times Enclosed AZE DOC 37 - Free Pr",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 37\nDate 25 September 2026\nTime 14:32\nTitle Infringement - Free Practice 3 Deleted Lap Times\nDescription Infringement - Free Practice 3 Deleted Lap Times\nEnclosed AZE DOC 37 - Free Practice 3 Deleted Lap Times.pdf\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n\n \n \n2026 AZERBAIJAN GRAND PRIX \n24 – 26 September 2026 \n \n  \n  \nFrom The Stewards      Document 37 \n  \nTo All Officials, All Teams      Date  25 September 2026 \n \n        T i m e   14:32 \n  \n \nThe Stewards, having received a report from the Race Director, have considered the following matter and determine the \nfollowing: \n \nSession Free Practice 3 \n  \nFact The F1 cars below did not use the track at turns 1, 3, 4, 7, 15 and 16. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 16 41 Arvid Lindblad Visa Cash App Racing Bulls F1 Team 12:43:42 2:11.369 \n2 1 11 Sergio Perez Cadillac Formula 1 Team 12:54:15 2:23.618 \n3 15 44 Lewis Hamilton Scuderia Ferrari HP 12:57:40 2:29.665 \n4 15 3 Max Verstappen Oracle Red Bull Racing 13:01:18 PIT \n5 1 44 Lewis Hamilton Scuderia Ferrari HP 13:"
+}

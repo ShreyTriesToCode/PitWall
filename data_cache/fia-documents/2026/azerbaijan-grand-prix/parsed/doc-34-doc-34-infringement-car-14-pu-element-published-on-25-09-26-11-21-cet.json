@@ -1,0 +1,26 @@
+{
+  "document_id": "836ea0f08480f4db",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_14_-_pu_element.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T16:42:10.633453+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 5,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The Stewards From The Stewards To The Team Manager, Aston Martin Aramco F1 Team Document 34 Date 25 September 2026 Time 13:01 The Stewards, having received a report from the Technical Delegate (document 33), have considered the following matter and d",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAston Martin Aramco F1 Team\nDocument 34\nDate 25 September 2026\nTime 13:01\nThe Stewards, having received a report from the Technical Delegate (document 33), have\nconsidered the following matter and determine the following:\nNo / Driver 14 - Fernando Alonso\nCompetitor Aston Martin Aramco F1 Team\nTime 12:43\nSession Free Practice 3\nFact The following Power Unit elements have been used:\n7th Energy Store (ES)\nInfringement Breaches of Articles B8.2.2 (read with B8.2.3) of the FIA F1 Regulations.\nDecision Drop of 5 grid positions for the next Race in which the driver participates.\nReason The penalty is imposed in accordance with Article B8.2.8 of the FIA F1 Regulations.\nCompetitors are reminded that they have the right to appeal certain decisions of the\nStewards, in accordance with Article 15 of the FIA International Sporting Code and\nChapter 5 of the FIA Judicial and Disciplinary Rules, within the applicable time limits.\nDecisions of the Stewards are taken independently of the FIA and are based solely\non the relevant regulations, guidelines and evidence presented.\nGerd Ennser Loïc Bacquela"
+}
