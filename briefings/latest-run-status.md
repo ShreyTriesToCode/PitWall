@@ -1,9 +1,9 @@
 # PitWall Run Status
 
-Generated: Friday, 25 September 2026, 10:10 PM IST
+Generated: Saturday, 26 September 2026, 02:44 AM IST
 
-Status: Skipped
+Status: Success
 
 ## Details
 
-No Sprint/Race output target selected.\n\nOutput mode: today\nReason: Manual runs use weekend mode; scheduled runs use today mode. Practice, Qualifying, and Sprint Qualifying are ignored as direct outputs.
+Generated Sprint/Race-only F1 briefing.\n\nOutput mode: today\nTargets: race=F1 Azerbaijan GP - Race\nBackfill used this run: 0\nErrors: None

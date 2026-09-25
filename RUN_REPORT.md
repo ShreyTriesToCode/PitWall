@@ -1,14 +1,14 @@
 # PitWall Run Report
 
-- Generated at: 2026-09-25T16:41:02.209434+00:00
+- Generated at: 2026-09-25T21:14:43.393133+00:00
 - Model version: 2026.06-strategy-actuals-v7
-- Target event/session: Italian Grand Prix / race
+- Target event/session: Azerbaijan Grand Prix / race
 - Top 10 availability: 10 rows
 - Full grid availability: 23 rows
 - Contract validation: passed
-- Event trust: 50.04
+- Event trust: 50.02
 - Source health: Fallback / 72.09
-- Source conflicts: 2
+- Source conflicts: 3
 - Major model disagreements: 6
 - Missing data groups: pit_stop_data, practice_or_lap_pace
 
@@ -19,7 +19,7 @@
   "ok": true,
   "schema_version": "2026.06-strategy-actuals-v7",
   "prediction_data_version": "2026.05-race-control-contract-v2",
-  "briefing_count": 19,
+  "briefing_count": 20,
   "debug_payload_count": 1,
   "model_version": "2026.06-strategy-actuals-v7",
   "latest_top10_count": 10,
