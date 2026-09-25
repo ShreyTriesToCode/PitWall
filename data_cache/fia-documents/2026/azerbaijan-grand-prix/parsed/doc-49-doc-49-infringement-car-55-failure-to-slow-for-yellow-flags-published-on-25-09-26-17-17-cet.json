@@ -1,0 +1,26 @@
+{
+  "document_id": "844f6278511bf29b",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_55_-_failure_to_slow_for_yellow_flags_0.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T22:05:49.590923+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 5,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Atlassian Williams F1 Team Document 49 Date 25 September 2026 Time 19:07 The Stewards, having received a report from the Race Director, summoned (document 45) and heard from the driver and team representative, h",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nAtlassian Williams F1 Team\nDocument 49\nDate 25 September 2026\nTime 19:07\nThe Stewards, having received a report from the Race Director, summoned (document 45) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 55 - Carlos Sainz\nCompetitor Atlassian Williams F1 Team\nTime 17:03\nSession Qualifying\nFact Failure to slow for yellow flags\nInfringement Breach of Appendix H, Article 2.5.5 b) of the International Sporting Code \nDecision Drop of 5 grid positions for the next Sprint/Race in which the driver participates.\n2 penalty points (total of 4 for the 12 month period).\nReason Reason: The Stewards heard from the driver of Car 55 (Carlos Sainz), team\nrepresentative and reviewed video, timing, telemetry, team radio and in-car video\nevidence.\nSingle Yellow Flags were displayed in Marshalling Sectors 4 and 5, in particular after\nTurn 2 and on the approach to Turn 3. The Yellow indications were clearly visible and\nSAI had also received a radio warning from the Team: “Yellow ahead, lift.” SAI\nconfirmed at the hearing that he was a"
+}

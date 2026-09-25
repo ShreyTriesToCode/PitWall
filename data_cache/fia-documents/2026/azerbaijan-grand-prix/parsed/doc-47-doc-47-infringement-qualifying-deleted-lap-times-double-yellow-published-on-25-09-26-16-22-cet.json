@@ -1,0 +1,26 @@
+{
+  "document_id": "83b9a97f68e09e36",
+  "document_type": "deleted_lap_times",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_qualifying_deleted_lap_times_-_double_yellow.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T22:05:52.428791+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": true,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The Stewards From The Stewards To All Teams, All Officials Document 47 Date 25 September 2026 Time 18:22 Title Infringement - Qualifying Deleted Lap Times - Double Yellow Description Qualifying Deleted Lap Times - Double Yellow Enclosed AZE DOC 47 - ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe Stewards\nFrom The Stewards\nTo All Teams, All Officials\nDocument 47\nDate 25 September 2026\nTime 18:22\nTitle Infringement - Qualifying Deleted Lap Times - Double Yellow\nDescription Qualifying Deleted Lap Times - Double Yellow\nEnclosed AZE DOC 47 - Qualifying Deleted Lap Times - Double Yellow.pdf\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n\n \n \n \n \n2026 AZERBAIJAN GRAND PRIX \n24 – 26 September 2026 \n \n  \n  \nFrom The Stewards      Document 47 \n  \nTo All Officials, All Teams      Date  25 September 2026 \n \n        T i m e   18:22 \n  \n \nThe lap times set by the F1 cars that went through the double waved yellow flag marshalling sector will be deleted as \ndetailed in Article B1.8.4b of the FIA F1 Regulations: \n \nSession Qualifying \n  \nFact The F1 cars passed through a double waved yellow flag marshalling sector. \n \nNo. Turn Car Driver Competitor Time of Day Lap Time \n1 7 30 Liam Lawson Visa Cash App Racing Bulls F1 Team 16:07:45 2:00.207 \n2 7 41 Arvid Lindblad Visa Cash App Racing Bulls F1 Team 16:07:42 2:00.079 \n3 3 16 Charles Leclerc Scuderia Ferrari HP 16:22:00 PIT \n4 3 77 Valtteri Bottas Cadillac Formu"
+}

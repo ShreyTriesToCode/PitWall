@@ -1,0 +1,26 @@
+{
+  "document_id": "dc0643f042d8a3cc",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_11_-_impeding_car_81.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T22:05:51.308417+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 3,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 48 Date 25 September 2026 Time 19:01 The Stewards, having received a report from the Race Director, summoned (documents 41 & 42) and heard from the drivers and team representativ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 48\nDate 25 September 2026\nTime 19:01\nThe Stewards, having received a report from the Race Director, summoned (documents 41 & 42)\nand heard from the drivers and team representatives, have considered the following matter and\ndetermine the following:\nNo / Driver 11 - Sergio Perez\nCompetitor Cadillac Formula 1 Team\nTime 16:11\nSession Qualifying\nFact Car 11 was driving at reduced speed on the racing line through Turns 18, 19 and 20\nand forced Car 81 approaching in a flying lap to lift and change direction.\nInfringement Breach of Article B4.1.1 of the FIA F1 Regulations and of item 27 of the Race\nDirector’s Competition Notes (V2).\nDecision Drop of 3 grid positions for the next Sprint/Race in which the driver participates.\nReason The Stewards heard from the driver of Car 11 (Sergio Perez), the driver of Car 81\n(Oscar Piastri), team representatives and reviewed video, timing, telemetry, team\nradio and in-car video evidence.\nPER was on a preparation lap between Turns 19 and 20 while PIA was approaching\non a flying lap. PER had received two radio warnings that PIA was app"
+}

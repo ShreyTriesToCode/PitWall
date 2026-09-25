@@ -1,0 +1,26 @@
+{
+  "document_id": "6a6310727357e319",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_41_-_leaving_the_track_in_turn_15.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-25T22:06:00.197500+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The Stewards From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 40 Date 25 September 2026 Time 15:37 The Stewards, having received a report from the Race Director, have considered the following matter and determine the",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 40\nDate 25 September 2026\nTime 15:37\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 41 - Arvid Lindblad\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 13:20\nSession Free Practice 3\nFact Leaving the track without a justifiable reason at turn 15.\nInfringement Breach of Article B1.8.6 of the FIA F1 Regulations.\nDecision Driver: Reprimand (Driving).\nThis is the driver’s 1st reprimand of the season.\nReason The Stewards reviewed video and in-car video evidence.\nLIN was on a preparation lap with two cars ahead of him. By leaving the track and\ntaking the shorter route at Turn 15, LIN was able to pass PER. This then placed him\nin a position to also pass BEA on the following straight.\nLIN therefore gained two positions as a consequence of leaving the track and had\nclear track ahead of him for his following lap.\nThe Stewards determine that LIN left the track and gained an advantage.\nTaking into account that the incident occurred during Free Practice, th"
+}
