@@ -1,0 +1,26 @@
+{
+  "document_id": "b198e870ab7e756e",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_6_-_failing_to_follow_race_directors_instructions_-_practice_start.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-27T02:11:38.045643+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 3,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Oracle Red Bull Racing Document 69 Date 26 September 2026 Time 19:53 TThe Stewards, having received a report from the Race Director, summoned (document 62) and heard from the driver and team representative, have",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 69\nDate 26 September 2026\nTime 19:53\nTThe Stewards, having received a report from the Race Director, summoned (document 62) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 6 - Isack Hadjar\nCompetitor Oracle Red Bull Racing\nTime 14:20\nSession Reconnaissance Laps\nFact Failure to follow Race Directors instruction.\nInfringement Alleged breach of Article 12.2.1.i of the International Sporting Code and non-\ncompliance with Race Director’s Competition Note (item 13.6, document 56) –\nPractice start infringement at 14:20.\nDecision Driver: Warning.\nReason The Stewards heard from the driver of Car 6 (Isack Hadjar), team representative and\nreviewed positioning/marshalling system data, video, timing, telemetry, team radio and\nin-car video evidence.\nDuring the reconnaissance laps, HAD approached the Pit Exit where several cars\nwere ahead of him. HAD did not ultimately perform a practice start.\nParagraph 13.6 of the Race Director’s Competition Notes requires a car not wishing\nto perform a practice "
+}
