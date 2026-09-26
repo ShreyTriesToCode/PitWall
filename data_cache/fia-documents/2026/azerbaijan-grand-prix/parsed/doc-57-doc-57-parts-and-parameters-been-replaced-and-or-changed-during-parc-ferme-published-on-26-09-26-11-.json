@@ -1,0 +1,26 @@
+{
+  "document_id": "b979e799b36954f6",
+  "document_type": "parc_ferme",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_parts_and_parameters_been_replaced_and_or_changed_during_parc_ferme.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-26T16:22:06.049305+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 0,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 Technical Delegate’s Report The following parts and parameters have been replaced / changed during the Parc Fermé yesterday and today: McLaren Mercedes: Car 81: Steering wheel Mercedes: Car 63: LHS and RHS front inner brake drum ducts Car 12: LHS fro",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nTechnical Delegate’s Report\n \n \nThe following parts and parameters have been replaced / changed during the Parc Fermé yesterday\nand today:\n \nMcLaren Mercedes:\n \nCar 81:           Steering wheel\n \n \nMercedes:\n \nCar 63:           LHS and RHS front inner brake drum ducts\n \nCar 12:           LHS front suspension assembly\n                        LHS front brake caliper\n                        Front brake friction material (axle set)\n                        Steering column assembly\n                        Steering rack assembly\n                        Forward plank section \n                        LHS front brake duct assembly\n                        Front wing / nosebox assembly \n \n \nRed Bull Racing RB Ford:\n \nCar 03:           LHS and RHS fuel lift pump assemblies\n                        ICE (new)\n                        TC (new)\n                        EXH (new)\n                        ANC (new)\n                        Parameter changes associated with the PU elements replacement\n \nFrom The FIA Formula 1 Technical Delegate\nTo The Stewards\nDocument 57\nDate 26 September 2026\nTime 13:50\n\nCar 06:           Clutch shaft torque sensor and as"
+}
