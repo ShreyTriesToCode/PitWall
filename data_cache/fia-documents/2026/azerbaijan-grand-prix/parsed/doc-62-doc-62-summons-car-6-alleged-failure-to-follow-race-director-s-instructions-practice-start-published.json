@@ -1,0 +1,26 @@
+{
+  "document_id": "387e0e91ad92e3b5",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_6_-_alleged_failure_to_follow_race_directors_instructions_-_practice_start.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-26T21:19:49.213597+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The driver and team representative are required to report to the Stewards at 18:10, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Oracle Red Bull Racing Document 62 Date 26 September 2026 Time 17:18 No / Drive",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe driver and team representative are required to report to the Stewards at 18:10, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nOracle Red Bull Racing\nDocument 62\nDate 26 September 2026\nTime 17:18\nNo / Driver 6 - Isack Hadjar\nReason Alleged breach of Article 12.2.1.i of the International Sporting Code and non-\ncompliance with Race Director’s Competition Note (item 13.6, document 56) –\nPractice start infringement at 14:20.\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n"
+}

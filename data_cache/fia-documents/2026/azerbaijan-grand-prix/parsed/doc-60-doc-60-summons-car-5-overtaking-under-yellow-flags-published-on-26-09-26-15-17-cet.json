@@ -1,0 +1,26 @@
+{
+  "document_id": "6d3b650c325590be",
+  "document_type": "summons",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_5_-_overtaking_under_yellow_flags_.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-26T21:19:51.938002+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 1,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 The driver and team representative are required to report to the Stewards at 17:30, in relation to the incident below: The Stewards From The Stewards To The Team Manager, Audi Revolut F1 Team Document 60 Date 26 September 2026 Time 17:11 No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nThe driver and team representative are required to report to the Stewards at 17:30, in relation to the\nincident below: \n \nThe Stewards\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 60\nDate 26 September 2026\nTime 17:11\nNo / Driver 5 - Gabriel Bortoleto\nReason Alleged breach of Appendix H, Article 2.5.5 b) of the International Sporting Code\nand/or B5.13.2(c) of the FIA 2026 F1 Sporting Regulations – overtaking under yellow\nflags and/or safety car procedure at 16:12.\nGerd Ennser Loïc Bacquelaine\nKhatuna Julakidze Derek Warwick\nDanil Solomin\n"
+}

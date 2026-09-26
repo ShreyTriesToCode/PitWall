@@ -1,0 +1,26 @@
+{
+  "document_id": "bd003e3795dcf96f",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_43_-_collision_with_car_10_in_turn_1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-26T21:19:44.321595+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 5,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, BWT Alpine F1 Team Document 66 Date 26 September 2026 Time 19:29 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver 43 - ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nBWT Alpine F1 Team\nDocument 66\nDate 26 September 2026\nTime 19:29\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 43 - Franco Colapinto\nCompetitor BWT Alpine F1 Team\nTime 16:11\nSession Race\nFact Collision with Car 10 in Turn 1\nInfringement Breach of Appendix L, Chapter IV, Article 2 d) of the FIA International Sporting Code.\nDecision 10 second time penalty converted to a drop of 5 grid positions at the next race in\nwhich the driver participates.\nReason The Stewards reviewed video, timing and in-car video evidence.\nFollowing the restart, COL approached GAS from behind into Turn 1. COL braked too\nlate and entered the corner on the inside at a speed which did not allow him to make\nthe corner in a controlled manner. He overshot the corner and made contact with the\nleft-hand side of GAS, who then hit NOR and both cars retired.\nThe Stewards considered that COL was wholly or predominantly to blame for the\ncollision. Although the incident occurred at the first corner following the restart, there\nwas no contribut"
+}

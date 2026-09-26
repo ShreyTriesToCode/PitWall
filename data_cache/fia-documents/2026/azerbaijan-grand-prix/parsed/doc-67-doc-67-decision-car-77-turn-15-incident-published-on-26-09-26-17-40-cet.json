@@ -1,0 +1,26 @@
+{
+  "document_id": "3ddea4860e6893e0",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_decision_-_car_77_-_turn_15_incident.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-26T21:19:43.250339+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 65,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Cadillac Formula 1 Team Document 67 Date 26 September 2026 Time 19:39 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: No / Driver ",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nCadillac Formula 1 Team\nDocument 67\nDate 26 September 2026\nTime 19:39\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 77 - Valtteri Bottas\nCompetitor Cadillac Formula 1 Team\nTime 16:43\nSession Race\nFact Car 77 left the track at Turn 15 and made contact with the wall. After exiting the car\nand replacing the steering wheel, the driver remained in the vicinity of the car for a\nperiod of time, including inspecting the rear of the car.\nInfringement Alleged breach of Article 12.2.1.h of the FIA International Sporting Code\nDecision No further action.\nReason The Stewards heard from the driver of Car 77 (Valtteri Bottas), the team\nrepresentative and reviewed video evidence.\nThe driver explained that, after the incident, he exited the car, replaced the steering\nwheel and proceeded to the rear of the car in order to ascertain whether a technical\nissue may have contributed to the incident. Indeed, BOT mentioned during the hearing\nthat he believed he had a rear brakes failure.\nThe Stewards noted that the driver rema"
+}

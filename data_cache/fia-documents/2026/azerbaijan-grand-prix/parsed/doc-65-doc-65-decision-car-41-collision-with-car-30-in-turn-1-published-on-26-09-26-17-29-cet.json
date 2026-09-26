@@ -1,0 +1,26 @@
+{
+  "document_id": "dca593bfcc9d8a5b",
+  "document_type": "decision",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_decision_-_car_41_-_collision_with_car_30_in_turn_1.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-26T21:19:45.387442+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Visa Cash App Racing Bulls F1 Team Document 65 Date 26 September 2026 Time 19:28 The Stewards, having received a report from the Race Director, have considered the following matter and determine the following: N",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nVisa Cash App Racing Bulls F1 Team\nDocument 65\nDate 26 September 2026\nTime 19:28\nThe Stewards, having received a report from the Race Director, have considered the following\nmatter and determine the following:\nNo / Driver 41 - Arvid Lindblad\nCompetitor Visa Cash App Racing Bulls F1 Team\nTime 16:11\nSession Race\nFact Collison between cars 41 and 30 in Turn 1.\nInfringement Alleged breach of Appendix L, Chapter IV, Article 2 d) of the FIA International\nSporting Code.\nDecision No further action.\nReason The Stewards looked at video and in-car video evidence.\nFollowing the restart, LIN and LAW approached Turn 1, with LIN in a three-car\nsituation.\nAhead of them, a collision occurred involving COL, GAS and NOR. That incident,\ntogether with COL locking his brakes, triggered a braking reaction among the cars\nimmediately ahead of LIN. At the same time, LIN was positioned between cars on\neither side.\nDuring the corner, LIN made contact with LAW. Having reviewed the positioning and\nmovement of the cars involved, the Stewards determined that the contact was\nprimarily the result of the restricted space availab"
+}

@@ -1,6 +1,6 @@
 # PitWall Run Report
 
-- Generated at: 2026-09-26T10:58:43.705952+00:00
+- Generated at: 2026-09-26T15:55:47.820720+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Azerbaijan Grand Prix / race
 - Top 10 availability: 10 rows
