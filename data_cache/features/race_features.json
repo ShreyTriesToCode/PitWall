@@ -1,7 +1,7 @@
 [
   {
     "race_id": "2026-15-azerbaijan-grand-prix",
-    "prediction_id": "2026-15-azerbaijan-grand-prix-race-post_qualifying-5ac6a3b30867",
+    "prediction_id": "2026-15-azerbaijan-grand-prix-race-post_qualifying-b528a1169fe9",
     "season": 2026,
     "round": 15,
     "circuit": "Baku City Circuit",
@@ -13,16 +13,16 @@
     "safety_car": "medium-high",
     "weather": {
       "source": "Open-Meteo forecast",
-      "temperature": "25.8°C",
+      "temperature": "26.0°C",
       "rain": "0%",
-      "humidity": "54%",
-      "wind": "21.0 km/h",
-      "wind_gust": "34.2 km/h",
-      "cloud_cover": "39%",
+      "humidity": "47%",
+      "wind": "19.5 km/h",
+      "wind_gust": "32.0 km/h",
+      "cloud_cover": "37%",
       "track_temperature": "Unavailable",
       "rain_score": 0,
       "heat_score": 0,
-      "wind_score": 88.92000000000002,
+      "wind_score": 83.2,
       "impact": "dry baseline more likely; wind may affect braking stability and aero balance"
     },
     "strategy": {
@@ -85,35 +85,35 @@
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 75.29,
+          "scenario_score": 75.37,
           "rank": 1
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 72.73,
+          "scenario_score": 73.05,
           "rank": 2
         },
         {
           "driver_id": "norris",
           "name": "Lando Norris",
           "team": "McLaren",
-          "scenario_score": 71.64,
+          "scenario_score": 71.74,
           "rank": 3
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 66.31,
+          "scenario_score": 66.47,
           "rank": 4
         },
         {
           "driver_id": "hadjar",
           "name": "Isack Hadjar",
           "team": "Red Bull",
-          "scenario_score": 63.57,
+          "scenario_score": 63.42,
           "rank": 5
         }
       ],
@@ -122,35 +122,35 @@
           "driver_id": "russell",
           "name": "George Russell",
           "team": "Mercedes",
-          "scenario_score": 76.37,
+          "scenario_score": 76.42,
           "rank": 1
         },
         {
           "driver_id": "antonelli",
           "name": "Andrea Kimi Antonelli",
           "team": "Mercedes",
-          "scenario_score": 71.3,
+          "scenario_score": 71.51,
           "rank": 2
         },
         {
           "driver_id": "norris",
           "name": "Lando Norris",
           "team": "McLaren",
-          "scenario_score": 69.03,
+          "scenario_score": 69.1,
           "rank": 3
         },
         {
           "driver_id": "max_verstappen",
           "name": "Max Verstappen",
           "team": "Red Bull",
-          "scenario_score": 63.1,
+          "scenario_score": 63.2,
           "rank": 4
         },
         {
           "driver_id": "piastri",
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "scenario_score": 62.01,
+          "scenario_score": 62.09,
           "rank": 5
         }
       ],
@@ -259,11 +259,11 @@
       "active_aero": {
         "straight_mode": "low-drag straight configuration",
         "corner_mode": "high-downforce corner configuration",
-        "average_suitability": 67.08
+        "average_suitability": 67.99
       },
       "energy_deployment": {
         "title": "2026 Boost / Overtake Mode Intelligence",
-        "average_boost_advantage": 61.57,
+        "average_boost_advantage": 62.14,
         "attack_defend_logic": "Attack/Defend output uses pace, tyre stress, track position, Boost proxy, and overtaking difficulty."
       },
       "decision_log": [
