@@ -1,12 +1,12 @@
 # PitWall Run Report
 
-- Generated at: 2026-09-26T03:42:33.392914+00:00
+- Generated at: 2026-09-26T08:56:58.856225+00:00
 - Model version: 2026.06-strategy-actuals-v7
 - Target event/session: Azerbaijan Grand Prix / race
 - Top 10 availability: 10 rows
 - Full grid availability: 23 rows
 - Contract validation: passed
-- Event trust: 49.73
+- Event trust: 49.62
 - Source health: Fallback / 72.09
 - Source conflicts: 2
 - Major model disagreements: 7
