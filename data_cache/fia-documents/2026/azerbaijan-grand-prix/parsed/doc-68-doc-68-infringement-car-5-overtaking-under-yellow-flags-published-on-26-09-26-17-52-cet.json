@@ -1,0 +1,26 @@
+{
+  "document_id": "247d458aba437b3a",
+  "document_type": "infringement",
+  "source_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_5_-_overtaking_under_yellow_flags.pdf",
+  "parser_version": "fia-parser-v2",
+  "parsed_at": "2026-09-27T09:16:46.000026+05:30",
+  "confidence": 0.78,
+  "classification": [],
+  "upgrades": [],
+  "pu_features": {},
+  "infringements": {
+    "deleted_lap_count": 0,
+    "deleted_fastest_lap_flag": false,
+    "qualifying_lap_deleted_flag": false,
+    "infringement_count": 2,
+    "penalty_points": null,
+    "grid_penalty_places": 0,
+    "pit_lane_start_flag": false,
+    "back_of_grid_flag": false,
+    "confidence_penalty": 0,
+    "discipline_risk_score": 35,
+    "steward_decision_summary": "2026 AZERBAIJAN GRAND PRIX 24 - 26 September 2026 From The Stewards To The Team Manager, Audi Revolut F1 Team Document 68 Date 26 September 2026 Time 19:52 TThe Stewards, having received a report from the Race Director, summoned (document 60) and heard from the driver and team representative, have c",
+    "source_document_ids": []
+  },
+  "raw_text_excerpt": "2026 AZERBAIJAN GRAND PRIX\n24 - 26 September 2026\nFrom The Stewards\nTo The Team Manager,\nAudi Revolut F1 Team\nDocument 68\nDate 26 September 2026\nTime 19:52\nTThe Stewards, having received a report from the Race Director, summoned (document 60) and\nheard from the driver and team representative, have considered the following matter and determine\nthe following:\nNo / Driver 5 - Gabriel Bortoleto\nCompetitor Audi Revolut F1 Team\nTime 16:12\nSession Race\nFact Overtaking under yellow flags\nInfringement Breach of Appendix H, Article 2.5.5 b) of the International Sporting Code \nDecision 10 second time penalty.\nReason Reason: The Stewards heard from the driver of Car 5 (Gabriel Bortoleto), team\nrepresentative and reviewed video and in-car video evidence.\nThe incident occurred between Turns 6 and 7 during the first lap after the restart of\nthe race. At the relevant time, marshal posts in this area were displaying physical\n“SC” boards together with waved Yellow Flags. However, the Stewards established\nthat, at that time, the Safety Car had not in fact been deployed by Race Control.\nBOR explained that he initially reacted to the SC boards and Yellow Flags. However,\nhe did not see any corresponding"
+}
