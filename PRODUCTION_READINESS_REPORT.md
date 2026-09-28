@@ -1,3 +1,5 @@
+> **Archived legacy report.** These claims describe the retired implementation and are not current release evidence. See [current methodology](MODEL_REPORT.md) and [validation](docs/VALIDATION.md).
+
 # Production Readiness Report
 
 ## 2026-06-29 Status

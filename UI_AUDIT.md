@@ -1,61 +1,84 @@
-# PitWall UI Audit
+> **Current consumer review:** [Updated artwork, IST display and final consumer critique](docs/CONSUMER_REVIEW.md).
 
-## Summary
-- Reduced oversized card-first layouts and moved dense prediction, driver, constructor, archive, and model data into compact tables and tabs.
-- Kept the dark PitWall identity while reducing red border usage for normal cards. Red is now reserved more consistently for active, warning, or critical states.
-- Added shared frontend primitives for compact tables, metric cards, data-state badges, developer-only panels, and data availability checks.
-- Preserved Top 10 predictions, Full Grid predictions, scenario comparison, source health, timing replay, archive comparison, and model status routes.
+> **Theme follow-up, 2026-09-22:** The Formula 1 identity has been restored. See [the separate theme, motion and visual critic](docs/THEME_REVIEW.md), scored 9.06 for that scope. The broader frontend assessment below is retained as the earlier review.
 
-## Files and Components Changed
-- `frontend/app/components/PitWallComponents.jsx`: added `DataStateBadge`, `SectionCard`, `MetricCard`, `CompactTable`, `DeveloperOnlyPanel`, data availability helpers, Developer Mode, compact ticker labels, and simulated scenario labeling.
-- `frontend/app/predictions/page.jsx`: made Full Grid the primary component, compacted Top 10, hid raw debug fields behind Developer Mode, added low-trust warning copy, and clarified metric meaning.
-- `frontend/app/drivers/page.jsx`: replaced card grid with compact sortable/filterable P1-P22 table and kept driver detail drawer.
-- `frontend/app/teams/page.jsx`: replaced tall constructor cards with a constructor comparison table and selected-team detail section.
-- `frontend/app/strategy/page.jsx`: compacted controls and labelled scenario/simulator output as simulated.
-- `frontend/app/live/page.jsx`: labelled archived timing replay, hid blank mini-sector blocks, collapsed mostly missing telemetry, and removed audio controls for invalid/zero-duration radio rows.
-- `frontend/app/model/page.jsx`: renamed visible page to Model Center and split content into Overview, Metrics, Source Health, and Developer tabs.
-- `frontend/app/archive/page.jsx`: deduped archive rows, grouped by race, moved raw briefing links to Developer Mode, and gated actual-result claims.
-- `frontend/app/page.jsx`: compacted dashboard sections and collapsed long explanatory content.
-- `frontend/app/globals.css`: added compact layout styles, tab styles, compact table styles, developer panel styles, and responsive fixes.
-- `frontend/app/api/f1timing/route.js`: tightened useful live timing detection so weather/race-control-only payloads do not suppress fallback standings.
+# Frontend critic — 2026-09-18
 
-## Page-by-Page Fixes
-- Command Center: kept current race, countdown, top three, prediction trust, strategy risk, source health, timeline, calendar, and quick links while collapsing explanatory content.
-- Prediction Board: Full Grid is first-class, Top 10 remains visible, low-trust predictions show a warning, and debug/internal fields require Developer Mode.
-- Driver Analysis: all drivers are accessible in a compact table with team, rank range, confidence, watchlist, and sort controls.
-- Team Analysis: constructor comparison table is the primary view; detailed constructor evidence appears only for the selected team.
-- Strategy Wall: scenario cards are compact and marked simulated; rain scenario copy explains fallback sensitivity when live rain risk is unavailable.
-- Timing Replay: archived sessions are not labelled live; blank telemetry, mini-sector placeholders, and invalid audio players are suppressed.
-- Model Center: normal users see model version, key metrics, source health, and actual-result comparison; schema/bundle/validation internals live in Developer.
-- Archive: duplicate race cards are removed by race + target + stage + model version; comparison requires two selected records.
+This report supersedes the old UI audit of the retired implementation. It covers
+actual rendered output from the local production build. It is separate from the
+[whole-product critic](docs/CRITIC_9_REVIEW.md).
 
-## Data Correctness Fixes
-- No winner match or recall is shown unless actual-result comparison is trusted and available.
-- Pending actuals render as compact pending states.
-- No audio player is shown for missing, zero, null, or `0:00` duration radio clips.
-- No blank mini-sector block is rendered when mini-sector data is missing.
-- Mostly missing car telemetry collapses to “Telemetry unavailable for this session.”
-- Fallback/stale/source states are shown through badges instead of looking fully healthy.
-- Scenario ranking is labelled simulated unless it is part of official final prediction output.
-- Timing replay is labelled archived when the feed is not genuinely live.
+## Verdict
 
-## Known Remaining Limitations
-- Playwright/browser route verification was not run by default because prior workflow runs timed out while downloading Playwright browsers. Production build validation is the primary automated UI check in this pass.
-- The frontend still depends on generated JSON contracts; if a contract omits optional fields, compact empty states are shown instead of fabricated values.
-- External F1 source freshness can only be as reliable as the backend source timestamps and cache metadata.
+**8.91 / 10** (equal-weight assessment below: raw 8.916666…; truncated).
+The interface is materially improved. The request for 9+ in every section is
+**not yet satisfied**. “Impeccable” and “no issues” would overstate this evidence.
 
-## How To Test The UI
-1. From the repo root, run `cd frontend`.
-2. Run `npm run build`.
-3. Run `npm run check`.
-4. Start the app with `npm run dev`.
-5. Visit `/`, `/predictions`, `/drivers`, `/teams`, `/strategy`, `/live`, `/model`, `/archive`, and `/sources`.
-6. Toggle Developer Mode on Prediction Board or Archive only when raw contract details are needed.
+| Area | Score | Basis and limit |
+|---|---:|---|
+| Hierarchy and visual consistency | 9.1 | Clear event, state and data hierarchy; restrained red/dark identity and consistent self-hosted typography |
+| Responsive layout | 9.0 | Desktop, laptop, two mobile engines and 320 px checks pass; tables intentionally scroll within their containers |
+| Controls and states | 9.1 | Explicit loading/failure/unavailable/no-match states; retry, search, menu, settings and focus restoration verified |
+| Motion | 9.0 | Short bounded entrance/disclosure/press feedback, no continuous decoration, stationary end state and reduced-motion tests |
+| Accessibility | 8.8 | Semantic tables, labeled controls, focusable scroll regions, keyboard and axe checks; no manual screen-reader certification |
+| Performance evidence | 8.5 | Production build and short transitions verified, self-hosted fonts; no hosted Core Web Vitals or low-end-device measurements |
 
-## Manual Verification Targets
-- `/predictions`: Full Grid table, compact Top 10, low-trust banner, Developer Mode.
-- `/drivers`: P1-P22 table, filters, watchlist, driver drawer.
-- `/teams`: constructor table and selected-team detail.
-- `/live`: archived timing label, no invalid radio controls, telemetry unavailable state.
-- `/model`: Overview/Metrics/Source Health/Developer tabs.
-- `/archive`: race grouping, no duplicate race cards, two-record comparison.
+## Actual review coverage
+
+Viewed overview at 1440×1000, methodology at 1280×800, and session timing at
+390×844 in the browser. Inspected saved production-build screenshots including
+rankings, results/history in mobile WebKit, methodology and the 320 px overview.
+The broader browser suite covers overview, rankings, drivers, constructors,
+strategy, sources, methodology, archive and timing across four projects.
+
+States checked include current upcoming event, historical classification/timing,
+unavailable qualifying, loading, API failure/retry, no matching search results,
+empty calendar and isolated test-only live timing. There was no genuine live event
+during the review. Test screenshots are not evidence of live production operation.
+
+## Improvements verified
+
+- Consistent spacing, neutral surfaces, tabular figures and compact mobile header.
+- Responsive calendar/grid shrinking; no document overflow in covered checks.
+- Wide classifications remain readable in contained, keyboard-scrollable tables.
+- Timing selector and provenance disclosures reduce the initial information load.
+- Full supplied field remains visible, including 22-driver timing fixtures.
+- Settings has real labels and Escape dismissal; mobile menu restores trigger focus.
+- No-result search explains the empty state instead of showing an empty table.
+- Surface entrance uses 240 ms translation; controls/disclosures use 160 ms.
+  Text stays fully opaque; reduced motion removes animations.
+- Unsupported tyre-wear visualization and Aero / Boost removed; correct wind units,
+  explicit unknown values and valid zero readings retained.
+- UTC race-control messages remain correct in an Asia/Kolkata browser.
+
+## Critical issues
+
+None reproduced in the covered local rendered paths. This is bounded validation,
+not a guarantee that every browser, provider payload or hosting state is correct.
+
+## Major issues
+
+**Mobile timing remains dense.** Sideways navigation is necessary to see all timing
+columns. Root cause: a complete motorsport table carries more fields than a phone
+can display at readable size. Best next improvement: observe actual driver-tracking
+tasks and compare a compact column selector or driver detail view against the current
+contained table. Do not hide legitimate rows or shrink type merely to fit.
+
+**Real-world performance is unmeasured.** Local render success cannot establish
+frame stability under a long stream or good Core Web Vitals on slow devices. Root
+cause: no deployed measurements or legitimate live-session endurance run. Best fix:
+measure the deployed build and an actual session, then target observed bottlenecks.
+
+## Minor issues
+
+- Consolidate duplicated timing state/source copy while preserving error visibility.
+- Complete VoiceOver, physical-device and zoom/readability review before describing
+  accessibility as comprehensive. Automated axe results alone are insufficient.
+
+## Evidence
+
+Full suite: **84 passed** across Chromium desktop/laptop/mobile and WebKit phone.
+It includes axe checks for eight product routes and timing, 320 px containment,
+keyboard entry, settings/menu focus behavior and reduced-motion/bounded-motion
+assertions. Test fixtures are confined to the test suite. Separate backend/unit
+results and the critic history are recorded in the whole-product report.

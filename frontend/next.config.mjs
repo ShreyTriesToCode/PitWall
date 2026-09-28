@@ -1,5 +1,8 @@
+import path from "node:path";
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: path.resolve(process.cwd(), ".."),
+  outputFileTracingIncludes: { "/*": ["../data_cache/product.json"] },
   devIndicators: false,
   async headers() {
     return [
@@ -9,7 +12,11 @@ const nextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+          },
         ],
       },
     ];

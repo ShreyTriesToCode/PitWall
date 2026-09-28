@@ -1,0 +1,4825 @@
+{
+  "status": "AVAILABLE",
+  "kind": "retrospective_reconstruction",
+  "created_at": "2026-09-26T11:08:25.646806+00:00",
+  "model_version": "qualifying-order-v1",
+  "candidate_version": "qualifying-recent5-equal-rank-v1",
+  "training_data_cutoff": null,
+  "test_period": "2024–2025",
+  "development_period": "2019–2023",
+  "history_start": "2018",
+  "baseline": {
+    "races": 39,
+    "mae": 3.0719298245614035,
+    "rmse": 4.224885404889084,
+    "spearman": 0.705668016194332,
+    "winner_hit": 0.5384615384615384,
+    "winner_top3": 0.8717948717948718
+  },
+  "candidate": {
+    "races": 39,
+    "mae": 3.1908232118758435,
+    "rmse": 4.321707848247153,
+    "spearman": 0.6927639611850138,
+    "winner_hit": 0.4358974358974359,
+    "winner_top3": 0.9230769230769231
+  },
+  "by_season": [
+    {
+      "season": 2024,
+      "baseline": {
+        "races": 18,
+        "mae": 2.833625730994152,
+        "rmse": 3.9090730940010787,
+        "spearman": 0.7503341687552214,
+        "winner_hit": 0.4444444444444444,
+        "winner_top3": 0.7777777777777778
+      },
+      "candidate": {
+        "races": 18,
+        "mae": 2.935672514619883,
+        "rmse": 3.946593643531926,
+        "spearman": 0.7430103035366193,
+        "winner_hit": 0.3888888888888889,
+        "winner_top3": 0.8333333333333334
+      }
+    },
+    {
+      "season": 2025,
+      "baseline": {
+        "races": 21,
+        "mae": 3.276190476190476,
+        "rmse": 4.4955816713645165,
+        "spearman": 0.6673827425707125,
+        "winner_hit": 0.6190476190476191,
+        "winner_top3": 0.9523809523809523
+      },
+      "candidate": {
+        "races": 21,
+        "mae": 3.4095238095238094,
+        "rmse": 4.643234309431635,
+        "spearman": 0.6496956677407805,
+        "winner_hit": 0.47619047619047616,
+        "winner_top3": 1
+      }
+    }
+  ],
+  "development": {
+    "baseline": {
+      "races": 93,
+      "mae": 3.5731182795698926,
+      "rmse": 4.843946563149382,
+      "spearman": 0.6195973805481445,
+      "winner_hit": 0.5376344086021505,
+      "winner_top3": 0.8709677419354839
+    },
+    "candidate": {
+      "races": 93,
+      "mae": 3.5064516129032257,
+      "rmse": 4.756838301141247,
+      "spearman": 0.6331797235023041,
+      "winner_hit": 0.5806451612903226,
+      "winner_top3": 0.8924731182795699
+    }
+  },
+  "promotion": {
+    "eligible_for_review": false,
+    "promoted": false,
+    "checks": {
+      "at_least_30_test_races": true,
+      "at_least_two_test_seasons": true,
+      "mae_improves_by_5_percent": false,
+      "no_season_mae_regression": false,
+      "no_rank_correlation_regression": false
+    },
+    "reason": "Production remains the qualifying-order baseline. Promotion requires an independently reviewed version change and untouched future validation."
+  },
+  "limitations": [
+    "Historical provider revisions may differ from what was published at the time; publication timestamps were not retained.",
+    "Complete qualifying/result fields with prior history for every entrant are required; excluded races are listed.",
+    "Qualifying rank is not the starting grid: penalties, pit-lane starts, substitutions and weather are not modeled.",
+    "Metrics use final classified order including DNFs, DNS and DSQ; this is not a pace model.",
+    "No probability calibration, confidence interval or statistical significance claim is made."
+  ],
+  "races": [
+    {
+      "race_id": "2019:2:race",
+      "name": "Bahrain Grand Prix",
+      "season": 2019,
+      "round": 2,
+      "start_at": "2019-03-31T15:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.3,
+        "rmse": 5.291502622129181,
+        "spearman": 0.5789473684210527,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.7,
+        "rmse": 4.743416490252569,
+        "spearman": 0.6616541353383458,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "4e40a983a76f91f6cf53e6717038e85ef1d95a0b446a3f2b0b46e25262984be3",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/2/qualifying.json",
+          "sha256": "82901e05d9d3fe3f7fa5af8a56c909ff678a276abbda8648025aaa475ed29141"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/2/results.json",
+          "sha256": "890dbcba34317771a6d278c829e5debdde54a1d4e3b9fc5e626730dbcab91906"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:4:race",
+      "name": "Azerbaijan Grand Prix",
+      "season": 2019,
+      "round": 4,
+      "start_at": "2019-04-28T12:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.1,
+        "rmse": 4.636809247747852,
+        "spearman": 0.6766917293233083,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.427188724235731,
+        "spearman": 0.7052631578947368,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "8ff73b551ee6dd007e6fa8c78ea9d5ac0d84503d60b44b497895086a136217e4",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/4/qualifying.json",
+          "sha256": "8fa8e628d79bf16cf5f162fdb6502bf2deabed4ee9b0ff07717571c5bf3b8d49"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/4/results.json",
+          "sha256": "ebb6ea06598b1298827a9a09f141023e129a59abe8d276cbea1f2dc99b0bcd2f"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:5:race",
+      "name": "Spanish Grand Prix",
+      "season": 2019,
+      "round": 5,
+      "start_at": "2019-05-12T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 1.8,
+        "rmse": 2.7386127875258306,
+        "spearman": 0.887218045112782,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 3.7682887362833544,
+        "spearman": 0.7864661654135339,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "6338aee69884d206eee8f940d2b2a69ae068ed9be1ea3c56cf8d11b03776ec3e",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/5/qualifying.json",
+          "sha256": "52fac07a2aa2e30efbc5bef30f4de4d1626fd46d8ba0cad94d0128968d8fdf02"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/5/results.json",
+          "sha256": "4144851165b7a1d9dc64e94f5a5e4b74327332fcfdd8ef05a8e842e777181c21"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:6:race",
+      "name": "Monaco Grand Prix",
+      "season": 2019,
+      "round": 6,
+      "start_at": "2019-05-26T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 3.0983866769659336,
+        "spearman": 0.8556390977443609,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.58257569495584,
+        "spearman": 0.6842105263157895,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d822ecb0ae4d56435432ea206af38404f50634221292cf4010ad7fe6a7bc8b07",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/6/qualifying.json",
+          "sha256": "1a8d8db690f6b16fa6ed3a7781e2487189d6c15ab2c43810d28bb318d2a6cdd1"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/6/results.json",
+          "sha256": "715ab3f5f22c66bce85d5de23f8d5a201c14d798a3f2113ab00ad06bbd342bdf"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:7:race",
+      "name": "Canadian Grand Prix",
+      "season": 2019,
+      "round": 7,
+      "start_at": "2019-06-09T18:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.449719092257398,
+        "spearman": 0.7022556390977444,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.571651780264984,
+        "spearman": 0.6857142857142857,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "e6496c0b44236b3d68e3d1a277a63ef3fc2c39f0bf472f37942ff544a03793f2",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/7/qualifying.json",
+          "sha256": "bc549d68416aecc47861ced413b7af9e0194cbe5d61c74c3d8e0297fe3026a3c"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/7/results.json",
+          "sha256": "98c31019c4771c09a7c01d0b9d9efd0456c14d2d9743a44b931de2b900bb1332"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:8:race",
+      "name": "French Grand Prix",
+      "season": 2019,
+      "round": 8,
+      "start_at": "2019-06-23T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.3,
+        "rmse": 3.0166206257996713,
+        "spearman": 0.8631578947368421,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.40587727318528,
+        "spearman": 0.825563909774436,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "5c8779101a47e67191eae6f7c104f27762804bd0bde4cc69fec0a965f565db65",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/8/qualifying.json",
+          "sha256": "95d37acf3aa33bb0f91927f7a543239c4885a1585f9d066af52bdc5be4ab2a08"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/8/results.json",
+          "sha256": "ffa762f1fcff6e007b4b0f96a8ee170a8fd795adb4dbb54244850bba31ac7324"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:9:race",
+      "name": "Austrian Grand Prix",
+      "season": 2019,
+      "round": 9,
+      "start_at": "2019-06-30T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3,
+        "rmse": 4.347413023856832,
+        "spearman": 0.7157894736842105,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 3.420526275297414,
+        "spearman": 0.8240601503759398,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "ef27affa624ecc0d34420bd02cc8bf750af2df93259bfbeaa6af6add42b8013e",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/9/qualifying.json",
+          "sha256": "ef5fa4c506ded2d5f20bb5b9db91ef75fda3f3f3c71c4bcf6c88f14cdbbe0ad5"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/9/results.json",
+          "sha256": "dd1e0d846bb41ce41770a85f21d38cb93472feb0e099f2aae4b18f1e6bf7946b"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:10:race",
+      "name": "British Grand Prix",
+      "season": 2019,
+      "round": 10,
+      "start_at": "2019-07-14T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.6,
+        "rmse": 4.58257569495584,
+        "spearman": 0.6842105263157895,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 3.9115214431215892,
+        "spearman": 0.7699248120300752,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "7b2debbfeadf008c1fa237d495bc5e89169c03514a97e4973096685171547696",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/10/qualifying.json",
+          "sha256": "95136ffcb09e6b12d4d2bb9ddc1017635ec46a86bddb5b032ecc338e76281f51"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/10/results.json",
+          "sha256": "ffbf66272879cb79be6dde5ad81c988053fb63f4b7ed7800068b9db595de9cf5"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:11:race",
+      "name": "German Grand Prix",
+      "season": 2019,
+      "round": 11,
+      "start_at": "2019-07-28T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 7.4,
+        "rmse": 8.608135686662937,
+        "spearman": -0.11428571428571432,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 7.7,
+        "rmse": 8.573214099741124,
+        "spearman": -0.10526315789473695,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "0418fcd5967843fb9e6233b5ea4ea5f0b4d6e3b633171f29fcb5c710af7f3607",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/11/qualifying.json",
+          "sha256": "239f0e8273ce0e43c8b1a2e9536c286b1d6501a1d8426be5f777fde003153f37"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/11/results.json",
+          "sha256": "78f91f0541c21c48acc936cb523cbcbc9a360a303ee71b32bb52609f441b7962"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:12:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2019,
+      "round": 12,
+      "start_at": "2019-08-04T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.7013511046643495,
+        "spearman": 0.793984962406015,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.7,
+        "rmse": 3.449637662132068,
+        "spearman": 0.8210526315789474,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "769dd838ec26d0ac86a6205421427665452f0b698edb013bb6ce7841dcf565f7",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/12/qualifying.json",
+          "sha256": "1ab78a735cba56f116f096db7b47bc0a75172899c5e2a3cbeef9bc4f6308b66f"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/12/results.json",
+          "sha256": "79718dbb8eda6f965390a85bc373ca09215113b7fd6b96681d91aa384fa8fca3"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:13:race",
+      "name": "Belgian Grand Prix",
+      "season": 2019,
+      "round": 13,
+      "start_at": "2019-09-01T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.3,
+        "rmse": 5.813776741499453,
+        "spearman": 0.4917293233082707,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.5,
+        "rmse": 6.18869937870632,
+        "spearman": 0.4240601503759398,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "498dc9ca8a5036a49528fbfdae609427aa646c5d5e8d4a60e61ce83b95a600c1",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/13/qualifying.json",
+          "sha256": "87bc4c03be629df0ce5f591d8677c8543a17f10094bb992f6d2ddeead2488e77"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/13/results.json",
+          "sha256": "1cc00e9e5341b7bd46c1e7b6ea0256e27d2a9a890326e5e1f3508e97eef080da"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:14:race",
+      "name": "Italian Grand Prix",
+      "season": 2019,
+      "round": 14,
+      "start_at": "2019-09-08T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.3,
+        "rmse": 5.761944116355173,
+        "spearman": 0.5007518796992481,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.3,
+        "rmse": 5.718391382198319,
+        "spearman": 0.5082706766917293,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "37ff00f048f7e0bc81719dd546d935f54e0b9b9b563be10a3edff40be4d1942a",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/14/qualifying.json",
+          "sha256": "8bc461a4946f3d293870eda9544cf3f64507425f5569604093ced769bb6c41a8"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/14/results.json",
+          "sha256": "457b7fe951b3e78e260548502e58d74549ba5c3e9eb69b829389a587b5f17d89"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:15:race",
+      "name": "Singapore Grand Prix",
+      "season": 2019,
+      "round": 15,
+      "start_at": "2019-09-22T12:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 3.646916505762094,
+        "spearman": 0.8,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 3.5355339059327378,
+        "spearman": 0.8120300751879699,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "c4a5bf285643a571065eda17f89e1df9f081c77ad466f955b47e7fc0e198eca9",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/15/qualifying.json",
+          "sha256": "037ab904c3e8d6f819a00f10d04b82fbbb4e2fda1f29da77463c2460faf4b220"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/15/results.json",
+          "sha256": "3e0e08a8a13d69a3e281cfa7d6d02b0e23506d28769ed9876dfcccb9218ddfae"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:16:race",
+      "name": "Russian Grand Prix",
+      "season": 2019,
+      "round": 16,
+      "start_at": "2019-09-29T11:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.5,
+        "rmse": 6.332456079595025,
+        "spearman": 0.39699248120300756,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.2,
+        "rmse": 5.477225575051661,
+        "spearman": 0.5488721804511278,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "413668ffb26d3b9ebb0b475ec4b1a14170d8e6a7b0a43d743f94023808705841",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/16/qualifying.json",
+          "sha256": "ce843645ccc6f999e1200593a1646f84fd7d536a2295eacaf85fc1281a012e35"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/16/results.json",
+          "sha256": "602871c67c497ec950f1cac1fda0e85749075e6ef63188a26a173723d500f25e"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:17:race",
+      "name": "Japanese Grand Prix",
+      "season": 2019,
+      "round": 17,
+      "start_at": "2019-10-13T05:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.5,
+        "rmse": 4.47213595499958,
+        "spearman": 0.6992481203007519,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.5,
+        "rmse": 4.626013402488151,
+        "spearman": 0.6781954887218045,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "cf1dfe3abcc23fd50a7b2518dc4686147ff6244bcecec0f7645698c202235b94",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/17/qualifying.json",
+          "sha256": "a5bd3f5557a7b9816997b6c06255f5042086aa2a89b29753f9808c5a505835fe"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/17/results.json",
+          "sha256": "cd8b7e3267d322d888f96fa0efe53101c252592b71dd7da76c9b4c022959a3c9"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:18:race",
+      "name": "Mexican Grand Prix",
+      "season": 2019,
+      "round": 18,
+      "start_at": "2019-10-27T19:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.110960958218893,
+        "spearman": 0.7458646616541353,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.63318042491699,
+        "spearman": 0.8015037593984963,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "45e12340c701a44afbce445caa4c5990929d5ff3e5baf58e3c82821d99b134d8",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/18/qualifying.json",
+          "sha256": "bf7b38042f959c9d7cf56381d468a5441d8167117c5835188d404d1881daa3a8"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/18/results.json",
+          "sha256": "8d2e4ad8632fed2053fbaf1b7eb5cfcd60148faffb5e077dbbfd9df646b73c10"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:19:race",
+      "name": "United States Grand Prix",
+      "season": 2019,
+      "round": 19,
+      "start_at": "2019-11-03T19:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.1,
+        "rmse": 5.224940191045253,
+        "spearman": 0.5894736842105264,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.8373546489791295,
+        "spearman": 0.6481203007518797,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "675bf363bde6a6326d3c35b85484d36aad0ab954dfebf56de848d0f6eda85c2c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/19/qualifying.json",
+          "sha256": "cab24e6a61684f742659a416779fda99e23188aaa8ad0406863e31ac8c77d0b9"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/19/results.json",
+          "sha256": "70cd036346be35d228126118ee7010283c0e414e0800cf6f17614c493f4277f2"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:20:race",
+      "name": "Brazilian Grand Prix",
+      "season": 2019,
+      "round": 20,
+      "start_at": "2019-11-17T17:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 6.5,
+        "rmse": 8.130190649671137,
+        "spearman": 0.006015037593984918,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 6.3,
+        "rmse": 7.880355321938218,
+        "spearman": 0.06616541353383454,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "cfa4a4ec0795ac859cd039f7248d24d4b60a8871b20d757395317088c8e4c8c4",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/20/qualifying.json",
+          "sha256": "7f518908448349dadc5ac12eadaa63b7a502b469e894d14c4073bdabc92ce26b"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/20/results.json",
+          "sha256": "f6c6e8156a60164ec867cf88bcb97f81f134703805e6e43c98fa5235eeb19de3"
+        }
+      ]
+    },
+    {
+      "race_id": "2019:21:race",
+      "name": "Abu Dhabi Grand Prix",
+      "season": 2019,
+      "round": 21,
+      "start_at": "2019-12-01T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.2,
+        "rmse": 3.0,
+        "spearman": 0.8646616541353384,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 2.8284271247461903,
+        "spearman": 0.8796992481203008,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "e031aac54e493a9fca50be1c3e2766e9b63fb23e74aaeb9aa10851951e33d7f5",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/21/qualifying.json",
+          "sha256": "90f42aeaadf027ce767b2dd4564dfd78e6461ad1e8d001ce27d21c0e41f6db0a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2019/21/results.json",
+          "sha256": "78f1005def611ff3a80921240956db9ca5d05a8d7945b96387119cc27536004d"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:2:race",
+      "name": "Styrian Grand Prix",
+      "season": 2020,
+      "round": 2,
+      "start_at": "2020-07-12T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.9,
+        "rmse": 6.04979338490167,
+        "spearman": 0.4496240601503759,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.5,
+        "rmse": 5.727128425310541,
+        "spearman": 0.5067669172932331,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "09d0767a244b3496304bc5b42a067965222f2657c70eabfe2f0cc373d76f1b8a",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/2/qualifying.json",
+          "sha256": "fa4064dff6867bba0cbc971e555bb488ae0827b1085438504c043a67612793a0"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/2/results.json",
+          "sha256": "6a773e814d4b07188d77d41055eb9e3b85d4471d4fcdf42a654a650064b852c6"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:3:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2020,
+      "round": 3,
+      "start_at": "2020-07-19T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.6,
+        "rmse": 4.505552130427524,
+        "spearman": 0.6947368421052631,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.6,
+        "rmse": 4.679743582719036,
+        "spearman": 0.6706766917293233,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "5a0c125fa4ae4c0a3711e65504f465056c2e1ecbc62ab3b30d314ada3f719b8d",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/3/qualifying.json",
+          "sha256": "ac70f3e68b1f82fda9626014a013565ca8fb1cd16f0d1fa79a7cddd3592cbeb8"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/3/results.json",
+          "sha256": "312afecde2e4d927b730400f309e56517064bc6927fa7aa9395402573b839d74"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:4:race",
+      "name": "British Grand Prix",
+      "season": 2020,
+      "round": 4,
+      "start_at": "2020-08-02T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 3.9496835316262997,
+        "spearman": 0.7654135338345864,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.6,
+        "rmse": 4.516635916254486,
+        "spearman": 0.693233082706767,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "056ed92d7fc772ef29bdd2a9b6b87b3fb253105e67297a95749d9ac5a22de769",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/4/qualifying.json",
+          "sha256": "672ed82317e1ace09773f8a0ba93827d7b155369d005b6df6d25733d1dd267a3"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/4/results.json",
+          "sha256": "95a39af8c4db42f16740728d152eddebd70efe4548dc055a1baa36a3baaf8ffe"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:5:race",
+      "name": "70th Anniversary Grand Prix",
+      "season": 2020,
+      "round": 5,
+      "start_at": "2020-08-09T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 3.5777087639996634,
+        "spearman": 0.8075187969924812,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 3.22490309931942,
+        "spearman": 0.843609022556391,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "b8bb597d1db6e1c26fd6aa74c43e561f7a5cde22063ad8f47cbbb28abff9f176",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/5/qualifying.json",
+          "sha256": "af30d12e7eb46c560084189adb08f6698b56f97c0701249ce6415b29c50e071f"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/5/results.json",
+          "sha256": "4cd9751a028e159f32cfe01b99929f2e952a9b6b07be320c64f61c43bca1c4e8"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:6:race",
+      "name": "Spanish Grand Prix",
+      "season": 2020,
+      "round": 6,
+      "start_at": "2020-08-16T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 1.9,
+        "rmse": 3.0166206257996713,
+        "spearman": 0.8631578947368421,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.1,
+        "rmse": 3.0659419433511785,
+        "spearman": 0.8586466165413533,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "a3c58e04cb5373f1cd63b665912fd80e7428726822c0f8c81e4ae11ab8ea3559",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/6/qualifying.json",
+          "sha256": "0008765a3bacf747fd5bd5b6b6789c61f8ef9ed484550b46413eab17a0f2b91a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/6/results.json",
+          "sha256": "6d4a53559e4d3c9537a7f09e1e366df617d9f4aa981492ae5931f22c7e990eb3"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:7:race",
+      "name": "Belgian Grand Prix",
+      "season": 2020,
+      "round": 7,
+      "start_at": "2020-08-30T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.1,
+        "rmse": 3.5777087639996634,
+        "spearman": 0.8075187969924812,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.7,
+        "rmse": 3.8078865529319543,
+        "spearman": 0.7819548872180451,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "a06634836175b62a5cf71877e090048e70a9daacf0e17b566d9ca488abbfd8bf",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/7/qualifying.json",
+          "sha256": "8f8f4a88f29651f6f222ff3569f875c6ba4801ef56d6cab54a8e89e4e844c1d8"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/7/results.json",
+          "sha256": "f6fe916d6c2f0122521584ba88c623b4dbde13992f5887d8017c18fdd2e21ad5"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:8:race",
+      "name": "Italian Grand Prix",
+      "season": 2020,
+      "round": 8,
+      "start_at": "2020-09-06T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.5,
+        "rmse": 5.338539126015656,
+        "spearman": 0.5714285714285714,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.3,
+        "rmse": 6.180614856144977,
+        "spearman": 0.42556390977443614,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "a4f71f56dde79606f8461f921184d9c1b1a5796b754e200adacb468dfaa55786",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/8/qualifying.json",
+          "sha256": "3d947506a79a1bc3bbbe0048f77fc6a36ca4fb7e3a104ab940e7d2ae8bf2d733"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/8/results.json",
+          "sha256": "09c614055733a777668ffe3857bee2bec97cc462a7a39e5989d9165670c2fe51"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:9:race",
+      "name": "Tuscan Grand Prix",
+      "season": 2020,
+      "round": 9,
+      "start_at": "2020-09-13T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.2,
+        "rmse": 5.495452665613635,
+        "spearman": 0.5458646616541354,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 5.796550698475776,
+        "spearman": 0.49473684210526314,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "dbf34a9821d484010eeed2af8557dfe9133b5cab0aaeca29f90c6cb121f81b7d",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/9/qualifying.json",
+          "sha256": "37b81bae73d2ba96e28daad820dfcb1e7242cbe443414bec97180b2d35954a15"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/9/results.json",
+          "sha256": "da8dc12b85f396cb3a7fee3466e0563f0dd6796358a72e507c5357b4088e0704"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:10:race",
+      "name": "Russian Grand Prix",
+      "season": 2020,
+      "round": 10,
+      "start_at": "2020-09-27T11:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.4,
+        "rmse": 4.764451699828638,
+        "spearman": 0.6586466165413534,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.8,
+        "rmse": 5.049752469181039,
+        "spearman": 0.6165413533834587,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "09bf167673561095473c5fcb830650af769a4ab48fdf51e81ef1993c2eb9f9ed",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/10/qualifying.json",
+          "sha256": "b54a1ea225adce643a7ff190bae5d61e1baea88d67b3a4cdf0db15c451e86b38"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/10/results.json",
+          "sha256": "96edf715b84803cffa1c7a7c2c4237a4cd8cc10502684b5a697d99019077ff4f"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:11:race",
+      "name": "Eifel Grand Prix",
+      "season": 2020,
+      "round": 11,
+      "start_at": "2020-10-11T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.7,
+        "rmse": 7.245688373094719,
+        "spearman": 0.21052631578947367,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.3,
+        "rmse": 6.913754406977442,
+        "spearman": 0.281203007518797,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "bc61be88306dd55d4e626add2f8844356590fd41ab14bfac7d9c1a806e90ee61",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/11/qualifying.json",
+          "sha256": "0ab3d485f09f56ccf9ea82cbedd47573d0d2c1a68ba66ff005c755599a969524"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/11/results.json",
+          "sha256": "a6489f0b0f921aabe2d022d3feec1e68e18ab2d770570effcc4f5493b3679e7a"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:12:race",
+      "name": "Portuguese Grand Prix",
+      "season": 2020,
+      "round": 12,
+      "start_at": "2020-10-25T12:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.605551275463989,
+        "spearman": 0.8045112781954887,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.159326868617084,
+        "spearman": 0.7398496240601504,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "5d9f0fc0f0b9b03fa47e7da8d9265de40686a79dd6bf268f41f14de8c547d2bd",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/12/qualifying.json",
+          "sha256": "383aa65ce67cb333d1ee4d24e70183367c6c86836e7bcda6b1cb13e8a0abc409"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/12/results.json",
+          "sha256": "17035ae1f66cc27555229946cd5e80c028d16d20ccc7fdf0c22ee1715f457bc4"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:13:race",
+      "name": "Emilia Romagna Grand Prix",
+      "season": 2020,
+      "round": 13,
+      "start_at": "2020-11-01T12:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.1,
+        "rmse": 6.745368781616021,
+        "spearman": 0.3157894736842105,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.2,
+        "rmse": 6.18869937870632,
+        "spearman": 0.4240601503759398,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "ac6433c0d9d2b7c374d596ecc273db7fc073d111dd1c4722581ae6ce9a0d3df7",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/13/qualifying.json",
+          "sha256": "294b828a0a04b5ac09d3914017ad95dcfcf53037095d6543d1704fa972be662d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/13/results.json",
+          "sha256": "876c26823607fd46802e905702af6e255062b933d1a5e4bafe1cdc8b48379e84"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:14:race",
+      "name": "Turkish Grand Prix",
+      "season": 2020,
+      "round": 14,
+      "start_at": "2020-11-15T10:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.7,
+        "rmse": 5.5677643628300215,
+        "spearman": 0.5338345864661654,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.7,
+        "rmse": 4.732863826479693,
+        "spearman": 0.6631578947368422,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "5aadf4e7be09bfaeff65a75db609f5f6c073b312a75835db431baf22fd5a2428",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/14/qualifying.json",
+          "sha256": "ca650cb941f65131569931aee588d6437531a0fc23232e381132f79eab90464a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/14/results.json",
+          "sha256": "b1450961a63211116c570f8af724a2c441767e48d82d627045e7699f8ca7dc2c"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:15:race",
+      "name": "Bahrain Grand Prix",
+      "season": 2020,
+      "round": 15,
+      "start_at": "2020-11-29T14:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.6475800154489,
+        "spearman": 0.675187969924812,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.6,
+        "rmse": 5.0,
+        "spearman": 0.6240601503759399,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d07c9d9bde95fce5a2cb26ba67fed853086df275024ee6d61eac727a57284a2c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/15/qualifying.json",
+          "sha256": "1467c71644faa22900f0e1e4ac1092ff06cf0d0236e3ae2ca275db33efe6daa4"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/15/results.json",
+          "sha256": "91e698d29e5a7ff5c66567e6b0f7b7ffe7120de1fcdf904794be2db5148e4d1e"
+        }
+      ]
+    },
+    {
+      "race_id": "2020:17:race",
+      "name": "Abu Dhabi Grand Prix",
+      "season": 2020,
+      "round": 17,
+      "start_at": "2020-12-13T13:10:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2,
+        "rmse": 2.6076809620810595,
+        "spearman": 0.8977443609022556,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.286335345030997,
+        "spearman": 0.837593984962406,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "a4018668e7789a184249306e3239e19a4ab04ebae74cc16334710ed06d80833b",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/17/qualifying.json",
+          "sha256": "131d0aad609ba9a42385ee40e4f956601cc63555bba44c070d16269c8453f4ca"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2020/17/results.json",
+          "sha256": "e29d21003da076ba900388327bb2f67d9abb917e1ee615c1af7b3bf35389f8a3"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:2:race",
+      "name": "Emilia Romagna Grand Prix",
+      "season": 2021,
+      "round": 2,
+      "start_at": "2021-04-18T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.7,
+        "rmse": 4.743416490252569,
+        "spearman": 0.6616541353383458,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.5,
+        "rmse": 4.527692569068709,
+        "spearman": 0.6917293233082706,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "3358d843ee70e4e407aeec04861e358d4598fdd0f75ea2e299847d10777874ae",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/2/qualifying.json",
+          "sha256": "eb461fb6e2f27362be4ebe96086f92324e907add12476d0c18c38a29be0a12bb"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/2/results.json",
+          "sha256": "2c3b646fc37a0178e7700af70eb5ffa6ff01dcf95d874c736fa6db30d188aeef"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:3:race",
+      "name": "Portuguese Grand Prix",
+      "season": 2021,
+      "round": 3,
+      "start_at": "2021-05-02T14:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.4,
+        "rmse": 3.1622776601683795,
+        "spearman": 0.849624060150376,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 3.24037034920393,
+        "spearman": 0.8421052631578947,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "3deeb1bd50b8ad278504829f21d0cb494c7d4ede6561a10d1fbf52b7179ed8c0",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/3/qualifying.json",
+          "sha256": "48e6bd1ce93422566c67603f3054a43b134f33ad74e028563e5c9dbc709caccb"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/3/results.json",
+          "sha256": "93a2af1fc0df55e3d38b264240cff4538595d1099c4ad1c34025cafb5ee6a213"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:4:race",
+      "name": "Spanish Grand Prix",
+      "season": 2021,
+      "round": 4,
+      "start_at": "2021-05-09T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 1.7,
+        "rmse": 2.588435821108957,
+        "spearman": 0.8992481203007519,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.1,
+        "rmse": 2.898275349237888,
+        "spearman": 0.8736842105263158,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "c50d2ecefc9a06f47473cf0365203005386dc78b6ce54f522b81c18cfd8c2dc8",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/4/qualifying.json",
+          "sha256": "17435ee6a3e2a7d2e28a41e319121393ccb207d4b0b9d39fd99e0056be55142d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/4/results.json",
+          "sha256": "3b1b661e698bb45ac05f2cf08f58eee7576800ccfee723c5624c02e2ce87f58a"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:6:race",
+      "name": "Azerbaijan Grand Prix",
+      "season": 2021,
+      "round": 6,
+      "start_at": "2021-06-06T12:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.6,
+        "rmse": 6.156297588648554,
+        "spearman": 0.43007518796992483,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.4,
+        "rmse": 6.8044103344816,
+        "spearman": 0.30375939849624056,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "be8d8d71d3c852f8fe1a27002445c8eb2fc7b2c1c0598e7ba1b16b8d0cf67c3c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/6/qualifying.json",
+          "sha256": "18a890a1d6039b48a09730854eb1abf9f69acea9a0b3be0575f325fd0380cfeb"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/6/results.json",
+          "sha256": "8819c6f7df1c92e693cec2c85b99b1a2720218e028c6cd1e30f7fa60ea04fac5"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:7:race",
+      "name": "French Grand Prix",
+      "season": 2021,
+      "round": 7,
+      "start_at": "2021-06-20T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3,
+        "rmse": 4.03732584763727,
+        "spearman": 0.7548872180451127,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.5777087639996634,
+        "spearman": 0.8075187969924812,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "89e711857148452057d3b866613056375f6c9a6ecaf0ac3fe3c5c4445f670a46",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/7/qualifying.json",
+          "sha256": "fe7037dfe5689049cee38f177c76e8fc1c864c70a59f96505651871de6879d64"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/7/results.json",
+          "sha256": "ee9f2b27a7ceb3e96bebceb45abb00f482e2f781920dd48e15793f37fcd6ae89"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:8:race",
+      "name": "Styrian Grand Prix",
+      "season": 2021,
+      "round": 8,
+      "start_at": "2021-06-27T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 4.381780460041329,
+        "spearman": 0.7112781954887217,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.4,
+        "rmse": 3.9496835316262997,
+        "spearman": 0.7654135338345864,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "4db906848e63a491f042c94fb40f11dd505bc0e3dacb8081817719b10765b1c8",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/8/qualifying.json",
+          "sha256": "08c4dca2b32b299efe7d9613a597fd8967ad08a976b963c12a56726cb201e7d4"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/8/results.json",
+          "sha256": "317f4dbe6b4ca2d00429d0abdaafbf9ef82d1590c52a8e01b90d53b273d02182"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:9:race",
+      "name": "Austrian Grand Prix",
+      "season": 2021,
+      "round": 9,
+      "start_at": "2021-07-04T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 3.6606010435446255,
+        "spearman": 0.7984962406015037,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.4,
+        "rmse": 3.271085446759225,
+        "spearman": 0.8390977443609022,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "7ce21e95ad1577186fcfdd59ab89ada5b464929e48793bbac798a478c8989751",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/9/qualifying.json",
+          "sha256": "2656ec86e76f554831d624ccd70df6929d89a492bd5b4177ff3ab8db6803a383"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/9/results.json",
+          "sha256": "cf148fbb526e820fbbf779a10324a92b3fb23b8efe3450b76703922e1d8a971a"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:10:race",
+      "name": "British Grand Prix",
+      "season": 2021,
+      "round": 10,
+      "start_at": "2021-07-18T14:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.2,
+        "rmse": 5.966573556070519,
+        "spearman": 0.46466165413533833,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.2,
+        "rmse": 6.23698645180507,
+        "spearman": 0.4150375939849624,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "06a0d75a9d9d9483157648d4343636be92c77174ce4f7f3fc6339a9ab39c32d8",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/10/qualifying.json",
+          "sha256": "2572af468b822a64c559f14cf2ad16ba688e0ba590ff314e171c88a95f78369c"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/10/results.json",
+          "sha256": "5c361445e4c651bdf368718eb550894d68bc9b2a804f68101069d188a5a7c66d"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:11:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2021,
+      "round": 11,
+      "start_at": "2021-08-01T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 7.1,
+        "rmse": 8.282511696339462,
+        "spearman": -0.03157894736842115,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 7.4,
+        "rmse": 8.384509526501834,
+        "spearman": -0.05714285714285716,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "f54d1c19128a6c23495ec162c8167b75015f8dc437cdaf1a9ad0720b9a71d28b",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/11/qualifying.json",
+          "sha256": "d7a9e7c1ee3dc1652267a9b6488938e282d935d266d2ea622824e604f91d26bd"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/11/results.json",
+          "sha256": "deb6918f88e92e1762d89ac024e804f770c6dbfd09325752efd33d1619e3c09e"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:12:race",
+      "name": "Belgian Grand Prix",
+      "season": 2021,
+      "round": 12,
+      "start_at": "2021-08-29T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 3.6606010435446255,
+        "spearman": 0.7984962406015037,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.1,
+        "rmse": 5.412947441089743,
+        "spearman": 0.5593984962406016,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "39da10078f48482b36b2d872f7137d3e3170bd212214a6f03840a5d6aa9c9068",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/12/qualifying.json",
+          "sha256": "01c891e946d64ac837a3e1d5b65a66a37dda0c182cd6e49fe64ffcbf4ae9bec0"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/12/results.json",
+          "sha256": "41f4d553ac3342042414cb1228f91bb8799f11cb554e27a9d11fe697435d3cfe"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:13:race",
+      "name": "Dutch Grand Prix",
+      "season": 2021,
+      "round": 13,
+      "start_at": "2021-09-05T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.2,
+        "rmse": 3.286335345030997,
+        "spearman": 0.837593984962406,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 3.1144823004794873,
+        "spearman": 0.8541353383458646,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "520d8d0e6c951cc13b7f911e872bc5cbd8a3e8703c5e1685e72b5d7f23b03ef6",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/13/qualifying.json",
+          "sha256": "cf2d3b61905c0ae6cb024c12d4ef378f1274dabec63b2e558a8c9f76ab554d9b"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/13/results.json",
+          "sha256": "9f1fd460bcff2dc9bd87847df655a55d24a50d818273b595e20a60fe06fb966c"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:14:race",
+      "name": "Italian Grand Prix",
+      "season": 2021,
+      "round": 14,
+      "start_at": "2021-09-12T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.2,
+        "rmse": 6.603029607687671,
+        "spearman": 0.3443609022556391,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.2,
+        "rmse": 6.870225614927067,
+        "spearman": 0.2902255639097744,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "6d3ed7ae3d978e90f34faf76b393ec749d6687eba1b08e74e75eb504fff4fe4a",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/14/qualifying.json",
+          "sha256": "d1b834818bb275b4453108a542cfd467d68e64349f3498239699342dd8ae424d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/14/results.json",
+          "sha256": "407cdbe5597938b41987b2c624ee6def0e819635c1d5c2f3838de1481ab8b2d0"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:15:race",
+      "name": "Russian Grand Prix",
+      "season": 2021,
+      "round": 15,
+      "start_at": "2021-09-26T12:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.5,
+        "rmse": 5.338539126015656,
+        "spearman": 0.5714285714285714,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.669047011971501,
+        "spearman": 0.6721804511278195,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d760bb1ed184ebfadbb2f6efff6659c3ac1b909d3d5e12e136be838c0aba88d3",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/15/qualifying.json",
+          "sha256": "1c5774291f2e136939b93cc23a23a2f27429b0c9a229d05543cbc496781cc00d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/15/results.json",
+          "sha256": "a60b54c1fae180e279e9efb5cba56d21d7a18abaf6a9976c8ca4155e0bd0d4ac"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:16:race",
+      "name": "Turkish Grand Prix",
+      "season": 2021,
+      "round": 16,
+      "start_at": "2021-10-10T12:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.3,
+        "rmse": 4.415880433163924,
+        "spearman": 0.7067669172932332,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 4.324349662087931,
+        "spearman": 0.718796992481203,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "2bf893f4dc4ad31052db905830182d1c4e132867933a4066989459f93100b68f",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/16/qualifying.json",
+          "sha256": "4beb5152d5684945e448fff5f9a52660eb12365530eda1f6dc95888baeef72a4"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/16/results.json",
+          "sha256": "a6978ff3ca08c81f476eba7f2f630812ad65138f05d83cc43b0aff2ff8e6ed92"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:17:race",
+      "name": "United States Grand Prix",
+      "season": 2021,
+      "round": 17,
+      "start_at": "2021-10-24T19:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.7682887362833544,
+        "spearman": 0.7864661654135339,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.312771730569565,
+        "spearman": 0.7203007518796993,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "b5a20c190b57a439b7855eb9fe1c2085cd8aea7ee075e9a610a860de58e9a4f6",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/17/qualifying.json",
+          "sha256": "03d5b8e0654df86756c53a33905b3f5c9652e97b029c4f99c58130c98f1efe1a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/17/results.json",
+          "sha256": "361f45639306c3f379f275133f0efb00c55291d790fa03f043a0f2f27436503e"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:18:race",
+      "name": "Mexico City Grand Prix",
+      "season": 2021,
+      "round": 18,
+      "start_at": "2021-11-07T19:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.4,
+        "rmse": 4.9899899799498595,
+        "spearman": 0.6255639097744361,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 4.449719092257398,
+        "spearman": 0.7022556390977444,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d897676dd0568402f109a014665f48bc9fc6934369a98174042ff79d039325c5",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/18/qualifying.json",
+          "sha256": "3d2b11dacec69281ebbcabbd6c2b1697033a379cb3d85aaf23abdd66bc4b3faf"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/18/results.json",
+          "sha256": "64c01649847bda46d90fd8ec4e2286c6635a8cab6b5f6ab703e8e7b453168417"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:19:race",
+      "name": "São Paulo Grand Prix",
+      "season": 2021,
+      "round": 19,
+      "start_at": "2021-11-14T17:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2,
+        "rmse": 3.03315017762062,
+        "spearman": 0.8616541353383459,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.5777087639996634,
+        "spearman": 0.8075187969924812,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "66a1434ba0003bbfbf2bb7178cf27f19982d1c27faff92118617d25becac5288",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/19/qualifying.json",
+          "sha256": "ca869e12efb293d2176720eca345c2546be79978fd572da8d4ed2323c3d727ec"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/19/results.json",
+          "sha256": "460c909ebacbf93fe26c34e98dc60d93b07f1e897eb205e3523ed44c2b07aeca"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:20:race",
+      "name": "Qatar Grand Prix",
+      "season": 2021,
+      "round": 20,
+      "start_at": "2021-11-21T14:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.6,
+        "rmse": 5.196152422706632,
+        "spearman": 0.5939849624060151,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 5.10881590977792,
+        "spearman": 0.6075187969924811,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d3562b248b5068fc94dcb2424c9ff9397d879e7a2b8659e0244c13d92c3993ee",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/20/qualifying.json",
+          "sha256": "0eceef2d5fe2aac462a83a1f7c4af69288f095458766b4d78700690be7dd44d1"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/20/results.json",
+          "sha256": "1bd86bb327775241c783780f7ac72bfdf3aa0109584db7e25ff0b0fa8edd74ad"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:21:race",
+      "name": "Saudi Arabian Grand Prix",
+      "season": 2021,
+      "round": 21,
+      "start_at": "2021-12-05T17:30:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.4,
+        "rmse": 4.560701700396552,
+        "spearman": 0.687218045112782,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.505552130427524,
+        "spearman": 0.6947368421052631,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "bd900f33186cb88e0696a3a26c3734566c78a84368104090eec64e842757256f",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/21/qualifying.json",
+          "sha256": "4cd4ca88d08d37afb4f14b00a11ac26610b3095642a28ead294973aa10424bc5"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/21/results.json",
+          "sha256": "535674bdba3852288b79440ff26dea32bd769c3655fb34267c007787c420b261"
+        }
+      ]
+    },
+    {
+      "race_id": "2021:22:race",
+      "name": "Abu Dhabi Grand Prix",
+      "season": 2021,
+      "round": 22,
+      "start_at": "2021-12-12T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 3.7416573867739413,
+        "spearman": 0.7894736842105263,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 4.0743097574926725,
+        "spearman": 0.750375939849624,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "844ff40034478b3266a5422d57b8045e3f9a0d92e21b503d1f68888029fd5bcc",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/22/qualifying.json",
+          "sha256": "67b07ba8390640b5f16205e700216ddccb0b36cf072334772be23c60ad6b5c30"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2021/22/results.json",
+          "sha256": "d7b2a18ead5f92efdff8e944b5beb048f74ab785e1584865bcc9144893245599"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:2:race",
+      "name": "Saudi Arabian Grand Prix",
+      "season": 2022,
+      "round": 2,
+      "start_at": "2022-03-27T17:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.1,
+        "rmse": 4.0,
+        "spearman": 0.7593984962406015,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.277849927241488,
+        "spearman": 0.7248120300751879,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "2b59db22a19cd5d52a215dc00ab88c0a9e506ba3fe5820cd2d02e18bfbba9c01",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/2/qualifying.json",
+          "sha256": "4edecb163708da9b0a8497a578d738f7b292c76320a42b8b78138e9fa886c031"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/2/results.json",
+          "sha256": "891cc63079b8fbb67046d615c0edaba4d1f552468d72f008ead46125d194a572"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:3:race",
+      "name": "Australian Grand Prix",
+      "season": 2022,
+      "round": 3,
+      "start_at": "2022-04-10T05:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.8,
+        "rmse": 5.458937625582473,
+        "spearman": 0.5518796992481203,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.6,
+        "rmse": 6.457553716385176,
+        "spearman": 0.37293233082706767,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "3d4ec39aacf1984c3cbce82859e0b6ccfa1ff255bcd6d08d247e54135382d9a5",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/3/qualifying.json",
+          "sha256": "b0c7100ced98f9cc85ec976be061db46fba0636d6fe22b7da89ac657b108c6ef"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/3/results.json",
+          "sha256": "650801854eec425413bb65f204b67f2e5558387bbeb1dc1b02ff529fe22878be"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:4:race",
+      "name": "Emilia Romagna Grand Prix",
+      "season": 2022,
+      "round": 4,
+      "start_at": "2022-04-24T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.1,
+        "rmse": 6.44980619863884,
+        "spearman": 0.3744360902255639,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.2,
+        "rmse": 6.488451279003334,
+        "spearman": 0.36691729323308275,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "ee1448fd65879418a015458a2ef18c464870aeae11f1b082a05521d4f8263c80",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/4/qualifying.json",
+          "sha256": "1d6dbaa64919a46ff5355ed4e55eace3a5124b45f9d5e3abac900edbb0a13e88"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/4/results.json",
+          "sha256": "e48d1c2e80f039b488d062bbbda59c56c0c160930ca685ddd9b5a059277533fc"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:5:race",
+      "name": "Miami Grand Prix",
+      "season": 2022,
+      "round": 5,
+      "start_at": "2022-05-08T19:30:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.6,
+        "rmse": 5.412947441089743,
+        "spearman": 0.5593984962406016,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.5,
+        "rmse": 4.449719092257398,
+        "spearman": 0.7022556390977444,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "0b9b966937d40a0a4b67b7ef58b60a58d2c80a0f0f672d28efb1bf1adfaac9cf",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/5/qualifying.json",
+          "sha256": "caed3bb97522704db92b8a44bccf6b05d7fb495016f0b8655e3529da3a79d0be"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/5/results.json",
+          "sha256": "88398c14a8e41e15ae77e4c54a395c3924e620165d04a8897969dffc848c01f9"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:6:race",
+      "name": "Spanish Grand Prix",
+      "season": 2022,
+      "round": 6,
+      "start_at": "2022-05-22T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4,
+        "rmse": 5.727128425310541,
+        "spearman": 0.5067669172932331,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.5,
+        "rmse": 5.709640969448079,
+        "spearman": 0.5097744360902255,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "007b75b3b3e56730e55cf95d70ef2957f37a689dde498a9d6b2e350027361171",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/6/qualifying.json",
+          "sha256": "1e983a0617db82d358454de12e3718cb7ab79f5df994750b44162da663530f1f"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/6/results.json",
+          "sha256": "ad1bfa7677db11b207fe7b221c94e627c499347e091322444f81f4cdbae6ca61"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:7:race",
+      "name": "Monaco Grand Prix",
+      "season": 2022,
+      "round": 7,
+      "start_at": "2022-05-29T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.3166247903554,
+        "spearman": 0.8345864661654135,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.1622776601683795,
+        "spearman": 0.849624060150376,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "213faf926c39e33135a6ce483e3c96fae2d4b18af4a2bcd37e96a0029bcab906",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/7/qualifying.json",
+          "sha256": "f79efda583b9289684f845f0bd4bf020d418400fa005582c8fdd081054b4f985"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/7/results.json",
+          "sha256": "064b75b3124fc3e68805135e7566a32463073bf602f9e2e478f559f3f7d50bd8"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:8:race",
+      "name": "Azerbaijan Grand Prix",
+      "season": 2022,
+      "round": 8,
+      "start_at": "2022-06-12T11:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.4,
+        "rmse": 6.252999280345393,
+        "spearman": 0.41203007518796997,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.3,
+        "rmse": 6.164414002968976,
+        "spearman": 0.4285714285714286,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "22e1c650e8d0bdb2dda1be38d8b87f7c4b38538aba523d0615a996340ae4b490",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/8/qualifying.json",
+          "sha256": "edd5bcc6e2d05d38fedd574aca40aa8d6ae24f740e6bc142b41d036ea1dcfb75"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/8/results.json",
+          "sha256": "d3ef6451ebdd97c20e5f5332c830627f9a1247a70bf0e43238d3d79c00bb187b"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:9:race",
+      "name": "Canadian Grand Prix",
+      "season": 2022,
+      "round": 9,
+      "start_at": "2022-06-19T18:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.3,
+        "rmse": 5.75325994545701,
+        "spearman": 0.5022556390977444,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.8,
+        "rmse": 5.291502622129181,
+        "spearman": 0.5789473684210527,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "6f7d682da5e3da0cd7bb7068edf96563326a972e6808280a1442ad9279850d1e",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/9/qualifying.json",
+          "sha256": "392c548ea2d96d0d4ecefe72f6f586229312d6d2dc7cda116627e74ce53f9445"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/9/results.json",
+          "sha256": "4e1ce3c54a50bd223c6ea71ddade63c8fa956a3d169bbc543e6162db7c8f45b4"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:10:race",
+      "name": "British Grand Prix",
+      "season": 2022,
+      "round": 10,
+      "start_at": "2022-07-03T14:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.3,
+        "rmse": 5.665686189686118,
+        "spearman": 0.5172932330827067,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.6,
+        "rmse": 5.848076606885378,
+        "spearman": 0.48571428571428577,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "b69c7c04c552400580a404251b5651df7a36a0f0e0c13d191d4b9d0976dbb8f8",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/10/qualifying.json",
+          "sha256": "df7aaf2de490d6e9dcdf47d5054268cf5f8df64a3f79038c11596277c22ce325"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/10/results.json",
+          "sha256": "d394b5943ff0a8bdd282064df5558e2db81aa6fc2d0056adf1597fd9bb0d4b28"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:11:race",
+      "name": "Austrian Grand Prix",
+      "season": 2022,
+      "round": 11,
+      "start_at": "2022-07-10T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.5,
+        "rmse": 5.029910535983717,
+        "spearman": 0.6195488721804512,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.2,
+        "rmse": 5.674504383644443,
+        "spearman": 0.5157894736842106,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "00557cd740601184d377eafb69a2e685445f291e78b68f1f07bcac62f8e3e417",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/11/qualifying.json",
+          "sha256": "e558f49ffc765bb2eba26787802a8e9d27840e50aec1e619dc0c8b5af9133f58"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/11/results.json",
+          "sha256": "4342274c210d310f4e997d3c65ad3ff3ddba7eda4d531af2431d884cb829d578"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:12:race",
+      "name": "French Grand Prix",
+      "season": 2022,
+      "round": 12,
+      "start_at": "2022-07-24T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.2,
+        "rmse": 5.89915248150105,
+        "spearman": 0.4766917293233083,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.8270073544588685,
+        "spearman": 0.649624060150376,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "2e73383808c9f835ba08e9bcd6e454e48449013530d6752d4af4125cd7928ee0",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/12/qualifying.json",
+          "sha256": "e3affd6db60c986b4cb3454d15225660d946ebe069085db77b9345ddb3c7ea85"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/12/results.json",
+          "sha256": "5bb153e1de7ef10d415a833efa63894e5e1eac6e10c0742dbb84c8ccc823b385"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:13:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2022,
+      "round": 13,
+      "start_at": "2022-07-31T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.1,
+        "rmse": 5.06951674225463,
+        "spearman": 0.6135338345864662,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 3.987480407475377,
+        "spearman": 0.7609022556390977,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "9c1fac59815479093209342e81fee44d2a6cb67ee7d8d308a9549f5826131c80",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/13/qualifying.json",
+          "sha256": "ab4536248e0ebcafb950fd4c8b3da09efe6bb63ffa31064b2b625c1f177ed52b"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/13/results.json",
+          "sha256": "46ed69cb96f1e4413edaae70271e2c2053a5f1b7ef04248667223bc40a83aee6"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:14:race",
+      "name": "Belgian Grand Prix",
+      "season": 2022,
+      "round": 14,
+      "start_at": "2022-08-28T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 4.159326868617084,
+        "spearman": 0.7398496240601504,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.764451699828638,
+        "spearman": 0.6586466165413534,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "26a9c294ec84d692b697f29142a905cbd8bb7863b4ee09e363f4ba8a448c3007",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/14/qualifying.json",
+          "sha256": "878af5bec4983147a3122044c435990293cda83703e70040da5e524a3aa81ae1"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/14/results.json",
+          "sha256": "606ffc5df1583653195ea7665eae2f8c24769f5da978b1c946f87f8605556b66"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:15:race",
+      "name": "Dutch Grand Prix",
+      "season": 2022,
+      "round": 15,
+      "start_at": "2022-09-04T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.9115214431215892,
+        "spearman": 0.7699248120300752,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2,
+        "rmse": 2.9154759474226504,
+        "spearman": 0.8721804511278195,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "55fcf8aa1932ce5cd5a423965fa8a6a561354f5354ac4b98d30692cb12afcce3",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/15/qualifying.json",
+          "sha256": "a62ed7887d183c6a4cd69cdb5f56b8666569b4db72a383791646f68428d9dea6"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/15/results.json",
+          "sha256": "67ffa0475b80407dbc7d34bfeb3c8b2ad502559578d245626664898848ecd9e5"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:17:race",
+      "name": "Singapore Grand Prix",
+      "season": 2022,
+      "round": 17,
+      "start_at": "2022-10-02T12:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.9,
+        "rmse": 5.196152422706632,
+        "spearman": 0.5939849624060151,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.6,
+        "rmse": 5.167204273105526,
+        "spearman": 0.5984962406015037,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "33cd57acf23240b4f6a6fd6e90782f6103c2d03d9fc43c405651e22999efef21",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/17/qualifying.json",
+          "sha256": "8b4e9ce9392648f023181e3cf144daefd8bb0fd58e01408d1eecde134259a136"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/17/results.json",
+          "sha256": "40234a740c22a649769ea91986ad8a66a45ce85c88966f147dd60691bdb54344"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:18:race",
+      "name": "Japanese Grand Prix",
+      "season": 2022,
+      "round": 18,
+      "start_at": "2022-10-09T05:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 4.959838707054898,
+        "spearman": 0.6300751879699248,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 5.440588203494177,
+        "spearman": 0.5548872180451128,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "96f56f10d37ed6fbf583b4eb414d8166863a5300d5db58d5d08175be2e9c4678",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/18/qualifying.json",
+          "sha256": "e3bbd215336fa3d2902e7778e2fe2f906b9802b7afb368310eb96d192d1d12c2"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/18/results.json",
+          "sha256": "3891f44d02d472353140251f53a8dc729981202cb6986384abebca4849a367a1"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:19:race",
+      "name": "United States Grand Prix",
+      "season": 2022,
+      "round": 19,
+      "start_at": "2022-10-23T19:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.3,
+        "rmse": 6.164414002968976,
+        "spearman": 0.4285714285714286,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.7,
+        "rmse": 5.449770637375485,
+        "spearman": 0.5533834586466165,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "f9a10e4a789b82c976041e15d4d5a16ac3cd791fb409a28f4674f1b6a70d1246",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/19/qualifying.json",
+          "sha256": "00e6958655d8aac809455288a627a20a7e3ebb44131a78adf02630f1c14379d5"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/19/results.json",
+          "sha256": "de86f44141daa1d94bcf67418be2d2654d01ed7eb9175b63c8ab300ddc563737"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:20:race",
+      "name": "Mexico City Grand Prix",
+      "season": 2022,
+      "round": 20,
+      "start_at": "2022-10-30T20:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.7282703764614498,
+        "spearman": 0.7909774436090226,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.3166247903554,
+        "spearman": 0.8345864661654135,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "feba8c456a032bcf270d5e7c21109849edac87aeb9034265d93f0eab7d535f5c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/20/qualifying.json",
+          "sha256": "51d93b1704b1aadb9daa2f18f805c7ce64b6c160957835f8832f771d26f918b3"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/20/results.json",
+          "sha256": "4e4dae3303f3790143ab238d5cc1dea179762cea4ec1dba6d41f4066e6deb0ee"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:21:race",
+      "name": "São Paulo Grand Prix",
+      "season": 2022,
+      "round": 21,
+      "start_at": "2022-11-13T18:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5,
+        "rmse": 6.603029607687671,
+        "spearman": 0.3443609022556391,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.2,
+        "rmse": 5.522680508593631,
+        "spearman": 0.5413533834586466,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "cc03964a66c0749816a0fdf6dfbda0504fa107c4377dafcadb4c780a187222ab",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/21/qualifying.json",
+          "sha256": "9d976d841a9b787310a3bbbf78d65d15b246b13b5b26816089df06e85665163a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/21/results.json",
+          "sha256": "9c6ba2fbe78c51b62c8d01c8c57a23ddc6de7d44270f4dddf28a0640856801c3"
+        }
+      ]
+    },
+    {
+      "race_id": "2022:22:race",
+      "name": "Abu Dhabi Grand Prix",
+      "season": 2022,
+      "round": 22,
+      "start_at": "2022-11-20T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 4.2895221179054435,
+        "spearman": 0.7233082706766918,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 4.33589667773576,
+        "spearman": 0.7172932330827068,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "063a9458a40a907b35138ded9fd33a14be380fdf1ebe64e185b207cccbd03ff2",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/22/qualifying.json",
+          "sha256": "72282d723f8fb8f27b0d732ccb06056d9714fb514638b5e82ce9985f64b769b3"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2022/22/results.json",
+          "sha256": "bcdc6c8996b1fde583604721357308f9b193e5831b409a29e95ee4cc7ab1edca"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:2:race",
+      "name": "Saudi Arabian Grand Prix",
+      "season": 2023,
+      "round": 2,
+      "start_at": "2023-03-19T17:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.5,
+        "rmse": 5.1478150704935,
+        "spearman": 0.6015037593984962,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.6475800154489,
+        "spearman": 0.675187969924812,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "8b7ae15b2a2dd4b05facaf954bf02998cb25afee1b9e418837baeff1b1cfc32f",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/2/qualifying.json",
+          "sha256": "a66192613924b69149273940c3b6bc090d99cf5d4ff023ef747f78a0c49106be"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/2/results.json",
+          "sha256": "915b6bfcaf9d0d92a9842bb2228e5cda359a9537e4eb19c815432b6982cb9189"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:3:race",
+      "name": "Australian Grand Prix",
+      "season": 2023,
+      "round": 3,
+      "start_at": "2023-04-02T05:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.7,
+        "rmse": 7.476630257007497,
+        "spearman": 0.15939849624060154,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.7,
+        "rmse": 7.092249290598858,
+        "spearman": 0.24360902255639094,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "2a6406d9373a8d2df896cf1f6d38be6aec2cfe819870104216fcbf1bfac07319",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/3/qualifying.json",
+          "sha256": "f67648f6f50f49f6b1f5dc6b3c02dc695bb3b5ecae5ad9990dd2b98a4af6a94a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/3/results.json",
+          "sha256": "6033f259935c9cf9555af8405d8c2d90f2cd8f8def2d8917c4d614d055df2a81"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:4:race",
+      "name": "Azerbaijan Grand Prix",
+      "season": 2023,
+      "round": 4,
+      "start_at": "2023-04-30T11:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2,
+        "rmse": 2.4698178070456938,
+        "spearman": 0.9082706766917293,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.0659419433511785,
+        "spearman": 0.8586466165413533,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "dd003c8424a854f40b0755ea1d89d240ae37a3e2eca43cd46030c16628103f22",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/4/qualifying.json",
+          "sha256": "140f491ecede4edb5816590dc3ce60494b116b4f2df4f7ca34c2c6091c4d0ae3"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/4/results.json",
+          "sha256": "24d395dcadf2b24d3a55f2d237bf2b56091d172eec3f8c5f5010c212205023ba"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:5:race",
+      "name": "Miami Grand Prix",
+      "season": 2023,
+      "round": 5,
+      "start_at": "2023-05-07T19:30:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 3.7549966711037173,
+        "spearman": 0.7879699248120301,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.3,
+        "rmse": 1.8973665961010275,
+        "spearman": 0.9458646616541353,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "2e486ab490d17ebb0b576d44f2ececdcecdadcaa1c6ec7308bed7baaaa72a58c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/5/qualifying.json",
+          "sha256": "18c3c4b3a8ce1c9cdc529bf46410e60b9f1dfcd63a84cc0ad8b48f0e80517932"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/5/results.json",
+          "sha256": "c505afcecdc7aa2db263cfb9db1d0d48eab128bf7f558f7469d7d54fc2ded29a"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:6:race",
+      "name": "Monaco Grand Prix",
+      "season": 2023,
+      "round": 6,
+      "start_at": "2023-05-28T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.3,
+        "rmse": 3.03315017762062,
+        "spearman": 0.8616541353383459,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.254409477236529,
+        "spearman": 0.7278195488721805,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "9a75edc5a93de94ba40a6572bd30be174db4f227d7b547dea84d758af047fd55",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/6/qualifying.json",
+          "sha256": "c5db6a9d845a283298a049a725f595891f1ef518fed9ea8a5c4312fe3c15bac5"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/6/results.json",
+          "sha256": "c956832bc6b0f25b5d50cc4ab21a885165c96596652b418350ad3bef3df0c6ac"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:7:race",
+      "name": "Spanish Grand Prix",
+      "season": 2023,
+      "round": 7,
+      "start_at": "2023-06-04T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.8,
+        "rmse": 5.224940191045253,
+        "spearman": 0.5894736842105264,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 4.0,
+        "spearman": 0.7593984962406015,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "fb80f91d17e3b1c9b96a5676b1e1fdf529260b0ae7ecdb09121eab6ce75fb3c4",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/7/qualifying.json",
+          "sha256": "d71a738950661fe2165543575c67c8647d9bf7d2cb0fc6ecc6bfa0c1f58a53f6"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/7/results.json",
+          "sha256": "93211f98693d43213557bd4057e8d57295d93b38b2a741cf6ea7940e0be35f73"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:8:race",
+      "name": "Canadian Grand Prix",
+      "season": 2023,
+      "round": 8,
+      "start_at": "2023-06-18T18:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.1,
+        "rmse": 5.522680508593631,
+        "spearman": 0.5413533834586466,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 4.5934736311423405,
+        "spearman": 0.6827067669172933,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "04576e24df9757145f2741d1f4b71cc6aa0c01d4dac4b5e107f343e7c0f7e156",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/8/qualifying.json",
+          "sha256": "ea9d2094d80ac513f4156213ad1a779879184f4b32dc3bd590fff163f443da62"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/8/results.json",
+          "sha256": "9e8393c86b97aa9b076d3abe36d827fed3142ed64f9ca4c3ba412c97900ab478"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:9:race",
+      "name": "Austrian Grand Prix",
+      "season": 2023,
+      "round": 9,
+      "start_at": "2023-07-02T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.58257569495584,
+        "spearman": 0.6842105263157895,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 3.7416573867739413,
+        "spearman": 0.7894736842105263,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "12bdbdcd6d0f0504a5a20c8abfd442338b2722ab7e8a567b62528a86d9636712",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/9/qualifying.json",
+          "sha256": "3d4e4919f7a04667c24ab0714af6f0fa45b2414fee28e2df7536d6d75932e559"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/9/results.json",
+          "sha256": "0a8bc488aac9554ec07a04e761c049c0d9e0a2ca90308d59343ea31bc51184ed"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:11:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2023,
+      "round": 11,
+      "start_at": "2023-07-23T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.8,
+        "rmse": 4.959838707054898,
+        "spearman": 0.6300751879699248,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.3,
+        "rmse": 4.012480529547776,
+        "spearman": 0.7578947368421053,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "3a53c8c2f83dcaabb8c5999955bb2beab907098ba537521d98f98552ced56158",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/11/qualifying.json",
+          "sha256": "b2fa762b4bcd244e9814b976012cb299b546065229a3aafea92771020d0d0aa8"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/11/results.json",
+          "sha256": "29e56d4aa2730355acf6e99e499ced6b334a939f76df2db7c5b0b9540c8b3c81"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:12:race",
+      "name": "Belgian Grand Prix",
+      "season": 2023,
+      "round": 12,
+      "start_at": "2023-07-30T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 3.1,
+        "rmse": 5.039841267341661,
+        "spearman": 0.6180451127819548,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.753945729601885,
+        "spearman": 0.6601503759398496,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "c442e8a028b0b82a1c25051ca17db03b7f2e265203e78aa2ebf30d41b75a48ba",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/12/qualifying.json",
+          "sha256": "1a40a87d92889215d27a2b1fd90c95f41e93062b1b98b01949d7b617c48724c3"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/12/results.json",
+          "sha256": "ba267d59f34daad5353c86f9ec9b16fd651879ccdebbdf6a5153e387b39c0493"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:14:race",
+      "name": "Italian Grand Prix",
+      "season": 2023,
+      "round": 14,
+      "start_at": "2023-09-03T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.4,
+        "rmse": 3.0983866769659336,
+        "spearman": 0.8556390977443609,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.4,
+        "rmse": 2.3664319132398464,
+        "spearman": 0.9157894736842105,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "883c7e8544d59cbbecfc88f31f36078779b7422a8be8d0c9d24d2eb060924a5f",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/14/qualifying.json",
+          "sha256": "139ef45e1cad02a0abb025e55032dbe860e3e5efd3f6e98648326f04f3138436"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/14/results.json",
+          "sha256": "c86d7e07e0bcee0d5726ace8775a2a7f83de7940c8ffda93855b7b4dd3693f5c"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:15:race",
+      "name": "Singapore Grand Prix",
+      "season": 2023,
+      "round": 15,
+      "start_at": "2023-09-17T12:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.6,
+        "rmse": 5.873670062235365,
+        "spearman": 0.48120300751879697,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 5.594640292279746,
+        "spearman": 0.5293233082706768,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "c09594c50d07ddf59f58eb91b83895f5303d207db6e134c2cd5297639d484981",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/15/qualifying.json",
+          "sha256": "9f145f9fbcf9d7e9fb9aca3d62c57baa8a5d713055ddb24e9f688e0c34a592fb"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/15/results.json",
+          "sha256": "fa6797a764f079848bb39d3af7f38a1ed42682fecb9c24ee3563f4e84b872283"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:16:race",
+      "name": "Japanese Grand Prix",
+      "season": 2023,
+      "round": 16,
+      "start_at": "2023-09-24T05:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 4.0743097574926725,
+        "spearman": 0.750375939849624,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.774934554525329,
+        "spearman": 0.6571428571428571,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "41f1af76846a32750b334438f82df306fd6acd65b2e41c4889ddc33e7653e8e6",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/16/qualifying.json",
+          "sha256": "2c3fa849e6620b531bf2e811881af1d6a4e2329f48a87534092f37e5a8ceb96d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/16/results.json",
+          "sha256": "ededda110d72ec23cfd77753cc1408c03484c2b66413abdb3e88f3fc698a58c0"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:17:race",
+      "name": "Qatar Grand Prix",
+      "season": 2023,
+      "round": 17,
+      "start_at": "2023-10-08T17:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4,
+        "rmse": 5.630275304103699,
+        "spearman": 0.5233082706766917,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 5.744562646538029,
+        "spearman": 0.5037593984962406,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "15850b50d614593ccc5c0eccbb4d3505c67ee7605274af410fa2564b91ec1086",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/17/qualifying.json",
+          "sha256": "e3a85a319702d979ab54e38a11db116666f278ecf38e9414fb8492b9ed6c3386"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/17/results.json",
+          "sha256": "c81b44108d1cb176142eef598dd3b85755ab6872c21bb8ac87b7d424234ed29a"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:18:race",
+      "name": "United States Grand Prix",
+      "season": 2023,
+      "round": 18,
+      "start_at": "2023-10-22T19:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.3,
+        "rmse": 7.681145747868608,
+        "spearman": 0.1127819548872181,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.9,
+        "rmse": 7.661592523751182,
+        "spearman": 0.11729323308270678,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "3fc6f88d08f1452873d0b12639bccf7749e79c646200ee2efe2858278abefc7f",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/18/qualifying.json",
+          "sha256": "f1d8be65382f1f238710a2db5ef3253055111b4c77e9d0c727e99e64962bc0bc"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/18/results.json",
+          "sha256": "54225fa8153312a3160995db82a8e340e98f60393f23290f338ee25cef2a3bee"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:19:race",
+      "name": "Mexico City Grand Prix",
+      "season": 2023,
+      "round": 19,
+      "start_at": "2023-10-29T20:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.1,
+        "rmse": 5.621387729022079,
+        "spearman": 0.524812030075188,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 5.128352561983234,
+        "spearman": 0.6045112781954887,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "46dec97c30cfcc7080cc695203cf88386aa10b77552c7fbf9cd0b2ae660b9357",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/19/qualifying.json",
+          "sha256": "7e4e5a6cbdb7b06fb3c463d2d57c96cc1aac965dd58a03c3f92f8a22fd39aeda"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/19/results.json",
+          "sha256": "9bad469f2c53a9e28db25efe4b1908ac7d2a66c88514f07d2f3e2f6bc3e81f72"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:20:race",
+      "name": "São Paulo Grand Prix",
+      "season": 2023,
+      "round": 20,
+      "start_at": "2023-11-05T17:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 4.5,
+        "rmse": 5.932958789676531,
+        "spearman": 0.47067669172932336,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.7,
+        "rmse": 6.260990336999411,
+        "spearman": 0.41052631578947374,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "a5baa57282d6b2a51fa5f1e2883ba36f2bf5ad5bd7bf361899316ab1cbbfd784",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/20/qualifying.json",
+          "sha256": "d72e27829ccbf537d7ccfc01ed70f3c1ae7f6faa89bca999f3542029f2de129c"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/20/results.json",
+          "sha256": "03b3a6e1eae72d3de59e7adf86130b48ba1ea3ea4dc412e67d2d44c6cb62056f"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:21:race",
+      "name": "Las Vegas Grand Prix",
+      "season": 2023,
+      "round": 21,
+      "start_at": "2023-11-19T06:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 5.3,
+        "rmse": 6.252999280345393,
+        "spearman": 0.41203007518796997,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 5.513619500836088,
+        "spearman": 0.5428571428571429,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "0983408890c7ad58eddddcf8ee1cd6b4681ab2d564965978d57164921d3fea94",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/21/qualifying.json",
+          "sha256": "1e6939ad5df8a384b65477f391c9ed68c93ba7f75084f8faa394a432ebed2322"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/21/results.json",
+          "sha256": "d6f7690f0ed665d2084d325f5241fcebbf5f76720e44103043c0b5b83866ebfd"
+        }
+      ]
+    },
+    {
+      "race_id": "2023:22:race",
+      "name": "Abu Dhabi Grand Prix",
+      "season": 2023,
+      "round": 22,
+      "start_at": "2023-11-26T13:00:00+00:00",
+      "split": "development",
+      "baseline": {
+        "mae": 2.1,
+        "rmse": 2.8284271247461903,
+        "spearman": 0.8796992481203008,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 2.8106938645110393,
+        "spearman": 0.881203007518797,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "5bfff9c400065d60ea43fb7235d2ba1e4eced0eba2a33f48423660ac77fc200a",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/22/qualifying.json",
+          "sha256": "6cf63fbd834ab5c0d27141e89f943545d3d0a6f037951be617dec307822cd4d1"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2023/22/results.json",
+          "sha256": "f1d87a0d7772a66b09764e50ede3e3b0477b9181c826cf6fd38ef15d790512b9"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:1:race",
+      "name": "Bahrain Grand Prix",
+      "season": 2024,
+      "round": 1,
+      "start_at": "2024-03-02T15:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.3,
+        "rmse": 2.756809750418044,
+        "spearman": 0.8857142857142857,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.0983866769659336,
+        "spearman": 0.8556390977443609,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "bbe3fa9d16851c505c0982225f0d0e01bc72140815dfab46378a9133bb4c5a5a",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/1/qualifying.json",
+          "sha256": "9b25d4e50df3e8b37d5aa80f80c20666370103845316a2d32f3e847924b0799d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/1/results.json",
+          "sha256": "2935c1c98acb09d51fd45ead80254d95b6c4b97b53ef8fbe956fe0ac2f5c4e2d"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:3:race",
+      "name": "Australian Grand Prix",
+      "season": 2024,
+      "round": 3,
+      "start_at": "2024-03-24T04:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 4.105263157894737,
+        "rmse": 5.812871380325779,
+        "spearman": 0.4368421052631579,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 19
+      },
+      "candidate": {
+        "mae": 4.842105263157895,
+        "rmse": 6.316228054947451,
+        "spearman": 0.33508771929824566,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 19
+      },
+      "input_hash": "17f413530979ad743e2d7d6b79e60fb0f23a8f53987011996d15c03317d2c513",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/3/qualifying.json",
+          "sha256": "27f306f8eaecccc3b2551c2f83849d8a7ec62be2ae19ea44b61ec49b0dea0062"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/3/results.json",
+          "sha256": "532aff2f8d503d2104652ed5a9e1be38a2e33fdeec7f9e5034d444686cac00e7"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:4:race",
+      "name": "Japanese Grand Prix",
+      "season": 2024,
+      "round": 4,
+      "start_at": "2024-04-07T05:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.2,
+        "rmse": 3.0495901363953815,
+        "spearman": 0.8601503759398497,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.1,
+        "rmse": 2.949576240750525,
+        "spearman": 0.869172932330827,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "4faca275ae713173bc2a2f7475c11ad5126669e0bb8e50d5ac823c60b9581c72",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/4/qualifying.json",
+          "sha256": "30d1726006425c57db9be2ed29ad8f206edf29a8b0f6dd6eeba2542cc211e06c"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/4/results.json",
+          "sha256": "81c8a5564a6a8da1d59a66eb89d9d240be38678d216925357343c4ae0e52a823"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:5:race",
+      "name": "Chinese Grand Prix",
+      "season": 2024,
+      "round": 5,
+      "start_at": "2024-04-21T07:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 3.8858718455450894,
+        "spearman": 0.7729323308270677,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 3.3763886032268267,
+        "spearman": 0.8285714285714285,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "8b203bea8d73c2561e70bf323bf2890885c85f61b9306bd51646496b953bcf74",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/5/qualifying.json",
+          "sha256": "9961f2c272a1321f0ad7fd6eaed9e2856a3049633326b0a86be8a2f6f2237726"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/5/results.json",
+          "sha256": "cb19dc1b012b5f57d0ff52acdd110477d18ac2ea2de81c740f6e34a1588e5745"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:6:race",
+      "name": "Miami Grand Prix",
+      "season": 2024,
+      "round": 6,
+      "start_at": "2024-05-05T20:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.4641016151377544,
+        "spearman": 0.8195488721804511,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 3.420526275297414,
+        "spearman": 0.8240601503759398,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "5e7867f607044909b426b0b07d4c24ebd62b6e2283951559bd1201fb9dcde999",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/6/qualifying.json",
+          "sha256": "3751b1343a2a0905d46f80a5f31f6b3ad6d8adc2ab9fdbfd96850c42e1a9150c"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/6/results.json",
+          "sha256": "982a8c8cfb799e8cbae2e82051ba326d2d7008575bcb2510046804b1aec40d01"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:7:race",
+      "name": "Emilia Romagna Grand Prix",
+      "season": 2024,
+      "round": 7,
+      "start_at": "2024-05-19T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.2,
+        "rmse": 2.792848008753788,
+        "spearman": 0.8827067669172932,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 2.8460498941515415,
+        "spearman": 0.8781954887218045,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "b5394cf993e3d641254d67f26ca0cdd9493a0a822942b9aebb574451bf3b4322",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/7/qualifying.json",
+          "sha256": "7fe9cd81bf420645afb42716695ffcc0aa79d5146a1cb58e8c11564283bbd3ca"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/7/results.json",
+          "sha256": "c56c7e5c8155357d3bccc9e7ea0b89bc4bffc4bc361510d983a38fa9df69fb50"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:9:race",
+      "name": "Canadian Grand Prix",
+      "season": 2024,
+      "round": 9,
+      "start_at": "2024-06-09T18:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 4,
+        "rmse": 4.774934554525329,
+        "spearman": 0.6571428571428571,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.1,
+        "rmse": 5.272570530585627,
+        "spearman": 0.5819548872180451,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "9fa6d72fbdb99a7171153ff0e25a2fc052d6dc81e525e8674520db313e681cc7",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/9/qualifying.json",
+          "sha256": "d203aecf5a91d1244e4b6b71297a8bfe50de6f10df6693cd92879efd5514ca36"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/9/results.json",
+          "sha256": "22fdcc17f157bff526b35b9d4676525fdbc0bf20fe2ebbfc811279cefbb69d60"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:10:race",
+      "name": "Spanish Grand Prix",
+      "season": 2024,
+      "round": 10,
+      "start_at": "2024-06-23T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 1.2,
+        "rmse": 1.6733200530681511,
+        "spearman": 0.9578947368421052,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.2,
+        "rmse": 1.7888543819998317,
+        "spearman": 0.9518796992481203,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "1554ecbe728fb32d878dacfebcdee26aec25462676c3f3a2570dbf0b19dac644",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/10/qualifying.json",
+          "sha256": "5f38e300ac3a4f39fa55fc54251ff54a26421abd6b659f26d84f0e41d7b5ac6c"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/10/results.json",
+          "sha256": "ed965c955a7485d9acc0b79063be48eb85a7eb5bca6e66f1fcaaf4cb68b2f588"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:11:race",
+      "name": "Austrian Grand Prix",
+      "season": 2024,
+      "round": 11,
+      "start_at": "2024-06-30T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.888762624632126,
+        "spearman": 0.6406015037593985,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.7,
+        "rmse": 5.263078946776307,
+        "spearman": 0.5834586466165413,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "73401922eb17ac057896e45c41e22ea39fcb2c5c7e7387eaeb62aaca47f9a8de",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/11/qualifying.json",
+          "sha256": "a7e6e958c31c4d08b61133f89b3a6168a1768e487225b6fff2ff49615d1927f0"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/11/results.json",
+          "sha256": "dadf6112a553ef4bd8a80eab0e1265063826cfdca56e8616c7c4887d96138766"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:12:race",
+      "name": "British Grand Prix",
+      "season": 2024,
+      "round": 12,
+      "start_at": "2024-07-07T14:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 4.538722287164087,
+        "spearman": 0.6902255639097744,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 5.253570214625479,
+        "spearman": 0.5849624060150376,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "692267a2ed8d900108307260d470f968505fd2c72d394ed7481e11a04de0a42e",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/12/qualifying.json",
+          "sha256": "cfd2ec8a311d9b79795e7add22da32a04c0f4ec93251305e653e75ca5ea09647"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/12/results.json",
+          "sha256": "73926b3023dcf865d263b875d5ab6f7201f1b09d060502453493fa9d0308f1d8"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:13:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2024,
+      "round": 13,
+      "start_at": "2024-07-21T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 3.478505426185217,
+        "spearman": 0.8180451127819549,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.3,
+        "rmse": 3.0,
+        "spearman": 0.8646616541353384,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "16307e4f0f1ae77b8b0a9992c6ef32ca25eacdb7d712e50eb0a8560d085e9a1d",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/13/qualifying.json",
+          "sha256": "2b4f9899b80ed7511e35a73cdbf0ea8ea684ebf5b11106b406996327b8dff766"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/13/results.json",
+          "sha256": "5cdea14aa52df4d20bd43fc3d243fd1cfca75a16d2922dce8b1161867e7895ac"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:14:race",
+      "name": "Belgian Grand Prix",
+      "season": 2024,
+      "round": 14,
+      "start_at": "2024-07-28T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.714835124201342,
+        "spearman": 0.7924812030075188,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.7,
+        "rmse": 3.9749213828703582,
+        "spearman": 0.762406015037594,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "af79624f09401007d96202071322b943684036b5dd2f7b6b51f6ead7be23c4ed",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/14/qualifying.json",
+          "sha256": "14cc80b4c67794f8b23f20fca8f7056c99a383b3008712b07dd1df6b96ce5b13"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/14/results.json",
+          "sha256": "24ff81781320e0d4221a72775f3b712215aa1a54d28e33e47f62b820f8943132"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:18:race",
+      "name": "Singapore Grand Prix",
+      "season": 2024,
+      "round": 18,
+      "start_at": "2024-09-22T12:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.40587727318528,
+        "spearman": 0.825563909774436,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.1,
+        "rmse": 3.0659419433511785,
+        "spearman": 0.8586466165413533,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "78cfdc74d46c76a2fb5b00602b74107b8c7083b6d2355cb2afadf4109e79da58",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/18/qualifying.json",
+          "sha256": "e3910ce6e16d565301aa2144ac40440a61da498cb21c18c9b73cfcdeec86ddb2"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/18/results.json",
+          "sha256": "876d67b7027914ec5296a6d23556a0638649942eb193042c91dbf2f6525a7baa"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:19:race",
+      "name": "United States Grand Prix",
+      "season": 2024,
+      "round": 19,
+      "start_at": "2024-10-20T19:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.331666249791536,
+        "spearman": 0.8330827067669173,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.7,
+        "rmse": 3.5355339059327378,
+        "spearman": 0.8120300751879699,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "aa48c1e3b592af8c2454ab70c34b99db8280d2604d31fc85b2a74a47a0a14b62",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/19/qualifying.json",
+          "sha256": "5eca2adf282b421fa5162d53c19985f622b0c52406ab3cd3d0eea16bcd897a47"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/19/results.json",
+          "sha256": "d4375212c02a628b4965b62704ac4f51bea65f1c7990b768b44e0d396b84ecca"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:20:race",
+      "name": "Mexico City Grand Prix",
+      "season": 2024,
+      "round": 20,
+      "start_at": "2024-10-27T20:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.4,
+        "rmse": 4.571651780264984,
+        "spearman": 0.6857142857142857,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.3,
+        "rmse": 4.230839160261236,
+        "spearman": 0.7308270676691729,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "4655c6b136b462936bf3c01a832aa6a881f96aefc78fa54daf5d11e5c806a728",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/20/qualifying.json",
+          "sha256": "8f4402fe346fc3b709d9cb0d716d9de5717c79174a4decef498ff468b3d0dad4"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/20/results.json",
+          "sha256": "cb19ff7a7ff88d42606f2d3e49e0859f97dceaed0a683dce5bcc26fa9bf12738"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:21:race",
+      "name": "São Paulo Grand Prix",
+      "season": 2024,
+      "round": 21,
+      "start_at": "2024-11-03T17:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 4.5,
+        "rmse": 5.735852159879995,
+        "spearman": 0.5052631578947369,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.3,
+        "rmse": 5.300943312279429,
+        "spearman": 0.5774436090225563,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "input_hash": "b9a43876ee4d94a93a9fa312ea700bc22277dd9928f384064a6b1b380c9ae653",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/21/qualifying.json",
+          "sha256": "f328c8181b6b895c609269966ff8b8ef64643f4db4e93411cb3c40f7910a4ea7"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/21/results.json",
+          "sha256": "39da7496da919b33e9111d3560964556c867cbcd88bc5c1251f90368f7eb3445"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:22:race",
+      "name": "Las Vegas Grand Prix",
+      "season": 2024,
+      "round": 22,
+      "start_at": "2024-11-23T06:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 4.979959839195493,
+        "spearman": 0.6270676691729323,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 4.370354676682432,
+        "spearman": 0.7127819548872181,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "0b3a2159be80edb3f2834a75905594c0a984b799f55f23ed38c2907f6c8f43d1",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/22/qualifying.json",
+          "sha256": "5fc9cb4f96772668ef39c3e2d05f3bf39510a20c976b2db60648e21581cf8c0a"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/22/results.json",
+          "sha256": "168deba2c6b1c15c2f8782cf0bdf57c5a153d070fa093091e56f1dcd9bcaf0b9"
+        }
+      ]
+    },
+    {
+      "race_id": "2024:23:race",
+      "name": "Qatar Grand Prix",
+      "season": 2024,
+      "round": 23,
+      "start_at": "2024-12-01T16:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.5071355833500366,
+        "spearman": 0.8150375939849623,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 3.9749213828703582,
+        "spearman": 0.762406015037594,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "987d0e27eeef5e51ca210cce1ab76d3dfe6d3eac680d9fff0d98840d85fbb961",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/23/qualifying.json",
+          "sha256": "3ba31c2f02d45c063a05fa0f5311c1f98a98d9b21d9db8eb46bc2cca8c5d86d1"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/23/results.json",
+          "sha256": "69d9d38861a8c2de5fa1234616baa9dcdd20910293dcc68ec44df32da44f4e3d"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:2:race",
+      "name": "Chinese Grand Prix",
+      "season": 2025,
+      "round": 2,
+      "start_at": "2025-03-23T07:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 4.9,
+        "rmse": 6.0909769331364245,
+        "spearman": 0.4421052631578948,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.1,
+        "rmse": 6.131883886702357,
+        "spearman": 0.4345864661654135,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "9c918b557fa392d4afff1c53b0a0782776fceb4f061838ec151b460ec65ca758",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/2/qualifying.json",
+          "sha256": "92edf39cf269eac14f8a7f9461bdf8a18e3e8c6b3680df12c885790d1498abe4"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/2/results.json",
+          "sha256": "673c008b8207d55d5876d63532219caeb14665af6f102f6046b25c6637ae9316"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:3:race",
+      "name": "Japanese Grand Prix",
+      "season": 2025,
+      "round": 3,
+      "start_at": "2025-04-06T05:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 1,
+        "rmse": 1.61245154965971,
+        "spearman": 0.9609022556390977,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.6,
+        "rmse": 2.2135943621178655,
+        "spearman": 0.9263157894736842,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "ed3a5883c79fee9f257e41224b03247f6536e418ee4feaae557b3303aa893279",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/3/qualifying.json",
+          "sha256": "43aa0cb26e74f6b4101d3f6ae289d7a28a8d1a9904ffcbdf2eda749d85684cc5"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/3/results.json",
+          "sha256": "ae1da7597c02e484bcd9b6a325eceba3b0ba61482cde4d9b87606fe8ec6a3b79"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:4:race",
+      "name": "Bahrain Grand Prix",
+      "season": 2025,
+      "round": 4,
+      "start_at": "2025-04-13T15:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.1,
+        "rmse": 4.370354676682432,
+        "spearman": 0.7127819548872181,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 4.183300132670378,
+        "spearman": 0.736842105263158,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "2f5cf965149f51b71dfd59858d581a4bd6b0228773b7f36dfb0244dd7cd24b6a",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/4/qualifying.json",
+          "sha256": "b55a783a2cdfcf9460ac581dae919c73af14afbe79a0b9d60e52651d82d02519"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/4/results.json",
+          "sha256": "9882956c053f4d86737b6eb9f6856d96f3769d6ce8cfa2d9954061cf2619566d"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:5:race",
+      "name": "Saudi Arabian Grand Prix",
+      "season": 2025,
+      "round": 5,
+      "start_at": "2025-04-20T17:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 4.219004621945797,
+        "spearman": 0.7323308270676692,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.4,
+        "rmse": 3.4351128074635335,
+        "spearman": 0.8225563909774436,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "4dbdb60b0d12d2802619fc7b23462aa5189151038de51891be874d0ee22bdb2f",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/5/qualifying.json",
+          "sha256": "975393e2523c7d64e1c5a9eb5afc73c72f76bcfcb86ef2ccc769f1f8e72268a5"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/5/results.json",
+          "sha256": "2f70df93ceb1e2ea0e77ae42946a67cbe9c693b8a7dbd4144a511a64aa6533f3"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:6:race",
+      "name": "Miami Grand Prix",
+      "season": 2025,
+      "round": 6,
+      "start_at": "2025-05-04T20:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 2.9832867780352594,
+        "spearman": 0.8661654135338346,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.2,
+        "rmse": 2.9154759474226504,
+        "spearman": 0.8721804511278195,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "aad9ad05905cd3be1f6c6cf82398d14d4b7f4703ec85c6c23aeb2e601f89a302",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/6/qualifying.json",
+          "sha256": "d6f4c6b67368bd078e6021ac071a6a724c3588c3866b5f189891d97acd5cd10e"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/6/results.json",
+          "sha256": "05a2b54e44d42831d19c84570224b1c5d63787d7d116213a49aa70dce3fe4166"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:7:race",
+      "name": "Emilia Romagna Grand Prix",
+      "season": 2025,
+      "round": 7,
+      "start_at": "2025-05-18T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.7,
+        "rmse": 4.505552130427524,
+        "spearman": 0.6947368421052631,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 4.135214625627067,
+        "spearman": 0.7428571428571429,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "82c28ad169250d881583052b3b95a676e31be966684b83dc0057cd14d9deca6d",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/7/qualifying.json",
+          "sha256": "1d9a6f7784d05951bdf942887b9c6e534dd108bebe833ce58542d52d023aa009"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/7/results.json",
+          "sha256": "bfbcdd3e296a6488a0cc1785e52aef887bec9ab370d73134fb4eb96ae28c5011"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:8:race",
+      "name": "Monaco Grand Prix",
+      "season": 2025,
+      "round": 8,
+      "start_at": "2025-05-25T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.872983346207417,
+        "spearman": 0.7744360902255639,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.024922359499621,
+        "spearman": 0.7563909774436091,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "8202fda09fd87033608f2ff58016b2a960a67ca5cf002ad643c136a4776b00cb",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/8/qualifying.json",
+          "sha256": "62b00b5c8e1df579acdb45469fb5b643b05df3e094733831f31d9f8664d485fc"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/8/results.json",
+          "sha256": "23b1e4787fa47683db9396e48be6c6a1d8d95e87e5d86b83d2ebafaf5cfd35de"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:10:race",
+      "name": "Canadian Grand Prix",
+      "season": 2025,
+      "round": 10,
+      "start_at": "2025-06-15T18:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.3,
+        "rmse": 4.658325879540846,
+        "spearman": 0.6736842105263158,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.1,
+        "rmse": 5.319774431308154,
+        "spearman": 0.5744360902255639,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "19fe7f665a613e11d873274787abc5be97a170792780d8261177695dd1d1c9b1",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/10/qualifying.json",
+          "sha256": "d6ecdf629390570e328d3f6aa66554ddcc2420258291c605c208a2106d33cc96"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/10/results.json",
+          "sha256": "abc11b897de4ac8b40211b33bae0b4b9b7e85b95508a96f9bff5cd31e670476d"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:11:race",
+      "name": "Austrian Grand Prix",
+      "season": 2025,
+      "round": 11,
+      "start_at": "2025-06-29T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.847679857416329,
+        "spearman": 0.6466165413533835,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.3,
+        "rmse": 5.576737397439475,
+        "spearman": 0.5323308270676692,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "24b616801aa30079a0d5efae00d552b555a9227c8c8f42c1ba9971fcc1f29075",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/11/qualifying.json",
+          "sha256": "f884968b235310e6ace79c8cf1944206b65b97ababab8ed0bbd21bf2cbcc6c27"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/11/results.json",
+          "sha256": "5297da14797b031b2559bcf7118f13fe42fcdacdf63e9eff1916563e4a804774"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:12:race",
+      "name": "British Grand Prix",
+      "season": 2025,
+      "round": 12,
+      "start_at": "2025-07-06T14:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 4.2,
+        "rmse": 5.830951894845301,
+        "spearman": 0.4887218045112782,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 6.0332412515993425,
+        "spearman": 0.4526315789473684,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "4eb2d27f8be903d6fdb73c3a1648e4649715f105ed2ba1a73689fa63c3323679",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/12/qualifying.json",
+          "sha256": "3a63fe8b3ae899f6c1832b7b6484328b45e3cc7e0648862975fc5894cf98264d"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/12/results.json",
+          "sha256": "bad3e60cd55dfeba73ce069d7b19e408db74a5232dd7d6e9b7079ad10709ddfb"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:13:race",
+      "name": "Belgian Grand Prix",
+      "season": 2025,
+      "round": 13,
+      "start_at": "2025-07-27T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 4.207136793592526,
+        "spearman": 0.7338345864661654,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.7,
+        "rmse": 4.230839160261236,
+        "spearman": 0.7308270676691729,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d557c1c6e98042fa863a14006cbb02b43bbe045cb882871e457f6fd0f982c164",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/13/qualifying.json",
+          "sha256": "25d452d6a9a5848c28203a1908803d8e22c95e534354a80b608a318b8a457bd6"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/13/results.json",
+          "sha256": "06990dda92712591f073d2a8a9d606966fbee582f7eb6949bc22fd040ce9adef"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:14:race",
+      "name": "Hungarian Grand Prix",
+      "season": 2025,
+      "round": 14,
+      "start_at": "2025-08-03T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.3,
+        "rmse": 3.255764119219941,
+        "spearman": 0.8406015037593985,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.8,
+        "rmse": 3.7416573867739413,
+        "spearman": 0.7894736842105263,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "30090aeb23c5d1b59b68ca27a777617f822809c3c1023160cad8f8c6d2abbc84",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/14/qualifying.json",
+          "sha256": "870b5e8cba1bafadc8373db13e5477e132b88643d9fbb07ff96785e2c718cf06"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/14/results.json",
+          "sha256": "d0bbb460df29d3d2284a2e3b2df24ff08d0369aa8ad8a139ce76b1fffd8a2729"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:15:race",
+      "name": "Dutch Grand Prix",
+      "season": 2025,
+      "round": 15,
+      "start_at": "2025-08-31T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 6,
+        "rmse": 7.797435475847171,
+        "spearman": 0.08571428571428574,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 6.7,
+        "rmse": 8.294576541331088,
+        "spearman": -0.03458646616541361,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "583b95063172f250b5cc6e91cf56a81143376e37b67d463c986ee14c8970933d",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/15/qualifying.json",
+          "sha256": "f1c773a6dfdef7683aab1aa669c0411e52da68026f9f202b2b4ee73345adfb01"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/15/results.json",
+          "sha256": "c8be3fe121ee3a67ed726f1a8bcd0165de5d491a36c3b5b2e128f0251d4c7855"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:16:race",
+      "name": "Italian Grand Prix",
+      "season": 2025,
+      "round": 16,
+      "start_at": "2025-09-07T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.9749213828703582,
+        "spearman": 0.762406015037594,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 4.626013402488151,
+        "spearman": 0.6781954887218045,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "0d401ac17b2834816ff8dca98817d3bad2d4d0a63e11ec2845cd6d59c6f46759",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/16/qualifying.json",
+          "sha256": "a131fb3f364d2738122ac01faf9500dab03afd2b7c933d5949396d8a07ba2a22"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/16/results.json",
+          "sha256": "177061a32472183b4e239040d037fe3ab9125932dcda564d95c7e07c3d40bac6"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:17:race",
+      "name": "Azerbaijan Grand Prix",
+      "season": 2025,
+      "round": 17,
+      "start_at": "2025-09-21T11:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.714835124201342,
+        "spearman": 0.7924812030075188,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.732863826479693,
+        "spearman": 0.6631578947368422,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "38cb46be191cc6a6be63dc817f1d13988c7f84faf929dc47eddfc3b0326bcdff",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/17/qualifying.json",
+          "sha256": "5ef3c6d49cd162c9e3fe6d8cda075434619ec4dd6aa8a1a32da0099c16f674bb"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/17/results.json",
+          "sha256": "4fe5d99aeac2251f0ae397266b1b6939189e38e160a4c236fa56e88451925cca"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:18:race",
+      "name": "Singapore Grand Prix",
+      "season": 2025,
+      "round": 18,
+      "start_at": "2025-10-05T12:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.4,
+        "rmse": 3.605551275463989,
+        "spearman": 0.8045112781954887,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.5071355833500366,
+        "spearman": 0.8150375939849623,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "05b8dafc8f360152574605e713c5fa3b5c6d25562a7aaf31be749d57de77052c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/18/qualifying.json",
+          "sha256": "2565d70f7aed47220eeb07c3b1f26b0260c1ddff96903a6cf22e16d2602ff1d0"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/18/results.json",
+          "sha256": "ad498fa81026301e7132e36301a8a0a7ad1a6c930dd807a82a9d8a1d494d8948"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:19:race",
+      "name": "United States Grand Prix",
+      "season": 2025,
+      "round": 19,
+      "start_at": "2025-10-19T19:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 4.024922359499621,
+        "spearman": 0.7563909774436091,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.483302354291979,
+        "spearman": 0.6977443609022556,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "5f30a8a483f1cb4cd6b686712c6651590b1d9e8e5c1a16ca7c10275903ceb26c",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/19/qualifying.json",
+          "sha256": "df3abe596ef5b388c623703a49d3f0722dc0da901cc9392fdace36dd51053570"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/19/results.json",
+          "sha256": "d388b3b28782c54b7b288ff9054de769badb1d3c5aad56d689a65d3ecb7d1cd1"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:20:race",
+      "name": "Mexico City Grand Prix",
+      "season": 2025,
+      "round": 20,
+      "start_at": "2025-10-26T20:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.7,
+        "rmse": 4.449719092257398,
+        "spearman": 0.7022556390977444,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.6,
+        "rmse": 4.254409477236529,
+        "spearman": 0.7278195488721805,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "99ef4fcd2f973bbd2797a48db19cf27c86779196b9c197ae53ca6c2e9a5adce4",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/20/qualifying.json",
+          "sha256": "72a519dfb93f1a330ea52846c430e7a1b90f1cab0bb23f1c3f9c20e720722f14"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/20/results.json",
+          "sha256": "39e2df35ed0311820ad46981b96bdac66266aa75dd5b2a8574e52686c428ebea"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:22:race",
+      "name": "Las Vegas Grand Prix",
+      "season": 2025,
+      "round": 22,
+      "start_at": "2025-11-23T04:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 5.6,
+        "rmse": 7.582875444051551,
+        "spearman": 0.13533834586466165,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 6.473020933072903,
+        "spearman": 0.3699248120300752,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "d1b592e540f2eb84bbe9a98d32fd24d1bb4d4e6cb6b10df9e645d9c839f44a2d",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/22/qualifying.json",
+          "sha256": "abf2ac13530b7010b4d329e0d4ce9c491ae602ff613bcc35c1fbe67f7af7eddf"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/22/results.json",
+          "sha256": "6ee5768a887afd5a2c7976ea3be3a80e16cabc76d6e32e92f0971dad88abc8b5"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:23:race",
+      "name": "Qatar Grand Prix",
+      "season": 2025,
+      "round": 23,
+      "start_at": "2025-11-30T16:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 3.9,
+        "rmse": 4.929503017546495,
+        "spearman": 0.6345864661654135,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 5.157518783291051,
+        "spearman": 0.6,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "3b186a28bc1e617e02368d99917016a58e295a152caedbe00bc02e0c86d957a7",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/23/qualifying.json",
+          "sha256": "3b292a72abe38528e3634c71f30a965c7e646e920858753bb42b34082084d202"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/23/results.json",
+          "sha256": "54a6dbcdd682789feb9461bb09953764a0172454be26ce73d2299a5bde53bfa8"
+        }
+      ]
+    },
+    {
+      "race_id": "2025:24:race",
+      "name": "Abu Dhabi Grand Prix",
+      "season": 2025,
+      "round": 24,
+      "start_at": "2025-12-07T13:00:00+00:00",
+      "split": "test",
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.872983346207417,
+        "spearman": 0.7744360902255639,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.03732584763727,
+        "spearman": 0.7548872180451127,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "input_hash": "84b0bde6ab5617a6b90c7523767b785d6ca7be1983473af86974013798f6b588",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/24/qualifying.json",
+          "sha256": "8394e27b4a6240c5adc18d277476f21e5f1cdcf0bb9e0b31fab6fee6898342e6"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2025/24/results.json",
+          "sha256": "43b66abad22458833060c77823be951b84a02760893b8a3452dd2258b18e62ac"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2023-10-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2024-15-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2024-17-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2024-8-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "race_id": "2019:1:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2019:3:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    },
+    {
+      "race_id": "2020:1:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2020:16:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2021:1:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2021:5:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    },
+    {
+      "race_id": "2022:1:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2022:16:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2023:1:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2023:10:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2023:13:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2024:2:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2024:8:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2024:15:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2024:16:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2024:17:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2024:24:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2025:1:race",
+      "reason": "Candidate requires prior classifications for every entrant"
+    },
+    {
+      "race_id": "2025:9:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    },
+    {
+      "race_id": "2025:21:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    }
+  ],
+  "dataset_hash": "a7688e8b4a26e879f4cdb3003149da9422ff65b51e9508cabbc7aaf836a9ece7"
+}

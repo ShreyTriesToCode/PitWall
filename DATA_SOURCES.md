@@ -1,68 +1,51 @@
-# PitWall Data Sources
+# Data sources and integrity
 
-[Documentation index](docs/README.md) -> [Artifact Policy](ARTIFACT_POLICY.md) -> [Audit](AUDIT.md)
+| Source | Active use | Freshness and limitations | Failure behavior |
+|---|---|---|---|
+| [Jolpica F1](https://github.com/jolpica/jolpica-f1) | Calendar, qualifying, race classification | Community provider; may lag or revise official records. Active cache TTL five minutes; request timeouts and pagination/schema checks. | No stale calendar selects a current event. Missing qualifying means no prediction. Saved results remain explicitly historical. |
+| [Formula 1 timing](https://livetiming.formula1.com/static/Index.json) | Session index, timing packets, lap/tyre observations, weather, race control, audio links | Undocumented endpoints without an availability SLA. Automatic selection cache at most 15 seconds; explicit archived selection up to six hours. Live requires an active scheduled window and source UTC packet no older than 60 seconds. | Unknown timestamp is stale/unavailable. An unmatched historical selection never loads another race. Partial fields remain absent. |
+| [FIA documents](https://www.fia.com/documents) | Official document metadata/archive via existing resolver | Original authority, source status, official/verified/stale flags, URLs and errors are preserved. UI labels saved metadata as historical and distinguishes indexing from current verification. | Resolver preserves cache/fallback provenance and errors. No PDF or document is fabricated. Numerical ranking does not infer car performance from document text. |
+| Original Jolpica HTTP JSON in repository | Reconstructed 2018–2025 historical experiment | Original response URLs/hashes retained. Historical publication timestamps are unavailable; later corrections are possible. | Incomplete qualifying, duplicate positions, mismatched fields and missing history are excluded with reasons. |
+| Immutable local forecast/evaluation ledger | Genuine new prediction history and evaluated dataset | Actual capture/retrieval/evaluation timestamps. Keep persistent backups. | Corruption or conflicting overwrite fails publication. No historical capture timestamps are invented. |
 
-Generated: 2026-05-25
+OpenF1, FastF1, Open-Meteo, F1DB, RelBench, Ollama and ICS helpers remain in the
+legacy research tree. They are not production numerical fallbacks. A configured
+provider is not counted as available merely because its URL or credentials exist.
 
-## Primary Sources
+## Status meanings
 
-- OpenF1: https://openf1.org/docs/ and https://openf1.org/auth.html
-  - Used as optional 2023+ enrichment for sessions, drivers, laps, pit data, stints, race control, weather, and session results.
-  - Live or restricted sessions may return 401/403 unless authenticated. PitWall reports this as auth-restricted and falls back.
-- Jolpica: https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md
-  - Ergast-compatible historical schedule/results/qualifying/laps/pit stops/status.
-  - Pagination uses `limit` and `offset`; default is 30 and max is 100.
-- FastF1: https://docs.fastf1.dev/fastf1.html
-  - Optional session timing, laps, telemetry, tyres, weather, and cache-backed F1 timing access.
-- Open-Meteo: https://open-meteo.com/en/docs
-  - Forecast/historical weather by latitude/longitude and hourly fields.
-- FIA documents:
-  - Official documents, classifications, decisions, race director notes, infringements, PU documents, grid documents, and context where available.
-  - Source order is trust-labelled: primary official FIA pages, verified 2026 `api.fia.com` archive/API fallback, configured third-party document indexes only when they expose real FIA-origin/downloadable documents, Wayback season-index snapshots as stale context, verified cache, then explicit unavailable.
-  - F1LivePulse is disabled by default until a stable parseable document feed is verified; summary-only pages must not replace official documents.
-  - Individual PDF downloads that return `403` are marked as forbidden; cached official text is reused as stale evidence when present.
-- Formula 1 timing/static feeds:
-  - Used for the `/live` timing dashboard with archive/live/stale/unavailable states.
-  - Track visuals use season-based Formula1.com track images such as `common/f1/2026/track/2026trackmontrealdetailed.webp` before falling back to legacy circuit maps.
+- **UPCOMING**: confirmed scheduled future race; does not imply a forecast exists.
+- **UPDATING**: scheduled start passed recently; this is not proof of live activity.
+- **LIVE**: timing source packet freshness and active session window both verified.
+- **STALE**: prior evidence exists but freshness is not established.
+- **UNAVAILABLE**: no reliable current data or valid input for that feature.
+- **HISTORICAL**: a past classification, saved archive, or ended session snapshot.
 
-## Optional Offline Datasets
+Retrieval time is never presented as the time a timing packet was produced.
+An empty successful qualifying response establishes endpoint accessibility, not
+that a qualifying result exists. Missing numbers never become zero.
 
-- F1DB: https://github.com/f1db/f1db
-  - License: CC-BY-4.0.
-  - Release format: CSV, JSON, SQL, SQLite, and split artifacts.
-  - Current verified release in config/tests: `v2026.4.2`.
-  - Used only when `F1DB_ENABLED=true` plus a local SQLite or CSV path is configured.
-  - Bootstrap planning: `.venv/bin/python scripts/bootstrap_datasets.py f1db`.
-- RelBench rel-f1: https://relbench.stanford.edu/datasets/rel-f1/
-  - License: CC-BY-4.0 via F1DB reference.
-  - Used as an offline relational benchmark, not a live prediction source.
-  - Bootstrap planning: `.venv/bin/python scripts/bootstrap_datasets.py relbench`.
+## Timing field semantics
 
-## Source Rules
+Wind speed is supplied in m/s. Tyre age is an observed lap count, not an estimated
+percentage of life remaining. A zero observation is distinct from missing data.
+Provider `Utc` message fields are normalized with an explicit UTC suffix; generic
+dates without an offset and relative audio times do not become absolute timestamps.
+Unknown car channels are not assigned speculative labels. Archived car readings
+are the latest retained feed values, not race averages.
 
-- Prefer official FIA/F1 documents for penalties, classification, timing/race documents, and rules context.
-- Prefer live/current APIs for race-week data when available and healthy.
-- Prefer F1DB/RelBench for stable historical/offline benchmarking.
-- Do not use future data in chronological training.
-- Do not fake missing API data; expose unavailable/auth-restricted/stale states.
+## Usage and attribution
 
-## Cache Manifest
+[Jolpica documentation](https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md)
+describes its Ergast-compatible API. Cache and limit requests; do not assume an
+unlimited service or guaranteed update time. Provider content is subject to its
+terms. Formula 1 and FIA content, names, images, audio and PDFs retain their owners'
+rights. The repository's MIT code license does not license third-party data.
+No legally required notices have been removed. The application makes no affiliation
+claim and requires no paid OpenF1 or AI account for current functionality.
 
-`data_cache/cache_manifest.json` records cache-aware loading for historical full-race data:
-
-- source name
-- file path
-- last checked/fetched time
-- season/round coverage
-- schema version
-- checksum and file size
-- freshness status
-- latest run action (`reused`, `refreshed`, `skipped`, or fallback)
-- refresh or fallback reason
-- validation status
-
-Valid cached data is reused. Missing, corrupted, stale, schema-invalid, or force-refreshed data is fetched only for the affected season/round. Optional sources can fail without crashing the app when valid cached fallback data exists; required training data missing or invalid must fail validation.
-
-## Actual Results
-
-Prediction-vs-actual comparison uses only trusted result rows already available through project sources or valid cache, primarily Ergast-compatible/Jolpica race `Results` classifications. If actual results are not yet published, delayed past the configured result window, source-stale, malformed, or unavailable, PitWall emits an explicit `actual_result_comparison.status` and warning instead of fabricating winners, podiums, Top 10 rows, or full-grid classifications.
+During the audit, the current Jolpica selection was cross-checked against the
+[official 2026 F1 calendar](https://www.formula1.com/en/racing/2026), which listed
+Azerbaijan as the next event. That verification is audit evidence, not a hardcoded
+runtime choice. The application requests the current UTC year's calendar and,
+after season end, the next published year's calendar.

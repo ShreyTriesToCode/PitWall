@@ -1,95 +1,90 @@
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
-
 import { GET as getTiming } from "../route";
-
 const encoder = new TextEncoder();
-
-function sse(event, data) {
-  return encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+function event(name, data) {
+  return encoder.encode(`event: ${name}\ndata: ${JSON.stringify(data)}\n\n`);
 }
-
 function wait(ms, signal) {
   return new Promise((resolve) => {
-    const timer = setTimeout(resolve, ms);
-    signal?.addEventListener("abort", () => {
+    const done = () => {
       clearTimeout(timer);
+      signal.removeEventListener("abort", done);
       resolve();
-    }, { once: true });
+    };
+    const timer = setTimeout(done, ms);
+    signal.addEventListener("abort", done, { once: true });
+    if (signal.aborted) done();
   });
 }
-
-function timingRequestUrl(requestUrl) {
-  const url = new URL(requestUrl);
-  url.pathname = "/api/f1timing";
-  url.searchParams.set("fast", "1");
-  return url;
-}
-
-function payloadFingerprint(payload) {
-  return JSON.stringify({
-    source: payload?.source,
-    state: payload?.session_state,
-    session: payload?.normalized?.session,
-    leaderboard: payload?.normalized?.leaderboard,
-    raceControl: payload?.normalized?.raceControl?.slice?.(0, 5),
-    weather: payload?.normalized?.weather,
-    trackStatus: payload?.normalized?.trackStatus,
-    lapCount: payload?.normalized?.lapCount,
-  });
-}
-
 export async function GET(request) {
-  const signal = request.signal;
-
+  const lifecycle = new AbortController();
+  const abort = () => lifecycle.abort();
+  request.signal.addEventListener("abort", abort, { once: true });
+  if (request.signal.aborted) abort();
   const stream = new ReadableStream({
     async start(controller) {
-      let lastFingerprint = "";
-      let closed = false;
-
-      function close() {
-        if (closed) return;
-        closed = true;
-        try { controller.close(); } catch {}
-      }
-
-      signal?.addEventListener("abort", close, { once: true });
-      controller.enqueue(sse("ready", { ok: true, server_time: new Date().toISOString() }));
-
-      while (!closed && !signal?.aborted) {
-        try {
-          const response = await getTiming(new Request(timingRequestUrl(request.url), { signal }));
-          const payload = await response.json();
-          const fingerprint = payloadFingerprint(payload);
-          if (fingerprint !== lastFingerprint) {
-            controller.enqueue(sse("message", payload));
-            lastFingerprint = fingerprint;
-          } else {
-            controller.enqueue(sse("heartbeat", { server_time: new Date().toISOString(), session_state: payload?.session_state || "pending" }));
+      let fingerprint = "";
+      const started = Date.now();
+      try {
+        controller.enqueue(
+          event("ready", { server_time: new Date().toISOString() }),
+        );
+        while (!lifecycle.signal.aborted && Date.now() - started < 55_000) {
+          try {
+            const url = new URL(request.url);
+            url.pathname = "/api/f1timing";
+            url.searchParams.set("fast", "1");
+            const response = await getTiming(
+              new Request(url, { signal: lifecycle.signal }),
+            );
+            const payload = await response.json();
+            if (lifecycle.signal.aborted) break;
+            const next = JSON.stringify({
+              state: payload.session_state,
+              mode: payload.timing_mode,
+              packet: payload.source_packet_at,
+              data: payload.normalized,
+            });
+            if (next !== fingerprint) {
+              controller.enqueue(event("message", payload));
+              fingerprint = next;
+            } else
+              controller.enqueue(
+                event("heartbeat", { server_time: new Date().toISOString() }),
+              );
+            await wait(
+              Math.max(
+                5000,
+                Math.min(15000, Number(payload.refresh_after_ms) || 10000),
+              ),
+              lifecycle.signal,
+            );
+          } catch (error) {
+            if (lifecycle.signal.aborted) break;
+            console.warn("PitWall timing stream failed:", error.name);
+            controller.enqueue(
+              event("error", {
+                message: "Timing temporarily unavailable; retrying.",
+              }),
+            );
+            await wait(5000, lifecycle.signal);
           }
-
-          const delay = Math.max(1500, Math.min(10000, Number(payload?.refresh_after_ms || 5000)));
-          await wait(delay, signal);
-        } catch (error) {
-          if (closed || signal?.aborted) break;
-          controller.enqueue(sse("error", { message: "Timing stream retrying", detail: String(error?.message || error) }));
-          await wait(5000, signal);
         }
+      } finally {
+        request.signal.removeEventListener("abort", abort);
+        if (!lifecycle.signal.aborted) controller.close();
       }
-
-      close();
     },
     cancel() {
-      signal?.throwIfAborted?.();
-    }
+      lifecycle.abort();
+    },
   });
-
   return new Response(stream, {
     headers: {
       "Content-Type": "text/event-stream; charset=utf-8",
       "Cache-Control": "no-store, no-transform",
-      "Connection": "keep-alive",
       "X-Accel-Buffering": "no",
-    }
+    },
   });
 }

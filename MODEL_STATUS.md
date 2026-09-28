@@ -1,3 +1,5 @@
+> **Archived legacy report.** These claims describe the retired implementation and are not current release evidence. See [current methodology](MODEL_REPORT.md) and [validation](docs/VALIDATION.md).
+
 # PitWall Model Status
 
 Generated: Thursday, 17 September 2026, 04:40 PM IST

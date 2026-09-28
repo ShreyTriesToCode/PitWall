@@ -1,8 +1,12 @@
 "use client";
 
-import { AppShell, InlineNotice, PageHeader } from "../components/PitWallComponents";
+import {
+  AppShell,
+  InlineNotice,
+  PageHeader,
+} from "../components/PitWallComponents";
 
-export default function LiveError({ error, reset }) {
+export default function LiveError({ reset }) {
   return (
     <AppShell active="/live">
       <PageHeader
@@ -12,9 +16,15 @@ export default function LiveError({ error, reset }) {
       />
       <InlineNotice
         title="Timing route failed"
-        body={error?.message || "Archived timing data or fallback session data may be malformed or temporarily unavailable."}
+        body={
+          "Archived timing data or fallback session data may be malformed or temporarily unavailable."
+        }
         tone="error"
-        action={<button className="control-btn" onClick={reset} type="button">Retry</button>}
+        action={
+          <button className="control-btn" onClick={reset} type="button">
+            Retry
+          </button>
+        }
       />
     </AppShell>
   );

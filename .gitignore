@@ -47,3 +47,8 @@ frontend/.env.local
 # - briefings/
 # - small canonical data_cache/*.json contracts/manifests
 # Large runtime caches belong in Actions cache, release assets, or object storage.
+
+# Provider/runtime caches; published product and immutable ledger are retained.
+data_cache/provider/
+frontend/test-results/
+frontend/playwright-report/

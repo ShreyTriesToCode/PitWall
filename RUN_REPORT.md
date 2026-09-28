@@ -1,3 +1,5 @@
+> **Archived legacy report.** These claims describe the retired implementation and are not current release evidence. See [current methodology](MODEL_REPORT.md) and [validation](docs/VALIDATION.md).
+
 # PitWall Run Report
 
 - Generated at: 2026-09-17T11:10:23.651475+00:00

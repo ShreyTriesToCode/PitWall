@@ -1,434 +1,455 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { createHash } from "node:crypto";
 
-const PROJECT_PARENT = path.resolve(/*turbopackIgnore: true*/ process.cwd(), "..");
-const DATA_CACHE_DIR = path.resolve(PROJECT_PARENT, "data_cache");
-const BRIEFINGS_DIR = path.resolve(PROJECT_PARENT, "briefings");
-const DATA_BASE =
-  process.env.NEXT_PUBLIC_F1_DATA_BASE_URL ||
-  "https://raw.githubusercontent.com/ShreyTriesToCode/PitWall/main";
-const GITHUB_RAW_DATA_FALLBACK = String(process.env.GITHUB_RAW_DATA_FALLBACK || process.env.NEXT_PUBLIC_GITHUB_RAW_DATA_FALLBACK || "true").toLowerCase() !== "false";
-const USE_LAST_VALID_CONTRACT_ON_ERROR = String(process.env.USE_LAST_VALID_CONTRACT_ON_ERROR || "true").toLowerCase() !== "false";
+const ROOT =
+  process.env.PITWALL_PROJECT_ROOT ||
+  path.resolve(/*turbopackIgnore: true*/ process.cwd(), "..");
+const BASE = "https://api.jolpi.ca/ergast/f1";
+const TTL = 5 * 60_000;
+const cache = new Map();
 
-async function readJson(filePath) {
-  const text = await readFile(/*turbopackIgnore: true*/ filePath, "utf8");
-  return JSON.parse(text);
+export function timestamp(value) {
+  if (typeof value !== "string" || !/(Z|[+-]\d{2}:\d{2})$/.test(value))
+    throw new Error("Timestamp needs a timezone");
+  const time = Date.parse(value);
+  if (!Number.isFinite(time)) throw new Error("Invalid timestamp");
+  return time;
 }
 
-async function fetchRemoteJson(relativePath) {
-  const res = await fetch(`${DATA_BASE}/${relativePath}?v=${Date.now()}`, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Remote ${relativePath} HTTP ${res.status}`);
-  return res.json();
-}
-
-async function loadJson(relativePath, fallback) {
-  const localPath = relativePath.startsWith("briefings/")
-    ? path.resolve(BRIEFINGS_DIR, relativePath.slice("briefings/".length))
-    : path.resolve(DATA_CACHE_DIR, relativePath.replace(/^data_cache\//, ""));
-  try {
-    return await readJson(localPath);
-  } catch {
-    if (!GITHUB_RAW_DATA_FALLBACK) return fallback;
-    try {
-      return await fetchRemoteJson(relativePath);
-    } catch {
-      return fallback;
-    }
-  }
-}
-
-function asArray(value) {
-  return Array.isArray(value) ? value : [];
-}
-
-function asObject(value) {
-  return value && typeof value === "object" && !Array.isArray(value) ? value : {};
-}
-
-function normalizeModelComparison(value = {}) {
-  const raw = asObject(value);
+export function eventFromRace(raw) {
+  const season = Number(raw.season),
+    round = Number(raw.round);
+  if (
+    !Number.isInteger(season) ||
+    season < 1950 ||
+    !Number.isInteger(round) ||
+    round < 1 ||
+    !raw.raceName ||
+    !raw.Circuit?.circuitId
+  )
+    throw new Error("Invalid calendar schema");
+  const start = raw.time
+    ? new Date(timestamp(`${raw.date}T${raw.time}`)).toISOString()
+    : null;
+  const sessions = Object.entries({
+    FirstPractice: "Practice 1",
+    SecondPractice: "Practice 2",
+    ThirdPractice: "Practice 3",
+    SprintQualifying: "Sprint qualifying",
+    SprintShootout: "Sprint qualifying",
+    Sprint: "Sprint",
+    Qualifying: "Qualifying",
+  })
+    .filter(([key]) => raw[key])
+    .map(([key, name]) => ({
+      name,
+      date: raw[key].date,
+      start_at: raw[key].time
+        ? new Date(timestamp(`${raw[key].date}T${raw[key].time}`)).toISOString()
+        : null,
+    }));
   return {
-    champion: asObject(raw.champion),
-    challenger: asObject(raw.challenger),
-    promotion_decision: asObject(raw.promotion_decision),
-    metrics: asObject(raw.metrics),
-    generated_at: raw.generated_at || "",
-    warnings: asArray(raw.warnings),
+    id: `${season}:${round}:race`,
+    season,
+    round,
+    name: raw.raceName,
+    circuit: raw.Circuit.circuitName,
+    location: raw.Circuit.Location?.locality,
+    date: raw.date,
+    start_at: start,
+    sessions: [...sessions, { name: "Race", date: raw.date, start_at: start }],
+    source_url: `${BASE}/${season}/${round}/races/`,
   };
 }
 
-function normalizeActualResultComparison(value = {}) {
-  const raw = asObject(value);
-  const status = ["available", "pending", "unavailable", "incomplete", "source_stale", "source_failed", "not_yet_raced"].includes(raw.status)
-    ? raw.status
-    : "pending";
-  return {
-    status,
-    race: asObject(raw.race),
-    predicted_winner: asObject(raw.predicted_winner),
-    actual_winner: asObject(raw.actual_winner),
-    winner_hit: Boolean(raw.winner_hit),
-    predicted_podium: asArray(raw.predicted_podium),
-    actual_podium: asArray(raw.actual_podium),
-    podium_recall: numeric(raw.podium_recall, null),
-    predicted_top10: asArray(raw.predicted_top10),
-    actual_top10: asArray(raw.actual_top10),
-    top10_recall: numeric(raw.top10_recall, null),
-    driver_position_errors: asArray(raw.driver_position_errors),
-    race_by_race: asArray(raw.race_by_race),
-    metrics: asObject(raw.metrics),
-    source_health: asArray(raw.source_health),
-    warnings: asArray(raw.warnings),
-  };
-}
-
-function numeric(value, fallback = null) {
-  const number = Number(value);
-  return Number.isFinite(number) ? number : fallback;
-}
-
-function normalizePredictionRows(rows, options = {}) {
-  const limit = options.limit === undefined ? 10 : options.limit;
-  const seen = new Set();
-  const normalized = asArray(rows).map((item, index) => {
-    const row = asObject(item);
-    const driverId = String(row.driver_id || row.name || `driver-${index + 1}`).trim();
+export function selectEvent(events, now = Date.now(), completed = []) {
+  if (
+    events.some(
+      (e) => !e.start_at && e.date >= new Date(now).toISOString().slice(0, 10),
+    )
+  )
     return {
-      ...row,
-      driver_id: driverId,
-      name: row.name || driverId,
-      team: row.team || "Unknown team",
-      rank: numeric(row.rank, index + 1),
-      previous_rank: numeric(row.previous_rank, row.rank ?? index + 1),
-      rank_delta: numeric(row.rank_delta, 0),
-      score: numeric(row.score, 0),
-      confidence: Math.max(0, Math.min(100, numeric(row.confidence, 0))),
-      prediction_trust_score: Math.max(0, Math.min(100, numeric(row.prediction_trust_score, row.confidence ?? 0))),
-      prediction_trust_label: row.prediction_trust_label || row.trust_label || "Trust pending",
-      model_disagreement_level: row.model_disagreement_level || "low",
-      model_disagreement_reasons: asArray(row.model_disagreement_reasons || row.disagreement_flags),
-      component_scores: asObject(row.component_scores),
-      reason_tags: asArray(row.reason_tags),
-      weakness_tags: asArray(row.weakness_tags),
-      evidence_status: asObject(row.evidence_status),
-      available_feature_groups: asArray(row.available_feature_groups || row.evidence_status?.available),
-      missing_feature_groups: asArray(row.missing_feature_groups || row.evidence_status?.missing),
-      missing_data_penalty_total: numeric(row.missing_data_penalty_total || row.evidence_status?.penalty_total, 0),
-      stage_limitations: asArray(row.stage_limitations),
-      source_warnings: asArray(row.source_warnings || row.source_notes?.warnings),
-      stale_source_warnings: asArray(row.stale_source_warnings),
-      missing_data_penalties: asObject(row.missing_data_penalties),
-      data_completeness_score: numeric(row.data_completeness_score, numeric(row.trust_components?.data_completeness, null)),
-      trust_components: asObject(row.trust_components),
-      trust_explanation: row.trust_explanation || "",
-      model_agreement_score: numeric(row.model_agreement_score, null),
-      ai_explanation: asObject(row.ai_explanation),
-      position_range: Array.isArray(row.position_range)
-        ? row.position_range
-        : [row.best_case_finish ?? row.finish_interval_low ?? row.rank, row.worst_case_finish ?? row.finish_interval_high ?? row.rank],
-      best_case_finish: numeric(row.best_case_finish, Array.isArray(row.position_range) ? row.position_range[0] : numeric(row.finish_interval_low, row.rank)),
-      worst_case_finish: numeric(row.worst_case_finish, Array.isArray(row.position_range) ? row.position_range[1] : numeric(row.finish_interval_high, row.rank)),
-      points_probability: numeric(row.points_probability, numeric(row.top10_probability, null)),
-      fastest_lap_probability: numeric(row.fastest_lap_probability, null),
-      dnf_probability: numeric(row.dnf_probability, null),
-      predicted_position: numeric(row.predicted_position, numeric(row.predicted_finish, numeric(row.predicted_finish_position, numeric(row.rank, index + 1)))),
-      probability: numeric(row.probability, numeric(row.points_probability, numeric(row.top10_probability, 0))),
-      rank_score: numeric(row.rank_score, numeric(row.score, 0)),
-      prediction_trust: row.prediction_trust || row.prediction_trust_label || row.trust_label || "Trust pending",
-      expected_strategy: asObject(row.expected_strategy),
-      explanation: asObject(row.explanation),
-      data_freshness: asObject(row.data_freshness),
-      source_notes: asObject(row.source_notes),
-      strategy_annotations: asArray(row.strategy_annotations),
+      state: "UNAVAILABLE",
+      event: null,
+      reason: "A future calendar event has no confirmed start time.",
     };
-  }).filter((row) => {
-    if (!row.driver_id || seen.has(row.driver_id)) return false;
-    seen.add(row.driver_id);
-    return true;
-  }).sort((a, b) => Number(a.rank || 999) - Number(b.rank || 999));
-  return limit ? normalized.slice(0, limit) : normalized;
-}
-
-function normalizeLatest(payload) {
-  if (!payload || typeof payload !== "object") return null;
-  const fullGrid = normalizePredictionRows(
-    payload.full_grid || payload.all_predictions || payload.driver_predictions || payload.top10,
-    { limit: null },
-  );
-  const top10 = normalizePredictionRows(payload.top10?.length ? payload.top10 : fullGrid, { limit: 10 });
-  return {
-    ...payload,
-    top10,
-    top_10: top10,
-    full_grid: fullGrid.length ? fullGrid : top10,
-    all_predictions: fullGrid.length ? fullGrid : top10,
-    race_factors: asObject(payload.race_factors),
-    warnings: asArray(payload.warnings),
-    scenarios: asObject(payload.scenarios),
-    strategy: asObject(payload.strategy),
-    prediction_model: asObject(payload.prediction_model),
-    source_health: asObject(payload.source_health || payload.source_status),
-    source_status: asObject(payload.source_status || payload.source_health),
-    race_intelligence_summary: asObject(payload.race_intelligence_summary),
-    changed_since_last_run: asObject(payload.changed_since_last_run || payload.change_summary),
-    change_summary: asObject(payload.change_summary || payload.changed_since_last_run),
-    ai_features: asObject(payload.ai_features),
-    source_conflicts: asArray(payload.source_conflicts),
-    event_trust_score: numeric(payload.event_trust_score || payload.prediction_trust_score, null),
-    event_trust_label: payload.event_trust_label || payload.prediction_trust_label || "",
-    model_metrics: asObject(payload.model_metrics),
-    model_comparison: normalizeModelComparison(payload.model_comparison),
-    actual_result_comparison: normalizeActualResultComparison(payload.actual_result_comparison),
-    correction_summary: asObject(payload.correction_summary),
-  };
-}
-
-function normalizeArchive(rows) {
-  return asArray(rows).map((row, index) => ({
-    ...asObject(row),
-    prediction_id: row?.prediction_id || row?.path || `archive-${index}`,
-    title: row?.title || row?.race_name || "Untitled briefing",
-    stage: row?.stage || row?.prediction_stage || "pending",
-  }));
-}
-
-function normalizeFrontendContract(contract) {
-  const raw = asObject(contract);
-  const latest = normalizeLatest(raw.latest);
-  return {
-    ...raw,
-    ok: Boolean(latest?.top10?.length),
-    latest,
-    briefings: asArray(raw.briefings),
-    archive: normalizeArchive(raw.archive),
-    schema_version: raw.schema_version || "unavailable",
-    prediction_data_version: raw.prediction_data_version || latest?.prediction_data_version || null,
-    race_intelligence_summary: asObject(raw.race_intelligence_summary || latest?.race_intelligence_summary),
-    changed_since_last_run: asObject(raw.changed_since_last_run || raw.what_changed_since_last_run || latest?.changed_since_last_run || latest?.change_summary),
-    event_trust_score: numeric(raw.event_trust_score || latest?.event_trust_score || latest?.prediction_trust_score, null),
-    event_trust_label: raw.event_trust_label || latest?.event_trust_label || latest?.prediction_trust_label || "",
-    ai_features: asObject(raw.ai_features || latest?.ai_features),
-    source_conflicts: asArray(raw.source_conflicts || latest?.source_conflicts),
-    model_comparison: normalizeModelComparison(raw.model_comparison || raw.model_status?.model_comparison || latest?.model_comparison),
-    actual_result_comparison: normalizeActualResultComparison(raw.actual_result_comparison || latest?.actual_result_comparison),
-  };
-}
-
-function recoverContractFromDebug(debug, base = {}) {
-  const targets = asArray(debug?.payloads).map(normalizeDebugTarget).filter((target) => target?.top10?.length);
-  const latest = normalizeLatest(targets.find((target) => target.target_type === "race") || targets[0]);
-  if (!latest?.top10?.length) return null;
-  const warning = "Recovered prediction contract from data_cache/latest-model-debug.json because frontend-contract.json was missing, blank, or invalid.";
-  const warnings = [...asArray(latest.warnings), warning];
-  return normalizeFrontendContract({
-    ...asObject(base),
-    schema_version: base?.schema_version || "recovered-from-debug",
-    prediction_data_version: base?.prediction_data_version || latest.prediction_data_version || "debug-recovery",
-    generated_at: base?.generated_at || debug?.generated_at || latest.generated || latest.generated_at || null,
-    target_event: base?.target_event || latest.race_name || latest.title || latest.event?.title || null,
-    prediction_stage: base?.prediction_stage || latest.prediction_stage || latest.stage || "pending",
-    contract_recovered_from_debug: true,
-    contract_recovery_warning: warning,
-    latest: {
-      ...latest,
-      warnings,
-      contract_recovered_from_debug: true,
-      contract_recovery_warning: warning,
-    },
-    briefings: asArray(base?.briefings),
-    archive: normalizeArchive(base?.archive),
-  });
-}
-
-function normalizeDebugTarget(payload) {
-  if (!payload || !payload.target_type) return null;
-  const fullGrid = normalizePredictionRows(
-    payload.full_grid || payload.all_predictions || payload.driver_predictions || payload.top10,
-    { limit: null },
-  );
-  return {
-    target_type: payload.target_type,
-    title: payload.title,
-    event: payload.event,
-    race: payload.race,
-    top10: normalizePredictionRows(payload.top10?.length ? payload.top10 : fullGrid, { limit: 10 }),
-    top_10: normalizePredictionRows(payload.top_10?.length ? payload.top_10 : payload.top10?.length ? payload.top10 : fullGrid, { limit: 10 }),
-    full_grid: fullGrid,
-    all_predictions: fullGrid,
-    race_factors: asObject(payload.race_factors),
-    warnings: asArray(payload.warnings),
-    scenarios: payload.prediction_model?.scenarios || {},
-    strategy: payload.strategy || null,
-    prediction_model: payload.prediction_model || {},
-    model_comparison: normalizeModelComparison(payload.model_comparison),
-    actual_result_comparison: normalizeActualResultComparison(payload.actual_result_comparison),
-    generated: payload.generated_at || null,
-    stage: payload.prediction_model?.prediction_stage || payload.stage || "pending",
-    available: Boolean(payload.top10?.length),
-  };
-}
-
-export async function loadFrontendContract() {
-  const fallback = { briefings: [], latest: null, archive: [], schema_version: "unavailable" };
-  const raw = await loadJson("data_cache/frontend-contract.json", fallback);
-  let normalized = normalizeFrontendContract(raw);
-  if (USE_LAST_VALID_CONTRACT_ON_ERROR && !normalized.latest?.top10?.length) {
-    const debug = await loadJson("data_cache/latest-model-debug.json", { payloads: [] });
-    const recovered = recoverContractFromDebug(debug, raw);
-    if (recovered) normalized = recovered;
+  for (const event of [...events]
+    .filter((e) => e.start_at)
+    .sort((a, b) => timestamp(a.start_at) - timestamp(b.start_at))) {
+    if (completed.includes(event.id)) continue;
+    const start = timestamp(event.start_at);
+    if (start > now) return { state: "UPCOMING", event, reason: null };
+    if (now - start < 8 * 3600_000)
+      return {
+        state: "UPDATING",
+        event,
+        reason:
+          "Scheduled start has passed. Check timing for verified session activity.",
+      };
   }
-  if (!normalized.latest?.top10?.length) {
-    const previous = await loadJson("data_cache/frontend-contract.previous.json", fallback);
-    const recoveredPrevious = normalizeFrontendContract({
-      ...previous,
-      contract_recovered_from_previous: true,
-      latest: previous?.latest ? {
-        ...previous.latest,
-        contract_recovered_from_previous: true,
-        warnings: [...asArray(previous.latest.warnings), "Recovered from frontend-contract.previous.json because the latest contract was unusable."],
-      } : null,
+  return {
+    state: "UNAVAILABLE",
+    event: null,
+    reason: "No upcoming race with a confirmed start time is available.",
+  };
+}
+
+export function raceRows(payload, season) {
+  const meta = payload?.MRData,
+    rows = meta?.RaceTable?.Races;
+  if (
+    !Array.isArray(rows) ||
+    ![meta?.offset, meta?.total, meta?.limit].every((v) =>
+      /^\d+$/.test(String(v)),
+    ) ||
+    Number(meta.limit) < 1 ||
+    Number(meta.offset) !== 0 ||
+    Number(meta.total) > Number(meta.limit)
+  )
+    throw new Error("Invalid or incomplete provider response");
+  const events = rows.map(eventFromRace);
+  if (
+    events.some((e) => e.season !== season) ||
+    new Set(events.map((e) => e.id)).size !== events.length
+  )
+    throw new Error("Incorrect season or duplicate race");
+  return rows;
+}
+
+async function provider(endpoint) {
+  const previous = cache.get(endpoint);
+  if (previous && previous.expires > Date.now()) return previous.promise;
+  const promise = (async () => {
+    const url = `${BASE}/${endpoint}/?limit=100`;
+    const response = await fetch(url, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
     });
-    if (recoveredPrevious.latest?.top10?.length) normalized = recoveredPrevious;
+    if (!response.ok) throw new Error(`Provider HTTP ${response.status}`);
+    const body = await response.text();
+    if (body.length > 2_000_000) throw new Error("Provider response too large");
+    return {
+      data: JSON.parse(body),
+      source: {
+        url,
+        retrieved_at: new Date().toISOString(),
+        status: "AVAILABLE",
+      },
+    };
+  })();
+  cache.set(endpoint, { promise, expires: Date.now() + TTL });
+  try {
+    return await promise;
+  } catch (error) {
+    cache.delete(endpoint);
+    throw error;
   }
-  return normalized;
 }
 
-export async function loadGeneratedTargets() {
-  const debug = await loadJson("data_cache/latest-model-debug.json", { payloads: [] });
-  const targets = (debug.payloads || []).map(normalizeDebugTarget).filter(Boolean);
-  return {
-    targets,
-    selected_targets: debug.selected_targets || [],
-    output_mode: debug.output_mode || null,
-  };
+// Matches Python's sorted, ASCII JSON encoding for the contract's integer/string inputs.
+export function inputDigest(value) {
+  function canonical(item) {
+    if (item === null || typeof item !== "object") return item;
+    if (Array.isArray(item)) return item.map(canonical);
+    return Object.fromEntries(
+      Object.keys(item)
+        .sort()
+        .map((key) => [key, canonical(item[key])]),
+    );
+  }
+  const text = JSON.stringify(canonical(value)).replace(
+    /[\u0080-\uffff]/g,
+    (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`,
+  );
+  return createHash("sha256").update(text).digest("hex");
 }
 
-function currentTargetOnly(target, latest) {
-  if (!target || !latest) return false;
-  const latestRaceId = latest.race_id || latest.prediction_id?.split("-race-")?.[0] || "";
-  const targetRaceId = target.race_id || target.prediction_id?.split("-race-")?.[0] || "";
-  if (latestRaceId && targetRaceId && latestRaceId !== targetRaceId) return false;
-  if (latest.season && target.season && Number(latest.season) !== Number(target.season)) return false;
-  if (latest.round && target.round && Number(latest.round) !== Number(target.round)) return false;
-  return true;
+export function validateProduct(data) {
+  if (
+    data?.schema_version !== 3 ||
+    !Array.isArray(data.predictions) ||
+    !Array.isArray(data.calendar) ||
+    !Array.isArray(data.evaluations)
+  )
+    throw new Error("Unsupported product contract");
+  timestamp(data.generated_at);
+  if (
+    new Set(data.predictions.map((p) => p.prediction_id)).size !==
+    data.predictions.length
+  )
+    throw new Error("Duplicate prediction IDs");
+  for (const prediction of data.predictions) {
+    if (
+      !prediction.prediction_id ||
+      !prediction.model_version ||
+      !prediction.feature_version ||
+      !prediction.input_hash ||
+      !prediction.sources?.length
+    )
+      throw new Error("Prediction provenance missing");
+    if (
+      !(
+        timestamp(prediction.data_cutoff) <=
+          timestamp(prediction.generated_at) &&
+        timestamp(prediction.generated_at) <
+          timestamp(prediction.event.start_at)
+      )
+    )
+      throw new Error("Invalid forecast chronology");
+    const grid = prediction.full_grid;
+    if (
+      !Array.isArray(grid) ||
+      grid.length < 2 ||
+      new Set(grid.map((r) => r.driver_id)).size !== grid.length ||
+      grid.some((r, i) => r.rank !== i + 1)
+    )
+      throw new Error("Invalid prediction field");
+    if (
+      prediction.race_id !== prediction.event.id ||
+      prediction.model_version !== "qualifying-order-v1"
+    )
+      throw new Error("Unsupported prediction identity/model");
+    if (JSON.stringify(prediction.top10) !== JSON.stringify(grid.slice(0, 10)))
+      throw new Error("Top 10 differs from full grid");
+    const qualifying = prediction.inputs?.qualifying;
+    if (
+      !Array.isArray(qualifying) ||
+      qualifying.length !== grid.length ||
+      prediction.feature_version !== "qualifying-position-v1"
+    )
+      throw new Error("Prediction input field missing or unsupported");
+    const hash = inputDigest({ event: prediction.event, qualifying });
+    if (
+      hash !== prediction.input_hash ||
+      inputDigest([prediction.race_id, prediction.model_version, hash]) !==
+        prediction.prediction_id
+    )
+      throw new Error("Prediction input identity mismatch");
+    const ordered = [...qualifying].sort((a, b) => a.position - b.position);
+    if (
+      ordered.some(
+        (q, i) =>
+          !q.driver_id ||
+          q.position !== i + 1 ||
+          grid[i].driver_id !== q.driver_id ||
+          grid[i].name !== q.name ||
+          grid[i].team !== q.team ||
+          grid[i].qualifying_position !== q.position ||
+          grid[i].ranking_score !== q.position,
+      )
+    )
+      throw new Error("Ranking differs from published model inputs");
+    const capture = timestamp(prediction.generated_at);
+    const retrieved = prediction.sources.map((source) =>
+      timestamp(source.retrieved_at),
+    );
+    if (
+      retrieved.some((t) => t > capture) ||
+      Math.max(...retrieved) !== timestamp(prediction.data_cutoff)
+    )
+      throw new Error("Source cutoff differs from prediction provenance");
+  }
+  return data;
+}
+
+async function readProduct() {
+  try {
+    let body;
+    try {
+      body = await readFile(
+        /*turbopackIgnore: true*/ path.join(ROOT, "data_cache/product.json"),
+        "utf8",
+      );
+    } catch (error) {
+      if (error.code !== "ENOENT" || !process.env.PITWALL_DATA_BASE_URL)
+        throw error;
+      const base = new URL(process.env.PITWALL_DATA_BASE_URL);
+      if (base.protocol !== "https:")
+        throw new Error("Data base must use HTTPS", { cause: error });
+      const response = await fetch(
+        new URL("data_cache/product.json", base.href.replace(/\/?$/, "/")),
+        { cache: "no-store", signal: AbortSignal.timeout(8_000) },
+      );
+      if (!response.ok)
+        throw new Error(`Contract HTTP ${response.status}`, { cause: error });
+      body = await response.text();
+    }
+    if (body.length > 5_000_000)
+      throw new Error("Product contract exceeds size limit");
+    return validateProduct(JSON.parse(body));
+  } catch (error) {
+    console.error("PitWall product contract unavailable:", error.message);
+    return {
+      schema_version: 3,
+      generated_at: null,
+      calendar: [],
+      predictions: [],
+      evaluations: [],
+      legacy_archive: [],
+      sources: [],
+      warnings: ["Published rankings and evaluation data are unavailable."],
+    };
+  }
+}
+
+export function currentPrediction(records, current, now = Date.now()) {
+  if (current.state !== "UPCOMING" || !current.event) return null;
+  return (
+    [...records]
+      .filter(
+        (p) =>
+          p.race_id === current.event.id &&
+          timestamp(p.event.start_at) === timestamp(current.event.start_at) &&
+          timestamp(p.generated_at) <= now &&
+          now < timestamp(p.event.start_at),
+      )
+      .sort(
+        (a, b) => timestamp(b.generated_at) - timestamp(a.generated_at),
+      )[0] || null
+  );
 }
 
 export async function loadPredictionsPayload() {
-  const contract = await loadFrontendContract();
-  const generated = await loadGeneratedTargets();
-  const hasLatest = Boolean(contract.latest?.top10?.length);
-  const generatedTargets = [
-    contract.latest?.target_type ? {
-      ...contract.latest,
-      target_type: contract.latest.target_type,
-      top10: contract.latest.top10 || [],
-      full_grid: contract.latest.full_grid || contract.latest.all_predictions || contract.latest.top10 || [],
-      all_predictions: contract.latest.all_predictions || contract.latest.full_grid || contract.latest.top10 || [],
-    } : null,
-    ...(generated.targets || []).filter((target) => currentTargetOnly(target, contract.latest)),
-  ].filter(Boolean);
+  const product = await readProduct();
+  const now = Date.now(),
+    season = new Date(now).getUTCFullYear();
+  let calendar = [],
+    current = {
+      state: "UNAVAILABLE",
+      event: null,
+      reason: "Current calendar could not be verified.",
+    };
+  const warnings = [...(product.warnings || [])],
+    sources = [];
+  let latestResult = product.latest_result || null;
+  const [calendarResponse, resultResponse] = await Promise.allSettled([
+    provider(`${season}/races`),
+    provider(`${season}/last/results`),
+  ]);
+  try {
+    if (calendarResponse.status === "rejected") throw calendarResponse.reason;
+    const response = calendarResponse.value;
+    calendar = raceRows(response.data, season).map(eventFromRace);
+    if (!calendar.length) throw new Error("Empty season calendar");
+    sources.push(response.source);
+    current = selectEvent(calendar, now);
+    if (
+      !current.event &&
+      calendar.every((e) => e.start_at && timestamp(e.start_at) < now)
+    ) {
+      const following = await provider(`${season + 1}/races`);
+      calendar.push(...raceRows(following.data, season + 1).map(eventFromRace));
+      sources.push(following.source);
+      current = selectEvent(calendar, now);
+    }
+  } catch (error) {
+    console.warn("PitWall calendar unavailable:", error.message);
+    warnings.push(
+      "Calendar provider unavailable. Previously published events are not treated as current.",
+    );
+    // A stale calendar may be inspected in history but may never select a current race.
+  }
+  try {
+    if (resultResponse.status === "rejected") throw resultResponse.reason;
+    const response = resultResponse.value;
+    const raw = raceRows(response.data, season)[0];
+    if (raw) {
+      const event = eventFromRace(raw),
+        result = raw.Results;
+      if (
+        !Array.isArray(result) ||
+        result.length < 2 ||
+        new Set(result.map((r) => r.Driver?.driverId)).size !== result.length ||
+        result.some(
+          (r, i) =>
+            Number(r.position) !== i + 1 ||
+            !r.Driver?.driverId ||
+            !r.Constructor?.name,
+        )
+      )
+        throw new Error("Invalid result classification");
+      if (!event.start_at || timestamp(event.start_at) >= now)
+        throw new Error("Result has a future/unknown start");
+      latestResult = {
+        event,
+        rows: result.map((r) => ({
+          driver_id: r.Driver.driverId,
+          name: `${r.Driver.givenName} ${r.Driver.familyName}`,
+          team: r.Constructor.name,
+          position: Number(r.position),
+          points: r.points,
+          status: r.status,
+        })),
+        source: response.source,
+      };
+      if (calendar.length) current = selectEvent(calendar, now, [event.id]);
+      sources.push(response.source);
+    }
+  } catch (error) {
+    console.warn("PitWall results unavailable:", error.message);
+    warnings.push(
+      "Latest results could not be refreshed; any saved result below is explicitly historical.",
+    );
+  }
+  const prediction = currentPrediction(product.predictions, current, now);
   return {
-    ok: hasLatest,
-    error: hasLatest ? "" : "No generated prediction contract is available yet.",
-    latest: contract.latest,
-    top10: contract.latest?.top10 || [],
-    top_10: contract.latest?.top_10 || contract.latest?.top10 || [],
-    full_grid: contract.latest?.full_grid || contract.latest?.all_predictions || contract.latest?.top10 || [],
-    all_predictions: contract.latest?.all_predictions || contract.latest?.full_grid || contract.latest?.top10 || [],
-    race_factors: contract.latest?.race_factors || {},
-    race_intelligence_summary: contract.race_intelligence_summary || contract.latest?.race_intelligence_summary || {},
-    model_comparison: contract.model_comparison || contract.latest?.model_comparison || {},
-    actual_result_comparison: contract.actual_result_comparison || contract.latest?.actual_result_comparison || {},
-    changed_since_last_run: contract.changed_since_last_run || contract.latest?.changed_since_last_run || contract.latest?.change_summary || {},
-    event_trust_score: contract.event_trust_score ?? contract.latest?.event_trust_score ?? contract.latest?.prediction_trust_score,
-    event_trust_label: contract.event_trust_label || contract.latest?.event_trust_label || contract.latest?.prediction_trust_label || "",
-    ai_features: contract.ai_features || contract.latest?.ai_features || {},
-    warnings: contract.latest?.warnings || [],
-    scenarios: contract.latest?.scenarios || {},
-    strategy: contract.latest?.strategy || {},
-    generated_targets: generatedTargets,
-    selected_targets: generated.selected_targets,
-    output_mode: generated.output_mode,
-    archive: contract.archive || [],
-    contract_recovered_from_debug: Boolean(contract.contract_recovered_from_debug || contract.latest?.contract_recovered_from_debug),
-    contract_recovered_from_previous: Boolean(contract.contract_recovered_from_previous || contract.latest?.contract_recovered_from_previous),
-    contract_recovery_warning: contract.contract_recovery_warning || contract.latest?.contract_recovery_warning || "",
-    schema_version: contract.schema_version,
-    prediction_data_version: contract.prediction_data_version,
-    season: contract.season,
-    target_event: contract.target_event,
-    prediction_stage: contract.prediction_stage,
-    previous_prediction_stage: contract.previous_prediction_stage,
-    session_timeline: contract.session_timeline || [],
-    last_ingested_session: contract.last_ingested_session,
-    next_session_to_ingest: contract.next_session_to_ingest,
-    pending_session_checks: contract.pending_session_checks || [],
-    session_data_delay_status: contract.session_data_delay_status,
-    session_official_status: contract.session_official_status,
-    effective_model_weights: contract.effective_model_weights || {},
-    source_registry: contract.source_registry,
-    source_health: contract.source_health,
-    source_conflicts: contract.source_conflicts || [],
-    model_limitations: contract.model_limitations || [],
-    live_timing_status: contract.live_timing_status,
-    timing_mode: contract.timing_mode,
-    timing_source: contract.timing_source,
-    timing_last_updated_at: contract.timing_last_updated_at,
-    timing_freshness_seconds: contract.timing_freshness_seconds,
-    is_genuinely_live: contract.is_genuinely_live,
-    live_fallback_reason: contract.live_fallback_reason,
-    fia_documents_enabled: contract.fia_documents_enabled,
-    fia_season_url: contract.fia_season_url,
-    fia_source_discovery_status: contract.fia_source_discovery_status,
-    fia_documents_available: contract.fia_documents_available,
-    fia_latest_document: contract.fia_latest_document,
-    fia_document_count: contract.fia_document_count,
-    fia_documents_by_type: contract.fia_documents_by_type,
-    fia_session_timetable: contract.fia_session_timetable,
-    fia_upgrade_summary: contract.fia_upgrade_summary,
-    fia_pu_summary: contract.fia_pu_summary,
-    fia_infringement_summary: contract.fia_infringement_summary,
-    latest_fia_ingested_at: contract.latest_fia_ingested_at,
-    fia_parse_errors: contract.fia_parse_errors,
-    fia_cache_hits: contract.fia_cache_hits,
-    fia_cache_misses: contract.fia_cache_misses,
+    ...product,
+    ok: true,
+    served_at: new Date(now).toISOString(),
+    current_data_retrieved_at:
+      sources
+        .map((s) => s.retrieved_at)
+        .filter(Boolean)
+        .sort()
+        .at(-1) || null,
+    current,
+    calendar,
+    prediction,
+    latest_result: latestResult,
+    sources: [...sources, ...(product.sources || [])].map((s) => ({
+      ...s,
+      status:
+        s.retrieved_at && now - Date.parse(s.retrieved_at) > TTL
+          ? "STALE"
+          : s.status,
+    })),
+    warnings: [...new Set(warnings)],
+    latest: null,
   };
 }
 
+export const loadFrontendContract = loadPredictionsPayload;
+export async function loadGeneratedTargets() {
+  return [];
+}
 export async function loadModelStatus() {
-  const raw = await loadJson("data_cache/model-status.json", {
-    readiness_state: { status: "Unavailable" },
-    metrics: {},
-    model_comparison: normalizeModelComparison(),
-    source_health: { status: "Missing", sources: [] },
-  });
+  const p = await readProduct();
   return {
-    ...asObject(raw),
-    metrics: asObject(raw?.metrics),
-    model_comparison: normalizeModelComparison(raw?.model_comparison),
-    source_health: asObject(raw?.source_health),
+    ok: !!p.model,
+    model: p.model,
+    backtest: p.backtest,
+    evaluations: p.evaluations,
   };
 }
-
 export async function loadBacktest() {
-  return loadJson("data_cache/backtest-history.json", { history: [] });
+  const p = await readProduct();
+  return p.backtest || { status: "UNAVAILABLE" };
 }
-
 export async function loadArchive() {
-  const contract = await loadFrontendContract();
+  const p = await readProduct();
   return {
-    archive: contract.archive || [],
-    briefings: contract.briefings || [],
-    model_status: contract.model_status || null,
-    model_comparison: contract.model_comparison || {},
-    actual_result_comparison: contract.actual_result_comparison || {},
+    ok: true,
+    predictions: p.predictions,
+    evaluations: p.evaluations,
+    legacy_archive: p.legacy_archive,
   };
 }
-
 export function jsonResponse(payload) {
   return Response.json(payload, {
     headers: {
       "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
     },
   });
 }

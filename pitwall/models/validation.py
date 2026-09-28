@@ -43,8 +43,8 @@ def assert_chronological_split(train_df: pd.DataFrame, valid_df: pd.DataFrame) -
         raise AssertionError("chronological split requires non-empty train and validation frames")
     if {"season", "round"} - set(train_df.columns) or {"season", "round"} - set(valid_df.columns):
         raise AssertionError("chronological split requires season and round columns")
-    train_max = tuple(train_df[["season", "round"]].max().astype(int).tolist())
-    valid_min = tuple(valid_df[["season", "round"]].min().astype(int).tolist())
+    train_max = max(map(tuple, train_df[["season", "round"]].astype(int).to_numpy()))
+    valid_min = min(map(tuple, valid_df[["season", "round"]].astype(int).to_numpy()))
     if train_max >= valid_min:
         raise AssertionError(f"validation starts before or at train end: train_max={train_max} valid_min={valid_min}")
 

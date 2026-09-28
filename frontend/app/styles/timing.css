@@ -1,0 +1,678 @@
+/* Timing shares product typography, tables and state colors. */
+.f1dash-shell {
+  min-width: 0;
+  color: var(--text);
+}
+.f1dash-shell.oled {
+  background: #000;
+  padding: 16px;
+}
+.f1dash-topbar {
+  position: relative;
+  margin-bottom: 24px;
+  border-top: 3px solid var(--red);
+  padding: 24px 0 0;
+}
+.f1dash-topbar h1 {
+  margin: 8px 0;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+.f1dash-topbar p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+.f1dash-topbar > div > span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.topbar-actions {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.dash-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--line2);
+  border-radius: 4px;
+  background: var(--panel2);
+  color: var(--text);
+  font-size: 13px;
+}
+.dash-btn:hover {
+  background: #303946;
+  border-color: #8190a4;
+}
+.dash-btn.active {
+  border-color: #698a7c;
+}
+.dash-status-pill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 14px 6px 0;
+  font-size: 12px;
+}
+.dash-status-pill span {
+  color: var(--muted);
+}
+.dash-status-pill strong {
+  font-size: 11px;
+  font-weight: 500;
+}
+.dash-status-pill.live span {
+  color: var(--green);
+}
+.dash-status-pill.fallback span {
+  color: var(--amber);
+}
+.live-control-panel {
+  padding: 20px;
+  margin: 0 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+}
+.live-selector-flow {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.65fr) minmax(0, 2fr) minmax(160px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.selector-step {
+  min-width: 0;
+}
+.selector-step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.selector-step-label > span {
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+.selector-step-label strong {
+  font-weight: 600;
+}
+.live-control-panel label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.live-control-panel input,
+.live-control-panel select,
+.dash-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid var(--line2);
+  border-radius: 3px;
+  background: #10151c;
+  color: var(--text);
+  padding: 10px;
+}
+.live-control-panel input[aria-invalid="true"] {
+  border-color: var(--red);
+}
+.live-race-picker,
+.selector-fields {
+  display: grid;
+  gap: 12px;
+}
+.race-picker-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+.race-picker-head > div {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+.race-picker-head span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.race-picker-head strong {
+  font-size: 13px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.race-picker-search {
+  position: relative;
+}
+.race-picker-search svg {
+  position: absolute;
+  left: 12px;
+  top: 15px;
+}
+.race-picker-search input {
+  padding-left: 36px;
+}
+.race-picker-empty {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+.selector-sync-row {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.stream-badge {
+  color: var(--muted);
+  font-size: 11px;
+}
+.stream-badge.connected {
+  color: var(--green);
+}
+.sync-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  font-size: 12px;
+}
+.sync-strip > span {
+  color: var(--muted);
+  display: grid;
+  gap: 4px;
+}
+.sync-strip strong {
+  color: var(--text);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.live-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.live-summary-grid > div {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+.live-summary-grid span {
+  color: var(--muted);
+}
+.live-summary-grid strong {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.dash-warning {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  background: #2a251d;
+  border-left: 3px solid var(--amber);
+  font-size: 13px;
+}
+.dash-warning svg {
+  margin-top: 2px;
+  color: var(--amber);
+}
+.dash-warning strong {
+  display: block;
+}
+.dash-warning p {
+  margin: 6px 0 0;
+  color: #d3c6ae;
+  line-height: 1.65;
+}
+.f1dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 28px;
+}
+.dash-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 4px;
+  padding: 20px;
+}
+.dash-card#leaderboard,
+.dash-card#car-metrics {
+  grid-column: 1 / -1;
+}
+.dash-card-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+.dash-card-head svg {
+  color: var(--muted);
+}
+.dash-empty {
+  margin: 0;
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.timing-table {
+  min-width: 740px;
+}
+.driver-name {
+  display: grid;
+  grid-template-columns: 3px 1fr;
+  gap: 3px 10px;
+}
+.driver-name i {
+  grid-row: span 2;
+  width: 3px;
+}
+.driver-name small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.tyre-visual > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.tyre-visual strong {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.tyre-visual span,
+.tyre-visual em {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: normal;
+}
+.tyre-visual.compact {
+  min-width: 130px;
+}
+.tyre-visual.soft strong {
+  color: #ff8985;
+}
+.tyre-visual.medium strong {
+  color: #efd27b;
+}
+.tyre-visual.hard strong {
+  color: #ecedf2;
+}
+.tyre-visual.inter strong {
+  color: #89d7ae;
+}
+.tyre-visual.wet strong {
+  color: #96c4ff;
+}
+.compact-stack,
+.sector-list,
+.race-control-stack,
+.radio-stack {
+  display: grid;
+  gap: 12px;
+  max-height: 480px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding-right: 4px;
+}
+.compact-stack > div,
+.sector-list > div {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.compact-stack > div > strong,
+.sector-list strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.mini-sectors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8px, 1fr));
+  gap: 3px;
+}
+.mini-sectors i {
+  height: 14px;
+  background: #606b7b;
+}
+.mini-sectors i.purple {
+  background: #b28ad8;
+}
+.mini-sectors i.green {
+  background: #79b99b;
+}
+.mini-sectors i.yellow {
+  background: #d6b76e;
+}
+.mini-sectors i.pit {
+  background: #de8079;
+}
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.fact-grid div {
+  display: grid;
+  gap: 6px;
+}
+.fact-grid span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.fact-grid strong {
+  font-size: 20px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.track-status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.track-status > div {
+  display: grid;
+  gap: 6px;
+}
+.track-status span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.race-control-stack article,
+.radio-stack article {
+  border-left: 2px solid var(--line2);
+  padding: 12px;
+  background: #14191f;
+  font-size: 13px;
+}
+.race-control-stack article.red {
+  border-color: var(--red);
+}
+.race-control-stack article.yellow,
+.race-control-stack article.warning {
+  border-color: var(--amber);
+}
+.race-control-stack article.green {
+  border-color: var(--green);
+}
+.race-control-stack article.safety {
+  border-color: var(--purple);
+}
+.race-control-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.race-control-stack p {
+  margin: 8px 0 0;
+  color: #bec8d4;
+  line-height: 1.65;
+}
+.radio-stack article > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.radio-stack article > div > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.radio-player audio {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+}
+.radio-missing {
+  color: var(--muted);
+  font-size: 12px;
+}
+.dash-settings {
+  position: relative;
+  z-index: 35;
+}
+.dash-settings-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 330px;
+  max-width: calc(100vw - 36px);
+  max-height: 65dvh;
+  overflow-y: auto;
+  padding: 16px;
+  background: #202630;
+  border: 1px solid #637083;
+  border-radius: 4px;
+  box-shadow: 0 12px 32px #0008;
+  animation: surface-enter 160ms ease-out both;
+}
+.dash-field {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.dash-toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  cursor: pointer;
+}
+.dash-toggle input {
+  accent-color: var(--red);
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+}
+.dash-toggle span {
+  flex: 1;
+}
+.dash-toggle svg {
+  color: var(--muted);
+}
+.dash-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media (max-width: 1100px) {
+  .live-selector-flow {
+    grid-template-columns: minmax(120px, 0.6fr) minmax(0, 1fr);
+  }
+  .grand-prix-step {
+    grid-column: 2;
+    grid-row: span 2;
+  }
+  .session-step {
+    grid-column: 1;
+  }
+  .fact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .live-selector-flow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .grand-prix-step,
+  .session-step {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .f1dash-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .dash-card {
+    padding: 16px;
+  }
+  .dash-settings {
+    position: static;
+  }
+  .dash-settings-panel {
+    right: 0;
+    top: 100%;
+    width: 100%;
+  }
+  .live-summary-grid,
+  .sync-strip {
+    grid-template-columns: 1fr;
+  }
+  .fact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .fact-grid strong {
+    font-size: 17px;
+  }
+  .topbar-actions {
+    gap: 8px;
+  }
+  .dash-status-pill {
+    width: 100%;
+  }
+}
+
+.track-status.track-code-2,
+.track-status.track-code-4,
+.track-status.track-code-6,
+.track-status.track-code-7 {
+  border-left: 3px solid var(--amber);
+  padding-left: 12px;
+}
+.track-status.track-code-5 {
+  border-left: 3px solid var(--red);
+  padding-left: 12px;
+}
+.track-status.track-code-1 svg {
+  color: var(--green);
+}
+.session-selector .live-control-panel {
+  margin: 0;
+  padding: 16px 0 0;
+  border: 0;
+  background: transparent;
+}
+
+.dash-status-pill.completed span {
+  color: #f2a59f;
+}
+.dash-status-pill.upcoming span {
+  color: #eed5a1;
+}
+.timing-density {
+  display: none;
+}
+.strategy-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+}
+.strategy-controls label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.strategy-controls select {
+  min-height: 44px;
+  padding: 8px 12px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line2);
+  border-radius: 3px;
+}
+.compound-label {
+  border-left: 3px solid #86909b;
+  padding-left: 8px;
+}
+.compound-soft {
+  border-color: #ed746e;
+}
+.compound-medium {
+  border-color: #e8ca78;
+}
+.compound-hard {
+  border-color: #d8dfdf;
+}
+.compound-intermediate {
+  border-color: #7ec9a0;
+}
+.compound-wet {
+  border-color: #78b5df;
+}
+@media (max-width: 600px) {
+  .timing-density {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .timing-density span {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .timing-compact .timing-table {
+    min-width: 0;
+    width: 100%;
+  }
+  .timing-compact .timing-table th:nth-child(n + 4),
+  .timing-compact .timing-table td:nth-child(n + 4),
+  .timing-compact:not(.strategy-desk) #tyres,
+  .timing-compact #sectors,
+  .timing-compact #car-metrics,
+  .timing-compact #team-radio {
+    display: none;
+  }
+  .timing-compact .timing-table th,
+  .timing-compact .timing-table td {
+    padding: 12px 8px;
+  }
+  .timing-compact .driver-name {
+    min-width: 0;
+  }
+  .timing-compact .driver-name strong {
+    white-space: normal;
+  }
+  .strategy-table {
+    min-width: 480px;
+  }
+}

@@ -6,18 +6,17 @@
   "status": "Active",
   "difficulty": "Major Project",
   "role": "Full Stack Developer",
-  "shortDescription": "An F1 prediction and race intelligence dashboard with automated briefings, live timing, and ML-based insights.",
-  "longDescription": "PitWall is a Formula 1 analytics project that generates sprint and race predictions, publishes readable briefings, supports optional email and GitHub notifications, and serves a Next.js dashboard with live timing, driver analysis, team analysis, strategy insights, model status, and race archive features.",
+  "shortDescription": "Formula 1 schedules, classifications, session timing and reproducible race rankings.",
+  "longDescription": "PitWall presents current calendar data, historical race classifications and session timing, with an immutable forecast lifecycle and chronological baseline comparison. Qualifying order is the production ranking; unsupported probabilities and automatic model mutation have been withdrawn.",
   "techStack": [
     "Python",
     "Next.js",
+    "React",
     "JavaScript",
     "CSS",
     "GitHub Actions",
-    "Machine Learning",
-    "FastF1",
-    "OpenF1",
-    "Open-Meteo"
+    "Jolpica",
+    "Formula 1 timing"
   ],
   "demoUrl": "https://pitwall.shreybuilds.com/",
   "imageUrl": "",
@@ -25,7 +24,6 @@
   "tags": [
     "formula-1",
     "sports-analytics",
-    "machine-learning",
     "dashboard",
     "automation",
     "nextjs",
