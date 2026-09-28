@@ -220,39 +220,9 @@ class ContractHardeningTests(unittest.TestCase):
         self.assertFalse(row["dnf_probability_available"])
         self.assertIn("missing_reliability_component", row["score_unavailable_reasons"])
 
-    def test_frontend_contract_loader_contains_debug_recovery_path(self):
-        source = Path("frontend/app/api/_lib/contracts.js").read_text(encoding="utf-8")
-        self.assertIn("contract_recovered_from_debug", source)
-        self.assertIn("recoverContractFromDebug", source)
-        self.assertIn("latest-model-debug.json", source)
 
-    def test_predictions_api_does_not_use_archive_briefings_as_live_targets(self):
-        route = Path("frontend/app/api/predictions/route.js").read_text(encoding="utf-8")
-        loader = Path("frontend/app/api/_lib/contracts.js").read_text(encoding="utf-8")
-        self.assertIn("loadPredictionsPayload", route)
-        self.assertIn("currentTargetOnly", loader)
-        self.assertNotIn("contract.briefings || []).filter((row) => row?.target_type", loader)
 
-    def test_current_contract_points_to_selected_calendar_race_with_current_model_version(self):
-        contract = json.loads(Path("data_cache/frontend-contract.json").read_text(encoding="utf-8"))
-        status = json.loads(Path("data_cache/model-status.json").read_text(encoding="utf-8"))
-        latest = contract["latest"]
-        calendar_source = Path("frontend/app/data/f1Calendar2026.js").read_text(encoding="utf-8")
 
-        self.assertIsInstance(latest.get("race_name"), str)
-        self.assertTrue(latest["race_name"].endswith("Grand Prix"))
-        self.assertIsInstance(latest.get("round"), int)
-        self.assertGreater(latest["round"], 0)
-        self.assertIn(f'round: {latest["round"]}, name: "{latest["race_name"]}"', calendar_source)
-        self.assertIn(f1.make_slug(latest["race_name"]), latest["prediction_id"])
-        self.assertEqual(latest["model_version"], f1.MODEL_SCHEMA_VERSION)
-        self.assertEqual(contract["schema_version"], f1.MODEL_SCHEMA_VERSION)
-        self.assertEqual(status["model_version"], f1.MODEL_SCHEMA_VERSION)
-
-    def test_frontend_calendar_matches_current_contract_round(self):
-        source = Path("frontend/app/data/f1Calendar2026.js").read_text(encoding="utf-8")
-        self.assertIn('round: 7, name: "Barcelona Grand Prix"', source)
-        self.assertNotIn('round: 7, name: "Canadian Grand Prix"', source)
 
     def test_stage_leakage_rules_block_future_session_columns(self):
         self.assertIn("qualifying_gap", forbidden_feature_columns("post_fp1", ["fp1_pace", "qualifying_gap"]))

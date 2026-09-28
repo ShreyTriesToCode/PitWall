@@ -4333,6 +4333,10 @@ def run_single_feature_leakage_diagnostic(
 
 
 def train_ml_model(force=False):
+    raise RuntimeError("The legacy model is unvalidated and cannot be trained/promoted. Use pitwall.publish and the documented candidate review process.")
+
+
+def _legacy_train_ml_model_for_research_only(force=False):
     _TRAINING_RUNTIME["started"] = time.perf_counter()
     _TRAINING_RUNTIME["timings"] = {"start": _TRAINING_RUNTIME["started"]}
     _TRAINING_RUNTIME["summary"] = {}
@@ -10344,6 +10348,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
-    args = parse_args()
-    force = args.force_retrain or os.getenv("FORCE_RETRAIN", "false").lower() == "true"
-    run(force_retrain=force)
+    # Legacy numerical research functions remain importable for reproducibility.
+    # Production publication must use the validated, append-only ranking path.
+    from pitwall.publish import main
+    main()

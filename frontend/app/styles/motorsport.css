@@ -1,0 +1,469 @@
+/* PitWall's motorsport identity. Decoration never represents timing or telemetry. */
+:root {
+  --racing: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --race-red: #f04438;
+}
+.race-app {
+  background: #111316;
+}
+.desktop-sidebar {
+  background: #141518;
+  border-right-color: #363536;
+}
+.brand-tile span {
+  font-family: var(--racing);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #ff5548;
+}
+.brand-tile strong {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 10px;
+}
+.side-link {
+  border-radius: 0;
+  gap: 10px;
+  font-size: 13px;
+  position: relative;
+}
+.side-link.active {
+  background: linear-gradient(90deg, #3a201f, #202024);
+  box-shadow: inset 3px 0 var(--race-red);
+}
+.side-link.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 10px;
+  width: 10px;
+  border-top: 2px solid var(--race-red);
+  border-right: 2px solid var(--race-red);
+}
+.nav-index {
+  margin-left: auto;
+  color: #8e969f;
+  font:
+    10px ui-monospace,
+    monospace;
+}
+.side-link.active .nav-index {
+  color: #ff8a80;
+}
+.sidebar-foot {
+  border-top: 1px solid #35363a;
+}
+.paddock-masthead {
+  min-height: 58px;
+  padding: 12px clamp(24px, 4vw, 64px);
+  border-bottom: 1px solid #37383d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #17191d;
+}
+.paddock-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--racing);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.paddock-title > span {
+  color: #a9b0bb;
+}
+.paddock-caption {
+  color: #a6aeb9;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.grid-mark {
+  width: 22px;
+  height: 16px;
+  display: inline-block;
+  background: repeating-conic-gradient(#e8e8e8 0% 25%, transparent 0% 50%) 0 0 /
+    8px 8px;
+  transform: skewX(-12deg);
+}
+.race-main {
+  --intro-gutter: clamp(24px, 4vw, 64px);
+  padding-top: 30px;
+}
+.product-header {
+  margin-bottom: 28px;
+}
+.product-header h1,
+.f1dash-topbar h1 {
+  font-family: var(--racing);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: clamp(36px, 3.8vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.product-header h1 {
+  margin: 9px 0 12px;
+}
+.eyebrow {
+  color: #b3bbc5;
+  font:
+    10px ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+}
+.control-btn,
+.dash-btn {
+  border-radius: 2px;
+}
+.race-intro {
+  position: relative;
+  isolation: isolate;
+  margin: -30px calc(-1 * var(--intro-gutter)) 28px;
+  padding: 30px var(--intro-gutter) 36px;
+  background: #111316;
+}
+.race-intro .product-header {
+  position: relative;
+  margin-bottom: 32px;
+}
+.event-focus {
+  display: flex;
+  align-items: center;
+  min-height: 350px;
+  padding: 32px 0;
+  margin-bottom: 0;
+  border: 0;
+  background: transparent;
+}
+.event-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.event-art img {
+  object-fit: cover;
+  object-position: center 50%;
+}
+.event-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      #111316a6 0%,
+      #11131600 28%,
+      #11131600 62%,
+      #111316 100%
+    ),
+    linear-gradient(
+      90deg,
+      #111316e8 0%,
+      #111316c4 32%,
+      #11131666 60%,
+      #11131626 100%
+    );
+}
+.event-focus::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 64px;
+  height: 3px;
+  background: var(--race-red);
+  transform-origin: left;
+  animation: pitwall-stripe 280ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.event-copy {
+  min-width: 0;
+  width: 66%;
+  max-width: 620px;
+}
+.event-focus h2 {
+  font-family: var(--racing);
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(48px, 5.2vw, 80px);
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.98;
+  text-wrap: balance;
+  margin: 24px 0 18px;
+  padding-right: 5px;
+}
+.event-focus p {
+  color: #d1d5dd;
+  font-size: 13px;
+}
+.event-focus .event-date {
+  font-size: 12px;
+  font-family: ui-monospace, monospace;
+  margin-top: 18px;
+}
+.event-kicker {
+  font:
+    11px ui-monospace,
+    monospace;
+  color: #d1d5dd;
+}
+.event-links {
+  margin-top: 28px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.event-links a {
+  color: #f0f1f3;
+  padding: 0 16px;
+  border: 1px solid #62656d;
+  background: #17191def;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+.event-links a:first-child {
+  background: #c92d23;
+  border-color: #ff7065;
+}
+.event-links a span {
+  transition: transform 160ms ease;
+}
+.event-links a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #30333a;
+  border-color: #b6bac4;
+}
+.event-links a:first-child:hover {
+  background: #a8221a;
+  border-color: #ff9188;
+}
+.event-links a:hover span {
+  transform: translate(3px, -2px);
+}
+.round-plate {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.round-plate-label {
+  font:
+    10px/1.5 ui-monospace,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #e0e2e7;
+  padding: 4px 0;
+  text-shadow: 0 1px 8px #111316;
+}
+.round-plate-number {
+  font: italic 800 76px/0.85 var(--racing);
+  letter-spacing: -0.02em;
+  color: #f2f0ed;
+  white-space: nowrap;
+  text-shadow: 0 2px 20px #101114;
+}
+.round-plate-number span {
+  font-size: 0.42em;
+  color: #ff6559;
+  margin-right: 6px;
+}
+.event-focus-compact {
+  min-height: 300px;
+  padding-block: 28px;
+}
+.event-focus-compact h2 {
+  font-size: clamp(38px, 4vw, 54px);
+  margin-block: 18px 12px;
+}
+.event-focus-compact .event-links {
+  margin-top: 18px;
+}
+.section-heading {
+  border-bottom-color: #47464b;
+  position: relative;
+}
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--race-red);
+}
+.section-heading h2,
+.dash-card-head h2 {
+  font: 700 25px/1.1 var(--racing);
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+.product-table thead th {
+  background: #26262c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+}
+.product-table .position {
+  font: italic 800 26px/1 var(--racing);
+  color: #ff8a80;
+}
+.calendar-list article {
+  border-left: 2px solid #656770;
+  background: #191b20;
+}
+.calendar-list article > span:first-child {
+  color: #ff948a;
+  font-family: ui-monospace, monospace;
+}
+.product-empty {
+  background: #1c1e24;
+  border-left-color: #9996a0;
+}
+.f1dash-topbar {
+  border-top-color: var(--race-red);
+}
+.dash-card {
+  border-radius: 2px;
+}
+.dash-card-head {
+  border-bottom: 1px solid #4a4448;
+  padding-bottom: 14px;
+}
+@keyframes pitwall-stripe {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (max-width: 1100px) {
+  .race-main {
+    --intro-gutter: 24px;
+  }
+  .round-plate-number {
+    font-size: 68px;
+  }
+  .paddock-caption {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .brand-tile span {
+    font-size: 36px;
+  }
+  .brand-tile strong {
+    font-size: 8px;
+    margin-top: 5px;
+  }
+  .paddock-masthead {
+    min-height: 40px;
+    padding: 8px 18px;
+  }
+  .paddock-title {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .grid-mark {
+    width: 18px;
+    height: 12px;
+    background-size: 6px 6px;
+  }
+  .race-main {
+    --intro-gutter: 18px;
+    padding-top: 24px;
+  }
+  .race-intro {
+    margin-top: -24px;
+    padding-top: 24px;
+  }
+  .product-header h1,
+  .f1dash-topbar h1 {
+    font-size: 38px;
+  }
+  .event-focus {
+    padding: 28px 0;
+    min-height: 320px;
+  }
+  .event-focus h2 {
+    font-size: 44px;
+  }
+  .nav-index {
+    font-size: 9px;
+  }
+  .desktop-sidebar nav.menu-open {
+    animation: surface-enter 180ms ease-out both;
+  }
+}
+@media (max-width: 600px) {
+  .race-intro {
+    padding-bottom: 28px;
+    margin-bottom: 24px;
+  }
+  .event-focus {
+    display: block;
+    padding: 26px 0 18px;
+    min-height: 0;
+  }
+  .event-copy {
+    width: 100%;
+  }
+  .event-art img {
+    object-position: 74% center;
+  }
+  .event-art::after {
+    background:
+      linear-gradient(
+        180deg,
+        #1113169c 0%,
+        #1113164d 30%,
+        #11131673 70%,
+        #111316 100%
+      ),
+      linear-gradient(90deg, #111316b8 0%, #11131680 60%, #11131659 100%);
+  }
+  .round-plate {
+    display: none;
+  }
+  .event-focus h2 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+  .event-links {
+    gap: 10px;
+  }
+  .product-header h1,
+  .f1dash-topbar h1 {
+    font-size: 36px;
+  }
+  .section-heading h2,
+  .dash-card-head h2 {
+    font-size: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-focus::before {
+    animation: none;
+  }
+  .event-links a span {
+    transition: none;
+  }
+}

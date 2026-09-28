@@ -22,7 +22,7 @@
   <path d="M92 418C178 302 265 327 330 215c46-79 139-98 220-39 91 66 182 44 241-28 62-76 195-42 238 52 39 85-8 189-108 207-85 15-130-50-214-32-95 20-127 123-245 131-147 10-254-102-370-88Z" fill="none" stroke="url(#track)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
   <rect x="70" y="68" width="1060" height="494" rx="20" fill="#120605" fill-opacity=".72" stroke="#ffe2d6" stroke-opacity=".18"/>
   <text x="104" y="148" fill="#ffe2d6" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">PITWALL</text>
-  <text x="104" y="224" fill="#ffffff" font-family="Arial, sans-serif" font-size="78" font-weight="900" font-style="italic">Prediction Intelligence</text>
+  <text x="104" y="224" fill="#ffffff" font-family="Arial, sans-serif" font-size="78" font-weight="900" font-style="italic">Formula 1 Analysis</text>
   <text x="108" y="280" fill="#ffcabd" font-family="Arial, sans-serif" font-size="26">Full-grid forecasts, source health, model status, and transparent fallback states.</text>
   <g transform="translate(104 360)">
     <rect width="245" height="92" rx="10" fill="#2b120f" stroke="#ffe2d6" stroke-opacity=".18"/>

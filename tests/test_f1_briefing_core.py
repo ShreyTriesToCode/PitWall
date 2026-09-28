@@ -375,8 +375,8 @@ class F1BriefingCoreTests(unittest.TestCase):
         sleep_mock.assert_not_called()
 
     def test_daily_workflow_refreshes_fia_document_metadata_by_default(self):
-        workflow = Path(".github/workflows/f1-briefing.yml").read_text(encoding="utf-8")
-        self.assertIn("REFRESH_FIA_DOCUMENTS: ${{ github.event.inputs.refresh_fia_documents || 'true' }}", workflow)
+        workflow = Path(".github/workflows/fia-metadata.yml").read_text(encoding="utf-8")
+        self.assertIn("python scripts/refresh_fia_metadata.py", workflow)
         self.assertIn("FIA_DOCUMENTS_ENABLED: \"true\"", workflow)
 
     def test_fia_pirelli_preview_extracts_event_relative_compounds(self):
@@ -582,23 +582,8 @@ class F1BriefingCoreTests(unittest.TestCase):
         route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
         self.assertIn("F1_TIMING_RATE_LIMIT_MS", route)
         self.assertIn("Timing endpoint rate limit exceeded", route)
-        self.assertIn("const normalizedJolpica = normalizeJolpicaFallback(jolpicaFallback)", route)
-        self.assertIn("normalizedOpenF1 || normalizedJolpica || normalized", route)
 
-    def test_mobile_driver_drawer_is_viewport_fixed_bottom_sheet(self):
-        css = Path("frontend/app/globals.css").read_text(encoding="utf-8")
-        component = Path("frontend/app/components/PitWallComponents.jsx").read_text(encoding="utf-8")
-        self.assertIn("position: fixed", css)
-        self.assertIn("bottom: 0", css)
-        self.assertIn("88dvh", css)
-        self.assertIn("env(safe-area-inset-bottom)", css)
-        self.assertIn('document.body.style.overflow = "hidden"', component)
 
-    def test_predictions_page_uses_selected_target_payload(self):
-        page = Path("frontend/app/predictions/page.jsx").read_text(encoding="utf-8")
-        self.assertIn("selectedPayload", page)
-        self.assertIn("selectedPayload.fia_document_count", page)
-        self.assertIn("selectedPayload.timing_mode", page)
 
     def test_f1_driver_number_map_uses_permanent_number(self):
         driver_list = {
@@ -830,23 +815,7 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("early_tyre_correction", labels)
         self.assertIn("competitive_after_compound_switch", labels)
 
-    def test_predictions_page_renders_top10_and_full_grid_sections(self):
-        page = Path("frontend/app/predictions/page.jsx").read_text(encoding="utf-8")
-        self.assertIn("top10Rows", page)
-        self.assertIn("fullGridRows", page)
-        self.assertIn("Top 10 Prediction", page)
-        self.assertIn("Full Grid Prediction", page)
-        self.assertIn("Race Overview", page)
 
-    def test_model_and_archive_pages_render_comparison_sections(self):
-        model_page = Path("frontend/app/model/page.jsx").read_text(encoding="utf-8")
-        model_client = Path("frontend/app/model/ModelCenterClient.jsx").read_text(encoding="utf-8")
-        archive_page = Path("frontend/app/archive/page.jsx").read_text(encoding="utf-8")
-        self.assertIn("loadPredictionsPayload", model_page)
-        self.assertIn("Actual Result Comparison", model_client)
-        self.assertIn("Model Comparison Metrics", model_client)
-        self.assertIn("actual_result_comparison", archive_page)
-        self.assertIn("Top 10 Recall", archive_page)
 
     def test_training_summary_has_visible_output_labels(self):
         lines = f1.training_summary_lines({
@@ -862,15 +831,6 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("Cache reused: 2 files", text)
         self.assertIn("Promotion: accepted", text)
 
-    def test_driver_detail_drawer_is_scrollable_and_rich(self):
-        css = Path("frontend/app/globals.css").read_text(encoding="utf-8")
-        component = Path("frontend/app/components/PitWallComponents.jsx").read_text(encoding="utf-8")
-        self.assertIn("overflow-y: auto", css)
-        self.assertIn("-webkit-overflow-scrolling: touch", css)
-        self.assertIn("driver-detail-content", component)
-        self.assertIn("Fastest lap", component)
-        self.assertIn("Expected strategy", component)
-        self.assertIn("Source notes", component)
 
     def test_f1timing_route_exposes_auto_selection_metadata(self):
         route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
@@ -879,12 +839,13 @@ class F1BriefingCoreTests(unittest.TestCase):
         self.assertIn("warnings", route)
         self.assertIn("safeNormalizedTimingPayload", route)
 
-    def test_f1timing_uses_self_hosted_track_visuals(self):
+    def test_timing_does_not_claim_an_unverified_aero_channel_or_track_visual(self):
         route = Path("frontend/app/api/f1timing/route.js").read_text(encoding="utf-8")
-        self.assertIn('image_url: "/pitwall-hero.svg"', route)
-        self.assertIn('source: "PitWall self-hosted visual"', route)
-        self.assertIn("page_url: pageUrl", route)
-        self.assertNotIn("media.formula1.com", route)
+        page = Path("frontend/app/live/page.jsx").read_text(encoding="utf-8")
+        self.assertNotIn("aero_mode", route)
+        self.assertNotIn("Aero / Boost", page)
+        self.assertNotIn("official-race-visual", page)
+        self.assertNotIn("leaderboard.slice(0, 20)", page)
 
     def test_extracted_modules_preserve_public_wrapper_outputs(self):
         simulation = importlib.import_module("pitwall.models.simulation")
@@ -1369,7 +1330,18 @@ class F1BriefingCoreTests(unittest.TestCase):
         }
         fixed_now = f1.datetime(2026, 6, 9, 12, 0, tzinfo=f1.USER_TIMEZONE)
 
-        with patch.object(f1, "fetch_schedule", return_value=[monaco, barcelona]), \
+        # Test calendar/cache selection with isolated inputs; never depend on a
+        # developer's runtime cache or the network for this regression.
+        cached = {"status": "final_results_available", "data": {"results": [{"Results": [
+            {"Driver": {"driverId": f"fixture_{i}", "givenName": "Fixture", "familyName": str(i)},
+             "Constructor": {"name": "Fixture Team"}, "position": str(i), "grid": str(i),
+             "points": "0", "status": "Finished"} for i in range(1, 21)
+        ]}]}}
+        with patch.object(f1, "read_full_race_cache", return_value=cached), \
+             patch.object(f1, "should_use_cached_round", return_value=True), \
+             patch.object(f1, "FORCE_REFRESH_DATA", False), \
+             patch.object(f1, "fetch_round_data_direct", side_effect=AssertionError("Unexpected network fetch")), \
+             patch.object(f1, "fetch_schedule", return_value=[monaco, barcelona]), \
              patch.object(f1, "now_local", return_value=fixed_now), \
              patch.object(f1, "record_full_race_cache_manifest"):
             rows = f1.collect_race_rows(2026, 2026)

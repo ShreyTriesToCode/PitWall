@@ -1,68 +1,50 @@
 name: Validate PitWall
-
 on:
   pull_request:
   push:
-    branches:
-      - main
-
+    branches: [main]
 permissions:
   contents: read
-
 concurrency:
   group: pitwall-validate-${{ github.ref }}
-  cancel-in-progress: false
-
+  cancel-in-progress: true
 jobs:
   backend:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-
+    timeout-minutes: 15
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
-          cache-dependency-path: "requirements.txt"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -r requirements-dev.txt
-
-      - name: Run backend checks
-        run: |
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: |
           python -m py_compile f1_briefing.py
           ruff check f1_briefing.py pitwall scripts tests
-          python -m unittest discover -s ./tests -p "test_*.py" -t .
-          python scripts/validate_contracts.py
-          python scripts/check_artifact_sizes.py
-          python scripts/generate_run_report.py
-
+          python -m pytest -q
+          python scripts/validate_product.py
   frontend:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "24"
-          cache: "npm"
-          cache-dependency-path: "frontend/package-lock.json"
-
-      - name: Install frontend dependencies
-        working-directory: frontend
-        run: npm ci
-
-      - name: Build frontend
-        working-directory: frontend
-        run: npm run build
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - working-directory: frontend
+        run: |
+          npm ci
+          npm run lint
+          npm run format:check
+          npm run test:unit
+          npm audit --audit-level=high
+          npx playwright install --with-deps chromium webkit
+          npm test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-failures
+          path: frontend/test-results

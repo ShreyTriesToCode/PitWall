@@ -1,8 +1,12 @@
 "use client";
 
-import { AppShell, InlineNotice, PageHeader } from "../components/PitWallComponents";
+import {
+  AppShell,
+  InlineNotice,
+  PageHeader,
+} from "../components/PitWallComponents";
 
-export default function PredictionsError({ error, reset }) {
+export default function PredictionsError({ reset }) {
   return (
     <AppShell active="/predictions">
       <PageHeader
@@ -12,9 +16,15 @@ export default function PredictionsError({ error, reset }) {
       />
       <InlineNotice
         title="Prediction route failed"
-        body={error?.message || "The generated prediction contract may be malformed or temporarily unavailable."}
+        body={
+          "The generated prediction contract may be malformed or temporarily unavailable."
+        }
         tone="error"
-        action={<button className="control-btn" onClick={reset} type="button">Retry</button>}
+        action={
+          <button className="control-btn" onClick={reset} type="button">
+            Retry
+          </button>
+        }
       />
     </AppShell>
   );

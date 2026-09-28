@@ -1,20 +1,27 @@
+import "@fontsource-variable/inter";
+import "@fontsource/barlow-condensed/700.css";
+import "@fontsource/barlow-condensed/800-italic.css";
 import "./globals.css";
+import "./styles/timing.css";
+import "./styles/motorsport.css";
 
 export const metadata = {
   metadataBase: new URL("https://pitwall.shreybuilds.com"),
   title: {
-    default: "PitWall | F1 Prediction Intelligence",
+    default: "PitWall | Formula 1 Analysis",
     template: "%s | PitWall",
   },
-  description: "Source-aware Formula 1 prediction intelligence with full-grid rankings, model status, and transparent fallback states.",
+  description:
+    "Formula 1 schedules, race classifications, session timing and reproducible rankings.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "PitWall | F1 Prediction Intelligence",
-    description: "Full-grid F1 prediction boards, source health, model status, and race strategy signals generated from trusted project contracts.",
+    title: "PitWall | Formula 1 Analysis",
+    description:
+      "Published Formula 1 data with traceable rankings and explicit limitations.",
     url: "https://pitwall.shreybuilds.com",
     siteName: "PitWall",
     images: [
@@ -29,16 +36,17 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PitWall | F1 Prediction Intelligence",
-    description: "Source-aware F1 prediction intelligence with full-grid rankings and transparent source health.",
+    title: "PitWall | Formula 1 Analysis",
+    description:
+      "Formula 1 schedules, classifications and transparent ranking evaluation.",
     images: ["/pitwall-og.svg"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

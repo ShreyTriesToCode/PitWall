@@ -1,3 +1,5 @@
+> **Archived legacy report.** These claims describe the retired implementation and are not current release evidence. See [current methodology](../MODEL_REPORT.md) and [validation](VALIDATION.md).
+
 # PitWall Verification Report
 
 [Documentation index](README.md) -> [Runbook](../RUNBOOK.md)
