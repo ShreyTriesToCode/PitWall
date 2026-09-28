@@ -124,8 +124,11 @@ records contain the result hash/source, model version, actual evaluation timesta
 classification and defined metrics. Re-running the same result reuses its record;
 a corrected result creates another immutable revision. Prediction bytes never
 change. Legacy briefings lack adequate provenance and never contribute to these
-metrics. There are currently zero prospective captures from this replacement
-pipeline; the UI states that explicitly.
+metrics. As of 28 September 2026 the ledger contains one genuine locally captured
+pre-race forecast and its matching evaluation (Azerbaijan). Its MAE was 5.00
+places. It was first published to GitHub after the event; no independent public
+pre-race timestamp is claimed. One race is insufficient to establish accuracy.
+See docs/RELEASE_REVIEW.md for exact timestamps and metrics.
 
 ## Candidate development and promotion
 
