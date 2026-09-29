@@ -4,7 +4,7 @@
   "status": "available",
   "source_authority": "official_fia",
   "source_status": "official_live",
-  "checked_at": "2026-09-28T18:26:16.434115+05:30",
+  "checked_at": "2026-09-29T14:34:25.160999+05:30",
   "documents": [
     {
       "season": 2026,
@@ -18,7 +18,7 @@
       "published_at": "2026-09-26T17:11:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_championship_points.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402481+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252548+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -33,8 +33,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -48,7 +52,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_final_race_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402487+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252552+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -63,8 +67,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -78,7 +86,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_55_-_failing_to_follow_race_directors_instructions_-_practice_start.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402490+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252555+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -93,8 +101,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -108,7 +120,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_6_-_failing_to_follow_race_directors_instructions_-_practice_start.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402493+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252558+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -123,8 +135,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -138,7 +154,7 @@
       "published_at": "2026-09-26T16:40:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_5_-_overtaking_under_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402496+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252561+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -153,8 +169,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -168,7 +188,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_decision_-_car_77_-_turn_15_incident.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402499+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252563+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -183,8 +203,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -198,7 +222,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_43_-_collision_with_car_10_in_turn_1.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402502+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252565+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -213,8 +237,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -228,7 +256,7 @@
       "published_at": "2026-09-26T15:54:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_decision_-_car_41_-_collision_with_car_30_in_turn_1.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402508+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252571+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -243,8 +271,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -258,7 +290,7 @@
       "published_at": "2026-09-26T15:43:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_race_deleted_lap_times.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402512+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252576+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -273,8 +305,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -288,7 +324,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_race_scrutineering.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402514+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252578+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -303,8 +339,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -318,7 +358,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_6_-_alleged_failure_to_follow_race_directors_instructions_-_practice_start.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402517+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252580+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -333,8 +373,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -348,7 +392,7 @@
       "published_at": "2026-09-26T14:17:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_55_-_alleged_failure_to_follow_race_directors_instructions_-_practice_start.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402519+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252582+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -363,8 +407,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -378,7 +426,7 @@
       "published_at": "2026-09-26T14:10:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_5_-_overtaking_under_yellow_flags_.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402521+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252584+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -393,8 +441,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -408,7 +460,7 @@
       "published_at": "2026-09-26T11:00:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_provisional_race_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402525+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252586+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -423,8 +475,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -438,7 +494,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_final_starting_grid.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402527+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252588+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -453,8 +509,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -468,7 +528,7 @@
       "published_at": "2026-09-26T09:15:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_parts_and_parameters_been_replaced_and_or_changed_during_parc_ferme.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402529+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252590+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -483,8 +543,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -498,7 +562,7 @@
       "published_at": "2026-09-26T09:08:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_race_directors_competition_notes_v3.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402531+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252592+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -513,8 +577,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -528,7 +596,7 @@
       "published_at": "2026-09-26T07:04:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_new_pu_elements_for_this_competition_1.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402533+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252594+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -543,8 +611,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -558,7 +630,7 @@
       "published_at": "2026-09-26T07:03:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_post-race_procedure.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402535+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252596+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -573,8 +645,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -588,7 +664,7 @@
       "published_at": "2026-09-25T17:00:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_pre-race_procedure.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402537+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252598+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -603,8 +679,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -618,7 +698,7 @@
       "published_at": "2026-09-25T16:56:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_provisional_starting_grid.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402539+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252599+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -633,8 +713,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -648,7 +732,7 @@
       "published_at": "2026-09-25T16:33:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_final_qualifying_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402542+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252601+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -663,8 +747,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -678,7 +766,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_fp3_and_qualifying_scrutineering.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402544+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252603+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -693,8 +781,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -708,7 +800,7 @@
       "published_at": "2026-09-25T16:09:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_55_-_failure_to_slow_for_yellow_flags_0.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402546+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252605+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -723,8 +815,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -738,7 +834,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_11_-_impeding_car_81.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402548+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252607+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -753,8 +849,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -768,7 +868,7 @@
       "published_at": "2026-09-25T15:22:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_qualifying_deleted_lap_times_-_double_yellow.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402550+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252610+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -783,8 +883,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -798,7 +902,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402552+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252612+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -813,8 +917,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -828,7 +936,7 @@
       "published_at": "2026-09-25T14:25:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_55_-_alleged_failure_to_slow_for_yellow_flags_0.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402554+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252613+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -843,8 +951,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -858,7 +970,7 @@
       "published_at": "2026-09-25T14:23:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_covers-on_time.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402556+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252615+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -873,8 +985,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -888,7 +1004,7 @@
       "published_at": "2026-09-25T14:11:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_provisional_qualifying_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402558+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252617+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -903,8 +1019,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -918,7 +1038,7 @@
       "published_at": "2026-09-25T14:23:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_81_-_alleged_impeding_by_car_11.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402560+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252619+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -933,8 +1053,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -948,7 +1072,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_11_-_alleged_impeding_of_car_81.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402562+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252621+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -963,8 +1087,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -978,7 +1106,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_41_-_leaving_the_track_in_turn_15.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402564+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252623+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -993,8 +1121,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1008,7 +1140,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_55_-_failure_to_slow_for_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402566+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252625+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1023,8 +1155,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1038,7 +1174,7 @@
       "published_at": "2026-09-25T11:35:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times_-_double_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402568+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252627+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1053,8 +1189,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1068,7 +1208,7 @@
       "published_at": "2026-09-25T10:55:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402570+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252629+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1083,8 +1223,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1098,7 +1242,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_free_practice_3_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402572+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252630+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1113,8 +1257,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1128,7 +1276,7 @@
       "published_at": "2026-09-25T10:21:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_55_-_alleged_failure_to_slow_for_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402575+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252632+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1143,8 +1291,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1158,7 +1310,7 @@
       "published_at": "2026-09-25T09:48:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_14_-_pu_element.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402577+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252635+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1173,8 +1325,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1188,7 +1344,7 @@
       "published_at": "2026-09-25T08:35:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_new_pu_elements_for_this_competition_0.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402580+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252637+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1203,8 +1359,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1218,7 +1378,7 @@
       "published_at": "2026-09-25T07:17:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_curfew_amended.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402582+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252639+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1233,8 +1393,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1248,7 +1412,7 @@
       "published_at": "2026-09-25T07:14:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_post-qualifying_procedure.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402584+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252641+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1263,8 +1427,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1278,7 +1446,7 @@
       "published_at": "2026-09-24T16:17:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_44_-_impeding_car_30.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402586+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252643+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1293,8 +1461,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1308,7 +1480,7 @@
       "published_at": "2026-09-24T14:34:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_fp1_and_fp2_scrutineering.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402588+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252645+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1323,8 +1495,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1338,7 +1514,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_race_director_notes_-_sc2_-_sc1_times.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402590+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252647+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1353,8 +1529,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1368,7 +1548,7 @@
       "published_at": "2026-09-24T14:32:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times_-_double_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402592+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252649+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1383,8 +1563,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1398,7 +1582,7 @@
       "published_at": "2026-09-24T14:20:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402594+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252651+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1413,8 +1597,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1428,7 +1616,7 @@
       "published_at": "2026-09-24T14:09:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_free_practice_2_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402596+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252653+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1443,8 +1631,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1458,7 +1650,7 @@
       "published_at": "2026-09-24T14:09:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_30_-_alleged_impeding_by_car_44.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402598+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252654+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1473,8 +1665,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1488,7 +1684,7 @@
       "published_at": "2026-09-24T13:10:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_44_-_alleged_impeding_of_car_30.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402611+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252658+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1503,8 +1699,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1518,7 +1718,7 @@
       "published_at": "2026-09-24T13:10:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_18_-_pu_elements.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402615+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252660+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1533,8 +1733,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1548,7 +1752,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_14_-_pu_elements.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402617+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252663+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1563,8 +1767,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1578,7 +1786,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_car_77_-_overtaking_under_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402618+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252665+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1593,8 +1801,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1608,7 +1820,7 @@
       "published_at": "2026-09-24T11:00:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times_-_double_yellow_flags.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402621+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252667+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1623,8 +1835,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1638,7 +1854,7 @@
       "published_at": "2026-09-24T10:52:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402623+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252669+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1653,8 +1869,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1668,7 +1888,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_free_practice_1_classification.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402625+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252671+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1683,8 +1903,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1698,7 +1922,7 @@
       "published_at": "2026-09-24T10:21:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_summons_-_car_77_-_alleged_yellow_flag_infringement.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402627+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252673+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1713,8 +1937,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1728,7 +1956,7 @@
       "published_at": "2026-09-24T08:12:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_new_pu_elements_for_this_competition.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402629+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252674+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1743,8 +1971,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1758,7 +1990,7 @@
       "published_at": "2026-09-24T07:15:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_race_directors_competition_notes_v2.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402631+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252676+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1773,8 +2005,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1788,7 +2024,7 @@
       "published_at": "2026-09-24T07:00:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_entry_list.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402633+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252678+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1803,8 +2039,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1818,7 +2058,7 @@
       "published_at": "2026-09-24T06:57:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_car_presentation_submissions.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402635+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252680+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1833,8 +2073,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1848,7 +2092,7 @@
       "published_at": "2026-09-24T07:35:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_self_scrutineering.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402637+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252682+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1863,8 +2107,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1878,7 +2126,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_pu_elements_used_per_driver_up_to_now.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402639+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252683+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1893,8 +2141,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1908,7 +2160,7 @@
       "published_at": "2026-09-23T16:08:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_competition_notes_-_circuit_map_pit_lane_drawing_emergency_exits_map_and_red_zone.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402641+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252685+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1923,8 +2175,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1938,7 +2194,7 @@
       "published_at": "2026-09-23T16:03:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_competition_visa_v2.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402643+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252687+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1953,8 +2209,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1968,7 +2228,7 @@
       "published_at": "2026-09-23T15:14:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_race_directors_competition_notes.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402645+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252689+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -1983,8 +2243,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -1998,7 +2262,7 @@
       "published_at": "2026-09-23T15:13:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_power_unit_information.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402647+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252691+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2013,8 +2277,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2028,7 +2296,7 @@
       "published_at": "2026-09-23T16:09:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_car_display_procedure.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402649+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252693+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2043,8 +2311,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2058,7 +2330,7 @@
       "published_at": "2026-09-22T08:41:00+00:00",
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_post-race_checks_on_car_number_63_2026_spanish_gp.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402651+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252694+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2073,8 +2345,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2088,7 +2364,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_competition_notes_-_pirelli_preview.pdf",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402653+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252696+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2103,8 +2379,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2118,7 +2398,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60310",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402656+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252698+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2133,8 +2413,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2148,7 +2432,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60309",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402658+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252700+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2163,8 +2447,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2178,7 +2466,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60308",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402660+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252703+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2193,8 +2481,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2208,7 +2500,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60307",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402662+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252705+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2223,8 +2515,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2238,7 +2534,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60306",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402663+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252707+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2253,8 +2549,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2268,7 +2568,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60305",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402666+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252708+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2283,8 +2583,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2298,7 +2602,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60304",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402668+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252710+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2313,8 +2617,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2328,7 +2636,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60303",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402670+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252712+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2343,8 +2651,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2358,7 +2670,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60302",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402672+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252714+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2373,8 +2685,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2388,7 +2704,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60301",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402674+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252715+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2403,8 +2719,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2418,7 +2738,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60300",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402676+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252717+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2433,8 +2753,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2448,7 +2772,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60297",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402678+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252719+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2463,8 +2787,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2478,7 +2806,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60296",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402680+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252721+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2493,8 +2821,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2508,7 +2840,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/decision-document-list/nojs/60295",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402681+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252723+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2523,8 +2855,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2538,7 +2874,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/file/83930/download",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402683+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252725+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2553,8 +2889,12 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     },
     {
       "season": 2026,
@@ -2568,7 +2908,7 @@
       "published_at": null,
       "download_url": "https://www.fia.com/file/199436/download",
       "content_type": null,
-      "fetched_at": "2026-09-28T12:54:41.402685+00:00",
+      "fetched_at": "2026-09-29T09:04:04.252727+00:00",
       "sha256": null,
       "bytes": null,
       "verification_status": "indexed",
@@ -2583,13 +2923,18 @@
       "parse_status": "indexed",
       "parse_error": null,
       "source_confidence": 1.0,
-      "cache_status": "miss",
-      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+      "cache_status": "hit",
+      "season_url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072",
+      "local_pdf_path": null,
+      "local_text_path": null,
+      "local_parsed_json_path": null,
+      "first_seen_at": null
     }
   ],
   "context_summaries": [],
   "cache_status": "refresh",
-  "documents_changed": [
+  "documents_changed": [],
+  "documents_reused": [
     "69bf82094a0eb229",
     "d6c27c4a9c7b1e6a",
     "de5f4d83fe66ff4b",
@@ -2677,7 +3022,6 @@
     "2993923044d09bbf",
     "d21f8172165de20f"
   ],
-  "documents_reused": [],
   "errors": [
     "official_fia_event_page_disabled_or_unconfigured",
     "f1livepulse_disabled_or_unconfigured",
