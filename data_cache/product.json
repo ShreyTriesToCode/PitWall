@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-10-03T06:37:21.227010+00:00",
+  "generated_at": "2026-10-03T12:37:16.911755+00:00",
   "calendar": [
     {
       "id": "2026:1:race",
@@ -919,7 +919,585 @@
     },
     "reason": null
   },
-  "prediction": null,
+  "prediction": {
+    "prediction_id": "ccdc56d433cedb1ba9c6c25b1c78c3b500059a8f2fc55e47cc0ac8a9a224327e",
+    "race_id": "2026:16:race",
+    "event": {
+      "id": "2026:16:race",
+      "season": 2026,
+      "round": 16,
+      "name": "Bahrain Grand Prix in Malaysia",
+      "circuit": "Sepang International Circuit",
+      "location": "Kuala Lumpur",
+      "date": "2026-10-04",
+      "start_at": "2026-10-04T07:00:00+00:00",
+      "sessions": [
+        {
+          "name": "Practice 1",
+          "start_at": "2026-10-02T04:30:00+00:00",
+          "date": "2026-10-02"
+        },
+        {
+          "name": "Practice 2",
+          "start_at": "2026-10-02T08:00:00+00:00",
+          "date": "2026-10-02"
+        },
+        {
+          "name": "Practice 3",
+          "start_at": "2026-10-03T04:30:00+00:00",
+          "date": "2026-10-03"
+        },
+        {
+          "name": "Qualifying",
+          "start_at": "2026-10-03T08:00:00+00:00",
+          "date": "2026-10-03"
+        },
+        {
+          "name": "Race",
+          "start_at": "2026-10-04T07:00:00+00:00",
+          "date": "2026-10-04"
+        }
+      ],
+      "source_url": "https://api.jolpi.ca/ergast/f1/2026/16/races/"
+    },
+    "season": 2026,
+    "round": 16,
+    "target_type": "race",
+    "model_version": "qualifying-order-v1",
+    "feature_version": "qualifying-position-v1",
+    "generated_at": "2026-10-03T12:37:16.498358+00:00",
+    "data_cutoff": "2026-10-03T12:37:16.496458+00:00",
+    "training_data_cutoff": null,
+    "input_hash": "ab5598c875f456b2330650326b1e59329086245e61e8a42339adc38677337cab",
+    "sources": [
+      {
+        "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
+        "retrieved_at": "2026-10-03T12:37:15.335225+00:00",
+        "status": "AVAILABLE",
+        "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
+      },
+      {
+        "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
+        "retrieved_at": "2026-10-03T12:37:15.920588+00:00",
+        "status": "AVAILABLE",
+        "sha256": "e45a24e3d3131835ddca89603a7e7ac2cb2f97bd2f22f66b5d5f358e963dddf9"
+      },
+      {
+        "url": "https://api.jolpi.ca/ergast/f1/2026/16/qualifying/?limit=100",
+        "retrieved_at": "2026-10-03T12:37:16.496458+00:00",
+        "status": "AVAILABLE",
+        "sha256": "1e9070cfa7a7fcae538d46030ab936fd174f47a50a37221eb1c69c525210267f"
+      }
+    ],
+    "inputs": {
+      "qualifying": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "position": 1,
+          "status": null,
+          "points": null,
+          "q1": "1:36.477",
+          "q2": "1:35.696",
+          "q3": "1:35.130"
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "position": 2,
+          "status": null,
+          "points": null,
+          "q1": "1:36.595",
+          "q2": "1:36.032",
+          "q3": "1:35.428"
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "position": 3,
+          "status": null,
+          "points": null,
+          "q1": "1:36.898",
+          "q2": "1:36.192",
+          "q3": "1:35.558"
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "position": 4,
+          "status": null,
+          "points": null,
+          "q1": "1:37.041",
+          "q2": "1:35.959",
+          "q3": "1:35.631"
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "position": 5,
+          "status": null,
+          "points": null,
+          "q1": "1:36.730",
+          "q2": "1:35.970",
+          "q3": "1:35.666"
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "position": 6,
+          "status": null,
+          "points": null,
+          "q1": "1:37.092",
+          "q2": "1:36.173",
+          "q3": "1:35.757"
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "position": 7,
+          "status": null,
+          "points": null,
+          "q1": "1:36.852",
+          "q2": "1:36.020",
+          "q3": "1:35.762"
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "position": 8,
+          "status": null,
+          "points": null,
+          "q1": "1:37.264",
+          "q2": "1:36.245",
+          "q3": "1:35.871"
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "position": 9,
+          "status": null,
+          "points": null,
+          "q1": "1:37.174",
+          "q2": "1:36.410",
+          "q3": "1:37.210"
+        },
+        {
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "position": 10,
+          "status": null,
+          "points": null,
+          "q1": "1:37.106",
+          "q2": "1:36.814",
+          "q3": "1:37.673"
+        },
+        {
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
+          "position": 11,
+          "status": null,
+          "points": null,
+          "q1": "1:37.332",
+          "q2": "1:37.023",
+          "q3": null
+        },
+        {
+          "driver_id": "alonso",
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "position": 12,
+          "status": null,
+          "points": null,
+          "q1": "1:37.721",
+          "q2": "1:37.220",
+          "q3": null
+        },
+        {
+          "driver_id": "sainz",
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "position": 13,
+          "status": null,
+          "points": null,
+          "q1": "1:37.651",
+          "q2": "1:37.527",
+          "q3": null
+        },
+        {
+          "driver_id": "stroll",
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "position": 14,
+          "status": null,
+          "points": null,
+          "q1": "1:37.729",
+          "q2": "1:37.566",
+          "q3": null
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "position": 15,
+          "status": null,
+          "points": null,
+          "q1": "1:37.179",
+          "q2": "",
+          "q3": null
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "name": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "position": 16,
+          "status": null,
+          "points": null,
+          "q1": "1:37.883",
+          "q2": "",
+          "q3": null
+        },
+        {
+          "driver_id": "hulkenberg",
+          "name": "Nico Hülkenberg",
+          "team": "Audi",
+          "position": 17,
+          "status": null,
+          "points": null,
+          "q1": "1:37.970",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bearman",
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "position": 18,
+          "status": null,
+          "points": null,
+          "q1": "1:37.980",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "ocon",
+          "name": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "position": 19,
+          "status": null,
+          "points": null,
+          "q1": "1:38.233",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "albon",
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "position": 20,
+          "status": null,
+          "points": null,
+          "q1": "1:38.600",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bottas",
+          "name": "Valtteri Bottas",
+          "team": "Cadillac F1 Team",
+          "position": 21,
+          "status": null,
+          "points": null,
+          "q1": "1:38.611",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "perez",
+          "name": "Sergio Pérez",
+          "team": "Cadillac F1 Team",
+          "position": 22,
+          "status": null,
+          "points": null,
+          "q1": "1:38.933",
+          "q2": null,
+          "q3": null
+        }
+      ]
+    },
+    "objective": "final_classification_rank",
+    "stage": "post_qualifying",
+    "full_grid": [
+      {
+        "driver_id": "max_verstappen",
+        "name": "Max Verstappen",
+        "team": "Red Bull",
+        "qualifying_position": 1,
+        "ranking_score": 1,
+        "rank": 1
+      },
+      {
+        "driver_id": "hamilton",
+        "name": "Lewis Hamilton",
+        "team": "Ferrari",
+        "qualifying_position": 2,
+        "ranking_score": 2,
+        "rank": 2
+      },
+      {
+        "driver_id": "hadjar",
+        "name": "Isack Hadjar",
+        "team": "Red Bull",
+        "qualifying_position": 3,
+        "ranking_score": 3,
+        "rank": 3
+      },
+      {
+        "driver_id": "antonelli",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes",
+        "qualifying_position": 4,
+        "ranking_score": 4,
+        "rank": 4
+      },
+      {
+        "driver_id": "leclerc",
+        "name": "Charles Leclerc",
+        "team": "Ferrari",
+        "qualifying_position": 5,
+        "ranking_score": 5,
+        "rank": 5
+      },
+      {
+        "driver_id": "norris",
+        "name": "Lando Norris",
+        "team": "McLaren",
+        "qualifying_position": 6,
+        "ranking_score": 6,
+        "rank": 6
+      },
+      {
+        "driver_id": "piastri",
+        "name": "Oscar Piastri",
+        "team": "McLaren",
+        "qualifying_position": 7,
+        "ranking_score": 7,
+        "rank": 7
+      },
+      {
+        "driver_id": "russell",
+        "name": "George Russell",
+        "team": "Mercedes",
+        "qualifying_position": 8,
+        "ranking_score": 8,
+        "rank": 8
+      },
+      {
+        "driver_id": "gasly",
+        "name": "Pierre Gasly",
+        "team": "Alpine F1 Team",
+        "qualifying_position": 9,
+        "ranking_score": 9,
+        "rank": 9
+      },
+      {
+        "driver_id": "bortoleto",
+        "name": "Gabriel Bortoleto",
+        "team": "Audi",
+        "qualifying_position": 10,
+        "ranking_score": 10,
+        "rank": 10
+      },
+      {
+        "driver_id": "lawson",
+        "name": "Liam Lawson",
+        "team": "RB F1 Team",
+        "qualifying_position": 11,
+        "ranking_score": 11,
+        "rank": 11
+      },
+      {
+        "driver_id": "alonso",
+        "name": "Fernando Alonso",
+        "team": "Aston Martin",
+        "qualifying_position": 12,
+        "ranking_score": 12,
+        "rank": 12
+      },
+      {
+        "driver_id": "sainz",
+        "name": "Carlos Sainz",
+        "team": "Williams",
+        "qualifying_position": 13,
+        "ranking_score": 13,
+        "rank": 13
+      },
+      {
+        "driver_id": "stroll",
+        "name": "Lance Stroll",
+        "team": "Aston Martin",
+        "qualifying_position": 14,
+        "ranking_score": 14,
+        "rank": 14
+      },
+      {
+        "driver_id": "colapinto",
+        "name": "Franco Colapinto",
+        "team": "Alpine F1 Team",
+        "qualifying_position": 15,
+        "ranking_score": 15,
+        "rank": 15
+      },
+      {
+        "driver_id": "arvid_lindblad",
+        "name": "Arvid Lindblad",
+        "team": "RB F1 Team",
+        "qualifying_position": 16,
+        "ranking_score": 16,
+        "rank": 16
+      },
+      {
+        "driver_id": "hulkenberg",
+        "name": "Nico Hülkenberg",
+        "team": "Audi",
+        "qualifying_position": 17,
+        "ranking_score": 17,
+        "rank": 17
+      },
+      {
+        "driver_id": "bearman",
+        "name": "Oliver Bearman",
+        "team": "Haas F1 Team",
+        "qualifying_position": 18,
+        "ranking_score": 18,
+        "rank": 18
+      },
+      {
+        "driver_id": "ocon",
+        "name": "Esteban Ocon",
+        "team": "Haas F1 Team",
+        "qualifying_position": 19,
+        "ranking_score": 19,
+        "rank": 19
+      },
+      {
+        "driver_id": "albon",
+        "name": "Alexander Albon",
+        "team": "Williams",
+        "qualifying_position": 20,
+        "ranking_score": 20,
+        "rank": 20
+      },
+      {
+        "driver_id": "bottas",
+        "name": "Valtteri Bottas",
+        "team": "Cadillac F1 Team",
+        "qualifying_position": 21,
+        "ranking_score": 21,
+        "rank": 21
+      },
+      {
+        "driver_id": "perez",
+        "name": "Sergio Pérez",
+        "team": "Cadillac F1 Team",
+        "qualifying_position": 22,
+        "ranking_score": 22,
+        "rank": 22
+      }
+    ],
+    "top10": [
+      {
+        "driver_id": "max_verstappen",
+        "name": "Max Verstappen",
+        "team": "Red Bull",
+        "qualifying_position": 1,
+        "ranking_score": 1,
+        "rank": 1
+      },
+      {
+        "driver_id": "hamilton",
+        "name": "Lewis Hamilton",
+        "team": "Ferrari",
+        "qualifying_position": 2,
+        "ranking_score": 2,
+        "rank": 2
+      },
+      {
+        "driver_id": "hadjar",
+        "name": "Isack Hadjar",
+        "team": "Red Bull",
+        "qualifying_position": 3,
+        "ranking_score": 3,
+        "rank": 3
+      },
+      {
+        "driver_id": "antonelli",
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes",
+        "qualifying_position": 4,
+        "ranking_score": 4,
+        "rank": 4
+      },
+      {
+        "driver_id": "leclerc",
+        "name": "Charles Leclerc",
+        "team": "Ferrari",
+        "qualifying_position": 5,
+        "ranking_score": 5,
+        "rank": 5
+      },
+      {
+        "driver_id": "norris",
+        "name": "Lando Norris",
+        "team": "McLaren",
+        "qualifying_position": 6,
+        "ranking_score": 6,
+        "rank": 6
+      },
+      {
+        "driver_id": "piastri",
+        "name": "Oscar Piastri",
+        "team": "McLaren",
+        "qualifying_position": 7,
+        "ranking_score": 7,
+        "rank": 7
+      },
+      {
+        "driver_id": "russell",
+        "name": "George Russell",
+        "team": "Mercedes",
+        "qualifying_position": 8,
+        "ranking_score": 8,
+        "rank": 8
+      },
+      {
+        "driver_id": "gasly",
+        "name": "Pierre Gasly",
+        "team": "Alpine F1 Team",
+        "qualifying_position": 9,
+        "ranking_score": 9,
+        "rank": 9
+      },
+      {
+        "driver_id": "bortoleto",
+        "name": "Gabriel Bortoleto",
+        "team": "Audi",
+        "qualifying_position": 10,
+        "ranking_score": 10,
+        "rank": 10
+      }
+    ]
+  },
   "latest_result": {
     "event": {
       "id": "2026:15:race",
@@ -1185,7 +1763,7 @@
     ],
     "source": {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-03T06:37:20.265013+00:00",
+      "retrieved_at": "2026-10-03T12:37:15.920588+00:00",
       "status": "AVAILABLE",
       "sha256": "e45a24e3d3131835ddca89603a7e7ac2cb2f97bd2f22f66b5d5f358e963dddf9"
     }
@@ -1764,6 +2342,585 @@
           "driver_id": "colapinto",
           "name": "Franco Colapinto",
           "team": "Alpine F1 Team",
+          "qualifying_position": 10,
+          "ranking_score": 10,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "prediction_id": "ccdc56d433cedb1ba9c6c25b1c78c3b500059a8f2fc55e47cc0ac8a9a224327e",
+      "race_id": "2026:16:race",
+      "event": {
+        "id": "2026:16:race",
+        "season": 2026,
+        "round": 16,
+        "name": "Bahrain Grand Prix in Malaysia",
+        "circuit": "Sepang International Circuit",
+        "location": "Kuala Lumpur",
+        "date": "2026-10-04",
+        "start_at": "2026-10-04T07:00:00+00:00",
+        "sessions": [
+          {
+            "name": "Practice 1",
+            "start_at": "2026-10-02T04:30:00+00:00",
+            "date": "2026-10-02"
+          },
+          {
+            "name": "Practice 2",
+            "start_at": "2026-10-02T08:00:00+00:00",
+            "date": "2026-10-02"
+          },
+          {
+            "name": "Practice 3",
+            "start_at": "2026-10-03T04:30:00+00:00",
+            "date": "2026-10-03"
+          },
+          {
+            "name": "Qualifying",
+            "start_at": "2026-10-03T08:00:00+00:00",
+            "date": "2026-10-03"
+          },
+          {
+            "name": "Race",
+            "start_at": "2026-10-04T07:00:00+00:00",
+            "date": "2026-10-04"
+          }
+        ],
+        "source_url": "https://api.jolpi.ca/ergast/f1/2026/16/races/"
+      },
+      "season": 2026,
+      "round": 16,
+      "target_type": "race",
+      "model_version": "qualifying-order-v1",
+      "feature_version": "qualifying-position-v1",
+      "generated_at": "2026-10-03T12:37:16.498358+00:00",
+      "data_cutoff": "2026-10-03T12:37:16.496458+00:00",
+      "training_data_cutoff": null,
+      "input_hash": "ab5598c875f456b2330650326b1e59329086245e61e8a42339adc38677337cab",
+      "sources": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
+          "retrieved_at": "2026-10-03T12:37:15.335225+00:00",
+          "status": "AVAILABLE",
+          "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
+          "retrieved_at": "2026-10-03T12:37:15.920588+00:00",
+          "status": "AVAILABLE",
+          "sha256": "e45a24e3d3131835ddca89603a7e7ac2cb2f97bd2f22f66b5d5f358e963dddf9"
+        },
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2026/16/qualifying/?limit=100",
+          "retrieved_at": "2026-10-03T12:37:16.496458+00:00",
+          "status": "AVAILABLE",
+          "sha256": "1e9070cfa7a7fcae538d46030ab936fd174f47a50a37221eb1c69c525210267f"
+        }
+      ],
+      "inputs": {
+        "qualifying": [
+          {
+            "driver_id": "max_verstappen",
+            "name": "Max Verstappen",
+            "team": "Red Bull",
+            "position": 1,
+            "status": null,
+            "points": null,
+            "q1": "1:36.477",
+            "q2": "1:35.696",
+            "q3": "1:35.130"
+          },
+          {
+            "driver_id": "hamilton",
+            "name": "Lewis Hamilton",
+            "team": "Ferrari",
+            "position": 2,
+            "status": null,
+            "points": null,
+            "q1": "1:36.595",
+            "q2": "1:36.032",
+            "q3": "1:35.428"
+          },
+          {
+            "driver_id": "hadjar",
+            "name": "Isack Hadjar",
+            "team": "Red Bull",
+            "position": 3,
+            "status": null,
+            "points": null,
+            "q1": "1:36.898",
+            "q2": "1:36.192",
+            "q3": "1:35.558"
+          },
+          {
+            "driver_id": "antonelli",
+            "name": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "position": 4,
+            "status": null,
+            "points": null,
+            "q1": "1:37.041",
+            "q2": "1:35.959",
+            "q3": "1:35.631"
+          },
+          {
+            "driver_id": "leclerc",
+            "name": "Charles Leclerc",
+            "team": "Ferrari",
+            "position": 5,
+            "status": null,
+            "points": null,
+            "q1": "1:36.730",
+            "q2": "1:35.970",
+            "q3": "1:35.666"
+          },
+          {
+            "driver_id": "norris",
+            "name": "Lando Norris",
+            "team": "McLaren",
+            "position": 6,
+            "status": null,
+            "points": null,
+            "q1": "1:37.092",
+            "q2": "1:36.173",
+            "q3": "1:35.757"
+          },
+          {
+            "driver_id": "piastri",
+            "name": "Oscar Piastri",
+            "team": "McLaren",
+            "position": 7,
+            "status": null,
+            "points": null,
+            "q1": "1:36.852",
+            "q2": "1:36.020",
+            "q3": "1:35.762"
+          },
+          {
+            "driver_id": "russell",
+            "name": "George Russell",
+            "team": "Mercedes",
+            "position": 8,
+            "status": null,
+            "points": null,
+            "q1": "1:37.264",
+            "q2": "1:36.245",
+            "q3": "1:35.871"
+          },
+          {
+            "driver_id": "gasly",
+            "name": "Pierre Gasly",
+            "team": "Alpine F1 Team",
+            "position": 9,
+            "status": null,
+            "points": null,
+            "q1": "1:37.174",
+            "q2": "1:36.410",
+            "q3": "1:37.210"
+          },
+          {
+            "driver_id": "bortoleto",
+            "name": "Gabriel Bortoleto",
+            "team": "Audi",
+            "position": 10,
+            "status": null,
+            "points": null,
+            "q1": "1:37.106",
+            "q2": "1:36.814",
+            "q3": "1:37.673"
+          },
+          {
+            "driver_id": "lawson",
+            "name": "Liam Lawson",
+            "team": "RB F1 Team",
+            "position": 11,
+            "status": null,
+            "points": null,
+            "q1": "1:37.332",
+            "q2": "1:37.023",
+            "q3": null
+          },
+          {
+            "driver_id": "alonso",
+            "name": "Fernando Alonso",
+            "team": "Aston Martin",
+            "position": 12,
+            "status": null,
+            "points": null,
+            "q1": "1:37.721",
+            "q2": "1:37.220",
+            "q3": null
+          },
+          {
+            "driver_id": "sainz",
+            "name": "Carlos Sainz",
+            "team": "Williams",
+            "position": 13,
+            "status": null,
+            "points": null,
+            "q1": "1:37.651",
+            "q2": "1:37.527",
+            "q3": null
+          },
+          {
+            "driver_id": "stroll",
+            "name": "Lance Stroll",
+            "team": "Aston Martin",
+            "position": 14,
+            "status": null,
+            "points": null,
+            "q1": "1:37.729",
+            "q2": "1:37.566",
+            "q3": null
+          },
+          {
+            "driver_id": "colapinto",
+            "name": "Franco Colapinto",
+            "team": "Alpine F1 Team",
+            "position": 15,
+            "status": null,
+            "points": null,
+            "q1": "1:37.179",
+            "q2": "",
+            "q3": null
+          },
+          {
+            "driver_id": "arvid_lindblad",
+            "name": "Arvid Lindblad",
+            "team": "RB F1 Team",
+            "position": 16,
+            "status": null,
+            "points": null,
+            "q1": "1:37.883",
+            "q2": "",
+            "q3": null
+          },
+          {
+            "driver_id": "hulkenberg",
+            "name": "Nico Hülkenberg",
+            "team": "Audi",
+            "position": 17,
+            "status": null,
+            "points": null,
+            "q1": "1:37.970",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "driver_id": "bearman",
+            "name": "Oliver Bearman",
+            "team": "Haas F1 Team",
+            "position": 18,
+            "status": null,
+            "points": null,
+            "q1": "1:37.980",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "driver_id": "ocon",
+            "name": "Esteban Ocon",
+            "team": "Haas F1 Team",
+            "position": 19,
+            "status": null,
+            "points": null,
+            "q1": "1:38.233",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "driver_id": "albon",
+            "name": "Alexander Albon",
+            "team": "Williams",
+            "position": 20,
+            "status": null,
+            "points": null,
+            "q1": "1:38.600",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "driver_id": "bottas",
+            "name": "Valtteri Bottas",
+            "team": "Cadillac F1 Team",
+            "position": 21,
+            "status": null,
+            "points": null,
+            "q1": "1:38.611",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "driver_id": "perez",
+            "name": "Sergio Pérez",
+            "team": "Cadillac F1 Team",
+            "position": 22,
+            "status": null,
+            "points": null,
+            "q1": "1:38.933",
+            "q2": null,
+            "q3": null
+          }
+        ]
+      },
+      "objective": "final_classification_rank",
+      "stage": "post_qualifying",
+      "full_grid": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "qualifying_position": 1,
+          "ranking_score": 1,
+          "rank": 1
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "qualifying_position": 2,
+          "ranking_score": 2,
+          "rank": 2
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "qualifying_position": 3,
+          "ranking_score": 3,
+          "rank": 3
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "qualifying_position": 4,
+          "ranking_score": 4,
+          "rank": 4
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "qualifying_position": 5,
+          "ranking_score": 5,
+          "rank": 5
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "qualifying_position": 6,
+          "ranking_score": 6,
+          "rank": 6
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "qualifying_position": 7,
+          "ranking_score": 7,
+          "rank": 7
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "qualifying_position": 8,
+          "ranking_score": 8,
+          "rank": 8
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "qualifying_position": 9,
+          "ranking_score": 9,
+          "rank": 9
+        },
+        {
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "qualifying_position": 10,
+          "ranking_score": 10,
+          "rank": 10
+        },
+        {
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
+          "qualifying_position": 11,
+          "ranking_score": 11,
+          "rank": 11
+        },
+        {
+          "driver_id": "alonso",
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "qualifying_position": 12,
+          "ranking_score": 12,
+          "rank": 12
+        },
+        {
+          "driver_id": "sainz",
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "qualifying_position": 13,
+          "ranking_score": 13,
+          "rank": 13
+        },
+        {
+          "driver_id": "stroll",
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "qualifying_position": 14,
+          "ranking_score": 14,
+          "rank": 14
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "qualifying_position": 15,
+          "ranking_score": 15,
+          "rank": 15
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "name": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "qualifying_position": 16,
+          "ranking_score": 16,
+          "rank": 16
+        },
+        {
+          "driver_id": "hulkenberg",
+          "name": "Nico Hülkenberg",
+          "team": "Audi",
+          "qualifying_position": 17,
+          "ranking_score": 17,
+          "rank": 17
+        },
+        {
+          "driver_id": "bearman",
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "qualifying_position": 18,
+          "ranking_score": 18,
+          "rank": 18
+        },
+        {
+          "driver_id": "ocon",
+          "name": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "qualifying_position": 19,
+          "ranking_score": 19,
+          "rank": 19
+        },
+        {
+          "driver_id": "albon",
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "qualifying_position": 20,
+          "ranking_score": 20,
+          "rank": 20
+        },
+        {
+          "driver_id": "bottas",
+          "name": "Valtteri Bottas",
+          "team": "Cadillac F1 Team",
+          "qualifying_position": 21,
+          "ranking_score": 21,
+          "rank": 21
+        },
+        {
+          "driver_id": "perez",
+          "name": "Sergio Pérez",
+          "team": "Cadillac F1 Team",
+          "qualifying_position": 22,
+          "ranking_score": 22,
+          "rank": 22
+        }
+      ],
+      "top10": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "qualifying_position": 1,
+          "ranking_score": 1,
+          "rank": 1
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "qualifying_position": 2,
+          "ranking_score": 2,
+          "rank": 2
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "qualifying_position": 3,
+          "ranking_score": 3,
+          "rank": 3
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "qualifying_position": 4,
+          "ranking_score": 4,
+          "rank": 4
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "qualifying_position": 5,
+          "ranking_score": 5,
+          "rank": 5
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "qualifying_position": 6,
+          "ranking_score": 6,
+          "rank": 6
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "qualifying_position": 7,
+          "ranking_score": 7,
+          "rank": 7
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "qualifying_position": 8,
+          "ranking_score": 8,
+          "rank": 8
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "qualifying_position": 9,
+          "ranking_score": 9,
+          "rank": 9
+        },
+        {
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
           "qualifying_position": 10,
           "ranking_score": 10,
           "rank": 10
@@ -4902,25 +6059,25 @@
   "sources": [
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
-      "retrieved_at": "2026-10-03T06:37:19.548042+00:00",
+      "retrieved_at": "2026-10-03T12:37:15.335225+00:00",
       "status": "AVAILABLE",
       "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-03T06:37:20.265013+00:00",
+      "retrieved_at": "2026-10-03T12:37:15.920588+00:00",
       "status": "AVAILABLE",
       "sha256": "e45a24e3d3131835ddca89603a7e7ac2cb2f97bd2f22f66b5d5f358e963dddf9"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/qualifying/?limit=100",
-      "retrieved_at": "2026-10-03T06:37:20.748703+00:00",
+      "retrieved_at": "2026-10-03T12:37:16.496458+00:00",
       "status": "AVAILABLE",
-      "sha256": "347cac90287953942278faed83fa15a3f2372c51976bbdcc6f367e47941d8ce9"
+      "sha256": "1e9070cfa7a7fcae538d46030ab936fd174f47a50a37221eb1c69c525210267f"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-10-03T06:37:21.222084+00:00",
+      "retrieved_at": "2026-10-03T12:37:16.907729+00:00",
       "status": "AVAILABLE",
       "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
     }
@@ -4928,7 +6085,7 @@
   "evaluated_races": 1,
   "fia_archive": {
     "status": "HISTORICAL",
-    "checked_at": "2026-10-02T14:31:52.461027+05:30",
+    "checked_at": "2026-10-03T14:04:31.486237+05:30",
     "source_authority": "official_fia",
     "source_status": "official_live",
     "errors": [
@@ -4940,6 +6097,198 @@
     ],
     "documents": [
       {
+        "document_id": "63846f58bf462921",
+        "title": "Doc 33 - Race Director's Competition Notes V3 Published on 03.10.26 09:22 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_race_directors_competition_notes_v3.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_race_directors_competition_notes_v3.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": null,
+        "fetched_at": "2026-10-03T08:34:30.135318+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "bf603a9e0a9a1fc4",
+        "title": "Doc 32 - Infringement - Free Practice 3 Deleted Lap Times Published on 03.10.26 07:55 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_infringement_-_free_practice_3_deleted_lap_times.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-03T06:44:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135323+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "c9208ab5cf6b2d0a",
+        "title": "Doc 31 - Free Practice 3 Classification Published on 03.10.26 07:44 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_free_practice_3_classification.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_free_practice_3_classification.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-03T05:34:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135326+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "f806ea2ff7cbd4e0",
+        "title": "Doc 30 - New PU Elements for this Competition Published on 03.10.26 06:34 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_new_pu_elements_for_this_competition_0.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_new_pu_elements_for_this_competition_0.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-03T05:24:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135329+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "1305bfab7cd396d7",
+        "title": "Doc 29 - Curfew Published on 03.10.26 06:24 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_curfew.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_curfew.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-03T04:42:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135331+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "148a4aab0b1963a7",
+        "title": "Doc 28 - Race Director's Competition Notes V2 Published on 03.10.26 05:42 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_race_directors_competition_notes_v2.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_race_directors_competition_notes_v2.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-03T02:27:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135334+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "3bada4c250263076",
+        "title": "Doc 27 - Post-Qualifying Procedure Published on 03.10.26 03:27 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_post-qualifying_procedure.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_post-qualifying_procedure.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-02T13:22:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135336+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "59120a3b6298f121",
+        "title": "Doc 26 - Infringement - Car 44 - Impeding of Car 5 Published on 02.10.26 14:22 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_infringement_-_car_44_-_impeding_of_car_5.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_infringement_-_car_44_-_impeding_of_car_5.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-02T12:08:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135342+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "b13f525c03d7ccdc",
+        "title": "Doc 25 - P1 and P2 Scrutineering Published on 02.10.26 13:08 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_p1_and_p2_scrutineering.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_p1_and_p2_scrutineering.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-02T10:32:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135345+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "5f7a65a21cae15e7",
+        "title": "Doc 24 - Race Director Notes - SC2 - SC1 Times Published on 02.10.26 11:32 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_race_director_notes_-_sc2_-_sc1_times.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_race_director_notes_-_sc2_-_sc1_times.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": null,
+        "fetched_at": "2026-10-03T08:34:30.135348+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "02dedd6f918b2c94",
+        "title": "Doc 23 - Infringement - Free Practice 2 Deleted Lap Times Published on 02.10.26 11:29 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_infringement_-_free_practice_2_deleted_lap_times.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-02T10:19:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135350+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "ab67bd1920ae2ef3",
+        "title": "Doc 22 - Free Practice 2 Classification Published on 02.10.26 11:19 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_free_practice_2_classification.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_free_practice_2_classification.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-02T09:58:00+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135352+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
         "document_id": "6760e106b955e521",
         "title": "Doc 21 - Summons - Car 5 - Alleged impeding by Car 44 Published on 02.10.26 10:58 CET",
         "source_url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_summons_-_car_5_-_alleged_impeding_by_car_44.pdf",
@@ -4947,7 +6296,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T09:42:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133557+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135354+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -4963,7 +6312,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133564+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135356+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -4979,7 +6328,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133568+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135358+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -4995,7 +6344,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133572+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135360+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5011,7 +6360,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T06:49:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133575+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135362+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5027,7 +6376,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133579+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135364+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5043,7 +6392,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T05:53:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133582+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135366+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5059,7 +6408,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T05:02:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133590+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135370+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5075,7 +6424,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T03:06:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133595+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135372+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5091,7 +6440,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T02:01:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133598+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135374+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5107,7 +6456,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T01:50:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133601+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135376+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5123,7 +6472,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T01:49:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133605+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135378+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5139,7 +6488,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-01T12:29:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133608+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135380+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5155,7 +6504,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133610+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135383+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5171,7 +6520,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-02T05:08:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133613+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135385+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5187,7 +6536,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-01T05:16:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133616+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135387+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5203,7 +6552,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-09-30T12:42:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133618+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135389+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5219,7 +6568,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133621+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135391+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5235,7 +6584,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-09-30T09:30:00+00:00",
-        "fetched_at": "2026-10-02T09:01:51.133624+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135393+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5251,7 +6600,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133627+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135395+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5267,7 +6616,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133629+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135398+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5283,7 +6632,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133632+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135401+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5299,7 +6648,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133634+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135403+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5315,7 +6664,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133639+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135404+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5331,7 +6680,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133642+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135406+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5347,7 +6696,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133644+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135408+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5363,7 +6712,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133647+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135410+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5379,7 +6728,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133650+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135412+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5395,7 +6744,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133653+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135414+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5411,7 +6760,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133655+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135416+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5427,7 +6776,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133658+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135418+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5443,7 +6792,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133660+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135420+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5459,7 +6808,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133663+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135422+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5475,7 +6824,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133666+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135424+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5491,7 +6840,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133668+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135426+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5507,7 +6856,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133671+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135428+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -5523,7 +6872,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-02T09:01:51.133674+00:00",
+        "fetched_at": "2026-10-03T08:34:30.135429+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -6653,9 +8002,7 @@
       }
     ]
   },
-  "warnings": [
-    "Prediction unavailable: qualifying classification has not been published."
-  ],
+  "warnings": [],
   "model": {
     "version": "qualifying-order-v1",
     "feature_version": "qualifying-position-v1",
