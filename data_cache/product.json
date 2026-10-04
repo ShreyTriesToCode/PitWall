@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-10-04T13:17:11.183222+00:00",
+  "generated_at": "2026-10-04T17:41:44.014247+00:00",
   "calendar": [
     {
       "id": "2026:1:race",
@@ -878,46 +878,46 @@
     }
   ],
   "current": {
-    "state": "UPDATING",
+    "state": "UPCOMING",
     "event": {
-      "id": "2026:16:race",
+      "id": "2026:17:race",
       "season": 2026,
-      "round": 16,
-      "name": "Bahrain Grand Prix in Malaysia",
-      "circuit": "Sepang International Circuit",
-      "location": "Kuala Lumpur",
-      "date": "2026-10-04",
-      "start_at": "2026-10-04T07:00:00+00:00",
+      "round": 17,
+      "name": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "location": "Marina Bay",
+      "date": "2026-10-11",
+      "start_at": "2026-10-11T12:00:00+00:00",
       "sessions": [
         {
           "name": "Practice 1",
-          "start_at": "2026-10-02T04:30:00+00:00",
-          "date": "2026-10-02"
+          "start_at": "2026-10-09T08:30:00+00:00",
+          "date": "2026-10-09"
         },
         {
-          "name": "Practice 2",
-          "start_at": "2026-10-02T08:00:00+00:00",
-          "date": "2026-10-02"
+          "name": "Sprint qualifying",
+          "start_at": "2026-10-09T12:30:00+00:00",
+          "date": "2026-10-09"
         },
         {
-          "name": "Practice 3",
-          "start_at": "2026-10-03T04:30:00+00:00",
-          "date": "2026-10-03"
+          "name": "Sprint",
+          "start_at": "2026-10-10T09:00:00+00:00",
+          "date": "2026-10-10"
         },
         {
           "name": "Qualifying",
-          "start_at": "2026-10-03T08:00:00+00:00",
-          "date": "2026-10-03"
+          "start_at": "2026-10-10T13:00:00+00:00",
+          "date": "2026-10-10"
         },
         {
           "name": "Race",
-          "start_at": "2026-10-04T07:00:00+00:00",
-          "date": "2026-10-04"
+          "start_at": "2026-10-11T12:00:00+00:00",
+          "date": "2026-10-11"
         }
       ],
-      "source_url": "https://api.jolpi.ca/ergast/f1/2026/16/races/"
+      "source_url": "https://api.jolpi.ca/ergast/f1/2026/17/races/"
     },
-    "reason": "Scheduled start has passed; check timing for verified session activity."
+    "reason": null
   },
   "prediction": null,
   "latest_result": {
@@ -1185,7 +1185,7 @@
     ],
     "source": {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-04T13:17:10.218877+00:00",
+      "retrieved_at": "2026-10-04T17:41:42.619485+00:00",
       "status": "AVAILABLE",
       "sha256": "e45a24e3d3131835ddca89603a7e7ac2cb2f97bd2f22f66b5d5f358e963dddf9"
     }
@@ -5481,25 +5481,31 @@
   "sources": [
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
-      "retrieved_at": "2026-10-04T13:17:09.490148+00:00",
+      "retrieved_at": "2026-10-04T17:41:42.049705+00:00",
       "status": "AVAILABLE",
       "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-04T13:17:10.218877+00:00",
+      "retrieved_at": "2026-10-04T17:41:42.619485+00:00",
       "status": "AVAILABLE",
       "sha256": "e45a24e3d3131835ddca89603a7e7ac2cb2f97bd2f22f66b5d5f358e963dddf9"
     },
     {
+      "url": "https://api.jolpi.ca/ergast/f1/2026/17/qualifying/?limit=100",
+      "retrieved_at": "2026-10-04T17:41:43.041056+00:00",
+      "status": "AVAILABLE",
+      "sha256": "1f4ab666bb004c36ffc464d51cf760e6c1084719803f0dcc6afe059553b8162f"
+    },
+    {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/results/?limit=100",
-      "retrieved_at": "2026-10-04T13:17:10.702323+00:00",
+      "retrieved_at": "2026-10-04T17:41:43.417262+00:00",
       "status": "AVAILABLE",
       "sha256": "dd4fe120a09d94b4a3af86964b7179c8a1775d7c7d7763bf0dc71721bba7cd6b"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-10-04T13:17:11.177324+00:00",
+      "retrieved_at": "2026-10-04T17:41:44.009884+00:00",
       "status": "AVAILABLE",
       "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
     }
@@ -7664,7 +7670,9 @@
       }
     ]
   },
-  "warnings": [],
+  "warnings": [
+    "Prediction unavailable: qualifying classification has not been published."
+  ],
   "model": {
     "version": "qualifying-order-v1",
     "feature_version": "qualifying-position-v1",
