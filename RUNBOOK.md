@@ -118,3 +118,17 @@ records or treat retrospective reconstruction as prospective evidence.
 A results-provider outage is exposed in warnings but does not suppress otherwise
 valid qualifying-based capture. A corrupt ledger remains a hard failure.
 Predictions remain immutable; post-race result revisions append evaluations.
+
+## Ranking visibility after race start
+
+The active forecast expires at scheduled start to avoid presenting it as a new
+prediction or live classification. While that event remains selected as UPDATING,
+the ranking page displays its immutable ledger entry as **Saved pre-race ranking**.
+It must match both the race ID and scheduled start; its cutoff and capture must
+precede that start. Top 10 and Full Grid remain available. When selection moves to
+the next race, prior captures and their evaluations remain in Results & history.
+
+If no eligible capture exists, the page says no forecast was saved. Do not run a
+post-start reconstruction to fill that gap. The October 26 visibility repair was
+prompted by an existing US GP capture being hidden by the active-forecast expiry;
+the publisher had succeeded and the ledger record did not need regeneration.

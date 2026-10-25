@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { sessionStatus } from "../lib/session-status";
 import { formatISTDateTime } from "../lib/time";
+import { capturedRanking } from "../lib/captured-ranking";
 import { useState } from "react";
 import {
   AppShell,
@@ -138,7 +139,8 @@ function EventHeader({ data, compact = false }) {
   );
 }
 function Prediction({ data, preview = false, target = "race" }) {
-  const p = data.prediction;
+  const saved = capturedRanking(data);
+  const p = saved || data.prediction;
   const [full, setFull] = useState(false);
   const [query, setQuery] = useState("");
   if (target !== "race")
@@ -158,7 +160,9 @@ function Prediction({ data, preview = false, target = "race" }) {
           body={
             data.current?.state === "UPCOMING"
               ? "A ranking will be available after qualifying is published and a forecast is captured before the race starts."
-              : "A pre-race ranking cannot be generated for an event that has started or whose schedule is unverified."
+              : data.current?.state === "UPDATING"
+                ? "No pre-race forecast was saved for this event. The scheduled start has passed, so a new forecast cannot be captured."
+                : "The current race schedule could not be verified. Saved forecasts and evaluations remain available in Results & history."
           }
         />
         <State>
@@ -169,6 +173,9 @@ function Prediction({ data, preview = false, target = "race" }) {
           </Link>
           .
         </State>
+        <Link prefetch={false} href="/archive">
+          View saved forecasts & evaluations →
+        </Link>
       </Section>
     );
   const rows = (
@@ -178,9 +185,29 @@ function Prediction({ data, preview = false, target = "race" }) {
   );
   return (
     <Section
-      title={preview ? "Leading ranks" : "Predicted classification"}
-      aside={<span className="muted">Post qualifying</span>}
+      title={
+        saved
+          ? "Saved pre-race ranking"
+          : preview
+            ? "Leading ranks"
+            : "Predicted classification"
+      }
+      aside={
+        <span className="muted">
+          {saved ? "Captured before race start" : "Post qualifying"}
+        </span>
+      }
     >
+      {saved && (
+        <State>
+          The scheduled start has passed. This is the unchanged forecast saved
+          before the race, not a live classification. Evaluation follows when
+          the official classification is available.{" "}
+          <Link prefetch={false} href="/archive">
+            View forecast history →
+          </Link>
+        </State>
+      )}
       <State>
         {p.event.name} · {p.model_version} · Captured{" "}
         {formatISTDateTime(p.generated_at)}

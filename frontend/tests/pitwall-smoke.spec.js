@@ -101,7 +101,7 @@ test("ranking controls derive top 10 and full field and expose provenance", asyn
   await noOverflow(page);
 });
 
-test("forecast disappears at race start without a publisher run", async ({
+test("forecast remains readable as a saved capture at race start", async ({
   page,
 }) => {
   await page.clock.install({ time: new Date("2030-03-10T13:59:59Z") });
@@ -112,8 +112,13 @@ test("forecast disappears at race start without a publisher run", async ({
   ).toBeVisible();
   await page.clock.fastForward(2000);
   await expect(
-    page.getByRole("heading", { name: "Prediction unavailable" }),
+    page.getByRole("heading", { name: "Saved pre-race ranking" }),
   ).toBeVisible();
+  await expect(page.getByText(/not a live classification/)).toBeVisible();
+  await expect(page.getByRole("table").getByRole("row")).toHaveCount(11);
+  await page.getByRole("button", { name: "Show full grid" }).click();
+  await expect(page.getByRole("table").getByRole("row")).toHaveCount(13);
+  await noOverflow(page);
   await expect(page.getByText("UPDATING", { exact: true })).toBeVisible();
 });
 
