@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-10-26T20:35:37.735837+00:00",
+  "generated_at": "2026-10-27T00:33:14.937337+00:00",
   "calendar": [
     {
       "id": "2026:1:race",
@@ -1185,7 +1185,7 @@
     ],
     "source": {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:34.918731+00:00",
+      "retrieved_at": "2026-10-27T00:33:12.948785+00:00",
       "status": "AVAILABLE",
       "sha256": "567b2922d9adb46abba55476f5a6094a0645d30b940819796d1ba184fdeaddbe"
     }
@@ -7437,43 +7437,43 @@
   "sources": [
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:34.280055+00:00",
+      "retrieved_at": "2026-10-27T00:33:12.865488+00:00",
       "status": "AVAILABLE",
       "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:34.918731+00:00",
+      "retrieved_at": "2026-10-27T00:33:12.948785+00:00",
       "status": "AVAILABLE",
       "sha256": "567b2922d9adb46abba55476f5a6094a0645d30b940819796d1ba184fdeaddbe"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/19/qualifying/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:35.169145+00:00",
+      "retrieved_at": "2026-10-27T00:33:13.349691+00:00",
       "status": "AVAILABLE",
       "sha256": "3ce4f9f8d6bf46bec60fb872af5c354e6430e394c2e78a5081e7aa270f5068d9"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/18/results/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:35.804770+00:00",
+      "retrieved_at": "2026-10-27T00:33:13.709243+00:00",
       "status": "AVAILABLE",
       "sha256": "45fa2248ed1795b041e24ab8190257776758cc8acffe8436736e7fa4b0a28353"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/results/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:36.462394+00:00",
+      "retrieved_at": "2026-10-27T00:33:14.226883+00:00",
       "status": "AVAILABLE",
       "sha256": "ae226e6239df3455db0c8d6f809192cb859fe51ed29dea9927df83671abd8052"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/17/results/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:37.107275+00:00",
+      "retrieved_at": "2026-10-27T00:33:14.573079+00:00",
       "status": "AVAILABLE",
       "sha256": "561d1135bcf91222e3a09b008c13e2225a040c3ec92ead3a769df586e4dc76fd"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-10-26T20:35:37.725841+00:00",
+      "retrieved_at": "2026-10-27T00:33:14.929563+00:00",
       "status": "AVAILABLE",
       "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
     }
