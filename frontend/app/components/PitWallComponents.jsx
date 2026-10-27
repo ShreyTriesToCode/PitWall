@@ -133,7 +133,10 @@ export function usePitWallData(endpoint = "/api/predictions", options = {}) {
       controller.abort();
     }, 15000);
     setRefreshing(true);
-    fetch(endpoint, { cache: "no-store", signal: controller.signal })
+    Promise.resolve()
+      .then(() =>
+        fetch(endpoint, { cache: "no-store", signal: controller.signal }),
+      )
       .then(async (response) => {
         if (!response.ok)
           throw new Error(`Data service returned HTTP ${response.status}.`);

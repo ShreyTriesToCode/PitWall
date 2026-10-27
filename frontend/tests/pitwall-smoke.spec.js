@@ -331,3 +331,20 @@ test("fitted research model is published separately from the qualifying baseline
   await expect(page.getByText(/2025: baseline MAE/)).toBeVisible();
   await noOverflow(page);
 });
+
+test("synchronous browser fetch failures use the controlled error state", async ({
+  page,
+}) => {
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+    window.fetch = () => {
+      throw new TypeError("Isolated synchronous fetch failure fixture");
+    };
+  });
+  await page.goto("/predictions");
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Data request failed" }),
+  ).toBeVisible();
+  expect(errors).toEqual([]);
+});
