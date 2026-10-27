@@ -425,11 +425,37 @@ export async function loadGeneratedTargets() {
 }
 export async function loadModelStatus() {
   const p = await readProduct();
+  let research_model = null;
+  try {
+    const report = JSON.parse(
+      await readFile(
+        path.join(ROOT, "data_cache/race-model-experiment.json"),
+        "utf8",
+      ),
+    );
+    if (
+      report.status !== "RESEARCH_ONLY" ||
+      report.promotion?.promoted !== false ||
+      report.model_version !== report.artifact?.model_version ||
+      !Array.isArray(report.races) ||
+      report.baseline?.races !== report.races.length ||
+      report.candidate?.races !== report.races.length ||
+      ![report.baseline?.mae, report.candidate?.mae].every(Number.isFinite)
+    )
+      throw new Error("Invalid research artifact identity");
+    // Learned parameters and full evidence remain in the versioned repository.
+    const publicReport = { ...report };
+    delete publicReport.artifact;
+    research_model = publicReport;
+  } catch (error) {
+    console.warn("PitWall research model unavailable:", error.message);
+  }
   return {
     ok: !!p.model,
     model: p.model,
     backtest: p.backtest,
     evaluations: p.evaluations,
+    research_model,
   };
 }
 export async function loadBacktest() {

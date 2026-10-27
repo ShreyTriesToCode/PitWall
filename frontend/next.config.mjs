@@ -2,7 +2,12 @@ import path from "node:path";
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: path.resolve(process.cwd(), ".."),
-  outputFileTracingIncludes: { "/*": ["../data_cache/product.json"] },
+  outputFileTracingIncludes: {
+    "/*": [
+      "../data_cache/product.json",
+      "../data_cache/race-model-experiment.json",
+    ],
+  },
   devIndicators: false,
   async headers() {
     return [

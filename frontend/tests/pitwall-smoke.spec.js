@@ -108,11 +108,11 @@ test("forecast remains readable as a saved capture at race start", async ({
   await fixture(page);
   await page.goto("/predictions");
   await expect(
-    page.getByRole("heading", { name: "Predicted classification" }),
+    page.getByRole("heading", { name: "Qualifying-order baseline" }),
   ).toBeVisible();
   await page.clock.fastForward(2000);
   await expect(
-    page.getByRole("heading", { name: "Saved pre-race ranking" }),
+    page.getByRole("heading", { name: "Saved qualifying baseline" }),
   ).toBeVisible();
   await expect(page.getByText(/not a live classification/)).toBeVisible();
   await expect(page.getByRole("table").getByRole("row")).toHaveCount(11);
@@ -169,7 +169,7 @@ test("loading and unavailable states have meaningful copy", async ({
     page.getByRole("heading", { name: "Race schedule unavailable" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Prediction unavailable" }),
+    page.getByRole("heading", { name: "Qualifying baseline unavailable" }),
   ).toBeVisible();
   await noOverflow(page);
 });
@@ -308,4 +308,26 @@ test("sprint request cannot display a grand prix forecast", async ({
     page.getByRole("heading", { name: "Sprint prediction unavailable" }),
   ).toBeVisible();
   await expect(page.getByRole("table")).toHaveCount(0);
+});
+
+test("fitted research model is published separately from the qualifying baseline", async ({
+  page,
+  request,
+}) => {
+  const response = await request.get("/api/model-status");
+  expect(response.ok()).toBeTruthy();
+  const status = await response.json();
+  expect(status.research_model.status).toBe("RESEARCH_ONLY");
+  expect(status.research_model.promotion.promoted).toBe(false);
+  expect(status.research_model.artifact).toBeUndefined();
+  await fixture(page);
+  await page.goto("/model");
+  await expect(
+    page.getByRole("heading", { name: "Fitted race model · research" }),
+  ).toBeVisible();
+  await expect(page.getByText("Not promoted", { exact: true })).toBeVisible();
+  await expect(page.getByText(/not a trained race prediction/)).toBeVisible();
+  await page.getByText("Season-by-season results", { exact: true }).click();
+  await expect(page.getByText(/2025: baseline MAE/)).toBeVisible();
+  await noOverflow(page);
 });

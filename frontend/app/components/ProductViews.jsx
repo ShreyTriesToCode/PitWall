@@ -47,11 +47,11 @@ function ResultTable({ rows = [], ranking = false }) {
       className="table-scroll"
       tabIndex={0}
       role="region"
-      aria-label={ranking ? "Predicted classification" : "Race classification"}
+      aria-label={ranking ? "Qualifying-order baseline" : "Race classification"}
     >
       <table className="product-table">
         <caption className="sr-only">
-          {ranking ? "Predicted classification" : "Race classification"}
+          {ranking ? "Qualifying-order baseline" : "Race classification"}
         </caption>
         <thead>
           <tr>
@@ -156,7 +156,7 @@ function Prediction({ data, preview = false, target = "race" }) {
     return (
       <Section title="Race ranking">
         <EmptyState
-          title="Prediction unavailable"
+          title="Qualifying baseline unavailable"
           body={
             data.current?.state === "UPCOMING"
               ? "A ranking will be available after qualifying is published and a forecast is captured before the race starts."
@@ -187,10 +187,10 @@ function Prediction({ data, preview = false, target = "race" }) {
     <Section
       title={
         saved
-          ? "Saved pre-race ranking"
+          ? "Saved qualifying baseline"
           : preview
-            ? "Leading ranks"
-            : "Predicted classification"
+            ? "Qualifying order"
+            : "Qualifying-order baseline"
       }
       aside={
         <span className="muted">
@@ -240,8 +240,8 @@ function Prediction({ data, preview = false, target = "race" }) {
         />
       )}
       <State>
-        Classification estimate based on qualifying order. Penalties, race pace,
-        weather and reliability are not modeled.
+        This baseline repeats qualifying order. Penalties, race pace, weather
+        and reliability are not modeled.
       </State>
       {!preview && (
         <details className="product-details">
@@ -524,16 +524,18 @@ function Metrics({ report }) {
 }
 function Model({ data }) {
   const report = data.backtest;
+  const { data: modelStatus } = usePitWallData("/api/model-status");
+  const research = modelStatus?.research_model;
   return (
     <>
       <Section title="Methodology">
         <h3>Qualifying order, with a measurable baseline</h3>
         <p>
-          The production ranking predicts final classification order using the
-          published qualifying positions. It has no trained parameters, random
-          simulation, or confidence score. A simple candidate combines
-          qualifying rank with a driver’s mean finish over their previous five
-          races.
+          The displayed ranking repeats the published qualifying order as a
+          comparison baseline; it is not a trained race prediction. It has no
+          trained parameters, random simulation, or confidence score. A simple
+          candidate combines qualifying rank with a driver’s mean finish over
+          their previous five races.
         </p>
         <dl className="provenance">
           <dt>Production version</dt>
@@ -550,7 +552,58 @@ function Model({ data }) {
           toward genuine forecast performance.
         </State>
       </Section>
-      <Section title="Chronological comparison">
+      <Section title="Fitted race model · research">
+        {research?.status === "RESEARCH_ONLY" ? (
+          <>
+            <p>
+              A Ridge regression model learns from qualifying position, prior
+              driver and constructor results, and prior finishing reliability.
+              It can change the order, but has not demonstrated a reliable
+              improvement.
+            </p>
+            <State>
+              {research.model_version} · Training: {research.training_period} ·
+              Validation: {research.validation_period} ·{" "}
+              {research.baseline.races} comparable races
+            </State>
+            <dl className="provenance">
+              <dt>Qualifying baseline MAE</dt>
+              <dd>{value(research.baseline.mae, 3)} places</dd>
+              <dt>Fitted model MAE</dt>
+              <dd>{value(research.candidate.mae, 3)} places</dd>
+              <dt>Promotion</dt>
+              <dd>Not promoted</dd>
+              <dt>Model minus baseline MAE · 95% bootstrap interval</dt>
+              <dd>
+                {research.mae_difference_95_percent_interval
+                  .map((v) => value(v, 3))
+                  .join(" to ")}{" "}
+                places
+              </dd>
+            </dl>
+            <State>
+              The interval includes zero, so the observed improvement is not
+              clear evidence of better performance. The candidate also regressed
+              in one season. Validation years were used in earlier research and
+              are not an untouched holdout. These are retrospective
+              reconstructions, not saved pre-race forecasts.
+            </State>
+            <details className="product-details">
+              <summary>Season-by-season results</summary>
+              {research.by_season.map((block) => (
+                <p key={block.season}>
+                  {block.season}: baseline MAE {value(block.baseline.mae, 3)} ·
+                  model MAE {value(block.candidate.mae, 3)} ·{" "}
+                  {block.baseline.races} races
+                </p>
+              ))}
+            </details>
+          </>
+        ) : (
+          <State>Fitted model research report unavailable.</State>
+        )}
+      </Section>
+      <Section title="Earlier heuristic comparison">
         <Metrics report={report} />
         {report?.promotion && (
           <InlineNotice
@@ -860,7 +913,7 @@ const TITLES = {
   ],
   predictions: [
     "Race ranking",
-    "Qualifying-based rankings, with the evidence behind each forecast.",
+    "Qualifying-order baseline. A validated race prediction model is not yet available.",
   ],
   drivers: [
     "Drivers",
