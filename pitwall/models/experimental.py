@@ -107,8 +107,13 @@ def validate_forecast(p):
         if (p["input_hash"] != identity or p["prediction_id"] != digest([p["race_id"], p["model_version"], identity])
                 or p["race_id"] != p["event"]["id"] or p["model_version"] != artifact["model_version"]
                 or p["feature_version"] != artifact["feature_version"] or p["training_data_cutoff"] != artifact["training_data_cutoff"]
-                or p["full_grid"] != grid or p["top10"] != grid[:10] or p["status"] != "EXPERIMENTAL"):
+                or len(p["full_grid"]) != len(grid) or p["top10"] != p["full_grid"][:10] or p["status"] != "EXPERIMENTAL"):
             raise DataUnavailable("Experimental forecast integrity mismatch")
+        # BLAS accumulation can differ by a few ulps between publisher platforms.
+        # Driver order and all discrete fields must still match exactly.
+        for actual, expected in zip(p["full_grid"], grid, strict=True):
+            if any(actual.get(key) != value for key, value in expected.items() if key != "ranking_score") or not np.isclose(actual["ranking_score"], expected["ranking_score"], rtol=0, atol=1e-12):
+                raise DataUnavailable("Experimental model output mismatch")
     except (KeyError, TypeError, ValueError, IndexError) as exc:
         raise DataUnavailable("Invalid experimental forecast") from exc
     return p
