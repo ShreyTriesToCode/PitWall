@@ -198,6 +198,20 @@ test("primary routes and navigation work without layout overflow", async ({
   isMobile,
 }) => {
   await fixture(page, { ...product, prediction: null, predictions: [] });
+  const timing = {
+    ok: false,
+    error: "Isolated unavailable timing fixture",
+    normalized: null,
+    meeting_options: [],
+    session_options: [],
+  };
+  await page.route("**/api/f1timing?**", (r) => r.fulfill({ json: timing }));
+  await page.route("**/api/f1timing/stream?**", (r) =>
+    r.fulfill({
+      contentType: "text/event-stream",
+      body: `data: ${JSON.stringify(timing)}\n\n`,
+    }),
+  );
   const failures = [];
   page.on("pageerror", (e) => failures.push(e.message));
   for (const [path, title] of [
@@ -211,6 +225,7 @@ test("primary routes and navigation work without layout overflow", async ({
     await expect(
       page.getByRole("heading", { name: title, exact: true, level: 1 }),
     ).toBeVisible();
+    await page.waitForLoadState("networkidle");
     await noOverflow(page);
   }
   if (isMobile) {
