@@ -108,6 +108,8 @@ def publish(root=ROOT, *, provider=None, now=None):
                     evaluations.append(evaluation)
         except DataUnavailable as exc:
             warnings.append(f"Evaluation pending for {prediction['race_id']}: {exc}")
+    from pitwall.models.experimental import publish_experimental
+    experimental = publish_experimental(root, provider, current, latest_result, clock)
     report_path = root / "data_cache/ranking-backtest.json"
     dataset = evaluated_dataset(records, evaluations)
     atomic_write_json(root / "data_cache/evaluated-dataset.json", {"schema_version": 1, "races": dataset})
@@ -124,7 +126,7 @@ def publish(root=ROOT, *, provider=None, now=None):
                "warnings": warnings, "model": {"version": MODEL_VERSION, "feature_version": FEATURE_VERSION,
                "objective": "Final classification ranking after qualifying", "probabilities": False,
                "training": "No fitted parameters. Qualifying order is the production baseline."},
-               "backtest": report}
+               "backtest": report, **experimental}
     atomic_write_json(root / "data_cache/product.json", payload, indent=2)
     return payload
 

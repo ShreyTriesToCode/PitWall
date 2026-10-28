@@ -148,3 +148,76 @@ artifact/input hashes, untouched evaluation data and a rollback plan are require
 Repeated tuning against 2024–2025 would turn it into development data; a new future
 test period would then be required. Zero new prospective races is insufficient
 for adaptive learning. Evaluation infrastructure is implemented first.
+
+## Fitted race model experiment (27 October 2026)
+
+`prior-form-ridge-v1` is a real fitted regression candidate, separate from the
+qualifying baseline. It uses qualifying percentile, prior driver finish/qualifying
+percentiles, constructor form, prior non-finish rate and observed sample counts.
+Missing history is represented as missing and imputed only inside the trained
+pipeline; those estimates are never presented as observed F1 statistics.
+
+Protocol: `docs/RACE_MODEL_EXPERIMENT.md`, committed before fitting. Alpha 100 was
+selected using 2022–2023 only, after fitting 2019–2021. The frozen candidate was
+refit on 2019–2023. On 43 comparable 2024–2025 races:
+
+| Metric | Qualifying baseline | Fitted model |
+|---|---:|---:|
+| MAE (positions) | 3.100122 | 3.086659 |
+| RMSE (positions) | 4.247096 | 4.214026 |
+| Spearman | 0.702518 | 0.704249 |
+| Winner first | 0.558140 | 0.418605 |
+
+MAE improved about 0.43%, below the predeclared 5% gate. The 2025 MAE worsened
+(3.340909 → 3.368182). The paired race bootstrap 95% interval for model minus
+baseline MAE is −0.174419 to +0.149327; it includes no improvement. **Not promoted.**
+These validation years were viewed in previous research and cannot be called an
+untouched test set. Do not tune against them again. The 2026 review was not used
+to rescue a candidate that already failed its retrospective gate.
+
+Run `.venv/bin/python -m pitwall.models.race_model` to reproduce the experiment.
+The small JSON report contains training race IDs, feature order, imputation values,
+scaling, fitted coefficients, artifact hash, selection metrics, per-race validation
+and exclusions. It is a research artifact, not a production model or prospective
+prediction. The existing immutable forecast ledger is unchanged.
+
+A defensible replacement is still not established. Next research needs new
+pre-race signals (e.g. validated clean practice pace and actual penalized grid),
+a new protocol and untouched future evaluation. Simply changing the order is
+not proof of useful prediction. The UI now explicitly calls the production
+output a qualifying-order baseline and publishes this failed experiment.
+
+## Website forecasts: early and after qualifying
+
+At the user's request, two fitted models are now exposed as **experimental race
+predictions**, separately from the qualifying-order benchmark and its immutable
+ledger. These are model estimates, not copied qualifying order. They do not claim
+validated superiority or calibrated probabilities. The failed promotion gate is
+retained and disclosed; no existing benchmark record is relabelled as a learned
+forecast.
+
+- `pre-race-form-ridge-v1` estimates order before qualifying from prior driver finish
+  and qualifying form, current-constructor historical form, prior non-finish rate
+  and history counts. It does not use the target qualifying position. Alpha is
+  selected using older seasons under the same chronological protocol.
+- `prior-form-ridge-v1` adds the published target qualifying percentile. Publication
+  switches stages only when a legitimate classification is available before start.
+
+On the same 43 reconstructed 2024–2025 races, early-model MAE is **3.722399 places**
+versus qualifying order **3.100122**. This is an information-richer benchmark for an
+assessment made before qualifying. Early-model Spearman is **0.614659**, winner hit
+**0.232558**; no future accuracy claim follows from these scores. Real participant
+changes are an additional early-forecast limitation not represented in that backtest.
+
+Before qualifying, entrants are projected from the latest published race result,
+with an explicit label and source event. That is an assumption about the future
+field, not a verified entry list. Substitutions require a new capture; evaluations
+with unmatched fields remain pending for review rather than silently dropping drivers.
+
+`pitwall/models/experimental.py` stores inputs, relevant prior races, a portable
+model snapshot, feature/model versions, hashes, cutoff and actual capture time.
+Python and the API independently recompute outputs. Top 10 derives from Full Grid.
+The ledger is `data_cache/experimental-ledger`; corrections append evaluations.
+The hourly publisher captures changed inputs; unchanged inputs reuse the first
+capture. Expired captures remain historical and cannot become forecasts for another
+race. Existing baseline captures and metrics remain separate.

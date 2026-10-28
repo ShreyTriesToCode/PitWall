@@ -123,7 +123,7 @@ Predictions remain immutable; post-race result revisions append evaluations.
 
 The active forecast expires at scheduled start to avoid presenting it as a new
 prediction or live classification. While that event remains selected as UPDATING,
-the ranking page displays its immutable ledger entry as **Saved pre-race ranking**.
+the ranking page displays its immutable ledger entry as **Saved qualifying baseline**.
 It must match both the race ID and scheduled start; its cutoff and capture must
 precede that start. Top 10 and Full Grid remain available. When selection moves to
 the next race, prior captures and their evaluations remain in Results & history.
@@ -132,3 +132,25 @@ If no eligible capture exists, the page says no forecast was saved. Do not run a
 post-start reconstruction to fill that gap. The October 26 visibility repair was
 prompted by an existing US GP capture being hidden by the active-forecast expiry;
 the publisher had succeeded and the ledger record did not need regeneration.
+
+Fitted-model research is separate from hourly publication. Run
+`python -m pitwall.models.race_model` only under the versioned experiment protocol;
+review `data_cache/race-model-experiment.json` and MODEL_REPORT.md. This command
+never writes to the production ledger or promotes a model. The Methodology page
+loads this report via `/api/model-status`; missing or invalid reports are explicitly
+unavailable. Do not reuse 2024–2025 as an untouched test period for further tuning.
+
+### Experimental model forecast publication
+
+The hourly publisher now also emits `experimental_prediction`,
+`experimental_predictions`, `experimental_evaluations` and `experimental_warnings`.
+Fitted forecasts are the main prediction view; qualifying order remains a separate
+benchmark. Stage-specific artifacts are `early-model-experiment.json` and
+`race-model-experiment.json`. Both are included in deployment file tracing.
+
+Run `python -m pitwall.publish` to fetch prior results/qualifying and capture the
+current early or after-qualifying estimate. The projected early field is identified
+on screen. Failed data/entry validation returns an unavailable warning. The separate
+`data_cache/experimental-ledger` must be persisted and committed by publication;
+never overwrite captures or rewrite their timestamps. No fitting or automatic
+parameter changes run during hourly publication.

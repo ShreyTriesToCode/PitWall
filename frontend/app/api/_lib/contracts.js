@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { validateExperimental, selectExperimental } from "./experimental.js";
 
 const ROOT =
   process.env.PITWALL_PROJECT_ROOT ||
@@ -250,6 +251,13 @@ export function validateProduct(data) {
     )
       throw new Error("Source cutoff differs from prediction provenance");
   }
+  const experimental = data.experimental_predictions || [];
+  if (
+    new Set(experimental.map((p) => p.prediction_id)).size !==
+    experimental.length
+  )
+    throw new Error("Duplicate experimental captures");
+  for (const p of experimental) validateExperimental(p, timestamp, inputDigest);
   return data;
 }
 
@@ -406,6 +414,11 @@ export async function loadPredictionsPayload() {
     current,
     calendar,
     prediction,
+    experimental_prediction: selectExperimental(
+      product.experimental_predictions || [],
+      current,
+      now,
+    ),
     latest_result: latestResult,
     sources: [...sources, ...(product.sources || [])].map((s) => ({
       ...s,
@@ -425,11 +438,57 @@ export async function loadGeneratedTargets() {
 }
 export async function loadModelStatus() {
   const p = await readProduct();
+  let research_model = null;
+  try {
+    const report = JSON.parse(
+      await readFile(
+        path.join(ROOT, "data_cache/race-model-experiment.json"),
+        "utf8",
+      ),
+    );
+    if (
+      report.status !== "RESEARCH_ONLY" ||
+      report.promotion?.promoted !== false ||
+      report.model_version !== report.artifact?.model_version ||
+      !Array.isArray(report.races) ||
+      report.baseline?.races !== report.races.length ||
+      report.candidate?.races !== report.races.length ||
+      ![report.baseline?.mae, report.candidate?.mae].every(Number.isFinite)
+    )
+      throw new Error("Invalid research artifact identity");
+    // Learned parameters and full evidence remain in the versioned repository.
+    const publicReport = { ...report };
+    delete publicReport.artifact;
+    research_model = publicReport;
+  } catch (error) {
+    console.warn("PitWall research model unavailable:", error.message);
+  }
+  let early_model = null;
+  try {
+    const report = JSON.parse(
+      await readFile(
+        path.join(ROOT, "data_cache/early-model-experiment.json"),
+        "utf8",
+      ),
+    );
+    if (
+      report.status !== "RESEARCH_ONLY" ||
+      report.model_version !== "pre-race-form-ridge-v1" ||
+      report.promotion?.promoted !== false
+    )
+      throw new Error("Invalid early model report");
+    early_model = { ...report };
+    delete early_model.artifact;
+  } catch (error) {
+    console.warn("PitWall early model report unavailable:", error.message);
+  }
   return {
     ok: !!p.model,
     model: p.model,
     backtest: p.backtest,
     evaluations: p.evaluations,
+    research_model,
+    early_model,
   };
 }
 export async function loadBacktest() {
@@ -442,6 +501,8 @@ export async function loadArchive() {
     ok: true,
     predictions: p.predictions,
     evaluations: p.evaluations,
+    experimental_predictions: p.experimental_predictions || [],
+    experimental_evaluations: p.experimental_evaluations || [],
     legacy_archive: p.legacy_archive,
   };
 }

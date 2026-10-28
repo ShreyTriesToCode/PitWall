@@ -5,6 +5,7 @@ import Image from "next/image";
 import { sessionStatus } from "../lib/session-status";
 import { formatISTDateTime } from "../lib/time";
 import { capturedRanking } from "../lib/captured-ranking";
+import { selectExperimental } from "../lib/experimental-selection";
 import { useState } from "react";
 import {
   AppShell,
@@ -34,7 +35,9 @@ function Section({ title, children, aside }) {
 function State({ children }) {
   return <p className="product-note">{children}</p>;
 }
-function ResultTable({ rows = [], ranking = false }) {
+function ResultTable({ rows = [], ranking = false, experimental = false }) {
+  const showQualifying =
+    !ranking || rows.some((r) => r.qualifying_position != null);
   if (!rows.length)
     return (
       <EmptyState
@@ -47,18 +50,30 @@ function ResultTable({ rows = [], ranking = false }) {
       className="table-scroll"
       tabIndex={0}
       role="region"
-      aria-label={ranking ? "Predicted classification" : "Race classification"}
+      aria-label={
+        ranking
+          ? experimental
+            ? "Predicted classification"
+            : "Qualifying-order baseline"
+          : "Race classification"
+      }
     >
       <table className="product-table">
         <caption className="sr-only">
-          {ranking ? "Predicted classification" : "Race classification"}
+          {ranking
+            ? experimental
+              ? "Predicted classification"
+              : "Qualifying-order baseline"
+            : "Race classification"}
         </caption>
         <thead>
           <tr>
             <th scope="col">{ranking ? "Rank" : "Pos"}</th>
             <th scope="col">Driver</th>
             <th scope="col">Constructor</th>
-            <th scope="col">{ranking ? "Qualifying" : "Status"}</th>
+            {showQualifying && (
+              <th scope="col">{ranking ? "Qualifying" : "Status"}</th>
+            )}
             {!ranking && <th scope="col">Points</th>}
           </tr>
         </thead>
@@ -68,11 +83,13 @@ function ResultTable({ rows = [], ranking = false }) {
               <td className="position">{ranking ? r.rank : r.position}</td>
               <th scope="row">{r.name}</th>
               <td>{r.team}</td>
-              <td>
-                {ranking
-                  ? (r.qualifying_position ?? "Unavailable")
-                  : r.status || "Unavailable"}
-              </td>
+              {showQualifying && (
+                <td>
+                  {ranking
+                    ? (r.qualifying_position ?? "Unavailable")
+                    : r.status || "Unavailable"}
+                </td>
+              )}
               {!ranking && <td>{r.points ?? "Unavailable"}</td>}
             </tr>
           ))}
@@ -139,8 +156,14 @@ function EventHeader({ data, compact = false }) {
   );
 }
 function Prediction({ data, preview = false, target = "race" }) {
-  const saved = capturedRanking(data);
-  const p = saved || data.prediction;
+  const experimental = selectExperimental(
+    data.experimental_predictions || [],
+    data.current || {},
+  );
+  const saved = experimental
+    ? data.current?.state === "UPDATING"
+    : capturedRanking(data);
+  const p = experimental || saved || data.prediction;
   const [full, setFull] = useState(false);
   const [query, setQuery] = useState("");
   if (target !== "race")
@@ -159,7 +182,8 @@ function Prediction({ data, preview = false, target = "race" }) {
           title="Prediction unavailable"
           body={
             data.current?.state === "UPCOMING"
-              ? "A ranking will be available after qualifying is published and a forecast is captured before the race starts."
+              ? data.experimental_warnings?.join(" ") ||
+                "The fitted forecast has not been published for this event yet. Refresh after the next data update."
               : data.current?.state === "UPDATING"
                 ? "No pre-race forecast was saved for this event. The scheduled start has passed, so a new forecast cannot be captured."
                 : "The current race schedule could not be verified. Saved forecasts and evaluations remain available in Results & history."
@@ -186,18 +210,46 @@ function Prediction({ data, preview = false, target = "race" }) {
   return (
     <Section
       title={
-        saved
-          ? "Saved pre-race ranking"
-          : preview
-            ? "Leading ranks"
-            : "Predicted classification"
+        experimental
+          ? saved
+            ? "Saved race prediction"
+            : preview
+              ? "Predicted leaders"
+              : "Predicted classification"
+          : saved
+            ? "Saved qualifying baseline"
+            : preview
+              ? "Qualifying order"
+              : "Qualifying-order baseline"
       }
       aside={
         <span className="muted">
-          {saved ? "Captured before race start" : "Post qualifying"}
+          {experimental
+            ? "Experimental model"
+            : saved
+              ? "Captured before race start"
+              : "Post qualifying"}
         </span>
       }
     >
+      {experimental && (
+        <State>
+          {p.stage === "pre_qualifying"
+            ? "Early race forecast using prior driver form, constructor form and finishing reliability."
+            : "Race forecast using qualifying and prior driver/constructor form."}{" "}
+          Historical validation has not established an advantage over qualifying
+          order.{" "}
+          <Link prefetch={false} href="/model">
+            View measured performance →
+          </Link>
+        </State>
+      )}
+      {experimental && p.entry_status === "PROJECTED_FROM_LAST_RESULT" && (
+        <State>
+          Projected field: entrants from {p.inputs.field_source.event.name}. The
+          entry list and substitutions are not yet confirmed for this forecast.
+        </State>
+      )}
       {saved && (
         <State>
           The scheduled start has passed. This is the unchanged forecast saved
@@ -232,7 +284,7 @@ function Prediction({ data, preview = false, target = "race" }) {
         </div>
       )}
       {rows.length ? (
-        <ResultTable rows={rows} ranking />
+        <ResultTable rows={rows} ranking experimental={!!experimental} />
       ) : (
         <EmptyState
           title="No matching drivers"
@@ -240,9 +292,16 @@ function Prediction({ data, preview = false, target = "race" }) {
         />
       )}
       <State>
-        Classification estimate based on qualifying order. Penalties, race pace,
-        weather and reliability are not modeled.
+        {experimental
+          ? "A fitted model estimates finishing order. Current weather, clean practice pace, grid penalties and strategy are not included. No win probabilities or confidence percentages are claimed."
+          : "This baseline repeats qualifying order. Penalties, race pace, weather and reliability are not modeled."}
       </State>
+      {experimental && data.prediction && !preview && (
+        <details className="product-details">
+          <summary>Compare qualifying-order baseline</summary>
+          <ResultTable rows={data.prediction.full_grid} ranking />
+        </details>
+      )}
       {!preview && (
         <details className="product-details">
           <summary>Prediction provenance</summary>
@@ -524,19 +583,22 @@ function Metrics({ report }) {
 }
 function Model({ data }) {
   const report = data.backtest;
+  const { data: modelStatus } = usePitWallData("/api/model-status");
+  const research = modelStatus?.research_model;
+  const early = modelStatus?.early_model;
   return (
     <>
       <Section title="Methodology">
         <h3>Qualifying order, with a measurable baseline</h3>
         <p>
-          The production ranking predicts final classification order using the
-          published qualifying positions. It has no trained parameters, random
-          simulation, or confidence score. A simple candidate combines
-          qualifying rank with a driver’s mean finish over their previous five
-          races.
+          The comparison baseline repeats the published qualifying order as a
+          comparison baseline; it is not a trained race prediction. It has no
+          trained parameters, random simulation, or confidence score. A simple
+          candidate combines qualifying rank with a driver’s mean finish over
+          their previous five races.
         </p>
         <dl className="provenance">
-          <dt>Production version</dt>
+          <dt>Benchmark version</dt>
           <dd>{data.model?.version || "Unavailable"}</dd>
           <dt>Feature version</dt>
           <dd>{data.model?.feature_version || "Unavailable"}</dd>
@@ -550,7 +612,82 @@ function Model({ data }) {
           toward genuine forecast performance.
         </State>
       </Section>
-      <Section title="Chronological comparison">
+      <Section title="Early race forecasts">
+        <p>
+          The website publishes a fitted early forecast using prior driver
+          results, constructor results and finishing reliability. Once
+          qualifying is published, a separate model also uses qualifying
+          position. Each version is captured before race start and evaluated
+          afterward. Both models are experimental; superiority to qualifying
+          order has not been established.
+        </p>
+        <State>
+          {data.experimental_predictions?.length || 0} fitted forecasts captured
+          · {data.experimental_evaluations?.length || 0} evaluations recorded
+        </State>
+        {early && (
+          <State>
+            Early model: {early.model_version} · {early.candidate.races}{" "}
+            retrospective races · MAE {value(early.candidate.mae, 3)} places
+            versus qualifying-order benchmark {value(early.baseline.mae, 3)}.
+            Qualifying order has information unavailable to the early model.
+            Historical evaluation assumes the eventual participant field is
+            known; real early forecasts label projected entrants.
+          </State>
+        )}
+      </Section>
+      <Section title="Fitted race model · research">
+        {research?.status === "RESEARCH_ONLY" ? (
+          <>
+            <p>
+              A Ridge regression model learns from qualifying position, prior
+              driver and constructor results, and prior finishing reliability.
+              It can change the order, but has not demonstrated a reliable
+              improvement.
+            </p>
+            <State>
+              {research.model_version} · Training: {research.training_period} ·
+              Validation: {research.validation_period} ·{" "}
+              {research.baseline.races} comparable races
+            </State>
+            <dl className="provenance">
+              <dt>Qualifying baseline MAE</dt>
+              <dd>{value(research.baseline.mae, 3)} places</dd>
+              <dt>Fitted model MAE</dt>
+              <dd>{value(research.candidate.mae, 3)} places</dd>
+              <dt>Promotion</dt>
+              <dd>Not promoted</dd>
+              <dt>Model minus baseline MAE · 95% bootstrap interval</dt>
+              <dd>
+                {research.mae_difference_95_percent_interval
+                  .map((v) => value(v, 3))
+                  .join(" to ")}{" "}
+                places
+              </dd>
+            </dl>
+            <State>
+              The interval includes zero, so the observed improvement is not
+              clear evidence of better performance. The candidate also regressed
+              in one season. Validation years were used in earlier research and
+              are not an untouched holdout. These are retrospective
+              reconstructions, not saved pre-race forecasts.
+            </State>
+            <details className="product-details">
+              <summary>Season-by-season results</summary>
+              {research.by_season.map((block) => (
+                <p key={block.season}>
+                  {block.season}: baseline MAE {value(block.baseline.mae, 3)} ·
+                  model MAE {value(block.candidate.mae, 3)} ·{" "}
+                  {block.baseline.races} races
+                </p>
+              ))}
+            </details>
+          </>
+        ) : (
+          <State>Fitted model research report unavailable.</State>
+        )}
+      </Section>
+      <Section title="Earlier heuristic comparison">
         <Metrics report={report} />
         {report?.promotion && (
           <InlineNotice
@@ -651,7 +788,46 @@ function Archive({ data }) {
   return (
     <>
       <LatestResult data={data} />
-      <Section title="Captured forecasts">
+      <Section title="Model prediction history">
+        {(data.experimental_predictions || []).length ? (
+          data.experimental_predictions.map((p) => (
+            <details className="product-details" key={p.prediction_id}>
+              <summary>
+                {p.event.name} ·{" "}
+                {p.stage === "pre_qualifying"
+                  ? "Early forecast"
+                  : "After qualifying"}{" "}
+                · {formatISTDateTime(p.generated_at)}
+              </summary>
+              <State>
+                Experimental · {p.model_version} · Data cutoff{" "}
+                {formatISTDateTime(p.data_cutoff)}
+              </State>
+              <ResultTable rows={p.full_grid} ranking experimental />
+              {(data.experimental_evaluations || [])
+                .filter((e) => e.prediction_id === p.prediction_id)
+                .map((e) => (
+                  <State key={e.evaluation_id}>
+                    MAE {value(e.metrics.mae)} places · Rank correlation{" "}
+                    {value(e.metrics.spearman, 3)} · Evaluated{" "}
+                    {formatISTDateTime(e.evaluated_at)}
+                  </State>
+                ))}
+              {!(data.experimental_evaluations || []).some(
+                (e) => e.prediction_id === p.prediction_id,
+              ) && (
+                <State>
+                  Evaluation pending: a complete matching classification has not
+                  been recorded.
+                </State>
+              )}
+            </details>
+          ))
+        ) : (
+          <State>No fitted model forecasts have been captured yet.</State>
+        )}
+      </Section>
+      <Section title="Qualifying baseline history">
         <State>
           {new Set(data.predictions.map((p) => p.race_id)).size} races with
           pre-race captures ·{" "}
@@ -860,7 +1036,7 @@ const TITLES = {
   ],
   predictions: [
     "Race ranking",
-    "Qualifying-based rankings, with the evidence behind each forecast.",
+    "Model forecasts for the next Grand Prix, with captured inputs and measured performance.",
   ],
   drivers: [
     "Drivers",
@@ -940,8 +1116,8 @@ export default function ProductView({
             }
           />
         )}
-        {data?.warnings
-          ?.filter((s) => !s.startsWith("Prediction unavailable:"))
+        {[...(data?.warnings || []), ...(data?.experimental_warnings || [])]
+          .filter((s) => !s.startsWith("Prediction unavailable:"))
           .map((s) => (
             <InlineNotice key={s} title="Data notice" body={s} tone="warning" />
           ))}

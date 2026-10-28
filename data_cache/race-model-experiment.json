@@ -1,0 +1,1260 @@
+{
+  "status": "RESEARCH_ONLY",
+  "model_version": "prior-form-ridge-v1",
+  "feature_version": "prior-five-normalized-v1",
+  "created_at": "2026-10-27T17:55:59.195795+00:00",
+  "dataset_hash": "a7688e8b4a26e879f4cdb3003149da9422ff65b51e9508cabbc7aaf836a9ece7",
+  "objective": "Final classification rank; no probabilities",
+  "selection_period": "2022–2023",
+  "training_period": "2019–2023",
+  "validation_period": "2024–2025",
+  "selection": [
+    {
+      "alpha": 0.1,
+      "metrics": {
+        "races": 43,
+        "mae": 3.5023255813953487,
+        "rmse": 4.832422629041197,
+        "spearman": 0.6254939674768316,
+        "winner_hit": 0.627906976744186,
+        "winner_top3": 0.9069767441860465
+      }
+    },
+    {
+      "alpha": 1.0,
+      "metrics": {
+        "races": 43,
+        "mae": 3.5,
+        "rmse": 4.829917874317054,
+        "spearman": 0.6256688232208428,
+        "winner_hit": 0.6511627906976745,
+        "winner_top3": 0.9069767441860465
+      }
+    },
+    {
+      "alpha": 10.0,
+      "metrics": {
+        "races": 43,
+        "mae": 3.4906976744186045,
+        "rmse": 4.820084518967888,
+        "spearman": 0.6271026403217346,
+        "winner_hit": 0.6744186046511628,
+        "winner_top3": 0.9302325581395349
+      }
+    },
+    {
+      "alpha": 100.0,
+      "metrics": {
+        "races": 43,
+        "mae": 3.4465116279069767,
+        "rmse": 4.77217111800158,
+        "spearman": 0.6336072739989509,
+        "winner_hit": 0.6976744186046512,
+        "winner_top3": 0.9534883720930233
+      }
+    }
+  ],
+  "baseline": {
+    "races": 43,
+    "mae": 3.1001223990208078,
+    "rmse": 4.247095920480295,
+    "spearman": 0.7025179227137611,
+    "winner_hit": 0.5581395348837209,
+    "winner_top3": 0.8604651162790697
+  },
+  "candidate": {
+    "races": 43,
+    "mae": 3.086658506731946,
+    "rmse": 4.214025592127686,
+    "spearman": 0.7042489945794719,
+    "winner_hit": 0.4186046511627907,
+    "winner_top3": 0.813953488372093
+  },
+  "by_season": [
+    {
+      "season": 2024,
+      "baseline": {
+        "races": 21,
+        "mae": 2.8478696741854637,
+        "rmse": 3.9231884565310744,
+        "spearman": 0.7478338703902614,
+        "winner_hit": 0.47619047619047616,
+        "winner_top3": 0.7619047619047619
+      },
+      "candidate": {
+        "races": 21,
+        "mae": 2.7917293233082705,
+        "rmse": 3.8657796918801037,
+        "spearman": 0.7511636233440745,
+        "winner_hit": 0.42857142857142855,
+        "winner_top3": 0.8095238095238095
+      }
+    },
+    {
+      "season": 2025,
+      "baseline": {
+        "races": 22,
+        "mae": 3.340909090909091,
+        "rmse": 4.556280317886371,
+        "spearman": 0.6592617908407382,
+        "winner_hit": 0.6363636363636364,
+        "winner_top3": 0.9545454545454546
+      },
+      "candidate": {
+        "races": 22,
+        "mae": 3.368181818181818,
+        "rmse": 4.546442133273105,
+        "spearman": 0.6594668489405331,
+        "winner_hit": 0.4090909090909091,
+        "winner_top3": 0.8181818181818182
+      }
+    }
+  ],
+  "mae_difference_95_percent_interval": [
+    -0.17441860465116282,
+    0.14932680538555687
+  ],
+  "races": [
+    {
+      "race_id": "2024:1:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.3,
+        "rmse": 2.756809750418044,
+        "spearman": 0.8857142857142857,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2,
+        "rmse": 2.8106938645110393,
+        "spearman": 0.881203007518797,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 15
+    },
+    {
+      "race_id": "2024:2:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 3.3466401061363023,
+        "spearman": 0.8315789473684211,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.521363372331802,
+        "spearman": 0.8135338345864662,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2024:3:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 4.105263157894737,
+        "rmse": 5.812871380325779,
+        "spearman": 0.4368421052631579,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 19
+      },
+      "candidate": {
+        "mae": 4.526315789473684,
+        "rmse": 6.155870112510924,
+        "spearman": 0.368421052631579,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 19
+      },
+      "positions_changed": 13
+    },
+    {
+      "race_id": "2024:4:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.2,
+        "rmse": 3.0495901363953815,
+        "spearman": 0.8601503759398497,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.6,
+        "rmse": 2.569046515733026,
+        "spearman": 0.9007518796992481,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 11
+    },
+    {
+      "race_id": "2024:5:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 3.8858718455450894,
+        "spearman": 0.7729323308270677,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.7,
+        "rmse": 3.420526275297414,
+        "spearman": 0.8240601503759398,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 11
+    },
+    {
+      "race_id": "2024:6:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.4641016151377544,
+        "spearman": 0.8195488721804511,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 3.6606010435446255,
+        "spearman": 0.7984962406015037,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 13
+    },
+    {
+      "race_id": "2024:7:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.2,
+        "rmse": 2.792848008753788,
+        "spearman": 0.8827067669172932,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.8,
+        "rmse": 2.5495097567963922,
+        "spearman": 0.9022556390977443,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 15
+    },
+    {
+      "race_id": "2024:9:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 4,
+        "rmse": 4.774934554525329,
+        "spearman": 0.6571428571428571,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 5.656854249492381,
+        "spearman": 0.518796992481203,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2024:10:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 1.2,
+        "rmse": 1.6733200530681511,
+        "spearman": 0.9578947368421052,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.2,
+        "rmse": 1.8708286933869707,
+        "spearman": 0.9473684210526316,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 12
+    },
+    {
+      "race_id": "2024:11:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.888762624632126,
+        "spearman": 0.6406015037593985,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 5.1478150704935,
+        "spearman": 0.6015037593984962,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2024:12:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 4.538722287164087,
+        "spearman": 0.6902255639097744,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.5,
+        "rmse": 5.244044240850758,
+        "spearman": 0.5864661654135339,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2024:13:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 3.478505426185217,
+        "spearman": 0.8180451127819549,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.6,
+        "rmse": 2.0248456731316584,
+        "spearman": 0.9383458646616541,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 15
+    },
+    {
+      "race_id": "2024:14:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.714835124201342,
+        "spearman": 0.7924812030075188,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.4,
+        "rmse": 3.9115214431215892,
+        "spearman": 0.7699248120300752,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2024:16:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.1,
+        "rmse": 2.8460498941515415,
+        "spearman": 0.8781954887218045,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.1622776601683795,
+        "spearman": 0.849624060150376,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 7
+    },
+    {
+      "race_id": "2024:18:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.7,
+        "rmse": 3.40587727318528,
+        "spearman": 0.825563909774436,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2,
+        "rmse": 2.8284271247461903,
+        "spearman": 0.8796992481203008,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2024:19:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.331666249791536,
+        "spearman": 0.8330827067669173,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 4.147288270665544,
+        "spearman": 0.7413533834586465,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 12
+    },
+    {
+      "race_id": "2024:20:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 3.4,
+        "rmse": 4.571651780264984,
+        "spearman": 0.6857142857142857,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.08656334834051,
+        "spearman": 0.7488721804511278,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 12
+    },
+    {
+      "race_id": "2024:21:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 4.5,
+        "rmse": 5.735852159879995,
+        "spearman": 0.5052631578947369,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 5.612486080160912,
+        "spearman": 0.5263157894736843,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2024:22:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 4.979959839195493,
+        "spearman": 0.6270676691729323,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.6,
+        "rmse": 4.06201920231798,
+        "spearman": 0.7518796992481203,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 13
+    },
+    {
+      "race_id": "2024:23:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.5071355833500366,
+        "spearman": 0.8150375939849623,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.460941604639093,
+        "spearman": 0.7007518796992481,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2024:24:race",
+      "season": 2024,
+      "baseline": {
+        "mae": 4.2,
+        "rmse": 5.830951894845301,
+        "spearman": 0.4887218045112782,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.1,
+        "rmse": 4.277849927241488,
+        "spearman": 0.7248120300751879,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:1:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 4.7,
+        "rmse": 5.830951894845301,
+        "spearman": 0.4887218045112782,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.6,
+        "rmse": 5.468089245796926,
+        "spearman": 0.5503759398496241,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 16
+    },
+    {
+      "race_id": "2025:2:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 4.9,
+        "rmse": 6.0909769331364245,
+        "spearman": 0.4421052631578948,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 5.3,
+        "rmse": 6.442049363362563,
+        "spearman": 0.37593984962406013,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 15
+    },
+    {
+      "race_id": "2025:3:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 1,
+        "rmse": 1.61245154965971,
+        "spearman": 0.9609022556390977,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 1.5,
+        "rmse": 2.04939015319192,
+        "spearman": 0.9368421052631579,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:4:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 3.1,
+        "rmse": 4.370354676682432,
+        "spearman": 0.7127819548872181,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.6,
+        "rmse": 4.012480529547776,
+        "spearman": 0.7578947368421053,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2025:5:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.8,
+        "rmse": 4.219004621945797,
+        "spearman": 0.7323308270676692,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.4,
+        "rmse": 3.687817782917155,
+        "spearman": 0.7954887218045112,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2025:6:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.5,
+        "rmse": 2.9832867780352594,
+        "spearman": 0.8661654135338346,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2,
+        "rmse": 2.449489742783178,
+        "spearman": 0.9097744360902256,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 20
+    },
+    {
+      "race_id": "2025:7:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 3.7,
+        "rmse": 4.505552130427524,
+        "spearman": 0.6947368421052631,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 4.03732584763727,
+        "spearman": 0.7548872180451127,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:8:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.872983346207417,
+        "spearman": 0.7744360902255639,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.4,
+        "rmse": 4.312771730569565,
+        "spearman": 0.7203007518796993,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:10:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 3.3,
+        "rmse": 4.658325879540846,
+        "spearman": 0.6736842105263158,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 5.796550698475776,
+        "spearman": 0.49473684210526314,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 15
+    },
+    {
+      "race_id": "2025:11:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 3.2,
+        "rmse": 4.847679857416329,
+        "spearman": 0.6466165413533835,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 5.70087712549569,
+        "spearman": 0.5112781954887218,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2025:12:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 4.2,
+        "rmse": 5.830951894845301,
+        "spearman": 0.4887218045112782,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.1,
+        "rmse": 5.890670590009257,
+        "spearman": 0.4781954887218045,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2025:13:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 4.207136793592526,
+        "spearman": 0.7338345864661654,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2,
+        "rmse": 3.5355339059327378,
+        "spearman": 0.8120300751879699,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 12
+    },
+    {
+      "race_id": "2025:14:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.3,
+        "rmse": 3.255764119219941,
+        "spearman": 0.8406015037593985,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.4,
+        "rmse": 2.9832867780352594,
+        "spearman": 0.8661654135338346,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:15:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 6,
+        "rmse": 7.797435475847171,
+        "spearman": 0.08571428571428574,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 6.2,
+        "rmse": 8.130190649671137,
+        "spearman": 0.006015037593984918,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:16:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.9749213828703582,
+        "spearman": 0.762406015037594,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 3.847076812334269,
+        "spearman": 0.7774436090225564,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 10
+    },
+    {
+      "race_id": "2025:17:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.714835124201342,
+        "spearman": 0.7924812030075188,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3,
+        "rmse": 4.636809247747852,
+        "spearman": 0.6766917293233083,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 14
+    },
+    {
+      "race_id": "2025:18:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.4,
+        "rmse": 3.605551275463989,
+        "spearman": 0.8045112781954887,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.5,
+        "rmse": 3.2093613071762426,
+        "spearman": 0.8451127819548871,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2025:19:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.9,
+        "rmse": 4.024922359499621,
+        "spearman": 0.7563909774436091,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 2.9,
+        "rmse": 3.9496835316262997,
+        "spearman": 0.7654135338345864,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2025:20:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 3.7,
+        "rmse": 4.449719092257398,
+        "spearman": 0.7022556390977444,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.9,
+        "rmse": 4.483302354291979,
+        "spearman": 0.6977443609022556,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:22:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 5.6,
+        "rmse": 7.582875444051551,
+        "spearman": 0.13533834586466165,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 4.4,
+        "rmse": 6.371812928829597,
+        "spearman": 0.3894736842105263,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 18
+    },
+    {
+      "race_id": "2025:23:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 3.9,
+        "rmse": 4.929503017546495,
+        "spearman": 0.6345864661654135,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.6,
+        "rmse": 4.679743582719036,
+        "spearman": 0.6706766917293233,
+        "winner_hit": 0,
+        "winner_top3": 0,
+        "drivers": 20
+      },
+      "positions_changed": 17
+    },
+    {
+      "race_id": "2025:24:race",
+      "season": 2025,
+      "baseline": {
+        "mae": 2.6,
+        "rmse": 3.872983346207417,
+        "spearman": 0.7744360902255639,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "candidate": {
+        "mae": 3.2,
+        "rmse": 4.347413023856832,
+        "spearman": 0.7157894736842105,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 20
+      },
+      "positions_changed": 11
+    }
+  ],
+  "excluded": [
+    {
+      "race_id": "2019:3:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    },
+    {
+      "race_id": "2021:5:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    },
+    {
+      "race_id": "2023:10:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2024:8:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2024:15:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2024:17:race",
+      "reason": "A unique qualifying field is required"
+    },
+    {
+      "race_id": "2025:9:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    },
+    {
+      "race_id": "2025:21:race",
+      "reason": "Evaluation requires the same complete field (substitutions need review)"
+    }
+  ],
+  "promotion": {
+    "promoted": false,
+    "retrospective_checks_pass": false,
+    "checks": {
+      "at_least_30_races": true,
+      "two_seasons": true,
+      "mae_improves_5_percent": false,
+      "no_season_mae_regression": false,
+      "no_rank_regression": true
+    },
+    "reason": "Research only. Retrospective validation is not untouched; 2026 and prospective review are required."
+  },
+  "artifact": {
+    "model_version": "prior-form-ridge-v1",
+    "feature_version": "prior-five-normalized-v1",
+    "features": [
+      "qualifying_percentile",
+      "driver_finish",
+      "driver_qualifying",
+      "constructor_finish",
+      "driver_nonfinish",
+      "driver_samples",
+      "constructor_samples"
+    ],
+    "alpha": 100.0,
+    "training_data_cutoff": "2023-11-26T13:00:00+00:00",
+    "training_race_ids": [
+      "2019:1:race",
+      "2019:2:race",
+      "2019:4:race",
+      "2019:5:race",
+      "2019:6:race",
+      "2019:7:race",
+      "2019:8:race",
+      "2019:9:race",
+      "2019:10:race",
+      "2019:11:race",
+      "2019:12:race",
+      "2019:13:race",
+      "2019:14:race",
+      "2019:15:race",
+      "2019:16:race",
+      "2019:17:race",
+      "2019:18:race",
+      "2019:19:race",
+      "2019:20:race",
+      "2019:21:race",
+      "2020:1:race",
+      "2020:2:race",
+      "2020:3:race",
+      "2020:4:race",
+      "2020:5:race",
+      "2020:6:race",
+      "2020:7:race",
+      "2020:8:race",
+      "2020:9:race",
+      "2020:10:race",
+      "2020:11:race",
+      "2020:12:race",
+      "2020:13:race",
+      "2020:14:race",
+      "2020:15:race",
+      "2020:16:race",
+      "2020:17:race",
+      "2021:1:race",
+      "2021:2:race",
+      "2021:3:race",
+      "2021:4:race",
+      "2021:6:race",
+      "2021:7:race",
+      "2021:8:race",
+      "2021:9:race",
+      "2021:10:race",
+      "2021:11:race",
+      "2021:12:race",
+      "2021:13:race",
+      "2021:14:race",
+      "2021:15:race",
+      "2021:16:race",
+      "2021:17:race",
+      "2021:18:race",
+      "2021:19:race",
+      "2021:20:race",
+      "2021:21:race",
+      "2021:22:race",
+      "2022:1:race",
+      "2022:2:race",
+      "2022:3:race",
+      "2022:4:race",
+      "2022:5:race",
+      "2022:6:race",
+      "2022:7:race",
+      "2022:8:race",
+      "2022:9:race",
+      "2022:10:race",
+      "2022:11:race",
+      "2022:12:race",
+      "2022:13:race",
+      "2022:14:race",
+      "2022:15:race",
+      "2022:16:race",
+      "2022:17:race",
+      "2022:18:race",
+      "2022:19:race",
+      "2022:20:race",
+      "2022:21:race",
+      "2022:22:race",
+      "2023:1:race",
+      "2023:2:race",
+      "2023:3:race",
+      "2023:4:race",
+      "2023:5:race",
+      "2023:6:race",
+      "2023:7:race",
+      "2023:8:race",
+      "2023:9:race",
+      "2023:11:race",
+      "2023:12:race",
+      "2023:13:race",
+      "2023:14:race",
+      "2023:15:race",
+      "2023:16:race",
+      "2023:17:race",
+      "2023:18:race",
+      "2023:19:race",
+      "2023:20:race",
+      "2023:21:race",
+      "2023:22:race"
+    ],
+    "imputation_medians": [
+      0.5,
+      0.5263157894736842,
+      0.5093567251461988,
+      0.531578947368421,
+      0.2,
+      5.0,
+      5.0
+    ],
+    "missing_indicators": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "scaler_mean": [
+      0.5,
+      0.4978174396387003,
+      0.4980901936942928,
+      0.5007334549244401,
+      0.1534488448844859,
+      4.892079207920792,
+      4.933663366336634,
+      0.008415841584158416,
+      0.008415841584158416,
+      0.0049504950495049506,
+      0.008415841584158416
+    ],
+    "scaler_scale": [
+      0.3034884893334432,
+      0.21913793403503168,
+      0.2554139856889865,
+      0.20463666760574803,
+      0.1633066856126002,
+      0.633422757536939,
+      0.4980709774309039,
+      0.09135105469882936,
+      0.09135105469882936,
+      0.0701853805879117,
+      0.09135105469882936
+    ],
+    "coefficients": [
+      0.10177676065540221,
+      0.024789408630323778,
+      0.03002414598683424,
+      0.05988684147091203,
+      -0.012455135364956222,
+      0.0012840371203484717,
+      0.00205478185082257,
+      0.0007375695507266223,
+      0.000737569550726623,
+      0.0030825306085207026,
+      0.0007375695507266238
+    ],
+    "intercept": 0.5000000000000003
+  },
+  "artifact_hash": "e5464c39b9c607eec57161282d4dadd1b59ca6a52597bd499c6fa2d928655c98",
+  "excluded_sources": [
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2023-10-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2024-15-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2024-17-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    },
+    {
+      "file": "https-api-jolpi-ca-ergast-f1-2024-8-qualifying-json.json",
+      "reason": "Duplicate drivers or incomplete positions in QualifyingResults"
+    }
+  ]
+}

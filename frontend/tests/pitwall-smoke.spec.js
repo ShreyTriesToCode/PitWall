@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 
 // Synthetic UI fixtures. Production code never imports this file.
@@ -108,11 +109,11 @@ test("forecast remains readable as a saved capture at race start", async ({
   await fixture(page);
   await page.goto("/predictions");
   await expect(
-    page.getByRole("heading", { name: "Predicted classification" }),
+    page.getByRole("heading", { name: "Qualifying-order baseline" }),
   ).toBeVisible();
   await page.clock.fastForward(2000);
   await expect(
-    page.getByRole("heading", { name: "Saved pre-race ranking" }),
+    page.getByRole("heading", { name: "Saved qualifying baseline" }),
   ).toBeVisible();
   await expect(page.getByText(/not a live classification/)).toBeVisible();
   await expect(page.getByRole("table").getByRole("row")).toHaveCount(11);
@@ -197,6 +198,20 @@ test("primary routes and navigation work without layout overflow", async ({
   isMobile,
 }) => {
   await fixture(page, { ...product, prediction: null, predictions: [] });
+  const timing = {
+    ok: false,
+    error: "Isolated unavailable timing fixture",
+    normalized: null,
+    meeting_options: [],
+    session_options: [],
+  };
+  await page.route("**/api/f1timing?**", (r) => r.fulfill({ json: timing }));
+  await page.route("**/api/f1timing/stream?**", (r) =>
+    r.fulfill({
+      contentType: "text/event-stream",
+      body: `data: ${JSON.stringify(timing)}\n\n`,
+    }),
+  );
   const failures = [];
   page.on("pageerror", (e) => failures.push(e.message));
   for (const [path, title] of [
@@ -210,6 +225,7 @@ test("primary routes and navigation work without layout overflow", async ({
     await expect(
       page.getByRole("heading", { name: title, exact: true, level: 1 }),
     ).toBeVisible();
+    await page.waitForLoadState("networkidle");
     await noOverflow(page);
   }
   if (isMobile) {
@@ -308,4 +324,83 @@ test("sprint request cannot display a grand prix forecast", async ({
     page.getByRole("heading", { name: "Sprint prediction unavailable" }),
   ).toBeVisible();
   await expect(page.getByRole("table")).toHaveCount(0);
+});
+
+test("fitted research model is published separately from the qualifying baseline", async ({
+  page,
+  request,
+}) => {
+  const response = await request.get("/api/model-status");
+  expect(response.ok()).toBeTruthy();
+  const status = await response.json();
+  expect(status.research_model.status).toBe("RESEARCH_ONLY");
+  expect(status.research_model.promotion.promoted).toBe(false);
+  expect(status.research_model.artifact).toBeUndefined();
+  await fixture(page);
+  await page.goto("/model");
+  await expect(
+    page.getByRole("heading", { name: "Fitted race model · research" }),
+  ).toBeVisible();
+  await expect(page.getByText("Not promoted", { exact: true })).toBeVisible();
+  await expect(page.getByText(/not a trained race prediction/)).toBeVisible();
+  await page.getByText("Season-by-season results", { exact: true }).click();
+  await expect(page.getByText(/2025: baseline MAE/)).toBeVisible();
+  await noOverflow(page);
+});
+
+test("synchronous browser fetch failures use the controlled error state", async ({
+  page,
+}) => {
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+    window.fetch = () => {
+      throw new TypeError("Isolated synchronous fetch failure fixture");
+    };
+  });
+  await page.goto("/predictions");
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Data request failed" }),
+  ).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test("fitted forecasts appear before qualifying and retain full-field provenance", async ({
+  page,
+}) => {
+  const forecast = JSON.parse(
+    readFileSync(
+      new URL("./fixtures/experimental-forecast.json", import.meta.url),
+    ),
+  );
+  await page.clock.install({ time: new Date("2030-03-09T12:00:00Z") });
+  await fixture(page, {
+    ...product,
+    current: { state: "UPCOMING", event: forecast.event },
+    prediction: null,
+    experimental_predictions: [forecast],
+    experimental_prediction: forecast,
+  });
+  await page.goto("/predictions");
+  await expect(
+    page.getByRole("heading", {
+      name: "Predicted classification",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(page.getByText(/Projected field: entrants from/)).toBeVisible();
+  await expect(
+    page
+      .getByRole("table", { name: "Predicted classification" })
+      .getByRole("row"),
+  ).toHaveCount(5);
+  await expect(
+    page.getByRole("columnheader", { name: "Qualifying", exact: true }),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "Show full grid" }).click();
+  await page.getByText("Prediction provenance", { exact: true }).click();
+  await expect(
+    page.getByText("pre-race-form-ridge-v1", { exact: true }),
+  ).toBeVisible();
+  await noOverflow(page);
 });

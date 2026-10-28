@@ -11,8 +11,8 @@ percentages are published.**
 - Session timing uses the Formula 1 session index and static feeds. A real source
   packet timestamp is required for a **live** label. Archived and unknown states
   are explicit; another race is never substituted for a failed selection.
-- The production forecast is a **post-qualifying classification ranking** using
-  qualifying order. It is a simple baseline with no fitted parameters.
+- The main prediction view uses **experimental fitted race models**, with early
+  and after-qualifying forecasts. Qualifying order remains the comparison baseline.
 - Captures are immutable. Result comparisons are separate, versioned records.
 - The older weighted/probability engine is quarantined research code. Its generated
   files are not served by the application. Legacy rankings are available as
@@ -88,14 +88,20 @@ the app does not choose a current race from old artifacts. Schedule passage is a
 See [MODEL_REPORT.md](MODEL_REPORT.md) for the full protocol, actual measured
 comparison, excluded races, leakage boundaries and promotion criteria.
 
-The forecast orders the published qualifying field. It predicts final classification
-order, including non-finishers, not race pace or win probability. It ignores grid
+The baseline repeats the published qualifying field. We evaluate that order against
+final classification, including non-finishers; it is not an independent race forecast. It ignores grid
 penalties, tyre choices, weather and mechanical reliability. It is deliberately
 simple because the previous final blended predictor had no defensible validation.
 
 A candidate combines qualifying rank and prior-five-result form rank with equal
 weight. On the reconstructed 2024–2025 test period it failed the improvement gate.
 It was not promoted. Production is not advertised as machine learning or self-learning.
+
+A fitted Ridge candidate now also has a reproducible, predeclared experiment in
+`pitwall/models/race_model.py`. It uses prior driver/constructor form and reliability,
+but failed promotion: 0.43% overall MAE improvement and a 2025 regression. See
+[the experiment protocol](docs/RACE_MODEL_EXPERIMENT.md) and
+[measured results](MODEL_REPORT.md). The baseline remains separate; model estimates are explicitly experimental.
 
 ### Capture → evaluation → improvement
 
@@ -184,3 +190,8 @@ affiliated with Formula 1 or the FIA.
 
 See [September 28 release review](docs/RELEASE_REVIEW.md) for Strategy, mobile
 timing, 12-hour IST, prospective evaluation evidence and the current critic score.
+
+Experimental forecasts are captured by the hourly publisher in
+`data_cache/experimental-ledger` and shown on the homepage, prediction page and
+history. Early forecasts label their participant field as projected from the latest
+published race classification. See MODEL_REPORT.md for measured limitations.
