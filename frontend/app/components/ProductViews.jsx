@@ -1116,8 +1116,8 @@ export default function ProductView({
             }
           />
         )}
-        {data?.warnings
-          ?.filter((s) => !s.startsWith("Prediction unavailable:"))
+        {[...(data?.warnings || []), ...(data?.experimental_warnings || [])]
+          .filter((s) => !s.startsWith("Prediction unavailable:"))
           .map((s) => (
             <InlineNotice key={s} title="Data notice" body={s} tone="warning" />
           ))}
