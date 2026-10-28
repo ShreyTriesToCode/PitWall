@@ -6,6 +6,7 @@ const nextConfig = {
     "/*": [
       "../data_cache/product.json",
       "../data_cache/race-model-experiment.json",
+      "../data_cache/early-model-experiment.json",
     ],
   },
   devIndicators: false,

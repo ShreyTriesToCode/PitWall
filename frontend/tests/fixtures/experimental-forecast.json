@@ -1,0 +1,230 @@
+{
+  "prediction_id": "c9a06a3c7db462793ffbc0e5f0946efc364328393d0bf1faefec7e3aefe8ec03",
+  "race_id": "2030:2:race",
+  "event": {
+    "id": "2030:2:race",
+    "season": 2030,
+    "round": 2,
+    "name": "Fixture GP",
+    "start_at": "2030-03-10T14:00:00Z",
+    "sessions": []
+  },
+  "season": 2030,
+  "round": 2,
+  "model_version": "pre-race-form-ridge-v1",
+  "feature_version": "prior-five-no-qualifying-v1",
+  "training_data_cutoff": "2023-11-26T13:00:00+00:00",
+  "generated_at": "2030-03-09T00:00:00+00:00",
+  "data_cutoff": "2030-03-09T00:00:00+00:00",
+  "input_hash": "c9b117f9bdb95345efb4fb479d3574664d2da70d65033670ce86f0c5b3598559",
+  "sources": [
+    {
+      "url": "fixture",
+      "retrieved_at": "2030-03-09T00:00:00+00:00"
+    }
+  ],
+  "inputs": {
+    "entrants": [
+      {
+        "driver_id": "0",
+        "name": "Fixture 0",
+        "team": "Fixture team 0"
+      },
+      {
+        "driver_id": "1",
+        "name": "Fixture 1",
+        "team": "Fixture team 0"
+      },
+      {
+        "driver_id": "2",
+        "name": "Fixture 2",
+        "team": "Fixture team 1"
+      },
+      {
+        "driver_id": "3",
+        "name": "Fixture 3",
+        "team": "Fixture team 1"
+      }
+    ],
+    "history": [
+      {
+        "event": {
+          "id": "2030:1:race",
+          "season": 2030,
+          "round": 1,
+          "name": "Fixture GP",
+          "start_at": "2030-03-01T14:00:00Z",
+          "sessions": []
+        },
+        "results": [
+          {
+            "driver_id": "0",
+            "name": "Fixture 0",
+            "team": "Fixture team 0",
+            "position": 1,
+            "status": "Finished"
+          },
+          {
+            "driver_id": "1",
+            "name": "Fixture 1",
+            "team": "Fixture team 0",
+            "position": 2,
+            "status": "Finished"
+          },
+          {
+            "driver_id": "2",
+            "name": "Fixture 2",
+            "team": "Fixture team 1",
+            "position": 3,
+            "status": "Finished"
+          },
+          {
+            "driver_id": "3",
+            "name": "Fixture 3",
+            "team": "Fixture team 1",
+            "position": 4,
+            "status": "Finished"
+          }
+        ],
+        "qualifying": [
+          {
+            "driver_id": "0",
+            "name": "Fixture 0",
+            "team": "Fixture team 0",
+            "position": 1,
+            "status": "Finished"
+          },
+          {
+            "driver_id": "1",
+            "name": "Fixture 1",
+            "team": "Fixture team 0",
+            "position": 2,
+            "status": "Finished"
+          },
+          {
+            "driver_id": "2",
+            "name": "Fixture 2",
+            "team": "Fixture team 1",
+            "position": 3,
+            "status": "Finished"
+          },
+          {
+            "driver_id": "3",
+            "name": "Fixture 3",
+            "team": "Fixture team 1",
+            "position": 4,
+            "status": "Finished"
+          }
+        ]
+      }
+    ],
+    "stage": "pre_qualifying",
+    "model_json": "{\"alpha\":100.0,\"coefficients\":[0.04129789257850153,0.07162496150129474,0.08286451068168085,-0.02197483226895678,0.0002487821854861967,0.0013309135185141066,0.0029774283362453443,0.00297742833624535,0.0037571447682446346,0.00297742833624535],\"feature_version\":\"prior-five-no-qualifying-v1\",\"features\":[\"driver_finish\",\"driver_qualifying\",\"constructor_finish\",\"driver_nonfinish\",\"driver_samples\",\"constructor_samples\"],\"imputation_medians\":[0.5263157894736842,0.5093567251461988,0.531578947368421,0.2,5.0,5.0],\"intercept\":0.5000000000000007,\"missing_indicators\":[0,1,2,3],\"model_version\":\"pre-race-form-ridge-v1\",\"scaler_mean\":[0.4978174396387003,0.4980901936942928,0.5007334549244401,0.1534488448844859,4.892079207920792,4.933663366336634,0.008415841584158416,0.008415841584158416,0.0049504950495049506,0.008415841584158416],\"scaler_scale\":[0.21913793403503168,0.2554139856889865,0.20463666760574803,0.1633066856126002,0.633422757536939,0.4980709774309039,0.09135105469882936,0.09135105469882936,0.0701853805879117,0.09135105469882936],\"training_data_cutoff\":\"2023-11-26T13:00:00+00:00\",\"training_race_ids\":[\"2019:1:race\",\"2019:2:race\",\"2019:4:race\",\"2019:5:race\",\"2019:6:race\",\"2019:7:race\",\"2019:8:race\",\"2019:9:race\",\"2019:10:race\",\"2019:11:race\",\"2019:12:race\",\"2019:13:race\",\"2019:14:race\",\"2019:15:race\",\"2019:16:race\",\"2019:17:race\",\"2019:18:race\",\"2019:19:race\",\"2019:20:race\",\"2019:21:race\",\"2020:1:race\",\"2020:2:race\",\"2020:3:race\",\"2020:4:race\",\"2020:5:race\",\"2020:6:race\",\"2020:7:race\",\"2020:8:race\",\"2020:9:race\",\"2020:10:race\",\"2020:11:race\",\"2020:12:race\",\"2020:13:race\",\"2020:14:race\",\"2020:15:race\",\"2020:16:race\",\"2020:17:race\",\"2021:1:race\",\"2021:2:race\",\"2021:3:race\",\"2021:4:race\",\"2021:6:race\",\"2021:7:race\",\"2021:8:race\",\"2021:9:race\",\"2021:10:race\",\"2021:11:race\",\"2021:12:race\",\"2021:13:race\",\"2021:14:race\",\"2021:15:race\",\"2021:16:race\",\"2021:17:race\",\"2021:18:race\",\"2021:19:race\",\"2021:20:race\",\"2021:21:race\",\"2021:22:race\",\"2022:1:race\",\"2022:2:race\",\"2022:3:race\",\"2022:4:race\",\"2022:5:race\",\"2022:6:race\",\"2022:7:race\",\"2022:8:race\",\"2022:9:race\",\"2022:10:race\",\"2022:11:race\",\"2022:12:race\",\"2022:13:race\",\"2022:14:race\",\"2022:15:race\",\"2022:16:race\",\"2022:17:race\",\"2022:18:race\",\"2022:19:race\",\"2022:20:race\",\"2022:21:race\",\"2022:22:race\",\"2023:1:race\",\"2023:2:race\",\"2023:3:race\",\"2023:4:race\",\"2023:5:race\",\"2023:6:race\",\"2023:7:race\",\"2023:8:race\",\"2023:9:race\",\"2023:11:race\",\"2023:12:race\",\"2023:13:race\",\"2023:14:race\",\"2023:15:race\",\"2023:16:race\",\"2023:17:race\",\"2023:18:race\",\"2023:19:race\",\"2023:20:race\",\"2023:21:race\",\"2023:22:race\"]}",
+    "model_hash": "b827b2fc9473367cdf15a3f93ea9ad61fbf075340252b3bf770ace31bded2ed7",
+    "field_source": {
+      "kind": "previous_classification",
+      "event": {
+        "id": "2030:1:race",
+        "season": 2030,
+        "round": 1,
+        "name": "Fixture GP",
+        "start_at": "2030-03-01T14:00:00Z",
+        "sessions": []
+      }
+    }
+  },
+  "stage": "pre_qualifying",
+  "status": "EXPERIMENTAL",
+  "entry_status": "PROJECTED_FROM_LAST_RESULT",
+  "objective": "final_classification_rank",
+  "target_type": "race",
+  "full_grid": [
+    {
+      "driver_id": "0",
+      "name": "Fixture 0",
+      "team": "Fixture team 0",
+      "qualifying_position": null,
+      "ranking_score": 0.13875056443334993,
+      "rank": 1
+    },
+    {
+      "driver_id": "1",
+      "name": "Fixture 1",
+      "team": "Fixture team 0",
+      "qualifying_position": null,
+      "ranking_score": 0.2950449283841817,
+      "rank": 2
+    },
+    {
+      "driver_id": "2",
+      "name": "Fixture 2",
+      "team": "Fixture team 1",
+      "qualifying_position": null,
+      "ranking_score": 0.7212958341780007,
+      "rank": 3
+    },
+    {
+      "driver_id": "3",
+      "name": "Fixture 3",
+      "team": "Fixture team 1",
+      "qualifying_position": null,
+      "ranking_score": 0.8775901981288325,
+      "rank": 4
+    }
+  ],
+  "top10": [
+    {
+      "driver_id": "0",
+      "name": "Fixture 0",
+      "team": "Fixture team 0",
+      "qualifying_position": null,
+      "ranking_score": 0.13875056443334993,
+      "rank": 1
+    },
+    {
+      "driver_id": "1",
+      "name": "Fixture 1",
+      "team": "Fixture team 0",
+      "qualifying_position": null,
+      "ranking_score": 0.2950449283841817,
+      "rank": 2
+    },
+    {
+      "driver_id": "2",
+      "name": "Fixture 2",
+      "team": "Fixture team 1",
+      "qualifying_position": null,
+      "ranking_score": 0.7212958341780007,
+      "rank": 3
+    },
+    {
+      "driver_id": "3",
+      "name": "Fixture 3",
+      "team": "Fixture team 1",
+      "qualifying_position": null,
+      "ranking_score": 0.8775901981288325,
+      "rank": 4
+    }
+  ],
+  "validation": {
+    "period": "2024–2025",
+    "baseline": {
+      "races": 43,
+      "mae": 3.1001223990208078,
+      "rmse": 4.247095920480295,
+      "spearman": 0.7025179227137611,
+      "winner_hit": 0.5581395348837209,
+      "winner_top3": 0.8604651162790697
+    },
+    "candidate": {
+      "races": 43,
+      "mae": 3.7223990208078335,
+      "rmse": 4.86797908738487,
+      "spearman": 0.6146587398729382,
+      "winner_hit": 0.23255813953488372,
+      "winner_top3": 0.6046511627906976
+    },
+    "promoted": false,
+    "note": "Retrospective reconstruction; no demonstrated superiority to qualifying order."
+  }
+}

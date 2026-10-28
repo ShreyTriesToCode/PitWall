@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 
 // Synthetic UI fixtures. Production code never imports this file.
@@ -169,7 +170,7 @@ test("loading and unavailable states have meaningful copy", async ({
     page.getByRole("heading", { name: "Race schedule unavailable" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Qualifying baseline unavailable" }),
+    page.getByRole("heading", { name: "Prediction unavailable" }),
   ).toBeVisible();
   await noOverflow(page);
 });
@@ -347,4 +348,44 @@ test("synchronous browser fetch failures use the controlled error state", async 
     page.getByRole("alert").filter({ hasText: "Data request failed" }),
   ).toBeVisible();
   expect(errors).toEqual([]);
+});
+
+test("fitted forecasts appear before qualifying and retain full-field provenance", async ({
+  page,
+}) => {
+  const forecast = JSON.parse(
+    readFileSync(
+      new URL("./fixtures/experimental-forecast.json", import.meta.url),
+    ),
+  );
+  await page.clock.install({ time: new Date("2030-03-09T12:00:00Z") });
+  await fixture(page, {
+    ...product,
+    current: { state: "UPCOMING", event: forecast.event },
+    prediction: null,
+    experimental_predictions: [forecast],
+    experimental_prediction: forecast,
+  });
+  await page.goto("/predictions");
+  await expect(
+    page.getByRole("heading", {
+      name: "Predicted classification",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(page.getByText(/Projected field: entrants from/)).toBeVisible();
+  await expect(
+    page
+      .getByRole("table", { name: "Predicted classification" })
+      .getByRole("row"),
+  ).toHaveCount(5);
+  await expect(
+    page.getByRole("columnheader", { name: "Qualifying", exact: true }),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "Show full grid" }).click();
+  await page.getByText("Prediction provenance", { exact: true }).click();
+  await expect(
+    page.getByText("pre-race-form-ridge-v1", { exact: true }),
+  ).toBeVisible();
+  await noOverflow(page);
 });

@@ -33,3 +33,15 @@ candidate must remain research-only. Do not alter existing captures or history.
 Limitations: retrospective provider revisions; constructor name changes; small
 rookie history; qualifying is not penalized starting grid; no clean race pace,
 fuel, weather forecast or strategy features. These limits must remain visible.
+
+## Early forecast variant (28 October)
+
+The user explicitly requested model forecasts on the website before qualifying.
+A separate `pre-race-form-ridge-v1` uses the same declared fitting/selection periods
+and alpha grid with the qualifying feature removed. Its results are disclosed as
+experimental; the production baseline and its ledger remain intact. No superiority,
+calibration, promotion, or win-probability claim accompanies these forecasts.
+Historical evaluation assumes the eventual qualifying field is known; a real early
+forecast must instead identify its projected entrants and source. Qualifying order
+is an information-richer benchmark for this early stage, not an equal-input baseline.
+No test-period feature/weight search is performed.

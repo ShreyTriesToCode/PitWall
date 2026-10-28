@@ -139,3 +139,18 @@ review `data_cache/race-model-experiment.json` and MODEL_REPORT.md. This command
 never writes to the production ledger or promotes a model. The Methodology page
 loads this report via `/api/model-status`; missing or invalid reports are explicitly
 unavailable. Do not reuse 2024–2025 as an untouched test period for further tuning.
+
+### Experimental model forecast publication
+
+The hourly publisher now also emits `experimental_prediction`,
+`experimental_predictions`, `experimental_evaluations` and `experimental_warnings`.
+Fitted forecasts are the main prediction view; qualifying order remains a separate
+benchmark. Stage-specific artifacts are `early-model-experiment.json` and
+`race-model-experiment.json`. Both are included in deployment file tracing.
+
+Run `python -m pitwall.publish` to fetch prior results/qualifying and capture the
+current early or after-qualifying estimate. The projected early field is identified
+on screen. Failed data/entry validation returns an unavailable warning. The separate
+`data_cache/experimental-ledger` must be persisted and committed by publication;
+never overwrite captures or rewrite their timestamps. No fitting or automatic
+parameter changes run during hourly publication.

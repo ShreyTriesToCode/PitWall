@@ -186,3 +186,38 @@ pre-race signals (e.g. validated clean practice pace and actual penalized grid),
 a new protocol and untouched future evaluation. Simply changing the order is
 not proof of useful prediction. The UI now explicitly calls the production
 output a qualifying-order baseline and publishes this failed experiment.
+
+## Website forecasts: early and after qualifying
+
+At the user's request, two fitted models are now exposed as **experimental race
+predictions**, separately from the qualifying-order benchmark and its immutable
+ledger. These are model estimates, not copied qualifying order. They do not claim
+validated superiority or calibrated probabilities. The failed promotion gate is
+retained and disclosed; no existing benchmark record is relabelled as a learned
+forecast.
+
+- `pre-race-form-ridge-v1` estimates order before qualifying from prior driver finish
+  and qualifying form, current-constructor historical form, prior non-finish rate
+  and history counts. It does not use the target qualifying position. Alpha is
+  selected using older seasons under the same chronological protocol.
+- `prior-form-ridge-v1` adds the published target qualifying percentile. Publication
+  switches stages only when a legitimate classification is available before start.
+
+On the same 43 reconstructed 2024–2025 races, early-model MAE is **3.722399 places**
+versus qualifying order **3.100122**. This is an information-richer benchmark for an
+assessment made before qualifying. Early-model Spearman is **0.614659**, winner hit
+**0.232558**; no future accuracy claim follows from these scores. Real participant
+changes are an additional early-forecast limitation not represented in that backtest.
+
+Before qualifying, entrants are projected from the latest published race result,
+with an explicit label and source event. That is an assumption about the future
+field, not a verified entry list. Substitutions require a new capture; evaluations
+with unmatched fields remain pending for review rather than silently dropping drivers.
+
+`pitwall/models/experimental.py` stores inputs, relevant prior races, a portable
+model snapshot, feature/model versions, hashes, cutoff and actual capture time.
+Python and the API independently recompute outputs. Top 10 derives from Full Grid.
+The ledger is `data_cache/experimental-ledger`; corrections append evaluations.
+The hourly publisher captures changed inputs; unchanged inputs reuse the first
+capture. Expired captures remain historical and cannot become forecasts for another
+race. Existing baseline captures and metrics remain separate.

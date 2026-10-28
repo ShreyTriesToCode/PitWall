@@ -11,8 +11,8 @@ percentages are published.**
 - Session timing uses the Formula 1 session index and static feeds. A real source
   packet timestamp is required for a **live** label. Archived and unknown states
   are explicit; another race is never substituted for a failed selection.
-- The displayed ranking is a **qualifying-order baseline**, not a trained race
-  prediction. It has no fitted parameters.
+- The main prediction view uses **experimental fitted race models**, with early
+  and after-qualifying forecasts. Qualifying order remains the comparison baseline.
 - Captures are immutable. Result comparisons are separate, versioned records.
 - The older weighted/probability engine is quarantined research code. Its generated
   files are not served by the application. Legacy rankings are available as
@@ -101,7 +101,7 @@ A fitted Ridge candidate now also has a reproducible, predeclared experiment in
 `pitwall/models/race_model.py`. It uses prior driver/constructor form and reliability,
 but failed promotion: 0.43% overall MAE improvement and a 2025 regression. See
 [the experiment protocol](docs/RACE_MODEL_EXPERIMENT.md) and
-[measured results](MODEL_REPORT.md). Production remains explicitly labelled as a baseline.
+[measured results](MODEL_REPORT.md). The baseline remains separate; model estimates are explicitly experimental.
 
 ### Capture → evaluation → improvement
 
@@ -190,3 +190,8 @@ affiliated with Formula 1 or the FIA.
 
 See [September 28 release review](docs/RELEASE_REVIEW.md) for Strategy, mobile
 timing, 12-hour IST, prospective evaluation evidence and the current critic score.
+
+Experimental forecasts are captured by the hourly publisher in
+`data_cache/experimental-ledger` and shown on the homepage, prediction page and
+history. Early forecasts label their participant field as projected from the latest
+published race classification. See MODEL_REPORT.md for measured limitations.

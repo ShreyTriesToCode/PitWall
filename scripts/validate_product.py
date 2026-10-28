@@ -34,12 +34,22 @@ def validate(product):
     for record in product["evaluations"]:
         prediction = next(p for p in product["predictions"] if p["prediction_id"] == record["prediction_id"])
         assert record["metrics"] == evaluate(prediction["full_grid"], record["actual"])
+    from pitwall.models.experimental import validate_forecast
+    experimental_ids = set()
+    for forecast in product.get("experimental_predictions", []):
+        validate_forecast(forecast)
+        assert forecast["prediction_id"] not in experimental_ids
+        experimental_ids.add(forecast["prediction_id"])
+        assert forecast["top10"] == forecast["full_grid"][:10]
+    for evaluation in product.get("experimental_evaluations", []):
+        forecast = next(p for p in product["experimental_predictions"] if p["prediction_id"] == evaluation["prediction_id"])
+        assert evaluation["metrics"] == evaluate(forecast["full_grid"], evaluation["actual"])
     for old in product["legacy_archive"]:
         assert old["status"] == "UNVERIFIED_LEGACY"
     if product["backtest"]["status"] == "AVAILABLE":
         assert product["backtest"]["kind"] == "retrospective_reconstruction"
         assert product["backtest"]["promotion"]["promoted"] is False
-    return {"ok": True, "forecasts": len(seen), "evaluations": len(product["evaluations"])}
+    return {"ok": True, "forecasts": len(seen), "evaluations": len(product["evaluations"]), "model_forecasts": len(experimental_ids)}
 
 
 if __name__ == "__main__":

@@ -23,9 +23,12 @@ FEATURES = ["qualifying_percentile", "driver_finish", "driver_qualifying",
 ALPHAS = (0.1, 1.0, 10.0, 100.0)
 
 
-def features(event, qualifying, history):
+def features(event, qualifying, history, *, qualifying_available=True):
     """Target results are not an argument. Reject any future/duplicate history."""
-    predict(qualifying)  # Complete field and uniqueness validation.
+    if qualifying_available:
+        predict(qualifying)  # Complete field and uniqueness validation.
+    elif len(qualifying) < 2 or len({r["driver_id"] for r in qualifying}) != len(qualifying):
+        raise DataUnavailable("A unique projected entrant field is required")
     start = instant(event["start_at"])
     ids = [r["event"]["id"] for r in history]
     if len(ids) != len(set(ids)):
@@ -54,7 +57,7 @@ def features(event, qualifying, history):
             if members:
                 teams.append(mean(members))
         recent = lambda xs: mean(xs[-5:]) if xs else np.nan
-        result.append([(driver["position"] - 1) / (len(qualifying) - 1), recent(finishes),
+        result.append([(driver["position"] - 1) / (len(qualifying) - 1) if qualifying_available else np.nan, recent(finishes),
                        recent(quals), recent(teams), recent(failures), min(len(finishes), 5), min(len(teams), 5)])
     return np.asarray(result, dtype=float)
 
@@ -111,8 +114,14 @@ def assess(model, samples):
             for s in samples]
 
 
-def experiment(dataset):
+def experiment(dataset, *, prequalifying=False):
     samples, excluded = prepare(dataset)
+    if prequalifying:
+        for sample in samples:
+            sample["x"] = sample["x"][:, 1:]
+    version = "pre-race-form-ridge-v1" if prequalifying else VERSION
+    feature_version = "prior-five-no-qualifying-v1" if prequalifying else FEATURE_VERSION
+    feature_names = FEATURES[1:] if prequalifying else FEATURES
     subset = lambda lo, hi: [s for s in samples if lo <= s["race"]["event"]["season"] <= hi]
     train, selection, development, validation = subset(2019, 2021), subset(2022, 2023), subset(2019, 2023), subset(2024, 2025)
     if not all([train, selection, validation]):
@@ -132,13 +141,13 @@ def experiment(dataset):
               "no_season_mae_regression": all(b["candidate"]["mae"] <= b["baseline"]["mae"] for b in seasons),
               "no_rank_regression": candidate["spearman"] >= baseline["spearman"]}
     imputer, scaler, ridge = model.steps[0][1], model.steps[1][1], model.steps[2][1]
-    artifact = {"model_version": VERSION, "feature_version": FEATURE_VERSION, "features": FEATURES,
+    artifact = {"model_version": version, "feature_version": feature_version, "features": feature_names,
                 "alpha": alpha, "training_data_cutoff": max(s["race"]["event"]["start_at"] for s in development),
                 "training_race_ids": [s["race"]["event"]["id"] for s in development],
                 "imputation_medians": imputer.statistics_.tolist(), "missing_indicators": imputer.indicator_.features_.tolist(),
                 "scaler_mean": scaler.mean_.tolist(), "scaler_scale": scaler.scale_.tolist(),
                 "coefficients": ridge.coef_.tolist(), "intercept": float(ridge.intercept_)}
-    return {"status": "RESEARCH_ONLY", "model_version": VERSION, "feature_version": FEATURE_VERSION,
+    return {"status": "RESEARCH_ONLY", "model_version": version, "feature_version": feature_version,
             "created_at": datetime.now(timezone.utc).isoformat(), "dataset_hash": digest(dataset),
             "objective": "Final classification rank; no probabilities",
             "selection_period": "2022–2023", "training_period": "2019–2023", "validation_period": "2024–2025",
