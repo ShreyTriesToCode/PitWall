@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-10-30T05:59:14.458193+00:00",
+  "generated_at": "2026-10-30T13:08:05.723887+00:00",
   "calendar": [
     {
       "id": "2026:1:race",
@@ -1185,7 +1185,7 @@
     ],
     "source": {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:49.159405+00:00",
+      "retrieved_at": "2026-10-30T13:07:44.078149+00:00",
       "status": "AVAILABLE",
       "sha256": "567b2922d9adb46abba55476f5a6094a0645d30b940819796d1ba184fdeaddbe"
     }
@@ -7437,265 +7437,265 @@
   "sources": [
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:48.475220+00:00",
+      "retrieved_at": "2026-10-30T13:07:43.511546+00:00",
       "status": "AVAILABLE",
       "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:49.159405+00:00",
+      "retrieved_at": "2026-10-30T13:07:44.078149+00:00",
       "status": "AVAILABLE",
       "sha256": "567b2922d9adb46abba55476f5a6094a0645d30b940819796d1ba184fdeaddbe"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/19/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:49.680586+00:00",
+      "retrieved_at": "2026-10-30T13:07:44.497498+00:00",
       "status": "AVAILABLE",
       "sha256": "3ce4f9f8d6bf46bec60fb872af5c354e6430e394c2e78a5081e7aa270f5068d9"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/18/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:50.344989+00:00",
+      "retrieved_at": "2026-10-30T13:07:45.031550+00:00",
       "status": "AVAILABLE",
       "sha256": "45fa2248ed1795b041e24ab8190257776758cc8acffe8436736e7fa4b0a28353"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:50.999235+00:00",
+      "retrieved_at": "2026-10-30T13:07:45.562410+00:00",
       "status": "AVAILABLE",
       "sha256": "ae226e6239df3455db0c8d6f809192cb859fe51ed29dea9927df83671abd8052"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/17/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:51.680100+00:00",
+      "retrieved_at": "2026-10-30T13:07:46.076451+00:00",
       "status": "AVAILABLE",
       "sha256": "561d1135bcf91222e3a09b008c13e2225a040c3ec92ead3a769df586e4dc76fd"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:52.352575+00:00",
+      "retrieved_at": "2026-10-30T13:07:46.617332+00:00",
       "status": "AVAILABLE",
       "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/1/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:53.939873+00:00",
+      "retrieved_at": "2026-10-30T13:07:48.430285+00:00",
       "status": "AVAILABLE",
       "sha256": "392b932061ff38c748797cbb0c9fcc840d3d224ec48736b864d20bab4eeadde2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/1/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:54.615880+00:00",
+      "retrieved_at": "2026-10-30T13:07:49.137748+00:00",
       "status": "AVAILABLE",
       "sha256": "1e92af0dda33ae305b61f2b20e1930bf28ef0376462da621421c244b56179916"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/2/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:55.093293+00:00",
+      "retrieved_at": "2026-10-30T13:07:49.659929+00:00",
       "status": "AVAILABLE",
       "sha256": "87cc8cd5ff037bd321ae28fcff7c04b4576cc6867904af0153dd49971ce8e08d"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/2/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:55.776642+00:00",
+      "retrieved_at": "2026-10-30T13:07:50.188466+00:00",
       "status": "AVAILABLE",
       "sha256": "3665274ca67977c4a4cc5e864669294f7d457d0aaa6c24ecaf817de440be3228"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/3/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:56.259428+00:00",
+      "retrieved_at": "2026-10-30T13:07:50.702070+00:00",
       "status": "AVAILABLE",
       "sha256": "a73b1695b2deb8301ed67e5e1cf9d452cc7f3930b410ac0f01d64a8e9af67ae4"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/3/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:56.684082+00:00",
+      "retrieved_at": "2026-10-30T13:07:51.218631+00:00",
       "status": "AVAILABLE",
       "sha256": "cc0627d14cfa2f337499e5edc126d8e3abab970c56fced134862480976ad0607"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/4/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:57.340164+00:00",
+      "retrieved_at": "2026-10-30T13:07:51.728161+00:00",
       "status": "AVAILABLE",
       "sha256": "672edc7e2cd2343b84d672ef0258706f47e5385bba1206f15496b6db462cef4d"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/4/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:58.008233+00:00",
+      "retrieved_at": "2026-10-30T13:07:52.246848+00:00",
       "status": "AVAILABLE",
       "sha256": "c077d360622ca50a1b2adf7bba35783b2c3ce7ab165ba28ab7daabf6f3a50891"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/5/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:58.646837+00:00",
+      "retrieved_at": "2026-10-30T13:07:52.745907+00:00",
       "status": "AVAILABLE",
       "sha256": "1a9e39e374eea55c3059704eb43010d0593534b25583e717d1293a6122fca26e"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/5/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:59.320808+00:00",
+      "retrieved_at": "2026-10-30T13:07:53.108718+00:00",
       "status": "AVAILABLE",
       "sha256": "6521f908da06833e3f2ad26eb4f19a2963d16991be2a9dabcd27ae9e4a8d0f95"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/6/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:00.008870+00:00",
+      "retrieved_at": "2026-10-30T13:07:53.784416+00:00",
       "status": "AVAILABLE",
       "sha256": "e252b2a0dae3cf963a37e21bf8a3b6f6b65a7a8d6082d6e6ae7e6dd95931e256"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/6/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:00.698165+00:00",
+      "retrieved_at": "2026-10-30T13:07:54.471943+00:00",
       "status": "AVAILABLE",
       "sha256": "4f74420ce303b321d3b9d37a7e6ebb01e0e918bc33422fef29e2855a2a6f1e76"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/7/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:01.369412+00:00",
+      "retrieved_at": "2026-10-30T13:07:54.988320+00:00",
       "status": "AVAILABLE",
       "sha256": "437ec00fffb86fdc686632e0d837c3ccec3eb2c4c713199e4e4dca44d372a950"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/7/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:02.054535+00:00",
+      "retrieved_at": "2026-10-30T13:07:55.515030+00:00",
       "status": "AVAILABLE",
       "sha256": "0599622a7f4430ae25e73836dd549b1f2d35d95d4d1bbbb3676f8df4a5db3b07"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/8/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:02.704976+00:00",
+      "retrieved_at": "2026-10-30T13:07:56.003849+00:00",
       "status": "AVAILABLE",
       "sha256": "ad9ba6793722b313cc5b9cfc22fa0bcc777ded8ae9d703ade7d60a0a163f0429"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/8/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:03.403168+00:00",
+      "retrieved_at": "2026-10-30T13:07:56.871919+00:00",
       "status": "AVAILABLE",
       "sha256": "0cb7e9c953986573a6befe00bb8ae464fdfe16d1d65e20ad8495ed53760cef15"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/9/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:04.058568+00:00",
+      "retrieved_at": "2026-10-30T13:07:57.570831+00:00",
       "status": "AVAILABLE",
       "sha256": "3aa34745f297525c9c5fdd11b84a3f1e8ca88698dcafe94c52d9d9ce4cfd4719"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/9/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:04.742646+00:00",
+      "retrieved_at": "2026-10-30T13:07:58.099047+00:00",
       "status": "AVAILABLE",
       "sha256": "59b2d011ec33c63b66c94c206c75d6fae0d0515d7585e2a8d36246a781f925da"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/10/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:05.403025+00:00",
+      "retrieved_at": "2026-10-30T13:07:58.599755+00:00",
       "status": "AVAILABLE",
       "sha256": "cd33210fa2553333a6c8afd46b4d811cf06bab1bda41b3982e7ea6d32ec8a474"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/10/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:06.090947+00:00",
+      "retrieved_at": "2026-10-30T13:07:59.112189+00:00",
       "status": "AVAILABLE",
       "sha256": "d0c4dbbcf89273eb9af8ea1f0ce7f98b44cdd95b79136cbe6e13431402d64ce3"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/11/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:06.769015+00:00",
+      "retrieved_at": "2026-10-30T13:07:59.623412+00:00",
       "status": "AVAILABLE",
       "sha256": "e6a930ea76c146e279aea6e98df8877b4d4bf2db42461f1f074b33cb7904ba2e"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/11/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:07.452451+00:00",
+      "retrieved_at": "2026-10-30T13:08:00.170102+00:00",
       "status": "AVAILABLE",
       "sha256": "5544b4e1bb765a5cea2e82f536c939f5aa9682151bfcc38bce5e7ddaa8843d11"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/12/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:08.120725+00:00",
+      "retrieved_at": "2026-10-30T13:08:00.735362+00:00",
       "status": "AVAILABLE",
       "sha256": "40869fe94a6acd14effcd72a0f2215090c2b033f55d186413406701da4b9119c"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/12/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:08.805475+00:00",
+      "retrieved_at": "2026-10-30T13:08:01.465510+00:00",
       "status": "AVAILABLE",
       "sha256": "760f8c4c115f0ecb71107ad702231d7b8d39fccd7c4e60a383f98071624946f8"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/13/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:09.465941+00:00",
+      "retrieved_at": "2026-10-30T13:08:02.004283+00:00",
       "status": "AVAILABLE",
       "sha256": "bde69bf6d284fd355b2a7660646c39411d504749ac1184f2976e175546d906e2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/13/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:10.164645+00:00",
+      "retrieved_at": "2026-10-30T13:08:02.563283+00:00",
       "status": "AVAILABLE",
       "sha256": "6993b6dd248c6465ef2d55481b76e2308195be2ad855e98b53dcec3c8449effa"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/14/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:10.820955+00:00",
+      "retrieved_at": "2026-10-30T13:08:03.071666+00:00",
       "status": "AVAILABLE",
       "sha256": "3d93f5427c5c847873620f3733b422ac0511bec74018a20faec886821a5c8e5b"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/14/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:11.504512+00:00",
+      "retrieved_at": "2026-10-30T13:08:03.509292+00:00",
       "status": "AVAILABLE",
       "sha256": "0355ca7b5d06f10145e11f4d2fb48caa6c617c3fa938aca5260d67f31d739b43"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:52.352575+00:00",
+      "retrieved_at": "2026-10-30T13:07:46.617332+00:00",
       "status": "CACHED",
       "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:12.171937+00:00",
+      "retrieved_at": "2026-10-30T13:08:04.041095+00:00",
       "status": "AVAILABLE",
       "sha256": "5a1779855fb85c170ff3a75b1e4978f2eca53fd89f0e65b8835db2a876a0d241"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:50.999235+00:00",
+      "retrieved_at": "2026-10-30T13:07:45.562410+00:00",
       "status": "CACHED",
       "sha256": "ae226e6239df3455db0c8d6f809192cb859fe51ed29dea9927df83671abd8052"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:13.036016+00:00",
+      "retrieved_at": "2026-10-30T13:08:04.580349+00:00",
       "status": "AVAILABLE",
       "sha256": "1e9070cfa7a7fcae538d46030ab936fd174f47a50a37221eb1c69c525210267f"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/17/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:51.680100+00:00",
+      "retrieved_at": "2026-10-30T13:07:46.076451+00:00",
       "status": "CACHED",
       "sha256": "561d1135bcf91222e3a09b008c13e2225a040c3ec92ead3a769df586e4dc76fd"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/17/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:13.720786+00:00",
+      "retrieved_at": "2026-10-30T13:08:05.154704+00:00",
       "status": "AVAILABLE",
       "sha256": "cc1e209282a990b561072197de3ad412dd0525948f9d86196fc5db2a88e258a2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/18/results/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:50.344989+00:00",
+      "retrieved_at": "2026-10-30T13:07:45.031550+00:00",
       "status": "CACHED",
       "sha256": "45fa2248ed1795b041e24ab8190257776758cc8acffe8436736e7fa4b0a28353"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/18/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:59:14.427502+00:00",
+      "retrieved_at": "2026-10-30T13:08:05.690829+00:00",
       "status": "AVAILABLE",
       "sha256": "90ac798b949570b2a64e90790d15a7045a0bca344b0d3aa57cab0b0cc427c575"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/19/qualifying/?limit=100",
-      "retrieved_at": "2026-10-30T05:58:49.680586+00:00",
+      "retrieved_at": "2026-10-30T13:07:44.497498+00:00",
       "status": "CACHED",
       "sha256": "3ce4f9f8d6bf46bec60fb872af5c354e6430e394c2e78a5081e7aa270f5068d9"
     }
@@ -7703,7 +7703,7 @@
   "evaluated_races": 4,
   "fia_archive": {
     "status": "HISTORICAL",
-    "checked_at": "2026-10-29T14:25:51.770477+05:30",
+    "checked_at": "2026-10-30T14:31:42.503770+05:30",
     "source_authority": "official_fia",
     "source_status": "official_live",
     "errors": [
@@ -7715,6 +7715,86 @@
     ],
     "documents": [
       {
+        "document_id": "40652ff21d8f46af",
+        "title": "Doc 8 - Race Director's Competition Notes Published on 29.10.26 23:10 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_race_directors_competition_notes.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_race_directors_competition_notes.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": null,
+        "fetched_at": "2026-10-30T09:01:41.397406+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "f679f1f17bb93b8d",
+        "title": "Doc 7 - Competition Notes - Circuit Map, Pit Lane Drawing and Emergency Exits Map Published on 29.10.26 23:07 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_competition_notes_-_circuit_map_pit_lane_drawing_and_emergency_exits_map.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_competition_notes_-_circuit_map_pit_lane_drawing_and_emergency_exits_map.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-29T21:46:00+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397415+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "54b47588ca99c86c",
+        "title": "Doc 6 - Power Unit Information Published on 29.10.26 22:46 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_power_unit_information.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_power_unit_information.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-29T21:00:00+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397420+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "e411306051bf1872",
+        "title": "Doc 5 - Car Display Procedure Published on 29.10.26 22:00 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_car_display_procedure.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_car_display_procedure.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": "2026-10-29T14:50:00+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397425+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
+        "document_id": "8368c78669f5ef58",
+        "title": "Doc 4 - Timetable V2 Published on 29.10.26 15:50 CET",
+        "source_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_timetable_v2.pdf",
+        "download_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_timetable_v2.pdf",
+        "source_authority": "official_fia",
+        "source_status": "official_live",
+        "published_at": null,
+        "fetched_at": "2026-10-30T09:01:41.397429+00:00",
+        "verification_status": "indexed",
+        "is_official": true,
+        "is_verified": true,
+        "is_stale": false,
+        "error_summary": null,
+        "parse_error": null
+      },
+      {
         "document_id": "5ba0c30af2b11703",
         "title": "Doc 3 - Post-Race Inspections on Car Number 63, 2026 United States GP Published on 28.10.26 22:12 CET",
         "source_url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_post-race_inspections_on_car_number_63_2026_united_states_gp.pdf",
@@ -7722,7 +7802,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-28T20:46:00+00:00",
-        "fetched_at": "2026-10-29T08:55:50.169599+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397434+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7738,7 +7818,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": "2026-10-28T20:00:00+00:00",
-        "fetched_at": "2026-10-29T08:55:50.169604+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397438+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7754,7 +7834,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169608+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397446+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7770,7 +7850,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169611+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397452+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7786,7 +7866,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169613+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397456+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7802,7 +7882,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169616+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397460+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7818,7 +7898,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169618+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397463+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7834,7 +7914,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169625+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397467+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7850,7 +7930,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169629+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397470+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7866,7 +7946,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169631+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397474+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7882,7 +7962,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169634+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397477+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7898,7 +7978,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169636+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397480+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7914,7 +7994,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169638+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397484+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7930,7 +8010,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169640+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397487+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7946,7 +8026,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169643+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397495+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7962,7 +8042,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169645+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397498+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7978,7 +8058,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169647+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397502+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -7994,7 +8074,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169650+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397505+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -8010,7 +8090,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169652+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397509+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -8026,7 +8106,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169654+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397512+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -8042,7 +8122,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169655+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397516+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -8058,7 +8138,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169657+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397519+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
@@ -8074,7 +8154,7 @@
         "source_authority": "official_fia",
         "source_status": "official_live",
         "published_at": null,
-        "fetched_at": "2026-10-29T08:55:50.169659+00:00",
+        "fetched_at": "2026-10-30T09:01:41.397523+00:00",
         "verification_status": "indexed",
         "is_official": true,
         "is_verified": true,
