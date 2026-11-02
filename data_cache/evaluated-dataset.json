@@ -2549,9 +2549,9 @@
           "q3": null
         },
         {
-          "driver_id": "piastri",
-          "name": "Oscar Piastri",
-          "team": "McLaren",
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
           "position": 7,
           "status": "Finished",
           "points": "6",
@@ -2560,9 +2560,9 @@
           "q3": null
         },
         {
-          "driver_id": "colapinto",
-          "name": "Franco Colapinto",
-          "team": "Alpine F1 Team",
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
           "position": 8,
           "status": "Finished",
           "points": "4",
@@ -2571,9 +2571,9 @@
           "q3": null
         },
         {
-          "driver_id": "lawson",
-          "name": "Liam Lawson",
-          "team": "RB F1 Team",
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
           "position": 9,
           "status": "Finished",
           "points": "2",
@@ -2582,9 +2582,9 @@
           "q3": null
         },
         {
-          "driver_id": "gasly",
-          "name": "Pierre Gasly",
-          "team": "Alpine F1 Team",
+          "driver_id": "ryo_hirakawa",
+          "name": "Ryo Hirakawa",
+          "team": "Haas F1 Team",
           "position": 10,
           "status": "Finished",
           "points": "1",
@@ -2593,43 +2593,10 @@
           "q3": null
         },
         {
-          "driver_id": "bortoleto",
-          "name": "Gabriel Bortoleto",
-          "team": "Audi",
-          "position": 11,
-          "status": "Finished",
-          "points": "0",
-          "q1": null,
-          "q2": null,
-          "q3": null
-        },
-        {
-          "driver_id": "hadjar",
-          "name": "Isack Hadjar",
-          "team": "Red Bull",
-          "position": 12,
-          "status": "Finished",
-          "points": "0",
-          "q1": null,
-          "q2": null,
-          "q3": null
-        },
-        {
-          "driver_id": "ryo_hirakawa",
-          "name": "Ryo Hirakawa",
-          "team": "Haas F1 Team",
-          "position": 13,
-          "status": "Finished",
-          "points": "0",
-          "q1": null,
-          "q2": null,
-          "q3": null
-        },
-        {
           "driver_id": "albon",
           "name": "Alexander Albon",
           "team": "Williams",
-          "position": 14,
+          "position": 11,
           "status": "Finished",
           "points": "0",
           "q1": null,
@@ -2640,7 +2607,18 @@
           "driver_id": "sainz",
           "name": "Carlos Sainz",
           "team": "Williams",
-          "position": 15,
+          "position": 12,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "position": 13,
           "status": "Finished",
           "points": "0",
           "q1": null,
@@ -2651,7 +2629,18 @@
           "driver_id": "hulkenberg",
           "name": "Nico Hülkenberg",
           "team": "Audi",
-          "position": 16,
+          "position": 14,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "position": 15,
           "status": "Finished",
           "points": "0",
           "q1": null,
@@ -2662,6 +2651,17 @@
           "driver_id": "perez",
           "name": "Sergio Pérez",
           "team": "Cadillac F1 Team",
+          "position": 16,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
           "position": 17,
           "status": "Finished",
           "points": "0",
@@ -2726,20 +2726,20 @@
         }
       ],
       "metrics": {
-        "mae": 3.1818181818181817,
-        "rmse": 3.8376128944009875,
-        "spearman": 0.8170525127046866,
+        "mae": 3.5454545454545454,
+        "rmse": 4.348458452036872,
+        "spearman": 0.7651044607566346,
         "winner_hit": 0,
         "winner_top3": 0,
         "drivers": 22
       },
       "result_source": {
         "url": "https://api.jolpi.ca/ergast/f1/2026/19/results/?limit=100",
-        "retrieved_at": "2026-11-02T06:21:47.974696+00:00",
+        "retrieved_at": "2026-11-02T23:55:11.334714+00:00",
         "status": "AVAILABLE",
-        "sha256": "cc449139dd7ecafa4689960a33f10807b9dc20eef2f31b6827791acc317ba4fd"
+        "sha256": "e667dd407e36f1fe1b8c963ff968490efa25f0d73c1d6eb2c04dcd26f217b031"
       },
-      "evaluation_id": "41ad109330fc6680cd64a0bdbb785591ad26315b71a5087b2f33fcb124805aae"
+      "evaluation_id": "85d791f2821b3dd27dae3b828e08f6fe15dac3353e7af10274cb79143b215c67"
     }
   ]
 }
