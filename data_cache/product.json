@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-08T20:34:07.258873+00:00",
+  "generated_at": "2026-11-09T00:59:16.954318+00:00",
   "calendar": [
     {
       "id": "2026:1:race",
@@ -1007,9 +1007,9 @@
         "q3": null
       },
       {
-        "driver_id": "leclerc",
-        "name": "Charles Leclerc",
-        "team": "Ferrari",
+        "driver_id": "lawson",
+        "name": "Liam Lawson",
+        "team": "RB F1 Team",
         "position": 7,
         "status": "Finished",
         "points": "6",
@@ -1018,9 +1018,9 @@
         "q3": null
       },
       {
-        "driver_id": "lawson",
-        "name": "Liam Lawson",
-        "team": "RB F1 Team",
+        "driver_id": "leclerc",
+        "name": "Charles Leclerc",
+        "team": "Ferrari",
         "position": 8,
         "status": "Finished",
         "points": "4",
@@ -1185,9 +1185,9 @@
     ],
     "source": {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:42.795069+00:00",
+      "retrieved_at": "2026-11-09T00:59:07.739851+00:00",
       "status": "AVAILABLE",
-      "sha256": "ea7b00798468f3cce51102af1952a7e0c8e42c27b7ded1e24cfb785c24677426"
+      "sha256": "64b7e5d4f5ed424db87e4736da2b5c128e68d20da26ff8316f3d6536a4ec2df7"
     }
   },
   "predictions": [
@@ -6528,6 +6528,272 @@
           "q3": null
         }
       ]
+    },
+    {
+      "evaluation_id": "a5fe2fb317dbbd4cb6a92ca6d0f56609af19916771245c95d6371ad8020f6beb",
+      "prediction_id": "c8f74a395b4d74b213f9978c7653f15e0d35d17fd6b0a706ed7b5ca2f0b231ae",
+      "race_id": "2026:20:race",
+      "evaluated_at": "2026-11-09T00:59:08.842180+00:00",
+      "model_version": "qualifying-order-v1",
+      "result_hash": "9ebb8fc45cf906909d6ae7702705c236dd63c69c2b7717de20d4dfb1889d672c",
+      "source": {
+        "url": "https://api.jolpi.ca/ergast/f1/2026/20/results/?limit=100",
+        "retrieved_at": "2026-11-09T00:59:08.839639+00:00",
+        "status": "AVAILABLE",
+        "sha256": "e4d3759f375054aa2fd7e5daa61c6eeaf3fe6a764890de9d04a57c1a2384beaa"
+      },
+      "metrics": {
+        "mae": 4.181818181818182,
+        "rmse": 5.090097337879788,
+        "spearman": 0.6781479390175043,
+        "winner_hit": 1,
+        "winner_top3": 1,
+        "drivers": 22
+      },
+      "actual": [
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "position": 1,
+          "status": "Finished",
+          "points": "25",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "position": 2,
+          "status": "Finished",
+          "points": "18",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "position": 3,
+          "status": "Finished",
+          "points": "15",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "position": 4,
+          "status": "Finished",
+          "points": "12",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "position": 5,
+          "status": "Finished",
+          "points": "10",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "position": 6,
+          "status": "Finished",
+          "points": "8",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
+          "position": 7,
+          "status": "Finished",
+          "points": "6",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "position": 8,
+          "status": "Finished",
+          "points": "4",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "position": 9,
+          "status": "Lapped",
+          "points": "2",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "hulkenberg",
+          "name": "Nico Hülkenberg",
+          "team": "Audi",
+          "position": 10,
+          "status": "Lapped",
+          "points": "1",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "name": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "position": 11,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "alonso",
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "position": 12,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "position": 13,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "position": 14,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "albon",
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "position": 15,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "position": 16,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bearman",
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "position": 17,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "perez",
+          "name": "Sergio Pérez",
+          "team": "Cadillac F1 Team",
+          "position": 18,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "sainz",
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "position": 19,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "rafael_camara",
+          "name": "Rafael Camara",
+          "team": "Haas F1 Team",
+          "position": 20,
+          "status": "Lapped",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "stroll",
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "position": 21,
+          "status": "Retired",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bottas",
+          "name": "Valtteri Bottas",
+          "team": "Cadillac F1 Team",
+          "position": 22,
+          "status": "Did not start",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        }
+      ]
     }
   ],
   "legacy_archive": [
@@ -9393,295 +9659,174 @@
   "sources": [
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/races/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:42.413352+00:00",
+      "retrieved_at": "2026-11-09T00:59:07.307723+00:00",
       "status": "AVAILABLE",
       "sha256": "378bd15ca9e2c3655c1aa768042491cdae0284df26d7cb3ea3fd9c958c9003ee"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/last/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:42.795069+00:00",
+      "retrieved_at": "2026-11-09T00:59:07.739851+00:00",
       "status": "AVAILABLE",
-      "sha256": "ea7b00798468f3cce51102af1952a7e0c8e42c27b7ded1e24cfb785c24677426"
+      "sha256": "64b7e5d4f5ed424db87e4736da2b5c128e68d20da26ff8316f3d6536a4ec2df7"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/21/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:43.257783+00:00",
+      "retrieved_at": "2026-11-09T00:59:08.149929+00:00",
       "status": "AVAILABLE",
       "sha256": "17edbc0dc0cd11e11715226f17d9357fdee0c8dd4eec75f1c6178245353681c3"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/18/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:43.649986+00:00",
+      "retrieved_at": "2026-11-09T00:59:08.257731+00:00",
       "status": "AVAILABLE",
       "sha256": "45fa2248ed1795b041e24ab8190257776758cc8acffe8436736e7fa4b0a28353"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/20/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.088938+00:00",
+      "retrieved_at": "2026-11-09T00:59:08.839639+00:00",
       "status": "AVAILABLE",
-      "sha256": "7522f5e86ab0faa3222d6f819c569aaf3144bafc7950fedab2419f7e4ffb68b7"
+      "sha256": "e4d3759f375054aa2fd7e5daa61c6eeaf3fe6a764890de9d04a57c1a2384beaa"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/16/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.499952+00:00",
+      "retrieved_at": "2026-11-09T00:59:08.972306+00:00",
       "status": "AVAILABLE",
       "sha256": "ae226e6239df3455db0c8d6f809192cb859fe51ed29dea9927df83671abd8052"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/19/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.899430+00:00",
+      "retrieved_at": "2026-11-09T00:59:09.071416+00:00",
       "status": "AVAILABLE",
       "sha256": "e667dd407e36f1fe1b8c963ff968490efa25f0d73c1d6eb2c04dcd26f217b031"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/17/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:45.338890+00:00",
+      "retrieved_at": "2026-11-09T00:59:09.169808+00:00",
       "status": "AVAILABLE",
       "sha256": "561d1135bcf91222e3a09b008c13e2225a040c3ec92ead3a769df586e4dc76fd"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:45.759913+00:00",
+      "retrieved_at": "2026-11-09T00:59:09.273112+00:00",
       "status": "AVAILABLE",
       "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/1/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:47.139613+00:00",
+      "retrieved_at": "2026-11-09T00:59:10.301616+00:00",
       "status": "AVAILABLE",
       "sha256": "392b932061ff38c748797cbb0c9fcc840d3d224ec48736b864d20bab4eeadde2"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/1/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:47.710891+00:00",
+      "retrieved_at": "2026-11-09T00:59:10.973099+00:00",
       "status": "AVAILABLE",
       "sha256": "1e92af0dda33ae305b61f2b20e1930bf28ef0376462da621421c244b56179916"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/2/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:48.313491+00:00",
+      "retrieved_at": "2026-11-09T00:59:11.063918+00:00",
       "status": "AVAILABLE",
       "sha256": "87cc8cd5ff037bd321ae28fcff7c04b4576cc6867904af0153dd49971ce8e08d"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/2/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:48.925135+00:00",
+      "retrieved_at": "2026-11-09T00:59:11.689644+00:00",
       "status": "AVAILABLE",
       "sha256": "3665274ca67977c4a4cc5e864669294f7d457d0aaa6c24ecaf817de440be3228"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/3/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:49.514314+00:00",
+      "retrieved_at": "2026-11-09T00:59:11.795508+00:00",
       "status": "AVAILABLE",
       "sha256": "a73b1695b2deb8301ed67e5e1cf9d452cc7f3930b410ac0f01d64a8e9af67ae4"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/3/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:50.124842+00:00",
+      "retrieved_at": "2026-11-09T00:59:12.440092+00:00",
       "status": "AVAILABLE",
       "sha256": "cc0627d14cfa2f337499e5edc126d8e3abab970c56fced134862480976ad0607"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/4/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:50.719750+00:00",
+      "retrieved_at": "2026-11-09T00:59:12.541613+00:00",
       "status": "AVAILABLE",
       "sha256": "672edc7e2cd2343b84d672ef0258706f47e5385bba1206f15496b6db462cef4d"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/4/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:51.341624+00:00",
+      "retrieved_at": "2026-11-09T00:59:13.253667+00:00",
       "status": "AVAILABLE",
       "sha256": "c077d360622ca50a1b2adf7bba35783b2c3ce7ab165ba28ab7daabf6f3a50891"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/5/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:51.928993+00:00",
+      "retrieved_at": "2026-11-09T00:59:13.358641+00:00",
       "status": "AVAILABLE",
       "sha256": "1a9e39e374eea55c3059704eb43010d0593534b25583e717d1293a6122fca26e"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/5/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:52.730705+00:00",
+      "retrieved_at": "2026-11-09T00:59:13.998675+00:00",
       "status": "AVAILABLE",
       "sha256": "6521f908da06833e3f2ad26eb4f19a2963d16991be2a9dabcd27ae9e4a8d0f95"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/6/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:53.304371+00:00",
+      "retrieved_at": "2026-11-09T00:59:14.080673+00:00",
       "status": "AVAILABLE",
       "sha256": "e252b2a0dae3cf963a37e21bf8a3b6f6b65a7a8d6082d6e6ae7e6dd95931e256"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/6/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:53.978335+00:00",
+      "retrieved_at": "2026-11-09T00:59:14.705648+00:00",
       "status": "AVAILABLE",
       "sha256": "4f74420ce303b321d3b9d37a7e6ebb01e0e918bc33422fef29e2855a2a6f1e76"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/7/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:54.573933+00:00",
+      "retrieved_at": "2026-11-09T00:59:15.336581+00:00",
       "status": "AVAILABLE",
       "sha256": "437ec00fffb86fdc686632e0d837c3ccec3eb2c4c713199e4e4dca44d372a950"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/7/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:55.209621+00:00",
+      "retrieved_at": "2026-11-09T00:59:15.995835+00:00",
       "status": "AVAILABLE",
       "sha256": "0599622a7f4430ae25e73836dd549b1f2d35d95d4d1bbbb3676f8df4a5db3b07"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/8/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:55.828055+00:00",
+      "retrieved_at": "2026-11-09T00:59:16.137138+00:00",
       "status": "AVAILABLE",
       "sha256": "ad9ba6793722b313cc5b9cfc22fa0bcc777ded8ae9d703ade7d60a0a163f0429"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/8/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:56.467742+00:00",
+      "retrieved_at": "2026-11-09T00:59:16.759895+00:00",
       "status": "AVAILABLE",
       "sha256": "0cb7e9c953986573a6befe00bb8ae464fdfe16d1d65e20ad8495ed53760cef15"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/9/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:57.141865+00:00",
+      "retrieved_at": "2026-11-09T00:59:16.855161+00:00",
       "status": "AVAILABLE",
       "sha256": "3aa34745f297525c9c5fdd11b84a3f1e8ca88698dcafe94c52d9d9ce4cfd4719"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/9/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:57.799842+00:00",
-      "status": "AVAILABLE",
-      "sha256": "59b2d011ec33c63b66c94c206c75d6fae0d0515d7585e2a8d36246a781f925da"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/10/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:58.379057+00:00",
-      "status": "AVAILABLE",
-      "sha256": "cd33210fa2553333a6c8afd46b4d811cf06bab1bda41b3982e7ea6d32ec8a474"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/10/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:58.992029+00:00",
-      "status": "AVAILABLE",
-      "sha256": "d0c4dbbcf89273eb9af8ea1f0ce7f98b44cdd95b79136cbe6e13431402d64ce3"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/11/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:59.582691+00:00",
-      "status": "AVAILABLE",
-      "sha256": "e6a930ea76c146e279aea6e98df8877b4d4bf2db42461f1f074b33cb7904ba2e"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/11/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:00.175250+00:00",
-      "status": "AVAILABLE",
-      "sha256": "5544b4e1bb765a5cea2e82f536c939f5aa9682151bfcc38bce5e7ddaa8843d11"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/12/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:00.756044+00:00",
-      "status": "AVAILABLE",
-      "sha256": "40869fe94a6acd14effcd72a0f2215090c2b033f55d186413406701da4b9119c"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/12/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:01.364039+00:00",
-      "status": "AVAILABLE",
-      "sha256": "760f8c4c115f0ecb71107ad702231d7b8d39fccd7c4e60a383f98071624946f8"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/13/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:02.097537+00:00",
-      "status": "AVAILABLE",
-      "sha256": "bde69bf6d284fd355b2a7660646c39411d504749ac1184f2976e175546d906e2"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/13/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:02.909538+00:00",
-      "status": "AVAILABLE",
-      "sha256": "6993b6dd248c6465ef2d55481b76e2308195be2ad855e98b53dcec3c8449effa"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/14/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:03.471498+00:00",
-      "status": "AVAILABLE",
-      "sha256": "3d93f5427c5c847873620f3733b422ac0511bec74018a20faec886821a5c8e5b"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/14/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:04.056887+00:00",
-      "status": "AVAILABLE",
-      "sha256": "0355ca7b5d06f10145e11f4d2fb48caa6c617c3fa938aca5260d67f31d739b43"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/15/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:45.759913+00:00",
-      "status": "CACHED",
-      "sha256": "5d9b3313e141040bacd1f5e68569761da73951bc75e297a8a830375c46921ae2"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/15/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:04.691913+00:00",
-      "status": "AVAILABLE",
-      "sha256": "5a1779855fb85c170ff3a75b1e4978f2eca53fd89f0e65b8835db2a876a0d241"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/16/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.499952+00:00",
-      "status": "CACHED",
-      "sha256": "ae226e6239df3455db0c8d6f809192cb859fe51ed29dea9927df83671abd8052"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/16/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:05.597191+00:00",
-      "status": "AVAILABLE",
-      "sha256": "1e9070cfa7a7fcae538d46030ab936fd174f47a50a37221eb1c69c525210267f"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/17/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:45.338890+00:00",
-      "status": "CACHED",
-      "sha256": "561d1135bcf91222e3a09b008c13e2225a040c3ec92ead3a769df586e4dc76fd"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/17/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:06.037601+00:00",
-      "status": "AVAILABLE",
-      "sha256": "cc1e209282a990b561072197de3ad412dd0525948f9d86196fc5db2a88e258a2"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/18/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:43.649986+00:00",
-      "status": "CACHED",
-      "sha256": "45fa2248ed1795b041e24ab8190257776758cc8acffe8436736e7fa4b0a28353"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/18/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:06.615816+00:00",
-      "status": "AVAILABLE",
-      "sha256": "90ac798b949570b2a64e90790d15a7045a0bca344b0d3aa57cab0b0cc427c575"
+      "retrieved_at": null,
+      "status": "UNAVAILABLE"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/19/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.899430+00:00",
-      "status": "CACHED",
-      "sha256": "e667dd407e36f1fe1b8c963ff968490efa25f0d73c1d6eb2c04dcd26f217b031"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/19/qualifying/?limit=100",
-      "retrieved_at": "2026-11-08T20:34:07.244525+00:00",
-      "status": "AVAILABLE",
-      "sha256": "6272a08e395550ccba644650e10a02deac1eb66102ad8b687e0d15de7db85aa1"
-    },
-    {
-      "url": "https://api.jolpi.ca/ergast/f1/2026/19/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.899430+00:00",
+      "retrieved_at": "2026-11-09T00:59:09.071416+00:00",
       "status": "CACHED",
       "sha256": "e667dd407e36f1fe1b8c963ff968490efa25f0d73c1d6eb2c04dcd26f217b031"
     },
     {
       "url": "https://api.jolpi.ca/ergast/f1/2026/19/results/?limit=100",
-      "retrieved_at": "2026-11-08T20:33:44.899430+00:00",
+      "retrieved_at": "2026-11-09T00:59:09.071416+00:00",
       "status": "CACHED",
       "sha256": "e667dd407e36f1fe1b8c963ff968490efa25f0d73c1d6eb2c04dcd26f217b031"
     }
@@ -30691,7 +30836,7 @@
     }
   ],
   "experimental_warnings": [
-    "Experimental forecast unavailable: Duplicate drivers or incomplete positions in QualifyingResults",
+    "Experimental forecast unavailable: Jolpica data is unavailable or invalid",
     "Experimental evaluation pending for 2026:19:race: Evaluation requires the same complete field (substitutions need review)"
   ]
 }

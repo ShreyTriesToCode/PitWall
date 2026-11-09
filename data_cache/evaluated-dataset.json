@@ -3097,9 +3097,9 @@
           "q3": null
         },
         {
-          "driver_id": "leclerc",
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
           "position": 7,
           "status": "Finished",
           "points": "6",
@@ -3108,9 +3108,9 @@
           "q3": null
         },
         {
-          "driver_id": "lawson",
-          "name": "Liam Lawson",
-          "team": "RB F1 Team",
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
           "position": 8,
           "status": "Finished",
           "points": "4",
@@ -3275,19 +3275,19 @@
       ],
       "metrics": {
         "mae": 4.181818181818182,
-        "rmse": 5.081159495448044,
-        "spearman": 0.6792772444946358,
+        "rmse": 5.090097337879788,
+        "spearman": 0.6781479390175043,
         "winner_hit": 1,
         "winner_top3": 1,
         "drivers": 22
       },
       "result_source": {
         "url": "https://api.jolpi.ca/ergast/f1/2026/20/results/?limit=100",
-        "retrieved_at": "2026-11-08T20:33:44.088938+00:00",
+        "retrieved_at": "2026-11-09T00:59:08.839639+00:00",
         "status": "AVAILABLE",
-        "sha256": "7522f5e86ab0faa3222d6f819c569aaf3144bafc7950fedab2419f7e4ffb68b7"
+        "sha256": "e4d3759f375054aa2fd7e5daa61c6eeaf3fe6a764890de9d04a57c1a2384beaa"
       },
-      "evaluation_id": "3c6b02ca6ade0b891a325d6e78b177461f65a6a1e80de84ee31db2488a70422c"
+      "evaluation_id": "a5fe2fb317dbbd4cb6a92ca6d0f56609af19916771245c95d6371ad8020f6beb"
     }
   ]
 }
