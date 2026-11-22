@@ -3288,6 +3288,554 @@
         "sha256": "e4d3759f375054aa2fd7e5daa61c6eeaf3fe6a764890de9d04a57c1a2384beaa"
       },
       "evaluation_id": "a5fe2fb317dbbd4cb6a92ca6d0f56609af19916771245c95d6371ad8020f6beb"
+    },
+    {
+      "event": {
+        "id": "2026:21:race",
+        "season": 2026,
+        "round": 21,
+        "name": "Las Vegas Grand Prix",
+        "circuit": "Las Vegas Strip Street Circuit",
+        "location": "Las Vegas",
+        "date": "2026-11-22",
+        "start_at": "2026-11-22T04:00:00+00:00",
+        "sessions": [
+          {
+            "name": "Practice 1",
+            "start_at": "2026-11-20T00:30:00+00:00",
+            "date": "2026-11-20"
+          },
+          {
+            "name": "Practice 2",
+            "start_at": "2026-11-20T04:00:00+00:00",
+            "date": "2026-11-20"
+          },
+          {
+            "name": "Practice 3",
+            "start_at": "2026-11-21T00:30:00+00:00",
+            "date": "2026-11-21"
+          },
+          {
+            "name": "Qualifying",
+            "start_at": "2026-11-21T04:00:00+00:00",
+            "date": "2026-11-21"
+          },
+          {
+            "name": "Race",
+            "start_at": "2026-11-22T04:00:00+00:00",
+            "date": "2026-11-22"
+          }
+        ],
+        "source_url": "https://api.jolpi.ca/ergast/f1/2026/21/races/"
+      },
+      "prediction_id": "de46beed4280d751ae4121d7986b7ef889e7a602535156feaf150e1ced36b292",
+      "model_version": "qualifying-order-v1",
+      "feature_version": "qualifying-position-v1",
+      "data_cutoff": "2026-11-21T19:25:44.445807+00:00",
+      "captured_at": "2026-11-21T19:25:44.447481+00:00",
+      "qualifying": [
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "position": 1,
+          "status": null,
+          "points": null,
+          "q1": "1:34.684",
+          "q2": "1:35.086",
+          "q3": "1:33.893"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "position": 2,
+          "status": null,
+          "points": null,
+          "q1": "1:35.264",
+          "q2": "1:34.394",
+          "q3": "1:34.151"
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "position": 3,
+          "status": null,
+          "points": null,
+          "q1": "1:34.664",
+          "q2": "1:34.617",
+          "q3": "1:34.224"
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "position": 4,
+          "status": null,
+          "points": null,
+          "q1": "1:35.109",
+          "q2": "1:34.766",
+          "q3": "1:34.244"
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "position": 5,
+          "status": null,
+          "points": null,
+          "q1": "1:35.413",
+          "q2": "1:35.064",
+          "q3": "1:34.592"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "name": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "position": 6,
+          "status": null,
+          "points": null,
+          "q1": "1:35.456",
+          "q2": "1:34.963",
+          "q3": "1:34.668"
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "position": 7,
+          "status": null,
+          "points": null,
+          "q1": "1:35.491",
+          "q2": "1:34.763",
+          "q3": "1:34.899"
+        },
+        {
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
+          "position": 8,
+          "status": null,
+          "points": null,
+          "q1": "1:35.489",
+          "q2": "1:35.048",
+          "q3": "1:35.090"
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "position": 9,
+          "status": null,
+          "points": null,
+          "q1": "1:35.718",
+          "q2": "1:34.559",
+          "q3": "1:35.105"
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "position": 10,
+          "status": null,
+          "points": null,
+          "q1": "1:35.930",
+          "q2": "1:34.982",
+          "q3": "1:35.314"
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "position": 11,
+          "status": null,
+          "points": null,
+          "q1": "1:35.040",
+          "q2": "1:35.197",
+          "q3": null
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "position": 12,
+          "status": null,
+          "points": null,
+          "q1": "1:35.743",
+          "q2": "1:35.253",
+          "q3": null
+        },
+        {
+          "driver_id": "hulkenberg",
+          "name": "Nico Hülkenberg",
+          "team": "Audi",
+          "position": 13,
+          "status": null,
+          "points": null,
+          "q1": "1:35.710",
+          "q2": "1:35.460",
+          "q3": null
+        },
+        {
+          "driver_id": "sainz",
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "position": 14,
+          "status": null,
+          "points": null,
+          "q1": "1:35.588",
+          "q2": "1:35.641",
+          "q3": null
+        },
+        {
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "position": 15,
+          "status": null,
+          "points": null,
+          "q1": "1:36.149",
+          "q2": "1:35.993",
+          "q3": null
+        },
+        {
+          "driver_id": "albon",
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "position": 16,
+          "status": null,
+          "points": null,
+          "q1": "1:35.856",
+          "q2": "1:36.125",
+          "q3": null
+        },
+        {
+          "driver_id": "rafael_camara",
+          "name": "Rafael Camara",
+          "team": "Haas F1 Team",
+          "position": 17,
+          "status": null,
+          "points": null,
+          "q1": "1:36.220",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "perez",
+          "name": "Sergio Pérez",
+          "team": "Cadillac F1 Team",
+          "position": 18,
+          "status": null,
+          "points": null,
+          "q1": "1:37.383",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "alonso",
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "position": 19,
+          "status": null,
+          "points": null,
+          "q1": "1:37.400",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "stroll",
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "position": 20,
+          "status": null,
+          "points": null,
+          "q1": "1:37.550",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bottas",
+          "name": "Valtteri Bottas",
+          "team": "Cadillac F1 Team",
+          "position": 21,
+          "status": null,
+          "points": null,
+          "q1": "1:37.601",
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bearman",
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "position": 22,
+          "status": null,
+          "points": null,
+          "q1": "1:48.005",
+          "q2": null,
+          "q3": null
+        }
+      ],
+      "results": [
+        {
+          "driver_id": "max_verstappen",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "position": 1,
+          "status": "Finished",
+          "points": "25",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "norris",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "position": 2,
+          "status": "Finished",
+          "points": "18",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "piastri",
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "position": 3,
+          "status": "Finished",
+          "points": "15",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "antonelli",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "position": 4,
+          "status": "Finished",
+          "points": "12",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "gasly",
+          "name": "Pierre Gasly",
+          "team": "Alpine F1 Team",
+          "position": 5,
+          "status": "Finished",
+          "points": "10",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "colapinto",
+          "name": "Franco Colapinto",
+          "team": "Alpine F1 Team",
+          "position": 6,
+          "status": "Finished",
+          "points": "8",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "hamilton",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "position": 7,
+          "status": "Finished",
+          "points": "6",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "sainz",
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "position": 8,
+          "status": "Finished",
+          "points": "4",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "russell",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "position": 9,
+          "status": "Finished",
+          "points": "2",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "leclerc",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "position": 10,
+          "status": "Finished",
+          "points": "1",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "hulkenberg",
+          "name": "Nico Hülkenberg",
+          "team": "Audi",
+          "position": 11,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bortoleto",
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "position": 12,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bearman",
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "position": 13,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "lawson",
+          "name": "Liam Lawson",
+          "team": "RB F1 Team",
+          "position": 14,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "hadjar",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "position": 15,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "rafael_camara",
+          "name": "Rafael Camara",
+          "team": "Haas F1 Team",
+          "position": 16,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "stroll",
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "position": 17,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "bottas",
+          "name": "Valtteri Bottas",
+          "team": "Cadillac F1 Team",
+          "position": 18,
+          "status": "Finished",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "alonso",
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "position": 19,
+          "status": "Retired",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "name": "Arvid Lindblad",
+          "team": "RB F1 Team",
+          "position": 20,
+          "status": "Retired",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "perez",
+          "name": "Sergio Pérez",
+          "team": "Cadillac F1 Team",
+          "position": 21,
+          "status": "Retired",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        },
+        {
+          "driver_id": "albon",
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "position": 22,
+          "status": "Did not start",
+          "points": "0",
+          "q1": null,
+          "q2": null,
+          "q3": null
+        }
+      ],
+      "metrics": {
+        "mae": 4.363636363636363,
+        "rmse": 5.43557306504609,
+        "spearman": 0.6329757199322417,
+        "winner_hit": 0,
+        "winner_top3": 1,
+        "drivers": 22
+      },
+      "result_source": {
+        "url": "https://api.jolpi.ca/ergast/f1/2026/21/results/?limit=100",
+        "retrieved_at": "2026-11-22T16:23:03.086857+00:00",
+        "status": "AVAILABLE",
+        "sha256": "e28f220a63d05b4aff7f54ea81dd01f3dc2595fb550845908c71b40327a97a4c"
+      },
+      "evaluation_id": "e2d1c0d0b88bae0fd3d39d25851d093112c85796d3ba589269eb24e8500b4539"
     }
   ]
 }
